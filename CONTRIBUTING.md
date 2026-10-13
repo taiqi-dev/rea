@@ -144,6 +144,25 @@ protocols in adapters and shared CLI/MCP workflows in the application layer.
 
 ### Windows source checkouts
 
+Clone without `--recurse-submodules`. To initialize or repair the optional
+Unblob and Wakaru source checkouts, run this helper with PowerShell 7:
+
+```powershell
+pwsh -NoProfile -File scripts/init-windows-submodules.ps1
+```
+
+It checks out REA's pinned revisions, preserves local changes, and backs up Git
+settings. Unblob uses a local cone-mode sparse index that excludes only
+`tests/integration/`: those upstream fixtures contain names Windows cannot
+create. Its source and other tests remain available; Wakaru is checked out in
+full. Other optional submodules can use ordinary `git submodule update --init`.
+The helper keeps Windows filename protection enabled and installs no engines
+or dependencies. REA's firmware and Wakaru runtime integrations still require
+Linux x64; source checkout does not add Windows runtime support. For Unblob
+object connectivity checks, use `git -C third_party/unblob fsck
+--connectivity-only --no-dangling HEAD`; an unqualified `git fsck` expands the
+sparse index and encounters the excluded invalid paths.
+
 The published npm package includes the Windows x64 native addon and its
 manifest. A source checkout does not: `native/windows/build/` is ignored by
 Git, and neither `npm ci` nor `npm run build:cached` (or `npm run build`)
