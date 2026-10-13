@@ -1,0 +1,252 @@
+{
+  "source_repository": "Spore-Community/Spore-ModAPI",
+  "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "method": "read-only HTTPS, pinned raw source; selected declaration lines, no game execution",
+  "files": [
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cHerd.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cHerd.h",
+      "sha256": "871755aee2a873e53ef88c0b286f6e6f191d55772f149f82c3c47b4dc72e85f9",
+      "bytes": 2988,
+      "line_count": 100,
+      "selected_declarations": [
+        {
+          "line": 43,
+          "text": "/* 40h */\teastl::vector<cCreatureAnimalPtr> mHerd;"
+        },
+        {
+          "line": 44,
+          "text": "/* 54h */\teastl::vector<cEggPtr> mEggs;"
+        },
+        {
+          "line": 51,
+          "text": "/* 88h */\tuint32_t mArchetype;  // herd entry in 0x02f98b67 (herdtypes~) that defines this herd type"
+        },
+        {
+          "line": 52,
+          "text": "/* 8Ch */\tuint32_t mArchetypeGroup;"
+        },
+        {
+          "line": 53,
+          "text": "/* 90h */\tint mScheduleIndex;"
+        },
+        {
+          "line": 55,
+          "text": "/* 98h */\tResourceKey mOwnerSpeciesKey;"
+        },
+        {
+          "line": 59,
+          "text": "/* F4h */\tint mTargetHerdSize;"
+        },
+        {
+          "line": 60,
+          "text": "/* F8h */\tint mInitialShortfall;"
+        },
+        {
+          "line": 68,
+          "text": "/* 11Ch */\tint mRespawnRate;"
+        },
+        {
+          "line": 77,
+          "text": "/* 15Ch */\tCreaturePersonality mCreaturePersonality;"
+        },
+        {
+          "line": 78,
+          "text": "/* 160h */\tcNestPtr mpNest;"
+        },
+        {
+          "line": 79,
+          "text": "/* 164h */\tcCreatureAnimalPtr mpHerdMom;"
+        },
+        {
+          "line": 81,
+          "text": "/* 190h */\tbool mbExtinction;"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cNest.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cNest.h",
+      "sha256": "24106e9097eba0eaf2e1fbaed193e547f44dc61ce7e0cb004747d32ed4965b08",
+      "bytes": 708,
+      "line_count": 33,
+      "selected_declarations": [
+        {
+          "line": 29,
+          "text": "/* 128h */\teastl::intrusive_ptr<cHerd> mpHerd;"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cSpeciesProfile.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpeciesProfile.h",
+      "sha256": "2003ab3cfcb87549462ba5ffb82ec8b153ce030e463564f2b504591f65b349e3",
+      "bytes": 6236,
+      "line_count": 188,
+      "selected_declarations": [
+        {
+          "line": 52,
+          "text": "enum HuntingStyle"
+        },
+        {
+          "line": 74,
+          "text": "/* 504h */\tResourceKey mCreatureKey;"
+        },
+        {
+          "line": 75,
+          "text": "/* 510h */\tResourceKey mBabyKey;"
+        },
+        {
+          "line": 90,
+          "text": "/* 580h */\tHuntingStyle mHuntingStyle;  // not initialized"
+        },
+        {
+          "line": 101,
+          "text": "/* 5ACh */\tfloat mSocialSum;"
+        },
+        {
+          "line": 104,
+          "text": "/* 5B8h */\tfloat mSocialMaxLevel;"
+        },
+        {
+          "line": 173,
+          "text": "/* 7A4h */\teastl::fixed_vector<unsigned long, 20> mSocialAbilityIndexes;"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureAnimal.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAnimal.h",
+      "sha256": "5fdfcb297c70cdc1f86f029183907eeab6e7b88b34b8aceea2163de44d4ade78",
+      "bytes": 3478,
+      "line_count": 97,
+      "selected_declarations": [
+        {
+          "line": 43,
+          "text": "void NPCTickAI(float deltaTime);"
+        },
+        {
+          "line": 44,
+          "text": "void AvatarTickAI(float deltaTime);"
+        },
+        {
+          "line": 74,
+          "text": "/* 1674h */\teastl::intrusive_ptr<cHerd> mHerd;  // cHerd ?"
+        },
+        {
+          "line": 78,
+          "text": "/* 1684h */\tint mPersonality;"
+        },
+        {
+          "line": 90,
+          "text": "DeclareAddress(NPCTickAI);  // 0xC08CD0 0xC09570"
+        },
+        {
+          "line": 91,
+          "text": "DeclareAddress(AvatarTickAI);  // 0xC03710 0xC04020"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureBase.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureBase.h",
+      "sha256": "4b813c02ac09a260d34048b8002e2cc694ccad67de4df4409fd45073ea5bec37",
+      "bytes": 18135,
+      "line_count": 429,
+      "selected_declarations": [
+        {
+          "line": 236,
+          "text": "/* 84h */\tvirtual void SetCreatureTarget(cCombatant* pTarget, bool, int intentionTowardsTarget);  //TODO check loc_D3242E"
+        },
+        {
+          "line": 295,
+          "text": "/* B74h */\tint mIntentionTowardsTarget;"
+        },
+        {
+          "line": 354,
+          "text": "/* E80h */\tint mArchetype;"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/SubSystem/cSpeciesRelationshipManager.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/SubSystem/cSpeciesRelationshipManager.h",
+      "sha256": "464b060cc00c3eb2c3fe7a1445bea18c5a707b3200f4a3ee2f0f117e370298d6",
+      "bytes": 4798,
+      "line_count": 150,
+      "selected_declarations": [
+        {
+          "line": 93,
+          "text": "/* 04h */\tint friendlyCount;"
+        },
+        {
+          "line": 94,
+          "text": "/* 08h */\tint numBefriended;"
+        },
+        {
+          "line": 95,
+          "text": "/* 0Ch */\tint numKilled;"
+        },
+        {
+          "line": 96,
+          "text": "/* 10h */\tuint32_t lastAbilityMode;"
+        },
+        {
+          "line": 134,
+          "text": "/* 20h */ hash_map<ResourceKey, tRelationshipData> mSpeciesRelationshipMap;\t//hash_map<ResourceKey, tRelationshipData>"
+        },
+        {
+          "line": 135,
+          "text": "/* 40h */ hash_map<ResourceKey, tRelationshipData> mSpeciesRelationshipMap2;"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/AI/cBehaviorTreeData.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/AI/cBehaviorTreeData.h",
+      "sha256": "3325ac81f65a1d4b39879de9cbb38beb07cb2f6b05979bdab7eef24d8a7536f7",
+      "bytes": 2390,
+      "line_count": 93,
+      "selected_declarations": [
+        {
+          "line": 20,
+          "text": "/* 04h */\tActivateCallback* mpActivateCallback;"
+        },
+        {
+          "line": 21,
+          "text": "/* 08h */\tvoid* mpTickCallback;"
+        },
+        {
+          "line": 22,
+          "text": "/* 0Ch */\tvoid* mpDeactivateCallback;"
+        },
+        {
+          "line": 33,
+          "text": "/* 08h */\tDecideCallback mpDecideCallback;"
+        },
+        {
+          "line": 43,
+          "text": "/* 7Ch */\tint mNumChildren;"
+        },
+        {
+          "line": 84,
+          "text": "/* 00h */\tcDecider* mpRootDecider;"
+        }
+      ]
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureGameData.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureGameData.h",
+      "sha256": "5aad4ee4889bcac79895b161c4ddc7a6f1ffec0d1f986d109fbc09ac177cb063",
+      "bytes": 3019,
+      "line_count": 91,
+      "selected_declarations": [
+        {
+          "line": 54,
+          "text": "/* 00h */\tint mCurrentBrainLevel;"
+        }
+      ]
+    }
+  ],
+  "limitations": "Community declarations and comments, not original game source or locally verified ABI/function implementations."
+}

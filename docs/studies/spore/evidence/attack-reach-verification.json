@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "checked_at_pacific": "2026-10-12 01:47:31 PDT",
+  "kind": "research-validation-not-game-runtime",
+  "markdown": {
+    "files": 28,
+    "relative_links": 130,
+    "utf8": true,
+    "fences_closed": true,
+    "missing_links": []
+  },
+  "local": {
+    "exe_sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "exact_strings_rechecked": 16,
+    "packages": [
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+        "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+        "bytes": 20210108,
+        "index_count": 11529,
+        "index_offset": 19887288,
+        "index_bytes": 322820,
+        "index_flags": 4,
+        "examined_entries": 11529
+      },
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+        "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+        "bytes": 80428851,
+        "index_count": 25535,
+        "index_offset": 79713863,
+        "index_bytes": 714988,
+        "index_flags": 4,
+        "examined_entries": 25535
+      }
+    ],
+    "decoded_records": 50,
+    "distinct_keys": 25,
+    "selected_fields_equal_across_packages": 25,
+    "full_decoded_bytes_equal_across_packages": 1,
+    "missing_selected_or_parent_candidate_keys": [],
+    "parent_type_zero_preserved": true,
+    "reader_identity_matches": true
+  },
+  "checks": [
+    {
+      "path": "checks/verify_selected_ability_reader.py",
+      "passed": 8,
+      "scope": "format boundaries and recorded selected local facts"
+    },
+    {
+      "path": "checks/verify_reach_hit_example.py",
+      "passed": 8,
+      "scope": "independent geometry arithmetic and single-effect event policy"
+    }
+  ],
+  "not_run": [
+    "native decompilation",
+    "Spore runtime/attachment",
+    "original reach/damage behavior",
+    "user game implementation",
+    "repository production build/tests"
+  ],
+  "risks": [
+    "package precedence and parent runtime resolution unknown",
+    "SDK ABI not aligned to local EXE",
+    "original geometry/event/damage call chain unknown"
+  ]
+}

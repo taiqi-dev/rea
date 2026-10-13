@@ -1,0 +1,931 @@
+{
+  "schema_version": 1,
+  "modules": [
+    47,
+    48
+  ],
+  "kind": "reaction-secondary-public-contracts-and-old-evidence-reuse-not-runtime",
+  "commits": {
+    "Spore-ModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "SporeModder-FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "scope": {
+    "target": "land Creature reactions/passive appendages",
+    "exe_sha256_reused": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "fresh_exe_hash_this_module": false,
+    "game_executed": false,
+    "game_attached": false,
+    "game_modified": false,
+    "private_data_read": false,
+    "new_package_payload_reads": false,
+    "new_asset_keys": false,
+    "asset_exported": false,
+    "native_provider_gap": "Prior blocker reused; no install/setup or native function analysis."
+  },
+  "reused_records": [
+    "public-hit-entry-observations.json",
+    "public-combat-movement-research-entries.json",
+    "public-perception-motive-contracts.json",
+    "public-action-event-format-contracts.json",
+    "local-selected-attack-properties.json",
+    "local-selected-perception-properties.json",
+    "local-same-role-selector-observations.json",
+    "local-selected-action-events.json"
+  ],
+  "files": [
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureBase.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureBase.h",
+      "bytes": 18135,
+      "sha256": "4b813c02ac09a260d34048b8002e2cc694ccad67de4df4409fd45073ea5bec37",
+      "lines": 429,
+      "read_ranges": [
+        [
+          11,
+          15
+        ],
+        [
+          24,
+          28
+        ],
+        [
+          48,
+          52
+        ],
+        [
+          54,
+          60
+        ],
+        [
+          88,
+          92
+        ],
+        [
+          113,
+          121
+        ],
+        [
+          123,
+          134
+        ],
+        [
+          142,
+          149
+        ],
+        [
+          185,
+          191
+        ],
+        [
+          195,
+          204
+        ],
+        [
+          232,
+          236
+        ],
+        [
+          242,
+          251
+        ],
+        [
+          261,
+          266
+        ],
+        [
+          281,
+          285
+        ],
+        [
+          315,
+          329
+        ],
+        [
+          346,
+          353
+        ],
+        [
+          355,
+          359
+        ],
+        [
+          405,
+          409
+        ],
+        [
+          412,
+          421
+        ],
+        [
+          423,
+          427
+        ]
+      ],
+      "search_pattern": "Damage|Pain|Stun|Knock|Fear|Flee|Scare|Abort|Cancel|Stop|Ability|AnimEvent|Hit|Motive",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "bytes": 5751,
+      "sha256": "0d58d8957fbeca887c9c123cdbffe9fb94ba818eba97865563a4a4f92e6919d2",
+      "lines": 195,
+      "read_ranges": [
+        [
+          11,
+          15
+        ],
+        [
+          25,
+          41
+        ],
+        [
+          106,
+          115
+        ],
+        [
+          120,
+          131
+        ],
+        [
+          135,
+          158
+        ],
+        [
+          161,
+          172
+        ],
+        [
+          176,
+          183
+        ],
+        [
+          185,
+          195
+        ]
+      ],
+      "search_pattern": "Damage|Pain|Stun|Knock|Effect|Ability|Anim|Refresh",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCombatant.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCombatant.h",
+      "bytes": 6322,
+      "sha256": "a52296c6f9afccd3f59f9903a0e4c6dba11fa18d1c84c450fb5d7cc95816cef7",
+      "lines": 160,
+      "read_ranges": [
+        [
+          30,
+          35
+        ],
+        [
+          38,
+          43
+        ],
+        [
+          50,
+          55
+        ],
+        [
+          79,
+          86
+        ],
+        [
+          92,
+          96
+        ],
+        [
+          115,
+          119
+        ],
+        [
+          130,
+          137
+        ],
+        [
+          141,
+          145
+        ],
+        [
+          155,
+          159
+        ]
+      ],
+      "search_pattern": "Damage|Health|Hit|Dead|Death|Effect",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "lines": 101,
+      "read_ranges": [
+        [
+          19,
+          23
+        ],
+        [
+          34,
+          38
+        ],
+        [
+          44,
+          50
+        ],
+        [
+          56,
+          64
+        ],
+        [
+          84,
+          92
+        ]
+      ],
+      "search_pattern": "Jigg|Flags|Capability|Animation",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureAnimal.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAnimal.h",
+      "bytes": 3478,
+      "sha256": "5fdfcb297c70cdc1f86f029183907eeab6e7b88b34b8aceea2163de44d4ade78",
+      "lines": 97,
+      "read_ranges": [
+        [
+          1,
+          97
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/SourceCode/Simulator/cCreatureAnimal.cpp",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Simulator/cCreatureAnimal.cpp",
+      "bytes": 4419,
+      "sha256": "57627f0ef3b510901d3d20dfc0252a13987cea9820f92f2df97ee14a7a94ffdf",
+      "lines": 113,
+      "read_ranges": [
+        [
+          1,
+          113
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_call_wrappers"
+    },
+    {
+      "path": "Spore ModAPI/SourceCode/Simulator/cCreatureAbility.cpp",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Simulator/cCreatureAbility.cpp",
+      "bytes": 1184,
+      "sha256": "edac08791cbfe724800f13027762680c8400719ff4c1c75cfd1fabf2c8de9de8",
+      "lines": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_call_wrappers"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCombatSimulator.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCombatSimulator.h",
+      "bytes": 868,
+      "sha256": "7e2173fbea01d32752e51b28530311897aa1f7ab90cacfb9f28e3acd835b6f54",
+      "lines": 34,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "evidence_kind": "community_native_declaration"
+    },
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "lines": 6368,
+      "read_ranges": [
+        [
+          1334,
+          1334
+        ],
+        [
+          3641,
+          3641
+        ],
+        [
+          3642,
+          3642
+        ],
+        [
+          4714,
+          4714
+        ],
+        [
+          4715,
+          4715
+        ],
+        [
+          4716,
+          4716
+        ],
+        [
+          4717,
+          4717
+        ],
+        [
+          6104,
+          6104
+        ],
+        [
+          3576,
+          3576
+        ],
+        [
+          3691,
+          3691
+        ]
+      ],
+      "search_pattern": "creature.*(reaction|pain|stun|knock|interrupt|jiggle|wiggle|tail|damping|spring)",
+      "additional_search": {
+        "pattern": "^(model|creature).*(jiggl|wiggl|flex|spring|damp)",
+        "matching_lines": [
+          3576,
+          3691
+        ]
+      },
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "evidence_kind": "community_property_registry"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "lines": 514,
+      "read_ranges": [],
+      "search_pattern": "Jiggl|Wiggl|Flexib|Rigid",
+      "searched_line_range": [
+        1,
+        514
+      ],
+      "matching_lines": [],
+      "evidence_kind": "bounded_literal_search_only",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+    }
+  ],
+  "developer_source": {
+    "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+    "bytes": 3896086,
+    "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+    "pages": 11,
+    "read_pages_one_based": [
+      7,
+      9,
+      10
+    ],
+    "evidence_kind": "developer_historical_design",
+    "identity_reused_from": "public-multi-action-paper-observations.json"
+  },
+  "developer_locators": [
+    {
+      "pages_one_based": [
+        7
+      ],
+      "section": "4.3.1",
+      "topic": "has-IK subtree eligibility"
+    },
+    {
+      "pages_one_based": [
+        9
+      ],
+      "section": "4.4",
+      "topic": "Jiggles/Wiggles and passive boundary"
+    },
+    {
+      "pages_one_based": [
+        10
+      ],
+      "section": "5 Limitations",
+      "topic": "intra-character collision limitation"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "damage_container_interface",
+      "source": "cCombatant.h",
+      "lines": [
+        [
+          31,
+          34
+        ],
+        [
+          81,
+          84
+        ],
+        [
+          131,
+          137
+        ]
+      ],
+      "evidence": "community_native_declaration_and_comment",
+      "fields": [
+        "TakeDamage(damage,attackerPoliticalID,damageType,Vector3,pAttacker)",
+        "mpLastAttacker",
+        "mMaxHealthPoints",
+        "mHealthPoints",
+        "mLastAttacker"
+      ],
+      "limits": [
+        "Vector3 comment explicitly uncertain about knockback direction",
+        "shared combatant does not prove land-specific response",
+        "no damage/cancel consumer body"
+      ]
+    },
+    {
+      "id": "creature_ability_reaction_fields",
+      "source": "cCreatureAbility.h",
+      "lines": [
+        [
+          139,
+          156
+        ],
+        [
+          163,
+          165
+        ],
+        [
+          179,
+          182
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "mReactionAnimation",
+        "mReactionDeathAnimation",
+        "mReactionLiveAnimation",
+        "mReactionDuration",
+        "mCombatEffectTypes/mCombatEffectPercentages/mCombatEffectEffectIds"
+      ],
+      "unknowns": [
+        "which actor/stage uses reaction fields",
+        "serialization default and consumer",
+        "units",
+        "ability cancellation or committed effect rules"
+      ]
+    },
+    {
+      "id": "animal_damage_timers",
+      "source": "cCreatureAnimal.h",
+      "lines": [
+        [
+          41,
+          48
+        ],
+        [
+          88,
+          95
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "NPCTickAI",
+        "AvatarTickAI",
+        "mNoDamageTimer",
+        "mLastAvatarDamageTimer",
+        "TakeDamage address declaration"
+      ],
+      "unknowns": [
+        "timer state transitions and units",
+        "invulnerability inference",
+        "reaction/AI update order"
+      ]
+    },
+    {
+      "id": "action_and_motive_state",
+      "source": "cCreatureBase.h",
+      "lines": [
+        [
+          127,
+          132
+        ],
+        [
+          242,
+          249
+        ],
+        [
+          317,
+          328
+        ],
+        [
+          357,
+          359
+        ],
+        [
+          423,
+          425
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "PlayAbility",
+        "UpdateMotiveState",
+        "mInUseAbilityBits",
+        "mRechargingAbilityBits",
+        "mAbilityStates",
+        "mCurrentAttackIdx",
+        "mCurrentAttackAnimId",
+        "TakeDamage address declaration"
+      ],
+      "unknowns": [
+        "clearing rules after hit",
+        "cooldown/energy refunds",
+        "navigation/fear transition"
+      ]
+    },
+    {
+      "id": "actual_sdk_wrappers_not_game_bodies",
+      "source": "cCreatureAnimal.cpp",
+      "lines": [
+        [
+          29,
+          38
+        ],
+        [
+          77,
+          97
+        ]
+      ],
+      "evidence": "community_wrapper_calls",
+      "calls": [
+        "native PlayAnimation/PlayAnimationTo wrapper",
+        "native WalkTo wrapper",
+        "native StopEffectFromPools wrapper",
+        "native NPCTickAI/AvatarTickAI wrapper",
+        "native PlayAbility/ConsumeEnergy wrapper"
+      ],
+      "limit": "Declarations/macros connect SDK calls to native addresses. No recovered internal cancellation logic; Citizen tail of this source excluded from gameplay analysis."
+    },
+    {
+      "id": "ability_parse_is_wrapped",
+      "source": "cCreatureAbility.cpp",
+      "lines": [
+        [
+          25,
+          29
+        ]
+      ],
+      "evidence": "community_wrapper_calls",
+      "calls": [
+        "native Parse wrapper",
+        "native GetAnimationID wrapper"
+      ],
+      "limit": "Not a readable original property consumer or reaction algorithm."
+    },
+    {
+      "id": "projectile_container_boundary",
+      "source": "cCombatSimulator.h",
+      "lines": [
+        [
+          10,
+          26
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "IMessageListener inheritance",
+        "mProjectiles",
+        "mIsUpdatingProjectiles",
+        "commented status-change listener"
+      ],
+      "limit": "Shared simulator container; current Creature cancellation/lifetime semantics not recovered."
+    },
+    {
+      "id": "reaction_registry_ids",
+      "source": "reg_property.txt",
+      "lines": [
+        [
+          3641,
+          3642
+        ],
+        [
+          4714,
+          4717
+        ]
+      ],
+      "evidence": "community_property_registry",
+      "ids": {
+        "creatureAbilityReactionAnimation": "0x075e00b7",
+        "creatureAbilityReactionDeathAnimation": "0x07a7ffd5",
+        "creatureAbilityReactionLiveAnimation": "0x07a7ffd9",
+        "creatureAbilityReactionDuration": "0x075e0100",
+        "creatureNPCReactionTime": "0xb136a2d1",
+        "creatureNPCReactionTimeVariance": "0xb136a2d2"
+      },
+      "limit": "Names/IDs only; NPC reaction timing not established as received-damage timing."
+    },
+    {
+      "id": "secondary_compiled_flags",
+      "source": "cCreatureDataResource.h",
+      "lines": [
+        [
+          44,
+          50
+        ],
+        [
+          56,
+          64
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": {
+        "kFlagIsJiggable": "0x200",
+        "kFlagExtraJiggly": "0x800",
+        "mParentIndex": "int16",
+        "mSymmetricIndex": "int16",
+        "mFlags": "int16"
+      },
+      "limit": "No producer/consumer or damping/takeover formula; not RW bone flags."
+    },
+    {
+      "id": "secondary_property_ids",
+      "source": "reg_property.txt",
+      "lines": [
+        [
+          3576,
+          3576
+        ],
+        [
+          3691,
+          3691
+        ]
+      ],
+      "evidence": "community_property_registry",
+      "ids": {
+        "modelExtraJiggly": "0xa64e0669",
+        "modelJigglable": "0xb6f17b6c"
+      },
+      "limit": "Not proof these map directly to compiled bits or known per-part stiffness."
+    }
+  ],
+  "bounded_negatives": [
+    {
+      "source": "EditorRigblock.h",
+      "scope": "whole fixed source text lines1..514",
+      "pattern": "Jiggl|Wiggl|Flexib|Rigid",
+      "matches": 0,
+      "limit": "Not absence from editor/game."
+    },
+    {
+      "source": "reg_property.txt",
+      "false_positive": {
+        "line": 6104,
+        "name": "alphaCreatureSkinPaintColorIndex",
+        "reason": "substring pain occurs in Paint; excluded"
+      },
+      "other_exclusions": [
+        {
+          "line": 1334,
+          "name": "creatureStarvationPain",
+          "reason": "hunger candidate, not weapon hit reaction"
+        }
+      ]
+    },
+    {
+      "scope": "examined headers and wrappers",
+      "not_recovered": [
+        "TakeDamage -> reaction/ability-cancel call chain",
+        "stun/knockback algorithm",
+        "Jiggles integration and active takeover consumer"
+      ],
+      "not_repository_wide_absence": true
+    }
+  ],
+  "local_reuse": {
+    "classification": "Existing selected evidence JSON only; no fresh package payload read.",
+    "inputs": [
+      {
+        "path": "local-selected-attack-properties.json",
+        "bytes": 194205,
+        "sha256": "814c236d621cfc4a8fab77096767e3a0f309a30398eb54f6e15d12c205880049",
+        "kind": "local-read-only-config-observation-not-REA-Evidence",
+        "read_scope": "Existing evidence JSON metadata and selected locators only; no fresh target reads."
+      },
+      {
+        "path": "local-selected-perception-properties.json",
+        "bytes": 37142,
+        "sha256": "ae33f21bb5e8c2a16d71aeef932442e6cf92e81ac274d63e771a5b488940438a",
+        "kind": "local-config-observation-not-REA-Evidence",
+        "read_scope": "Existing evidence JSON metadata and selected locators only; no fresh target reads."
+      },
+      {
+        "path": "local-same-role-selector-observations.json",
+        "bytes": 146377,
+        "sha256": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75",
+        "kind": "selected-ANIM-raw-metadata-and-community-format-observations",
+        "read_scope": "Existing evidence JSON metadata and selected locators only; no fresh target reads."
+      },
+      {
+        "path": "local-selected-action-events.json",
+        "bytes": 381153,
+        "sha256": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c",
+        "kind": "bounded-selected-event-observations-not-REA-Evidence",
+        "read_scope": "Existing evidence JSON metadata and selected locators only; no fresh target reads."
+      }
+    ],
+    "attack_reaction_absence": {
+      "expected_records": 50,
+      "exact_ids": [
+        "0x075e00b7",
+        "0x07a7ffd5",
+        "0x07a7ffd9",
+        "0x075e0100"
+      ],
+      "coverage": "All stored complete property-ID lists; verify list count equals recorded property_count.",
+      "limit": "Directly serialized only; no code defaults/other configuration/active inheritance inferred.",
+      "records_verified": 50,
+      "direct_occurrences": 0
+    },
+    "perception_config": {
+      "key": "00b1b104:ad56080c:7c340397",
+      "packages": [
+        "Spore_Game.package",
+        "PatchData.package"
+      ],
+      "raw_values": {
+        "creatureFleeDistance": 25,
+        "creatureFleeTime": 5,
+        "creatureFleeRememberTime": 90,
+        "creatureHitPointsTurnAndFightPercentage": 0.75
+      },
+      "limit": "No units, health comparator, motive/fear formula or group-role attribution established."
+    },
+    "ear_eye_queries": {
+      "source": "local-same-role-selector-observations.json",
+      "locator": "statistics.unique_context_patterns primaryContext ear/eye",
+      "occurrences_each": 46,
+      "flags": "0x00000000",
+      "limit": "Selection metadata does not establish effective pose goals or passive eligibility."
+    },
+    "action_event_context": {
+      "source": "40-action-events-emitters-hit-windows-and-stale-callbacks.md section2",
+      "fact": "Existing selected spit clip has separate event indices with name hit.",
+      "limit": "No damage multiplicity, actual dispatch or interruption consumer recovered."
+    }
+  },
+  "independent_examples": {
+    "classification": "Independent authored proposals; not original implementation.",
+    "reaction": {
+      "tick_seconds": 0.05,
+      "initial_hp": 100,
+      "initial_poise": 25,
+      "initial_energy": 20,
+      "reservation": 8,
+      "first_committed_cost": 5,
+      "uncommitted_cost_released": 3,
+      "hits": [
+        [
+          12,
+          8
+        ],
+        [
+          18,
+          20
+        ]
+      ],
+      "final_hp": 70,
+      "final_energy": 15,
+      "stagger_ticks": [
+        9,
+        21
+      ],
+      "cooldown_until_tick": 106,
+      "terminal_navigation": "advance navigation epoch and reject even current-epoch tickets",
+      "memory_at_recovery": {
+        "confidence": 0.6308775127848614,
+        "error_radius_m": 2
+      }
+    },
+    "secondary": {
+      "units": {
+        "angle": "rad",
+        "velocity": "rad/s",
+        "omega": "s^-1",
+        "forcing": "rad/s^2"
+      },
+      "omega": 10,
+      "dt": 0.1,
+      "start": [
+        0.2,
+        0
+      ],
+      "passive_step": [
+        0.14715177646857694,
+        -0.7357588823428847
+      ],
+      "takeover_end": [
+        0.4,
+        0
+      ],
+      "takeover_duration": 0.2,
+      "takeover_mid_angle": 0.25518191617571634,
+      "return_next": [
+        0.2943035529371539,
+        -1.4715177646857693
+      ],
+      "limits": [
+        -0.5,
+        0.5
+      ],
+      "ownership": "passive never writes active parent; state body-owned, lease action-owned"
+    }
+  },
+  "question_status": {
+    "47": "Original partial: interfaces, timers and configuration namespace; native received-hit interruption/AI consumer unknown.",
+    "48": "Original partial: historical dynamic passive subtrees and flags; shipped dynamics/transition/collision behavior unknown."
+  },
+  "verification": {
+    "status": "pass",
+    "checks": [
+      "unique pinned source URLs",
+      "SHA256 shapes/range bounds",
+      "contract locators covered",
+      "reused public hashes",
+      "developer paper identity",
+      "50 complete property-ID lists and bounded absence",
+      "existing local-input byte identities"
+    ],
+    "code_sources": 10,
+    "pdf_sources": 1,
+    "reused_hash_matches": 4,
+    "new_package_payload_reads": 0,
+    "runtime_verified": false
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "592d5e8bcc9bfad6c68b321834c9424dd33acfea48bfbd98c4e8fb09e659c462",
+    "captured_file_bytes": 24246,
+    "reference_changes": [
+      {
+        "pointer": "/local_reuse/inputs/0/sha256",
+        "captured": "10d4c739488f16777c01a0fc40a3669c19b9ff32a027cb2190ae05d25c5bc8d9",
+        "published": "814c236d621cfc4a8fab77096767e3a0f309a30398eb54f6e15d12c205880049",
+        "study_file": "evidence/local-selected-attack-properties.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/0/bytes",
+        "captured": 201967,
+        "published": 194205,
+        "study_file": "evidence/local-selected-attack-properties.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/1/sha256",
+        "captured": "87e5fd824d315daa128c2563ad188f6a231e2dc09e562b0b98eb8fced11b8db6",
+        "published": "ae33f21bb5e8c2a16d71aeef932442e6cf92e81ac274d63e771a5b488940438a",
+        "study_file": "evidence/local-selected-perception-properties.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/1/bytes",
+        "captured": 38416,
+        "published": 37142,
+        "study_file": "evidence/local-selected-perception-properties.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/2/sha256",
+        "captured": "6021335a0b27a63a3f2e296905b0880f368828c445f3408936c0a22cb6ec7c7f",
+        "published": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75",
+        "study_file": "evidence/local-same-role-selector-observations.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/2/bytes",
+        "captured": 145478,
+        "published": 146377,
+        "study_file": "evidence/local-same-role-selector-observations.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/3/sha256",
+        "captured": "d25e6f854fc11adae64b0d5ca4bd8a96e64a89c9f26f0a4c3911d0ed09c1f5d9",
+        "published": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c",
+        "study_file": "evidence/local-selected-action-events.json"
+      },
+      {
+        "pointer": "/local_reuse/inputs/3/bytes",
+        "captured": 380443,
+        "published": 381153,
+        "study_file": "evidence/local-selected-action-events.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "scope": "selected exact instance names only; inventory not decoded behavior",
+  "queried_names": [
+    "CreatureGame",
+    "CreatureGameTuning",
+    "CreatureTuning",
+    "AnimConfig",
+    "AnimGlobals",
+    "AnimationConfig",
+    "AnimationGlobals",
+    "gait0",
+    "gait1",
+    "gait2",
+    "gait3",
+    "gait4",
+    "gait5",
+    "gait6"
+  ],
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "bytes": 20210108,
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "bytes": 80428851,
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "records": [
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureTuning",
+      "type": "0x472329b",
+      "group": "0x24a4f5a",
+      "instance": "0x8e4c4871",
+      "offset": 19487365,
+      "stored_bytes": 2877,
+      "memory_bytes": 7324,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0x2ae0c7e",
+      "instance": "0x7c340397",
+      "offset": 12867744,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait6",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf60",
+      "offset": 6908929,
+      "stored_bytes": 4353,
+      "memory_bytes": 48504,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait4",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf62",
+      "offset": 6920137,
+      "stored_bytes": 5202,
+      "memory_bytes": 45432,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait5",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf63",
+      "offset": 6932583,
+      "stored_bytes": 4167,
+      "memory_bytes": 40600,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait2",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf64",
+      "offset": 6943426,
+      "stored_bytes": 3110,
+      "memory_bytes": 23064,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait3",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf65",
+      "offset": 6955251,
+      "stored_bytes": 2332,
+      "memory_bytes": 24792,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait0",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf66",
+      "offset": 6957583,
+      "stored_bytes": 200,
+      "memory_bytes": 1208,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "gait1",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf67",
+      "offset": 6964715,
+      "stored_bytes": 1109,
+      "memory_bytes": 8984,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0xf71fa311",
+      "instance": "0x7c340397",
+      "offset": 13243116,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0xad56080c",
+      "instance": "0x7c340397",
+      "offset": 12641977,
+      "stored_bytes": 2412,
+      "memory_bytes": 3808,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGame",
+      "type": "0xb1b104",
+      "group": "0xcc489c6f",
+      "instance": "0xad56080c",
+      "offset": 11291263,
+      "stored_bytes": 79,
+      "memory_bytes": 580,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0x0",
+      "instance": "0x7c340397",
+      "offset": 12597699,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0x0",
+      "instance": "0x7c340397",
+      "offset": 18774990,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGame",
+      "type": "0xb1b104",
+      "group": "0xcc489c6f",
+      "instance": "0xad56080c",
+      "offset": 14134173,
+      "stored_bytes": 79,
+      "memory_bytes": 580,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureTuning",
+      "type": "0x472329b",
+      "group": "0x24a4f5a",
+      "instance": "0x8e4c4871",
+      "offset": 42842,
+      "stored_bytes": 1735,
+      "memory_bytes": 7324,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0xf71fa311",
+      "instance": "0x7c340397",
+      "offset": 13325243,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0x2ae0c7e",
+      "instance": "0x7c340397",
+      "offset": 3819892,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait6",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf60",
+      "offset": 12232676,
+      "stored_bytes": 765,
+      "memory_bytes": 48504,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait4",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf62",
+      "offset": 12258401,
+      "stored_bytes": 1339,
+      "memory_bytes": 45432,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait5",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf63",
+      "offset": 12259740,
+      "stored_bytes": 748,
+      "memory_bytes": 40600,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait2",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf64",
+      "offset": 12260488,
+      "stored_bytes": 2153,
+      "memory_bytes": 27552,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait3",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf65",
+      "offset": 12262815,
+      "stored_bytes": 617,
+      "memory_bytes": 24792,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait0",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf66",
+      "offset": 12263432,
+      "stored_bytes": 200,
+      "memory_bytes": 1208,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "gait1",
+      "type": "0x25df0112",
+      "group": "0x0",
+      "instance": "0xb00eaf67",
+      "offset": 12263685,
+      "stored_bytes": 597,
+      "memory_bytes": 8984,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "type": "0xb1b104",
+      "group": "0xad56080c",
+      "instance": "0x7c340397",
+      "offset": 13758115,
+      "stored_bytes": 2413,
+      "memory_bytes": 3808,
+      "compression": 65535
+    }
+  ]
+}

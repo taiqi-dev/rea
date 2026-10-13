@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "modules": [
+    47,
+    48
+  ],
+  "kind": "independent-examples-and-existing-metadata-validation-not-game-tests",
+  "status": "pass",
+  "test_result": {
+    "kind": "independent-reaction-secondary-examples",
+    "tests_run": 30,
+    "failures": 0,
+    "errors": 0,
+    "success": true,
+    "module_counts": {
+      "47": 14,
+      "48": 14,
+      "existing_json": 2
+    },
+    "game_runtime_verified": false
+  },
+  "test_command": {
+    "python": "C:\\Users\\81553\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "args": [
+      "-B",
+      "docs/studies/spore/checks/verify_reaction_secondary_examples.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"kind\": \"independent-reaction-secondary-examples\", \"tests_run\": 30, \"failures\": 0, \"errors\": 0, \"success\": true, \"module_counts\": {\"47\": 14, \"48\": 14, \"existing_json\": 2}, \"game_runtime_verified\": false}",
+    "stderr": "..............................\n----------------------------------------------------------------------\nRan 30 tests in 0.004s\n\nOK"
+  },
+  "document_checks": [
+    {
+      "path": "47-hit-reactions-action-interruption-and-ai-recovery.md",
+      "status": "pass",
+      "local_links": 11,
+      "closed_fenced_blocks": 3,
+      "supported_fences": [
+        "```",
+        "~~~"
+      ]
+    },
+    {
+      "path": "48-secondary-motion-passive-appendages-and-active-takeover.md",
+      "status": "pass",
+      "local_links": 10,
+      "closed_fenced_blocks": 6,
+      "supported_fences": [
+        "```",
+        "~~~"
+      ]
+    }
+  ],
+  "public_evidence": {
+    "source_files": 10,
+    "sdk_files": 9,
+    "registry_files": 1,
+    "literal_search_only_sdk_files": 1,
+    "developer_pdf_sources": 1,
+    "pdf_pages_actually_read_one_based": [
+      7,
+      9,
+      10
+    ],
+    "source_checks": {
+      "status": "pass",
+      "checks": [
+        "unique pinned source URLs",
+        "SHA256 shapes/range bounds",
+        "contract locators covered",
+        "reused public hashes",
+        "developer paper identity",
+        "50 complete property-ID lists and bounded absence",
+        "existing local-input byte identities"
+      ],
+      "code_sources": 10,
+      "pdf_sources": 1,
+      "reused_hash_matches": 4,
+      "new_package_payload_reads": 0,
+      "runtime_verified": false
+    },
+    "unchanged_existing_local_json_hashes": 4,
+    "new_package_payload_reads": 0
+  },
+  "files": [
+    {
+      "path": "docs/studies/spore/47-hit-reactions-action-interruption-and-ai-recovery.md",
+      "bytes": 12436,
+      "sha256": "340a9a64b80ae0f3ee3d9bf0397e43bace27e8cbde9d8f2745e8796d19dbfd61"
+    },
+    {
+      "path": "docs/studies/spore/48-secondary-motion-passive-appendages-and-active-takeover.md",
+      "bytes": 13081,
+      "sha256": "57a8e43d9ba9bfc969581cabbbff5227cf741ff3cf65f15384bae0db8fbb7356"
+    },
+    {
+      "path": "docs/studies/spore/checks/verify_reaction_secondary_examples.py",
+      "bytes": 17278,
+      "sha256": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51"
+    },
+    {
+      "path": "docs/studies/spore/evidence/public-reaction-secondary-contracts.json",
+      "bytes": 25824,
+      "sha256": "412ae11b6736497b817ea1e6014408dc5bc37acdbfc59aa7c71734708f671877"
+    }
+  ],
+  "terminal_guard_coverage": [
+    "fatal damage cancels actions and advances navigation epoch",
+    "commit rejects TerminalActor",
+    "old and current-epoch navigation tickets reject TerminalActor",
+    "recovery delegates terminal route rather than replanning alive"
+  ],
+  "coverage_limits": [
+    "No native received-hit interruption consumer or shipped Jiggles evaluator recovered.",
+    "Actor-local serial examples do not establish cross-thread/network/crash guarantees.",
+    "Scalar damping/Hermite models do not validate a complete 3D chain or renderer.",
+    "No full collision, takeover-trajectory limit solver or performance validation.",
+    "Two tests read existing selected JSON only."
+  ],
+  "not_performed": [
+    "game startup/attach",
+    "private save data",
+    "new game package payload reads",
+    "asset export",
+    "installation/configuration",
+    "production implementation",
+    "Git writes"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "3ece3e3c6694270686ad59e773d3f3505f7095b710540ecf5cb829273a291dde",
+    "captured_file_bytes": 4352,
+    "reference_changes": [
+      {
+        "pointer": "/files/3/sha256",
+        "captured": "592d5e8bcc9bfad6c68b321834c9424dd33acfea48bfbd98c4e8fb09e659c462",
+        "published": "412ae11b6736497b817ea1e6014408dc5bc37acdbfc59aa7c71734708f671877",
+        "study_file": "evidence/public-reaction-secondary-contracts.json"
+      },
+      {
+        "pointer": "/files/3/bytes",
+        "captured": 24246,
+        "published": 25824,
+        "study_file": "evidence/public-reaction-secondary-contracts.json"
+      }
+    ],
+    "followup_reference_refresh": [
+      {
+        "recorded_at_pacific": "2026-10-13T03:07:56.620444-07:00",
+        "reason": "Remove six trailing blank lines reported by Git whitespace check; preserve source logic and historical values",
+        "reference_changes": [
+          {
+            "pointer": "/files/0/sha256",
+            "captured": "a0f9f287d6e24b300783f7b9d3f61a98d7f464e3e5c2fef76bead92cc1d85394",
+            "published": "340a9a64b80ae0f3ee3d9bf0397e43bace27e8cbde9d8f2745e8796d19dbfd61",
+            "study_file": "47-hit-reactions-action-interruption-and-ai-recovery.md"
+          },
+          {
+            "pointer": "/files/0/bytes",
+            "captured": 12437,
+            "published": 12436,
+            "study_file": "47-hit-reactions-action-interruption-and-ai-recovery.md"
+          },
+          {
+            "pointer": "/files/1/sha256",
+            "captured": "22de0abc136e6bb840ff30e395868dc05819c735d995440ac7b26bfa61e83b30",
+            "published": "57a8e43d9ba9bfc969581cabbbff5227cf741ff3cf65f15384bae0db8fbb7356",
+            "study_file": "48-secondary-motion-passive-appendages-and-active-takeover.md"
+          },
+          {
+            "pointer": "/files/1/bytes",
+            "captured": 13082,
+            "published": 13081,
+            "study_file": "48-secondary-motion-passive-appendages-and-active-takeover.md"
+          },
+          {
+            "pointer": "/files/2/sha256",
+            "captured": "3c11be913d412e83ad40bc2e4883dce6c00615c70feb6e7ebb8f192fe78d1ea6",
+            "published": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51",
+            "study_file": "checks/verify_reaction_secondary_examples.py"
+          },
+          {
+            "pointer": "/files/2/bytes",
+            "captured": 17279,
+            "published": 17278,
+            "study_file": "checks/verify_reaction_secondary_examples.py"
+          }
+        ]
+      }
+    ]
+  }
+}

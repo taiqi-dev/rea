@@ -1,0 +1,77 @@
+{
+  "kind": "research-validation-not-original-runtime-or-production-AI",
+  "verified_at_pacific": "2026-10-12 14:48:07 PDT",
+  "identity": {
+    "exe_digest_matched": true,
+    "package_digests_matched": true,
+    "reader_digest_matched": true,
+    "full_strings_rechecked": 27
+  },
+  "config_coverage": {
+    "tlsa_resources": 2,
+    "selected_group_records": 26,
+    "groups_examined": [
+      1864,
+      1875
+    ],
+    "anim_records": 46,
+    "distinct_anim_instance_ids": 33,
+    "channel_records": 612,
+    "missing_animation_ids": [],
+    "anim_versions": [
+      21,
+      25
+    ],
+    "scope": "selected four attack families normal/rushing IDs; TLSA structural traversal and referenced Creature-labeled ANIM metadata only"
+  },
+  "source_records": {
+    "public-action-channel-format-sources.json": 7,
+    "public-tlsa-action-format-sources.json": 5,
+    "public-multi-action-contracts.json": 8
+  },
+  "paper_selected_pages": [
+    5,
+    6,
+    7
+  ],
+  "checks": [
+    {
+      "path": "checks/verify_action_channel_reader.py",
+      "tests": 8,
+      "exit_code": 0
+    },
+    {
+      "path": "checks/verify_parallel_action_examples.py",
+      "tests": 12,
+      "exit_code": 0
+    }
+  ],
+  "document_check": {
+    "markdown_files": 31,
+    "relative_links": 186,
+    "utf8_and_fences": "passed",
+    "links": "passed including artifact created by this run"
+  },
+  "answered": {
+    "animation_layering": "partly: developer design and local metadata",
+    "selected_movement_permission": "partly: stored values, consumer unknown",
+    "actual_body_binding": "unresolved",
+    "simultaneous_gameplay_skills": "unresolved",
+    "runtime_arbitration_and_events": "unresolved"
+  },
+  "not_performed": [
+    "game launch/attach",
+    "runtime movement/attack overlap test",
+    "native decompilation",
+    "private saves",
+    "full curve/event/predicate/relocation decoding",
+    "old ANIM version normalization",
+    "production implementation/build/tests"
+  ],
+  "risks": [
+    "TLSA load/merge precedence unknown",
+    "historical design not verified against fixed executable",
+    "channel metadata is not an actual body binding",
+    "independent quasi-static support model not dynamic balance guarantee"
+  ]
+}

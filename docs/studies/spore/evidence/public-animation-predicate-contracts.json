@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "module": 45,
+  "kind": "pinned-public-contracts-not-REA-Evidence",
+  "commits": {
+    "SporeModderFX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "SporeModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+  },
+  "sources": [
+    {
+      "path": "src/sporemodder/file/anim/AnimationPredicate.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationPredicate.java",
+      "bytes": 2173,
+      "sha256": "69981fb134f5a44ac22975a9f05f82cc35927707569a2931edebab0387e4c2ea",
+      "line_count": 66,
+      "examined_line_ranges": [
+        [
+          14,
+          24
+        ],
+        [
+          27,
+          41
+        ],
+        [
+          44,
+          64
+        ]
+      ],
+      "summary": "Two LE32 words. flags1 selects checks; flags2 supplies required boolean values in the ArgScript roundtrip. Known bits uprightSpine=1, hasGraspers=2, hasFeet=4. No evaluator is implemented here.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "src/sporemodder/file/anim/SPAnimation.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/SPAnimation.java",
+      "bytes": 8639,
+      "sha256": "1497f34e425a7199d590005f023dc3253fcb8184d36fd8161e822c57aa5c7cc3",
+      "line_count": 284,
+      "examined_line_ranges": [
+        [
+          87,
+          88
+        ],
+        [
+          152,
+          154
+        ],
+        [
+          221,
+          224
+        ],
+        [
+          267,
+          277
+        ]
+      ],
+      "summary": "Whole-animation predicate is serialized at decoded offset0x154; nondefault values are called branchPredicate by the community text format. This source does not implement TLSA selection or fallback.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationChannel.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationChannel.java",
+      "bytes": 19403,
+      "sha256": "73c1a794a6199391cc1a622cd4bafd00c0a2ebf8b9846d70a1cdff4d9a950a3c",
+      "line_count": 555,
+      "examined_line_ranges": [
+        [
+          82,
+          85
+        ],
+        [
+          219,
+          233
+        ],
+        [
+          480,
+          496
+        ],
+        [
+          499,
+          509
+        ]
+      ],
+      "summary": "Channel bind flag4 is named require; selectors and bindFlags are separate from the animation predicate. No channel AnimationPredicate member or evaluator is declared in this class. Empty required-channel consequences are not implemented here.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationEvent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationEvent.java",
+      "bytes": 28346,
+      "sha256": "84d425744402b2a4f76fe3ef77d1716888d5d384db95a070a8c4abd6a0bc7333",
+      "line_count": 742,
+      "examined_line_ranges": [
+        [
+          39,
+          41
+        ],
+        [
+          263,
+          280
+        ],
+        [
+          292,
+          314
+        ],
+        [
+          662,
+          669
+        ]
+      ],
+      "summary": "Event uses the same two-word predicate at record-relative0x50, gated by flag0x01000000 in the text parser. Event selectors, archetype, disabled/chance flags are distinct fields; unknown selectors and source4 remain unknown.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimChannelParser.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimChannelParser.java",
+      "bytes": 7242,
+      "sha256": "bb602b4f52c490b55ec5972725ae76ca92023af0e69a00509b6353a096aa3959",
+      "line_count": 211,
+      "examined_line_ranges": [
+        [
+          48,
+          53
+        ],
+        [
+          67,
+          74
+        ],
+        [
+          191,
+          197
+        ]
+      ],
+      "summary": "require sets bindFlags bit4; blendGroup and variantGroup occupy upper bytes. These parse operations establish encoding only, not runtime branch precedence.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "line_count": 267,
+      "examined_line_ranges": [
+        [
+          51,
+          68
+        ]
+      ],
+      "summary": "Community interface describes PlayAnimation as LoadAnimation plus StartAnimation; pChoice can report a choice or force a non-minus-one choice. No predicate evaluator or failure fallback implementation is supplied.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/SPAnimation.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/SPAnimation.h",
+      "bytes": 1069,
+      "sha256": "b38771106d6efae667e04a71d671f7b77f08b5c357cd66ead2a0395809b73903",
+      "line_count": 55,
+      "examined_line_ranges": [
+        [
+          33,
+          39
+        ]
+      ],
+      "summary": "Incomplete community structure declarations expose timing and event/channel pointers; no predicate, branch or fallback names occur in this55line header.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    },
+    {
+      "path": "Spore ModAPI/SourceCode/Anim/Animations.cpp",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Anim/Animations.cpp",
+      "bytes": 1766,
+      "sha256": "5e816fc1fdb35c518a923a62cc78c6757fb61e93c002509ae5c63bc0760c06b0",
+      "line_count": 89,
+      "examined_line_ranges": [
+        [
+          1,
+          89
+        ]
+      ],
+      "summary": "Bounded89line source contains no predicate, branch, condition, HasFeet, HasGraspers or UprightSpine match. This is not an exhaustive SDK or binary negative search.",
+      "evidence_kind": "community-format-or-interface-source-not-original-implementation"
+    }
+  ],
+  "layout": {
+    "whole_animation_predicate_offset": 340,
+    "predicate_bytes": 8,
+    "predicate_word_endianness": "little",
+    "known_mask": 7,
+    "known_bits": {
+      "uprightSpine": 1,
+      "hasGraspers": 2,
+      "hasFeet": 4
+    },
+    "event_predicate_relative_offset": 80,
+    "event_predicate_flag": "0x01000000",
+    "channel_require_bind_mask": 4
+  },
+  "interpretation": "Boolean requirement decoding follows community ArgScript writer/parser only. Native evaluation, predicate state production and fallback remain unknown.",
+  "reused_historical_design": {
+    "source": "public-locomotion-rebuild-contracts.json",
+    "locator": "SIGGRAPH2008 section4.1.1",
+    "summary": "Existing43 research cites anatomy-based binding branches; no new PDF read in45."
+  }
+}

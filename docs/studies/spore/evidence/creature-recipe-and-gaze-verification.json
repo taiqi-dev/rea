@@ -1,0 +1,1652 @@
+{
+  "schema_version": 1,
+  "modules": [
+    50,
+    52
+  ],
+  "timestamp_utc": "2026-10-13T07:25:33.632590+00:00",
+  "tests_run": 42,
+  "recipe_tests": 22,
+  "gaze_tests": 20,
+  "failures": 0,
+  "errors": 0,
+  "status": "passed",
+  "log": "test_bad_scale (__main__.RecipeTests.test_bad_scale) ... ok\ntest_bind_identity (__main__.RecipeTests.test_bind_identity) ... ok\ntest_complete_counts (__main__.RecipeTests.test_complete_counts) ... ok\ntest_creaturedata_truncation (__main__.RecipeTests.test_creaturedata_truncation) ... ok\ntest_cycle (__main__.RecipeTests.test_cycle) ... ok\ntest_duplicate_part (__main__.RecipeTests.test_duplicate_part) ... ok\ntest_joint_bind_position (__main__.RecipeTests.test_joint_bind_position) ... ok\ntest_missing_asset (__main__.RecipeTests.test_missing_asset) ... ok\ntest_missing_parent (__main__.RecipeTests.test_missing_parent) ... ok\ntest_missing_socket (__main__.RecipeTests.test_missing_socket) ... ok\ntest_negative_weights (__main__.RecipeTests.test_negative_weights) ... ok\ntest_nonfinite_transform (__main__.RecipeTests.test_nonfinite_transform) ... ok\ntest_provider_max_not_sum (__main__.RecipeTests.test_provider_max_not_sum) ... ok\ntest_skin_motion (__main__.RecipeTests.test_skin_motion) ... ok\ntest_sockets_reference_exact_host (__main__.RecipeTests.test_sockets_reference_exact_host) ... ok\ntest_stable_identity_after_detach (__main__.RecipeTests.test_stable_identity_after_detach) ... ok\ntest_unknown_detach (__main__.RecipeTests.test_unknown_detach) ... ok\ntest_unknown_influence (__main__.RecipeTests.test_unknown_influence) ... ok\ntest_weights_normalize (__main__.RecipeTests.test_weights_normalize) ... ok\ntest_xml_count_error (__main__.RecipeTests.test_xml_count_error) ... ok\ntest_xml_entity_rejected (__main__.RecipeTests.test_xml_entity_rejected) ... ok\ntest_zero_weights (__main__.RecipeTests.test_zero_weights) ... ok\ntest_angle_wrap (__main__.GazeTests.test_angle_wrap) ... ok\ntest_angular_rate (__main__.GazeTests.test_angular_rate) ... ok\ntest_attack_neck_lock_respected (__main__.GazeTests.test_attack_neck_lock_respected) ... ok\ntest_body_change (__main__.GazeTests.test_body_change) ... ok\ntest_coincident (__main__.GazeTests.test_coincident) ... ok\ntest_duplicate_head (__main__.GazeTests.test_duplicate_head) ... ok\ntest_empty_attention (__main__.GazeTests.test_empty_attention) ... ok\ntest_future_memory (__main__.GazeTests.test_future_memory) ... ok\ntest_invalid_dt (__main__.GazeTests.test_invalid_dt) ... ok\ntest_invalid_lock (__main__.GazeTests.test_invalid_lock) ... ok\ntest_lost_target (__main__.GazeTests.test_lost_target) ... ok\ntest_missing_profile (__main__.GazeTests.test_missing_profile) ... ok\ntest_motion_lock_respected (__main__.GazeTests.test_motion_lock_respected) ... ok\ntest_multi_head_shared_trunk (__main__.GazeTests.test_multi_head_shared_trunk) ... ok\ntest_negative_limit (__main__.GazeTests.test_negative_limit) ... ok\ntest_nonfinite_target (__main__.GazeTests.test_nonfinite_target) ... ok\ntest_pitch_allocated (__main__.GazeTests.test_pitch_allocated) ... ok\ntest_soul_change (__main__.GazeTests.test_soul_change) ... ok\ntest_target_angles (__main__.GazeTests.test_target_angles) ... ok\ntest_target_memory (__main__.GazeTests.test_target_memory) ... ok\n\n----------------------------------------------------------------------\nRan 42 tests in 0.005s\n\nOK\n",
+  "evidence_inputs": [
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\complete-creature-recipe-observations.json",
+      "sha256": "242eda17fd17c100fd241c0784695b2b5a4425cb3c82589a3eb33a6a5290b7fa"
+    },
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\gaze-head-attention-observations.json",
+      "sha256": "a8a1261ed838023b050b3c628bb65073148c69982fe3aa4ec40a96f99e8a6736"
+    }
+  ],
+  "document_inputs": [
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\50-complete-creature-recipe-runtime-bones-and-bindings.md",
+      "sha256": "8dbecec934bdc073c8473c6a86e292cfebd0793a858c4421a3599f992eaf7154"
+    },
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\52-gaze-head-orientation-and-multi-organ-attention.md",
+      "sha256": "4af2331084637d5840b6be4e467f35ac9fb4aac21f580fae44e19f8d8a045889"
+    }
+  ],
+  "recipe_example": {
+    "recipe": {
+      "schema": 1,
+      "recipe_id": "own-four-hands-six-feet-two-heads",
+      "parts": [
+        {
+          "id": "S0",
+          "definition": "torso",
+          "parent": null,
+          "socket": null,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "S1",
+          "definition": "torso",
+          "parent": "S0",
+          "socket": "root",
+          "offset": [
+            0,
+            1,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "S2",
+          "definition": "torso",
+          "parent": "S1",
+          "socket": "root",
+          "offset": [
+            0,
+            1,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "H0",
+          "definition": "head",
+          "parent": "S2",
+          "socket": "root",
+          "offset": [
+            -0.4,
+            0.4,
+            0.5
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "M0",
+          "definition": "mouth",
+          "parent": "H0",
+          "socket": "head",
+          "offset": [
+            0,
+            0.25,
+            -0.12
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "E0",
+          "definition": "eye",
+          "parent": "H0",
+          "socket": "head",
+          "offset": [
+            -0.12,
+            0.2,
+            0.1
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "E1",
+          "definition": "eye",
+          "parent": "H0",
+          "socket": "head",
+          "offset": [
+            0.12,
+            0.2,
+            0.1
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "H1",
+          "definition": "head",
+          "parent": "S2",
+          "socket": "root",
+          "offset": [
+            0.4,
+            0.4,
+            0.5
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "M1",
+          "definition": "mouth",
+          "parent": "H1",
+          "socket": "head",
+          "offset": [
+            0,
+            0.25,
+            -0.12
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "E2",
+          "definition": "eye",
+          "parent": "H1",
+          "socket": "head",
+          "offset": [
+            -0.12,
+            0.2,
+            0.1
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "E3",
+          "definition": "eye",
+          "parent": "H1",
+          "socket": "head",
+          "offset": [
+            0.12,
+            0.2,
+            0.1
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "A0",
+          "definition": "arm",
+          "parent": "S2",
+          "socket": "root",
+          "offset": [
+            -1,
+            0,
+            0.3
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "G0",
+          "definition": "grasper",
+          "parent": "A0",
+          "socket": "wrist",
+          "offset": [
+            -0.1,
+            0,
+            0
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "A1",
+          "definition": "arm",
+          "parent": "S2",
+          "socket": "root",
+          "offset": [
+            1,
+            0,
+            0.3
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "G1",
+          "definition": "grasper",
+          "parent": "A1",
+          "socket": "wrist",
+          "offset": [
+            0.1,
+            0,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 2
+        },
+        {
+          "id": "A2",
+          "definition": "arm",
+          "parent": "S1",
+          "socket": "root",
+          "offset": [
+            -1,
+            0,
+            0.3
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "G2",
+          "definition": "grasper",
+          "parent": "A2",
+          "socket": "wrist",
+          "offset": [
+            -0.1,
+            0,
+            0
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "A3",
+          "definition": "arm",
+          "parent": "S1",
+          "socket": "root",
+          "offset": [
+            1,
+            0,
+            0.3
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "G3",
+          "definition": "grasper",
+          "parent": "A3",
+          "socket": "wrist",
+          "offset": [
+            0.1,
+            0,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 3
+        },
+        {
+          "id": "L0",
+          "definition": "leg",
+          "parent": "S0",
+          "socket": "root",
+          "offset": [
+            -0.6,
+            0,
+            -0.3
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "F0",
+          "definition": "foot",
+          "parent": "L0",
+          "socket": "ankle",
+          "offset": [
+            0,
+            0.15,
+            0
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "L1",
+          "definition": "leg",
+          "parent": "S0",
+          "socket": "root",
+          "offset": [
+            0.6,
+            0,
+            -0.3
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "F1",
+          "definition": "foot",
+          "parent": "L1",
+          "socket": "ankle",
+          "offset": [
+            0,
+            0.15,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "L2",
+          "definition": "leg",
+          "parent": "S1",
+          "socket": "root",
+          "offset": [
+            -0.6,
+            0,
+            -0.3
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "F2",
+          "definition": "foot",
+          "parent": "L2",
+          "socket": "ankle",
+          "offset": [
+            0,
+            0.15,
+            0
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "L3",
+          "definition": "leg",
+          "parent": "S1",
+          "socket": "root",
+          "offset": [
+            0.6,
+            0,
+            -0.3
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "F3",
+          "definition": "foot",
+          "parent": "L3",
+          "socket": "ankle",
+          "offset": [
+            0,
+            0.15,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "L4",
+          "definition": "leg",
+          "parent": "S2",
+          "socket": "root",
+          "offset": [
+            -0.6,
+            0,
+            -0.3
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "F4",
+          "definition": "foot",
+          "parent": "L4",
+          "socket": "ankle",
+          "offset": [
+            0,
+            0.15,
+            0
+          ],
+          "side": -1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "L5",
+          "definition": "leg",
+          "parent": "S2",
+          "socket": "root",
+          "offset": [
+            0.6,
+            0,
+            -0.3
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        },
+        {
+          "id": "F5",
+          "definition": "foot",
+          "parent": "L5",
+          "socket": "ankle",
+          "offset": [
+            0,
+            0.15,
+            0
+          ],
+          "side": 1,
+          "scale": 1.0,
+          "level": 1
+        }
+      ],
+      "coordinates": "metres; +Y forward,+Z up; identity reference rotations",
+      "asset_version": "own-catalog-v1"
+    },
+    "parts": 31,
+    "bones": 57,
+    "palette": [
+      {
+        "index": 0,
+        "bone_id": [
+          "A0",
+          "elbow"
+        ],
+        "parent": [
+          "A0",
+          "shoulder"
+        ],
+        "bind_position": [
+          -1.6,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 1,
+        "bone_id": [
+          "A0",
+          "shoulder"
+        ],
+        "parent": [
+          "S2",
+          "root"
+        ],
+        "bind_position": [
+          -1.0,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 2,
+        "bone_id": [
+          "A0",
+          "wrist"
+        ],
+        "parent": [
+          "A0",
+          "elbow"
+        ],
+        "bind_position": [
+          -2.1,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 3,
+        "bone_id": [
+          "A1",
+          "elbow"
+        ],
+        "parent": [
+          "A1",
+          "shoulder"
+        ],
+        "bind_position": [
+          1.6,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 4,
+        "bone_id": [
+          "A1",
+          "shoulder"
+        ],
+        "parent": [
+          "S2",
+          "root"
+        ],
+        "bind_position": [
+          1.0,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 5,
+        "bone_id": [
+          "A1",
+          "wrist"
+        ],
+        "parent": [
+          "A1",
+          "elbow"
+        ],
+        "bind_position": [
+          2.1,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 6,
+        "bone_id": [
+          "A2",
+          "elbow"
+        ],
+        "parent": [
+          "A2",
+          "shoulder"
+        ],
+        "bind_position": [
+          -1.6,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 7,
+        "bone_id": [
+          "A2",
+          "shoulder"
+        ],
+        "parent": [
+          "S1",
+          "root"
+        ],
+        "bind_position": [
+          -1.0,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 8,
+        "bone_id": [
+          "A2",
+          "wrist"
+        ],
+        "parent": [
+          "A2",
+          "elbow"
+        ],
+        "bind_position": [
+          -2.1,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 9,
+        "bone_id": [
+          "A3",
+          "elbow"
+        ],
+        "parent": [
+          "A3",
+          "shoulder"
+        ],
+        "bind_position": [
+          1.6,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 10,
+        "bone_id": [
+          "A3",
+          "shoulder"
+        ],
+        "parent": [
+          "S1",
+          "root"
+        ],
+        "bind_position": [
+          1.0,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 11,
+        "bone_id": [
+          "A3",
+          "wrist"
+        ],
+        "parent": [
+          "A3",
+          "elbow"
+        ],
+        "bind_position": [
+          2.1,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 12,
+        "bone_id": [
+          "E0",
+          "eye"
+        ],
+        "parent": [
+          "H0",
+          "head"
+        ],
+        "bind_position": [
+          -0.52,
+          2.6,
+          0.6
+        ]
+      },
+      {
+        "index": 13,
+        "bone_id": [
+          "E1",
+          "eye"
+        ],
+        "parent": [
+          "H0",
+          "head"
+        ],
+        "bind_position": [
+          -0.28,
+          2.6,
+          0.6
+        ]
+      },
+      {
+        "index": 14,
+        "bone_id": [
+          "E2",
+          "eye"
+        ],
+        "parent": [
+          "H1",
+          "head"
+        ],
+        "bind_position": [
+          0.28,
+          2.6,
+          0.6
+        ]
+      },
+      {
+        "index": 15,
+        "bone_id": [
+          "E3",
+          "eye"
+        ],
+        "parent": [
+          "H1",
+          "head"
+        ],
+        "bind_position": [
+          0.52,
+          2.6,
+          0.6
+        ]
+      },
+      {
+        "index": 16,
+        "bone_id": [
+          "F0",
+          "foot"
+        ],
+        "parent": [
+          "L0",
+          "ankle"
+        ],
+        "bind_position": [
+          -0.6,
+          0.15,
+          -1.3
+        ]
+      },
+      {
+        "index": 17,
+        "bone_id": [
+          "F1",
+          "foot"
+        ],
+        "parent": [
+          "L1",
+          "ankle"
+        ],
+        "bind_position": [
+          0.6,
+          0.15,
+          -1.3
+        ]
+      },
+      {
+        "index": 18,
+        "bone_id": [
+          "F2",
+          "foot"
+        ],
+        "parent": [
+          "L2",
+          "ankle"
+        ],
+        "bind_position": [
+          -0.6,
+          1.15,
+          -1.3
+        ]
+      },
+      {
+        "index": 19,
+        "bone_id": [
+          "F3",
+          "foot"
+        ],
+        "parent": [
+          "L3",
+          "ankle"
+        ],
+        "bind_position": [
+          0.6,
+          1.15,
+          -1.3
+        ]
+      },
+      {
+        "index": 20,
+        "bone_id": [
+          "F4",
+          "foot"
+        ],
+        "parent": [
+          "L4",
+          "ankle"
+        ],
+        "bind_position": [
+          -0.6,
+          2.15,
+          -1.3
+        ]
+      },
+      {
+        "index": 21,
+        "bone_id": [
+          "F5",
+          "foot"
+        ],
+        "parent": [
+          "L5",
+          "ankle"
+        ],
+        "bind_position": [
+          0.6,
+          2.15,
+          -1.3
+        ]
+      },
+      {
+        "index": 22,
+        "bone_id": [
+          "G0",
+          "finger"
+        ],
+        "parent": [
+          "G0",
+          "palm"
+        ],
+        "bind_position": [
+          -2.4000000000000004,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 23,
+        "bone_id": [
+          "G0",
+          "palm"
+        ],
+        "parent": [
+          "A0",
+          "wrist"
+        ],
+        "bind_position": [
+          -2.2,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 24,
+        "bone_id": [
+          "G1",
+          "finger"
+        ],
+        "parent": [
+          "G1",
+          "palm"
+        ],
+        "bind_position": [
+          2.4000000000000004,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 25,
+        "bone_id": [
+          "G1",
+          "palm"
+        ],
+        "parent": [
+          "A1",
+          "wrist"
+        ],
+        "bind_position": [
+          2.2,
+          2.0,
+          0.3
+        ]
+      },
+      {
+        "index": 26,
+        "bone_id": [
+          "G2",
+          "finger"
+        ],
+        "parent": [
+          "G2",
+          "palm"
+        ],
+        "bind_position": [
+          -2.4000000000000004,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 27,
+        "bone_id": [
+          "G2",
+          "palm"
+        ],
+        "parent": [
+          "A2",
+          "wrist"
+        ],
+        "bind_position": [
+          -2.2,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 28,
+        "bone_id": [
+          "G3",
+          "finger"
+        ],
+        "parent": [
+          "G3",
+          "palm"
+        ],
+        "bind_position": [
+          2.4000000000000004,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 29,
+        "bone_id": [
+          "G3",
+          "palm"
+        ],
+        "parent": [
+          "A3",
+          "wrist"
+        ],
+        "bind_position": [
+          2.2,
+          1.0,
+          0.3
+        ]
+      },
+      {
+        "index": 30,
+        "bone_id": [
+          "H0",
+          "head"
+        ],
+        "parent": [
+          "S2",
+          "root"
+        ],
+        "bind_position": [
+          -0.4,
+          2.4,
+          0.5
+        ]
+      },
+      {
+        "index": 31,
+        "bone_id": [
+          "H1",
+          "head"
+        ],
+        "parent": [
+          "S2",
+          "root"
+        ],
+        "bind_position": [
+          0.4,
+          2.4,
+          0.5
+        ]
+      },
+      {
+        "index": 32,
+        "bone_id": [
+          "L0",
+          "ankle"
+        ],
+        "parent": [
+          "L0",
+          "knee"
+        ],
+        "bind_position": [
+          -0.6,
+          0.0,
+          -1.3
+        ]
+      },
+      {
+        "index": 33,
+        "bone_id": [
+          "L0",
+          "hip"
+        ],
+        "parent": [
+          "S0",
+          "root"
+        ],
+        "bind_position": [
+          -0.6,
+          0.0,
+          -0.3
+        ]
+      },
+      {
+        "index": 34,
+        "bone_id": [
+          "L0",
+          "knee"
+        ],
+        "parent": [
+          "L0",
+          "hip"
+        ],
+        "bind_position": [
+          -0.6,
+          0.0,
+          -0.8
+        ]
+      },
+      {
+        "index": 35,
+        "bone_id": [
+          "L1",
+          "ankle"
+        ],
+        "parent": [
+          "L1",
+          "knee"
+        ],
+        "bind_position": [
+          0.6,
+          0.0,
+          -1.3
+        ]
+      },
+      {
+        "index": 36,
+        "bone_id": [
+          "L1",
+          "hip"
+        ],
+        "parent": [
+          "S0",
+          "root"
+        ],
+        "bind_position": [
+          0.6,
+          0.0,
+          -0.3
+        ]
+      },
+      {
+        "index": 37,
+        "bone_id": [
+          "L1",
+          "knee"
+        ],
+        "parent": [
+          "L1",
+          "hip"
+        ],
+        "bind_position": [
+          0.6,
+          0.0,
+          -0.8
+        ]
+      },
+      {
+        "index": 38,
+        "bone_id": [
+          "L2",
+          "ankle"
+        ],
+        "parent": [
+          "L2",
+          "knee"
+        ],
+        "bind_position": [
+          -0.6,
+          1.0,
+          -1.3
+        ]
+      },
+      {
+        "index": 39,
+        "bone_id": [
+          "L2",
+          "hip"
+        ],
+        "parent": [
+          "S1",
+          "root"
+        ],
+        "bind_position": [
+          -0.6,
+          1.0,
+          -0.3
+        ]
+      },
+      {
+        "index": 40,
+        "bone_id": [
+          "L2",
+          "knee"
+        ],
+        "parent": [
+          "L2",
+          "hip"
+        ],
+        "bind_position": [
+          -0.6,
+          1.0,
+          -0.8
+        ]
+      },
+      {
+        "index": 41,
+        "bone_id": [
+          "L3",
+          "ankle"
+        ],
+        "parent": [
+          "L3",
+          "knee"
+        ],
+        "bind_position": [
+          0.6,
+          1.0,
+          -1.3
+        ]
+      },
+      {
+        "index": 42,
+        "bone_id": [
+          "L3",
+          "hip"
+        ],
+        "parent": [
+          "S1",
+          "root"
+        ],
+        "bind_position": [
+          0.6,
+          1.0,
+          -0.3
+        ]
+      },
+      {
+        "index": 43,
+        "bone_id": [
+          "L3",
+          "knee"
+        ],
+        "parent": [
+          "L3",
+          "hip"
+        ],
+        "bind_position": [
+          0.6,
+          1.0,
+          -0.8
+        ]
+      },
+      {
+        "index": 44,
+        "bone_id": [
+          "L4",
+          "ankle"
+        ],
+        "parent": [
+          "L4",
+          "knee"
+        ],
+        "bind_position": [
+          -0.6,
+          2.0,
+          -1.3
+        ]
+      },
+      {
+        "index": 45,
+        "bone_id": [
+          "L4",
+          "hip"
+        ],
+        "parent": [
+          "S2",
+          "root"
+        ],
+        "bind_position": [
+          -0.6,
+          2.0,
+          -0.3
+        ]
+      },
+      {
+        "index": 46,
+        "bone_id": [
+          "L4",
+          "knee"
+        ],
+        "parent": [
+          "L4",
+          "hip"
+        ],
+        "bind_position": [
+          -0.6,
+          2.0,
+          -0.8
+        ]
+      },
+      {
+        "index": 47,
+        "bone_id": [
+          "L5",
+          "ankle"
+        ],
+        "parent": [
+          "L5",
+          "knee"
+        ],
+        "bind_position": [
+          0.6,
+          2.0,
+          -1.3
+        ]
+      },
+      {
+        "index": 48,
+        "bone_id": [
+          "L5",
+          "hip"
+        ],
+        "parent": [
+          "S2",
+          "root"
+        ],
+        "bind_position": [
+          0.6,
+          2.0,
+          -0.3
+        ]
+      },
+      {
+        "index": 49,
+        "bone_id": [
+          "L5",
+          "knee"
+        ],
+        "parent": [
+          "L5",
+          "hip"
+        ],
+        "bind_position": [
+          0.6,
+          2.0,
+          -0.8
+        ]
+      },
+      {
+        "index": 50,
+        "bone_id": [
+          "M0",
+          "jaw"
+        ],
+        "parent": [
+          "H0",
+          "head"
+        ],
+        "bind_position": [
+          -0.4,
+          2.65,
+          0.38
+        ]
+      },
+      {
+        "index": 51,
+        "bone_id": [
+          "M0",
+          "tip"
+        ],
+        "parent": [
+          "M0",
+          "jaw"
+        ],
+        "bind_position": [
+          -0.4,
+          2.85,
+          0.38
+        ]
+      },
+      {
+        "index": 52,
+        "bone_id": [
+          "M1",
+          "jaw"
+        ],
+        "parent": [
+          "H1",
+          "head"
+        ],
+        "bind_position": [
+          0.4,
+          2.65,
+          0.38
+        ]
+      },
+      {
+        "index": 53,
+        "bone_id": [
+          "M1",
+          "tip"
+        ],
+        "parent": [
+          "M1",
+          "jaw"
+        ],
+        "bind_position": [
+          0.4,
+          2.85,
+          0.38
+        ]
+      },
+      {
+        "index": 54,
+        "bone_id": [
+          "S0",
+          "root"
+        ],
+        "parent": null,
+        "bind_position": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "index": 55,
+        "bone_id": [
+          "S1",
+          "root"
+        ],
+        "parent": [
+          "S0",
+          "root"
+        ],
+        "bind_position": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "index": 56,
+        "bone_id": [
+          "S2",
+          "root"
+        ],
+        "parent": [
+          "S1",
+          "root"
+        ],
+        "bind_position": [
+          0.0,
+          2.0,
+          0.0
+        ]
+      }
+    ],
+    "capabilities": {
+      "Grasp": [
+        {
+          "part": "G0",
+          "level": 1
+        },
+        {
+          "part": "G1",
+          "level": 2
+        },
+        {
+          "part": "G2",
+          "level": 1
+        },
+        {
+          "part": "G3",
+          "level": 3
+        }
+      ],
+      "Walk": [
+        {
+          "part": "F0",
+          "level": 1
+        },
+        {
+          "part": "F1",
+          "level": 1
+        },
+        {
+          "part": "F2",
+          "level": 1
+        },
+        {
+          "part": "F3",
+          "level": 1
+        },
+        {
+          "part": "F4",
+          "level": 1
+        },
+        {
+          "part": "F5",
+          "level": 1
+        }
+      ],
+      "Bite": [
+        {
+          "part": "M0",
+          "level": 1
+        },
+        {
+          "part": "M1",
+          "level": 1
+        }
+      ]
+    },
+    "levels": {
+      "Grasp": 3,
+      "Walk": 1,
+      "Bite": 1
+    },
+    "attack_binding": {
+      "executor": "G2",
+      "palm_index": 27,
+      "auxiliary": "A2",
+      "elbow_index": 6,
+      "socket_host": [
+        "A2",
+        "wrist"
+      ]
+    },
+    "skin_example": {
+      "bind_position": [
+        -0.4,
+        1,
+        0.3
+      ],
+      "weights": [
+        {
+          "bone": [
+            "S1",
+            "root"
+          ],
+          "weight": 0.4,
+          "palette_index": 55
+        },
+        {
+          "bone": [
+            "A2",
+            "shoulder"
+          ],
+          "weight": 0.6,
+          "palette_index": 7
+        }
+      ],
+      "posed_position": [
+        -0.4,
+        1.0,
+        0.42
+      ],
+      "UV_copies_share_logical_weights": true
+    },
+    "detach": {
+      "removed": [
+        "A0",
+        "G0"
+      ],
+      "parts": 29,
+      "bones": 52,
+      "grasper_providers": 3,
+      "retained_G2_id": [
+        "G2",
+        "palm"
+      ],
+      "before_index": 27,
+      "after_index": 22
+    }
+  },
+  "gaze_example": {
+    "requests": [
+      {
+        "head": "H0",
+        "yaw": 80,
+        "pitch": 20,
+        "priority": 100
+      },
+      {
+        "head": "H1",
+        "yaw": -60,
+        "pitch": -10,
+        "priority": 20
+      }
+    ],
+    "limits": {
+      "H0": {
+        "yaw": {
+          "eye": 25,
+          "neck": 50
+        },
+        "pitch": {
+          "eye": 15,
+          "neck": 20
+        }
+      },
+      "H1": {
+        "yaw": {
+          "eye": 20,
+          "neck": 35
+        },
+        "pitch": {
+          "eye": 15,
+          "neck": 20
+        }
+      }
+    },
+    "torso_limits": {
+      "yaw": 20,
+      "pitch": 10
+    },
+    "steady": {
+      "torso": {
+        "yaw": 5,
+        "pitch": 0
+      },
+      "heads": {
+        "H0": {
+          "yaw": {
+            "eye": 25,
+            "neck": 50,
+            "world": 80,
+            "error": 0
+          },
+          "pitch": {
+            "eye": 15,
+            "neck": 5,
+            "world": 20,
+            "error": 0
+          }
+        },
+        "H1": {
+          "yaw": {
+            "eye": -20,
+            "neck": -35,
+            "world": -50,
+            "error": -10
+          },
+          "pitch": {
+            "eye": -10,
+            "neck": 0,
+            "world": -10,
+            "error": 0
+          }
+        }
+      },
+      "shared_torso_policy": "highest priority; head ID tie-break; motion lock respected"
+    },
+    "attack_locked": {
+      "torso": {
+        "yaw": 0,
+        "pitch": 0
+      },
+      "heads": {
+        "H0": {
+          "yaw": {
+            "eye": 25,
+            "neck": 20,
+            "world": 45,
+            "error": 35
+          },
+          "pitch": {
+            "eye": 15,
+            "neck": 5,
+            "world": 20,
+            "error": 0
+          }
+        },
+        "H1": {
+          "yaw": {
+            "eye": -20,
+            "neck": -35,
+            "world": -55,
+            "error": -5
+          },
+          "pitch": {
+            "eye": -10,
+            "neck": 0,
+            "world": -10,
+            "error": 0
+          }
+        }
+      },
+      "shared_torso_policy": "highest priority; head ID tie-break; motion lock respected"
+    },
+    "first_frame_yaw": {
+      "eye": 18.0,
+      "neck": 9.0,
+      "torso": 4.5
+    }
+  },
+  "verifier_sha256": "6db23bbe3aaf6fabe2dc8ab48fbfaac93badd2c369b97925ca569ab649a4b758",
+  "limitations": "Own translation-only reference compiler and bounded two-axis angle examples; not full mesh/IK/physics/asset loader, not Spore behavior.",
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "baa5f5a8db7153a1df7d86a11c8b6e5bda4fec9533ceaf48a2bc17e7b11c07fa",
+    "captured_file_bytes": 33695,
+    "reference_changes": [
+      {
+        "pointer": "/evidence_inputs/0/sha256",
+        "captured": "2647a5d5f479289adeef1db656e1e637ff992442ef07347d40db54fd567e5ad7",
+        "published": "242eda17fd17c100fd241c0784695b2b5a4425cb3c82589a3eb33a6a5290b7fa",
+        "study_file": "evidence/complete-creature-recipe-observations.json"
+      },
+      {
+        "pointer": "/evidence_inputs/1/sha256",
+        "captured": "fd5665367bc309e4be68e227e2d505c378412b2b6117afa20e769ca6c74382f8",
+        "published": "a8a1261ed838023b050b3c628bb65073148c69982fe3aa4ec40a96f99e8a6736",
+        "study_file": "evidence/gaze-head-attention-observations.json"
+      }
+    ]
+  }
+}

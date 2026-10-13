@@ -1,0 +1,124 @@
+{
+  "kind": "land-action-presentation-static-reader-and-independent-policy-verification-not-game-runtime",
+  "status": "passed",
+  "module": 53,
+  "tests_run": 38,
+  "scope_counts": {
+    "format_reader": 15,
+    "actual_evidence_consistency": 5,
+    "independent_policy": 18
+  },
+  "test_suite": {
+    "id": "action_presentation",
+    "path": "checks/verify_action_presentation_examples.py",
+    "passed": 38,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "output": "test_actual_catalog_scope_and_counts (__main__.EvidenceChecks.test_actual_catalog_scope_and_counts) ... ok\r\ntest_actual_disabled_sound_and_scale_flags (__main__.EvidenceChecks.test_actual_disabled_sound_and_scale_flags) ... ok\r\ntest_actual_gain_and_sample_array_counts (__main__.EvidenceChecks.test_actual_gain_and_sample_array_counts) ... ok\r\ntest_alias_and_sound_prop_format_source (__main__.EvidenceChecks.test_alias_and_sound_prop_format_source) ... ok\r\ntest_input_and_reader_identity (__main__.EvidenceChecks.test_input_and_reader_identity) ... ok\r\ntest_component_index_diagnosed (__main__.FormatChecks.test_component_index_diagnosed) ... ok\r\ntest_import_mask_is_7f_not_high_sign_bit (__main__.FormatChecks.test_import_mask_is_7f_not_high_sign_bit) ... ok\r\ntest_import_reference_retains_distinct_pair (__main__.FormatChecks.test_import_reference_retains_distinct_pair) ... ok\r\ntest_null_and_unsupported_negative_separate (__main__.FormatChecks.test_null_and_unsupported_negative_separate) ... ok\r\ntest_partial_import_mask_rejected (__main__.FormatChecks.test_partial_import_mask_rejected) ... ok\r\ntest_reference_outside_namespace_rejected (__main__.FormatChecks.test_reference_outside_namespace_rejected) ... ok\r\ntest_sound_big_endian_pair_and_inactive_volume (__main__.FormatChecks.test_sound_big_endian_pair_and_inactive_volume) ... ok\r\ntest_sound_identity_mismatch_rejected (__main__.FormatChecks.test_sound_identity_mismatch_rejected) ... ok\r\ntest_sound_length_mismatch_rejected (__main__.FormatChecks.test_sound_length_mismatch_rejected) ... ok\r\ntest_sound_nonfinite_rejected (__main__.FormatChecks.test_sound_nonfinite_rejected) ... ok\r\ntest_sound_version_rejected (__main__.FormatChecks.test_sound_version_rejected) ... ok\r\ntest_visual_cycle_diagnosed (__main__.FormatChecks.test_visual_cycle_diagnosed) ... ok\r\ntest_visual_empty_export_is_not_missing (__main__.FormatChecks.test_visual_empty_export_is_not_missing) ... ok\r\ntest_visual_truncated_or_trailing_rejected (__main__.FormatChecks.test_visual_truncated_or_trailing_rejected) ... ok\r\ntest_visual_unsupported_version_rejected (__main__.FormatChecks.test_visual_unsupported_version_rejected) ... ok\r\ntest_detach_retires_follow_but_preserves_world_effect (__main__.OwnPolicyChecks.test_detach_retires_follow_but_preserves_world_effect) ... ok\r\ntest_direction_normalized_independent_of_uniform_scale (__main__.OwnPolicyChecks.test_direction_normalized_independent_of_uniform_scale) ... ok\r\ntest_duplicate_channels_share_semantic_cue (__main__.OwnPolicyChecks.test_duplicate_channels_share_semantic_cue) ... ok\r\ntest_duplicate_voice_id_diagnosed (__main__.OwnPolicyChecks.test_duplicate_voice_id_diagnosed) ... ok\r\ntest_effect_and_sound_slots_are_separate (__main__.OwnPolicyChecks.test_effect_and_sound_slots_are_separate) ... ok\r\ntest_explicit_dual_volley_has_two_ordinals (__main__.OwnPolicyChecks.test_explicit_dual_volley_has_two_ordinals) ... ok\r\ntest_foot_contacts_mix_energy_and_cap_gain (__main__.OwnPolicyChecks.test_foot_contacts_mix_energy_and_cap_gain) ... ok\r\ntest_invalid_audio_numbers_diagnosed (__main__.OwnPolicyChecks.test_invalid_audio_numbers_diagnosed) ... ok\r\ntest_invalid_scale_and_zero_direction_diagnosed (__main__.OwnPolicyChecks.test_invalid_scale_and_zero_direction_diagnosed) ... ok\r\ntest_missing_emitter_does_not_create_effect (__main__.OwnPolicyChecks.test_missing_emitter_does_not_create_effect) ... ok\r\ntest_other_actor_or_time_bucket_not_merged (__main__.OwnPolicyChecks.test_other_actor_or_time_bucket_not_merged) ... ok\r\ntest_presentation_drop_cannot_undo_damage (__main__.OwnPolicyChecks.test_presentation_drop_cannot_undo_damage) ... ok\r\ntest_repeat_contact_serial_is_not_second_step (__main__.OwnPolicyChecks.test_repeat_contact_serial_is_not_second_step) ... ok\r\ntest_socket_scale_and_yaw_applied_once (__main__.OwnPolicyChecks.test_socket_scale_and_yaw_applied_once) ... ok\r\ntest_stale_body_and_binding_rejected (__main__.OwnPolicyChecks.test_stale_body_and_binding_rejected) ... ok\r\ntest_voice_cap_zero_and_bad_input (__main__.OwnPolicyChecks.test_voice_cap_zero_and_bad_input) ... ok\r\ntest_voice_priority_audibility_and_stable_tie (__main__.OwnPolicyChecks.test_voice_priority_audibility_and_stable_tie) ... ok\r\ntest_world_effect_position_does_not_follow_new_root (__main__.OwnPolicyChecks.test_world_effect_position_does_not_follow_new_root) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 38 tests in 0.031s\r\n\r\nOK\r\n",
+    "script_sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc"
+  },
+  "actual_new_reads": {
+    "FX_directories": 6,
+    "decoded_directory_bytes": 9033983,
+    "matched_unique_exports": 10,
+    "trace_leaves": 20,
+    "selected_sound_component": 1,
+    "audioProp_records": 4,
+    "audioProp_bytes": 536
+  },
+  "events_reused": {
+    "ANIM_version_records": 8,
+    "presentation_events": 44,
+    "effect": 26,
+    "sound": 18,
+    "disabled_sound_entries": 8,
+    "ANIM_payloads_reread": false
+  },
+  "public_sources": {
+    "manifest": "public-action-presentation-contracts.json",
+    "fixed_commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "files": 11
+  },
+  "original_runtime_verified": false,
+  "particle_payloads_decoded": false,
+  "audio_waveforms_read_or_exported": false,
+  "remaining_unknowns": [
+    "Native event dispatch and actual effect selection/space/scale",
+    "Audio sample selection, inheritance, bank lookup and gain units",
+    "Native cancellation, voice limits and performance"
+  ],
+  "workflow_diagnostics": [
+    "Wrong old-reader filename was corrected from the bounded file inventory",
+    "Web raw sources missed cache and sandbox DNS failed; fixed public sources were then fetched through approved read-only formal escalation",
+    "AudioProp format was confirmed by the pinned PropConverter before parsing",
+    "The initial hexadecimal-only reg_file query was bounded and corrected to the verified name/FNV1/explicit-override syntax, preserving aliases",
+    "Initial synthetic checks tried mutating frozen Section metadata and changed bytes outside its slice; corrected fixtures to use immutable replacement and in-slice corruption"
+  ],
+  "not_performed": [
+    "Game execution or attach",
+    "Full particle/audio/model export",
+    "Production user-game implementation or real audio mixing/performance validation"
+  ],
+  "verified_at": "2026-10-13T00:31:16.111173-07:00",
+  "timezone": "America/Los_Angeles",
+  "files": [
+    {
+      "path": "53-action-effects-audio-resources-and-presentation-ownership.md",
+      "bytes": 14689,
+      "sha256": "cd2390973be44ba3f664e14bde3dd860b1c129ed185246a71138b0be17b53ac3"
+    },
+    {
+      "path": "checks/read_action_presentation_resources.py",
+      "bytes": 18844,
+      "sha256": "794b6a7243c1bf8b13be057ef1823f76474bcdd870217d02d7ad1beac87f1117"
+    },
+    {
+      "path": "checks/verify_action_presentation_examples.py",
+      "bytes": 13179,
+      "sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc"
+    },
+    {
+      "path": "evidence/public-action-presentation-contracts.json",
+      "bytes": 95808,
+      "sha256": "19c7ae6fca1b583cab8d0573c3480d557cc20c8d917963956119a5c71b34ae98"
+    },
+    {
+      "path": "evidence/local-selected-action-presentation-resources.json",
+      "bytes": 214128,
+      "sha256": "43de285ee3832099ff0b462069688016073901a31cd4ad15921a6c36682f26e5"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "8cb1645bed68bcb947a4474547ad3217a5de548ef7b2782a1461f3f187094282",
+    "captured_file_bytes": 8065,
+    "reference_changes": [
+      {
+        "pointer": "/files/3/sha256",
+        "captured": "3e239a48584a8371221cbcdf02f75008df431f0b5c15f140c37fe4840a5016a3",
+        "published": "19c7ae6fca1b583cab8d0573c3480d557cc20c8d917963956119a5c71b34ae98",
+        "study_file": "evidence/public-action-presentation-contracts.json"
+      },
+      {
+        "pointer": "/files/3/bytes",
+        "captured": 99376,
+        "published": 95808,
+        "study_file": "evidence/public-action-presentation-contracts.json"
+      },
+      {
+        "pointer": "/files/4/sha256",
+        "captured": "bef1eb8fd7f082dea78cfdd095cc489628caefde91afa63a357c150f0ec8bad4",
+        "published": "43de285ee3832099ff0b462069688016073901a31cd4ad15921a6c36682f26e5",
+        "study_file": "evidence/local-selected-action-presentation-resources.json"
+      },
+      {
+        "pointer": "/files/4/bytes",
+        "captured": 220350,
+        "published": 214128,
+        "study_file": "evidence/local-selected-action-presentation-resources.json"
+      }
+    ]
+  }
+}

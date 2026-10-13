@@ -1,0 +1,1276 @@
+{
+  "schemaVersion": 1,
+  "module": "36-selected-skin-recipe-candidate-inventory",
+  "kind": "ordinary-file-index-and-public-registry-observations",
+  "reaEvidenceId": null,
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "sources": [
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "bytes": 2860453,
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "lineCount": 125507
+    },
+    {
+      "path": "reg_type.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_type.txt",
+      "bytes": 13944,
+      "sha256": "3e0ff520a9e0793f29e82a00aee5de56dc5a83a1fbef0d8e8b5fe2754147caa9",
+      "lineCount": 608
+    }
+  ],
+  "typeDeclarations": [
+    {
+      "line": 1,
+      "text": "prop\t0xb1b104"
+    },
+    {
+      "line": 99,
+      "text": "effdir\t0xea5118b0"
+    }
+  ],
+  "typeInterpretation": "reg_type.txt line 99 explicitly registers effdir as 0xEA5118B0; line 1 registers prop as 0x00B1B104. This is community registry evidence, not decoded payload or recovered runtime class.",
+  "registryQuery": {
+    "nameRegex": "skin|paint|coat|theme|(^|[_])base($|[_])|(^|[_])detail($|[_])",
+    "caseInsensitive": true,
+    "matchedNameRecords": 4071,
+    "hashAlgorithm": "Lowercase FNV-1: 32-bit multiply by 0x1000193 then XOR character, initial 0x811C9DC5. Explicit registry IDs take precedence.",
+    "matchedFields": [
+      "resource instance",
+      "resource group"
+    ],
+    "classification": "Instance matches rank before group-only matches. Skin/paint/coat outrank theme, which outranks generic base/detail; obvious other-stage names are downgraded.",
+    "collisionCaution": "Registry hash/name lookup is a candidate mapping; aliases and collisions are retained by counts and bounded lists, not interpreted as unique identity.",
+    "refinedSelection": "Formal PROP candidates restricted to exact instance-ID hash matches for skin-containing registry names. Generic paint/theme/base/detail hits and group-only hits counted but not copied into shortlist.",
+    "exactSkinNameRecords": 1287
+  },
+  "indexReader": {
+    "helperPath": "docs/studies/spore/checks/read_selected_ability_properties.py",
+    "helperSHA256": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+    "helperBytes": 13326,
+    "readIndexLineStart": 100,
+    "readIndexLineEnd": 134,
+    "execution": "An inline read-only Node index parser follows the existing helper layout and checks; helper itself was not executed.",
+    "checks": [
+      "DBPF magic and version 3.0",
+      "Index range and flag validity",
+      "Common high-ID slot is zero",
+      "Exact record count/size",
+      "All resource key uniqueness and stored-range bounds",
+      "Compression identifier 0 or 65535"
+    ],
+    "payloadSemantics": "Stored payloads were not decompressed, parsed or extracted; full-file hash traverses bytes but is not semantic decoding."
+  },
+  "packages": [
+    {
+      "path": "E:/Steam/steamapps/common/Spore/Data/Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "format": "DBPF 3.0",
+      "index": {
+        "count": 11529,
+        "offset": 19887288,
+        "bytes": 322820,
+        "flags": 4,
+        "examinedEntries": 11529,
+        "indexSHA256": "abd86cb2718f3e7ff4a2e1550e25f4c88ea06191c3c945ac8898cfb9c99188db",
+        "recordSize": 28,
+        "complete": true,
+        "duplicateKeyAndRangeValidation": "passed"
+      },
+      "inventory": {
+        "effectDirectoryType": "0xea5118b0",
+        "effectDirectoryCount": 0,
+        "propType": "0x00b1b104",
+        "propCount": 7030,
+        "effectOrPropNameMatchedEntries": 1994,
+        "propNameMatchedEntries": 1994,
+        "propMatchCategories": {
+          "strong-instance-name": 414,
+          "theme-instance-name": 325,
+          "generic-or-shared-instance-name": 100,
+          "group-only-name": 1155
+        },
+        "exactSkinInstanceNamePropEntries": 356
+      },
+      "effectDirectoryCandidates": [],
+      "propCandidates": [
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x00f3892f"
+          },
+          "fileOffset": 11832770,
+          "fileOffsetHex": "0x00b48dc2",
+          "storedBytes": 136,
+          "memoryBytes": 196,
+          "compression": 65535,
+          "endExclusive": 11832906,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12766,
+              "text": "ce_skinpaint_detail_stripesML",
+              "name": "ce_skinpaint_detail_stripesML",
+              "id": "0x00f3892f",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x05475ea3"
+          },
+          "fileOffset": 11926844,
+          "fileOffsetHex": "0x00b5fd3c",
+          "storedBytes": 151,
+          "memoryBytes": 180,
+          "compression": 65535,
+          "endExclusive": 11926995,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 38628,
+              "text": "ce_skinpaint_theme_giraffeArmor",
+              "name": "ce_skinpaint_theme_giraffeArmor",
+              "id": "0x05475ea3",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x1315dabe"
+          },
+          "fileOffset": 11828764,
+          "fileOffsetHex": "0x00b47e1c",
+          "storedBytes": 172,
+          "memoryBytes": 196,
+          "compression": 65535,
+          "endExclusive": 11828936,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 38645,
+              "text": "ce_skinpaint_theme_oppositeOfCamouflage",
+              "name": "ce_skinpaint_theme_oppositeOfCamouflage",
+              "id": "0x1315dabe",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x085b9de0"
+          },
+          "fileOffset": 11941095,
+          "fileOffsetHex": "0x00b634e7",
+          "storedBytes": 130,
+          "memoryBytes": 182,
+          "compression": 65535,
+          "endExclusive": 11941225,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12777,
+              "text": "ce_skinpaint_base_melt",
+              "name": "ce_skinpaint_base_melt",
+              "id": "0x085b9de0",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x1492c462"
+          },
+          "fileOffset": 11955434,
+          "fileOffsetHex": "0x00b66cea",
+          "storedBytes": 137,
+          "memoryBytes": 188,
+          "compression": 65535,
+          "endExclusive": 11955571,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12783,
+              "text": "ce_skinpaint_base_quilted",
+              "name": "ce_skinpaint_base_quilted",
+              "id": "0x1492c462",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x003f4d28"
+          },
+          "fileOffset": 11933712,
+          "fileOffsetHex": "0x00b61810",
+          "storedBytes": 134,
+          "memoryBytes": 192,
+          "compression": 65535,
+          "endExclusive": 11933846,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12765,
+              "text": "ce_skinpaint_detail_suckers",
+              "name": "ce_skinpaint_detail_suckers",
+              "id": "0x003f4d28",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x084761f2"
+          },
+          "fileOffset": 11855173,
+          "fileOffsetHex": "0x00b4e545",
+          "storedBytes": 134,
+          "memoryBytes": 194,
+          "compression": 65535,
+          "endExclusive": 11855307,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12773,
+              "text": "ce_skinpaint_detail_sideWash",
+              "name": "ce_skinpaint_detail_sideWash",
+              "id": "0x084761f2",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x08adfe64"
+          },
+          "fileOffset": 11948479,
+          "fileOffsetHex": "0x00b651bf",
+          "storedBytes": 144,
+          "memoryBytes": 204,
+          "compression": 65535,
+          "endExclusive": 11948623,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12782,
+              "text": "ce_skinpaint_detail_halftoneLimbs",
+              "name": "ce_skinpaint_detail_halftoneLimbs",
+              "id": "0x08adfe64",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x092d6846"
+          },
+          "fileOffset": 11899819,
+          "fileOffsetHex": "0x00b593ab",
+          "storedBytes": 138,
+          "memoryBytes": 202,
+          "compression": 65535,
+          "endExclusive": 11899957,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12776,
+              "text": "ce_skinpaint_detail_gooUnderside",
+              "name": "ce_skinpaint_detail_gooUnderside",
+              "id": "0x092d6846",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        }
+      ],
+      "selectionCoverage": {
+        "effectDirectoriesSelected": 0,
+        "effectDirectoryLimitPerPackage": 4,
+        "propSelected": 9,
+        "propLimitPerPackage": 15,
+        "totalPropBudget": 30,
+        "totalEffectBudget": 8,
+        "selectionLimits": "Shortlist only. Complete index traversal and original broad-query totals remain recorded; only exact skin instance-name PROP hits are selected."
+      },
+      "shortlistRefinement": {
+        "priorSkinInstanceLimit": 15,
+        "keptPredicate": "At least one exact instance-name match begins ce_skinpaint_. Prefix is a candidate scope hint, not active-stage proof.",
+        "excludedSelectedNames": [
+          "fe_skinpaint_floradetail_giraffe",
+          "fe_skinpaint_floradetail_giraffeLimbs",
+          "fe_skinpaint_florabase_mantelloid",
+          "fe_skinpaint_florabase_walrus",
+          "fe_skinpaint_floracoat_mantella",
+          "fe_skinpaint_floradetail_graniteTopside"
+        ],
+        "meaning": "Flora-prefixed candidates removed from formal Creature shortlist; complete skin-instance counts still include all skin names."
+      }
+    },
+    {
+      "path": "E:/Steam/steamapps/common/Spore/Data/PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "format": "DBPF 3.0",
+      "index": {
+        "count": 25535,
+        "offset": 79713863,
+        "bytes": 714988,
+        "flags": 4,
+        "examinedEntries": 25535,
+        "indexSHA256": "075698b95018ce0115d1178e2070ad3b1a2155232be815cf9200a71b7e961ee9",
+        "recordSize": 28,
+        "complete": true,
+        "duplicateKeyAndRangeValidation": "passed"
+      },
+      "inventory": {
+        "effectDirectoryType": "0xea5118b0",
+        "effectDirectoryCount": 18,
+        "propType": "0x00b1b104",
+        "propCount": 11460,
+        "effectOrPropNameMatchedEntries": 2063,
+        "propNameMatchedEntries": 2060,
+        "propMatchCategories": {
+          "strong-instance-name": 426,
+          "theme-instance-name": 329,
+          "generic-or-shared-instance-name": 126,
+          "group-only-name": 1179
+        },
+        "exactSkinInstanceNamePropEntries": 362
+      },
+      "effectDirectoryCandidates": [
+        {
+          "resourceKey": {
+            "type": "0xea5118b0",
+            "group": "0x40450200",
+            "instance": "0x2c978da4"
+          },
+          "fileOffset": 32449023,
+          "fileOffsetHex": "0x01ef21ff",
+          "storedBytes": 7289,
+          "memoryBytes": 57862,
+          "compression": 65535,
+          "endExclusive": 32456312,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 2767,
+              "text": "csa",
+              "name": "csa",
+              "id": "0x2c978da4",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "full-registry-instance-lookup",
+              "scopeHint": "unassigned"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 14087,
+              "text": "gameEffects_1~\t0x40450200",
+              "name": "gameEffects_1~",
+              "id": "0x40450200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 1,
+          "selectionReason": "Priority key from parent index investigation, then lowest key; this worker read index only.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0xea5118b0",
+            "group": "0x40450200",
+            "instance": "0xbafc5ca1"
+          },
+          "fileOffset": 42176287,
+          "fileOffsetHex": "0x02838f1f",
+          "storedBytes": 64325,
+          "memoryBytes": 631889,
+          "compression": 65535,
+          "endExclusive": 42240612,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 14082,
+              "text": "editors",
+              "name": "editors",
+              "id": "0xbafc5ca1",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "full-registry-instance-lookup",
+              "scopeHint": "unassigned"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 14087,
+              "text": "gameEffects_1~\t0x40450200",
+              "name": "gameEffects_1~",
+              "id": "0x40450200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 1,
+          "selectionReason": "Priority key from parent index investigation, then lowest key; this worker read index only.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0xea5118b0",
+            "group": "0x40450200",
+            "instance": "0x4cf9b596"
+          },
+          "fileOffset": 33846011,
+          "fileOffsetHex": "0x020472fb",
+          "storedBytes": 35269,
+          "memoryBytes": 697113,
+          "compression": 65535,
+          "endExclusive": 33881280,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 5,
+              "text": "base",
+              "name": "base",
+              "id": "0x4cf9b596",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "full-registry-instance-lookup",
+              "scopeHint": "unassigned"
+            },
+            {
+              "line": 570,
+              "text": "base",
+              "name": "base",
+              "id": "0x4cf9b596",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "full-registry-instance-lookup",
+              "scopeHint": "unassigned"
+            },
+            {
+              "line": 122395,
+              "text": "Base Color~\t0x052c812a",
+              "name": "Base",
+              "id": "0x4cf9b596",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "full-registry-instance-lookup",
+              "scopeHint": "unassigned"
+            }
+          ],
+          "instanceNameMatchCount": 3,
+          "groupNameMatches": [
+            {
+              "line": 14087,
+              "text": "gameEffects_1~\t0x40450200",
+              "name": "gameEffects_1~",
+              "id": "0x40450200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 1,
+          "selectionReason": "Priority key from parent index investigation, then lowest key; this worker read index only.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0xea5118b0",
+            "group": "0x40450200",
+            "instance": "0x5f848353"
+          },
+          "fileOffset": 35671515,
+          "fileOffsetHex": "0x02204ddb",
+          "storedBytes": 124546,
+          "memoryBytes": 2435150,
+          "compression": 65535,
+          "endExclusive": 35796061,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 5355,
+              "text": "planet",
+              "name": "planet",
+              "id": "0x5f848353",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "full-registry-instance-lookup",
+              "scopeHint": "shared-or-other-stage-name"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 14087,
+              "text": "gameEffects_1~\t0x40450200",
+              "name": "gameEffects_1~",
+              "id": "0x40450200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 1,
+          "selectionReason": "Priority key from parent index investigation, then lowest key; this worker read index only.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        }
+      ],
+      "propCandidates": [
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x00f3892f"
+          },
+          "fileOffset": 15783070,
+          "fileOffsetHex": "0x00f0d49e",
+          "storedBytes": 136,
+          "memoryBytes": 196,
+          "compression": 65535,
+          "endExclusive": 15783206,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12766,
+              "text": "ce_skinpaint_detail_stripesML",
+              "name": "ce_skinpaint_detail_stripesML",
+              "id": "0x00f3892f",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x05475ea3"
+          },
+          "fileOffset": 3416030,
+          "fileOffsetHex": "0x00341fde",
+          "storedBytes": 151,
+          "memoryBytes": 180,
+          "compression": 65535,
+          "endExclusive": 3416181,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 38628,
+              "text": "ce_skinpaint_theme_giraffeArmor",
+              "name": "ce_skinpaint_theme_giraffeArmor",
+              "id": "0x05475ea3",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x1315dabe"
+          },
+          "fileOffset": 12963929,
+          "fileOffsetHex": "0x00c5d059",
+          "storedBytes": 172,
+          "memoryBytes": 196,
+          "compression": 65535,
+          "endExclusive": 12964101,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 38645,
+              "text": "ce_skinpaint_theme_oppositeOfCamouflage",
+              "name": "ce_skinpaint_theme_oppositeOfCamouflage",
+              "id": "0x1315dabe",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x085b9de0"
+          },
+          "fileOffset": 15216460,
+          "fileOffsetHex": "0x00e82f4c",
+          "storedBytes": 130,
+          "memoryBytes": 182,
+          "compression": 65535,
+          "endExclusive": 15216590,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12777,
+              "text": "ce_skinpaint_base_melt",
+              "name": "ce_skinpaint_base_melt",
+              "id": "0x085b9de0",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x1492c462"
+          },
+          "fileOffset": 13742613,
+          "fileOffsetHex": "0x00d1b215",
+          "storedBytes": 137,
+          "memoryBytes": 188,
+          "compression": 65535,
+          "endExclusive": 13742750,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12783,
+              "text": "ce_skinpaint_base_quilted",
+              "name": "ce_skinpaint_base_quilted",
+              "id": "0x1492c462",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x003f4d28"
+          },
+          "fileOffset": 1454087,
+          "fileOffsetHex": "0x00163007",
+          "storedBytes": 134,
+          "memoryBytes": 192,
+          "compression": 65535,
+          "endExclusive": 1454221,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12765,
+              "text": "ce_skinpaint_detail_suckers",
+              "name": "ce_skinpaint_detail_suckers",
+              "id": "0x003f4d28",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x084761f2"
+          },
+          "fileOffset": 9828875,
+          "fileOffsetHex": "0x0095fa0b",
+          "storedBytes": 134,
+          "memoryBytes": 194,
+          "compression": 65535,
+          "endExclusive": 9829009,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12773,
+              "text": "ce_skinpaint_detail_sideWash",
+              "name": "ce_skinpaint_detail_sideWash",
+              "id": "0x084761f2",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x08adfe64"
+          },
+          "fileOffset": 4337739,
+          "fileOffsetHex": "0x0042304b",
+          "storedBytes": 144,
+          "memoryBytes": 204,
+          "compression": 65535,
+          "endExclusive": 4337883,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12782,
+              "text": "ce_skinpaint_detail_halftoneLimbs",
+              "name": "ce_skinpaint_detail_halftoneLimbs",
+              "id": "0x08adfe64",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        },
+        {
+          "resourceKey": {
+            "type": "0x00b1b104",
+            "group": "0x406a0200",
+            "instance": "0x092d6846"
+          },
+          "fileOffset": 12457387,
+          "fileOffsetHex": "0x00be15ab",
+          "storedBytes": 138,
+          "memoryBytes": 202,
+          "compression": 65535,
+          "endExclusive": 12457525,
+          "payloadRead": false,
+          "instanceNameMatches": [
+            {
+              "line": 12776,
+              "text": "ce_skinpaint_detail_gooUnderside",
+              "name": "ce_skinpaint_detail_gooUnderside",
+              "id": "0x092d6846",
+              "idSource": "lowercase FNV-1",
+              "nameCategory": "exact-instance-skin-substring",
+              "scopeHint": "Creature-editor-looking prefix; stage unproven"
+            }
+          ],
+          "instanceNameMatchCount": 1,
+          "groupNameMatches": [
+            {
+              "line": 13889,
+              "text": "paints~\t0x406A0200",
+              "name": "paints~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            },
+            {
+              "line": 95232,
+              "text": "skinPaint_script~\t0x406A0200",
+              "name": "skinPaint_script~",
+              "id": "0x406a0200",
+              "idSource": "explicit registry mapping",
+              "nameCategory": "full-registry-group-lookup"
+            }
+          ],
+          "groupNameMatchCount": 2,
+          "selectionReason": "Within the initial bounded skin-instance shortlist, retain ce_skinpaint_ names; prioritize stripe, theme and base labels as concrete follow-up candidates.",
+          "stageAttribution": "Unknown; name/hash matches cannot establish Creature execution."
+        }
+      ],
+      "selectionCoverage": {
+        "effectDirectoriesSelected": 4,
+        "effectDirectoryLimitPerPackage": 4,
+        "propSelected": 9,
+        "propLimitPerPackage": 15,
+        "totalPropBudget": 30,
+        "totalEffectBudget": 8,
+        "selectionLimits": "Shortlist only. Complete index traversal and original broad-query totals remain recorded; only exact skin instance-name PROP hits are selected."
+      },
+      "shortlistRefinement": {
+        "priorSkinInstanceLimit": 15,
+        "keptPredicate": "At least one exact instance-name match begins ce_skinpaint_. Prefix is a candidate scope hint, not active-stage proof.",
+        "excludedSelectedNames": [
+          "fe_skinpaint_floradetail_giraffe",
+          "fe_skinpaint_floradetail_giraffeLimbs",
+          "fe_skinpaint_florabase_mantelloid",
+          "fe_skinpaint_florabase_walrus",
+          "fe_skinpaint_floracoat_mantella",
+          "fe_skinpaint_floradetail_graniteTopside"
+        ],
+        "meaning": "Flora-prefixed candidates removed from formal Creature shortlist; complete skin-instance counts still include all skin names."
+      }
+    }
+  ],
+  "unknowns": [
+    "Exact skin/theme PROP semantics and contained resource references.",
+    "Actual effect directory payload structure/version and which components are Skinpaint.",
+    "Which names or group entries are active Creature recipes versus Cell/vehicle/planet/general effects.",
+    "Overlay/preference ordering between Game and Patch at runtime.",
+    "A naming hit cannot establish base/coat/detail layer assignment or stripe/spot algorithm.",
+    "Shape-edit repaint triggers, seeds, density and seams.",
+    "Resources absent from these two packages may exist elsewhere, but no other packages were searched.",
+    "The ce_skinpaint_ prefix is a naming hint; catalog purpose and land-stage use require decoded references/callers."
+  ],
+  "notPerformed": [
+    "Any resource decompression or extraction",
+    "Spore execution/attachment",
+    "Private saves",
+    "Other package search including Graphics/Content",
+    "Repository download, install/build/config changes"
+  ],
+  "risk": "Shortlisted resources are research candidates only. Effect/PROP presence and registry names do not establish active Creature skin recipes.",
+  "focusedRegistryLookup": {
+    "coverage": "All nonempty non-comment registry records, regardless of skin keyword; fixed source full hash verified.",
+    "ids": [
+      {
+        "id": "0x2c978da4",
+        "matchCount": 1,
+        "matches": [
+          {
+            "line": 2767,
+            "text": "csa",
+            "name": "csa",
+            "id": "0x2c978da4",
+            "idSource": "lowercase FNV-1"
+          }
+        ]
+      },
+      {
+        "id": "0xbafc5ca1",
+        "matchCount": 1,
+        "matches": [
+          {
+            "line": 14082,
+            "text": "editors",
+            "name": "editors",
+            "id": "0xbafc5ca1",
+            "idSource": "lowercase FNV-1"
+          }
+        ]
+      },
+      {
+        "id": "0x40450200",
+        "matchCount": 1,
+        "matches": [
+          {
+            "line": 14087,
+            "text": "gameEffects_1~\t0x40450200",
+            "name": "gameEffects_1~",
+            "id": "0x40450200",
+            "idSource": "explicit registry mapping"
+          }
+        ]
+      }
+    ],
+    "meaning": "Only name/hash mapping; original runtime identity or active-stage usage is not established."
+  },
+  "formalSelectionTotals": {
+    "prop": 18,
+    "effect": 4
+  },
+  "verification": {
+    "jsonParse": "passed",
+    "selectedKeysAndRangesAgainstPackageIndex": "passed",
+    "fullPackageSHA256Recheck": "passed",
+    "candidateBudgets": "passed",
+    "payloadDecode": false
+  }
+}

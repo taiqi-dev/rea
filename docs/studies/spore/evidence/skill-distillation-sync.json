@@ -1,0 +1,39 @@
+{
+  "source_root": "E:\\0Data\\Project_Other\\rea\\.agents\\skills",
+  "installed_root": "C:\\Users\\81553\\.agents\\skills",
+  "backup_root": "C:\\Users\\81553\\.agents\\skill-backups\\rea-2026-10-12-010605",
+  "changed_files": [
+    {
+      "path": "rea-system-study/SKILL.md",
+      "sha256": "a79db36f7c1be8140fd9c272546b51dd1f7b2aa7e7128332445703c9376b84b9",
+      "backed_up": true
+    },
+    {
+      "path": "rea-system-study/references/study-delivery.md",
+      "sha256": "dca50c292659a240d0641e01fdcdf423edcae121b6f5af0cafaedf5f691f0979",
+      "backed_up": true
+    },
+    {
+      "path": "rea-system-study/references/reconstruction-studies.md",
+      "sha256": "a5bc581a72a0930f9a7ddcee2081c345b39e01310889fa62bb9260a7d9b89ade",
+      "backed_up": false
+    },
+    {
+      "path": "reverse-engineer-anything/SKILL.md",
+      "sha256": "834f55eb51ea5e1966b5477ddf62f320477a5871d80e5ec052b726c5dddbecd9",
+      "backed_up": true
+    },
+    {
+      "path": "reverse-engineer-anything/references/static-fallback.md",
+      "sha256": "3a5fd02023bce79eb4d38b2fe27ddbfef69b81cde37a4cbbeb166aeedb1c7955",
+      "backed_up": false
+    },
+    {
+      "path": "reverse-engineer-anything/agents/openai.yaml",
+      "sha256": "5a524470adbaf2b01ae27ab9b01c21c959c49dca6d0f4e49712110b43710b1a0",
+      "backed_up": false
+    }
+  ],
+  "all_source_files_matching_installed_copy": 15,
+  "no_configuration_or_other_skills_modified": true
+}

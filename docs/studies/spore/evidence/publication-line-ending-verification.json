@@ -1,0 +1,2398 @@
+{
+  "kind": "study-publication-line-endings-and-local-file-identities",
+  "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+  "timezone": "America/Los_Angeles",
+  "policy": "Repository text=auto eol=lf; source paths and historical values preserved; only own study-file references refreshed",
+  "original_game_reads": false,
+  "native_runtime_verified": false,
+  "files": [
+    {
+      "path": "00-evidence-and-scope.md",
+      "captured_bytes": 14683,
+      "captured_sha256": "f3bcbce993c31b0e41462ae31061085f1312ffa6c03873148f612f5b85fb590e",
+      "published_bytes": 14683,
+      "published_sha256": "f3bcbce993c31b0e41462ae31061085f1312ffa6c03873148f612f5b85fb590e",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "01-body-parts-and-poses.md",
+      "captured_bytes": 13638,
+      "captured_sha256": "765bfce4ac69c36676b68201b700ac461c6453e4a70e992f800c87d79d97bac2",
+      "published_bytes": 13638,
+      "published_sha256": "765bfce4ac69c36676b68201b700ac461c6453e4a70e992f800c87d79d97bac2",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "02-skill-selection-and-editor-attachments.md",
+      "captured_bytes": 13469,
+      "captured_sha256": "8968a12545dac737a8c5f7a42f1f0d7893a8e794a3bc1dc9f44227198d3cc9be",
+      "published_bytes": 13469,
+      "published_sha256": "8968a12545dac737a8c5f7a42f1f0d7893a8e794a3bc1dc9f44227198d3cc9be",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "03-core-structures-and-frame-pipeline.md",
+      "captured_bytes": 7879,
+      "captured_sha256": "d079c1cbc6e5911624fe098cb5f40ca069abe67b8a4f4a2083d9388c05a9c6bb",
+      "published_bytes": 7879,
+      "published_sha256": "d079c1cbc6e5911624fe098cb5f40ca069abe67b8a4f4a2083d9388c05a9c6bb",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "04-gait-synthesis-and-foot-targets.md",
+      "captured_bytes": 7383,
+      "captured_sha256": "cbb94d5fe886f8e7ae176175ed7ec059d8bf26c9686bfe5a4efe95a1c4ffd5f6",
+      "published_bytes": 7383,
+      "published_sha256": "cbb94d5fe886f8e7ae176175ed7ec059d8bf26c9686bfe5a4efe95a1c4ffd5f6",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "05-particle-ik-and-rest-pose.md",
+      "captured_bytes": 8943,
+      "captured_sha256": "edb3faf8790468de9086c948c3250b2f99d758303b803a28a11da9007462adbb",
+      "published_bytes": 8943,
+      "published_sha256": "edb3faf8790468de9086c948c3250b2f99d758303b803a28a11da9007462adbb",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "06-editor-input-and-rebuild.md",
+      "captured_bytes": 6235,
+      "captured_sha256": "d8c543c881af2cda704ec03d830cef38023d6149bc58087a50daeabf73143e73",
+      "published_bytes": 6235,
+      "published_sha256": "d8c543c881af2cda704ec03d830cef38023d6149bc58087a50daeabf73143e73",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "07-skin-texturing-and-patterns.md",
+      "captured_bytes": 9838,
+      "captured_sha256": "39c1d8de99a41c385ecd604138bbf6385a4f8f92583224fb016b09c49f04fc93",
+      "published_bytes": 9838,
+      "published_sha256": "39c1d8de99a41c385ecd604138bbf6385a4f8f92583224fb016b09c49f04fc93",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "08-epic-creature-generation.md",
+      "captured_bytes": 7375,
+      "captured_sha256": "fb6176726ff24b220a1343e842aaaf72d7d98e3f4b4c47117740493e1df09175",
+      "published_bytes": 7375,
+      "published_sha256": "fb6176726ff24b220a1343e842aaaf72d7d98e3f4b4c47117740493e1df09175",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "09-related-systems-and-verification.md",
+      "captured_bytes": 7022,
+      "captured_sha256": "9cc51650f3dc5a16709a8b4f14cdf5dfa66c91048982cbcccaa63c338282d4b1",
+      "published_bytes": 7022,
+      "published_sha256": "9cc51650f3dc5a16709a8b4f14cdf5dfa66c91048982cbcccaa63c338282d4b1",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "10-capability-aggregation-and-ability-eligibility.md",
+      "captured_bytes": 5983,
+      "captured_sha256": "090762e38e814fcbe1240f6ce3b30eaa1113f9f68bbe122f80dcd89a17a91666",
+      "published_bytes": 5983,
+      "published_sha256": "090762e38e814fcbe1240f6ce3b30eaa1113f9f68bbe122f80dcd89a17a91666",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "11-action-plans-and-execution.md",
+      "captured_bytes": 7615,
+      "captured_sha256": "5e67a682f4e6655636dca48360075ba9cf02a3391de8700afa2f5037c4cea353",
+      "published_bytes": 7615,
+      "published_sha256": "5e67a682f4e6655636dca48360075ba9cf02a3391de8700afa2f5037c4cea353",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "12-body-recipes-and-runtime-reconstruction.md",
+      "captured_bytes": 7155,
+      "captured_sha256": "be097ad5208219c565f4e78f6c1ea89b3d8546a82354a2bac0bb1422f0fc4d2e",
+      "published_bytes": 7155,
+      "published_sha256": "be097ad5208219c565f4e78f6c1ea89b3d8546a82354a2bac0bb1422f0fc4d2e",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "13-soul-body-contracts.md",
+      "captured_bytes": 7572,
+      "captured_sha256": "bef247ba9492137701bc6a44caa3dcc1506114504a38e9b8016497bf9ed08339",
+      "published_bytes": 7572,
+      "published_sha256": "bef247ba9492137701bc6a44caa3dcc1506114504a38e9b8016497bf9ed08339",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "14-ai-strategy-and-action-scoring.md",
+      "captured_bytes": 7933,
+      "captured_sha256": "bb2ac3f3620ab6f8a02f87f4e8d125a39cfe2639f055439a24e6a6a4edf1d980",
+      "published_bytes": 7933,
+      "published_sha256": "bb2ac3f3620ab6f8a02f87f4e8d125a39cfe2639f055439a24e6a6a4edf1d980",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "15-soul-body-scenarios-and-validation.md",
+      "captured_bytes": 4793,
+      "captured_sha256": "d1f13bd7eca23830c3f1c0ce57d047b70aec33d32e1599788f43449b207c68a9",
+      "published_bytes": 4793,
+      "published_sha256": "d1f13bd7eca23830c3f1c0ce57d047b70aec33d32e1599788f43449b207c68a9",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "16-soul-ai-body-assessment.md",
+      "captured_bytes": 15141,
+      "captured_sha256": "7221dc9b2266a1d3ea95719f0eba1366ffc4c02b9e3e3caa55b621f5e1267ca7",
+      "published_bytes": 15141,
+      "published_sha256": "7221dc9b2266a1d3ea95719f0eba1366ffc4c02b9e3e3caa55b621f5e1267ca7",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "17-soul-ai-complete-battle.md",
+      "captured_bytes": 13460,
+      "captured_sha256": "d665c1d3a45b3e9ae7ec2392057972427eaee4912f3fd6ba5940bb7c18b389f9",
+      "published_bytes": 13460,
+      "published_sha256": "d665c1d3a45b3e9ae7ec2392057972427eaee4912f3fd6ba5940bb7c18b389f9",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "18-enemy-creature-sources-and-generation.md",
+      "captured_bytes": 7733,
+      "captured_sha256": "d209af13e7b2e7bc73a4f31a38f120bb8145f7b11d4beca30d2eab6c33225711",
+      "published_bytes": 7733,
+      "published_sha256": "d209af13e7b2e7bc73a4f31a38f120bb8145f7b11d4beca30d2eab6c33225711",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "19-land-creature-graphics-research-priorities.md",
+      "captured_bytes": 11468,
+      "captured_sha256": "bddee57d80e6194a1cc87920242ab14166169a1a7360aa2d68cd3fbd2346ebc3",
+      "published_bytes": 11468,
+      "published_sha256": "bddee57d80e6194a1cc87920242ab14166169a1a7360aa2d68cd3fbd2346ebc3",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "20-species-herds-and-population.md",
+      "captured_bytes": 9617,
+      "captured_sha256": "f6c60eb551d9d96502466defac2bb3ef81c29972ad700e16d8effcba40aeb745",
+      "published_bytes": 9617,
+      "published_sha256": "f6c60eb551d9d96502466defac2bb3ef81c29972ad700e16d8effcba40aeb745",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "21-pack-coordination-and-shared-intents.md",
+      "captured_bytes": 9573,
+      "captured_sha256": "e32efc0db3025f67038cfd83cb0d81239e45169db12e6fe7475f8c736b64379d",
+      "published_bytes": 9573,
+      "published_sha256": "e32efc0db3025f67038cfd83cb0d81239e45169db12e6fe7475f8c736b64379d",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "22-social-sessions-and-relationships.md",
+      "captured_bytes": 9773,
+      "captured_sha256": "192d94afbcad697990b07bcdda6b21db8fbc860e0443978ccdb9a98ee7ee4b1a",
+      "published_bytes": 9773,
+      "published_sha256": "192d94afbcad697990b07bcdda6b21db8fbc860e0443978ccdb9a98ee7ee4b1a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "23-requirements-and-workflow-distillation.md",
+      "captured_bytes": 7453,
+      "captured_sha256": "096bd88452ad1b1f786422f94aaa88605a8fbb89807da632d4b1bc2c25488bec",
+      "published_bytes": 7453,
+      "published_sha256": "096bd88452ad1b1f786422f94aaa88605a8fbb89807da632d4b1bc2c25488bec",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "24-next-land-mechanism-investigations.md",
+      "captured_bytes": 10532,
+      "captured_sha256": "a9b8d3cbf3848e80a1bec212bbf34bce48006495e7b9d8fb0b3ec0abf8e8210a",
+      "published_bytes": 10532,
+      "published_sha256": "a9b8d3cbf3848e80a1bec212bbf34bce48006495e7b9d8fb0b3ec0abf8e8210a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "25-body-reach-attack-ranges-and-hit-resolution.md",
+      "captured_bytes": 24741,
+      "captured_sha256": "738255b1568dcf3a84d3be020ba7a8eca356628ab2543c5d3e8021fa60c7b44e",
+      "published_bytes": 24741,
+      "published_sha256": "738255b1568dcf3a84d3be020ba7a8eca356628ab2543c5d3e8021fa60c7b44e",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "26-land-approach-stopping-avoidance-and-gait.md",
+      "captured_bytes": 25426,
+      "captured_sha256": "1ad198c41304f176e0382009acdf9a1ce4b36c6cacffa7c2344aad46c7dbf480",
+      "published_bytes": 25426,
+      "published_sha256": "1ad198c41304f176e0382009acdf9a1ce4b36c6cacffa7c2344aad46c7dbf480",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "27-perception-target-memory-and-motive-selection.md",
+      "captured_bytes": 28301,
+      "captured_sha256": "d78a4b6bfca58db2b7d31a030942802a7b556da80415e157972e0a9ebdcdbc5a",
+      "published_bytes": 28301,
+      "published_sha256": "d78a4b6bfca58db2b7d31a030942802a7b556da80415e157972e0a9ebdcdbc5a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "28-parallel-actions-channel-ownership-and-conflicts.md",
+      "captured_bytes": 25076,
+      "captured_sha256": "c3c09246d2ed28dcf39fa98d44a7e6d61810826b08db8aac6dee1bf63df75319",
+      "published_bytes": 25076,
+      "published_sha256": "c3c09246d2ed28dcf39fa98d44a7e6d61810826b08db8aac6dee1bf63df75319",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "29-creature-mesh-joins-and-automatic-skinning.md",
+      "captured_bytes": 21693,
+      "captured_sha256": "457f7ef18bcca5d13e7e68c3252b606a19c53aabde7677de357e4eeff2d02bf5",
+      "published_bytes": 21693,
+      "published_sha256": "457f7ef18bcca5d13e7e68c3252b606a19c53aabde7677de357e4eeff2d02bf5",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "30-part-shape-rest-pose-and-local-animation.md",
+      "captured_bytes": 19179,
+      "captured_sha256": "1364d75ac6b8925e4cac2a56fd3f08ec73364851985285faddef7b90cdac1a7c",
+      "published_bytes": 19179,
+      "published_sha256": "1364d75ac6b8925e4cac2a56fd3f08ec73364851985285faddef7b90cdac1a7c",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "31-terrain-contact-foot-locking-and-support.md",
+      "captured_bytes": 9062,
+      "captured_sha256": "3cea1f021091e3075713c34f6b61707b81f0255856d35cfc970697c01b03d57a",
+      "published_bytes": 9062,
+      "published_sha256": "3cea1f021091e3075713c34f6b61707b81f0255856d35cfc970697c01b03d57a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "32-body-volume-contacts-and-self-collision.md",
+      "captured_bytes": 16742,
+      "captured_sha256": "4be786a0daaaa289c24bb01dbe5f29b4a9568c0fb2cee65481ed4a66c6998e00",
+      "published_bytes": 16742,
+      "published_sha256": "4be786a0daaaa289c24bb01dbe5f29b4a9568c0fb2cee65481ed4a66c6998e00",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "33-shape-revisions-collision-hit-and-ai-sync.md",
+      "captured_bytes": 9862,
+      "captured_sha256": "0f8df432b4e57bd36baaef890333dd453e866f5774517511ec22daef40ba714a",
+      "published_bytes": 9862,
+      "published_sha256": "0f8df432b4e57bd36baaef890333dd453e866f5774517511ec22daef40ba714a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "34-editor-validity-complexity-and-runtime-cost.md",
+      "captured_bytes": 13703,
+      "captured_sha256": "7aaa3ad005c06057469eb976161573f2fbff9683f4b2ac317ea261b16036a84c",
+      "published_bytes": 13703,
+      "published_sha256": "7aaa3ad005c06057469eb976161573f2fbff9683f4b2ac317ea261b16036a84c",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "35-skin-pattern-shape-edits-and-seams.md",
+      "captured_bytes": 20759,
+      "captured_sha256": "234f1bd769afaeafbbef4918292e5abff1755bacf626d96eb4f962f1742b2f66",
+      "published_bytes": 20759,
+      "published_sha256": "234f1bd769afaeafbbef4918292e5abff1755bacf626d96eb4f962f1742b2f66",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "36-selected-skinpaint-recipe-and-material-controls.md",
+      "captured_bytes": 13474,
+      "captured_sha256": "bb67938770c012119570376a1dfde247fd093a287c92bdc5a479b345d5bd6cdc",
+      "published_bytes": 13474,
+      "published_sha256": "bb67938770c012119570376a1dfde247fd093a287c92bdc5a479b345d5bd6cdc",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "37-part-definition-edit-controls-rigs-and-capabilities.md",
+      "captured_bytes": 24451,
+      "captured_sha256": "549b15144a4a89b91767dbddfa9ec9d582d95c97ba4ba5106eb1e30c17cdfb31",
+      "published_bytes": 24451,
+      "published_sha256": "549b15144a4a89b91767dbddfa9ec9d582d95c97ba4ba5106eb1e30c17cdfb31",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "38-axis-controls-capability-role-and-local-deform-binding.md",
+      "captured_bytes": 15343,
+      "captured_sha256": "45d23ce0e4710dcf20c966de7ecdd222c6aadf1f46915b4c4b0e3f5179e427a1",
+      "published_bytes": 15343,
+      "published_sha256": "45d23ce0e4710dcf20c966de7ecdd222c6aadf1f46915b4c4b0e3f5179e427a1",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "39-same-role-effectors-variant-binding-and-default-mixing.md",
+      "captured_bytes": 21666,
+      "captured_sha256": "abf2d425f562e3e835ed9f9acddee7c76c73fa5359908f8a8a59a0abc269aa62",
+      "published_bytes": 21666,
+      "published_sha256": "abf2d425f562e3e835ed9f9acddee7c76c73fa5359908f8a8a59a0abc269aa62",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "40-action-events-emitters-hit-windows-and-stale-callbacks.md",
+      "captured_bytes": 19010,
+      "captured_sha256": "f57e4b7393b32993f27c5943349be8d94d120cdf598cee99394d4dfc6b8dce7b",
+      "published_bytes": 19010,
+      "published_sha256": "f57e4b7393b32993f27c5943349be8d94d120cdf598cee99394d4dfc6b8dce7b",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "41-mirroring-mount-frames-and-action-coordinates.md",
+      "captured_bytes": 12195,
+      "captured_sha256": "4921aaba62db47bc3378e8233ac3d14bcb60b2f9c3ad62cca8df019c035b5735",
+      "published_bytes": 12194,
+      "published_sha256": "f92a77bc913dd939cf8973261ca3b610055ce3a7631a3d43273dc8441a50db37",
+      "transformation": "unchanged; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "42-branched-limbs-shared-joints-and-goal-conflicts.md",
+      "captured_bytes": 15696,
+      "captured_sha256": "0f7f68ec354eba96b01157a4f186cd78df1f4174f7de16b66e4a96a118fc45ba",
+      "published_bytes": 15695,
+      "published_sha256": "28f34cbe2327b9f63b4eadde3424b0d5975cf0da356952289500c867740527e8",
+      "transformation": "unchanged; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "43-unusual-bodies-locomotion-modes-and-transitions.md",
+      "captured_bytes": 13277,
+      "captured_sha256": "d40812c5c895e47c04295fcc96d0011a6ca96a04c59933d1abf830b700afa429",
+      "published_bytes": 13277,
+      "published_sha256": "d40812c5c895e47c04295fcc96d0011a6ca96a04c59933d1abf830b700afa429",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "44-editor-rebuild-undo-and-animation-cache-consistency.md",
+      "captured_bytes": 15500,
+      "captured_sha256": "8c009958124d41caf1d3ee7b6261f59f14d294b08b90b4ec8efaa64ba873b647",
+      "published_bytes": 15500,
+      "published_sha256": "8c009958124d41caf1d3ee7b6261f59f14d294b08b90b4ec8efaa64ba873b647",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "45-animation-predicates-conditional-binding-and-fallbacks.md",
+      "captured_bytes": 15702,
+      "captured_sha256": "691e102e0c5c5f7b0718624a5cd7ea1dceddaeed201f14cd5a6f8f6fcaaa6487",
+      "published_bytes": 15702,
+      "published_sha256": "691e102e0c5c5f7b0718624a5cd7ea1dceddaeed201f14cd5a6f8f6fcaaa6487",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "46-capability-contributions-body-statistics-and-executor-qualification.md",
+      "captured_bytes": 13756,
+      "captured_sha256": "11dd16c7761b575711de0beb4d48c6d94eaa6001dee3a4ae791010be29db7f68",
+      "published_bytes": 13756,
+      "published_sha256": "11dd16c7761b575711de0beb4d48c6d94eaa6001dee3a4ae791010be29db7f68",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "47-hit-reactions-action-interruption-and-ai-recovery.md",
+      "captured_bytes": 12437,
+      "captured_sha256": "a0f9f287d6e24b300783f7b9d3f61a98d7f464e3e5c2fef76bead92cc1d85394",
+      "published_bytes": 12436,
+      "published_sha256": "340a9a64b80ae0f3ee3d9bf0397e43bace27e8cbde9d8f2745e8796d19dbfd61",
+      "transformation": "unchanged; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "48-secondary-motion-passive-appendages-and-active-takeover.md",
+      "captured_bytes": 13082,
+      "captured_sha256": "22de0abc136e6bb840ff30e395868dc05819c735d995440ac7b26bfa61e83b30",
+      "published_bytes": 13081,
+      "published_sha256": "57a8e43d9ba9bfc969581cabbbff5227cf741ff3cf65f15384bae0db8fbb7356",
+      "transformation": "unchanged; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "49-editor-surface-snapping-attachment-and-connection-validation.md",
+      "captured_bytes": 18116,
+      "captured_sha256": "4946512cdc4feb3dac19469238afd713533dad320fec7dc9eac56f016d48057a",
+      "published_bytes": 18116,
+      "published_sha256": "4946512cdc4feb3dac19469238afd713533dad320fec7dc9eac56f016d48057a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "50-complete-creature-recipe-runtime-bones-and-bindings.md",
+      "captured_bytes": 16090,
+      "captured_sha256": "8dbecec934bdc073c8473c6a86e292cfebd0793a858c4421a3599f992eaf7154",
+      "published_bytes": 16090,
+      "published_sha256": "8dbecec934bdc073c8473c6a86e292cfebd0793a858c4421a3599f992eaf7154",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "51-ability-animation-clocks-and-gait-synchronization.md",
+      "captured_bytes": 20287,
+      "captured_sha256": "7600d39679fa1d25182fe32590df8fd9fac739a35338871c62a5b379d528b3ab",
+      "published_bytes": 20287,
+      "published_sha256": "7600d39679fa1d25182fe32590df8fd9fac739a35338871c62a5b379d528b3ab",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "52-gaze-head-orientation-and-multi-organ-attention.md",
+      "captured_bytes": 14601,
+      "captured_sha256": "4af2331084637d5840b6be4e467f35ac9fb4aac21f580fae44e19f8d8a045889",
+      "published_bytes": 14601,
+      "published_sha256": "4af2331084637d5840b6be4e467f35ac9fb4aac21f580fae44e19f8d8a045889",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "53-action-effects-audio-resources-and-presentation-ownership.md",
+      "captured_bytes": 14689,
+      "captured_sha256": "cd2390973be44ba3f664e14bde3dd860b1c129ed185246a71138b0be17b53ac3",
+      "published_bytes": 14689,
+      "published_sha256": "cd2390973be44ba3f664e14bde3dd860b1c129ed185246a71138b0be17b53ac3",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "54-creature-population-animation-and-simulation-lod.md",
+      "captured_bytes": 17807,
+      "captured_sha256": "4ab19699e3110733325362e67b0e5b23d04bcc22ebb2e49a3402d2d7e3795c45",
+      "published_bytes": 17807,
+      "published_sha256": "4ab19699e3110733325362e67b0e5b23d04bcc22ebb2e49a3402d2d7e3795c45",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "55-joint-limits-shape-edits-and-motion-feasibility.md",
+      "captured_bytes": 18743,
+      "captured_sha256": "6a2c5b6d4a96f3b82a3a306bb930a75b96df77493372d9e40f0ce584842c78c7",
+      "published_bytes": 18743,
+      "published_sha256": "6a2c5b6d4a96f3b82a3a306bb930a75b96df77493372d9e40f0ce584842c78c7",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "56-neutral-posture-body-form-and-soul-action-style.md",
+      "captured_bytes": 20000,
+      "captured_sha256": "586a6b92aa42f96d9f3806f89d82d30c22bfecc6ca31e85ca4ca0b1d2c0c728a",
+      "published_bytes": 20000,
+      "published_sha256": "586a6b92aa42f96d9f3806f89d82d30c22bfecc6ca31e85ca4ca0b1d2c0c728a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "57-editor-animation-preview-and-functional-validation.md",
+      "captured_bytes": 14011,
+      "captured_sha256": "5b6d7d4b766a086193e1eb923bc25f88b04a6fa224ad9e520e3481688e724c1b",
+      "published_bytes": 14011,
+      "published_sha256": "5b6d7d4b766a086193e1eb923bc25f88b04a6fa224ad9e520e3481688e724c1b",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "58-limb-subtree-copy-replacement-and-reparenting.md",
+      "captured_bytes": 13849,
+      "captured_sha256": "641caed445ec76e1956ba2f6aa5e98ab4852947353f7cb3f6d64a28045327aa5",
+      "published_bytes": 13849,
+      "published_sha256": "641caed445ec76e1956ba2f6aa5e98ab4852947353f7cb3f6d64a28045327aa5",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "59-soul-body-calibration-feedback-and-experience-transfer.md",
+      "captured_bytes": 16812,
+      "captured_sha256": "16f97ed025ea06370e8df1bd77474d2b6b398f6d37731c35c6eb450be21c58b4",
+      "published_bytes": 16812,
+      "published_sha256": "16f97ed025ea06370e8df1bd77474d2b6b398f6d37731c35c6eb450be21c58b4",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_action_presentation_resources.py",
+      "captured_bytes": 18844,
+      "captured_sha256": "794b6a7243c1bf8b13be057ef1823f76474bcdd870217d02d7ad1beac87f1117",
+      "published_bytes": 18844,
+      "published_sha256": "794b6a7243c1bf8b13be057ef1823f76474bcdd870217d02d7ad1beac87f1117",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_capability_contribution_records.py",
+      "captured_bytes": 12495,
+      "captured_sha256": "b06338a71c0c0702e90da2521b2481abe7476699f69787b1f8660dc93d1cf1ad",
+      "published_bytes": 12495,
+      "published_sha256": "b06338a71c0c0702e90da2521b2481abe7476699f69787b1f8660dc93d1cf1ad",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_creature_recipe_and_gaze_metadata.py",
+      "captured_bytes": 12346,
+      "captured_sha256": "9128af5d5a55c25a6d5db8526a90c1013f73f29deb2d6f7cf4c0f8649b02fd3a",
+      "published_bytes": 12346,
+      "published_sha256": "9128af5d5a55c25a6d5db8526a90c1013f73f29deb2d6f7cf4c0f8649b02fd3a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_joint_shape_feasibility_metadata.py",
+      "captured_bytes": 8024,
+      "captured_sha256": "892d399d4f8c2024ebf70d1d89a3a8e6fad5635c0b0be354d93d4993a1f55ebb",
+      "published_bytes": 8024,
+      "published_sha256": "892d399d4f8c2024ebf70d1d89a3a8e6fad5635c0b0be354d93d4993a1f55ebb",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_ability_properties.py",
+      "captured_bytes": 13326,
+      "captured_sha256": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+      "published_bytes": 13326,
+      "published_sha256": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_action_channels.py",
+      "captured_bytes": 10636,
+      "captured_sha256": "5102d4aae59a4725860c17d8eb26f519bc9cb70779f483d6be067f402584c88e",
+      "published_bytes": 10636,
+      "published_sha256": "5102d4aae59a4725860c17d8eb26f519bc9cb70779f483d6be067f402584c88e",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_action_events.py",
+      "captured_bytes": 18965,
+      "captured_sha256": "a7207f1166f77a8a31f6b7a00fbb2d74c5096d7922d18b61ef6ad3488c2f4dc9",
+      "published_bytes": 18965,
+      "published_sha256": "a7207f1166f77a8a31f6b7a00fbb2d74c5096d7922d18b61ef6ad3488c2f4dc9",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_animation_predicates.py",
+      "captured_bytes": 11507,
+      "captured_sha256": "5f61b7c37cbcbad8482e4921b61fa91aa3e94edb6d1fad68acbf8e9110642aad",
+      "published_bytes": 11507,
+      "published_sha256": "5f61b7c37cbcbad8482e4921b61fa91aa3e94edb6d1fad68acbf8e9110642aad",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_capability_mappings.py",
+      "captured_bytes": 8358,
+      "captured_sha256": "075b0a3545ac35801ff4851dfd29918e45944a7f8ed87ada375320ceb0756fa7",
+      "published_bytes": 8358,
+      "published_sha256": "075b0a3545ac35801ff4851dfd29918e45944a7f8ed87ada375320ceb0756fa7",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_creature_lod_properties.py",
+      "captured_bytes": 4929,
+      "captured_sha256": "398e1b9893e8e3086f530ea3287610cb3288611593f0473a7823c2c97b60a02a",
+      "published_bytes": 4929,
+      "published_sha256": "398e1b9893e8e3086f530ea3287610cb3288611593f0473a7823c2c97b60a02a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_editor_preview_properties.py",
+      "captured_bytes": 3992,
+      "captured_sha256": "d651ac0d4bcfec63bb0ac8895010772ab5dafb482473f1c7358e01779471c26f",
+      "published_bytes": 3992,
+      "published_sha256": "d651ac0d4bcfec63bb0ac8895010772ab5dafb482473f1c7358e01779471c26f",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_idle_posture_metadata.py",
+      "captured_bytes": 6897,
+      "captured_sha256": "530444e6df2df83edd8201c7ae687e98aa271434dd4526d2efd20ae6cd4e5e90",
+      "published_bytes": 6897,
+      "published_sha256": "530444e6df2df83edd8201c7ae687e98aa271434dd4526d2efd20ae6cd4e5e90",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_movement_resources.py",
+      "captured_bytes": 9206,
+      "captured_sha256": "3d78bc15ab26cdd9a00483d03aa38a27bb9f6ea351e62b42fd16d28069114a7d",
+      "published_bytes": 9206,
+      "published_sha256": "3d78bc15ab26cdd9a00483d03aa38a27bb9f6ea351e62b42fd16d28069114a7d",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_part_deform_keys.py",
+      "captured_bytes": 5880,
+      "captured_sha256": "415e16c8b1374b0209e39de26a690a95814a3763bcded3125c521619427e14ce",
+      "published_bytes": 5880,
+      "published_sha256": "415e16c8b1374b0209e39de26a690a95814a3763bcded3125c521619427e14ce",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_perception_properties.py",
+      "captured_bytes": 4149,
+      "captured_sha256": "1bfe1b0ae787d2f50563a2b5258c7e6e94d1321066f02d062a3e343dbfd33f88",
+      "published_bytes": 4149,
+      "published_sha256": "1bfe1b0ae787d2f50563a2b5258c7e6e94d1321066f02d062a3e343dbfd33f88",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_rigblock_metadata.py",
+      "captured_bytes": 14040,
+      "captured_sha256": "828c4f125f364855647914540ddd7479834177a470f640afacc634538b9681fe",
+      "published_bytes": 14040,
+      "published_sha256": "828c4f125f364855647914540ddd7479834177a470f640afacc634538b9681fe",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_skin_recipe_resources.py",
+      "captured_bytes": 7962,
+      "captured_sha256": "e26296b56e3bd2304cc742660718010b8dcb597b7d058d3d5d94f18fa6d934c5",
+      "published_bytes": 7962,
+      "published_sha256": "e26296b56e3bd2304cc742660718010b8dcb597b7d058d3d5d94f18fa6d934c5",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/read_selected_skinpaint_sections.py",
+      "captured_bytes": 12121,
+      "captured_sha256": "8b646f50e7a4d8a0eb5bf9b49b951f15753e5b2e0ab6c7b1bacee6aadd801688",
+      "published_bytes": 12121,
+      "published_sha256": "8b646f50e7a4d8a0eb5bf9b49b951f15753e5b2e0ab6c7b1bacee6aadd801688",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_action_channel_reader.py",
+      "captured_bytes": 5456,
+      "captured_sha256": "edc7e6f19e5e5d3f4422c0008fabc59a7a72576dbb67a0acd0ee03b2a1a75a04",
+      "published_bytes": 5456,
+      "published_sha256": "edc7e6f19e5e5d3f4422c0008fabc59a7a72576dbb67a0acd0ee03b2a1a75a04",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_action_effect_lifecycle_examples.py",
+      "captured_bytes": 15008,
+      "captured_sha256": "d911b08d7ff3977be97e9841f2f37702c9b09413754483bd6a6145390011249a",
+      "published_bytes": 15008,
+      "published_sha256": "d911b08d7ff3977be97e9841f2f37702c9b09413754483bd6a6145390011249a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_action_event_reader.py",
+      "captured_bytes": 6936,
+      "captured_sha256": "a0e0462551faea2ebe12ec20d0125eb12ee1b4722a7241fc5a3128ed42d8afcd",
+      "published_bytes": 6936,
+      "published_sha256": "a0e0462551faea2ebe12ec20d0125eb12ee1b4722a7241fc5a3128ed42d8afcd",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_action_presentation_examples.py",
+      "captured_bytes": 13179,
+      "captured_sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc",
+      "published_bytes": 13179,
+      "published_sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_animation_clock_examples.py",
+      "captured_bytes": 19292,
+      "captured_sha256": "0ef156367caefe69d5bcb2d344f33ecc0da62c40f2b946ffa839a163280c0ce8",
+      "published_bytes": 19292,
+      "published_sha256": "0ef156367caefe69d5bcb2d344f33ecc0da62c40f2b946ffa839a163280c0ce8",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_animation_predicate_examples.py",
+      "captured_bytes": 9517,
+      "captured_sha256": "2019db1c3e840a39b24e5fb6403814c494b49d338225d81e4eee6f7cb258299d",
+      "published_bytes": 9517,
+      "published_sha256": "2019db1c3e840a39b24e5fb6403814c494b49d338225d81e4eee6f7cb258299d",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_body_contact_examples.py",
+      "captured_bytes": 6550,
+      "captured_sha256": "0382feac934bae37effff7ca90fa869c9d50b87b9b9fb8d4d02b072d71c43aec",
+      "published_bytes": 6550,
+      "published_sha256": "0382feac934bae37effff7ca90fa869c9d50b87b9b9fb8d4d02b072d71c43aec",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_capability_aggregation_examples.py",
+      "captured_bytes": 12230,
+      "captured_sha256": "53b04c47ada7439acae699dc66b756e6c17c856203966c9bb54e7c9b9f067893",
+      "published_bytes": 12230,
+      "published_sha256": "53b04c47ada7439acae699dc66b756e6c17c856203966c9bb54e7c9b9f067893",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_capability_mapping_reader.py",
+      "captured_bytes": 4969,
+      "captured_sha256": "a715fc0b4bfafef0787fd4f4bc7a4425a2ca650dda67ac03053579e2f598e74c",
+      "published_bytes": 4969,
+      "published_sha256": "a715fc0b4bfafef0787fd4f4bc7a4425a2ca650dda67ac03053579e2f598e74c",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_creature_lod_examples.py",
+      "captured_bytes": 12739,
+      "captured_sha256": "4407295494ee753a05740707b61bd0bbd0092ce99faa3adb044c6e5fe539c2ec",
+      "published_bytes": 12739,
+      "published_sha256": "4407295494ee753a05740707b61bd0bbd0092ce99faa3adb044c6e5fe539c2ec",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_creature_recipe_and_gaze_examples.py",
+      "captured_bytes": 19842,
+      "captured_sha256": "6db23bbe3aaf6fabe2dc8ab48fbfaac93badd2c369b97925ca569ab649a4b758",
+      "published_bytes": 19842,
+      "published_sha256": "6db23bbe3aaf6fabe2dc8ab48fbfaac93badd2c369b97925ca569ab649a4b758",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_editor_budget_examples.py",
+      "captured_bytes": 11050,
+      "captured_sha256": "9efcd4994ec4440267c6380c5e70a8ac09dcf9818ba8ac127347a80441b6ff5f",
+      "published_bytes": 11050,
+      "published_sha256": "9efcd4994ec4440267c6380c5e70a8ac09dcf9818ba8ac127347a80441b6ff5f",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_editor_preview_subtree_examples.py",
+      "captured_bytes": 20508,
+      "captured_sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54",
+      "published_bytes": 20508,
+      "published_sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_editor_snap_connection_examples.py",
+      "captured_bytes": 13914,
+      "captured_sha256": "7f4871a23529ba908a18fc902b61bfd4801b5defa2b8a99a6f21db0952696643",
+      "published_bytes": 13914,
+      "published_sha256": "7f4871a23529ba908a18fc902b61bfd4801b5defa2b8a99a6f21db0952696643",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_five_topic_event_evidence.py",
+      "captured_bytes": 6634,
+      "captured_sha256": "2f8069da7976a4175d85f142dc0a39150b6c6634e973ddc9633a101a883c68bf",
+      "published_bytes": 6634,
+      "published_sha256": "2f8069da7976a4175d85f142dc0a39150b6c6634e973ddc9633a101a883c68bf",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_group_social_examples.py",
+      "captured_bytes": 7617,
+      "captured_sha256": "f7345ccdaec0082f01d2ab2b4302ccac176c2bea7c47dcebbd7c4db086e7103e",
+      "published_bytes": 7617,
+      "published_sha256": "f7345ccdaec0082f01d2ab2b4302ccac176c2bea7c47dcebbd7c4db086e7103e",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_joint_shape_feasibility_examples.py",
+      "captured_bytes": 15335,
+      "captured_sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd",
+      "published_bytes": 15335,
+      "published_sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_land_motion_examples.py",
+      "captured_bytes": 5721,
+      "captured_sha256": "4e7ce4b98705c0b87aa6e72ff7d6b9258323e7646764d0ee4e01b1202029af7e",
+      "published_bytes": 5721,
+      "published_sha256": "4e7ce4b98705c0b87aa6e72ff7d6b9258323e7646764d0ee4e01b1202029af7e",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_locomotion_rebuild_examples.py",
+      "captured_bytes": 12510,
+      "captured_sha256": "7b520a76e5852bf52f0838475b0fb6ba737c70469f356269966329c2b52033a5",
+      "published_bytes": 12510,
+      "published_sha256": "7b520a76e5852bf52f0838475b0fb6ba737c70469f356269966329c2b52033a5",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_mesh_skinning_examples.py",
+      "captured_bytes": 8037,
+      "captured_sha256": "5be5183f3b4fa02675cdfc061abe257e29b7561814d47ecd80da28a27d42ee3c",
+      "published_bytes": 8037,
+      "published_sha256": "5be5183f3b4fa02675cdfc061abe257e29b7561814d47ecd80da28a27d42ee3c",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_mirror_branch_examples.py",
+      "captured_bytes": 15966,
+      "captured_sha256": "2507b559b62f7f9deb1abca99ad3581d7a38adeb5a1ea1edb8097e79da530b54",
+      "published_bytes": 15965,
+      "published_sha256": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2",
+      "transformation": "unchanged; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "checks/verify_movement_reader.py",
+      "captured_bytes": 5071,
+      "captured_sha256": "37dc4fc2335830e7457c7a4f522a79a930d0078cafa138500ce0b13b72d7d561",
+      "published_bytes": 5071,
+      "published_sha256": "37dc4fc2335830e7457c7a4f522a79a930d0078cafa138500ce0b13b72d7d561",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_neutral_posture_style_examples.py",
+      "captured_bytes": 19630,
+      "captured_sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29",
+      "published_bytes": 19630,
+      "published_sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_parallel_action_examples.py",
+      "captured_bytes": 8245,
+      "captured_sha256": "856acb45dad2a2a9804de9ffe26a3fcb109f29e85760813c3e9e5f9cf995f8f0",
+      "published_bytes": 8245,
+      "published_sha256": "856acb45dad2a2a9804de9ffe26a3fcb109f29e85760813c3e9e5f9cf995f8f0",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_part_binding_examples.py",
+      "captured_bytes": 8379,
+      "captured_sha256": "7d7043fed6b0530b2bde1ed00991e9fe32bc7adfe36cb6113b4b4cdd70c1fb03",
+      "published_bytes": 8379,
+      "published_sha256": "7d7043fed6b0530b2bde1ed00991e9fe32bc7adfe36cb6113b4b4cdd70c1fb03",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_part_definition_examples.py",
+      "captured_bytes": 8379,
+      "captured_sha256": "21761ce3c5c3cab7e71face6f79d9e9e8e1d53aed476bbee4b996164ba8dd600",
+      "published_bytes": 8379,
+      "published_sha256": "21761ce3c5c3cab7e71face6f79d9e9e8e1d53aed476bbee4b996164ba8dd600",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_part_deform_reader.py",
+      "captured_bytes": 2965,
+      "captured_sha256": "a6e85046f2b71f76237bea7739994fc9dcf086ad2b314658fe0b92da825fe819",
+      "published_bytes": 2965,
+      "published_sha256": "a6e85046f2b71f76237bea7739994fc9dcf086ad2b314658fe0b92da825fe819",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_part_deformation_examples.py",
+      "captured_bytes": 7133,
+      "captured_sha256": "7d7412c3798c87b9857014de302d6087e0887ea2d165be664189ac912d561fd0",
+      "published_bytes": 7133,
+      "published_sha256": "7d7412c3798c87b9857014de302d6087e0887ea2d165be664189ac912d561fd0",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_perception_motive_examples.py",
+      "captured_bytes": 6463,
+      "captured_sha256": "f1a068c3e563f42af11139ed5b508fdbd91397866a525c889be3c08593a3fc35",
+      "published_bytes": 6463,
+      "published_sha256": "f1a068c3e563f42af11139ed5b508fdbd91397866a525c889be3c08593a3fc35",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_perception_reader.py",
+      "captured_bytes": 3004,
+      "captured_sha256": "8c1393246174ea0b507726fb2d1e276efdd05b87c1057bea61fa004abb4d9db6",
+      "published_bytes": 3004,
+      "published_sha256": "8c1393246174ea0b507726fb2d1e276efdd05b87c1057bea61fa004abb4d9db6",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_reach_hit_example.py",
+      "captured_bytes": 4583,
+      "captured_sha256": "4bd8bb22abb0b603b5ecdbef6f8cfc14ba3a7890fa342b40e9a2065c83c86488",
+      "published_bytes": 4583,
+      "published_sha256": "4bd8bb22abb0b603b5ecdbef6f8cfc14ba3a7890fa342b40e9a2065c83c86488",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_reaction_secondary_examples.py",
+      "captured_bytes": 17279,
+      "captured_sha256": "3c11be913d412e83ad40bc2e4883dce6c00615c70feb6e7ebb8f192fe78d1ea6",
+      "published_bytes": 17278,
+      "published_sha256": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51",
+      "transformation": "unchanged; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "checks/verify_same_role_evidence.py",
+      "captured_bytes": 6687,
+      "captured_sha256": "f7daf445effb47576537a67487c02449a2fd3526a6e8c5bafcc32610311989b8",
+      "published_bytes": 6687,
+      "published_sha256": "f7daf445effb47576537a67487c02449a2fd3526a6e8c5bafcc32610311989b8",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_same_role_selection_examples.py",
+      "captured_bytes": 14213,
+      "captured_sha256": "98314cabe42c4c3a3425d1eed6ab4ed82f3acfb88f7a028c8a10c9f7f4d86357",
+      "published_bytes": 14213,
+      "published_sha256": "98314cabe42c4c3a3425d1eed6ab4ed82f3acfb88f7a028c8a10c9f7f4d86357",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_selected_ability_reader.py",
+      "captured_bytes": 4947,
+      "captured_sha256": "fcb23844618ba45cdf1a1ff0e11947e706b2c8cdcd15a4d37f96bb5d4386148f",
+      "published_bytes": 4947,
+      "published_sha256": "fcb23844618ba45cdf1a1ff0e11947e706b2c8cdcd15a4d37f96bb5d4386148f",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_selected_rigblock_metadata.py",
+      "captured_bytes": 7404,
+      "captured_sha256": "67ee74698ba840d959ac928d153e9e71777039ddcfb7dfad6ce0d21ab45a7158",
+      "published_bytes": 7404,
+      "published_sha256": "67ee74698ba840d959ac928d153e9e71777039ddcfb7dfad6ce0d21ab45a7158",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_selected_skinpaint_reader.py",
+      "captured_bytes": 8707,
+      "captured_sha256": "d02bd211915bf4a2e0e252647c3f65255da06bae9a9d9c4decee277906feefba",
+      "published_bytes": 8707,
+      "published_sha256": "d02bd211915bf4a2e0e252647c3f65255da06bae9a9d9c4decee277906feefba",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_shape_hit_sync_examples.py",
+      "captured_bytes": 4853,
+      "captured_sha256": "152919788b601f92f6489f9bc1d31ce971f4a21384f3d5bd1621a53ae92f2c3d",
+      "published_bytes": 4853,
+      "published_sha256": "152919788b601f92f6489f9bc1d31ce971f4a21384f3d5bd1621a53ae92f2c3d",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_skin_material_layer_examples.py",
+      "captured_bytes": 5212,
+      "captured_sha256": "9161452641f3b81248e85570e1c18a68204d57c41b7f1509d99e08bcc15e1a20",
+      "published_bytes": 5212,
+      "published_sha256": "9161452641f3b81248e85570e1c18a68204d57c41b7f1509d99e08bcc15e1a20",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_skin_pattern_examples.py",
+      "captured_bytes": 12822,
+      "captured_sha256": "2234cfea246294dc14bec1039f059cbff665ead9558e508cb50d420c48ebf1af",
+      "published_bytes": 12822,
+      "published_sha256": "2234cfea246294dc14bec1039f059cbff665ead9558e508cb50d420c48ebf1af",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_soul_ai_battle.py",
+      "captured_bytes": 12723,
+      "captured_sha256": "bfbbbd065f4e58b946b9d4df06a20ad0fcf98a749cf880d61953fbc653f77d7c",
+      "published_bytes": 12723,
+      "published_sha256": "bfbbbd065f4e58b946b9d4df06a20ad0fcf98a749cf880d61953fbc653f77d7c",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_soul_body_calibration_examples.py",
+      "captured_bytes": 16104,
+      "captured_sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6",
+      "published_bytes": 16104,
+      "published_sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "checks/verify_terrain_contact_examples.py",
+      "captured_bytes": 3769,
+      "captured_sha256": "818bb48da65c7c5637655f513ea36266ca1259f9516502af8c0fd24e0b9f0278",
+      "published_bytes": 3769,
+      "published_sha256": "818bb48da65c7c5637655f513ea36266ca1259f9516502af8c0fd24e0b9f0278",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/action-presentation-verification.json",
+      "captured_bytes": 8065,
+      "captured_sha256": "8cb1645bed68bcb947a4474547ad3217a5de548ef7b2782a1461f3f187094282",
+      "published_bytes": 9373,
+      "published_sha256": "ca33a8a8f5a26940c56884361b3dbceab253b77e297fafcdbb42a7baed657c7f",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/animation-clock-verification.json",
+      "captured_bytes": 7464,
+      "captured_sha256": "72807fb863db3df6dc095feb3f73f9549ac1f72abd8749e1e11c633169c2b160",
+      "published_bytes": 8347,
+      "published_sha256": "65524e635da3cd9a6e19f9b612290bcc45b1e86a68fae33c3b2249c03d633dfa",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/animation-predicate-verification.json",
+      "captured_bytes": 4732,
+      "captured_sha256": "bf1aff9b8cb640b9992a6ab849fe0d86584630954043d47421466f8579667f45",
+      "published_bytes": 5382,
+      "published_sha256": "5e22a51f5028c772607fc26d429dea4e85a1d2f504459aff17a8f0bba066b183",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/attack-reach-verification.json",
+      "captured_bytes": 2215,
+      "captured_sha256": "41e1927d452852448c4eb7e683f7233289cc2a44dfe7a9812c14c27e96c575c3",
+      "published_bytes": 2146,
+      "published_sha256": "4e013559580fe58f3836b65231c9d34a2b558b79ca41dd3cd29c99d1a07bd74b",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/complete-creature-recipe-observations.json",
+      "captured_bytes": 27674,
+      "captured_sha256": "2647a5d5f479289adeef1db656e1e637ff992442ef07347d40db54fd567e5ad7",
+      "published_bytes": 28256,
+      "published_sha256": "242eda17fd17c100fd241c0784695b2b5a4425cb3c82589a3eb33a6a5290b7fa",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/contact-and-cost-verification.json",
+      "captured_bytes": 3522,
+      "captured_sha256": "97f34d7a15c7d66bd50c260d72654af3e610334e8bd1c60e3f1e55ad79fa73c5",
+      "published_bytes": 4143,
+      "published_sha256": "df320110995737a9735eb8d5a40425cabf83edd265419fb262e053d04cdd4546",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/contact-volume-design-observations.json",
+      "captured_bytes": 5253,
+      "captured_sha256": "c434205765da317efa0c7106b2c0e5dc2e2408eb6db6de72cb71416899809907",
+      "published_bytes": 5253,
+      "published_sha256": "c434205765da317efa0c7106b2c0e5dc2e2408eb6db6de72cb71416899809907",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/creature-group-social-string-survey.json",
+      "captured_bytes": 18953,
+      "captured_sha256": "74ae684b2fcf94a844d01ac95343e5a6803c10589a482d00c2bba3427767023e",
+      "published_bytes": 18261,
+      "published_sha256": "e484b5af7d707cde22f450f9d4e6fcaa04b3560103a121b4b659c25bedf94718",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/creature-lod-verification.json",
+      "captured_bytes": 3285,
+      "captured_sha256": "e0da967350d35327e351948be642cbd170e6f784cb5c4f034f72f724f1e83dd7",
+      "published_bytes": 3909,
+      "published_sha256": "f834156478ac72f70125e502f933dab975ed2722c4d8c05440aa30225ebd0f2d",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/creature-recipe-and-gaze-verification.json",
+      "captured_bytes": 33695,
+      "captured_sha256": "baa5f5a8db7153a1df7d86a11c8b6e5bda4fec9533ceaf48a2bc17e7b11c07fa",
+      "published_bytes": 33095,
+      "published_sha256": "92a5d346ceef5a7c1538a2a321f22cd4e7686b4f5cba1a28b0299a1aa5a0a267",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/editor-body-ai-five-topics-verification.json",
+      "captured_bytes": 26519,
+      "captured_sha256": "141617c87381d21f513a855d219d02628d35846930df93bf578523febc01328f",
+      "published_bytes": 33805,
+      "published_sha256": "7a8cea0d50383dda2bf0e4e0a5a489cacb2b827771a945a9831eb59fa5f88784",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/editor-preview-subtree-verification.json",
+      "captured_bytes": 3687,
+      "captured_sha256": "cc15c91db26c9bacd2f724836b468e1c2c431cacb4ee8892c9e5956205b994cd",
+      "published_bytes": 4307,
+      "published_sha256": "97f8128fc3cca92e2b1b183d2e62f877fe1884d0cb08d2922f1db5062a1bfc49",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/editor-snap-connection-verification.json",
+      "captured_bytes": 2028,
+      "captured_sha256": "12a6a9b270191140a262df68e378eebe717181ca611091e3a2a9b5673425d546",
+      "published_bytes": 2713,
+      "published_sha256": "f3d528b8f8f1eea64859adc528e9718bfac23490103c7adc3156c389da9f8661",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/gaze-head-attention-observations.json",
+      "captured_bytes": 30723,
+      "captured_sha256": "fd5665367bc309e4be68e227e2d505c378412b2b6117afa20e769ca6c74382f8",
+      "published_bytes": 30632,
+      "published_sha256": "a8a1261ed838023b050b3c628bb65073148c69982fe3aa4ec40a96f99e8a6736",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/group-social-verification.json",
+      "captured_bytes": 746,
+      "captured_sha256": "9f35b3503050ecf5fadbcc38476baac7c212557226e754932356840261f0b0a1",
+      "published_bytes": 731,
+      "published_sha256": "733d9ad11e9a0deb6b10e31045769b2dae8ed89577a95336c292de4eb16840a6",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/joint-limits-shape-feasibility-observations.json",
+      "captured_bytes": 30410,
+      "captured_sha256": "f69d8c41d80900fd0b441bec5008a689596b135c16fe881364fb881a17777342",
+      "published_bytes": 30180,
+      "published_sha256": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/joint-shape-feasibility-verification.json",
+      "captured_bytes": 10291,
+      "captured_sha256": "c0e5b786e56916c3c9edf3aadeb94bbb4074bddf1243fd172a88aac1cad0943c",
+      "published_bytes": 10760,
+      "published_sha256": "bb41b842912ccf81ef84d3239f054dd5be0eedfb7ea258b32beeb7f90902b63a",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/land-behavior-five-topics-verification.json",
+      "captured_bytes": 20176,
+      "captured_sha256": "91aaf83af29c633fbd749485624bfe51f280cac11fc00ff218ff2937304c3014",
+      "published_bytes": 27037,
+      "published_sha256": "fef0b03a6f2f018722c46aa05a50279e743542f2ac2d036592601d9186e57edc",
+      "transformation": "local-identity-reference-refresh-and-LF; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "evidence/land-five-topics-verification.json",
+      "captured_bytes": 18165,
+      "captured_sha256": "98b3bf5916c3f94b139ae5edda1b6c7acffb2e47c39e3b42b09f57145d12ce68",
+      "published_bytes": 23509,
+      "published_sha256": "b78c8922f4424955f8aa4a73eae9c24901367bf51ec702477f1e7942514da4c0",
+      "transformation": "local-identity-reference-refresh-and-LF; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "evidence/land-motion-verification.json",
+      "captured_bytes": 2566,
+      "captured_sha256": "50de1591dbe788542e51c5e93c5730bcba8ac0e39922c48906cf984b6e9d4253",
+      "published_bytes": 2494,
+      "published_sha256": "5ceec7b1f7ae27cc8a88cdbdf39cc26a6dcb75d26884d5590237366a0853fc55",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/land-runtime-five-topics-verification.json",
+      "captured_bytes": 20973,
+      "captured_sha256": "7aa6c0f7f979406a2a70038ac4d04e1580b881b25bfa397a42de5a1bc15f6863",
+      "published_bytes": 26417,
+      "published_sha256": "7ff5da035df535e250e353d3bb720e139e1f6e2f8be3bc5d0b08493daf128d62",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-attack-entry-observations.json",
+      "captured_bytes": 3742,
+      "captured_sha256": "6cbdceb803a31636533407c98e623e0786f41bb52f7e7af220ede740dac87a04",
+      "published_bytes": 3606,
+      "published_sha256": "4d45c7c36beca13cb7f3467e3247896438ff3f4ffb8ee099ca5c714d2fe4f8cf",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-axis-control-template-observations.json",
+      "captured_bytes": 28384,
+      "captured_sha256": "410bd21e694359031682cd44c32a99b6af28da7554bcf841ad8e26fa24fc72e7",
+      "published_bytes": 27515,
+      "published_sha256": "ef973b0c466ce357f38d8128257c64ce8d3ffd08e3d43ad3f0f778628b92a494",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-editor-budget-entry-observations.json",
+      "captured_bytes": 3695,
+      "captured_sha256": "918b30b8eaa96687ac60c30db6065bf1400419565c890fd9ed65c2300be3e55a",
+      "published_bytes": 3695,
+      "published_sha256": "918b30b8eaa96687ac60c30db6065bf1400419565c890fd9ed65c2300be3e55a",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/local-land-motion-entry-observations.json",
+      "captured_bytes": 4379,
+      "captured_sha256": "4aaecd78713a4e01e6c077d5b4c453ee90a1bdeddb7f8ce8a47ef7985859133f",
+      "published_bytes": 4211,
+      "published_sha256": "7f6c394e1f4787a7ccd7e8ff7503c292baf429161efd199e2e7275faf6eeab78",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-mesh-skinning-entry-observations.json",
+      "captured_bytes": 6767,
+      "captured_sha256": "47019288f44c6ab9cba1b5f7bd2afa8f16af49a06b2ff432751512748125bb7d",
+      "published_bytes": 6503,
+      "published_sha256": "deaad5d4d5cd2504c4a581e6e2f2af8d24b651670ebc77c3a2ffb38c949398a8",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-movement-resource-inventory.json",
+      "captured_bytes": 8445,
+      "captured_sha256": "4d1fc7b52122353d8d8d668b8be590dc0bb2bb17bd2fee57e9ffb1f77f058c04",
+      "published_bytes": 8116,
+      "published_sha256": "ccd4d86d9d52325a3522443a5d46355a5e0911d92175a0dd8ac363f6c669091a",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-multi-action-entry-observations.json",
+      "captured_bytes": 4797,
+      "captured_sha256": "06d126823838debf5f46b3f1b1f7518c94df17ac5232abe76d0bfb3f266eec9b",
+      "published_bytes": 4609,
+      "published_sha256": "f050861605359527787391c328f2adb03bb065146266b5fe04388aaa2be6376e",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-part-definition-observations.json",
+      "captured_bytes": 102844,
+      "captured_sha256": "75f1ea6173d468f87ed18c948ca3e20e4161605057413fdb6574b4ec18fdf355",
+      "published_bytes": 102844,
+      "published_sha256": "75f1ea6173d468f87ed18c948ca3e20e4161605057413fdb6574b4ec18fdf355",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/local-part-deformation-entry-observations.json",
+      "captured_bytes": 12738,
+      "captured_sha256": "0c863392ca4eb9a702bfd93dd055cbb5303c05a43815817d7db7bb60289c7224",
+      "published_bytes": 12996,
+      "published_sha256": "0364dcab60016c543965a450d4cc3bdc4bbb1ff62a936f5e43aa83846dffc224",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-perception-motive-entry-observations.json",
+      "captured_bytes": 4308,
+      "captured_sha256": "082a170baa7a139519feee4f339f7a1db696b079fc1292d9489d43ebe98034da",
+      "published_bytes": 4152,
+      "published_sha256": "fd933d6bb861622af5e6ffd69910c63634273d16877d9f830eabb85c9df6583e",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-same-role-selector-observations.json",
+      "captured_bytes": 145478,
+      "captured_sha256": "6021335a0b27a63a3f2e296905b0880f368828c445f3408936c0a22cb6ec7c7f",
+      "published_bytes": 146377,
+      "published_sha256": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-action-channels.json",
+      "captured_bytes": 1437572,
+      "captured_sha256": "50c75ef6c46b979c43641a5c290743bebd5aba161bd3ca2b608cff10de2ef4a5",
+      "published_bytes": 1394152,
+      "published_sha256": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-action-events.json",
+      "captured_bytes": 380443,
+      "captured_sha256": "d25e6f854fc11adae64b0d5ca4bd8a96e64a89c9f26f0a4c3911d0ed09c1f5d9",
+      "published_bytes": 381153,
+      "published_sha256": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-action-presentation-resources.json",
+      "captured_bytes": 220350,
+      "captured_sha256": "bef1eb8fd7f082dea78cfdd095cc489628caefde91afa63a357c150f0ec8bad4",
+      "published_bytes": 214128,
+      "published_sha256": "43de285ee3832099ff0b462069688016073901a31cd4ad15921a6c36682f26e5",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-animation-predicates.json",
+      "captured_bytes": 1573013,
+      "captured_sha256": "120e9964177ea916751eda169d7e1f241c137ea43a869380f629ba701dbb243e",
+      "published_bytes": 1534277,
+      "published_sha256": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-attack-properties.json",
+      "captured_bytes": 201967,
+      "captured_sha256": "10d4c739488f16777c01a0fc40a3669c19b9ff32a027cb2190ae05d25c5bc8d9",
+      "published_bytes": 194205,
+      "published_sha256": "814c236d621cfc4a8fab77096767e3a0f309a30398eb54f6e15d12c205880049",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-capability-contributions.json",
+      "captured_bytes": 35160,
+      "captured_sha256": "24f41a841ea7f6f6d09700ee1be6d3ef8157b32c5e72ec003b465837661591f4",
+      "published_bytes": 34429,
+      "published_sha256": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-capability-mappings.json",
+      "captured_bytes": 9210,
+      "captured_sha256": "ea106c9080c19ef332bbf839c942d940b32cab5c3d85f9dfb9998dcf9b463d25",
+      "published_bytes": 8915,
+      "published_sha256": "8ede8b3706ab2928b9a205748d350e089859cf0e82ff3da441e6422a12b8a965",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-creature-lod-properties.json",
+      "captured_bytes": 15200,
+      "captured_sha256": "f83e592e20f09a4f702b64ca28e1eb7f4d61bb619ab69e98aef5a3def5a3c5c0",
+      "published_bytes": 14709,
+      "published_sha256": "9f095176d4f289a9bda3308438b0c715c8fb9d4cedf44723eba688ab1e5ba325",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-editor-preview-properties.json",
+      "captured_bytes": 17999,
+      "captured_sha256": "a92500614fa24c5cdf93a8efa5fb2244476e2d59306bd48705a0340a3ea336c7",
+      "published_bytes": 17339,
+      "published_sha256": "61e8b60530e4fe99011632bcab31b34e28e156ede3500d6689ea67999985c3af",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-idle-posture-metadata.json",
+      "captured_bytes": 154462,
+      "captured_sha256": "e526dec7880fd6626883484b55f3e31b052584bb1a8a4ca0aea0fc032c1fe05d",
+      "published_bytes": 150396,
+      "published_sha256": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-movement-properties.json",
+      "captured_bytes": 46983,
+      "captured_sha256": "43088c6e0ab865fb94137753bd8e8e2c263d495429b11cafa532df723fefe7ee",
+      "published_bytes": 45084,
+      "published_sha256": "728060bbc440984a2a7873db0f4c992513bc3f6ca695c23cd83ceef4a82bce3d",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-movement-resources.json",
+      "captured_bytes": 228264,
+      "captured_sha256": "4d7d8e35829b37879f1c35f7e827247fa66309c858363e27db1e595e99c5332f",
+      "published_bytes": 221158,
+      "published_sha256": "ef1b3a3fcb015e96055d6af8c229757882b90abf3e64b0b784a45c8c717faea7",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-part-deform-keys.json",
+      "captured_bytes": 15220,
+      "captured_sha256": "f280f5870b84a50e89c4629aad0c627178a77be2ef6355d2babcdb8a3a7b9040",
+      "published_bytes": 15393,
+      "published_sha256": "514b83a21e359e30144145074917ec6b4f128d17878e9bcac7f0d56c3935fbd7",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/local-selected-perception-properties.json",
+      "captured_bytes": 38416,
+      "captured_sha256": "87e5fd824d315daa128c2563ad188f6a231e2dc09e562b0b98eb8fced11b8db6",
+      "published_bytes": 37142,
+      "published_sha256": "ae33f21bb5e8c2a16d71aeef932442e6cf92e81ac274d63e771a5b488940438a",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-rigblock-metadata.json",
+      "captured_bytes": 24684,
+      "captured_sha256": "fa54ec5aecc93525de0caba77a16da22ed6464642411dde74c7a1ac26371a8f5",
+      "published_bytes": 23878,
+      "published_sha256": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-selected-skin-recipe-resources.json",
+      "captured_bytes": 63781,
+      "captured_sha256": "2f8534c65b82eb3ba0292a8d104b72eada931a6f7c9d51a80ca74cf147955cde",
+      "published_bytes": 61545,
+      "published_sha256": "cdb48956d225370d904aa884067c6a5d93061d850e4d92ea89ee0880f9cf29df",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/local-skin-pattern-entry-observations.json",
+      "captured_bytes": 30955,
+      "captured_sha256": "33c07d798f31b5ed9b6242db473482dc6cb5b234593247c2decb840ec4652bd0",
+      "published_bytes": 30955,
+      "published_sha256": "33c07d798f31b5ed9b6242db473482dc6cb5b234593247c2decb840ec4652bd0",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/local-skin-recipe-candidate-inventory.json",
+      "captured_bytes": 49340,
+      "captured_sha256": "9f2395b1221b25980a160eb59180b07657d149678d4d8ca3b113ae036edc802b",
+      "published_bytes": 49340,
+      "published_sha256": "9f2395b1221b25980a160eb59180b07657d149678d4d8ca3b113ae036edc802b",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/local-terrain-contact-entry-observations.json",
+      "captured_bytes": 30908,
+      "captured_sha256": "427572a673da142a0843d47ef6839f5d03e391db074bc2c33dcbb0c317f68272",
+      "published_bytes": 30908,
+      "published_sha256": "427572a673da142a0843d47ef6839f5d03e391db074bc2c33dcbb0c317f68272",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/locomotion-rebuild-verification.json",
+      "captured_bytes": 2060,
+      "captured_sha256": "f9b2c9249dfcb78c070824d2071cac8caa4798f67463d061d2d5d5693d83a413",
+      "published_bytes": 2736,
+      "published_sha256": "8d698792f63d24a763195ca140f01022d6e6adb761dd37bd60dbfa35bea95316",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/mesh-skinning-verification.json",
+      "captured_bytes": 1550,
+      "captured_sha256": "15a1c3ccda19790e068c36e41a057ff3a0f2335907c77d83c77a34665dddfe25",
+      "published_bytes": 1509,
+      "published_sha256": "e36f39154a86aa93897a59d34c33f49f53655b3d1b70711783325accc13da3d7",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/mirror-branch-verification.json",
+      "captured_bytes": 3620,
+      "captured_sha256": "b5db101192159b6743a3f71218d705ba4d52a2c0d6f4925d59d94db014b3f560",
+      "published_bytes": 6286,
+      "published_sha256": "cbbb291f244bb4a0fc036ea9abe709869170482e2130d2e1e68c5df9c5cce22e",
+      "transformation": "local-identity-reference-refresh-and-LF; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "evidence/neutral-posture-style-verification.json",
+      "captured_bytes": 8800,
+      "captured_sha256": "aa376017248d9e2c9d5146e78287c57b6f3bcb19d1ccbd43c36f2f2888ec122f",
+      "published_bytes": 10188,
+      "published_sha256": "b803b839beb2d2cc16582635527702498e3c320e2529633c0b7631428e20a831",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/next-land-research-verification.json",
+      "captured_bytes": 426,
+      "captured_sha256": "90cacb838133cf72b841722591064c78be0c74f3fd510c498d0d3b7760a6a8c0",
+      "published_bytes": 419,
+      "published_sha256": "a25745c3b36d5bde4707e88dfbf8e1d0de8799fedd3705b6dc6f598899a45b43",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/official-manual-creature-pages.json",
+      "captured_bytes": 1722,
+      "captured_sha256": "779398a4fe47d8b0c9e7b7dd03bb38df386ac6be742a98268568891693a18e5a",
+      "published_bytes": 1681,
+      "published_sha256": "23a388f03198278734136e9892e749ce2ecdb0f1ee5df61ab41b70c20aa54032",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/parallel-action-verification.json",
+      "captured_bytes": 2302,
+      "captured_sha256": "d482e2cbe4173107f7322e3aaafa1d8ec2df6c277648db2b6b9c2e92d7ac5753",
+      "published_bytes": 2225,
+      "published_sha256": "543a9e9a54eb1f3889ab1f52b6a363495546d8fce7c4be90e52b6038b9d1491b",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/part-binding-verification.json",
+      "captured_bytes": 4357,
+      "captured_sha256": "a85364f2131acbc8bcd325527b605e51ab959a1555056bb81854d641bd5cf7e3",
+      "published_bytes": 6208,
+      "published_sha256": "30627c642bac6f55a79696604cc07fc98c90f5953153ae21b786092ac099e3a3",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/part-definition-verification.json",
+      "captured_bytes": 4549,
+      "captured_sha256": "c9aeb4f6d49e2485b819ab3d8e4318e1ac90b9c4b48abfbf4ba73de2db15f019",
+      "published_bytes": 5341,
+      "published_sha256": "7c3021bdb3f38feecde532758010061f9c0f23606805e47228b7548a9b4efce1",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/part-deformation-verification.json",
+      "captured_bytes": 2202,
+      "captured_sha256": "eaec4f7e84606c9e7dbd6ffd3619866b686aaac15325860977f763ec78c67463",
+      "published_bytes": 2140,
+      "published_sha256": "c6f33264f5258923a5d6bec1c3a4a79660ab658cbec7a7c540a2c3801a9c1619",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/perception-motive-verification.json",
+      "captured_bytes": 1478,
+      "captured_sha256": "a550ef44a4ec2dd5906b3589dc10ffae701b47faa5b2e14a15e019ac8683fddc",
+      "published_bytes": 1435,
+      "published_sha256": "6a39ed8d8a04bbcdb4d7d422ca6cc3af666b079e07b45448b6debf66638ffd7e",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-ability-name-and-type-registry.json",
+      "captured_bytes": 69918,
+      "captured_sha256": "60cccb1c7ea3a2633f1bb92e6da54053923aa922cff3d1891cfc5941b18cca35",
+      "published_bytes": 67161,
+      "published_sha256": "16cb2637f0502b4da16a32cc01d4b2f1e23772a99cb2b6f8ca67e2925972f8ac",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-action-channel-format-sources.json",
+      "captured_bytes": 42908,
+      "captured_sha256": "27b4663e1882dec2a4d846572a5164286f94e8532f487386e7e53ddc20dbb6c0",
+      "published_bytes": 41459,
+      "published_sha256": "0a894c613dfefc9c21caab76a033125425469d45a7e571d2aa8b6da0517bfda2",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-action-event-format-contracts.json",
+      "captured_bytes": 12265,
+      "captured_sha256": "b06217c366936d67cc81174d90d4b3536a288e6ae9ac05a311bffb76de2d6c32",
+      "published_bytes": 12265,
+      "published_sha256": "b06217c366936d67cc81174d90d4b3536a288e6ae9ac05a311bffb76de2d6c32",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-action-format-source-index.json",
+      "captured_bytes": 621,
+      "captured_sha256": "194e815072b1aac325fe2b9f6fa835003d54a0f58427cda7221e18b5e0e783b6",
+      "published_bytes": 607,
+      "published_sha256": "9e1df7cc19a6ad85dd711579a501225d7db1844a1efa6a73b89f73bf9cb4efd5",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-action-presentation-contracts.json",
+      "captured_bytes": 99376,
+      "captured_sha256": "3e239a48584a8371221cbcdf02f75008df431f0b5c15f140c37fe4840a5016a3",
+      "published_bytes": 95808,
+      "published_sha256": "19c7ae6fca1b583cab8d0573c3480d557cc20c8d917963956119a5c71b34ae98",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-animation-clock-contracts.json",
+      "captured_bytes": 19574,
+      "captured_sha256": "eb8ec4e34d105dd185f8f11ce5c20eb8e0ca561f4c4ea2cad60be6d03386b5ec",
+      "published_bytes": 22526,
+      "published_sha256": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/public-animation-predicate-contracts.json",
+      "captured_bytes": 7792,
+      "captured_sha256": "1ef207dfdf29857d851ad17b7e9cf78ef890f194f70092aef04bbd4c38df790b",
+      "published_bytes": 7792,
+      "published_sha256": "1ef207dfdf29857d851ad17b7e9cf78ef890f194f70092aef04bbd4c38df790b",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-capability-aggregation-contracts.json",
+      "captured_bytes": 188718,
+      "captured_sha256": "3826d05f084edcd7020585aa12be9a149b30d7d61d7ec68ac351f03a9b60ee75",
+      "published_bytes": 181741,
+      "published_sha256": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-capability-binding-format-contracts.json",
+      "captured_bytes": 30733,
+      "captured_sha256": "679444762ed7d10fb45aec4a414f308e655a43eb1693c567089d5fe5c0f10a27",
+      "published_bytes": 29695,
+      "published_sha256": "bed063b1c57693b1656e39481449dabc756451d3577a92430e3581c0f481360b",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-combat-movement-research-entries.json",
+      "captured_bytes": 6016,
+      "captured_sha256": "938b1b2da5361cf46d7192c05a951d6acc04de0d2f8446bc462b5af6666e34d0",
+      "published_bytes": 5823,
+      "published_sha256": "3eccf2c74418f922163ea69db989ee34c139849f2483a0fc2064000926dddeac",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-creature-lod-contracts.json",
+      "captured_bytes": 27641,
+      "captured_sha256": "8b3bdc9ef34d7b6e7b54ea24fcdb3aa610ae2fa7706a35c5578a62954cc0625e",
+      "published_bytes": 26595,
+      "published_sha256": "803bb94f2ce9485a069891d76a79eb6a2300a1e02c1d7aa982ea6b490ef329a5",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-dbpf-prop-format-sources.json",
+      "captured_bytes": 16532,
+      "captured_sha256": "74777c65781c3f2477001be9633402430985266f0b8df38d1ad4950b24e57d07",
+      "published_bytes": 16058,
+      "published_sha256": "b9ccb3aa278cfdd84f4401d48668e6fa20647fed936029988912b5441988730d",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-dbpf-prop-source-index.json",
+      "captured_bytes": 2349,
+      "captured_sha256": "ac581658969aa5651b6f2bf95a930113c01549b2fd0e39384325adcdf6505b10",
+      "published_bytes": 2302,
+      "published_sha256": "4647375182e5c5b65ae12172fa6dad4a9d21d88e95fa4f26b26c8bfa7686a580",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-editor-budget-entries.json",
+      "captured_bytes": 12748,
+      "captured_sha256": "910d6e0c61799e1ca6ed114537c6191d663f46445bac190b8b74be565a907798",
+      "published_bytes": 12748,
+      "published_sha256": "910d6e0c61799e1ca6ed114537c6191d663f46445bac190b8b74be565a907798",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-editor-preview-subtree-contracts.json",
+      "captured_bytes": 129224,
+      "captured_sha256": "bcfa73bd9bbbbf2f118b8d0513260bb7292c9504398abcd8ac2c6ad33b296064",
+      "published_bytes": 123840,
+      "published_sha256": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-editor-snap-connection-contracts.json",
+      "captured_bytes": 6815,
+      "captured_sha256": "8d677417a28e3287c61ef1db8abc77cf419a4890e78de7f8318ec97e76eff0cb",
+      "published_bytes": 6600,
+      "published_sha256": "41ca483f4d53f7e732054b0cf54438f8f9e3a2f7ab13db714f6162f2e48d5f8a",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-gait-format-sources.json",
+      "captured_bytes": 19840,
+      "captured_sha256": "0cc3a450b2892e80dc31c2a54a5f6a29302fedc8d62d87e8fc32367c64aad69c",
+      "published_bytes": 19112,
+      "published_sha256": "30f0d2111baaa7a82fbeaa48af0c2d7b4ee4a94013ffa402c9688481122b6e74",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-group-social-contracts.json",
+      "captured_bytes": 8598,
+      "captured_sha256": "8b1df2c3dc4656ae7edb4bfd07f72c24e0b09ecd55b86815c10e152736c412ab",
+      "published_bytes": 8346,
+      "published_sha256": "37f3c3345a89b0074ec5b05639ffc2548bda3b60db626bce0b3dd7c8ea7fdf6f",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-hit-entry-observations.json",
+      "captured_bytes": 2063,
+      "captured_sha256": "0cff24d8b7950d3897bd7affa44047a25a6bee696bf64d16aefa2f8ab762fec6",
+      "published_bytes": 2029,
+      "published_sha256": "047779765caa402eac3fb9565f80fc97ea253bddd6bc85ff45e76c03f5b7a0bd",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-land-motion-entry-observations.json",
+      "captured_bytes": 2466,
+      "captured_sha256": "23ecf53043ad35b4ce96cae503b4ab5816f6139a9ff0e583a7cab7ed1bc08267",
+      "published_bytes": 2401,
+      "published_sha256": "a9af22b23e57ece407051e3ffc9d204f5a7cfad5b45d11c261869ac918106d1f",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-land-movement-registry.json",
+      "captured_bytes": 32239,
+      "captured_sha256": "b1569f12ea406becd46618832ea40b7e8b9ea34e2bfd50ef75704518beddbc2b",
+      "published_bytes": 30866,
+      "published_sha256": "fda762de350c939c77a4abad3c7ff2704d38662e8dce03678c97596dc30a482d",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-locomotion-rebuild-contracts.json",
+      "captured_bytes": 8849,
+      "captured_sha256": "e9a42ff726c8175ab234fc2de23f3ff078fd54b94454a9faecc1b1ada06bc24e",
+      "published_bytes": 8552,
+      "published_sha256": "388b2cc770bdcbeca296ee3e1c3ac2c77df79255cd14e6100dc9bf2005a02249",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-mesh-generation-design.json",
+      "captured_bytes": 1467,
+      "captured_sha256": "336083bece16b6e442436fe430b5878e49a63fa688ba93f8a884d792c95f6fe1",
+      "published_bytes": 1442,
+      "published_sha256": "6f1c20c0f91b67d4790adca5e3506fdcd230320f7ceb7ce00d6ab684aa0e3a57",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-mesh-related-papers.json",
+      "captured_bytes": 2037,
+      "captured_sha256": "8e4a26b92f2828f1ad879166f4e880a7e0cd2d42354eb5bffbbf5a338bcd1518",
+      "published_bytes": 1980,
+      "published_sha256": "c35b64dd46b81242b0ffcffa4c93bfbdf9825cc93a237b942c3ec3f1fec7cac1",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-mesh-skinning-contracts.json",
+      "captured_bytes": 7706,
+      "captured_sha256": "7d2b365638dbe03384d4e0cd29c236d4dfba33d52c29c51747e9da951b06501f",
+      "published_bytes": 7488,
+      "published_sha256": "1191e62f1b9387ae5e8d25183b4d1821078fdb1191121d2a51e2bca22f2a448d",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-mirror-branch-contracts.json",
+      "captured_bytes": 18289,
+      "captured_sha256": "f4faf32287958281acf022073bbdf665d193f6dc6c852a0901ebc5662499c405",
+      "published_bytes": 19126,
+      "published_sha256": "e03d42ae795f98de3c635cdba5abb91bf941bbc7eca0679b3eba59a27fbb91e1",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/public-movement-format-source-index.json",
+      "captured_bytes": 2991,
+      "captured_sha256": "88295a9fd0f84f2f8d458cb5c8e05ca2c0a9e6e9fe0841bec2e6f3dcd0b92dce",
+      "published_bytes": 2941,
+      "published_sha256": "125a7a2d5bfaf2c2a6b581df1223cf3e9f87e1f9569533deb818f9afa8bd092c",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-movement-type-registry.json",
+      "captured_bytes": 947,
+      "captured_sha256": "63c90fa92d5b67bd4ec6bb92eba1f4567c0ca7d223f5fee0eaa64f7cea96c152",
+      "published_bytes": 908,
+      "published_sha256": "edcdce6179c2e6dae2ab5b06dbcbdfa41a25485056565e98c3cce0c475590e33",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-multi-action-contracts.json",
+      "captured_bytes": 5853,
+      "captured_sha256": "b3775e42d1e580b10256a1e34d4e492aad2b6ff05fc7648c33a83efbc80918c7",
+      "published_bytes": 5668,
+      "published_sha256": "71d1312d41a4f50b5c58fffa7820c0990dcddea97ce462590c8297a8dddd3895",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-multi-action-paper-observations.json",
+      "captured_bytes": 1282,
+      "captured_sha256": "209c1c664be27497b78b4297b9ea4a65fa3082a07d193ea7964be07d0d2b080b",
+      "published_bytes": 1244,
+      "published_sha256": "cd686bbf8bf1751ab731909ffaceb82e12eb996748ced24fc25a50ff933f6e11",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-neutral-posture-style-contracts.json",
+      "captured_bytes": 18806,
+      "captured_sha256": "7cf8dcd72c2b79a706b541db99b7838dd2c3c94c646d9de551d3de41718878d7",
+      "published_bytes": 21245,
+      "published_sha256": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/public-part-authoring-design.json",
+      "captured_bytes": 2136,
+      "captured_sha256": "f779f73abb3461c63bd5ad8bab1d397337d76e5801627096071dd89fd98d6570",
+      "published_bytes": 2136,
+      "published_sha256": "f779f73abb3461c63bd5ad8bab1d397337d76e5801627096071dd89fd98d6570",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-part-definition-contracts.json",
+      "captured_bytes": 36950,
+      "captured_sha256": "66bc1abb168ec3b77146d8710cf77bec1dcc8991da21f197f3c20f646aa9bed3",
+      "published_bytes": 36950,
+      "published_sha256": "66bc1abb168ec3b77146d8710cf77bec1dcc8991da21f197f3c20f646aa9bed3",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-part-deformation-contracts.json",
+      "captured_bytes": 7413,
+      "captured_sha256": "83235d1f5026db02b5064b9d6a5cd92b43f1a689c1558dc0d3d5055d48912259",
+      "published_bytes": 7180,
+      "published_sha256": "b8652b67842f7bd79a9ac942ccdf4730e839b02c3d3f5f1960458b2cf9c6a123",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-part-local-animation-design.json",
+      "captured_bytes": 1775,
+      "captured_sha256": "119d79f88e8d6b356f71052980bbb3f77be332ac1ee01c337f03651a5f007b64",
+      "published_bytes": 1727,
+      "published_sha256": "ac8ca0050d8a6a405d773eb3ab8702ee2bb25a5860dac07d4bbe0506c789a25d",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-perception-motive-contracts.json",
+      "captured_bytes": 5668,
+      "captured_sha256": "f2e9d167d93ce408e715bfd7bf2967098a3f7952143023d7853afaffb2d5b8d2",
+      "published_bytes": 5501,
+      "published_sha256": "61c568f8659ad9cae51b874a0ec3879dd8dfa920ee15af82ca87282fb700d8e6",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-perception-motive-registry.json",
+      "captured_bytes": 5143,
+      "captured_sha256": "9b4f2581e41a64b2928708f81edaf80b13741bc60125c73b45d998f71f7d4e29",
+      "published_bytes": 4919,
+      "published_sha256": "46592493d0aa743ce4ef1d79f7039ec2ec80c3f2a74d8d8bf5aa8ae4f1b1e5e1",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-reaction-secondary-contracts.json",
+      "captured_bytes": 24246,
+      "captured_sha256": "592d5e8bcc9bfad6c68b321834c9424dd33acfea48bfbd98c4e8fb09e659c462",
+      "published_bytes": 25824,
+      "published_sha256": "412ae11b6736497b817ea1e6014408dc5bc37acdbfc59aa7c71734708f671877",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/public-rigblock-deformation-slides.json",
+      "captured_bytes": 1791,
+      "captured_sha256": "37b89c6add45dcc64ac7714720e30c91e9b7cc25fa45925db4905f0cc1871dfd",
+      "published_bytes": 1734,
+      "published_sha256": "ab5d599422fec6a120be2872e17bce5716dfa46c26f880fc1b70201af9cfeb90",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-same-role-binding-contracts.json",
+      "captured_bytes": 23972,
+      "captured_sha256": "a8fb1c0d9f833fddc7d62c52880974598f025b5ea030174564c5e0dfec332877",
+      "published_bytes": 23222,
+      "published_sha256": "82f56d25196405d486c893ffa31b6fbfe9210d4434e4b3afbc2266b5fcdff163",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-selected-skin-property-labels.json",
+      "captured_bytes": 9796,
+      "captured_sha256": "c651fa5dbbc9b97a648bafe4b4728c7f27209fa496efb61fd7f2e70ef73b833b",
+      "published_bytes": 9796,
+      "published_sha256": "c651fa5dbbc9b97a648bafe4b4728c7f27209fa496efb61fd7f2e70ef73b833b",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-selected-skin-recipe-container-format.json",
+      "captured_bytes": 30249,
+      "captured_sha256": "77f3e031a730cefd97e185a460a47fe3e69faf54fa80fb6a2b56e7cee987ee7b",
+      "published_bytes": 30249,
+      "published_sha256": "77f3e031a730cefd97e185a460a47fe3e69faf54fa80fb6a2b56e7cee987ee7b",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-shape-hit-sync-entries.json",
+      "captured_bytes": 8994,
+      "captured_sha256": "cd1eecff1ae00c98168023770722ac4298a9a0a6d9dc616b08f05ca74f854fec",
+      "published_bytes": 8718,
+      "published_sha256": "a784840cbf3d2a6491a3a870017df6693094b49958740c2f9226a1c964ccd5e5",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-skin-pattern-design.json",
+      "captured_bytes": 8421,
+      "captured_sha256": "bc841045e15de2dbaff32d0d885de0f218dc1cbdcc49bdfeb5863b22e2da0c6a",
+      "published_bytes": 8276,
+      "published_sha256": "51bc5ebb0d89f2c860a03e9b5424167c071fe3018e01f773b56b69e5a6dd3f83",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/public-skin-pattern-format-entries.json",
+      "captured_bytes": 22764,
+      "captured_sha256": "29f3371ed143aa14a9c45cb041649933afe658b086b928684144c5900c5649b6",
+      "published_bytes": 22764,
+      "published_sha256": "29f3371ed143aa14a9c45cb041649933afe658b086b928684144c5900c5649b6",
+      "transformation": "unchanged"
+    },
+    {
+      "path": "evidence/public-tlsa-action-format-sources.json",
+      "captured_bytes": 30943,
+      "captured_sha256": "31332fc1b413f7a23f2d8cac2223bfce969677e7cb6296420b8045676be9058c",
+      "published_bytes": 29737,
+      "published_sha256": "8bad4d035c2774a662b2db9a0d1af6e5c030cae490dd5b11aa9f79bcd4a6ed8e",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/reaction-secondary-verification.json",
+      "captured_bytes": 4352,
+      "captured_sha256": "3ece3e3c6694270686ad59e773d3f3505f7095b710540ecf5cb829273a291dde",
+      "published_bytes": 7046,
+      "published_sha256": "ea742b8b1ada309ba013506220edcb41347958e841c5cc6f74a827cd8dd01c57",
+      "transformation": "local-identity-reference-refresh-and-LF; EOF-cleanup or local-identity-followup"
+    },
+    {
+      "path": "evidence/same-role-binding-verification.json",
+      "captured_bytes": 3927,
+      "captured_sha256": "58063b1886e31c72c3e7ba8048209718c8c3f2e760b7cf2095aa8e25277f8969",
+      "published_bytes": 5196,
+      "published_sha256": "2eb6d15bedb3794a6b1ff7f0658c72ec65fa52fafb8e2e3b99d91a87a0990f8b",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/selected-skin-recipe-verification.json",
+      "captured_bytes": 8714,
+      "captured_sha256": "0af4841f017fefc064a12c61df05321eec3e800926333e5a14ef409815cc2aca",
+      "published_bytes": 9214,
+      "published_sha256": "4e0528a1cc12dddf40004d829099c668ba20ba52bdf52a064cadfeb8e8de96f1",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/skill-distillation-sync.json",
+      "captured_bytes": 1469,
+      "captured_sha256": "b3204e5af40a3fc66d7f82c2729c4bee8e1b11d23063f237cc480cc44cfeed1f",
+      "published_bytes": 1431,
+      "published_sha256": "6eb58bf5b77947518abd53f29d76abce7f2579078cfb36319dacb3baba7ad24a",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/skill-distillation-verification.json",
+      "captured_bytes": 796,
+      "captured_sha256": "209a88e5adffa8ee7172c4fa67dc7886315f8bfe5a0ae51dfc9ed6f406bf04c4",
+      "published_bytes": 776,
+      "published_sha256": "c093babfb52c13468330a9b39f011f45d1447905d1ea3f85f8dd4119b995f8ed",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "evidence/skin-pattern-verification.json",
+      "captured_bytes": 5052,
+      "captured_sha256": "3a10d91d5a9feb94987e53896d868be63ee55d9fe153e57462cef1be519bee4e",
+      "published_bytes": 5655,
+      "published_sha256": "1979b28d4a2a227feae17025c1bda5849978e8c6ac17781de1c315dda261dc91",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/soul-body-calibration-study-references.json",
+      "captured_bytes": 3597,
+      "captured_sha256": "291cabd7c4be7b5d73b3f3ce6cdf8aad086787399e45377e0f06d13284224a40",
+      "published_bytes": 4929,
+      "published_sha256": "58c13c67d36e614c7c9d80dec568aa66c25fd25ee01a84a8b8877b7ee206d40e",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "evidence/soul-body-calibration-verification.json",
+      "captured_bytes": 7712,
+      "captured_sha256": "9fd784f9efc81883f73f9a54a2cec7c6d9dd482d94669ce3995c8012d4bbd912",
+      "published_bytes": 8518,
+      "published_sha256": "e290a5928305c919535fdb102385a9d427a96f68c19ed860bc6ae646883c673b",
+      "transformation": "local-identity-reference-refresh-and-LF"
+    },
+    {
+      "path": "notes/initial-multi-leg-study.md",
+      "captured_bytes": 12151,
+      "captured_sha256": "b3ef6a5da2d769f48734b8ae4d88aade8b4f227c2cef1f9a320b9f79ec5386ad",
+      "published_bytes": 12002,
+      "published_sha256": "16fbcb9be475875155a9878d21b3c92046b193bbbe282a1d9c12c2cfc4bd9ebe",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "README.md",
+      "captured_bytes": 29289,
+      "captured_sha256": "beb0f40e85027311b239e2bf134a1f65522513a1b61913ee0ebb8a9531e164be",
+      "published_bytes": 29761,
+      "published_sha256": "c014286c26c9e8796ab1c3228e8a5028cd00d5d9b884ca1e70e635b67155b489",
+      "transformation": "publication-note-and-LF"
+    }
+  ],
+  "reference_refresh_files": 40,
+  "reference_field_changes": 164,
+  "status": "passed",
+  "checks": {
+    "script_runs": 43,
+    "failed_scripts": 0,
+    "known_test_total": 828,
+    "scripts": [
+      {
+        "script": "checks/verify_action_channel_reader.py",
+        "sha256": "edc7e6f19e5e5d3f4422c0008fabc59a7a72576dbb67a0acd0ee03b2a1a75a04",
+        "exit_code": 0,
+        "tests_run": 8,
+        "output": null
+      },
+      {
+        "script": "checks/verify_action_effect_lifecycle_examples.py",
+        "sha256": "d911b08d7ff3977be97e9841f2f37702c9b09413754483bd6a6145390011249a",
+        "exit_code": 0,
+        "tests_run": 27,
+        "output": null
+      },
+      {
+        "script": "checks/verify_action_event_reader.py",
+        "sha256": "a0e0462551faea2ebe12ec20d0125eb12ee1b4722a7241fc5a3128ed42d8afcd",
+        "exit_code": 0,
+        "tests_run": 20,
+        "output": null
+      },
+      {
+        "script": "checks/verify_action_presentation_examples.py",
+        "sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc",
+        "exit_code": 0,
+        "tests_run": 38,
+        "output": null
+      },
+      {
+        "script": "checks/verify_animation_clock_examples.py",
+        "sha256": "0ef156367caefe69d5bcb2d344f33ecc0da62c40f2b946ffa839a163280c0ce8",
+        "exit_code": 0,
+        "tests_run": 35,
+        "output": null
+      },
+      {
+        "script": "checks/verify_animation_predicate_examples.py",
+        "sha256": "2019db1c3e840a39b24e5fb6403814c494b49d338225d81e4eee6f7cb258299d",
+        "exit_code": 0,
+        "tests_run": 32,
+        "output": null
+      },
+      {
+        "script": "checks/verify_body_contact_examples.py",
+        "sha256": "0382feac934bae37effff7ca90fa869c9d50b87b9b9fb8d4d02b072d71c43aec",
+        "exit_code": 0,
+        "tests_run": 12,
+        "output": null
+      },
+      {
+        "script": "checks/verify_capability_aggregation_examples.py",
+        "sha256": "53b04c47ada7439acae699dc66b756e6c17c856203966c9bb54e7c9b9f067893",
+        "exit_code": 0,
+        "tests_run": 25,
+        "output": null
+      },
+      {
+        "script": "checks/verify_capability_mapping_reader.py",
+        "sha256": "a715fc0b4bfafef0787fd4f4bc7a4425a2ca650dda67ac03053579e2f598e74c",
+        "exit_code": 0,
+        "tests_run": 13,
+        "output": null
+      },
+      {
+        "script": "checks/verify_creature_lod_examples.py",
+        "sha256": "4407295494ee753a05740707b61bd0bbd0092ce99faa3adb044c6e5fe539c2ec",
+        "exit_code": 0,
+        "tests_run": 24,
+        "output": null
+      },
+      {
+        "script": "checks/verify_creature_recipe_and_gaze_examples.py",
+        "sha256": "6db23bbe3aaf6fabe2dc8ab48fbfaac93badd2c369b97925ca569ab649a4b758",
+        "exit_code": 0,
+        "tests_run": 42,
+        "output": null
+      },
+      {
+        "script": "checks/verify_editor_budget_examples.py",
+        "sha256": "9efcd4994ec4440267c6380c5e70a8ac09dcf9818ba8ac127347a80441b6ff5f",
+        "exit_code": 0,
+        "tests_run": 12,
+        "output": null
+      },
+      {
+        "script": "checks/verify_editor_preview_subtree_examples.py",
+        "sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54",
+        "exit_code": 0,
+        "tests_run": 30,
+        "output": null
+      },
+      {
+        "script": "checks/verify_editor_snap_connection_examples.py",
+        "sha256": "7f4871a23529ba908a18fc902b61bfd4801b5defa2b8a99a6f21db0952696643",
+        "exit_code": 0,
+        "tests_run": 30,
+        "output": null
+      },
+      {
+        "script": "checks/verify_five_topic_event_evidence.py",
+        "sha256": "2f8069da7976a4175d85f142dc0a39150b6c6634e973ddc9633a101a883c68bf",
+        "exit_code": 0,
+        "tests_run": 8,
+        "output": null
+      },
+      {
+        "script": "checks/verify_group_social_examples.py",
+        "sha256": "f7345ccdaec0082f01d2ab2b4302ccac176c2bea7c47dcebbd7c4db086e7103e",
+        "exit_code": 0,
+        "tests_run": 7,
+        "output": null
+      },
+      {
+        "script": "checks/verify_joint_shape_feasibility_examples.py",
+        "sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd",
+        "exit_code": 0,
+        "tests_run": 39,
+        "output": null
+      },
+      {
+        "script": "checks/verify_land_motion_examples.py",
+        "sha256": "4e7ce4b98705c0b87aa6e72ff7d6b9258323e7646764d0ee4e01b1202029af7e",
+        "exit_code": 0,
+        "tests_run": 11,
+        "output": null
+      },
+      {
+        "script": "checks/verify_locomotion_rebuild_examples.py",
+        "sha256": "7b520a76e5852bf52f0838475b0fb6ba737c70469f356269966329c2b52033a5",
+        "exit_code": 0,
+        "tests_run": 24,
+        "output": null
+      },
+      {
+        "script": "checks/verify_mesh_skinning_examples.py",
+        "sha256": "5be5183f3b4fa02675cdfc061abe257e29b7561814d47ecd80da28a27d42ee3c",
+        "exit_code": 0,
+        "tests_run": 20,
+        "output": null
+      },
+      {
+        "script": "checks/verify_mirror_branch_examples.py",
+        "sha256": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2",
+        "exit_code": 0,
+        "tests_run": 32,
+        "output": null
+      },
+      {
+        "script": "checks/verify_movement_reader.py",
+        "sha256": "37dc4fc2335830e7457c7a4f522a79a930d0078cafa138500ce0b13b72d7d561",
+        "exit_code": 0,
+        "tests_run": 6,
+        "output": null
+      },
+      {
+        "script": "checks/verify_neutral_posture_style_examples.py",
+        "sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29",
+        "exit_code": 0,
+        "tests_run": 36,
+        "output": null
+      },
+      {
+        "script": "checks/verify_parallel_action_examples.py",
+        "sha256": "856acb45dad2a2a9804de9ffe26a3fcb109f29e85760813c3e9e5f9cf995f8f0",
+        "exit_code": 0,
+        "tests_run": 12,
+        "output": null
+      },
+      {
+        "script": "checks/verify_part_binding_examples.py",
+        "sha256": "7d7043fed6b0530b2bde1ed00991e9fe32bc7adfe36cb6113b4b4cdd70c1fb03",
+        "exit_code": 0,
+        "tests_run": 15,
+        "output": null
+      },
+      {
+        "script": "checks/verify_part_definition_examples.py",
+        "sha256": "21761ce3c5c3cab7e71face6f79d9e9e8e1d53aed476bbee4b996164ba8dd600",
+        "exit_code": 0,
+        "tests_run": 19,
+        "output": null
+      },
+      {
+        "script": "checks/verify_part_deform_reader.py",
+        "sha256": "a6e85046f2b71f76237bea7739994fc9dcf086ad2b314658fe0b92da825fe819",
+        "exit_code": 0,
+        "tests_run": 8,
+        "output": null
+      },
+      {
+        "script": "checks/verify_part_deformation_examples.py",
+        "sha256": "7d7412c3798c87b9857014de302d6087e0887ea2d165be664189ac912d561fd0",
+        "exit_code": 0,
+        "tests_run": 22,
+        "output": null
+      },
+      {
+        "script": "checks/verify_perception_motive_examples.py",
+        "sha256": "f1a068c3e563f42af11139ed5b508fdbd91397866a525c889be3c08593a3fc35",
+        "exit_code": 0,
+        "tests_run": 11,
+        "output": null
+      },
+      {
+        "script": "checks/verify_perception_reader.py",
+        "sha256": "8c1393246174ea0b507726fb2d1e276efdd05b87c1057bea61fa004abb4d9db6",
+        "exit_code": 0,
+        "tests_run": 4,
+        "output": null
+      },
+      {
+        "script": "checks/verify_reach_hit_example.py",
+        "sha256": "4bd8bb22abb0b603b5ecdbef6f8cfc14ba3a7890fa342b40e9a2065c83c86488",
+        "exit_code": 0,
+        "tests_run": 8,
+        "output": null
+      },
+      {
+        "script": "checks/verify_reaction_secondary_examples.py",
+        "sha256": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51",
+        "exit_code": 0,
+        "tests_run": 30,
+        "output": null
+      },
+      {
+        "script": "checks/verify_same_role_evidence.py",
+        "sha256": "f7daf445effb47576537a67487c02449a2fd3526a6e8c5bafcc32610311989b8",
+        "exit_code": 0,
+        "tests_run": 8,
+        "output": null
+      },
+      {
+        "script": "checks/verify_same_role_selection_examples.py",
+        "sha256": "98314cabe42c4c3a3425d1eed6ab4ed82f3acfb88f7a028c8a10c9f7f4d86357",
+        "exit_code": 0,
+        "tests_run": 27,
+        "output": null
+      },
+      {
+        "script": "checks/verify_selected_ability_reader.py",
+        "sha256": "fcb23844618ba45cdf1a1ff0e11947e706b2c8cdcd15a4d37f96bb5d4386148f",
+        "exit_code": 0,
+        "tests_run": 8,
+        "output": null
+      },
+      {
+        "script": "checks/verify_selected_rigblock_metadata.py",
+        "sha256": "67ee74698ba840d959ac928d153e9e71777039ddcfb7dfad6ce0d21ab45a7158",
+        "exit_code": 0,
+        "tests_run": 16,
+        "output": null
+      },
+      {
+        "script": "checks/verify_selected_skinpaint_reader.py",
+        "sha256": "d02bd211915bf4a2e0e252647c3f65255da06bae9a9d9c4decee277906feefba",
+        "exit_code": 0,
+        "tests_run": 16,
+        "output": null
+      },
+      {
+        "script": "checks/verify_shape_hit_sync_examples.py",
+        "sha256": "152919788b601f92f6489f9bc1d31ce971f4a21384f3d5bd1621a53ae92f2c3d",
+        "exit_code": 0,
+        "tests_run": 12,
+        "output": null
+      },
+      {
+        "script": "checks/verify_skin_material_layer_examples.py",
+        "sha256": "9161452641f3b81248e85570e1c18a68204d57c41b7f1509d99e08bcc15e1a20",
+        "exit_code": 0,
+        "tests_run": 10,
+        "output": null
+      },
+      {
+        "script": "checks/verify_skin_pattern_examples.py",
+        "sha256": "2234cfea246294dc14bec1039f059cbff665ead9558e508cb50d420c48ebf1af",
+        "exit_code": 0,
+        "tests_run": 23,
+        "output": null
+      },
+      {
+        "script": "checks/verify_soul_ai_battle.py",
+        "sha256": "bfbbbd065f4e58b946b9d4df06a20ad0fcf98a749cf880d61953fbc653f77d7c",
+        "exit_code": 0,
+        "tests_run": 6,
+        "output": null
+      },
+      {
+        "script": "checks/verify_soul_body_calibration_examples.py",
+        "sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6",
+        "exit_code": 0,
+        "tests_run": 32,
+        "output": null
+      },
+      {
+        "script": "checks/verify_terrain_contact_examples.py",
+        "sha256": "818bb48da65c7c5637655f513ea36266ca1259f9516502af8c0fd24e0b9f0278",
+        "exit_code": 0,
+        "tests_run": 10,
+        "output": null
+      }
+    ],
+    "original_game_runtime_verified": false
+  },
+  "excludes": "This receipt itself; original game assets; optional local analysis artifacts; unrelated rules/skills",
+  "related_study_lf_normalization": [
+    {
+      "path": "docs/studies/procedural-modeling/05-tiny-glade-seams.md",
+      "captured_bytes": 10128,
+      "captured_sha256": "3cc48489546b96f43fdf00f36c092a7b8682c3e2491bd6202a9ca3bb37371191",
+      "published_bytes": 10127,
+      "published_sha256": "ac5b976d32142f731d78f72797177cd9a883c9b75c927c24f16307023f6841e5",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/08-tiny-glade-water-vegetation-and-surface.md",
+      "captured_bytes": 16023,
+      "captured_sha256": "c234b83e146498f68a19f81a4a7bc44bd3aca1415de921b7e4df24c324bcfbc8",
+      "published_bytes": 15843,
+      "published_sha256": "f0c8747c61a150dda6f451b7299419a7f3d75f311004a9c530942b305c97e025",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/11-tiny-glade-stair-anchors-and-paths.md",
+      "captured_bytes": 14649,
+      "captured_sha256": "ddc5c2b39cf96212005b40a463769958b236ee0fc6e0be30736d5efff8d86f6e",
+      "published_bytes": 14546,
+      "published_sha256": "ec8bdad03d5d420b95d79f5dd18e5eb53ddf7547624a9c819b0e24365987566b",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/13-tiny-glade-stair-supports.md",
+      "captured_bytes": 16611,
+      "captured_sha256": "fb2a25c3b9f67a5011b8d1df62116312a7158891bda3d25c3e87fe176afa2991",
+      "published_bytes": 16454,
+      "published_sha256": "d72a25f39d8182a7ceb33b0df43cddae2c3d9f77706c62f7b9ff7b37ace2fbb3",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/16-tiny-glade-window-placement-and-holes.md",
+      "captured_bytes": 12881,
+      "captured_sha256": "68a75c2a9a0e456feaeb3bb6a0b4ad73ddf864735f419d054584d93c2e3f849a",
+      "published_bytes": 12771,
+      "published_sha256": "d404e89a4a01ef19cd71dc3e813ed9178d945e07a637e07bd07a48c40b21881e",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/18-tiny-glade-window-frames.md",
+      "captured_bytes": 13591,
+      "captured_sha256": "b13f70a65fedf131e7d35fcada4b9db91e093f1b108911fc3068de203dbf8b92",
+      "published_bytes": 13455,
+      "published_sha256": "55db44dab0dba4337e794f4885c13627a223b2ebef3285ec9bd84857ff6d53e1",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/19-tiny-glade-window-autoclutter.md",
+      "captured_bytes": 17337,
+      "captured_sha256": "2bbfce5967a89afdb0c794a137405ab50b3331c3fea9070c877681da5f9209d5",
+      "published_bytes": 16999,
+      "published_sha256": "56223b415cd5dee01742dc0e1912ed9c251bdb9f63b01d40d1ea9789cefa3f01",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/procedural-modeling/22-tiny-glade-ivy-growth-and-wall-following.md",
+      "captured_bytes": 12971,
+      "captured_sha256": "3411021d0d7cc10b3342113483158d3e3f1361b1115ddce9c6c3171575d90746",
+      "published_bytes": 12834,
+      "published_sha256": "1810d1ecd6b581fe33ce0492ca9f03164991a7cee41716ebdf6ef936e9655b5a",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/stoneshard/24-investigation-and-reveal.md",
+      "captured_bytes": 21849,
+      "captured_sha256": "bd7168bca2026b9b3761a4e6878aca84349025c2e48c8c61e170e20deca90b0a",
+      "published_bytes": 21674,
+      "published_sha256": "7321658c8bfcaefe3b974fd30bc891cf158472c7bd3a32d0ec8a932c2ac52456",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/stoneshard/28-bleeding-and-blood-loss.md",
+      "captured_bytes": 23199,
+      "captured_sha256": "ca46f9b467d25a61a092edc7023e28dd235caef3085693b7d8198ddbc80b68b4",
+      "published_bytes": 22914,
+      "published_sha256": "0765e13cfaed85bac6f6c5e3a7022add198e46edd53979b277a1e8b4d8aa3261",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/stoneshard/29-bandages-and-wound-treatment.md",
+      "captured_bytes": 11173,
+      "captured_sha256": "010459b41ecc257e5dc5942b89ca5b17e5d2383a1cc0c6a51dfde44abb4e8c61",
+      "published_bytes": 11082,
+      "published_sha256": "3bb009ee7af3b77fe530ecaceb93eb52b9462c2763a65c7cef7f9e5bb071abde",
+      "transformation": "LF-only"
+    },
+    {
+      "path": "docs/studies/stoneshard/34-enemy-self-treatment-and-survival.md",
+      "captured_bytes": 22668,
+      "captured_sha256": "2d5f7d6deb42087830dd64382e0b2b488bd78bbc91f7df481a534d377fd7d895",
+      "published_bytes": 22483,
+      "published_sha256": "4aebba99713e895cc439e137b1746ffe4d9286e7818d94ecd87f28ae25579ecf",
+      "transformation": "LF-only"
+    }
+  ],
+  "related_study_normalization_at_pacific": "2026-10-13T03:05:06.456161-07:00",
+  "final_document_scan": {
+    "selected_files": 349,
+    "extensions": {
+      ".md": 171,
+      ".py": 61,
+      ".json": 117
+    },
+    "relative_file_links_checked": 1850,
+    "code_fence_blocks": 662,
+    "optional_unpublished_local_reference_links": {
+      "stoneshard": 479
+    },
+    "lf_utf8_verified": true,
+    "anchors_checked": false,
+    "errors": []
+  },
+  "checked_at_pacific": "2026-10-13T03:08:55.292536-07:00",
+  "publication_cleanup": [
+    {
+      "path": "41-mirroring-mount-frames-and-action-coordinates.md",
+      "before_sha256": "4921aaba62db47bc3378e8233ac3d14bcb60b2f9c3ad62cca8df019c035b5735",
+      "published_sha256": "f92a77bc913dd939cf8973261ca3b610055ce3a7631a3d43273dc8441a50db37",
+      "change": "Remove trailing blank line; preserve Python AST where applicable"
+    },
+    {
+      "path": "42-branched-limbs-shared-joints-and-goal-conflicts.md",
+      "before_sha256": "0f7f68ec354eba96b01157a4f186cd78df1f4174f7de16b66e4a96a118fc45ba",
+      "published_sha256": "28f34cbe2327b9f63b4eadde3424b0d5975cf0da356952289500c867740527e8",
+      "change": "Remove trailing blank line; preserve Python AST where applicable"
+    },
+    {
+      "path": "47-hit-reactions-action-interruption-and-ai-recovery.md",
+      "before_sha256": "a0f9f287d6e24b300783f7b9d3f61a98d7f464e3e5c2fef76bead92cc1d85394",
+      "published_sha256": "340a9a64b80ae0f3ee3d9bf0397e43bace27e8cbde9d8f2745e8796d19dbfd61",
+      "change": "Remove trailing blank line; preserve Python AST where applicable"
+    },
+    {
+      "path": "48-secondary-motion-passive-appendages-and-active-takeover.md",
+      "before_sha256": "22de0abc136e6bb840ff30e395868dc05819c735d995440ac7b26bfa61e83b30",
+      "published_sha256": "57a8e43d9ba9bfc969581cabbbff5227cf741ff3cf65f15384bae0db8fbb7356",
+      "change": "Remove trailing blank line; preserve Python AST where applicable"
+    },
+    {
+      "path": "checks/verify_mirror_branch_examples.py",
+      "before_sha256": "2507b559b62f7f9deb1abca99ad3581d7a38adeb5a1ea1edb8097e79da530b54",
+      "published_sha256": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2",
+      "change": "Remove trailing blank line; preserve Python AST where applicable"
+    },
+    {
+      "path": "checks/verify_reaction_secondary_examples.py",
+      "before_sha256": "3c11be913d412e83ad40bc2e4883dce6c00615c70feb6e7ebb8f192fe78d1ea6",
+      "published_sha256": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51",
+      "change": "Remove trailing blank line; preserve Python AST where applicable"
+    }
+  ],
+  "cleanup_reference_refresh_files": 4,
+  "cleanup_at_pacific": "2026-10-13T03:07:56.620444-07:00",
+  "post_cleanup_validation": {
+    "all_published_file_digests_match": true,
+    "all_utf8_and_lf": true,
+    "json_and_python_syntax": "passed",
+    "document_links_unchanged_by_eof_cleanup": true,
+    "test_logic_changed": false
+  }
+}

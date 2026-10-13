@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "kind": "creature-editor-body-ai-five-topics-study-verification-not-original-runtime",
+  "modules": [
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "status": "passed",
+  "scope": "Just-landed land Creature Stage and Creature editor/Test Drive; excludes water/Cell, Tribal, Civilization, Space and Galactic Adventures gameplay",
+  "tests_run": 137,
+  "failures": 0,
+  "errors": 0,
+  "suites": [
+    {
+      "modules": "55",
+      "script": "checks/verify_joint_shape_feasibility_examples.py",
+      "tests_run": 39,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "{\"tests_run\": 39, \"failures\": 0, \"errors\": 0, \"status\": \"passed\"}\r\n{\"raw_rows_checked\": 14, \"phase_reasons\": {\"before\": {\"windup\": [], \"power\": []}, \"after\": {\"windup\": [\"ElbowFlexExceeded\"], \"power\": [\"NeighborPenetration\"]}}}\r\n",
+      "script_sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd"
+    },
+    {
+      "modules": "56",
+      "script": "checks/verify_neutral_posture_style_examples.py",
+      "tests_run": 36,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "....................................\r\n----------------------------------------------------------------------\r\nRan 36 tests in 0.025s\r\n\r\nOK\r\n{\"kind\": \"independent-neutral-posture-style-examples\", \"tests_run\": 36, \"failures\": 0, \"errors\": 0, \"success\": true, \"counts\": {\"own_posture_style\": 30, \"static_evidence\": 6}, \"target_runtime_verified\": false}\r\n",
+      "script_sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29"
+    },
+    {
+      "modules": "57-58",
+      "script": "checks/verify_editor_preview_subtree_examples.py",
+      "tests_run": 30,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "test_01_old_body_preview_refused (__main__.PreviewExamples.test_01_old_body_preview_refused) ... ok\r\ntest_02_dummy_effect_isolated_and_deduplicated (__main__.PreviewExamples.test_02_dummy_effect_isolated_and_deduplicated) ... ok\r\ntest_03_world_effect_and_rewards_rejected (__main__.PreviewExamples.test_03_world_effect_and_rewards_rejected) ... ok\r\ntest_04_new_body_case_exposes_support_failure (__main__.PreviewExamples.test_04_new_body_case_exposes_support_failure) ... ok\r\ntest_05_adjusted_foot_case_and_output_conflict (__main__.PreviewExamples.test_05_adjusted_foot_case_and_output_conflict) ... ok\r\ntest_06_incomplete_or_failed_result_not_accept (__main__.PreviewExamples.test_06_incomplete_or_failed_result_not_accept) ... ok\r\ntest_07_pass_result_must_match_current_generation (__main__.PreviewExamples.test_07_pass_result_must_match_current_generation) ... ok\r\ntest_08_disposal_rejects_callbacks_and_keeps_failed_cleanup_owner (__main__.PreviewExamples.test_08_disposal_rejects_callbacks_and_keeps_failed_cleanup_owner) ... ok\r\ntest_09_invalid_measurements_keep_diagnostics (__main__.PreviewExamples.test_09_invalid_measurements_keep_diagnostics) ... ok\r\ntest_10_real_selected_preview_resource_fields (__main__.PreviewExamples.test_10_real_selected_preview_resource_fields) ... ok\r\ntest_21_missing_metrics_or_stale_suite_cannot_accept (__main__.PreviewExamples.test_21_missing_metrics_or_stale_suite_cannot_accept) ... ok\r\ntest_22_disposed_sandbox_cannot_apply_effect (__main__.PreviewExamples.test_22_disposed_sandbox_cannot_apply_effect) ... ok\r\ntest_27_invalid_damage_cannot_poison_dummy_or_event_ledger (__main__.PreviewExamples.test_27_invalid_damage_cannot_poison_dummy_or_event_ledger) ... ok\r\ntest_28_duplicate_result_fields_not_folded_silently (__main__.PreviewExamples.test_28_duplicate_result_fields_not_folded_silently) ... ok\r\ntest_11_copy_all_descendants_with_new_ids (__main__.SubtreeExamples.test_11_copy_all_descendants_with_new_ids) ... ok\r\ntest_12_copy_id_collision_or_incomplete_map_rejected (__main__.SubtreeExamples.test_12_copy_id_collision_or_incomplete_map_rejected) ... ok\r\ntest_13_replacement_retains_descendant_ids (__main__.SubtreeExamples.test_13_replacement_retains_descendant_ids) ... ok\r\ntest_14_replacement_displacement_from_reference_chain (__main__.SubtreeExamples.test_14_replacement_displacement_from_reference_chain) ... ok\r\ntest_15_missing_socket_or_shape_mapping_rejected (__main__.SubtreeExamples.test_15_missing_socket_or_shape_mapping_rejected) ... ok\r\ntest_16_reparent_keeps_id_but_refuses_descendant_cycle (__main__.SubtreeExamples.test_16_reparent_keeps_id_but_refuses_descendant_cycle) ... ok\r\ntest_17_copy_cost_and_undo_preserve_external_reward (__main__.SubtreeExamples.test_17_copy_cost_and_undo_preserve_external_reward) ... ok\r\ntest_18_replacement_delta_cost_is_five (__main__.SubtreeExamples.test_18_replacement_delta_cost_is_five) ... ok\r\ntest_19_budget_or_stale_transaction_keeps_original (__main__.SubtreeExamples.test_19_budget_or_stale_transaction_keeps_original) ... ok\r\ntest_20_duplicate_or_missing_parent_graph_diagnosed (__main__.SubtreeExamples.test_20_duplicate_or_missing_parent_graph_diagnosed) ... ok\r\ntest_23_negative_cost_never_turns_copy_into_reward (__main__.SubtreeExamples.test_23_negative_cost_never_turns_copy_into_reward) ... ok\r\ntest_24_external_mirror_copy_relation_explicitly_cleared (__main__.SubtreeExamples.test_24_external_mirror_copy_relation_explicitly_cleared) ... ok\r\ntest_25_retained_hand_still_invalidates_old_ai_plan (__main__.SubtreeExamples.test_25_retained_hand_still_invalidates_old_ai_plan) ... ok\r\ntest_26_removed_upper_not_redirected_to_copy (__main__.SubtreeExamples.test_26_removed_upper_not_redirected_to_copy) ... ok\r\ntest_29_unknown_replacement_socket_rejects_without_charging (__main__.SubtreeExamples.test_29_unknown_replacement_socket_rejects_without_charging) ... ok\r\ntest_30_complete_copy_replace_reparent_and_three_undos (__main__.SubtreeExamples.test_30_complete_copy_replace_reparent_and_three_undos) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 30 tests in 0.011s\r\n\r\nOK\r\n",
+      "script_sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54"
+    },
+    {
+      "modules": "59",
+      "script": "checks/verify_soul_body_calibration_examples.py",
+      "tests_run": 32,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "test_another_soul_or_technique_has_no_direct_motor_samples (__main__.AttributionChecks.test_another_soul_or_technique_has_no_direct_motor_samples) ... ok\r\ntest_array_palette_index_is_not_metric_identity (__main__.AttributionChecks.test_array_palette_index_is_not_metric_identity) ... ok\r\ntest_busy_and_target_gone_not_hit_failures (__main__.AttributionChecks.test_busy_and_target_gone_not_hit_failures) ... ok\r\ntest_clone_and_new_body_do_not_share_observations (__main__.AttributionChecks.test_clone_and_new_body_do_not_share_observations) ... ok\r\ntest_committed_old_body_effect_updates_history_only (__main__.AttributionChecks.test_committed_old_body_effect_updates_history_only) ... ok\r\ntest_duplicate_outcome_not_extra_trial (__main__.AttributionChecks.test_duplicate_outcome_not_extra_trial) ... ok\r\ntest_hit_increments_success (__main__.AttributionChecks.test_hit_increments_success) ... ok\r\ntest_new_context_or_combat_domain_has_no_direct_samples (__main__.AttributionChecks.test_new_context_or_combat_domain_has_no_direct_samples) ... ok\r\ntest_old_control_cannot_update_current_motor_model (__main__.AttributionChecks.test_old_control_cannot_update_current_motor_model) ... ok\r\ntest_shape_change_does_not_invalidate_unrelated_left_scope (__main__.AttributionChecks.test_shape_change_does_not_invalidate_unrelated_left_scope) ... ok\r\ntest_style_change_separates_motor_calibration (__main__.AttributionChecks.test_style_change_separates_motor_calibration) ... ok\r\ntest_uncommitted_late_hit_cannot_be_credited (__main__.AttributionChecks.test_uncommitted_late_hit_cannot_be_credited) ... ok\r\ntest_unknown_and_duplicate_attempt_diagnosed (__main__.AttributionChecks.test_unknown_and_duplicate_attempt_diagnosed) ... ok\r\ntest_valid_miss_increments_failure (__main__.AttributionChecks.test_valid_miss_increments_failure) ... ok\r\ntest_bad_counts_diagnosed (__main__.PosteriorChecks.test_bad_counts_diagnosed) ... ok\r\ntest_large_penalty_is_clamped (__main__.PosteriorChecks.test_large_penalty_is_clamped) ... ok\r\ntest_left_hand_counts_differ (__main__.PosteriorChecks.test_left_hand_counts_differ) ... ok\r\ntest_no_observations_remain_uncertain (__main__.PosteriorChecks.test_no_observations_remain_uncertain) ... ok\r\ntest_nonfinite_prior_and_penalty_diagnosed (__main__.PosteriorChecks.test_nonfinite_prior_and_penalty_diagnosed) ... ok\r\ntest_right_hand_counts_and_penalty (__main__.PosteriorChecks.test_right_hand_counts_and_penalty) ... ok\r\ntest_existing_study_inputs_match_recorded_identities (__main__.ReferenceChecks.test_existing_study_inputs_match_recorded_identities) ... ok\r\ntest_active_hostile_context_does_not_run_editor_probes (__main__.TransferAndPolicyChecks.test_active_hostile_context_does_not_run_editor_probes) ... ok\r\ntest_compatible_transfer_is_capped_weak_prior (__main__.TransferAndPolicyChecks.test_compatible_transfer_is_capped_weak_prior) ... ok\r\ntest_complete_example_selects_right_then_soul_then_right (__main__.TransferAndPolicyChecks.test_complete_example_selects_right_then_soul_then_right) ... ok\r\ntest_hard_condition_not_overridden_by_success_history (__main__.TransferAndPolicyChecks.test_hard_condition_not_overridden_by_success_history) ... ok\r\ntest_incompatible_transfer_not_silent_direct_copy (__main__.TransferAndPolicyChecks.test_incompatible_transfer_not_silent_direct_copy) ... ok\r\ntest_invalid_probe_time_budget_and_duplicate_id (__main__.TransferAndPolicyChecks.test_invalid_probe_time_budget_and_duplicate_id) ... ok\r\ntest_invalid_scoring_values_rejected (__main__.TransferAndPolicyChecks.test_invalid_scoring_values_rejected) ... ok\r\ntest_missing_receipt_or_excess_weight_rejected (__main__.TransferAndPolicyChecks.test_missing_receipt_or_excess_weight_rejected) ... ok\r\ntest_no_source_samples_means_no_transfer_weight (__main__.TransferAndPolicyChecks.test_no_source_samples_means_no_transfer_weight) ... ok\r\ntest_probe_budget_is_bounded_and_repeatable (__main__.TransferAndPolicyChecks.test_probe_budget_is_bounded_and_repeatable) ... ok\r\ntest_stale_plan_rechecked_at_commit (__main__.TransferAndPolicyChecks.test_stale_plan_rechecked_at_commit) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 32 tests in 0.010s\r\n\r\nOK\r\n",
+      "script_sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6"
+    }
+  ],
+  "separate_consistency_checks": {
+    "module": 55,
+    "raw_rows_checked": 14,
+    "included_in_tests_run": false
+  },
+  "original_game_runtime_verified": false,
+  "original_native_consumers_recovered": false,
+  "original_algorithms_fully_recovered": false,
+  "rea_evidence_id": null,
+  "evidence_scope": [
+    {
+      "module": 55,
+      "answer": "partial original/static plus independent specification",
+      "new_target_reads": "One already-selected Graphics RW4 at package offset152564158, stored33479/decoded55388 bytes; four64-byte AnimationSkin rows and ten32-byte LocRot samples; selected resource and index identity checked",
+      "reused_identity": "Graphics whole-package SHA256 and EXE identity reused from earlier studies, not fully rehashed this module",
+      "public_sources": "Fixed SDK/FX declarations/registry; developer paper sources reused",
+      "unresolved": "Hard joint angle limits, edit-to-native-limit consumer, full trajectory and native solver"
+    },
+    {
+      "module": 56,
+      "answer": "partial original/static plus independent specification",
+      "new_target_reads": "Game/Patch identity rehashed; two selected TLSA inventories and three ordinary idle groups per package, six ANIM metadata records,51 channels",
+      "excluded": "No curve/event decoding; channel names mentioningCell remain raw metadata without water gameplay study",
+      "public_sources": "Twelve fixed community files and complete relevant developer-paper pages",
+      "unresolved": "Original neutral posture/body classification/style consumers"
+    },
+    {
+      "modules": [
+        57,
+        58
+      ],
+      "answer": "partial original preview declarations/config plus independent sandbox/subtree specification",
+      "new_target_reads": "Game/Patch identity rehashed; ten selected Creature editor PROP records, five names per package; no animation bodies read",
+      "public_sources": "Official manual complete relevant pages10,11,14 and fourteen fixed public files",
+      "observations": "Test Drive single click walking/double click running; selected attack configurations and neutral-pose event correspondence",
+      "unresolved": "Original full-subtree copy, retained-child replacement and reparenting transaction consumers"
+    },
+    {
+      "module": 59,
+      "answer": "independent user-product design",
+      "new_target_payload_reads": false,
+      "reused_inputs": "Nine already-recorded study documents/evidence files checked by complete digests",
+      "own_algorithm": "Calibration identity/context, hard qualification, outcome attribution, historical/current separation, weak prior transfer, bounded probes and R-to-Soul-to-R worked example",
+      "unresolved": "No original Spore soul/adaptive learning mechanism established; no real probability calibration"
+    }
+  ],
+  "target_identity": {
+    "root": "E:/Steam/steamapps/common/Spore",
+    "exe": {
+      "path": "SporeBin/SporeApp.exe",
+      "bytes": 20626168,
+      "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+      "identity_reused_not_newly_read": true
+    },
+    "game": {
+      "path": "Data/Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "rehashed_by_modules": [
+        56,
+        57
+      ]
+    },
+    "patch": {
+      "path": "Data/PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "rehashed_by_modules": [
+        56,
+        57
+      ]
+    },
+    "graphics": {
+      "path": "Data/Spore_Graphics.package",
+      "sha256": "e01bb86d8ddf02c56d52394b4e1db7181c1e1ebe1878bf6fb72c4ee523fcedd1",
+      "whole_package_identity_reused": true,
+      "newly_read": "header/index and one selected bounded resource"
+    }
+  },
+  "per_module_records": [
+    "evidence/joint-shape-feasibility-verification.json",
+    "evidence/neutral-posture-style-verification.json",
+    "evidence/editor-preview-subtree-verification.json",
+    "evidence/soul-body-calibration-verification.json"
+  ],
+  "not_performed": [
+    "Game launch/attach/runtime capture/private save access",
+    "Native provider setup, installation or configuration changes",
+    "Full proprietary model, texture or animation export",
+    "Real3D geometry/physics execution, battle/editor measurements or probability fitting",
+    "User-product implementation, production persistence/concurrency/network validation",
+    "Git staging, commit or push"
+  ],
+  "remaining_risks": [
+    "Static declarations/resource fields do not establish shipping ABI or runtime consumers",
+    "Sample pose/angular/contact checks do not certify continuous trajectories or arbitrary branched3D bodies",
+    "Sequential preview/subtree state examples do not establish full3D connector/skin migration or durable transactions",
+    "Learning policies depend on complete current body/learner/control/context identities and valid compatibility receipts",
+    "Constructed outcome counts do not establish calibrated probabilities or best tactical behavior"
+  ],
+  "document_scan": {
+    "status": "passed",
+    "markdown_files": 62,
+    "relative_file_links_checked": 616,
+    "json_files": 116,
+    "code_fence_blocks": 245,
+    "utf8_valid": true,
+    "replacement_characters": 0,
+    "fence_dialects": [
+      "```",
+      "~~~"
+    ],
+    "file_destinations_checked": true,
+    "anchors_checked": false,
+    "errors": [],
+    "previously_pending_aggregate_links_resolved": true
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 29761,
+      "sha256": "c014286c26c9e8796ab1c3228e8a5028cd00d5d9b884ca1e70e635b67155b489"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 14683,
+      "sha256": "f3bcbce993c31b0e41462ae31061085f1312ffa6c03873148f612f5b85fb590e"
+    },
+    {
+      "path": "09-related-systems-and-verification.md",
+      "bytes": 7022,
+      "sha256": "9cc51650f3dc5a16709a8b4f14cdf5dfa66c91048982cbcccaa63c338282d4b1"
+    },
+    {
+      "path": "55-joint-limits-shape-edits-and-motion-feasibility.md",
+      "bytes": 18743,
+      "sha256": "6a2c5b6d4a96f3b82a3a306bb930a75b96df77493372d9e40f0ce584842c78c7"
+    },
+    {
+      "path": "56-neutral-posture-body-form-and-soul-action-style.md",
+      "bytes": 20000,
+      "sha256": "586a6b92aa42f96d9f3806f89d82d30c22bfecc6ca31e85ca4ca0b1d2c0c728a"
+    },
+    {
+      "path": "57-editor-animation-preview-and-functional-validation.md",
+      "bytes": 14011,
+      "sha256": "5b6d7d4b766a086193e1eb923bc25f88b04a6fa224ad9e520e3481688e724c1b"
+    },
+    {
+      "path": "58-limb-subtree-copy-replacement-and-reparenting.md",
+      "bytes": 13849,
+      "sha256": "641caed445ec76e1956ba2f6aa5e98ab4852947353f7cb3f6d64a28045327aa5"
+    },
+    {
+      "path": "59-soul-body-calibration-feedback-and-experience-transfer.md",
+      "bytes": 16812,
+      "sha256": "16f97ed025ea06370e8df1bd77474d2b6b398f6d37731c35c6eb450be21c58b4"
+    },
+    {
+      "path": "evidence/joint-limits-shape-feasibility-observations.json",
+      "bytes": 30180,
+      "sha256": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66"
+    },
+    {
+      "path": "evidence/joint-shape-feasibility-verification.json",
+      "bytes": 10760,
+      "sha256": "bb41b842912ccf81ef84d3239f054dd5be0eedfb7ea258b32beeb7f90902b63a"
+    },
+    {
+      "path": "evidence/public-neutral-posture-style-contracts.json",
+      "bytes": 21245,
+      "sha256": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754"
+    },
+    {
+      "path": "evidence/local-selected-idle-posture-metadata.json",
+      "bytes": 150396,
+      "sha256": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f"
+    },
+    {
+      "path": "evidence/neutral-posture-style-verification.json",
+      "bytes": 10188,
+      "sha256": "b803b839beb2d2cc16582635527702498e3c320e2529633c0b7631428e20a831"
+    },
+    {
+      "path": "evidence/public-editor-preview-subtree-contracts.json",
+      "bytes": 123840,
+      "sha256": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50"
+    },
+    {
+      "path": "evidence/local-selected-editor-preview-properties.json",
+      "bytes": 17339,
+      "sha256": "61e8b60530e4fe99011632bcab31b34e28e156ede3500d6689ea67999985c3af"
+    },
+    {
+      "path": "evidence/editor-preview-subtree-verification.json",
+      "bytes": 4307,
+      "sha256": "97f8128fc3cca92e2b1b183d2e62f877fe1884d0cb08d2922f1db5062a1bfc49"
+    },
+    {
+      "path": "evidence/soul-body-calibration-study-references.json",
+      "bytes": 4929,
+      "sha256": "58c13c67d36e614c7c9d80dec568aa66c25fd25ee01a84a8b8877b7ee206d40e"
+    },
+    {
+      "path": "evidence/soul-body-calibration-verification.json",
+      "bytes": 8518,
+      "sha256": "e290a5928305c919535fdb102385a9d427a96f68c19ed860bc6ae646883c673b"
+    },
+    {
+      "path": "checks/read_joint_shape_feasibility_metadata.py",
+      "bytes": 8024,
+      "sha256": "892d399d4f8c2024ebf70d1d89a3a8e6fad5635c0b0be354d93d4993a1f55ebb"
+    },
+    {
+      "path": "checks/verify_joint_shape_feasibility_examples.py",
+      "bytes": 15335,
+      "sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd"
+    },
+    {
+      "path": "checks/read_selected_idle_posture_metadata.py",
+      "bytes": 6897,
+      "sha256": "530444e6df2df83edd8201c7ae687e98aa271434dd4526d2efd20ae6cd4e5e90"
+    },
+    {
+      "path": "checks/verify_neutral_posture_style_examples.py",
+      "bytes": 19630,
+      "sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29"
+    },
+    {
+      "path": "checks/read_selected_editor_preview_properties.py",
+      "bytes": 3992,
+      "sha256": "d651ac0d4bcfec63bb0ac8895010772ab5dafb482473f1c7358e01779471c26f"
+    },
+    {
+      "path": "checks/verify_editor_preview_subtree_examples.py",
+      "bytes": 20508,
+      "sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54"
+    },
+    {
+      "path": "checks/verify_soul_body_calibration_examples.py",
+      "bytes": 16104,
+      "sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6"
+    }
+  ],
+  "recording_policy": "Only this round137 tests; previous round counts are not accumulated. Separate14 raw-row consistency checks are not added. Hash manifest excludes this self-describing aggregate.",
+  "recorded_at_pacific": "2026-10-13T01:56:07.955572-07:00",
+  "timezone": "America/Los_Angeles",
+  "frozen_identity_checks": [
+    {
+      "owner": "55",
+      "path": "evidence/joint-limits-shape-feasibility-observations.json",
+      "sha256": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66",
+      "status": "matched"
+    },
+    {
+      "owner": "55",
+      "path": "55-joint-limits-shape-edits-and-motion-feasibility.md",
+      "sha256": "6a2c5b6d4a96f3b82a3a306bb930a75b96df77493372d9e40f0ce584842c78c7",
+      "status": "matched"
+    },
+    {
+      "owner": "55",
+      "path": "checks/verify_joint_shape_feasibility_examples.py",
+      "sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd",
+      "status": "matched"
+    },
+    {
+      "owner": "56",
+      "path": "56-neutral-posture-body-form-and-soul-action-style.md",
+      "sha256": "586a6b92aa42f96d9f3806f89d82d30c22bfecc6ca31e85ca4ca0b1d2c0c728a",
+      "status": "matched"
+    },
+    {
+      "owner": "56",
+      "path": "evidence/public-neutral-posture-style-contracts.json",
+      "sha256": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754",
+      "status": "matched"
+    },
+    {
+      "owner": "56",
+      "path": "evidence/local-selected-idle-posture-metadata.json",
+      "sha256": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+      "status": "matched"
+    },
+    {
+      "owner": "56",
+      "path": "checks/read_selected_idle_posture_metadata.py",
+      "sha256": "530444e6df2df83edd8201c7ae687e98aa271434dd4526d2efd20ae6cd4e5e90",
+      "status": "matched"
+    },
+    {
+      "owner": "56",
+      "path": "checks/verify_neutral_posture_style_examples.py",
+      "sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29",
+      "status": "matched"
+    },
+    {
+      "owner": "57-58",
+      "path": "checks/verify_editor_preview_subtree_examples.py",
+      "sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54",
+      "status": "matched"
+    },
+    {
+      "owner": "57-58",
+      "path": "checks/read_selected_editor_preview_properties.py",
+      "sha256": "d651ac0d4bcfec63bb0ac8895010772ab5dafb482473f1c7358e01779471c26f",
+      "status": "matched"
+    },
+    {
+      "owner": "57-58",
+      "path": "evidence/public-editor-preview-subtree-contracts.json",
+      "sha256": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50",
+      "status": "matched"
+    },
+    {
+      "owner": "57-58",
+      "path": "57-editor-animation-preview-and-functional-validation.md",
+      "sha256": "5b6d7d4b766a086193e1eb923bc25f88b04a6fa224ad9e520e3481688e724c1b",
+      "status": "matched"
+    },
+    {
+      "owner": "57-58",
+      "path": "58-limb-subtree-copy-replacement-and-reparenting.md",
+      "sha256": "641caed445ec76e1956ba2f6aa5e98ab4852947353f7cb3f6d64a28045327aa5",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "14-ai-strategy-and-action-scoring.md",
+      "sha256": "bb2ac3f3620ab6f8a02f87f4e8d125a39cfe2639f055439a24e6a6a4edf1d980",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "16-soul-ai-body-assessment.md",
+      "sha256": "7221dc9b2266a1d3ea95719f0eba1366ffc4c02b9e3e3caa55b621f5e1267ca7",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "17-soul-ai-complete-battle.md",
+      "sha256": "d665c1d3a45b3e9ae7ec2392057972427eaee4912f3fd6ba5940bb7c18b389f9",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "46-capability-contributions-body-statistics-and-executor-qualification.md",
+      "sha256": "11dd16c7761b575711de0beb4d48c6d94eaa6001dee3a4ae791010be29db7f68",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "50-complete-creature-recipe-runtime-bones-and-bindings.md",
+      "sha256": "8dbecec934bdc073c8473c6a86e292cfebd0793a858c4421a3599f992eaf7154",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "51-ability-animation-clocks-and-gait-synchronization.md",
+      "sha256": "7600d39679fa1d25182fe32590df8fd9fac739a35338871c62a5b379d528b3ab",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "52-gaze-head-orientation-and-multi-organ-attention.md",
+      "sha256": "4af2331084637d5840b6be4e467f35ac9fb4aac21f580fae44e19f8d8a045889",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "evidence/local-selected-capability-contributions.json",
+      "sha256": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+      "status": "matched"
+    },
+    {
+      "owner": "59 existing references",
+      "path": "evidence/public-capability-aggregation-contracts.json",
+      "sha256": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510",
+      "status": "matched"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "141617c87381d21f513a855d219d02628d35846930df93bf578523febc01328f",
+    "captured_file_bytes": 26519,
+    "reference_changes": [
+      {
+        "pointer": "/files/0/sha256",
+        "captured": "beb0f40e85027311b239e2bf134a1f65522513a1b61913ee0ebb8a9531e164be",
+        "published": "c014286c26c9e8796ab1c3228e8a5028cd00d5d9b884ca1e70e635b67155b489",
+        "study_file": "README.md"
+      },
+      {
+        "pointer": "/files/0/bytes",
+        "captured": 29289,
+        "published": 29761,
+        "study_file": "README.md"
+      },
+      {
+        "pointer": "/files/8/sha256",
+        "captured": "f69d8c41d80900fd0b441bec5008a689596b135c16fe881364fb881a17777342",
+        "published": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66",
+        "study_file": "evidence/joint-limits-shape-feasibility-observations.json"
+      },
+      {
+        "pointer": "/files/8/bytes",
+        "captured": 30410,
+        "published": 30180,
+        "study_file": "evidence/joint-limits-shape-feasibility-observations.json"
+      },
+      {
+        "pointer": "/files/9/sha256",
+        "captured": "c0e5b786e56916c3c9edf3aadeb94bbb4074bddf1243fd172a88aac1cad0943c",
+        "published": "bb41b842912ccf81ef84d3239f054dd5be0eedfb7ea258b32beeb7f90902b63a",
+        "study_file": "evidence/joint-shape-feasibility-verification.json"
+      },
+      {
+        "pointer": "/files/9/bytes",
+        "captured": 10291,
+        "published": 10760,
+        "study_file": "evidence/joint-shape-feasibility-verification.json"
+      },
+      {
+        "pointer": "/files/10/sha256",
+        "captured": "7cf8dcd72c2b79a706b541db99b7838dd2c3c94c646d9de551d3de41718878d7",
+        "published": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754",
+        "study_file": "evidence/public-neutral-posture-style-contracts.json"
+      },
+      {
+        "pointer": "/files/10/bytes",
+        "captured": 18806,
+        "published": 21245,
+        "study_file": "evidence/public-neutral-posture-style-contracts.json"
+      },
+      {
+        "pointer": "/files/11/sha256",
+        "captured": "e526dec7880fd6626883484b55f3e31b052584bb1a8a4ca0aea0fc032c1fe05d",
+        "published": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      },
+      {
+        "pointer": "/files/11/bytes",
+        "captured": 154462,
+        "published": 150396,
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      },
+      {
+        "pointer": "/files/12/sha256",
+        "captured": "aa376017248d9e2c9d5146e78287c57b6f3bcb19d1ccbd43c36f2f2888ec122f",
+        "published": "b803b839beb2d2cc16582635527702498e3c320e2529633c0b7631428e20a831",
+        "study_file": "evidence/neutral-posture-style-verification.json"
+      },
+      {
+        "pointer": "/files/12/bytes",
+        "captured": 8800,
+        "published": 10188,
+        "study_file": "evidence/neutral-posture-style-verification.json"
+      },
+      {
+        "pointer": "/files/13/sha256",
+        "captured": "bcfa73bd9bbbbf2f118b8d0513260bb7292c9504398abcd8ac2c6ad33b296064",
+        "published": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50",
+        "study_file": "evidence/public-editor-preview-subtree-contracts.json"
+      },
+      {
+        "pointer": "/files/13/bytes",
+        "captured": 129224,
+        "published": 123840,
+        "study_file": "evidence/public-editor-preview-subtree-contracts.json"
+      },
+      {
+        "pointer": "/files/14/sha256",
+        "captured": "a92500614fa24c5cdf93a8efa5fb2244476e2d59306bd48705a0340a3ea336c7",
+        "published": "61e8b60530e4fe99011632bcab31b34e28e156ede3500d6689ea67999985c3af",
+        "study_file": "evidence/local-selected-editor-preview-properties.json"
+      },
+      {
+        "pointer": "/files/14/bytes",
+        "captured": 17999,
+        "published": 17339,
+        "study_file": "evidence/local-selected-editor-preview-properties.json"
+      },
+      {
+        "pointer": "/files/15/sha256",
+        "captured": "cc15c91db26c9bacd2f724836b468e1c2c431cacb4ee8892c9e5956205b994cd",
+        "published": "97f8128fc3cca92e2b1b183d2e62f877fe1884d0cb08d2922f1db5062a1bfc49",
+        "study_file": "evidence/editor-preview-subtree-verification.json"
+      },
+      {
+        "pointer": "/files/15/bytes",
+        "captured": 3687,
+        "published": 4307,
+        "study_file": "evidence/editor-preview-subtree-verification.json"
+      },
+      {
+        "pointer": "/files/16/sha256",
+        "captured": "291cabd7c4be7b5d73b3f3ce6cdf8aad086787399e45377e0f06d13284224a40",
+        "published": "58c13c67d36e614c7c9d80dec568aa66c25fd25ee01a84a8b8877b7ee206d40e",
+        "study_file": "evidence/soul-body-calibration-study-references.json"
+      },
+      {
+        "pointer": "/files/16/bytes",
+        "captured": 3597,
+        "published": 4929,
+        "study_file": "evidence/soul-body-calibration-study-references.json"
+      },
+      {
+        "pointer": "/files/17/sha256",
+        "captured": "9fd784f9efc81883f73f9a54a2cec7c6d9dd482d94669ce3995c8012d4bbd912",
+        "published": "e290a5928305c919535fdb102385a9d427a96f68c19ed860bc6ae646883c673b",
+        "study_file": "evidence/soul-body-calibration-verification.json"
+      },
+      {
+        "pointer": "/files/17/bytes",
+        "captured": 7712,
+        "published": 8518,
+        "study_file": "evidence/soul-body-calibration-verification.json"
+      },
+      {
+        "pointer": "/frozen_identity_checks/0/sha256",
+        "captured": "f69d8c41d80900fd0b441bec5008a689596b135c16fe881364fb881a17777342",
+        "published": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66",
+        "study_file": "evidence/joint-limits-shape-feasibility-observations.json"
+      },
+      {
+        "pointer": "/frozen_identity_checks/4/sha256",
+        "captured": "7cf8dcd72c2b79a706b541db99b7838dd2c3c94c646d9de551d3de41718878d7",
+        "published": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754",
+        "study_file": "evidence/public-neutral-posture-style-contracts.json"
+      },
+      {
+        "pointer": "/frozen_identity_checks/5/sha256",
+        "captured": "e526dec7880fd6626883484b55f3e31b052584bb1a8a4ca0aea0fc032c1fe05d",
+        "published": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      },
+      {
+        "pointer": "/frozen_identity_checks/10/sha256",
+        "captured": "bcfa73bd9bbbbf2f118b8d0513260bb7292c9504398abcd8ac2c6ad33b296064",
+        "published": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50",
+        "study_file": "evidence/public-editor-preview-subtree-contracts.json"
+      },
+      {
+        "pointer": "/frozen_identity_checks/20/sha256",
+        "captured": "24f41a841ea7f6f6d09700ee1be6d3ef8157b32c5e72ec003b465837661591f4",
+        "published": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/frozen_identity_checks/21/sha256",
+        "captured": "3826d05f084edcd7020585aa12be9a149b30d7d61d7ec68ac351f03a9b60ee75",
+        "published": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510",
+        "study_file": "evidence/public-capability-aggregation-contracts.json"
+      }
+    ]
+  }
+}

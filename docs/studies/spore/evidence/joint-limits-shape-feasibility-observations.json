@@ -1,0 +1,957 @@
+{
+  "schema_version": 1,
+  "module": 55,
+  "kind": "bounded-static-research-not-REA-Evidence",
+  "commits": {
+    "SporeModderFX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "SporeModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+  },
+  "public_sources": [
+    {
+      "path": "Editors/EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "line_count": 514,
+      "examined_line_ranges": [
+        [
+          359,
+          367
+        ],
+        [
+          389,
+          405
+        ],
+        [
+          472,
+          486
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "Editing declares deform base/middle/end indices, orientations, muscle/scale/connector scale fields and handle arrays; no named swing/twist/joint angular limit field was found by bounded whole-file keywords. Scale bounds do not establish runtime joint limits.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "Editors/cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "line_count": 101,
+      "examined_line_ranges": [
+        [
+          52,
+          90
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "Compiled blocks store orientation/scale/muscle and capability/morph indices. Socket distance comment remains uncertain; no joint angular limit consumer or muscles physics is supplied.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "Anim/CreatureBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/CreatureBlock.h",
+      "bytes": 4035,
+      "sha256": "958b8dbc70774f76cc47c76654714651a9b33b0c97278bfae1e4f3ceea5c1ca2",
+      "line_count": 149,
+      "examined_line_ranges": [
+        [
+          31,
+          77
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "Runtime descriptor has direction/scale and eight deform slots with unknown values. Unknown words are not assigned constraint semantics.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "RWMorphHandle.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWMorphHandle.java",
+      "bytes": 2244,
+      "sha256": "4264122df72932d20eb27f8a6347c353a8dd6149d6068706dccc51353e1c3005",
+      "line_count": 73,
+      "examined_line_ranges": [
+        [
+          31,
+          37
+        ],
+        [
+          44,
+          60
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "Handle progress, spatial endpoints and animation reference are encoding fields; do not establish anatomical limits.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "RWKeyframeAnim.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWKeyframeAnim.java",
+      "bytes": 7401,
+      "sha256": "0745328bba8643c6f0387bc37459d2a6afd76108b962945ed5cd310a88a2c580",
+      "line_count": 245,
+      "examined_line_ranges": [
+        [
+          77,
+          127
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "Typed channel directory uses relative offsets/pose stride/components; bounded adjacent channel spans can be read without last-channel heuristic. These keyframes are not a joint-limit envelope.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "RWKeyframe.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWKeyframe.java",
+      "bytes": 3567,
+      "sha256": "9348c45f4cf2fd00ce25072e4951970c10c5c0d3b22c5006ea026e8fce160ee2",
+      "line_count": 143,
+      "examined_line_ranges": [
+        [
+          77,
+          110
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "LocRot32bytes serializes Vector4 rotation, Vector3 location and float time. Quaternion interpretation/axis and time units require a consumer; sample norm and geodesic candidate are explicitly conditional.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "RWAnimationSkin.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWAnimationSkin.java",
+      "bytes": 2837,
+      "sha256": "44de95965b8e3ceb28a97fa5085ef96e2f74a008598a9b220a97ff3e3e097e31",
+      "line_count": 100,
+      "examined_line_ranges": [
+        [
+          35,
+          38
+        ],
+        [
+          49,
+          70
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "BonePose names absBindPose and invPoseTranslation; parser reads48byte matrix then3floats plus4padding. No correspondence to edited reference bend or inverse-bind multiplication order is implemented here.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    },
+    {
+      "path": "RWMatrix3x4.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWMatrix3x4.java",
+      "bytes": 2598,
+      "sha256": "3e028c73f45c6a0f6bf9e440bbb81bde644b7d754a1769ff89faf079b42792ca",
+      "line_count": 97,
+      "examined_line_ranges": [
+        [
+          30,
+          38
+        ],
+        [
+          54,
+          69
+        ],
+        [
+          86,
+          90
+        ]
+      ],
+      "whole_file_keyword_inventory": [],
+      "summary": "Three rows of four LE float32 values; top-left3x3 and last column have tool rotation/offset views. These labels alone do not establish runtime bone angle restrictions.",
+      "kind": "community-format-or-object-declaration-not-native-consumer"
+    }
+  ],
+  "reused_original_design": {
+    "records": [
+      "public-part-local-animation-design.json",
+      "public-rigblock-deformation-slides.json"
+    ],
+    "scope": "Reuse30Rigblocks shaping-to-new-reference design and05SIGGRAPH4.3 reference-shape bias; no new PDF read in55."
+  },
+  "timestamp_utc": "2026-10-13 08:40:32 UTC",
+  "timestamp_pacific": "2026-10-13 01:40:32 PDT",
+  "target_executable_identity": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "scope": "reused fixed identity; EXE not reread or executed in55"
+  },
+  "package": {
+    "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Graphics.package",
+    "bytes": 942881325,
+    "header96_sha256": "0ab1f43303b6d32436d919419b57db9656df67f077790d58a3f190448d8fbd97",
+    "index_sha256": "bfc7feb82d2d3a17a828f20e0d1ad924fea94426808490e586ee3225c1240595",
+    "full_sha256_reused": "e01bb86d8ddf02c56d52394b4e1db7181c1e1ebe1878bf6fb72c4ee523fcedd1",
+    "full_file_digest_fresh": false,
+    "index_count": 24707,
+    "index_offset": 942189521,
+    "index_bytes": 691804,
+    "index_flags": 4,
+    "examined_entries": 24707
+  },
+  "resource": {
+    "key": {
+      "type": "0x2f4e681b",
+      "group": "0x40606000",
+      "instance": "0x0df11468"
+    },
+    "offset": 152564158,
+    "stored_bytes": 33479,
+    "memory_bytes": 55388,
+    "compression": 65535,
+    "stored_sha256": "ac94219c42fa426bd6dc710b0df4cf1eb04bc490b29a5fd5f930bda5f8647d14",
+    "decoded_sha256": "9575d53175a28240c4ce591664fa66dee8eb962bf659ada1f00c8d1a5d28b9dc"
+  },
+  "skin_pose_prefixes": [
+    {
+      "section_index": 6,
+      "header_decoded_offset": 27808,
+      "pointer": 27824,
+      "count": 10,
+      "raw_header16": "b06c00000a0000000000000000000000",
+      "field8_raw": 0,
+      "fieldc_raw": 0,
+      "rows": [
+        {
+          "pose_ordinal": 0,
+          "decoded_offset": 27824,
+          "raw_64_bytes": "9474afbeca7f703f368841a400000000ca7f703f9474af3e7aa304250000000000300d2500000000000080bf0000000000000000000000000000000000000000",
+          "matrix3x4_rows_raw": [
+            [
+              -0.3426862955093384,
+              0.9394499063491821,
+              -4.196557900977937e-17,
+              0.0
+            ],
+            [
+              0.9394499063491821,
+              0.3426862955093384,
+              1.1504562955263478e-16,
+              0.0
+            ],
+            [
+              1.2246063538223773e-16,
+              0.0,
+              -1.0,
+              0.0
+            ]
+          ],
+          "community_invPoseTranslation_raw": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "padding_word_raw": "00000000",
+          "interpretation": "Tool BonePose labels only; edited rest pose, space and consumer multiplication remain unknown."
+        },
+        {
+          "pose_ordinal": 1,
+          "decoded_offset": 27888,
+          "raw_64_bytes": "d2bf553f56e10cbfcc83eaa30000000056e10c3fd2bf553ff80b6ca30000000044610224c01874a20000803f00000000d38a0f3d7ccc9abc4e8c093c00000000",
+          "matrix3x4_rows_raw": [
+            [
+              0.8349581956863403,
+              -0.5503133535385132,
+              -2.5426148983895882e-17,
+              0.0
+            ],
+            [
+              0.5503133535385132,
+              0.8349581956863403,
+              -1.2796120116725815e-17,
+              0.0
+            ],
+            [
+              2.8271643673633397e-17,
+              -3.3081268801710725e-18,
+              1.0,
+              0.0
+            ]
+          ],
+          "community_invPoseTranslation_raw": [
+            0.03504450246691704,
+            -0.018896333873271942,
+            0.008395267650485039
+          ],
+          "padding_word_raw": "00000000",
+          "interpretation": "Tool BonePose labels only; edited rest pose, space and consumer multiplication remain unknown."
+        },
+        {
+          "pose_ordinal": 2,
+          "decoded_offset": 27952,
+          "raw_64_bytes": "23c83e3f12b32abfcc83eaa30000000012b32a3f23c83e3ff80b6ca300000000b077fd23b8d508a30000803f00000000fcaf993d9789eabcb1a7f43c00000000",
+          "matrix3x4_rows_raw": [
+            [
+              0.7452413439750671,
+              -0.6667948961257935,
+              -2.5426148983895882e-17,
+              0.0
+            ],
+            [
+              0.6667948961257935,
+              0.7452413439750671,
+              -1.2796120116725815e-17,
+              0.0
+            ],
+            [
+              2.7481004591820512e-17,
+              -7.417831478575431e-18,
+              1.0,
+              0.0
+            ]
+          ],
+          "community_invPoseTranslation_raw": [
+            0.07504269480705261,
+            -0.028630061075091362,
+            0.029865117743611336
+          ],
+          "padding_word_raw": "00000000",
+          "interpretation": "Tool BonePose labels only; edited rest pose, space and consumer multiplication remain unknown."
+        },
+        {
+          "pose_ordinal": 3,
+          "decoded_offset": 28016,
+          "raw_64_bytes": "9474afbeca7f703f01a6cea400000000ca7f703f9474af3e388506a40000000096187422602fd9a4000080bf000000007e0a053c65a6c73ddb7a57bd00000000",
+          "matrix3x4_rows_raw": [
+            [
+              -0.3426862955093384,
+              0.9394499063491821,
+              -8.961948056873889e-17,
+              0.0
+            ],
+            [
+              0.9394499063491821,
+              0.3426862955093384,
+              -2.916945889305355e-17,
+              0.0
+            ],
+            [
+              3.3081181947746407e-18,
+              -9.418900494349413e-17,
+              -1.0,
+              0.0
+            ]
+          ],
+          "community_invPoseTranslation_raw": [
+            0.008120177313685417,
+            0.09748534113168716,
+            -0.052607398480176926
+          ],
+          "padding_word_raw": "00000000",
+          "interpretation": "Tool BonePose labels only; edited rest pose, space and consumer multiplication remain unknown."
+        }
+      ],
+      "rows_not_read": 6
+    }
+  ],
+  "local_track_prefixes": [
+    {
+      "section_index": 0,
+      "channel_id": "0xc045a9a3",
+      "channel_ordinal": 0,
+      "samples": [
+        {
+          "offset": 560,
+          "rotation_raw": [
+            -0.5732863545417786,
+            -0.8193550705909729,
+            1.5066838431663508e-17,
+            8.527191853083369e-17
+          ],
+          "location_raw": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "time_raw": 0.0,
+          "raw32": "e5c212bf41c151bf91f78a23a89fc42400000080000000000000000000000000"
+        },
+        {
+          "offset": 592,
+          "rotation_raw": [
+            -0.5732863545417786,
+            -0.8193550705909729,
+            1.5066838431663508e-17,
+            8.527191853083369e-17
+          ],
+          "location_raw": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "time_raw": 0.625,
+          "raw32": "e5c212bf41c151bf91f78a23a89fc4240000008000000000000000000000203f"
+        },
+        {
+          "offset": 624,
+          "rotation_raw": [
+            -0.5732863545417786,
+            -0.8193550705909729,
+            1.5066838431663508e-17,
+            8.527191853083369e-17
+          ],
+          "location_raw": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "time_raw": 1.25,
+          "raw32": "e5c212bf41c151bf91f78a23a89fc4240000008000000000000000000000a03f"
+        }
+      ],
+      "rotation_diagnostic": {
+        "norm0": 0.9999999880034699,
+        "norm1": 0.9999999880034699,
+        "normalized_abs_dot": 1.0000000000000002,
+        "quaternion_geodesic_candidate_degrees": 0.0,
+        "assumption": "Both four-component rotations are quaternions in one consistent ordering; diagnostic only, not joint-limit or reference-bend measurement."
+      }
+    },
+    {
+      "section_index": 0,
+      "channel_id": "0xd0be09e9",
+      "channel_ordinal": 1,
+      "samples": [
+        {
+          "offset": 656,
+          "rotation_raw": [
+            -0.6994056105613708,
+            -0.680368185043335,
+            0.16196979582309723,
+            -0.14729823172092438
+          ],
+          "location_raw": [
+            0.010772956535220146,
+            -0.038460247218608856,
+            0.008395249024033546
+          ],
+          "time_raw": 0.0,
+          "raw32": "3f0c33bf9c2c2ebf69db253e59d516be0e81303c7e881dbd3a8c093c00000000"
+        },
+        {
+          "offset": 688,
+          "rotation_raw": [
+            -0.7844943404197693,
+            -0.6201359629631042,
+            -3.7971113905593446e-17,
+            -4.80348447008198e-17
+          ],
+          "location_raw": [
+            0.01029533427208662,
+            -0.038460247218608856,
+            0.008395249024033546
+          ],
+          "time_raw": 0.625,
+          "raw32": "9fd448bf3bc11ebf611c2fa489855da4c3ad283c7e881dbd3a8c093c0000203f"
+        },
+        {
+          "offset": 720,
+          "rotation_raw": [
+            -0.7613022327423096,
+            -0.6277147531509399,
+            -0.047783054411411285,
+            0.15527354180812836
+          ],
+          "location_raw": [
+            0.01029533427208662,
+            -0.038460247218608856,
+            0.008395249024033546
+          ],
+          "time_raw": 1.25,
+          "raw32": "b4e442bfeab120bf2ab843bd07001f3ec3ad283c7e881dbd3a8c093c0000a03f"
+        }
+      ],
+      "rotation_diagnostic": {
+        "norm0": 1.0000000295654858,
+        "norm1": 0.9999999969881478,
+        "normalized_abs_dot": 0.9289252458645568,
+        "quaternion_geodesic_candidate_degrees": 43.46420897069635,
+        "assumption": "Both four-component rotations are quaternions in one consistent ordering; diagnostic only, not joint-limit or reference-bend measurement."
+      }
+    },
+    {
+      "section_index": 1,
+      "channel_id": "0xc045a9a3",
+      "channel_ordinal": 0,
+      "samples": [
+        {
+          "offset": 2688,
+          "rotation_raw": [
+            -0.5732863545417786,
+            -0.8193550705909729,
+            1.5066838431663508e-17,
+            8.527191853083369e-17
+          ],
+          "location_raw": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "time_raw": 0.0,
+          "raw32": "e5c212bf41c151bf91f78a23a89fc42400000080000000000000000000000000"
+        },
+        {
+          "offset": 2720,
+          "rotation_raw": [
+            -0.5732863545417786,
+            -0.8193550705909729,
+            1.5066838431663508e-17,
+            8.527191853083369e-17
+          ],
+          "location_raw": [
+            -0.0,
+            0.0,
+            0.0
+          ],
+          "time_raw": 1.25,
+          "raw32": "e5c212bf41c151bf91f78a23a89fc4240000008000000000000000000000a03f"
+        }
+      ],
+      "rotation_diagnostic": {
+        "norm0": 0.9999999880034699,
+        "norm1": 0.9999999880034699,
+        "normalized_abs_dot": 1.0000000000000002,
+        "quaternion_geodesic_candidate_degrees": 0.0,
+        "assumption": "Both four-component rotations are quaternions in one consistent ordering; diagnostic only, not joint-limit or reference-bend measurement."
+      }
+    },
+    {
+      "section_index": 1,
+      "channel_id": "0xd0be09e9",
+      "channel_ordinal": 1,
+      "samples": [
+        {
+          "offset": 2752,
+          "rotation_raw": [
+            0.7844943404197693,
+            0.6201359629631042,
+            3.7971113905593446e-17,
+            4.80348447008198e-17
+          ],
+          "location_raw": [
+            0.01029533427208662,
+            -0.038460247218608856,
+            0.008395249024033546
+          ],
+          "time_raw": 0.0,
+          "raw32": "9fd4483f3bc11e3f611c2f2489855d24c3ad283c7e881dbd3a8c093c00000000"
+        },
+        {
+          "offset": 2784,
+          "rotation_raw": [
+            0.7844943404197693,
+            0.6201359629631042,
+            3.7971113905593446e-17,
+            4.80348447008198e-17
+          ],
+          "location_raw": [
+            0.01029533427208662,
+            -0.038460247218608856,
+            0.008395249024033546
+          ],
+          "time_raw": 1.25,
+          "raw32": "9fd4483f3bc11e3f611c2f2489855d24c3ad283c7e881dbd3a8c093c0000a03f"
+        }
+      ],
+      "rotation_diagnostic": {
+        "norm0": 0.9999999913554127,
+        "norm1": 0.9999999913554127,
+        "normalized_abs_dot": 0.9999999999999999,
+        "quaternion_geodesic_candidate_degrees": 1.7075472925031877e-06,
+        "assumption": "Both four-component rotations are quaternions in one consistent ordering; diagnostic only, not joint-limit or reference-bend measurement."
+      }
+    }
+  ],
+  "handle_section_count": 0,
+  "skeletons": [
+    {
+      "section_index": 14,
+      "bone_count": 1,
+      "duplicate_count": 1,
+      "skeleton_id": "0x3dd6440c",
+      "array_ranges_checked": true,
+      "array_contents_read": true,
+      "bones": [
+        {
+          "index": 0,
+          "name_id": "0x18c9a5b9",
+          "flags_raw": "0x00000001",
+          "parent_index_raw": -1
+        }
+      ]
+    },
+    {
+      "section_index": 16,
+      "bone_count": 10,
+      "duplicate_count": 10,
+      "skeleton_id": "0xa5f9dff5",
+      "array_ranges_checked": true,
+      "array_contents_read": true,
+      "bones": [
+        {
+          "index": 0,
+          "name_id": "0xc045a9a3",
+          "flags_raw": "0x00000000",
+          "parent_index_raw": -1
+        },
+        {
+          "index": 1,
+          "name_id": "0xd0be09e9",
+          "flags_raw": "0x00000002",
+          "parent_index_raw": 0
+        },
+        {
+          "index": 2,
+          "name_id": "0xd0be09e8",
+          "flags_raw": "0x00000000",
+          "parent_index_raw": 1
+        },
+        {
+          "index": 3,
+          "name_id": "0x7b298b90",
+          "flags_raw": "0x00000001",
+          "parent_index_raw": 2
+        },
+        {
+          "index": 4,
+          "name_id": "0xd0be09e4",
+          "flags_raw": "0x00000002",
+          "parent_index_raw": 0
+        },
+        {
+          "index": 5,
+          "name_id": "0xd0be09e7",
+          "flags_raw": "0x00000000",
+          "parent_index_raw": 4
+        },
+        {
+          "index": 6,
+          "name_id": "0xd0be09e6",
+          "flags_raw": "0x00000001",
+          "parent_index_raw": 5
+        },
+        {
+          "index": 7,
+          "name_id": "0xd0be09e3",
+          "flags_raw": "0x00000000",
+          "parent_index_raw": 0
+        },
+        {
+          "index": 8,
+          "name_id": "0xd0be09e2",
+          "flags_raw": "0x00000000",
+          "parent_index_raw": 7
+        },
+        {
+          "index": 9,
+          "name_id": "0xd0be09e5",
+          "flags_raw": "0x00000001",
+          "parent_index_raw": 8
+        }
+      ]
+    }
+  ],
+  "skin_links": [
+    {
+      "section_index": 8,
+      "field_4_raw": 9268640,
+      "field_0_reference": {
+        "raw": "0x00400000",
+        "kind": "null-encoding"
+      },
+      "matrix_buffer_reference": {
+        "raw": "0x00000007",
+        "kind": "direct-object",
+        "section_index": 7,
+        "type": "0x0007000f"
+      },
+      "skeleton_reference": {
+        "raw": "0x00000010",
+        "kind": "direct-object",
+        "section_index": 16,
+        "type": "0x00070002"
+      },
+      "animation_skin_reference": {
+        "raw": "0x00000006",
+        "kind": "direct-object",
+        "section_index": 6,
+        "type": "0x00070003"
+      }
+    }
+  ],
+  "reused_properties": [
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "stored_offset": 31262393,
+      "decoded_sha256": "dc76340e96dccb735f6d6506c3581b459007cd8e465c28814ec65273ea79fcd6",
+      "property": {
+        "id": "0x00fba611",
+        "labels": [
+          {
+            "name": "modelScale",
+            "line": 39,
+            "id": "0x00fba611",
+            "mapping": "explicit",
+            "calculated_fnv": "0x75a591b2"
+          }
+        ],
+        "type": "0x000d",
+        "flags": "0x0000",
+        "array": false,
+        "values": [
+          1.2999999523162842
+        ]
+      },
+      "reused_not_reread": true
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "stored_offset": 31262393,
+      "decoded_sha256": "dc76340e96dccb735f6d6506c3581b459007cd8e465c28814ec65273ea79fcd6",
+      "property": {
+        "id": "0x00fba613",
+        "labels": [
+          {
+            "name": "modelRotation",
+            "line": 41,
+            "id": "0x00fba613",
+            "mapping": "explicit",
+            "calculated_fnv": "0x77dd6f9e"
+          }
+        ],
+        "type": "0x0031",
+        "flags": "0x0000",
+        "array": false,
+        "values": [
+          [
+            0,
+            7,
+            -4
+          ]
+        ]
+      },
+      "reused_not_reread": true
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "stored_offset": 31262393,
+      "decoded_sha256": "dc76340e96dccb735f6d6506c3581b459007cd8e465c28814ec65273ea79fcd6",
+      "property": {
+        "id": "0x05aee941",
+        "labels": [
+          {
+            "name": "modelEditorInitialRotation",
+            "line": 2280,
+            "id": "0x05aee941",
+            "mapping": "explicit",
+            "calculated_fnv": "0x5472477f"
+          }
+        ],
+        "type": "0x0031",
+        "flags": "0x0000",
+        "array": false,
+        "values": [
+          [
+            0,
+            -30,
+            0
+          ]
+        ]
+      },
+      "reused_not_reread": true
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "stored_offset": 31262393,
+      "decoded_sha256": "dc76340e96dccb735f6d6506c3581b459007cd8e465c28814ec65273ea79fcd6",
+      "property": {
+        "id": "0x51fa9dfa",
+        "labels": [
+          {
+            "name": "modelRunTimeBoneCount",
+            "line": 3233,
+            "id": "0x51fa9dfa",
+            "mapping": "explicit",
+            "calculated_fnv": "0xe84b224f"
+          }
+        ],
+        "type": "0x0009",
+        "flags": "0x0000",
+        "array": false,
+        "values": [
+          4
+        ]
+      },
+      "reused_not_reread": true
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "stored_offset": 31262393,
+      "decoded_sha256": "dc76340e96dccb735f6d6506c3581b459007cd8e465c28814ec65273ea79fcd6",
+      "property": {
+        "id": "0xf023ed73",
+        "labels": [
+          {
+            "name": "modelMinScale",
+            "line": 3917,
+            "id": "0xf023ed73",
+            "mapping": "explicit",
+            "calculated_fnv": "0x7414a906"
+          }
+        ],
+        "type": "0x000d",
+        "flags": "0x0000",
+        "array": false,
+        "values": [
+          0.5
+        ]
+      },
+      "reused_not_reread": true
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "stored_offset": 31262393,
+      "decoded_sha256": "dc76340e96dccb735f6d6506c3581b459007cd8e465c28814ec65273ea79fcd6",
+      "property": {
+        "id": "0xf023ed79",
+        "labels": [
+          {
+            "name": "modelMaxScale",
+            "line": 3918,
+            "id": "0xf023ed79",
+            "mapping": "explicit",
+            "calculated_fnv": "0x9bc87450"
+          }
+        ],
+        "type": "0x000d",
+        "flags": "0x0000",
+        "array": false,
+        "values": [
+          2
+        ]
+      },
+      "reused_not_reread": true
+    }
+  ],
+  "reused_sources": [
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-selected-rigblock-metadata.json",
+      "sha256": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e"
+    },
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-part-definition-observations.json",
+      "sha256": "75f1ea6173d468f87ed18c948ca3e20e4161605057413fdb6574b4ec18fdf355"
+    }
+  ],
+  "reader_sha256": "892d399d4f8c2024ebf70d1d89a3a8e6fad5635c0b0be354d93d4993a1f55ebb",
+  "coverage": {
+    "fresh_stored_bytes": 33479,
+    "fresh_decoded_bytes": 55388,
+    "skeleton_metadata": true,
+    "local_LocRot_key_samples": 10,
+    "skin_pose_rows": 4,
+    "models_vertices_textures_exported": false,
+    "angular_limit_configuration_obtained": false,
+    "native_shape_to_motion_consumer_recovered": false
+  },
+  "unknowns": [
+    "Which local tracks correspond to edit handles or runtime semantic deforms",
+    "Global/local bind pose convention and reference bend extraction",
+    "Original swing/twist limits, post-edit recalculation and muscle physics",
+    "Shape-to-action feasibility and collision consumers"
+  ],
+  "property_registry": {
+    "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+    "bytes": 191259,
+    "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+    "whole_file_query_regex": "^model.*(joint|bone|limb|muscle|connector|scale|rotation|angle|limit|bend)",
+    "total_model_candidates": 56,
+    "selected_label_rows": [
+      {
+        "line": 39,
+        "raw": "modelScale\t0x00FBA611"
+      },
+      {
+        "line": 41,
+        "raw": "modelRotation\t0x00FBA613"
+      },
+      {
+        "line": 1712,
+        "raw": "modelSnapAxisRotation\t0x04F7B20C"
+      },
+      {
+        "line": 2280,
+        "raw": "modelEditorInitialRotation\t0x05AEE941"
+      },
+      {
+        "line": 2541,
+        "raw": "modelQuantizeBoneDir\t0x061B99CF"
+      },
+      {
+        "line": 3009,
+        "raw": "modelMaxBallConnectorScale\t0x21D55D8C"
+      },
+      {
+        "line": 3233,
+        "raw": "modelRunTimeBoneCount\t0x51FA9DFA"
+      },
+      {
+        "line": 3917,
+        "raw": "modelMinScale\t0xF023ED73"
+      },
+      {
+        "line": 3918,
+        "raw": "modelMaxScale\t0xF023ED79"
+      },
+      {
+        "line": 4006,
+        "raw": "modelMinBallConnectorScale\t0xFE0926F6"
+      }
+    ],
+    "explicit_angular_query": "^model.*(joint.*limit|swing|twist|bend.*limit|angle.*limit)",
+    "explicit_angular_matches": [],
+    "coverage": "Exact selected fields and bounded named-angular query; no implication of absent native limits or physics."
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "f69d8c41d80900fd0b441bec5008a689596b135c16fe881364fb881a17777342",
+    "captured_file_bytes": 30410,
+    "reference_changes": [
+      {
+        "pointer": "/reused_sources/0/sha256",
+        "captured": "fa54ec5aecc93525de0caba77a16da22ed6464642411dde74c7a1ac26371a8f5",
+        "published": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e",
+        "study_file": "evidence/local-selected-rigblock-metadata.json"
+      }
+    ]
+  }
+}

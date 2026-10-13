@@ -1,0 +1,126 @@
+{
+  "kind": "bounded-static-skin-pattern-study-and-independent-model-checks-not-game-runtime",
+  "time": {
+    "utc": "2026-10-13T01:00:13.810176+00:00",
+    "pacific": "2026-10-12T18:00:13.810176-07:00",
+    "authority": "local clock",
+    "timezone": "America/Los_Angeles"
+  },
+  "target": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "sha256Verified": true,
+    "format": "PE32",
+    "machine": "0x14C",
+    "optionalHeaderMagic": "0x10B",
+    "imageBase": "0x400000",
+    "version": "1.3.0.29",
+    "versionProvenance": "Prior verified identity; current pass independently checked digest/header/sections."
+  },
+  "selected_literals": {
+    "count": 104,
+    "full_bytes_nul_boundary_predecessor_and_measured_section_va_mapping_verified": true,
+    "subsystem_scope": "Names and small skinpaint windows, not call attribution"
+  },
+  "primary_sources": {
+    "count": 3,
+    "coverage": "Complete paper, selected complete slide text pages, complete Creature Texturing section and footnote 7; locators in source manifest",
+    "visual_figures_reviewed": false
+  },
+  "community_sources": {
+    "count": 4,
+    "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "coverage": "Pinned bytes and selected declarations/serialization/parser passages; not executed; no game runtime binding"
+  },
+  "independent_checks": {
+    "path": "checks/verify_skin_pattern_examples.py",
+    "tests": 23,
+    "passed": 23,
+    "exit_code": 0,
+    "execution": "Bundled Python -B -X utf8, direct root invocation",
+    "coverage": [
+      "Relative/physical stripe cycles and angular closure",
+      "Relative/physical spot size and area-density targets",
+      "Stable part seeds, structural anchors and connected-surface distance",
+      "Circular phase mixing and explicit cancellation",
+      "UV seam sampling, chart-isolated padding and mirrored tangent frames",
+      "Stale and mixed-revision material publication"
+    ],
+    "limits": "Small geometry/math/state examples; no complete generator, atlas packer, paint rasterizer, GPU shader or production integration validated"
+  },
+  "question_status": {
+    "answered": "Historical surface painting, direction adaptation and shipping dilation correction; pinned format reference/field representation",
+    "partial": "Edit-induced rapid atlas generation, morphology-aware particle inputs and material channel entrances",
+    "unknown": [
+      "Actual edit-triggered repaint vs reprojection and persistence",
+      "Concrete stripe spacing, spot density, radius and seeds",
+      "Cross-rigblock pattern continuity and skin-region classifier",
+      "Version-specific UV/dilation/mip/normal implementation"
+    ]
+  },
+  "not_performed": [
+    "Game launch/attach, private saves",
+    "New package/skinpaint/brush resource decoding",
+    "REA provider repair/build/install or configuration changes",
+    "Original pixel comparison or visual figure review",
+    "GPU compression/mip/shader verification and performance timing",
+    "User game implementation and repository production build/tests"
+  ],
+  "risks": [
+    "Historical design/local binary/community representation are separate evidence levels",
+    "Canonical mapping and local cylinder/graph metrics have approximation and topology limits",
+    "Joint phase conflict and partial coverage must remain diagnostic",
+    "Filtering/gutter and actual performance require engine measurements"
+  ],
+  "unavailable_primary_followup": {
+    "url": "https://oceanquigley.blogspot.com/2009/04/spores-creature-skin-painting.html",
+    "tool": "web open via developer reference",
+    "result": "Redirected to Google sorry/CAPTCHA page; non-retryable inaccessible response. Content not read or used as evidence; no bypass attempted."
+  },
+  "documentation_checks": {
+    "markdown_files": 38,
+    "relative_file_links": 284,
+    "evidence_json_files": 59,
+    "utf8_json_fences_relative_file_targets": "passed",
+    "internal_link_anchors": "not checked"
+  },
+  "source_manifest_digests": [
+    {
+      "path": "evidence/public-skin-pattern-design.json",
+      "sha256": "51bc5ebb0d89f2c860a03e9b5424167c071fe3018e01f773b56b69e5a6dd3f83"
+    },
+    {
+      "path": "evidence/public-skin-pattern-format-entries.json",
+      "sha256": "29f3371ed143aa14a9c45cb041649933afe658b086b928684144c5900c5649b6"
+    },
+    {
+      "path": "evidence/local-skin-pattern-entry-observations.json",
+      "sha256": "33c07d798f31b5ed9b6242db473482dc6cb5b234593247c2decb840ec4652bd0"
+    }
+  ],
+  "deliverable_digests": [
+    {
+      "path": "35-skin-pattern-shape-edits-and-seams.md",
+      "sha256": "2a46b64c288860204b09372313e65a10121c7156779a24f24a334fafa8167113"
+    },
+    {
+      "path": "checks/verify_skin_pattern_examples.py",
+      "sha256": "2234cfea246294dc14bec1039f059cbff665ead9558e508cb50d420c48ebf1af"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "3a10d91d5a9feb94987e53896d868be63ee55d9fe153e57462cef1be519bee4e",
+    "captured_file_bytes": 5052,
+    "reference_changes": [
+      {
+        "pointer": "/source_manifest_digests/0/sha256",
+        "captured": "bc841045e15de2dbaff32d0d885de0f218dc1cbdcc49bdfeb5863b22e2da0c6a",
+        "published": "51bc5ebb0d89f2c860a03e9b5424167c071fe3018e01f773b56b69e5a6dd3f83",
+        "study_file": "evidence/public-skin-pattern-design.json"
+      }
+    ]
+  }
+}

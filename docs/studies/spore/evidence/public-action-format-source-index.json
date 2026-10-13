@@ -1,0 +1,14 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "url": "https://api.github.com/repos/Spore-Community/SporeModder-FX/git/trees/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5?recursive=1",
+  "sha256": "2cfabe7c206d8791f430a470c153069a9d6f399c7701dabeca1f0f761e17bed9",
+  "bytes": 235274,
+  "truncated": false,
+  "selected_paths": [
+    "src/sporemodder/file/tlsa/TLSAAnimation.java",
+    "src/sporemodder/file/tlsa/TLSAAnimationChoice.java",
+    "src/sporemodder/file/tlsa/TLSAAnimationGroup.java",
+    "src/sporemodder/file/tlsa/TLSAConverter.java",
+    "src/sporemodder/file/tlsa/TLSAUnit.java"
+  ]
+}

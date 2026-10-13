@@ -1,0 +1,156 @@
+{
+  "kind": "local-bounded-ASCII-observation-not-REA-Evidence",
+  "target": {
+    "path": "E:\\Steam\\steamapps\\common\\Spore\\SporeBin\\SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d"
+  },
+  "sections": [
+    {
+      "name": ".rdata",
+      "start": 16561152,
+      "end": 17869312,
+      "rva": 16564224
+    },
+    {
+      "name": ".data",
+      "start": 17869312,
+      "end": 18675200,
+      "rva": 17874944
+    }
+  ],
+  "query": "percept|sight|hearing|hunger|motive|lasttarget|losttarget|untarget|alert|flee",
+  "matching": "full NUL ASCII4..160, no printable preceding byte",
+  "initial_candidate_count": 34,
+  "selected": [
+    {
+      "string": "Simulator/cAIMemory",
+      "file_offset": "0x10695f0",
+      "preferred_data_va": "0x146a1f0",
+      "section": ".rdata"
+    },
+    {
+      "string": "mPersonality",
+      "file_offset": "0x1069634",
+      "preferred_data_va": "0x146a234",
+      "section": ".rdata"
+    },
+    {
+      "string": "mUntargetDistanceTime",
+      "file_offset": "0x1069654",
+      "preferred_data_va": "0x146a254",
+      "section": ".rdata"
+    },
+    {
+      "string": "mLastAvatarDamageTimer",
+      "file_offset": "0x106967c",
+      "preferred_data_va": "0x146a27c",
+      "section": ".rdata"
+    },
+    {
+      "string": "mNoDamageTimer",
+      "file_offset": "0x1069694",
+      "preferred_data_va": "0x146a294",
+      "section": ".rdata"
+    },
+    {
+      "string": "mHerd",
+      "file_offset": "0x10696a4",
+      "preferred_data_va": "0x146a2a4",
+      "section": ".rdata"
+    },
+    {
+      "string": "mPlayerAlertState",
+      "file_offset": "0x10696bc",
+      "preferred_data_va": "0x146a2bc",
+      "section": ".rdata"
+    },
+    {
+      "string": "mIntentionTowardsTarget",
+      "file_offset": "0x1069bd4",
+      "preferred_data_va": "0x146a7d4",
+      "section": ".rdata"
+    },
+    {
+      "string": "mNoAttackTimer",
+      "file_offset": "0x1069c5c",
+      "preferred_data_va": "0x146a85c",
+      "section": ".rdata"
+    },
+    {
+      "string": "mHungerDelayTimer",
+      "file_offset": "0x1069c88",
+      "preferred_data_va": "0x146a888",
+      "section": ".rdata"
+    },
+    {
+      "string": "mHungerDelta",
+      "file_offset": "0x1069c9c",
+      "preferred_data_va": "0x146a89c",
+      "section": ".rdata"
+    },
+    {
+      "string": "mHunger",
+      "file_offset": "0x1069cac",
+      "preferred_data_va": "0x146a8ac",
+      "section": ".rdata"
+    },
+    {
+      "string": "mFoodValue",
+      "file_offset": "0x1069d30",
+      "preferred_data_va": "0x146a930",
+      "section": ".rdata"
+    },
+    {
+      "string": "mCurrentLoudness",
+      "file_offset": "0x1069d3c",
+      "preferred_data_va": "0x146a93c",
+      "section": ".rdata"
+    },
+    {
+      "string": "mbStealthed",
+      "file_offset": "0x1069d50",
+      "preferred_data_va": "0x146a950",
+      "section": ".rdata"
+    },
+    {
+      "string": "mLastMotiveState",
+      "file_offset": "0x1069d7c",
+      "preferred_data_va": "0x146a97c",
+      "section": ".rdata"
+    },
+    {
+      "string": "mbUpdateMotiveEffect",
+      "file_offset": "0x1069db8",
+      "preferred_data_va": "0x146a9b8",
+      "section": ".rdata"
+    },
+    {
+      "string": "mbDead",
+      "file_offset": "0x1069dec",
+      "preferred_data_va": "0x146a9ec",
+      "section": ".rdata"
+    }
+  ],
+  "excluded_contexts": [
+    {
+      "range": [
+        "0x10822a0",
+        "0x10828f0"
+      ],
+      "reason": "cell/cellType/electricDischarge/poisonRecharge/startTile neighborhood; fleeTime/fleeSpeed/flee_target not Creature Stage evidence"
+    },
+    {
+      "range": [
+        "0x107b960",
+        "0x107bb80"
+      ],
+      "reason": "Vehicle Movement Wander/spice/trade/city neighborhood; Flee normal end not Creature Stage evidence"
+    }
+  ],
+  "limits": [
+    "Shared animal/Scenario names occur nearby; adjacency does not prove class membership or stage execution",
+    "Preferred data VA is not a function, runtime pointer or SDK member offset",
+    "No full ASCII matches percept/sight/hearing/lasttarget/losttarget in queried sections does not prove feature absence"
+  ]
+}

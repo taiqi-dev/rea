@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "module": 56,
+  "kind": "independent-posture-style-and-static-evidence-verification-not-runtime",
+  "status": "passed",
+  "tests_run": 36,
+  "failures": 0,
+  "errors": 0,
+  "counts": {
+    "own_posture_style": 30,
+    "static_evidence": 6
+  },
+  "test_entry": "docs/studies/spore/checks/verify_neutral_posture_style_examples.py",
+  "reader_entry": "docs/studies/spore/checks/read_selected_idle_posture_metadata.py",
+  "interpreter": "C:/Users/81553/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "run_argument_prefix": [
+    "-B"
+  ],
+  "test_requires_game_files": false,
+  "reader_requires_exact_installed_packages": true,
+  "target_runtime_verified": false,
+  "rea_evidence_id": null,
+  "files": [
+    {
+      "path": "docs/studies/spore/56-neutral-posture-body-form-and-soul-action-style.md",
+      "bytes": 20000,
+      "sha256": "586a6b92aa42f96d9f3806f89d82d30c22bfecc6ca31e85ca4ca0b1d2c0c728a"
+    },
+    {
+      "path": "docs/studies/spore/evidence/public-neutral-posture-style-contracts.json",
+      "bytes": 21245,
+      "sha256": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754"
+    },
+    {
+      "path": "docs/studies/spore/evidence/local-selected-idle-posture-metadata.json",
+      "bytes": 150396,
+      "sha256": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f"
+    },
+    {
+      "path": "docs/studies/spore/checks/read_selected_idle_posture_metadata.py",
+      "bytes": 6897,
+      "sha256": "530444e6df2df83edd8201c7ae687e98aa271434dd4526d2efd20ae6cd4e5e90"
+    },
+    {
+      "path": "docs/studies/spore/checks/verify_neutral_posture_style_examples.py",
+      "bytes": 19630,
+      "sha256": "7692e9fc6c1f70bb42330f793d4f702b482f6974f481edb2d1192564a5b88b29"
+    }
+  ],
+  "tests": [
+    {
+      "test": "OwnPostureTests.test_01_static_recipe_not_changed_by_two_styles",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_02_leg_height_interval_from_length_and_joint_limits",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_03_same_body_different_feasible_styles",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_04_style_clamps_height_without_changing_shape",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_05_joint_limit_clamp_is_explicit",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_06_missing_hand_is_not_created_by_soul",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_07_unknown_mass_or_geometry_not_defaulted",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_08_nan_and_unknown_style_fields_diagnostic",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_09_eccentric_body_preserved_support_violation_rejected",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_10_support_margin_of_both_example_styles",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_11_six_leg_count_and_upright_are_separate",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_12_unknown_and_mixed_orientation_remain_explicit",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_13_low_body_uses_own_feasible_height",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_14_no_support_or_invalid_leg_reports_reason",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_15_support_output_cannot_be_reserved_by_style",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_16_existing_action_lease_conflict_diagnostic",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_17_handoff_preserves_initial_position_velocity",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_18_handoff_midpoint_full_numerical_example",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_19_handoff_endpoint_and_gait_anchor_continuity",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_20_old_pose_job_invalid_after_swap",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_21_swap_cancels_pending_action_preserves_committed_effect",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_22_invalid_transition_preflight_does_not_half_swap",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_23_curve_peak_checked_analytically_not_only_endpoints",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_24_changed_body_revision_invalidates_pose_job",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_25_short_windup_cannot_override_velocity_budget",
+      "status": "passed"
+    },
+    {
+      "test": "OwnPostureTests.test_26_stride_and_invalid_timing_policy",
+      "status": "passed"
+    },
+    {
+      "test": "EvidenceTests.test_27_six_new_idle_resources_and_exact_groups",
+      "status": "passed"
+    },
+    {
+      "test": "EvidenceTests.test_28_idle_flag_is_only_loop_and_not_default_posture",
+      "status": "passed"
+    },
+    {
+      "test": "EvidenceTests.test_29_group_namespace_differs_from_resource_instances",
+      "status": "passed"
+    },
+    {
+      "test": "EvidenceTests.test_30_zero_predicates_do_not_classify_body_upright_false",
+      "status": "passed"
+    },
+    {
+      "test": "EvidenceTests.test_31_posture_capability_raw_one_two_preserved",
+      "status": "passed"
+    },
+    {
+      "test": "EvidenceTests.test_32_all_manifest_local_identity_hashes_match",
+      "status": "passed"
+    },
+    {
+      "test": "HandoffInvalidationTests.test_33_body_swap_rejects_inflight_handoff_curve",
+      "status": "passed"
+    },
+    {
+      "test": "HandoffInvalidationTests.test_34_soul_swap_cannot_steal_external_action_output",
+      "status": "passed"
+    },
+    {
+      "test": "HandoffInvalidationTests.test_35_feasible_endpoints_do_not_allow_overshooting_handoff",
+      "status": "passed"
+    },
+    {
+      "test": "HandoffInvalidationTests.test_36_second_handoff_captures_current_pose_and_velocity",
+      "status": "passed"
+    }
+  ],
+  "reader_result": {
+    "status": "passed",
+    "TLSA": 2,
+    "selected_groups": 6,
+    "ANIM": 6,
+    "channels": 51,
+    "diagnostics": [],
+    "full_package_hashes_matched_prior": true,
+    "curves_decoded": false,
+    "events_decoded": false
+  },
+  "source_coverage": {
+    "new_community_files": 12,
+    "SDK_files": 10,
+    "registries": 2,
+    "developer_papers": 1,
+    "actual_PDF_read_pages_one_based": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "full_SDK_files": 9,
+    "partial_SDK_file": "AnimatedCreature.h lines30–75,122–158,209–247",
+    "raw_source_hashes_recorded": true,
+    "original_algorithm_consumers_recovered": false
+  },
+  "doc_scan": {
+    "UTF8": "verified",
+    "fence_dialects": [
+      "~~~",
+      "```"
+    ],
+    "pending_root_owned_link": "evidence/editor-body-ai-five-topics-verification.json",
+    "relative_links_except_declared_root_aggregate": "resolved"
+  },
+  "validation_history": [
+    "First34 test run detected the deliberately overshooting fixture v=4 reached only.337037, below.35 limit; fixture corrected to v=5 so overshoot actually exceeds limit.",
+    "Added direct transaction rejection for overshoot and support for a second soul swap from current interpolated q/v; final36 passed."
+  ],
+  "question_status": {
+    "player_created_rest_and_motion_coordinates": "historical developer design confirmed",
+    "ordinary_idle_reference_chain": "selected local resources confirmed",
+    "part_Posture_values": "reused1/2 direct values, consumer unknown",
+    "default_editor_neutral_pose": "partial: source labels/representations only; native procedure unknown",
+    "UprightSpine_classifier": "historical heuristic/format bit only; native threshold unknown",
+    "alert_charge_personality_style": "native task/style selection unknown; own design specified",
+    "same_body_two_souls_handoff": "independent constrained numerical example verified"
+  },
+  "risks": [
+    "Pure equal-length planar leg geometry and fixed rectangular support hull, not full FK/IK or terrain physics.",
+    "Style proposals do not prove Spore personality mapping or neutral-pose generation.",
+    "Runtime terrain/contact version checks and full diagnostic DTO are specified in document but not implemented by this pure model.",
+    "No original neutral/idle curve outputs or original game runtime observed."
+  ],
+  "not_performed": [
+    "game launch/attach",
+    "private saves",
+    "full proprietary assets export",
+    "new static-pose/editor PROP payload reads",
+    "native provider setup",
+    "install/config changes",
+    "Git write"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "aa376017248d9e2c9d5146e78287c57b6f3bcb19d1ccbd43c36f2f2888ec122f",
+    "captured_file_bytes": 8800,
+    "reference_changes": [
+      {
+        "pointer": "/files/1/sha256",
+        "captured": "7cf8dcd72c2b79a706b541db99b7838dd2c3c94c646d9de551d3de41718878d7",
+        "published": "b6708705c94e2283136902e7cd0e950fce9f7cd49157c2ff24b233d67603b754",
+        "study_file": "evidence/public-neutral-posture-style-contracts.json"
+      },
+      {
+        "pointer": "/files/1/bytes",
+        "captured": 18806,
+        "published": 21245,
+        "study_file": "evidence/public-neutral-posture-style-contracts.json"
+      },
+      {
+        "pointer": "/files/2/sha256",
+        "captured": "e526dec7880fd6626883484b55f3e31b052584bb1a8a4ca0aea0fc032c1fe05d",
+        "published": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      },
+      {
+        "pointer": "/files/2/bytes",
+        "captured": 154462,
+        "published": 150396,
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      }
+    ]
+  }
+}

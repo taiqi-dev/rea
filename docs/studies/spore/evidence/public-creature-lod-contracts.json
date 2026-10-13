@@ -1,0 +1,1046 @@
+{
+  "kind": "fixed-public-creature-lod-contracts",
+  "sdk_commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "fx_commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "sources": [
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "lines": 6368,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Simulation|Think|Update|CreatureGameTuning|Renderable",
+      "selected_declarations": [
+        {
+          "line": 32,
+          "text": "modelMeshLOD0\t0x00F9EFBB"
+        },
+        {
+          "line": 33,
+          "text": "modelMeshLOD1\t0x00F9EFBC"
+        },
+        {
+          "line": 34,
+          "text": "modelMeshLOD2\t0x00F9EFBD"
+        },
+        {
+          "line": 35,
+          "text": "modelMeshLOD3\t0x00F9EFBE"
+        },
+        {
+          "line": 88,
+          "text": "kNumLODs\t0x010B0ACF"
+        },
+        {
+          "line": 89,
+          "text": "kNumFaceLODs\t0x010B0AD6"
+        },
+        {
+          "line": 91,
+          "text": "kFaceQuadLODDistance\t0x010B0AE1"
+        },
+        {
+          "line": 92,
+          "text": "kLODDistanceNormalizer\t0x010B0AE7"
+        },
+        {
+          "line": 93,
+          "text": "kLODTable\t0x010B0AEB"
+        },
+        {
+          "line": 94,
+          "text": "kFaceLODTable\t0x010B0AF0"
+        },
+        {
+          "line": 95,
+          "text": "kAtmosphereLODTable\t0x010B0AF4"
+        },
+        {
+          "line": 99,
+          "text": "kUseLowLODShaders\t0x010B0B0C"
+        },
+        {
+          "line": 160,
+          "text": "creatureSpeedMediumLODMultiplier\t0x017DC905"
+        },
+        {
+          "line": 708,
+          "text": "modelLODDistances\t0x02E33A81"
+        },
+        {
+          "line": 719,
+          "text": "modelLODFactor0\t0x02E765CF"
+        },
+        {
+          "line": 720,
+          "text": "modelLODFactor1\t0x02E765D0"
+        },
+        {
+          "line": 721,
+          "text": "modelLODFactor2\t0x02E765D1"
+        },
+        {
+          "line": 722,
+          "text": "modelLODFactor3\t0x02E765D2"
+        },
+        {
+          "line": 778,
+          "text": "cameraMaterialLODs\t0x030BC65A"
+        },
+        {
+          "line": 1009,
+          "text": "tribeToolLoDamage\t0x03A26422"
+        },
+        {
+          "line": 1011,
+          "text": "tribeHutLoDamage\t0x03A26424"
+        },
+        {
+          "line": 1255,
+          "text": "modelLODFlags0\t0x0452027C"
+        },
+        {
+          "line": 1256,
+          "text": "modelLODFlags1\t0x0452027D"
+        },
+        {
+          "line": 1257,
+          "text": "modelLODFlags2\t0x0452027E"
+        },
+        {
+          "line": 1258,
+          "text": "modelLODFlags3\t0x0452027F"
+        },
+        {
+          "line": 1852,
+          "text": "creatureSimulationLOD_MinDistanceLow\t0x052583BC"
+        },
+        {
+          "line": 1853,
+          "text": "creatureSimulationLOD_MinDistanceMed\t0x052583D4"
+        },
+        {
+          "line": 3572,
+          "text": "kLODMaxProjSize\t0xA52C03AB"
+        },
+        {
+          "line": 3741,
+          "text": "kLODSeabedMaxProjSize\t0xC65EA1ED"
+        },
+        {
+          "line": 3742,
+          "text": "kLODSeabedMinProjSize\t0xC73D64D3"
+        },
+        {
+          "line": 3817,
+          "text": "kLODMinProjSize\t0xD4D2A115"
+        },
+        {
+          "line": 3891,
+          "text": "kLODChunkRes\t0xE8172372"
+        },
+        {
+          "line": 4072,
+          "text": "TMMIPLOD\t0x02840048"
+        },
+        {
+          "line": 4099,
+          "text": "LODOffset\t0x0114259a"
+        },
+        {
+          "line": 4100,
+          "text": "LODDistanceScale\t0x0114259f"
+        },
+        {
+          "line": 4102,
+          "text": "EffectLODSoftTransition\t0x0114259c"
+        },
+        {
+          "line": 4170,
+          "text": "terrainForceLowestLOD\t0x2fbb4880"
+        },
+        {
+          "line": 4187,
+          "text": "planetLODChunkRes\t0xe8172372"
+        },
+        {
+          "line": 4209,
+          "text": "LODFactor0\t0x02e765cf"
+        },
+        {
+          "line": 4210,
+          "text": "LODFactor1\t0x02e765d0"
+        },
+        {
+          "line": 4211,
+          "text": "LODFactor2\t0x02e765d1"
+        },
+        {
+          "line": 4212,
+          "text": "LODFactor3\t0x02e765d2"
+        },
+        {
+          "line": 4430,
+          "text": "terrainLODThreshold\t0x00000021"
+        },
+        {
+          "line": 4431,
+          "text": "terrainLODMorphDistance\t0x00000022"
+        },
+        {
+          "line": 4432,
+          "text": "terrainLODAspect\t0x00000023"
+        },
+        {
+          "line": 4436,
+          "text": "modelLODDistanceScale\t0x00000027"
+        },
+        {
+          "line": 4556,
+          "text": "powerupExplodeStrength\t0x5E73053D"
+        },
+        {
+          "line": 4649,
+          "text": "modelMeshLODHi\t0x00f9efc1"
+        },
+        {
+          "line": 4682,
+          "text": "modelBakeHighLODComplete\t0x03704e56"
+        },
+        {
+          "line": 4797,
+          "text": "explodeEffect\t0x28B1515B"
+        },
+        {
+          "line": 5170,
+          "text": "TintCreaturesByAnimLOD"
+        },
+        {
+          "line": 5171,
+          "text": "LODMaxHigh"
+        },
+        {
+          "line": 5172,
+          "text": "LODMaxMedium"
+        },
+        {
+          "line": 5173,
+          "text": "LODMaxLow"
+        },
+        {
+          "line": 5174,
+          "text": "LODCutoffHigh"
+        },
+        {
+          "line": 5175,
+          "text": "LODCutoffMedium"
+        },
+        {
+          "line": 5207,
+          "text": "modelTexturesLODHi"
+        },
+        {
+          "line": 5208,
+          "text": "modelTexturesLOD0"
+        },
+        {
+          "line": 5209,
+          "text": "modelTexturesLOD1"
+        },
+        {
+          "line": 5210,
+          "text": "modelTexturesLOD2"
+        },
+        {
+          "line": 5211,
+          "text": "modelTexturesLOD3"
+        },
+        {
+          "line": 5486,
+          "text": "useHighModelLOD"
+        },
+        {
+          "line": 5487,
+          "text": "useHighAnimLOD"
+        },
+        {
+          "line": 6294,
+          "text": "objectLODDeactivationDistance"
+        },
+        {
+          "line": 6298,
+          "text": "characterLODDistance"
+        }
+      ],
+      "semantically_inspected_excerpt_lines": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        98,
+        99,
+        100,
+        159,
+        160,
+        161,
+        707,
+        708,
+        709,
+        718,
+        719,
+        720,
+        721,
+        722,
+        723,
+        777,
+        778,
+        779,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1254,
+        1255,
+        1256,
+        1257,
+        1258,
+        1259,
+        1851,
+        1852,
+        1853,
+        1854,
+        3571,
+        3572,
+        3573,
+        3740,
+        3741,
+        3742,
+        3743,
+        3816,
+        3817,
+        3818,
+        3890,
+        3891,
+        3892,
+        4071,
+        4072,
+        4073,
+        4098,
+        4099,
+        4100,
+        4101,
+        4102,
+        4103,
+        4169,
+        4170,
+        4171,
+        4186,
+        4187,
+        4188,
+        4208,
+        4209,
+        4210,
+        4211,
+        4212,
+        4213,
+        4429,
+        4430,
+        4431,
+        4432,
+        4433,
+        4435,
+        4436,
+        4437,
+        4555,
+        4556,
+        4557,
+        4648,
+        4649,
+        4650,
+        4681,
+        4682,
+        4683,
+        4796,
+        4797,
+        4798,
+        5169,
+        5170,
+        5171,
+        5172,
+        5173,
+        5174,
+        5175,
+        5176,
+        5206,
+        5207,
+        5208,
+        5209,
+        5210,
+        5211,
+        5212,
+        5485,
+        5486,
+        5487,
+        5488,
+        6293,
+        6294,
+        6295,
+        6297,
+        6298,
+        6299
+      ],
+      "kind": "fixed-community-registry-or-declaration-not-local-execution"
+    },
+    {
+      "path": "Simulator/cCreatureAnimal.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAnimal.h",
+      "bytes": 3478,
+      "sha256": "5fdfcb297c70cdc1f86f029183907eeab6e7b88b34b8aceea2163de44d4ade78",
+      "lines": 97,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Simulat|Think|Update|Renderable|queue|Cancel|BakeModel",
+      "selected_declarations": [
+        {
+          "line": 21,
+          "text": "#include <Spore\\Simulator\\cCreatureBase.h>"
+        },
+        {
+          "line": 22,
+          "text": "#include <Spore\\Simulator\\cSpeciesProfile.h>"
+        },
+        {
+          "line": 24,
+          "text": "#define cCreatureAnimalPtr eastl::intrusive_ptr<Simulator::cCreatureAnimal>"
+        },
+        {
+          "line": 26,
+          "text": "namespace Simulator"
+        },
+        {
+          "line": 94,
+          "text": "\t\tDeclareAddress(Update);  // 0xC0A590 0xC0AE30"
+        }
+      ],
+      "semantically_inspected_excerpt_lines": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        93,
+        94,
+        95
+      ],
+      "kind": "fixed-community-registry-or-declaration-not-local-execution"
+    },
+    {
+      "path": "Anim/IAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/IAnimWorld.h",
+      "bytes": 2546,
+      "sha256": "68e1b28df2cc6c5cc9052875ab756424ca902e27f1976f093200b9f0cf7bd52c",
+      "lines": 58,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Simulat|Think|Update|Renderable|queue|Cancel|BakeModel",
+      "selected_declarations": [
+        {
+          "line": 34,
+          "text": "\t\t/* 24h */\tvirtual void Update(float deltaTime, App::cViewer* = nullptr) = 0;  // must be called every frame?"
+        },
+        {
+          "line": 35,
+          "text": "\t\t/* 28h */\tvirtual void UpdateCreatures(float deltaTime, App::cViewer* = nullptr) = 0;"
+        },
+        {
+          "line": 36,
+          "text": "\t\t/* 2Ch */\tvirtual void PostUpdateCreatures(float deltaTime, App::cViewer* = nullptr) = 0;"
+        },
+        {
+          "line": 47,
+          "text": "\t\t/* 48h */\tvirtual void func48h(int index, int) = 0;  // related with lod max"
+        }
+      ],
+      "semantically_inspected_excerpt_lines": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        46,
+        47,
+        48
+      ],
+      "kind": "fixed-community-registry-or-declaration-not-local-execution"
+    },
+    {
+      "path": "Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "lines": 267,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Simulat|Think|Update|Renderable|queue|Cancel|BakeModel",
+      "selected_declarations": [],
+      "semantically_inspected_excerpt_lines": [],
+      "kind": "fixed-community-registry-or-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/BakeManager.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/BakeManager.h",
+      "bytes": 37294,
+      "sha256": "461f65242d2e19c6daaa5d9a1c8c4a61910cdfdc9e7d0914c043483565377209",
+      "lines": 1282,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Simulat|Think|Update|Renderable|queue|Cancel|BakeModel",
+      "selected_declarations": [
+        {
+          "line": 43,
+          "text": "\t\tint mQueuedBakes;"
+        },
+        {
+          "line": 67,
+          "text": "\t\t/* 14h */\tvirtual void Update();"
+        },
+        {
+          "line": 70,
+          "text": "\t\t/* 20h */\tvirtual void SetQueueEnabled(bool QueueEnabled);"
+        },
+        {
+          "line": 71,
+          "text": "\t\t/* 24h */\tvirtual int GetQueueSize(uint32_t unk);\t//InterruptForEditorPaintRequest?"
+        },
+        {
+          "line": 72,
+          "text": "\t\t/* 28h */\tvirtual int GetQueueSize();\t//FinishCreature?\tReloadMuscleData?"
+        },
+        {
+          "line": 74,
+          "text": "\t\t/* 30h */\tvirtual void GetQueue(eastl::vector<eastl::pair<ResourceKey, BakeParameters>>* unk);//Set swarm parameters? or HandleMessage?"
+        },
+        {
+          "line": 78,
+          "text": "\t\t/* 40h */\tvirtual bool Cancel(uint32_t mTag);"
+        },
+        {
+          "line": 79,
+          "text": "\t\t/* 44h */\tvirtual bool Cancel(const ResourceKey& nameKey, uint32_t mTag);"
+        },
+        {
+          "line": 80,
+          "text": "\t\t/* 48h */\tvirtual bool Cancel(const ResourceKey& nameKey);"
+        },
+        {
+          "line": 81,
+          "text": "\t\t/* 4Ch */\tvirtual bool BakeModel(const ResourceKey& nameKey, const BakeParameters& params);"
+        },
+        {
+          "line": 82,
+          "text": "\t\t/* 50h */\tvirtual bool QueueBake(const ResourceKey& nameKey, const ResourceKey& nameKey2);"
+        }
+      ],
+      "semantically_inspected_excerpt_lines": [
+        42,
+        43,
+        44,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "kind": "fixed-community-registry-or-declaration-not-local-execution"
+    },
+    {
+      "path": "Simulator/cCreatureBase.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureBase.h",
+      "bytes": 18135,
+      "sha256": "4b813c02ac09a260d34048b8002e2cc694ccad67de4df4409fd45073ea5bec37",
+      "lines": 429,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Update|Schedule|Renderable|class cCreatureBase|Simulat|Think",
+      "semantically_inspected_excerpt_lines": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        39,
+        40,
+        41,
+        42,
+        43,
+        84,
+        85,
+        86,
+        87,
+        148,
+        149,
+        150,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        236,
+        237,
+        238,
+        242,
+        243,
+        244,
+        245,
+        246,
+        281,
+        282,
+        283,
+        284,
+        423,
+        424,
+        425
+      ],
+      "selected_declarations": [
+        {
+          "line": 22,
+          "text": "#include <Spore\\Simulator\\cGameData.h>"
+        },
+        {
+          "line": 23,
+          "text": "#include <Spore\\Simulator\\cGameBundleContainer.h>"
+        },
+        {
+          "line": 24,
+          "text": "#include <Spore\\Simulator\\cSpeciesProfile.h>"
+        },
+        {
+          "line": 25,
+          "text": "#include <Spore\\Simulator\\cBehaviorAgent.h>"
+        },
+        {
+          "line": 26,
+          "text": "#include <Spore\\Simulator\\cLocomotiveObject.h>"
+        },
+        {
+          "line": 27,
+          "text": "#include <Spore\\Simulator\\cBehaviorList.h>"
+        },
+        {
+          "line": 28,
+          "text": "#include <Spore\\Simulator\\cCombatant.h>"
+        },
+        {
+          "line": 29,
+          "text": "#include <Spore\\Simulator\\UnknownCreatureClass.h>"
+        },
+        {
+          "line": 40,
+          "text": "#define cCreatureBasePtr eastl::intrusive_ptr<Simulator::cCreatureBase>"
+        },
+        {
+          "line": 42,
+          "text": "namespace Simulator"
+        },
+        {
+          "line": 85,
+          "text": "\t/// The base class for all creatures in the Simulator."
+        },
+        {
+          "line": 86,
+          "text": "\tclass cCreatureBase"
+        },
+        {
+          "line": 149,
+          "text": "\t\t/// Returns the target of this creature ONLY if it is a Simulator::cCreatureAnimal."
+        },
+        {
+          "line": 225,
+          "text": "\t\t/* 60h */\tvirtual void Update(int deltaTime);"
+        },
+        {
+          "line": 227,
+          "text": "\t\t/* 64h */\tvirtual void func64h(float);  // called by Update"
+        },
+        {
+          "line": 228,
+          "text": "\t\t/* 68h */\tvirtual void func68h(float);  // called by Update"
+        },
+        {
+          "line": 229,
+          "text": "\t\t/* 6Ch */\tvirtual void func6Ch(int deltaTime);  // called by Update"
+        },
+        {
+          "line": 230,
+          "text": "\t\t/* 70h */\tvirtual void func70h(float deltaTimeSeconds);  // called by Update"
+        },
+        {
+          "line": 237,
+          "text": "\t\t/* 88h */\tvirtual void UpdateHunger(float deltaTimeSeconds);"
+        },
+        {
+          "line": 243,
+          "text": "\t\t/* A0h */\tvirtual bool ForgetUpdateInteractionEffect();"
+        },
+        {
+          "line": 244,
+          "text": "\t\t/* A4h */\tvirtual CreatureMotive UpdateMotiveState();  // returns new motive state"
+        },
+        {
+          "line": 245,
+          "text": "\t\t/* A8h */\tvirtual bool HasUpdateMotiveEffect();"
+        },
+        {
+          "line": 282,
+          "text": "\t\t/* B60h */\tbool mbUpdateInteractionEffect;"
+        },
+        {
+          "line": 283,
+          "text": "\t\t/* B61h */\tbool mbUpdateMotiveEffect;"
+        },
+        {
+          "line": 424,
+          "text": "\t\tDeclareAddress(Update);  // 0xC20C50 0xC21530"
+        }
+      ],
+      "kind": "fixed-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Simulator/cLocomotiveObject.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cLocomotiveObject.h",
+      "bytes": 4720,
+      "sha256": "850cd29803ab81caeab2cc715bb1ba7af7f5d0c998031c3342864d769ea8a0df",
+      "lines": 134,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Update|Schedule|Renderable|class cCreatureBase|Simulat|Think",
+      "semantically_inspected_excerpt_lines": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "selected_declarations": [
+        {
+          "line": 21,
+          "text": "#include <Spore\\Simulator\\cSpatialObject.h>"
+        },
+        {
+          "line": 24,
+          "text": "#define cLocomotiveObjectPtr eastl::intrusive_ptr<Simulator::cLocomotiveObject>"
+        },
+        {
+          "line": 26,
+          "text": "namespace Simulator"
+        }
+      ],
+      "kind": "fixed-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Simulator/cSpatialObject.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpatialObject.h",
+      "bytes": 7548,
+      "sha256": "9c3f44b21370988c3b47a3286a666076ceaa9b0c4c91c0924839b70dbbca4de3",
+      "lines": 199,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Update|Schedule|Renderable|class cCreatureBase|Simulat|Think",
+      "semantically_inspected_excerpt_lines": [
+        27,
+        28,
+        29,
+        30,
+        33,
+        34,
+        35,
+        36,
+        37,
+        39,
+        40,
+        41
+      ],
+      "selected_declarations": [
+        {
+          "line": 28,
+          "text": "#include <Spore\\Simulator\\Serialization.h>"
+        },
+        {
+          "line": 29,
+          "text": "#include <Spore\\Simulator\\cGameData.h>"
+        },
+        {
+          "line": 34,
+          "text": "#define cSpatialObjectPtr eastl::intrusive_ptr<Simulator::cSpatialObject>"
+        },
+        {
+          "line": 36,
+          "text": "namespace Simulator"
+        },
+        {
+          "line": 40,
+          "text": "\t/// A 3D model in the Simulator. This class is inherit by all classes that have a visual representation,"
+        }
+      ],
+      "kind": "fixed-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Anim/cAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/cAnimWorld.h",
+      "bytes": 366,
+      "sha256": "05b9420a605dd7c9f06013a0fa9b5c1d310a463fc55a0e27756037cf1420a030",
+      "lines": 21,
+      "complete_keyword_inventory": true,
+      "pattern": "complete file",
+      "semantically_inspected_excerpt_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "kind": "fixed-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Graphics/Model.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Graphics/Model.h",
+      "bytes": 6931,
+      "sha256": "f2cf0c10e25de686e32b40ab9a9e44aed6132f59842483ecf1c63afa8a439476",
+      "lines": 246,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Render|Draw|update",
+      "semantically_inspected_excerpt_lines": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        173,
+        174,
+        175,
+        176,
+        179,
+        180,
+        181
+      ],
+      "kind": "fixed-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Graphics/IModelWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Graphics/IModelWorld.h",
+      "bytes": 26387,
+      "sha256": "ab45a2df7a10addab2ac29d87d14c8713301b417bd077d9b2435c23217be6980",
+      "lines": 578,
+      "complete_keyword_inventory": true,
+      "pattern": "LOD|Render|Draw|update",
+      "semantically_inspected_excerpt_lines": [
+        30,
+        31,
+        32,
+        100,
+        101,
+        102,
+        103,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        127,
+        128,
+        129,
+        130,
+        274,
+        275,
+        276,
+        353,
+        354,
+        355,
+        356,
+        357,
+        369,
+        370,
+        371,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        407,
+        408,
+        409,
+        410,
+        475,
+        476,
+        477,
+        485,
+        486,
+        487,
+        488,
+        489,
+        493,
+        494,
+        495,
+        496,
+        497,
+        498,
+        499,
+        500,
+        501,
+        514,
+        515,
+        516,
+        519,
+        520,
+        521,
+        522,
+        523,
+        533,
+        534,
+        535,
+        539,
+        540,
+        541,
+        554,
+        555,
+        556
+      ],
+      "kind": "fixed-community-declaration-not-local-execution"
+    }
+  ],
+  "repository_path_inventory": {
+    "url": "https://api.github.com/repos/Spore-Community/Spore-ModAPI/git/trees/2d71289adc71aa5c58f4516c6c835c99f5f9ca19?recursive=1",
+    "bytes": 344822,
+    "sha256": "5c3282c0aa0c0f0bee8de0ba804019d1a478800f97111239f7d8ec2f53854a06",
+    "truncated": false,
+    "matching_header_paths": [
+      "Projects/Example Projects/TemplatesExample/MyRenderable.h",
+      "Spore ModAPI/Spore/Anim/IAnimWorld.h",
+      "Spore ModAPI/Spore/Anim/cAnimWorld.h",
+      "Spore ModAPI/Spore/Editors/cEditorAnimWorld.h",
+      "Spore ModAPI/Spore/Simulator/cSimPlanetHighLOD.h",
+      "Spore ModAPI/Spore/Simulator/cSimPlanetLowLOD.h"
+    ],
+    "only_paths_not_source_bodies": true
+  },
+  "facts": [
+    {
+      "locator": "reg_property.txt 1852-1853",
+      "summary": "Distinct simulation minimum distance property IDs registered; actual selected direct values decoded separately."
+    },
+    {
+      "locator": "reg_property.txt 5169-5176 and5486-5487",
+      "summary": "Animation manager LOD limits/cutoffs and high animation/model names registered, no effective values read here."
+    },
+    {
+      "locator": "Anim/IAnimWorld.h 34-36,47",
+      "summary": "Separate animation update passes declared; unnamed method commented related with lod max, semantics and cadence unknown."
+    }
+  ],
+  "unread_or_unknown": [
+    "Native method bodies and actual render/animation/simulation scheduling",
+    "Distance units/origin, thresholds inclusivity and loaded CreatureGameTuning variant",
+    "Effective model/animation LOD resource values",
+    "LOD activation, population/individual AI cadence and damage scheduling",
+    "New object/mesh/texture content: not extracted"
+  ],
+  "scope": "Landed Creature editor/population; only declared model/animation/individual simulation entries, other-stage registry candidates excluded from conclusions",
+  "reused_records": [
+    "public-editor-budget-entries.json",
+    "local-selected-movement-resources.json",
+    "public-gait-format-sources.json"
+  ],
+  "source_limitations": [
+    "Community interface/registry not original native method bodies or validated local ABI",
+    "Tree paths include examples/planet LOD; not used as land creature implementation",
+    "cAnimWorld entire body is commented placeholder, not implementation",
+    "Complete keyword inventories, only recorded excerpt lines semantically inspected"
+  ]
+}

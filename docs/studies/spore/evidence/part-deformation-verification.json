@@ -1,0 +1,62 @@
+{
+  "kind": "study-and-independent-contract-verification-not-runtime",
+  "status": "passed",
+  "verified_at_pacific": "2026-10-12T15:28:46.736015-07:00",
+  "test_results": [
+    {
+      "file": "checks/verify_part_deform_reader.py",
+      "passed": 8,
+      "observed_exit_code": 0
+    },
+    {
+      "file": "checks/verify_part_deformation_examples.py",
+      "passed": 22,
+      "observed_exit_code": 0
+    }
+  ],
+  "tests_scope": "Selected format boundary checks and independent 2D affine/3D quaternion examples; no rendered Creature tests.",
+  "target_sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+  "full_ascii_entries_verified": 38,
+  "selected_scalar_resource": {
+    "package_sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+    "key": {
+      "type": "0xee17c6ad",
+      "group": "0x00000000",
+      "instance": "0x0af13430"
+    },
+    "channel": "mouthMorphs",
+    "version": 25,
+    "keyframes": 5,
+    "scalar_components": 4,
+    "scalar_samples": 20,
+    "decoded_sha256": "fbc75353278e96c856ec6f07d779f6a59809234c1aa0285b849623e127b2075e",
+    "reparsed_result_matched": true
+  },
+  "public_sources": {
+    "new_pinned_format_records": 11,
+    "slide_pages_text_examined": 26,
+    "slide_text_identity": "c5e26f917589ff9e4af36753f79fdc9550f1036407791c353ec1aa7677529634",
+    "slide_images_inspected": false,
+    "previous_pdf_source_identity_reused": true
+  },
+  "not_performed": [
+    "game launch/attach",
+    "native decompilation",
+    "private save reads",
+    "full model/animation asset extraction",
+    "runtime interpolation or body binding",
+    "production code/build/tests",
+    "3D visual/performance validation"
+  ],
+  "risks": [
+    "Historical Rigblock pipeline not fully aligned to local release.",
+    "Original deform ID semantics, value units, weight composition and final morph/skin order remain unknown.",
+    "Independent own rig templates require testing extreme shapes and contacts."
+  ],
+  "documentation": {
+    "markdown_files": 33,
+    "relative_links_checked": 223,
+    "json_records_checked": 49,
+    "utf8_and_fences": "passed"
+  }
+}

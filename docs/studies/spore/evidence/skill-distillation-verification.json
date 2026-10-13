@@ -1,0 +1,21 @@
+{
+  "skills": [
+    {
+      "skill": "rea-system-study",
+      "markdown_files_checked": 5,
+      "local_references_checked": 5,
+      "frontmatter_and_ui_scalar_schema": "passed"
+    },
+    {
+      "skill": "reverse-engineer-anything",
+      "markdown_files_checked": 8,
+      "local_references_checked": 10,
+      "frontmatter_and_ui_scalar_schema": "passed"
+    }
+  ],
+  "study_markdown_files_checked": 26,
+  "study_relative_links_checked": 108,
+  "bundled_quick_validator": "not run successfully: Python yaml dependency missing",
+  "alternative_check": "Strict scalar mapping subset plus expected frontmatter/UI schema, reference containment, existence, fences and UTF-8; not general YAML validation or model forward-test.",
+  "installed_skill_source_files_matching": 15
+}

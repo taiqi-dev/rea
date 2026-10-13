@@ -1,0 +1,42 @@
+{
+  "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17390/manuals/manual.pdf?t=1642702281",
+  "sha256": "9a1cd765673454b3fbdf0edf2026b853b3354a4fa6ef144076b10eb508bdae1d",
+  "bytes": 13354693,
+  "total_pages": 31,
+  "relevant_pages": [
+    {
+      "pdf_page": 19,
+      "printed_pages": "32-33",
+      "headings": [
+        "Creature Stage",
+        "Creature Stage Screen",
+        "Creature Controls"
+      ],
+      "facts": [
+        "Player controls one creature; other species members act independently.",
+        "Social and combat modes expose different ability sets.",
+        "Death returns the player to the home nest."
+      ]
+    },
+    {
+      "pdf_page": 20,
+      "printed_pages": "34-35",
+      "headings": [
+        "Gaining Intelligence",
+        "Developing Your Species",
+        "Relationships",
+        "Befriending Other Creatures",
+        "Combat"
+      ],
+      "facts": [
+        "Intelligence progression adds pack slots, up to three companions.",
+        "Social challenges require matching the opponent action at equal or greater ability level.",
+        "Already impressed individuals cannot initiate another social challenge.",
+        "Friendly or Allied relations permit healing at their nests; Allied creatures can join a pack with available slots.",
+        "Defeating an individual worsens relations with its species.",
+        "Creator changes apply to the player species; nest migration is described."
+      ]
+    }
+  ],
+  "method": "Official public PDF downloaded and relevant complete pages text-read in memory. Paraphrased facts and page locators retained; no full PDF/text persisted, no visual layout review."
+}

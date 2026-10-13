@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "modules": [
+    41,
+    42
+  ],
+  "kind": "independent-mathematics-state-and-existing-evidence-consistency-checks",
+  "status": "pass",
+  "test_result": {
+    "kind": "independent-examples-and-reused-json-checks",
+    "tests_run": 32,
+    "failures": 0,
+    "errors": 0,
+    "success": true,
+    "module_counts": {
+      "41": 16,
+      "42": 14,
+      "reused_evidence": 2
+    },
+    "game_runtime_verified": false
+  },
+  "test_command": {
+    "python": "C:\\Users\\81553\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "arguments": [
+      "-B",
+      "docs/studies/spore/checks/verify_mirror_branch_examples.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"kind\": \"independent-examples-and-reused-json-checks\", \"tests_run\": 32, \"failures\": 0, \"errors\": 0, \"success\": true, \"module_counts\": {\"41\": 16, \"42\": 14, \"reused_evidence\": 2}, \"game_runtime_verified\": false}",
+    "stderr": "................................\n----------------------------------------------------------------------\nRan 32 tests in 0.009s\n\nOK"
+  },
+  "document_checks": [
+    {
+      "path": "41-mirroring-mount-frames-and-action-coordinates.md",
+      "status": "pass",
+      "local_links": 7,
+      "closed_fenced_blocks": 5,
+      "supported_fences": [
+        "```",
+        "~~~"
+      ]
+    },
+    {
+      "path": "42-branched-limbs-shared-joints-and-goal-conflicts.md",
+      "status": "pass",
+      "local_links": 9,
+      "closed_fenced_blocks": 7,
+      "supported_fences": [
+        "```",
+        "~~~"
+      ]
+    }
+  ],
+  "public_evidence": {
+    "fixed_code_sources": 5,
+    "developer_pdf_sources": 1,
+    "pdf_pages_actually_read_one_based": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "source_checks": {
+      "status": "pass",
+      "checks": [
+        "unique pinned source URLs",
+        "digest shapes and read-range bounds",
+        "contract locators covered",
+        "developer paper identity reused",
+        "existing selected tree/channel-ID match",
+        "local-input byte hashes"
+      ],
+      "runtime_verified": false
+    },
+    "unchanged_local_json_hashes": 3
+  },
+  "files": [
+    {
+      "path": "docs/studies/spore/41-mirroring-mount-frames-and-action-coordinates.md",
+      "bytes": 12194,
+      "sha256": "f92a77bc913dd939cf8973261ca3b610055ce3a7631a3d43273dc8441a50db37"
+    },
+    {
+      "path": "docs/studies/spore/42-branched-limbs-shared-joints-and-goal-conflicts.md",
+      "bytes": 15695,
+      "sha256": "28f34cbe2327b9f63b4eadde3424b0d5975cf0da356952289500c867740527e8"
+    },
+    {
+      "path": "docs/studies/spore/checks/verify_mirror_branch_examples.py",
+      "bytes": 15965,
+      "sha256": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2"
+    },
+    {
+      "path": "docs/studies/spore/evidence/public-mirror-branch-contracts.json",
+      "bytes": 19126,
+      "sha256": "e03d42ae795f98de3c635cdba5abb91bf941bbc7eca0679b3eba59a27fbb91e1"
+    }
+  ],
+  "coverage_limits": [
+    "Independent examples are not Spore tests.",
+    "No current native transform/IK/default-mix function recovered.",
+    "No complete 3D preconditioner, solver, renderer, contact or performance validation.",
+    "Two tests read existing selected JSON; no game package payload reads this module."
+  ],
+  "not_performed": [
+    "game startup/attach",
+    "private saves",
+    "asset export",
+    "tool installation/configuration",
+    "production implementation",
+    "Git writes"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "b5db101192159b6743a3f71218d705ba4d52a2c0d6f4925d59d94db014b3f560",
+    "captured_file_bytes": 3620,
+    "reference_changes": [
+      {
+        "pointer": "/files/3/sha256",
+        "captured": "f4faf32287958281acf022073bbdf665d193f6dc6c852a0901ebc5662499c405",
+        "published": "e03d42ae795f98de3c635cdba5abb91bf941bbc7eca0679b3eba59a27fbb91e1",
+        "study_file": "evidence/public-mirror-branch-contracts.json"
+      },
+      {
+        "pointer": "/files/3/bytes",
+        "captured": 18289,
+        "published": 19126,
+        "study_file": "evidence/public-mirror-branch-contracts.json"
+      }
+    ],
+    "followup_reference_refresh": [
+      {
+        "recorded_at_pacific": "2026-10-13T03:07:56.620444-07:00",
+        "reason": "Remove six trailing blank lines reported by Git whitespace check; preserve source logic and historical values",
+        "reference_changes": [
+          {
+            "pointer": "/files/0/sha256",
+            "captured": "4921aaba62db47bc3378e8233ac3d14bcb60b2f9c3ad62cca8df019c035b5735",
+            "published": "f92a77bc913dd939cf8973261ca3b610055ce3a7631a3d43273dc8441a50db37",
+            "study_file": "41-mirroring-mount-frames-and-action-coordinates.md"
+          },
+          {
+            "pointer": "/files/0/bytes",
+            "captured": 12195,
+            "published": 12194,
+            "study_file": "41-mirroring-mount-frames-and-action-coordinates.md"
+          },
+          {
+            "pointer": "/files/1/sha256",
+            "captured": "0f7f68ec354eba96b01157a4f186cd78df1f4174f7de16b66e4a96a118fc45ba",
+            "published": "28f34cbe2327b9f63b4eadde3424b0d5975cf0da356952289500c867740527e8",
+            "study_file": "42-branched-limbs-shared-joints-and-goal-conflicts.md"
+          },
+          {
+            "pointer": "/files/1/bytes",
+            "captured": 15696,
+            "published": 15695,
+            "study_file": "42-branched-limbs-shared-joints-and-goal-conflicts.md"
+          },
+          {
+            "pointer": "/files/2/sha256",
+            "captured": "2507b559b62f7f9deb1abca99ad3581d7a38adeb5a1ea1edb8097e79da530b54",
+            "published": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2",
+            "study_file": "checks/verify_mirror_branch_examples.py"
+          },
+          {
+            "pointer": "/files/2/bytes",
+            "captured": 15966,
+            "published": 15965,
+            "study_file": "checks/verify_mirror_branch_examples.py"
+          }
+        ]
+      }
+    ]
+  }
+}

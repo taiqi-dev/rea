@@ -1,0 +1,164 @@
+{
+  "kind": "module38-research-verification-not-original-runtime",
+  "status": "passed",
+  "verified_at_pacific": "2026-10-12T19:28:08.336050-07:00",
+  "tests": [
+    {
+      "path": "docs\\studies\\spore\\checks\\verify_capability_mapping_reader.py",
+      "sha256": "a715fc0b4bfafef0787fd4f4bc7a4425a2ca650dda67ac03053579e2f598e74c",
+      "passed": 13,
+      "exit_code": 0
+    },
+    {
+      "path": "docs\\studies\\spore\\checks\\verify_part_binding_examples.py",
+      "sha256": "7d7043fed6b0530b2bde1ed00991e9fe32bc7adfe36cb6113b4b4cdd70c1fb03",
+      "passed": 15,
+      "exit_code": 0
+    }
+  ],
+  "passed_checks": 28,
+  "structure": {
+    "markdown_files": 41,
+    "relative_file_links": 332,
+    "json_files_including_this_record": 73,
+    "utf8_fences_and_relative_file_links": true,
+    "internal_anchors_checked": false
+  },
+  "coverage": {
+    "public_sources": 16,
+    "public_contracts": 19,
+    "selected_PCTP_resources": 2,
+    "v4_parsed_resources": 1,
+    "v3_header_only_resources": 1,
+    "v4_counts": {
+      "names": 88,
+      "remaps": 168,
+      "aggregates": 8,
+      "deforms": 20
+    },
+    "roles_exported": [
+      "mout",
+      "grsp"
+    ],
+    "cross_record_type_hash_match": "0xdd204963",
+    "axis_and_placement_seed_keys": 6,
+    "axis_template_payload_reads": 0,
+    "game_execution": false,
+    "native_execution_trace": false,
+    "private_save_read": false,
+    "model_texture_export": false,
+    "original_game_equivalence_test": false
+  },
+  "scope_notes": [
+    "PCTP v3 retained header-only; raw +8 word is not a v4 priority.",
+    "Index differs from sorted-name position and bone numbering.",
+    "Control/placement lookup has zero payload reads; no claim those keys are resource files.",
+    "Same deform ID has distinct role contexts/defaults.",
+    "The selected v4 file has unknown original Creature load context.",
+    "EXE/Graphics identities reused; two config package hashes remeasured.",
+    "An atomic documentation patch had a stale context and was rejected; no partial edit occurred, corrected contexts then applied.",
+    "No game/runtime/provider/install/save/asset-export or production implementation."
+  ],
+  "unknowns": [
+    "Original control-key resolution and axis consumers",
+    "PCTP runtime load selection and effective map properties",
+    "Default value/weight evaluation and retargeting",
+    "Original concrete skill executor selection"
+  ],
+  "deliverable_digests": [
+    {
+      "path": "38-axis-controls-capability-role-and-local-deform-binding.md",
+      "bytes": 15020,
+      "sha256": "c7783c1695c5b022228fee70b3a79c2980e2240d8a9912d15c4de2cd8d70ffcd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 18975,
+      "sha256": "a716faa2abb8f7539dc27468b3fb82f249f692f1463ca7243c3dbe5884371873"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 10322,
+      "sha256": "d038a0dcd2d856345fb8d8b0fa25b7dae323b41639521e2e321097697074feed"
+    },
+    {
+      "path": "37-part-definition-edit-controls-rigs-and-capabilities.md",
+      "bytes": 24451,
+      "sha256": "549b15144a4a89b91767dbddfa9ec9d582d95c97ba4ba5106eb1e30c17cdfb31"
+    },
+    {
+      "path": "checks/read_selected_capability_mappings.py",
+      "bytes": 8358,
+      "sha256": "075b0a3545ac35801ff4851dfd29918e45944a7f8ed87ada375320ceb0756fa7"
+    },
+    {
+      "path": "checks/verify_capability_mapping_reader.py",
+      "bytes": 4969,
+      "sha256": "a715fc0b4bfafef0787fd4f4bc7a4425a2ca650dda67ac03053579e2f598e74c"
+    },
+    {
+      "path": "checks/verify_part_binding_examples.py",
+      "bytes": 8379,
+      "sha256": "7d7043fed6b0530b2bde1ed00991e9fe32bc7adfe36cb6113b4b4cdd70c1fb03"
+    },
+    {
+      "path": "evidence/local-axis-control-template-observations.json",
+      "bytes": 27515,
+      "sha256": "ef973b0c466ce357f38d8128257c64ce8d3ffd08e3d43ad3f0f778628b92a494"
+    },
+    {
+      "path": "evidence/public-capability-binding-format-contracts.json",
+      "bytes": 29695,
+      "sha256": "bed063b1c57693b1656e39481449dabc756451d3577a92430e3581c0f481360b"
+    },
+    {
+      "path": "evidence/local-selected-capability-mappings.json",
+      "bytes": 8915,
+      "sha256": "8ede8b3706ab2928b9a205748d350e089859cf0e82ff3da441e6422a12b8a965"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "a85364f2131acbc8bcd325527b605e51ab959a1555056bb81854d641bd5cf7e3",
+    "captured_file_bytes": 4357,
+    "reference_changes": [
+      {
+        "pointer": "/deliverable_digests/7/sha256",
+        "captured": "410bd21e694359031682cd44c32a99b6af28da7554bcf841ad8e26fa24fc72e7",
+        "published": "ef973b0c466ce357f38d8128257c64ce8d3ffd08e3d43ad3f0f778628b92a494",
+        "study_file": "evidence/local-axis-control-template-observations.json"
+      },
+      {
+        "pointer": "/deliverable_digests/7/bytes",
+        "captured": 28384,
+        "published": 27515,
+        "study_file": "evidence/local-axis-control-template-observations.json"
+      },
+      {
+        "pointer": "/deliverable_digests/8/sha256",
+        "captured": "679444762ed7d10fb45aec4a414f308e655a43eb1693c567089d5fe5c0f10a27",
+        "published": "bed063b1c57693b1656e39481449dabc756451d3577a92430e3581c0f481360b",
+        "study_file": "evidence/public-capability-binding-format-contracts.json"
+      },
+      {
+        "pointer": "/deliverable_digests/8/bytes",
+        "captured": 30733,
+        "published": 29695,
+        "study_file": "evidence/public-capability-binding-format-contracts.json"
+      },
+      {
+        "pointer": "/deliverable_digests/9/sha256",
+        "captured": "ea106c9080c19ef332bbf839c942d940b32cab5c3d85f9dfb9998dcf9b463d25",
+        "published": "8ede8b3706ab2928b9a205748d350e089859cf0e82ff3da441e6422a12b8a965",
+        "study_file": "evidence/local-selected-capability-mappings.json"
+      },
+      {
+        "pointer": "/deliverable_digests/9/bytes",
+        "captured": 9210,
+        "published": 8915,
+        "study_file": "evidence/local-selected-capability-mappings.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "kind": "pinned-public-editor-snap-connection-contracts",
+  "sdk_commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "fx_commit_reused_only": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "sources": [
+    {
+      "path": "Editors/EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "encoding": "utf-8",
+      "lines": 514,
+      "ranges_semantically_inspected": [
+        [
+          230,
+          288
+        ],
+        [
+          350,
+          470
+        ],
+        [
+          480,
+          505
+        ]
+      ],
+      "keyword_inventory_pattern": null,
+      "keyword_excerpt_lines_inspected": null,
+      "kind": "pinned-community-declaration-not-local-ABI-or-method-body"
+    },
+    {
+      "path": "Editors/EditorBaseHandle.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorBaseHandle.h",
+      "bytes": 2201,
+      "sha256": "431fcbd2c5f4611201c9ff54f4f8af48fdb18c8afb0b27a8edaec7adc5ed2f8a",
+      "encoding": "utf-8",
+      "lines": 67,
+      "ranges_semantically_inspected": [
+        [
+          1,
+          67
+        ]
+      ],
+      "keyword_inventory_pattern": null,
+      "keyword_excerpt_lines_inspected": null,
+      "kind": "pinned-community-declaration-not-local-ABI-or-method-body"
+    },
+    {
+      "path": "Editors/Editor.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/Editor.h",
+      "bytes": 27192,
+      "sha256": "5cb5d4d9fb17194e329effd08597bb33656bf5a6d7521a20b3a4ba3c6661aaa1",
+      "encoding": "utf-8",
+      "lines": 700,
+      "ranges_semantically_inspected": null,
+      "keyword_inventory_pattern": "pick|ray|snap|attach|mouse|HitTest|Intersect",
+      "keyword_excerpt_lines_inspected": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        257,
+        258,
+        259,
+        260,
+        261,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        410,
+        411,
+        412,
+        413,
+        414,
+        418,
+        419,
+        420,
+        421,
+        422,
+        550,
+        551,
+        552,
+        553,
+        554,
+        555,
+        556,
+        557,
+        558,
+        559,
+        560,
+        634,
+        635,
+        636,
+        637,
+        638,
+        639,
+        640,
+        641
+      ],
+      "kind": "pinned-community-declaration-not-local-ABI-or-method-body"
+    },
+    {
+      "path": "Editors/cEditorSkin.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorSkin.h",
+      "bytes": 1589,
+      "sha256": "3c100d2a2213ec287653e14322d7dfe85345028538378c7efcd1110537c14735",
+      "encoding": "utf-8",
+      "lines": 60,
+      "ranges_semantically_inspected": null,
+      "keyword_inventory_pattern": "pick|ray|snap|attach|mouse|HitTest|Intersect",
+      "keyword_excerpt_lines_inspected": [],
+      "kind": "pinned-community-declaration-not-local-ABI-or-method-body"
+    }
+  ],
+  "reused_records": [
+    "public-part-definition-contracts.json",
+    "public-mirror-branch-contracts.json",
+    "public-locomotion-rebuild-contracts.json",
+    "local-part-definition-observations.json"
+  ],
+  "local_scope": "No new local game resource or instruction reads in this module",
+  "unread_or_unknown": [
+    "Actual mouse ray to creature surface/parent selection method",
+    "CSnap matrix coordinate spaces and multiplication order",
+    "modelHandle template key consumers and original tuning values",
+    "Published flags do not establish land editor connection validity policy",
+    "No original live drag/undo/cancellation execution observed"
+  ],
+  "target_identity_reused": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "version": "1.3.0.29",
+    "rehashed_this_module": false
+  },
+  "facts": [
+    {
+      "source": "EditorRigblock.h",
+      "locator": "417-449",
+      "summary": "CSnap transforms and model csnap bone index are separate from parent/children, triangle picking, pinning and symmetric partner declarations. No method body establishes the spaces or selection algorithm."
+    },
+    {
+      "source": "EditorRigblock.h",
+      "locator": "359-370",
+      "summary": "History/current position and base/user/total orientation fields exist; order unspecified, surfaceNormal comment uncertain."
+    },
+    {
+      "source": "EditorRigblock.h",
+      "locator": "230-288,487-495",
+      "summary": "Surface orientation, snap, picking and parent/type interaction names exist in shared editor header; original land-stage values and consumers unknown."
+    },
+    {
+      "source": "Editor.h",
+      "locator": "142-145,299-309",
+      "summary": "Mouse event and active/moving/selected part, active handle and mouse-in-skin declarations are distinct."
+    },
+    {
+      "source": "EditorBaseHandle.h",
+      "locator": "13-23",
+      "summary": "Handle Active, Unselected, Rollover and Default enum states exist, no state transitions recovered."
+    },
+    {
+      "source": "cEditorSkin.h",
+      "locator": "Complete-file bounded keyword inventory",
+      "summary": "Specified pick/ray/snap/attach/mouse/HitTest/Intersect query found no matches. Does not establish absence of picking elsewhere."
+    }
+  ],
+  "source_limitations": [
+    "Community declarations, not authoritative original source or verified local ABI",
+    "GPL community code used only as declaration research, not copied into user production",
+    "Header reads with unrelated stage enum names do not extend gameplay scope",
+    "No methods executed; no new modelHandle or property consumers recovered"
+  ]
+}

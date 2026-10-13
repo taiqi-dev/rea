@@ -1,0 +1,2236 @@
+{
+  "kind": "selected-local-config-and-reference-graph-observations-not-runtime",
+  "packages": [
+    {
+      "path": "E:/Steam/steamapps/common/Spore/Data/Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index": {
+        "index_count": 11529,
+        "index_offset": 19887288,
+        "index_bytes": 322820,
+        "index_flags": 4,
+        "examined_entries": 11529
+      }
+    },
+    {
+      "path": "E:/Steam/steamapps/common/Spore/Data/PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index": {
+        "index_count": 25535,
+        "index_offset": 79713863,
+        "index_bytes": 714988,
+        "index_flags": 4,
+        "examined_entries": 25535
+      }
+    }
+  ],
+  "selected_properties": [
+    {
+      "package": "Spore_Game.package",
+      "name_candidate": "ce_skinpaint_detail_stripesML",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x406a0200",
+        "instance": "0x00f3892f"
+      },
+      "stored_sha256": "1cfcd0d4846c9394d567dc05e4629d9ac4f889238576626eb23dc6cec6554bfd",
+      "decoded_sha256": "7c88514e1674d7645aaf3113fd2e58596646b1282c11715c51d1a7d860322e00",
+      "offset": 11832770,
+      "stored_bytes": 136,
+      "memory_bytes": 196,
+      "compression": 65535,
+      "properties": [
+        {
+          "id": "0x00b2ccca",
+          "registered_name": "description",
+          "type": "0x0013",
+          "flags": "0x000d",
+          "array": false,
+          "values": [
+            "skinpaint_detail_stripesML"
+          ]
+        },
+        {
+          "id": "0x00b2cccb",
+          "registered_name": "parent",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0x406a0200",
+              "instance": "0x91ad3433"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a7",
+          "registered_name": "paintThemePaints",
+          "type": "0x0020",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x103691ce"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a8",
+          "registered_name": "paintThemeColor1s",
+          "type": "0x0032",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.1254899948835373,
+              0.1254899948835373,
+              0.1254899948835373
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "name_candidate": "ce_skinpaint_theme_giraffeArmor",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x406a0200",
+        "instance": "0x05475ea3"
+      },
+      "stored_sha256": "5d3c9cb39268f223f21e9bc3827c2021b9edfab32c971f3ce8b56821fc5d5693",
+      "decoded_sha256": "619c68d89d64d1be21e31e82fee1765564e482b0fe56ffd7ecfceaa599e969b9",
+      "offset": 11926844,
+      "stored_bytes": 151,
+      "memory_bytes": 180,
+      "compression": 65535,
+      "properties": [
+        {
+          "id": "0x00b2ccca",
+          "registered_name": "description",
+          "type": "0x0013",
+          "flags": "0x000d",
+          "array": false,
+          "values": [
+            "giraffeArmor Theme"
+          ]
+        },
+        {
+          "id": "0x00b2cccb",
+          "registered_name": "parent",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0x406a0200",
+              "instance": "0x91ad3433"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a7",
+          "registered_name": "paintThemePaints",
+          "type": "0x0020",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x32fe45f6"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x8ac01a79"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x203219f6"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a8",
+          "registered_name": "paintThemeColor1s",
+          "type": "0x0032",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              0.443136990070343,
+              0.36470600962638855,
+              0.20392200350761414
+            ],
+            [
+              0.443136990070343,
+              0.1411760002374649,
+              0.19607800245285034
+            ],
+            [
+              0.443136990070343,
+              0.1411760002374649,
+              0.19607800245285034
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "name_candidate": "ce_skinpaint_base_melt",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x406a0200",
+        "instance": "0x085b9de0"
+      },
+      "stored_sha256": "05973c60b0122d2c73afd54ad3ff02b108f62946d0bf15da10d7443092e503b1",
+      "decoded_sha256": "810afb881675d1bbdb231f595950110d099c0a3a74370a6ec083b0a479979050",
+      "offset": 11941095,
+      "stored_bytes": 130,
+      "memory_bytes": 182,
+      "compression": 65535,
+      "properties": [
+        {
+          "id": "0x00b2ccca",
+          "registered_name": "description",
+          "type": "0x0013",
+          "flags": "0x000d",
+          "array": false,
+          "values": [
+            "skinpaint_base_melt"
+          ]
+        },
+        {
+          "id": "0x00b2cccb",
+          "registered_name": "parent",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0x406a0200",
+              "instance": "0x91ad3433"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a7",
+          "registered_name": "paintThemePaints",
+          "type": "0x0020",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x8c7aa8c3"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a8",
+          "registered_name": "paintThemeColor1s",
+          "type": "0x0032",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              0.2588239908218384,
+              0.5372549891471863,
+              0.8039219975471497
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name_candidate": "ce_skinpaint_detail_stripesML",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x406a0200",
+        "instance": "0x00f3892f"
+      },
+      "stored_sha256": "55344af301c55a61af3728c0891a1496cf3135337c30934f02cd74a5e1aab869",
+      "decoded_sha256": "0e7df581951fb04e2ebe89ff8009f70cc90289e5fdb6d61d853a27ed84003c03",
+      "offset": 15783070,
+      "stored_bytes": 136,
+      "memory_bytes": 196,
+      "compression": 65535,
+      "properties": [
+        {
+          "id": "0x00b2ccca",
+          "registered_name": "description",
+          "type": "0x0013",
+          "flags": "0x000d",
+          "array": false,
+          "values": [
+            "skinpaint_detail_stripesML"
+          ]
+        },
+        {
+          "id": "0x00b2cccb",
+          "registered_name": "parent",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0x406a0200",
+              "instance": "0x91ad3433"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a7",
+          "registered_name": "paintThemePaints",
+          "type": "0x0020",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x103691ce"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a8",
+          "registered_name": "paintThemeColor1s",
+          "type": "0x0032",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.1254899948835373,
+              0.1254899948835373,
+              0.1254899948835373
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name_candidate": "ce_skinpaint_theme_giraffeArmor",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x406a0200",
+        "instance": "0x05475ea3"
+      },
+      "stored_sha256": "d03a8393ae422fffe91e160d5480c0491c295f45d21eb9104a54bf86022f5b82",
+      "decoded_sha256": "a8f1590076dd17fabab00af854331c4a1b661478b8856f3416c5db598fb3f75b",
+      "offset": 3416030,
+      "stored_bytes": 151,
+      "memory_bytes": 180,
+      "compression": 65535,
+      "properties": [
+        {
+          "id": "0x00b2ccca",
+          "registered_name": "description",
+          "type": "0x0013",
+          "flags": "0x000d",
+          "array": false,
+          "values": [
+            "giraffeArmor Theme"
+          ]
+        },
+        {
+          "id": "0x00b2cccb",
+          "registered_name": "parent",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0x406a0200",
+              "instance": "0x91ad3433"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a7",
+          "registered_name": "paintThemePaints",
+          "type": "0x0020",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x32fe45f6"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x8ac01a79"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x203219f6"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a8",
+          "registered_name": "paintThemeColor1s",
+          "type": "0x0032",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              0.443136990070343,
+              0.36470600962638855,
+              0.20392200350761414
+            ],
+            [
+              0.443136990070343,
+              0.1411760002374649,
+              0.19607800245285034
+            ],
+            [
+              0.443136990070343,
+              0.1411760002374649,
+              0.19607800245285034
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name_candidate": "ce_skinpaint_base_melt",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x406a0200",
+        "instance": "0x085b9de0"
+      },
+      "stored_sha256": "a798b4b17256ed3c7aacb7ad40b8022b871f3de70f70dbb4e165ab40eefd8008",
+      "decoded_sha256": "c666e18e38779b7df7d5d67d3ab94c22213bcc3f63d60f8db3a5a13e01ba8c6a",
+      "offset": 15216460,
+      "stored_bytes": 130,
+      "memory_bytes": 182,
+      "compression": 65535,
+      "properties": [
+        {
+          "id": "0x00b2ccca",
+          "registered_name": "description",
+          "type": "0x0013",
+          "flags": "0x000d",
+          "array": false,
+          "values": [
+            "skinpaint_base_melt"
+          ]
+        },
+        {
+          "id": "0x00b2cccb",
+          "registered_name": "parent",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0x406a0200",
+              "instance": "0x91ad3433"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a7",
+          "registered_name": "paintThemePaints",
+          "type": "0x0020",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x8c7aa8c3"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            },
+            {
+              "type": "0x00000000",
+              "group": "0x00000000",
+              "instance": "0x00000000"
+            }
+          ]
+        },
+        {
+          "id": "0xb0e066a8",
+          "registered_name": "paintThemeColor1s",
+          "type": "0x0032",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              0.2588239908218384,
+              0.5372549891471863,
+              0.8039219975471497
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "effect_prefix_candidates": [
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0x2c978da4"
+      },
+      "offset": 32449023,
+      "stored_bytes": 7289,
+      "memory_bytes": 57862,
+      "compression": 65535,
+      "stored_sha256": "4830b1756ff13b4f3bb600634d8de93e80577cb27f117655fe0bcf27a16dba7f",
+      "decoded_sha256": "87b03bddc2c0deb4dc5231f629550e8a5c40a260149e8abbf7c8c62f1aadb5d2",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 41285,
+      "skin_sections": [
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 11081,
+          "body_start": 11089,
+          "body_end": 12451,
+          "count": 14,
+          "sha256": "6ed6f1b46fc70a55f8573953bc2a9643e6c33960b7383f8f8e853a4dbd88cec4"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 12451,
+          "body_start": 12459,
+          "body_end": 13891,
+          "count": 34,
+          "sha256": "defb2fa259e4b7924da1fdd533d0824b20cdd793cb003205a183bfed41387c8d"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 13891,
+          "body_start": 13899,
+          "body_end": 41063,
+          "count": 52,
+          "sha256": "35e2f0a89546d2ec019badae88e3d22e62afdc421f1cc23655efad029bb15f15"
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450201",
+        "instance": "0x2c978da4"
+      },
+      "offset": 32456312,
+      "stored_bytes": 7325,
+      "memory_bytes": 58285,
+      "compression": 65535,
+      "stored_sha256": "2dcb7ee4ac752c34d67489c3e282a55df795d8cf1524445230b7e9385c9b987a",
+      "decoded_sha256": "d8b189115ec69a758cd02882ec5d24796c86fd8eb79787785fb52a39fc03959f",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 41285,
+      "skin_sections": [
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 11081,
+          "body_start": 11089,
+          "body_end": 12451,
+          "count": 14,
+          "sha256": "6ed6f1b46fc70a55f8573953bc2a9643e6c33960b7383f8f8e853a4dbd88cec4"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 12451,
+          "body_start": 12459,
+          "body_end": 13891,
+          "count": 34,
+          "sha256": "defb2fa259e4b7924da1fdd533d0824b20cdd793cb003205a183bfed41387c8d"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 13891,
+          "body_start": 13899,
+          "body_end": 41063,
+          "count": 52,
+          "sha256": "35e2f0a89546d2ec019badae88e3d22e62afdc421f1cc23655efad029bb15f15"
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450202",
+        "instance": "0x2c978da4"
+      },
+      "offset": 32463637,
+      "stored_bytes": 7325,
+      "memory_bytes": 58285,
+      "compression": 65535,
+      "stored_sha256": "2dcb7ee4ac752c34d67489c3e282a55df795d8cf1524445230b7e9385c9b987a",
+      "decoded_sha256": "d8b189115ec69a758cd02882ec5d24796c86fd8eb79787785fb52a39fc03959f",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 41285,
+      "skin_sections": [
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 11081,
+          "body_start": 11089,
+          "body_end": 12451,
+          "count": 14,
+          "sha256": "6ed6f1b46fc70a55f8573953bc2a9643e6c33960b7383f8f8e853a4dbd88cec4"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 12451,
+          "body_start": 12459,
+          "body_end": 13891,
+          "count": 34,
+          "sha256": "defb2fa259e4b7924da1fdd533d0824b20cdd793cb003205a183bfed41387c8d"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 13891,
+          "body_start": 13899,
+          "body_end": 41063,
+          "count": 52,
+          "sha256": "35e2f0a89546d2ec019badae88e3d22e62afdc421f1cc23655efad029bb15f15"
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450202",
+        "instance": "0xc1195706"
+      },
+      "offset": 43230934,
+      "stored_bytes": 375677,
+      "memory_bytes": 5134522,
+      "compression": 65535,
+      "status": "NotDecompressedAboveDeclaredResearchBudget"
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0xc1195706"
+      },
+      "offset": 42485040,
+      "stored_bytes": 370996,
+      "memory_bytes": 5068716,
+      "compression": 65535,
+      "status": "NotDecompressedAboveDeclaredResearchBudget"
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450201",
+        "instance": "0xc1195706"
+      },
+      "offset": 42856036,
+      "stored_bytes": 374898,
+      "memory_bytes": 5122674,
+      "compression": 65535,
+      "status": "NotDecompressedAboveDeclaredResearchBudget"
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450201",
+        "instance": "0xbc2c0be9"
+      },
+      "offset": 42385729,
+      "stored_bytes": 10003,
+      "memory_bytes": 143471,
+      "compression": 65535,
+      "stored_sha256": "785acf6c12b235633d36d24147808c6d298e09387730de9641d9210a05c9d212",
+      "decoded_sha256": "ad33689c479dd5c373b61689f7fd2a4139e1eb9f6b7b3fccb5ef7d356462ef10",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 89442,
+      "skin_sections": []
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0xbc2c0be9"
+      },
+      "offset": 42375748,
+      "stored_bytes": 9981,
+      "memory_bytes": 143253,
+      "compression": 65535,
+      "stored_sha256": "699e2813dc6a81ec265faba7fe526989b575d933f759869c8f209526dc05da6d",
+      "decoded_sha256": "6ebd2713a42556caaca0bdcf2e495e6361848598966b23af3319d91ccdd7844a",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 89442,
+      "skin_sections": []
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450202",
+        "instance": "0xbc2c0be9"
+      },
+      "offset": 42395732,
+      "stored_bytes": 10016,
+      "memory_bytes": 143689,
+      "compression": 65535,
+      "stored_sha256": "7fbb207c4e9f869f66e19c1593250340f39b0bdeed0db5349dd240b60d4413f2",
+      "decoded_sha256": "416e2851bbbfd8f483aa310ddf0c1b7328c9b9fa3cba8302a0bf18dba47731b3",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 89442,
+      "skin_sections": []
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450201",
+        "instance": "0xbafc5ca1"
+      },
+      "offset": 42240612,
+      "stored_bytes": 65598,
+      "memory_bytes": 653317,
+      "compression": 65535,
+      "stored_sha256": "47b952fa8a1ea618b8368db113c34eb9636e86dc50228bfb59b4a6b205679faf",
+      "decoded_sha256": "f7e29a451c4a1eb6da825e2d363c0c019333576c4873382f9350e348dfcb7cab",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 435060,
+      "skin_sections": [
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 184394,
+          "body_start": 184402,
+          "body_end": 199538,
+          "count": 156,
+          "sha256": "e4b649d263bc74cf610a622ca1e7e89dd6d475adf8941ea610efa46fe6105d74"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 199538,
+          "body_start": 199546,
+          "body_end": 211522,
+          "count": 282,
+          "sha256": "be64c93fd8f46e8663df8b9a3895f7b571f436a6302b28cfe6b9e59c00b5fedf"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 216253,
+          "body_start": 216261,
+          "body_end": 429154,
+          "count": 391,
+          "sha256": "dce5dd9daf5d38af801e618bf6ec0e36cbb6bbf1977c5010d4e8e870e70c4f50"
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0xbafc5ca1"
+      },
+      "offset": 42176287,
+      "stored_bytes": 64325,
+      "memory_bytes": 631889,
+      "compression": 65535,
+      "stored_sha256": "3d1997d1dd13ca22d4fc3caad78726446bd5cf8c85140a6b48556f8ae9bd80f4",
+      "decoded_sha256": "f7db3b0b488961fcf5ce83a5ee59b7377da2b2a2131fe8572be4632925e605df",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 434490,
+      "skin_sections": [
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 183824,
+          "body_start": 183832,
+          "body_end": 198968,
+          "count": 156,
+          "sha256": "e4b649d263bc74cf610a622ca1e7e89dd6d475adf8941ea610efa46fe6105d74"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 198968,
+          "body_start": 198976,
+          "body_end": 210952,
+          "count": 282,
+          "sha256": "be64c93fd8f46e8663df8b9a3895f7b571f436a6302b28cfe6b9e59c00b5fedf"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 215683,
+          "body_start": 215691,
+          "body_end": 428584,
+          "count": 391,
+          "sha256": "dce5dd9daf5d38af801e618bf6ec0e36cbb6bbf1977c5010d4e8e870e70c4f50"
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450202",
+        "instance": "0xbafc5ca1"
+      },
+      "offset": 42306210,
+      "stored_bytes": 65598,
+      "memory_bytes": 653317,
+      "compression": 65535,
+      "stored_sha256": "d0fa63c166d8f646c3559bb8c1c16196bf33e67a7ee023fde9b47cefca494e3f",
+      "decoded_sha256": "74af2feec99f343fecb5d7e9e652361d04acf1a6f2cb84f77e575b2a07a3f7e5",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 435060,
+      "skin_sections": [
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 184394,
+          "body_start": 184402,
+          "body_end": 199538,
+          "count": 156,
+          "sha256": "e4b649d263bc74cf610a622ca1e7e89dd6d475adf8941ea610efa46fe6105d74"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 199538,
+          "body_start": 199546,
+          "body_end": 211522,
+          "count": 282,
+          "sha256": "be64c93fd8f46e8663df8b9a3895f7b571f436a6302b28cfe6b9e59c00b5fedf"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 216253,
+          "body_start": 216261,
+          "body_end": 429154,
+          "count": 391,
+          "sha256": "dce5dd9daf5d38af801e618bf6ec0e36cbb6bbf1977c5010d4e8e870e70c4f50"
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450202",
+        "instance": "0x4cf9b596"
+      },
+      "offset": 33916650,
+      "stored_bytes": 35362,
+      "memory_bytes": 698142,
+      "compression": 65535,
+      "stored_sha256": "13883619238107c294c24244ac481259cbc4e129d610e1ef248b71214907f93c",
+      "decoded_sha256": "491c49b92d3d14d1244ac0d569290ca6587398c740e1653ae2a3125ee101ecc8",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 372490,
+      "skin_sections": []
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0x4cf9b596"
+      },
+      "offset": 33846011,
+      "stored_bytes": 35269,
+      "memory_bytes": 697113,
+      "compression": 65535,
+      "stored_sha256": "e08140d926e4219dbfcc9cf02d51acec989fae7eb1611055e04a6314fa280a8e",
+      "decoded_sha256": "38eeab7bc5eea009b93d190d8173ddf447545bb24fe76933822e2326eb342758",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 372224,
+      "skin_sections": []
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450201",
+        "instance": "0x4cf9b596"
+      },
+      "offset": 33881280,
+      "stored_bytes": 35370,
+      "memory_bytes": 697967,
+      "compression": 65535,
+      "stored_sha256": "ae5ab94af2df8e5d37f78ee4f73ba371cdf6064848008b3479e0665b6a3de63b",
+      "decoded_sha256": "b3f2761ae88ab893ffec6328a2a2fd77e48535a0fcba720c8dc0fa37de694bbc",
+      "status": "NormalComponentEnvelopesExamined",
+      "normal_prefix_end": 372424,
+      "skin_sections": []
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450202",
+        "instance": "0x5f848353"
+      },
+      "offset": 35924591,
+      "stored_bytes": 130275,
+      "memory_bytes": 2545942,
+      "compression": 65535,
+      "status": "NotDecompressedAboveDeclaredResearchBudget"
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450201",
+        "instance": "0x5f848353"
+      },
+      "offset": 35796061,
+      "stored_bytes": 128530,
+      "memory_bytes": 2517370,
+      "compression": 65535,
+      "status": "NotDecompressedAboveDeclaredResearchBudget"
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0x5f848353"
+      },
+      "offset": 35671515,
+      "stored_bytes": 124546,
+      "memory_bytes": 2435150,
+      "compression": 65535,
+      "status": "NotDecompressedAboveDeclaredResearchBudget"
+    }
+  ],
+  "selected_effect_directories": [
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0x2c978da4"
+      },
+      "stored_sha256": "4830b1756ff13b4f3bb600634d8de93e80577cb27f117655fe0bcf27a16dba7f",
+      "decoded_sha256": "87b03bddc2c0deb4dc5231f629550e8a5c40a260149e8abbf7c8c62f1aadb5d2",
+      "offset": 32449023,
+      "stored_bytes": 7289,
+      "memory_bytes": 57862,
+      "compression": 65535,
+      "normal_sections": [
+        {
+          "type_id": 1,
+          "version": 1,
+          "header_offset": 2,
+          "body_start": 10,
+          "body_end": 10252,
+          "count": 22,
+          "sha256": "857c21d5c838dab5168cc144519d1597f5df3ddf2f6bfc12467fa762d3b99b3b"
+        },
+        {
+          "type_id": 4,
+          "version": 1,
+          "header_offset": 10252,
+          "body_start": 10260,
+          "body_end": 11024,
+          "count": 26,
+          "sha256": "ebb5cb5e0fd86e1d0ab450648058f25916786515abca6549b151bc248fc2dc46"
+        },
+        {
+          "type_id": 8,
+          "version": 1,
+          "header_offset": 11024,
+          "body_start": 11032,
+          "body_end": 11081,
+          "count": 1,
+          "sha256": "3c3be09e7b415e67b3f1a4c09adb95d11f1e8ada383f441f2c372e842f5292ce"
+        },
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 11081,
+          "body_start": 11089,
+          "body_end": 12451,
+          "count": 14,
+          "sha256": "6ed6f1b46fc70a55f8573953bc2a9643e6c33960b7383f8f8e853a4dbd88cec4"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 12451,
+          "body_start": 12459,
+          "body_end": 13891,
+          "count": 34,
+          "sha256": "defb2fa259e4b7924da1fdd533d0824b20cdd793cb003205a183bfed41387c8d"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 13891,
+          "body_start": 13899,
+          "body_end": 41063,
+          "count": 52,
+          "sha256": "35e2f0a89546d2ec019badae88e3d22e62afdc421f1cc23655efad029bb15f15"
+        },
+        {
+          "type_id": 39,
+          "version": 1,
+          "header_offset": 41063,
+          "body_start": 41071,
+          "body_end": 41283,
+          "count": 1,
+          "sha256": "a2cf88e9c54a3255b9812747efbbca9143b7c9140297438769bce3cddc9a9ad4"
+        }
+      ],
+      "resource_sections": [
+        {
+          "type_id": 1,
+          "version": 0,
+          "header_offset": 41285,
+          "body_start": 41293,
+          "body_end": 41651,
+          "count": 2,
+          "sha256": "7f2749090de9c9159f77d8b45fd48420a7a3469b03e75f6452e5760f4093a5e7"
+        }
+      ],
+      "visual_count": 84,
+      "export_count": 42,
+      "import_count": 0,
+      "string_assignments_raw": -1,
+      "exact_directory_end": 57862,
+      "sequence_records_validated": 26,
+      "distribute_records_validated": 34,
+      "selected_traces": [
+        {
+          "name_candidate": "skinpaint_base_zebroid",
+          "export": {
+            "effect_index_raw": 16,
+            "group": "0x00000000",
+            "name_hash": "0x32fe45f6"
+          },
+          "paths": [
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  15
+                ],
+                [
+                  "component",
+                  34,
+                  6
+                ]
+              ],
+              "block_decoded_byte_range": [
+                44405,
+                44514
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  15
+                ],
+                [
+                  "component",
+                  34,
+                  7
+                ]
+              ],
+              "block_decoded_byte_range": [
+                44514,
+                44623
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  13
+                ],
+                [
+                  "component",
+                  35,
+                  7
+                ]
+              ],
+              "block_decoded_byte_range": [
+                44089,
+                44198
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  14
+                ],
+                [
+                  "component",
+                  35,
+                  8
+                ]
+              ],
+              "block_decoded_byte_range": [
+                44247,
+                44356
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  11
+                ],
+                [
+                  "component",
+                  35,
+                  5
+                ]
+              ],
+              "block_decoded_byte_range": [
+                43773,
+                43882
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  12
+                ],
+                [
+                  "component",
+                  35,
+                  6
+                ]
+              ],
+              "block_decoded_byte_range": [
+                43931,
+                44040
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  9
+                ],
+                [
+                  "component",
+                  35,
+                  3
+                ]
+              ],
+              "block_decoded_byte_range": [
+                43457,
+                43566
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  16
+                ],
+                [
+                  "sequence",
+                  3
+                ],
+                [
+                  "visual",
+                  10
+                ],
+                [
+                  "component",
+                  35,
+                  4
+                ]
+              ],
+              "block_decoded_byte_range": [
+                43615,
+                43724
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name_candidate": "skinpaint_coat_giraffe",
+          "export": {
+            "effect_index_raw": 47,
+            "group": "0x00000000",
+            "name_hash": "0x8ac01a79"
+          },
+          "paths": [
+            {
+              "path": [
+                [
+                  "visual",
+                  47
+                ],
+                [
+                  "sequence",
+                  15
+                ],
+                [
+                  "visual",
+                  46
+                ],
+                [
+                  "component",
+                  35,
+                  24
+                ]
+              ],
+              "block_decoded_byte_range": [
+                49848,
+                49957
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name_candidate": "skinpaint_detail_giraffeLimbs",
+          "export": {
+            "effect_index_raw": 60,
+            "group": "0x00000000",
+            "name_hash": "0x203219f6"
+          },
+          "paths": [
+            {
+              "path": [
+                [
+                  "visual",
+                  60
+                ],
+                [
+                  "sequence",
+                  21
+                ],
+                [
+                  "visual",
+                  59
+                ],
+                [
+                  "component",
+                  35,
+                  30
+                ]
+              ],
+              "block_decoded_byte_range": [
+                51793,
+                51902
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "selected_distributions": [
+        {
+          "ordinal": 3,
+          "decoded_byte_start": 12589,
+          "decoded_byte_end": 12631,
+          "label": "",
+          "particle_index": 3,
+          "spacing": 0.07999999821186066,
+          "distribute_limit": -1,
+          "region_raw": 1,
+          "region_back_stored": -431602080.0,
+          "region_belly_stored": -431602080.0,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "cdcdcdcd",
+            "belly_hex": "cdcdcdcd",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 4,
+          "decoded_byte_start": 12631,
+          "decoded_byte_end": 12673,
+          "label": "",
+          "particle_index": 4,
+          "spacing": 0.07999999821186066,
+          "distribute_limit": -1,
+          "region_raw": 1,
+          "region_back_stored": -431602080.0,
+          "region_belly_stored": -431602080.0,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "cdcdcdcd",
+            "belly_hex": "cdcdcdcd",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 5,
+          "decoded_byte_start": 12673,
+          "decoded_byte_end": 12715,
+          "label": "",
+          "particle_index": 5,
+          "spacing": 0.05000000074505806,
+          "distribute_limit": -1,
+          "region_raw": 2,
+          "region_back_stored": -431602080.0,
+          "region_belly_stored": -431602080.0,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "cdcdcdcd",
+            "belly_hex": "cdcdcdcd",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 6,
+          "decoded_byte_start": 12715,
+          "decoded_byte_end": 12757,
+          "label": "",
+          "particle_index": 6,
+          "spacing": 0.05000000074505806,
+          "distribute_limit": -1,
+          "region_raw": 2,
+          "region_back_stored": -431602080.0,
+          "region_belly_stored": -431602080.0,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "cdcdcdcd",
+            "belly_hex": "cdcdcdcd",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 7,
+          "decoded_byte_start": 12757,
+          "decoded_byte_end": 12799,
+          "label": "",
+          "particle_index": 7,
+          "spacing": 0.15000000596046448,
+          "distribute_limit": -1,
+          "region_raw": 4,
+          "region_back_stored": -431602080.0,
+          "region_belly_stored": -431602080.0,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "cdcdcdcd",
+            "belly_hex": "cdcdcdcd",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 8,
+          "decoded_byte_start": 12799,
+          "decoded_byte_end": 12841,
+          "label": "",
+          "particle_index": 7,
+          "spacing": 0.15000000596046448,
+          "distribute_limit": -1,
+          "region_raw": 4,
+          "region_back_stored": -431602080.0,
+          "region_belly_stored": -431602080.0,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "cdcdcdcd",
+            "belly_hex": "cdcdcdcd",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 24,
+          "decoded_byte_start": 13471,
+          "decoded_byte_end": 13513,
+          "label": "",
+          "particle_index": 30,
+          "spacing": 0.11999999731779099,
+          "distribute_limit": -1,
+          "region_raw": -1,
+          "region_back_stored": 0.8910065293312073,
+          "region_belly_stored": -0.8910065293312073,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "3f641901",
+            "belly_hex": "bf641901",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": false
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 30,
+          "decoded_byte_start": 13723,
+          "decoded_byte_end": 13765,
+          "label": "",
+          "particle_index": 40,
+          "spacing": 0.07000000029802322,
+          "distribute_limit": -1,
+          "region_raw": 6,
+          "region_back_stored": 0.8910065293312073,
+          "region_belly_stored": -0.8910065293312073,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "3f641901",
+            "belly_hex": "bf641901",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": false
+          },
+          "particle_select": [],
+          "select_all": false
+        }
+      ]
+    },
+    {
+      "key": {
+        "type": "0xea5118b0",
+        "group": "0x40450200",
+        "instance": "0xbafc5ca1"
+      },
+      "stored_sha256": "3d1997d1dd13ca22d4fc3caad78726446bd5cf8c85140a6b48556f8ae9bd80f4",
+      "decoded_sha256": "f7db3b0b488961fcf5ce83a5ee59b7377da2b2a2131fe8572be4632925e605df",
+      "offset": 42176287,
+      "stored_bytes": 64325,
+      "memory_bytes": 631889,
+      "compression": 65535,
+      "normal_sections": [
+        {
+          "type_id": 1,
+          "version": 1,
+          "header_offset": 2,
+          "body_start": 10,
+          "body_end": 134794,
+          "count": 292,
+          "sha256": "b1424c88b9d263271ce0528cfa1e4c7d019ddf12c07bcf3a8036e4f836b49ec4"
+        },
+        {
+          "type_id": 2,
+          "version": 2,
+          "header_offset": 134794,
+          "body_start": 134802,
+          "body_end": 167474,
+          "count": 64,
+          "sha256": "dccc9db7eedb8c082a546903a7da9fc5a17d2f253f1d43bf5665292cfbeea94f"
+        },
+        {
+          "type_id": 4,
+          "version": 1,
+          "header_offset": 167474,
+          "body_start": 167482,
+          "body_end": 174366,
+          "count": 200,
+          "sha256": "bc03ebf3ca3c252d4e5a5213e5f1faec214c031c79c2d831e527259a869957ba"
+        },
+        {
+          "type_id": 5,
+          "version": 1,
+          "header_offset": 174366,
+          "body_start": 174374,
+          "body_end": 176814,
+          "count": 87,
+          "sha256": "4bc924ec2e2c38570d85732872c9ab2971dcb156223d28ec9d0e45db4d48e417"
+        },
+        {
+          "type_id": 6,
+          "version": 2,
+          "header_offset": 176814,
+          "body_start": 176822,
+          "body_end": 177148,
+          "count": 6,
+          "sha256": "017f6613687685c19e4e40174ee2cf9b9d7f55a203f45eaa1aa67d4cfbf6c4b9"
+        },
+        {
+          "type_id": 7,
+          "version": 1,
+          "header_offset": 177148,
+          "body_start": 177156,
+          "body_end": 177256,
+          "count": 2,
+          "sha256": "bd76c895fcd0082b9e0e3d2e42d3ae073ce67d079a12568aa5985a0e308e8c41"
+        },
+        {
+          "type_id": 8,
+          "version": 1,
+          "header_offset": 177256,
+          "body_start": 177264,
+          "body_end": 177853,
+          "count": 13,
+          "sha256": "1f12fac3243135e60469f48c0b59c449a67759b51ae1417267b730551a4880a5"
+        },
+        {
+          "type_id": 9,
+          "version": 1,
+          "header_offset": 177853,
+          "body_start": 177861,
+          "body_end": 180363,
+          "count": 21,
+          "sha256": "16b6d73aed2fa3dfd379b6c671e5d4dd70a833dcbb6764b1df717e5dd01a59ec"
+        },
+        {
+          "type_id": 11,
+          "version": 1,
+          "header_offset": 180363,
+          "body_start": 180371,
+          "body_end": 180462,
+          "count": 3,
+          "sha256": "0337744ce8e9ff7bb92586869a21e78fb3773e7f757965db73f16f8958a0d089"
+        },
+        {
+          "type_id": 13,
+          "version": 4,
+          "header_offset": 180462,
+          "body_start": 180470,
+          "body_end": 181932,
+          "count": 6,
+          "sha256": "2e1f8006d91ec9e1e70c04266ab399d1420d7c7cd5d67b785627a83cd986facc"
+        },
+        {
+          "type_id": 14,
+          "version": 1,
+          "header_offset": 181932,
+          "body_start": 181940,
+          "body_end": 183824,
+          "count": 8,
+          "sha256": "be47cd81283c7b2bc5322907b1d968760fa9a1a0ebabbbc632c6991e075697bd"
+        },
+        {
+          "type_id": 34,
+          "version": 3,
+          "header_offset": 183824,
+          "body_start": 183832,
+          "body_end": 198968,
+          "count": 156,
+          "sha256": "e4b649d263bc74cf610a622ca1e7e89dd6d475adf8941ea610efa46fe6105d74"
+        },
+        {
+          "type_id": 35,
+          "version": 2,
+          "header_offset": 198968,
+          "body_start": 198976,
+          "body_end": 210952,
+          "count": 282,
+          "sha256": "be64c93fd8f46e8663df8b9a3895f7b571f436a6302b28cfe6b9e59c00b5fedf"
+        },
+        {
+          "type_id": 37,
+          "version": 8,
+          "header_offset": 210952,
+          "body_start": 210960,
+          "body_end": 215683,
+          "count": 55,
+          "sha256": "91d91677bb3336d3e4fb43776617971268e18dc3912ea4638e4637717e208647"
+        },
+        {
+          "type_id": 38,
+          "version": 1,
+          "header_offset": 215683,
+          "body_start": 215691,
+          "body_end": 428584,
+          "count": 391,
+          "sha256": "dce5dd9daf5d38af801e618bf6ec0e36cbb6bbf1977c5010d4e8e870e70c4f50"
+        },
+        {
+          "type_id": 39,
+          "version": 1,
+          "header_offset": 428584,
+          "body_start": 428592,
+          "body_end": 434260,
+          "count": 24,
+          "sha256": "17501fbcce9a636ecb3441e747208504b3d485b28abc978c813eb1513d703366"
+        },
+        {
+          "type_id": 40,
+          "version": 1,
+          "header_offset": 434260,
+          "body_start": 434268,
+          "body_end": 434488,
+          "count": 1,
+          "sha256": "d6f9199130525476818303e92536c3dac517d09fe6191ceed561900850de94b7"
+        }
+      ],
+      "resource_sections": [
+        {
+          "type_id": 0,
+          "version": 0,
+          "header_offset": 434490,
+          "body_start": 434498,
+          "body_end": 436122,
+          "count": 12,
+          "sha256": "e9a720de5ae47520c65ec574e1c032640f28a08606580c050c8a69bf75e20c2f"
+        },
+        {
+          "type_id": 1,
+          "version": 0,
+          "header_offset": 436122,
+          "body_start": 436130,
+          "body_end": 437654,
+          "count": 14,
+          "sha256": "34e70cb3af165883e362636879cea37dff699df0a71ed7d4c75ea761493606a3"
+        }
+      ],
+      "visual_count": 981,
+      "export_count": 485,
+      "import_count": 0,
+      "string_assignments_raw": -1,
+      "exact_directory_end": 631889,
+      "sequence_records_validated": 200,
+      "distribute_records_validated": 282,
+      "selected_traces": [
+        {
+          "name_candidate": "skinpaint_detail_stripesML",
+          "export": {
+            "effect_index_raw": 642,
+            "group": "0x00000000",
+            "name_hash": "0x103691ce"
+          },
+          "paths": [
+            {
+              "path": [
+                [
+                  "visual",
+                  642
+                ],
+                [
+                  "sequence",
+                  86
+                ],
+                [
+                  "visual",
+                  640
+                ],
+                [
+                  "component",
+                  35,
+                  121
+                ]
+              ],
+              "block_decoded_byte_range": [
+                566451,
+                566560
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  642
+                ],
+                [
+                  "sequence",
+                  86
+                ],
+                [
+                  "visual",
+                  641
+                ],
+                [
+                  "component",
+                  35,
+                  122
+                ]
+              ],
+              "block_decoded_byte_range": [
+                566609,
+                566718
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name_candidate": "skinpaint_base_melt",
+          "export": {
+            "effect_index_raw": 407,
+            "group": "0x00000000",
+            "name_hash": "0x8c7aa8c3"
+          },
+          "paths": [
+            {
+              "path": [
+                [
+                  "visual",
+                  407
+                ],
+                [
+                  "sequence",
+                  5
+                ],
+                [
+                  "visual",
+                  406
+                ],
+                [
+                  "component",
+                  34,
+                  2
+                ]
+              ],
+              "block_decoded_byte_range": [
+                526863,
+                526972
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  407
+                ],
+                [
+                  "sequence",
+                  5
+                ],
+                [
+                  "visual",
+                  406
+                ],
+                [
+                  "component",
+                  34,
+                  3
+                ]
+              ],
+              "block_decoded_byte_range": [
+                526972,
+                527081
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            },
+            {
+              "path": [
+                [
+                  "visual",
+                  407
+                ],
+                [
+                  "sequence",
+                  5
+                ],
+                [
+                  "visual",
+                  405
+                ],
+                [
+                  "component",
+                  35,
+                  2
+                ]
+              ],
+              "block_decoded_byte_range": [
+                526705,
+                526814
+              ],
+              "block_flags_raw": 0,
+              "sequence_time_ranges_stored": [
+                [
+                  -1.0,
+                  -1.0
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "selected_distributions": [
+        {
+          "ordinal": 2,
+          "decoded_byte_start": 199064,
+          "decoded_byte_end": 199106,
+          "label": "",
+          "particle_index": 1,
+          "spacing": 0.05999999865889549,
+          "distribute_limit": -1,
+          "region_raw": -1,
+          "region_back_stored": 0.8910065293312073,
+          "region_belly_stored": -0.8910065293312073,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "3f641901",
+            "belly_hex": "bf641901",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": true
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 121,
+          "decoded_byte_start": 204078,
+          "decoded_byte_end": 204120,
+          "label": "",
+          "particle_index": 168,
+          "spacing": 0.009999999776482582,
+          "distribute_limit": -1,
+          "region_raw": 2,
+          "region_back_stored": -4.371138828673793e-08,
+          "region_belly_stored": -0.7071067690849304,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "b33bbd2e",
+            "belly_hex": "bf3504f3",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": false
+          },
+          "particle_select": [],
+          "select_all": false
+        },
+        {
+          "ordinal": 122,
+          "decoded_byte_start": 204120,
+          "decoded_byte_end": 204162,
+          "label": "",
+          "particle_index": 169,
+          "spacing": 0.009999999776482582,
+          "distribute_limit": -1,
+          "region_raw": 2,
+          "region_back_stored": -4.371138828673793e-08,
+          "region_belly_stored": -0.7071067690849304,
+          "body_range": [
+            0.0,
+            1.0
+          ],
+          "raw_float_fields": {
+            "back_hex": "b33bbd2e",
+            "belly_hex": "bf3504f3",
+            "body_range_hex": "000000000000803f"
+          },
+          "flags": {
+            "inverse": false,
+            "center_only": false,
+            "cover": false,
+            "ordered": false
+          },
+          "particle_select": [],
+          "select_all": false
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "prefix_budget_bytes": 1048576,
+    "prefix_scope": "12 normal-component envelopes only, six oversized effect candidates not decompressed",
+    "complete_directory_scope": "Two explicit Patch group40450200 csa/editors candidates; component payloads opaque except Distribute and Sequence",
+    "particle_settings_transform_payloads": "Particle, Settings, non-skin components, resources and most Visual fields remain opaque/skipped; not a complete effects exporter"
+  },
+  "property_pair_comparisons": [
+    {
+      "instance": "0x00f3892f",
+      "interpreted_properties_equal": true,
+      "decoded_bytes_equal": false,
+      "same_decoded_length": true,
+      "differing_bytes": [
+        {
+          "decoded_offset": 88,
+          "game_byte": 228,
+          "patch_byte": 52
+        },
+        {
+          "decoded_offset": 89,
+          "game_byte": 12,
+          "patch_byte": 171
+        },
+        {
+          "decoded_offset": 90,
+          "game_byte": 160,
+          "patch_byte": 18
+        }
+      ],
+      "interpretation": "Differences are not interpreted; equal parsed fields do not mean identical bytes or proven load precedence."
+    },
+    {
+      "instance": "0x05475ea3",
+      "interpreted_properties_equal": true,
+      "decoded_bytes_equal": false,
+      "same_decoded_length": true,
+      "differing_bytes": [
+        {
+          "decoded_offset": 72,
+          "game_byte": 228,
+          "patch_byte": 52
+        },
+        {
+          "decoded_offset": 73,
+          "game_byte": 12,
+          "patch_byte": 171
+        },
+        {
+          "decoded_offset": 74,
+          "game_byte": 160,
+          "patch_byte": 18
+        }
+      ],
+      "interpretation": "Differences are not interpreted; equal parsed fields do not mean identical bytes or proven load precedence."
+    },
+    {
+      "instance": "0x085b9de0",
+      "interpreted_properties_equal": true,
+      "decoded_bytes_equal": false,
+      "same_decoded_length": true,
+      "differing_bytes": [
+        {
+          "decoded_offset": 74,
+          "game_byte": 228,
+          "patch_byte": 52
+        },
+        {
+          "decoded_offset": 75,
+          "game_byte": 12,
+          "patch_byte": 171
+        },
+        {
+          "decoded_offset": 76,
+          "game_byte": 160,
+          "patch_byte": 18
+        }
+      ],
+      "interpretation": "Differences are not interpreted; equal parsed fields do not mean identical bytes or proven load precedence."
+    }
+  ],
+  "unknowns": [
+    "Package/variant loading precedence and actual Creature-stage caller",
+    "Particle brush contents/directions/variables and Settings map initialization",
+    "Spacing units, sequence time semantics, execution order and conditional block flags",
+    "Theme slot lookup/colour conversion and default/inheritance application",
+    "Edit redraw/reprojection, precise stripe/spot density and cross-part seams"
+  ]
+}

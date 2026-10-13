@@ -1,0 +1,141 @@
+{
+  "kind": "module37-research-verification-not-original-runtime",
+  "status": "passed",
+  "verified_at_pacific": "2026-10-12T19:06:45.984201-07:00",
+  "tests": [
+    {
+      "path": "docs\\studies\\spore\\checks\\verify_selected_rigblock_metadata.py",
+      "sha256": "67ee74698ba840d959ac928d153e9e71777039ddcfb7dfad6ce0d21ab45a7158",
+      "passed": 16,
+      "exit_code": 0
+    },
+    {
+      "path": "docs\\studies\\spore\\checks\\verify_part_definition_examples.py",
+      "sha256": "21761ce3c5c3cab7e71face6f79d9e9e8e1d53aed476bbee4b996164ba8dd600",
+      "passed": 19,
+      "exit_code": 0
+    }
+  ],
+  "passed_checks": 35,
+  "structural_checks": {
+    "markdown_files": 40,
+    "relative_file_links": 316,
+    "json_files_including_this_record": 69,
+    "utf8_and_fences": true,
+    "internal_link_anchors_checked": false
+  },
+  "coverage": {
+    "successful_prop_records": 5,
+    "rejected_null_candidate": "unsupported PROP type 0x39 at 44; retained diagnostic",
+    "public_sources": 19,
+    "public_contracts": 16,
+    "selected_rw4_payloads": 1,
+    "rw_sections": 21,
+    "skeleton_records": 2,
+    "bone_metadata_records": 11,
+    "skin_link_records": 1,
+    "animation_directories": 2,
+    "animation_channels_metadata": 20,
+    "selected_local_keyframes": 10,
+    "morph_handle_records_in_selected_model": 0,
+    "game_execution": false,
+    "native_decompilation": false,
+    "private_save_read": false,
+    "proprietary_asset_export": false,
+    "production_implementation": false
+  },
+  "scope_notes": [
+    "EXE identity reused, not rehashed.",
+    "Graphics full digest measured; other additional Data packages are index-only.",
+    "PROP worker did not read model; separate RW4 record did.",
+    "Two guessed evidence filenames were absent; resolved actual names with inventory.",
+    "First doc scan failed on this not-yet-created record; a pending record preserved the diagnostic, then all links rechecked before passed status.",
+    "PCTP actual mapping and axis/placement template payloads not read.",
+    "Research reader supports only selected RW4 profile/resource budget.",
+    "Thirty-five checks do not establish original UI/animation or three-dimensional equivalence."
+  ],
+  "unknowns": [
+    "Mouse mapping/edit composition",
+    "Skeleton reduction and PROP inheritance/load order",
+    "Axis-control to local-animation link",
+    "Parameter units and local-motion semantics",
+    "PCTP and gameplay executor mapping"
+  ],
+  "deliverable_digests": [
+    {
+      "path": "37-part-definition-edit-controls-rigs-and-capabilities.md",
+      "bytes": 24124,
+      "sha256": "bd1afe08f18b23fb28e74bb2e3a05792e4022d2db80b90351e94ef78226a461e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 18141,
+      "sha256": "3c2c0b38c05d1f3b754db59144a00434022f81e7f651957498b8ff498a104dfb"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 9749,
+      "sha256": "75743a24e755352d2b14c2374a62f196c31a915406e33b3f53f77738887e3f96"
+    },
+    {
+      "path": "30-part-shape-rest-pose-and-local-animation.md",
+      "bytes": 19179,
+      "sha256": "1364d75ac6b8925e4cac2a56fd3f08ec73364851985285faddef7b90cdac1a7c"
+    },
+    {
+      "path": "checks/read_selected_rigblock_metadata.py",
+      "bytes": 14040,
+      "sha256": "828c4f125f364855647914540ddd7479834177a470f640afacc634538b9681fe"
+    },
+    {
+      "path": "checks/verify_selected_rigblock_metadata.py",
+      "bytes": 7404,
+      "sha256": "67ee74698ba840d959ac928d153e9e71777039ddcfb7dfad6ce0d21ab45a7158"
+    },
+    {
+      "path": "checks/verify_part_definition_examples.py",
+      "bytes": 8379,
+      "sha256": "21761ce3c5c3cab7e71face6f79d9e9e8e1d53aed476bbee4b996164ba8dd600"
+    },
+    {
+      "path": "evidence/public-part-authoring-design.json",
+      "bytes": 2136,
+      "sha256": "f779f73abb3461c63bd5ad8bab1d397337d76e5801627096071dd89fd98d6570"
+    },
+    {
+      "path": "evidence/public-part-definition-contracts.json",
+      "bytes": 36950,
+      "sha256": "66bc1abb168ec3b77146d8710cf77bec1dcc8991da21f197f3c20f646aa9bed3"
+    },
+    {
+      "path": "evidence/local-part-definition-observations.json",
+      "bytes": 102844,
+      "sha256": "75f1ea6173d468f87ed18c948ca3e20e4161605057413fdb6574b4ec18fdf355"
+    },
+    {
+      "path": "evidence/local-selected-rigblock-metadata.json",
+      "bytes": 23878,
+      "sha256": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "c9aeb4f6d49e2485b819ab3d8e4318e1ac90b9c4b48abfbf4ba73de2db15f019",
+    "captured_file_bytes": 4549,
+    "reference_changes": [
+      {
+        "pointer": "/deliverable_digests/10/sha256",
+        "captured": "fa54ec5aecc93525de0caba77a16da22ed6464642411dde74c7a1ac26371a8f5",
+        "published": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e",
+        "study_file": "evidence/local-selected-rigblock-metadata.json"
+      },
+      {
+        "pointer": "/deliverable_digests/10/bytes",
+        "captured": 24684,
+        "published": 23878,
+        "study_file": "evidence/local-selected-rigblock-metadata.json"
+      }
+    ]
+  }
+}

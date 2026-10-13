@@ -1,0 +1,224 @@
+{
+  "kind": "public-registry-observation-not-runtime",
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "path": "reg_property.txt",
+  "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+  "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+  "bytes": 191259,
+  "line_count": 6368,
+  "query": "(?:creature|npc).*(?:percep|sight|hearing|loud|alert|hunger|food|flee|chase|threat|motive|target|memory|ally|friend|aggress|fear|curious)|(?:percep|sight|hearing|hunger|motive|aggress|fear).*creature",
+  "selected_declarations": [
+    {
+      "line": 432,
+      "text": "creatureUntargetDistance\t0x01C2301B"
+    },
+    {
+      "line": 1332,
+      "text": "creatureHungerCostForBuildNest\t0x046DBF27"
+    },
+    {
+      "line": 1333,
+      "text": "creatureHungerDrain\t0x046DC07F"
+    },
+    {
+      "line": 1339,
+      "text": "creatureStartingMotive_HealthMin\t0x046DD2D0"
+    },
+    {
+      "line": 1340,
+      "text": "creatureStartingMotive_HealthMax\t0x046DD2D1"
+    },
+    {
+      "line": 1341,
+      "text": "creatureStartingMotive_HungerMin\t0x046DD2D2"
+    },
+    {
+      "line": 1342,
+      "text": "creatureStartingMotive_HungerMax\t0x046DD2D3"
+    },
+    {
+      "line": 2629,
+      "text": "creatureAbilityRushingTargetedCharge\t0x06400F3F"
+    },
+    {
+      "line": 2877,
+      "text": "CreaturesToFoodRatioMax\t0x1063D416"
+    },
+    {
+      "line": 3368,
+      "text": "creatureHungerSatisfiedPerMeatPerSec\t0x7105CCE0"
+    },
+    {
+      "line": 3377,
+      "text": "creatureHungerSatisfiedPerEgg\t0x71DBB4BA"
+    },
+    {
+      "line": 3659,
+      "text": "creatureHungerSatisfiedPerFruit\t0xB1CB9C62"
+    },
+    {
+      "line": 3928,
+      "text": "CreaturesToFoodRatioMin\t0xF063D415"
+    },
+    {
+      "line": 4573,
+      "text": "scenarioCreaturesBefriended\t0x76134BA7"
+    },
+    {
+      "line": 4904,
+      "text": "creatureSightAngle"
+    },
+    {
+      "line": 4905,
+      "text": "creatureSightRadius"
+    },
+    {
+      "line": 4912,
+      "text": "creatureFleeTime"
+    },
+    {
+      "line": 4914,
+      "text": "creatureFleeDistance"
+    },
+    {
+      "line": 4915,
+      "text": "creatureChaseDistance"
+    },
+    {
+      "line": 5268,
+      "text": "creatureBasePerception"
+    },
+    {
+      "line": 5269,
+      "text": "creatureBaseLoudness"
+    },
+    {
+      "line": 5597,
+      "text": "creatureFleeWatchTime"
+    },
+    {
+      "line": 5979,
+      "text": "creatureStrengthDelta_GreatThreat"
+    },
+    {
+      "line": 5980,
+      "text": "creatureStrengthDelta_EqualThreat"
+    },
+    {
+      "line": 5981,
+      "text": "creatureStrengthDelta_MildThreat"
+    },
+    {
+      "line": 5982,
+      "text": "creatureStrengthDelta_NoThreat"
+    },
+    {
+      "line": 6052,
+      "text": "creatureFoodSearchTravelDistance"
+    },
+    {
+      "line": 6053,
+      "text": "creatureMaxPerceptionRadius"
+    },
+    {
+      "line": 6054,
+      "text": "creatureLoudnessInCombatMultiplier"
+    },
+    {
+      "line": 6055,
+      "text": "creatureLoudnessSprintingSpeedMultiplier"
+    },
+    {
+      "line": 6056,
+      "text": "creatureLoudnessNormalSpeedMultiplier"
+    },
+    {
+      "line": 6057,
+      "text": "creatureAlertSightMultiplier_LookAt"
+    },
+    {
+      "line": 6058,
+      "text": "creatureAlertHearingMultiplier_LookAt"
+    },
+    {
+      "line": 6059,
+      "text": "creatureAlertSightMultiplier"
+    },
+    {
+      "line": 6060,
+      "text": "creatureAlertHearingMultiplier"
+    },
+    {
+      "line": 6088,
+      "text": "creatureTargetMethod"
+    },
+    {
+      "line": 6097,
+      "text": "deadCreatureFoodValueDecay"
+    },
+    {
+      "line": 6128,
+      "text": "creatureHelpAllyInRadius"
+    },
+    {
+      "line": 6159,
+      "text": "creatureScenarioFightThreatRating"
+    },
+    {
+      "line": 6176,
+      "text": "creatureFleeForceStay"
+    },
+    {
+      "line": 6177,
+      "text": "creatureFleeDirectionBiasHerd"
+    },
+    {
+      "line": 6178,
+      "text": "creatureFleeDirectionBiasAwayFromCamera"
+    },
+    {
+      "line": 6179,
+      "text": "creatureFleeDirectionBiasAwayFromThreat"
+    },
+    {
+      "line": 6180,
+      "text": "creatureFleeDirectionBiasNest"
+    },
+    {
+      "line": 6181,
+      "text": "creatureFleeTiredTime"
+    },
+    {
+      "line": 6182,
+      "text": "creatureFleeTimeToTired"
+    },
+    {
+      "line": 6183,
+      "text": "creatureFleeStealthTime"
+    },
+    {
+      "line": 6184,
+      "text": "creatureFleeWatchTime"
+    },
+    {
+      "line": 6185,
+      "text": "creatureFleeRememberTime"
+    },
+    {
+      "line": 6186,
+      "text": "creatureFleeDodgeTime"
+    },
+    {
+      "line": 6187,
+      "text": "creatureFleeDodgeDistance"
+    },
+    {
+      "line": 6271,
+      "text": "creatureCallMaxLoudness"
+    },
+    {
+      "line": 6273,
+      "text": "creatureFleeJumpFrequency"
+    }
+  ]
+}

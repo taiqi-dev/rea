@@ -1,0 +1,145 @@
+{
+  "kind": "static-evidence-and-independent-example-verification-not-game-runtime",
+  "status": "passed",
+  "test_suites": [
+    {
+      "path": "checks/verify_same_role_evidence.py",
+      "passed": 8,
+      "failed": 0
+    },
+    {
+      "path": "checks/verify_same_role_selection_examples.py",
+      "passed": 27,
+      "failed": 0
+    }
+  ],
+  "passed": 35,
+  "game_runtime_tests_run": false,
+  "native_binding_recovered": false,
+  "verified_at": "2026-10-12T20:57:37.378125-07:00",
+  "timezone": "America/Los_Angeles",
+  "structure": {
+    "markdown_files": 42,
+    "relative_file_links": 350,
+    "json_files_including_this_record": 76,
+    "utf8_fences_and_relative_file_links": true,
+    "internal_anchors_checked": false
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 19988,
+      "sha256": "1b1790be633b519f54ccb92f0439da1261687062b100a8612c61af916206c926"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 10939,
+      "sha256": "f87cdbaf9252a670cc6779b2580ce579f65f15a9188d4fd8966bdb44aafecf74"
+    },
+    {
+      "path": "28-parallel-actions-channel-ownership-and-conflicts.md",
+      "bytes": 25076,
+      "sha256": "c3c09246d2ed28dcf39fa98d44a7e6d61810826b08db8aac6dee1bf63df75319"
+    },
+    {
+      "path": "38-axis-controls-capability-role-and-local-deform-binding.md",
+      "bytes": 15343,
+      "sha256": "45d23ce0e4710dcf20c966de7ecdd222c6aadf1f46915b4c4b0e3f5179e427a1"
+    },
+    {
+      "path": "39-same-role-effectors-variant-binding-and-default-mixing.md",
+      "bytes": 21189,
+      "sha256": "73fc40e2583130d6f2317843565c9d123405cd9e47aefa74d4aab518e9aea6a9"
+    },
+    {
+      "path": "checks/verify_same_role_evidence.py",
+      "bytes": 6687,
+      "sha256": "f7daf445effb47576537a67487c02449a2fd3526a6e8c5bafcc32610311989b8"
+    },
+    {
+      "path": "checks/verify_same_role_selection_examples.py",
+      "bytes": 14213,
+      "sha256": "98314cabe42c4c3a3425d1eed6ab4ed82f3acfb88f7a028c8a10c9f7f4d86357"
+    },
+    {
+      "path": "evidence/local-same-role-selector-observations.json",
+      "bytes": 146377,
+      "sha256": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75"
+    },
+    {
+      "path": "evidence/public-same-role-binding-contracts.json",
+      "bytes": 23222,
+      "sha256": "82f56d25196405d486c893ffa31b6fbfe9210d4434e4b3afbc2266b5fcdff163"
+    }
+  ],
+  "actual_new_local_reads": {
+    "resource_records": 46,
+    "distinct_keys": 33,
+    "channels": 612,
+    "contexts": 1224,
+    "stored_and_decoded_digests_and_all_metadata_match_module28": true,
+    "full_package_hashes_rechecked": 2,
+    "exe_graphics_pctp_curves_read": false
+  },
+  "public_read_coverage": {
+    "fixed_code_sources": 10,
+    "developer_pdf_sources": 1,
+    "contracts": 16,
+    "pdf_pages_one_based": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "not_performed": [
+    "Game execution/attach or native consumer trace",
+    "Private saves, full proprietary asset export",
+    "User product implementation",
+    "REA/provider setup/build/config changes",
+    "Repository production build/tests: research docs/examples only"
+  ],
+  "remaining_risks": [
+    "Current executable skill-specific variant chooser and final instance-to-bone binding unknown",
+    "PCTP Creature load context and scalar default/mix consumer unknown",
+    "Independent scalar mixing and actor-local claims need product validation",
+    "Support example only flat quasi-static geometry"
+  ],
+  "observed_workflow_diagnostics": [
+    "Initial rg literal globs were replaced with bounded -g queries/file inventory",
+    "A guessed scope filename and guessed records.animations property failed read-only; corrected from actual filenames/record shapes",
+    "PowerShell shallow JSON preview was truncated; complete JSON parsed in consistency checks"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "58063b1886e31c72c3e7ba8048209718c8c3f2e760b7cf2095aa8e25277f8969",
+    "captured_file_bytes": 3927,
+    "reference_changes": [
+      {
+        "pointer": "/files/7/sha256",
+        "captured": "6021335a0b27a63a3f2e296905b0880f368828c445f3408936c0a22cb6ec7c7f",
+        "published": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75",
+        "study_file": "evidence/local-same-role-selector-observations.json"
+      },
+      {
+        "pointer": "/files/7/bytes",
+        "captured": 145478,
+        "published": 146377,
+        "study_file": "evidence/local-same-role-selector-observations.json"
+      },
+      {
+        "pointer": "/files/8/sha256",
+        "captured": "a8fb1c0d9f833fddc7d62c52880974598f025b5ea030174564c5e0dfec332877",
+        "published": "82f56d25196405d486c893ffa31b6fbfe9210d4434e4b3afbc2266b5fcdff163",
+        "study_file": "evidence/public-same-role-binding-contracts.json"
+      },
+      {
+        "pointer": "/files/8/bytes",
+        "captured": 23972,
+        "published": 23222,
+        "study_file": "evidence/public-same-role-binding-contracts.json"
+      }
+    ]
+  }
+}

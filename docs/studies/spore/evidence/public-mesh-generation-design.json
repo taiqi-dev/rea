@@ -1,0 +1,25 @@
+{
+  "kind": "developer-historical-design-not-local-runtime",
+  "retrieved_at_pacific": "2026-10-12T14:57:35.871073-07:00",
+  "url": "https://chrishecker.com/My_Liner_Notes_for_Spore",
+  "sha256": "24539b97412032e1fff2396209e615f63983a7ce2b5f8749f631c32b117eec35",
+  "bytes": 52702,
+  "selected_section": "Creature Skin Mesh",
+  "html_character_range": [
+    8463,
+    20808
+  ],
+  "facts": [
+    "Skin generated interactively as torso deforms and limbs attach/detach; blobby implicit surface/metaballs selected.",
+    "Developer names ear clipping for tessellation and Moore/Warren mesh displacement to reduce thin triangles; this section does not establish marching tetrahedra or BCC lattice.",
+    "Single global implicit surface without metaball groups can connect neighboring limbs into webbing; no universal anti-merging guarantee.",
+    "Only spherical metaballs distributed along torso and limbs; exact spacing formula not provided.",
+    "Vertex bone weights derived from body-part provenance of metaballs; exact kernel, smoothing and influence cap not provided.",
+    "Fat torso spine segments may produce uneven weights and shearing; attached-part correction unresolved in developer account.",
+    "Anatomical detail parts are authored deformable Maya Rigblocks."
+  ],
+  "limits": [
+    "Historical developer account not aligned to local executable functions.",
+    "Algorithm constants and mapping to local version unknown."
+  ]
+}

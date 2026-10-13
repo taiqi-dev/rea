@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "module": "51-ability-animation-clocks-and-gait-synchronization",
+  "kind": "independent-specification-and-reused-evidence-checks-not-target-runtime",
+  "status": "passed",
+  "tests_run": 35,
+  "failures": 0,
+  "errors": 0,
+  "counts": {
+    "action_visual_clocks": 20,
+    "gait_geometry": 8,
+    "complete_scenario": 1,
+    "reused_evidence": 6
+  },
+  "test_entry": "docs/studies/spore/checks/verify_animation_clock_examples.py",
+  "interpreter": "C:/Users/81553/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "arguments": [
+    "-B",
+    "docs/studies/spore/checks/verify_animation_clock_examples.py"
+  ],
+  "network_required_for_check": false,
+  "new_game_reads": false,
+  "target_runtime_verified": false,
+  "rea_evidence_id": null,
+  "files": [
+    {
+      "path": "docs/studies/spore/51-ability-animation-clocks-and-gait-synchronization.md",
+      "bytes": 20287,
+      "sha256": "7600d39679fa1d25182fe32590df8fd9fac739a35338871c62a5b379d528b3ab"
+    },
+    {
+      "path": "docs/studies/spore/evidence/public-animation-clock-contracts.json",
+      "bytes": 22526,
+      "sha256": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9"
+    },
+    {
+      "path": "docs/studies/spore/checks/verify_animation_clock_examples.py",
+      "bytes": 19292,
+      "sha256": "0ef156367caefe69d5bcb2d344f33ecc0da62c40f2b946ffa839a163280c0ce8"
+    }
+  ],
+  "tests": [
+    {
+      "test": "ClockTests.test_01_frame_jump_crosses_both_action_markers",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_02_action_frame_partition_has_same_commits",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_03_exact_marker_boundary_once",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_04_zero_marker_requires_explicit_start_and_is_deduplicated",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_05_action_pause_freezes_authority_then_resumes",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_06_action_double_rate_moves_commit_world_time",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_07_visual_rate_and_pause_do_not_move_action_clock",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_08_loop_large_jump_preserves_cycles_and_zero_boundary",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_09_wrapped_equal_phase_is_not_no_motion",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_10_loop_frame_partition_has_same_occurrences",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_11_distinct_equal_time_markers_retain_identity",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_12_crossfade_two_visuals_cannot_duplicate_gameplay_slot",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_13_cancel_keeps_committed_effect_rejects_old_ticket",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_14_cancel_before_hit_cannot_emit_late",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_15_duplicate_tick_diagnostic_does_not_advance",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_16_negative_and_nonfinite_inputs_diagnostic",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_17_capacity_error_is_atomic_even_for_billion_cycles",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_18_invalid_loop_period_or_endpoint_is_diagnostic",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_19_end_marker_fires_before_completion_and_clamps",
+      "status": "passed"
+    },
+    {
+      "test": "ClockTests.test_20_body_revision_and_generation_invalidate_callback",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_21_six_leg_phase_at_numerical_example",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_22_paused_arm_does_not_reset_moving_gait",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_23_actual_displacement_zero_means_no_stride_even_if_desired_speed_high",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_24_emergency_stop_freezes_cycle_then_lands_three_feet",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_25_stop_does_not_accept_movement_or_silent_phase_reset",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_26_invalid_stride_and_negative_distance",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_27_long_arm_changes_trajectory_keeps_locked_time",
+      "status": "passed"
+    },
+    {
+      "test": "GaitAndGeometryTests.test_28_peak_velocity_rejects_path_which_average_would_accept",
+      "status": "passed"
+    },
+    {
+      "test": "ReusedEvidenceTests.test_29_reused_evidence_hashes_unchanged",
+      "status": "passed"
+    },
+    {
+      "test": "ReusedEvidenceTests.test_30_eight_headers_preserve_unknown_units",
+      "status": "passed"
+    },
+    {
+      "test": "ReusedEvidenceTests.test_31_actual_reference_times_bounded_without_conversion",
+      "status": "passed"
+    },
+    {
+      "test": "ReusedEvidenceTests.test_32_tlsa_preserves_sentinel_and_per_reference_scope",
+      "status": "passed"
+    },
+    {
+      "test": "ReusedEvidenceTests.test_33_gait6_slots_do_not_supply_limb_identity",
+      "status": "passed"
+    },
+    {
+      "test": "ReusedEvidenceTests.test_34_manifest_has_explicit_consumer_unknowns",
+      "status": "passed"
+    },
+    {
+      "test": "CompleteScenarioTests.test_35_six_leg_swing_pause_double_rate_and_emergency_stop_table",
+      "status": "passed"
+    }
+  ],
+  "source_coverage": {
+    "community_sources": 11,
+    "community_format_sources": 6,
+    "community_SDK_sources": 4,
+    "community_editor_negative_source": 1,
+    "developer_papers": 1,
+    "developer_PDF_actual_read_pages_one_based": [
+      5,
+      6,
+      7
+    ],
+    "pinnedFX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "pinnedSDK": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+  },
+  "validation_history": [
+    "Initial34-test run detected counting48 INFO rows as60 occurrences; test corrected to assert48 rows and eventCount sum60; no original evidence edited.",
+    "34 passed after correction.",
+    "Added one integrated six-leg paused/double-rate swing+emergency-stop numerical-table check; final35 passed."
+  ],
+  "doc_scan": {
+    "UTF8": "checked",
+    "fence_dialect": "~~~ pairs supported",
+    "pending_root_owned_link": "evidence/land-runtime-five-topics-verification.json",
+    "other_relative_links": "resolved at final check"
+  },
+  "not_performed": [
+    "Spore runtime/native consumer validation",
+    "new package payload read",
+    "production physics event queue/state-history replay",
+    "terrain/IK/collision quality",
+    "concurrency/persistence assurance",
+    "install/config/provider setup",
+    "Git write"
+  ],
+  "risks": [
+    "Raw INFO integer time to seconds and ANIM length/frameLength consumption unresolved.",
+    "TLSA durationScale and -1 sentinel native semantics unresolved.",
+    "Gait slot-to-body, units and native stop transition unresolved.",
+    "Independent tests establish own rational-clock examples, not original-game equivalence.",
+    "Git read-only status encountered permission denial in third_party/binwalk submodule; no Git mutation attempted."
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "72807fb863db3df6dc095feb3f73f9549ac1f72abd8749e1e11c633169c2b160",
+    "captured_file_bytes": 7464,
+    "reference_changes": [
+      {
+        "pointer": "/files/1/sha256",
+        "captured": "eb8ec4e34d105dd185f8f11ce5c20eb8e0ca561f4c4ea2cad60be6d03386b5ec",
+        "published": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9",
+        "study_file": "evidence/public-animation-clock-contracts.json"
+      },
+      {
+        "pointer": "/files/1/bytes",
+        "captured": 19574,
+        "published": 22526,
+        "study_file": "evidence/public-animation-clock-contracts.json"
+      }
+    ]
+  }
+}

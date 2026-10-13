@@ -1,0 +1,692 @@
+{
+  "target": "E:\\Steam\\steamapps\\common\\Spore\\SporeBin\\SporeApp.exe",
+  "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+  "bytes": 20626168,
+  "section": ".rdata",
+  "raw_range": [
+    "0xfcb400",
+    "0x110aa00"
+  ],
+  "encoding": "bounded contiguous printable ASCII, length>=5",
+  "filter": "pack|herd|social|befriend|relationship|extinct|nest|decider",
+  "matches": [
+    {
+      "name": "social",
+      "file_offset": "0xfeb574",
+      "preferred_data_va": "0x13ec174"
+    },
+    {
+      "name": "tribeSocial",
+      "file_offset": "0xfeb644",
+      "preferred_data_va": "0x13ec244"
+    },
+    {
+      "name": "totalSocial",
+      "file_offset": "0xfefb30",
+      "preferred_data_va": "0x13f0730"
+    },
+    {
+      "name": "-totalSocial <min> <max>",
+      "file_offset": "0xfefee7",
+      "preferred_data_va": "0x13f0ae7"
+    },
+    {
+      "name": "-social <min> <max>",
+      "file_offset": "0xfeff00",
+      "preferred_data_va": "0x13f0b00"
+    },
+    {
+      "name": "/community/assetBrowser/requiredPacks",
+      "file_offset": "0xffc568",
+      "preferred_data_va": "0x13fd168"
+    },
+    {
+      "name": "App/DatabasePackedFile",
+      "file_offset": "0x100234c",
+      "preferred_data_va": "0x1402f4c"
+    },
+    {
+      "name": "UseBigPackedDatabases",
+      "file_offset": "0x1008bb8",
+      "preferred_data_va": "0x14097b8"
+    },
+    {
+      "name": "Resource/PackedRecord",
+      "file_offset": "0x100950c",
+      "preferred_data_va": "0x140a10c"
+    },
+    {
+      "name": "Could not find a needed package.",
+      "file_offset": "0x100bcb8",
+      "preferred_data_va": "0x140c8b8"
+    },
+    {
+      "name": "lineStrip",
+      "file_offset": "0x100c654",
+      "preferred_data_va": "0x140d254"
+    },
+    {
+      "name": "can't nest states or transitions",
+      "file_offset": "0x101296c",
+      "preferred_data_va": "0x141356c"
+    },
+    {
+      "name": "-listPacks^",
+      "file_offset": "0x101320c",
+      "preferred_data_va": "0x1413e0c"
+    },
+    {
+      "name": "List all add-on packages loaded by the app",
+      "file_offset": "0x1013218",
+      "preferred_data_va": "0x1413e18"
+    },
+    {
+      "name": "Resource/DatabasePackedFile",
+      "file_offset": "0x1035c44",
+      "preferred_data_va": "0x1436844"
+    },
+    {
+      "name": "OS service pack",
+      "file_offset": "0x103c8a0",
+      "preferred_data_va": "0x143d4a0"
+    },
+    {
+      "name": "Refpack",
+      "file_offset": "0x103d840",
+      "preferred_data_va": "0x143e440"
+    },
+    {
+      "name": "EAPd/t_pack_atoms",
+      "file_offset": "0x1054568",
+      "preferred_data_va": "0x1455168"
+    },
+    {
+      "name": "EAPd/t_unpackout",
+      "file_offset": "0x1054584",
+      "preferred_data_va": "0x1455184"
+    },
+    {
+      "name": "EAPd/t_unpack_atoms",
+      "file_offset": "0x1054598",
+      "preferred_data_va": "0x1455198"
+    },
+    {
+      "name": "unpack",
+      "file_offset": "0x10545ac",
+      "preferred_data_va": "0x14551ac"
+    },
+    {
+      "name": "mbUseCastedHerds",
+      "file_offset": "0x10597dc",
+      "preferred_data_va": "0x145a3dc"
+    },
+    {
+      "name": "herds",
+      "file_offset": "0x1059864",
+      "preferred_data_va": "0x145a464"
+    },
+    {
+      "name": "actorNest",
+      "file_offset": "0x1059994",
+      "preferred_data_va": "0x145a594"
+    },
+    {
+      "name": "Simulator/cNest",
+      "file_offset": "0x105d650",
+      "preferred_data_va": "0x145e250"
+    },
+    {
+      "name": "Simulator/cHerd",
+      "file_offset": "0x105d660",
+      "preferred_data_va": "0x145e260"
+    },
+    {
+      "name": "cHerd",
+      "file_offset": "0x105e7e8",
+      "preferred_data_va": "0x145f3e8"
+    },
+    {
+      "name": "cNest",
+      "file_offset": "0x105e7f0",
+      "preferred_data_va": "0x145f3f0"
+    },
+    {
+      "name": "mAvatarHerd",
+      "file_offset": "0x105ec94",
+      "preferred_data_va": "0x145f894"
+    },
+    {
+      "name": "cHerdEffects__DEPRECATED",
+      "file_offset": "0x105ed08",
+      "preferred_data_va": "0x145f908"
+    },
+    {
+      "name": "SP_Simulator/cHerdEffects__DEPRECATED/COM",
+      "file_offset": "0x105ee6c",
+      "preferred_data_va": "0x145fa6c"
+    },
+    {
+      "name": "Simulator/cNestView",
+      "file_offset": "0x1060270",
+      "preferred_data_va": "0x1460e70"
+    },
+    {
+      "name": "        [nestlevel <int:level>]",
+      "file_offset": "0x1060fc7",
+      "preferred_data_va": "0x1461bc7"
+    },
+    {
+      "name": "        [numrelationships] ... prints the size of the map in the relationship simulator to the console",
+      "file_offset": "0x1061015",
+      "preferred_data_va": "0x1461c15"
+    },
+    {
+      "name": "SP_Simulator/cRelationshipManager/COM",
+      "file_offset": "0x106172c",
+      "preferred_data_va": "0x146232c"
+    },
+    {
+      "name": "cRelationshipManager",
+      "file_offset": "0x1061754",
+      "preferred_data_va": "0x1462354"
+    },
+    {
+      "name": "creature_social",
+      "file_offset": "0x1061e78",
+      "preferred_data_va": "0x1462a78"
+    },
+    {
+      "name": "tribe_social",
+      "file_offset": "0x1061eac",
+      "preferred_data_va": "0x1462aac"
+    },
+    {
+      "name": "Simulator/SubSystem/SpeciesRelationshipManager",
+      "file_offset": "0x1062eb0",
+      "preferred_data_va": "0x1463ab0"
+    },
+    {
+      "name": "sSpeciesRelationshipManagerContainer",
+      "file_offset": "0x106351c",
+      "preferred_data_va": "0x146411c"
+    },
+    {
+      "name": "numBefriended",
+      "file_offset": "0x1065200",
+      "preferred_data_va": "0x1465e00"
+    },
+    {
+      "name": "relationship",
+      "file_offset": "0x1065220",
+      "preferred_data_va": "0x1465e20"
+    },
+    {
+      "name": "mSpeciesRelationshipMap",
+      "file_offset": "0x1065230",
+      "preferred_data_va": "0x1465e30"
+    },
+    {
+      "name": "sRelationshipManagerContainer",
+      "file_offset": "0x1065774",
+      "preferred_data_va": "0x1466374"
+    },
+    {
+      "name": "Relationship To Player = %.1f",
+      "file_offset": "0x1067c79",
+      "preferred_data_va": "0x1468879"
+    },
+    {
+      "name": "mMineStateTimeout",
+      "file_offset": "0x1068fe8",
+      "preferred_data_va": "0x1469be8"
+    },
+    {
+      "name": "mMineStateTimer",
+      "file_offset": "0x1068ffc",
+      "preferred_data_va": "0x1469bfc"
+    },
+    {
+      "name": "mMineState",
+      "file_offset": "0x106900c",
+      "preferred_data_va": "0x1469c0c"
+    },
+    {
+      "name": "mHerd",
+      "file_offset": "0x10696a4",
+      "preferred_data_va": "0x146a2a4"
+    },
+    {
+      "name": "mRelationship",
+      "file_offset": "0x106a940",
+      "preferred_data_va": "0x146b540"
+    },
+    {
+      "name": "mSocialEvoPointReward",
+      "file_offset": "0x106a984",
+      "preferred_data_va": "0x146b584"
+    },
+    {
+      "name": "mNumToKillForExtinction",
+      "file_offset": "0x106a9ec",
+      "preferred_data_va": "0x146b5ec"
+    },
+    {
+      "name": "mNumBefriended",
+      "file_offset": "0x106aa28",
+      "preferred_data_va": "0x146b628"
+    },
+    {
+      "name": "mMaxDiseasedPerHerd",
+      "file_offset": "0x106d840",
+      "preferred_data_va": "0x146e440"
+    },
+    {
+      "name": "mMinDiseasedPerHerd",
+      "file_offset": "0x106d854",
+      "preferred_data_va": "0x146e454"
+    },
+    {
+      "name": "mpHerd",
+      "file_offset": "0x10710c8",
+      "preferred_data_va": "0x1471cc8"
+    },
+    {
+      "name": "mbResetNestEffects",
+      "file_offset": "0x10710dc",
+      "preferred_data_va": "0x1471cdc"
+    },
+    {
+      "name": "mbTransientHerd",
+      "file_offset": "0x10710f0",
+      "preferred_data_va": "0x1471cf0"
+    },
+    {
+      "name": "mbExtinction",
+      "file_offset": "0x1071100",
+      "preferred_data_va": "0x1471d00"
+    },
+    {
+      "name": "mbEggsInNest",
+      "file_offset": "0x1071290",
+      "preferred_data_va": "0x1471e90"
+    },
+    {
+      "name": "mpHerdMom",
+      "file_offset": "0x10712a0",
+      "preferred_data_va": "0x1471ea0"
+    },
+    {
+      "name": "mpNest",
+      "file_offset": "0x10712b8",
+      "preferred_data_va": "0x1471eb8"
+    },
+    {
+      "name": "mTargetHerdSize",
+      "file_offset": "0x1071308",
+      "preferred_data_va": "0x1471f08"
+    },
+    {
+      "name": "mSocialTraitProgress",
+      "file_offset": "0x10722d8",
+      "preferred_data_va": "0x1472ed8"
+    },
+    {
+      "name": "Relationship Events:",
+      "file_offset": "0x10730b1",
+      "preferred_data_va": "0x1473cb1"
+    },
+    {
+      "name": "mGiftRelationshipDecayTimer",
+      "file_offset": "0x1073400",
+      "preferred_data_va": "0x1474000"
+    },
+    {
+      "name": "mInitialRelationship",
+      "file_offset": "0x1073454",
+      "preferred_data_va": "0x1474054"
+    },
+    {
+      "name": "mpDomesticatedAnimalsHerd",
+      "file_offset": "0x1073504",
+      "preferred_data_va": "0x1474104"
+    },
+    {
+      "name": "mSocialTools",
+      "file_offset": "0x1073564",
+      "preferred_data_va": "0x1474164"
+    },
+    {
+      "name": "mRelationships",
+      "file_offset": "0x10782a8",
+      "preferred_data_va": "0x1478ea8"
+    },
+    {
+      "name": "mRelationshipEvents",
+      "file_offset": "0x10782b8",
+      "preferred_data_va": "0x1478eb8"
+    },
+    {
+      "name": "cUISocialRainbow",
+      "file_offset": "0x1079894",
+      "preferred_data_va": "0x147a494"
+    },
+    {
+      "name": "CRG_SocialFailure",
+      "file_offset": "0x107a100",
+      "preferred_data_va": "0x147ad00"
+    },
+    {
+      "name": "CRG_ClaimNest",
+      "file_offset": "0x107a194",
+      "preferred_data_va": "0x147ad94"
+    },
+    {
+      "name": "mNestUpgradeLevel",
+      "file_offset": "0x107ab44",
+      "preferred_data_va": "0x147b744"
+    },
+    {
+      "name": "7WildAnimalSocial",
+      "file_offset": "0x107b597",
+      "preferred_data_va": "0x147c197"
+    },
+    {
+      "name": "TRG_TotemPole_Social",
+      "file_offset": "0x107b5b8",
+      "preferred_data_va": "0x147c1b8"
+    },
+    {
+      "name": "SocialPropose",
+      "file_offset": "0x107b5d0",
+      "preferred_data_va": "0x147c1d0"
+    },
+    {
+      "name": "Social",
+      "file_offset": "0x107b5e8",
+      "preferred_data_va": "0x147c1e8"
+    },
+    {
+      "name": "SocialPower",
+      "file_offset": "0x107b6b8",
+      "preferred_data_va": "0x147c2b8"
+    },
+    {
+      "name": "UI/cSPUIRelationshipStripLayout",
+      "file_offset": "0x1080c38",
+      "preferred_data_va": "0x1481838"
+    },
+    {
+      "name": "triberelationship",
+      "file_offset": "0x1087020",
+      "preferred_data_va": "0x1487c20"
+    },
+    {
+      "name": "empirerelationship",
+      "file_offset": "0x10870d0",
+      "preferred_data_va": "0x1487cd0"
+    },
+    {
+      "name": "Simulator/decider",
+      "file_offset": "0x10883a4",
+      "preferred_data_va": "0x1488fa4"
+    },
+    {
+      "name": "usedAppPackIds",
+      "file_offset": "0x108c104",
+      "preferred_data_va": "0x148cd04"
+    },
+    {
+      "name": "Terrain/ResourceManager/DatabasePackedFile",
+      "file_offset": "0x108f5b8",
+      "preferred_data_va": "0x14901b8"
+    },
+    {
+      "name": "-relationship <val:float>",
+      "file_offset": "0x1093a34",
+      "preferred_data_va": "0x1494634"
+    },
+    {
+      "name": "multiplier for the actual relationship value",
+      "file_offset": "0x1093a50",
+      "preferred_data_va": "0x1494650"
+    },
+    {
+      "name": "mTribeCivRelationships",
+      "file_offset": "0x1094fa4",
+      "preferred_data_va": "0x1495ba4"
+    },
+    {
+      "name": "-setRelationship <value>       sets the relationship score between the player and the current starsystem.",
+      "file_offset": "0x10958ca",
+      "preferred_data_va": "0x14964ca"
+    },
+    {
+      "name": "-debug relationship            shows relationships etc.",
+      "file_offset": "0x1095cef",
+      "preferred_data_va": "0x14968ef"
+    },
+    {
+      "name": "-dumprel                       prints out all relationships pairs",
+      "file_offset": "0x1095fa9",
+      "preferred_data_va": "0x1496ba9"
+    },
+    {
+      "name": "relationships",
+      "file_offset": "0x1098388",
+      "preferred_data_va": "0x1498f88"
+    },
+    {
+      "name": "setRelationship",
+      "file_offset": "0x10987a4",
+      "preferred_data_va": "0x14993a4"
+    },
+    {
+      "name": "hkPackfileSectionHeader",
+      "file_offset": "0x10a6818",
+      "preferred_data_va": "0x14a7418"
+    },
+    {
+      "name": "hkPackfileHeader",
+      "file_offset": "0x10a69c4",
+      "preferred_data_va": "0x14a75c4"
+    },
+    {
+      "name": "For more information on 3D audio calculation and rendering, please see the RWAudio3D packagedocumentation and library.",
+      "file_offset": "0x10b8164",
+      "preferred_data_va": "0x14b8d64"
+    },
+    {
+      "name": "?PacketPlayer",
+      "file_offset": "0x10ba8e3",
+      "preferred_data_va": "0x14bb4e3"
+    },
+    {
+      "name": "PacketPlayer RequestExternal array",
+      "file_offset": "0x10ba91c",
+      "preferred_data_va": "0x14bb51c"
+    },
+    {
+      "name": "The IsPacketDone event indicates whether a packet has completed or not. It will return BOOLEAN_TRUE if the packet played to the end, was stopped or failed due to an error.",
+      "file_offset": "0x10babb0",
+      "preferred_data_va": "0x14bb7b0"
+    },
+    {
+      "name": "It will return BOOLEAN_FALSE if the packet is still to be played.",
+      "file_offset": "0x10bac5d",
+      "preferred_data_va": "0x14bb85d"
+    },
+    {
+      "name": "IsPacketDoneParams",
+      "file_offset": "0x10baca0",
+      "preferred_data_va": "0x14bb8a0"
+    },
+    {
+      "name": "EVENT_ISPACKETDONE",
+      "file_offset": "0x10bacb4",
+      "preferred_data_va": "0x14bb8b4"
+    },
+    {
+      "name": "The Submit event submits one packet of source sample data to be played.",
+      "file_offset": "0x10bacc8",
+      "preferred_data_va": "0x14bb8c8"
+    },
+    {
+      "name": "The Submit event is asynchronous and the submitted packet cannot be changed until the PacketPlayer has finished processing it. To determine when the packet has finished processing, use the EVENT_ISPACKETDONE event to query its state.",
+      "file_offset": "0x10bad11",
+      "preferred_data_va": "0x14bb911"
+    },
+    {
+      "name": "This Stop event will stop all playback and remove all submitted packets from the internal queue.",
+      "file_offset": "0x10bae28",
+      "preferred_data_va": "0x14bba28"
+    },
+    {
+      "name": "The Play event specifies format information about the source sample data that will be submitted andenters the PacketPlayer into an active state where submitted packets will start being processed.",
+      "file_offset": "0x10baee8",
+      "preferred_data_va": "0x14bbae8"
+    },
+    {
+      "name": "The PacketPlayer event is asynchronous, meaning any output attributes the PacketPlayer supports will not be immediately updated to reflect the new state of the PacketPlayer.",
+      "file_offset": "0x10bafad",
+      "preferred_data_va": "0x14bbbad"
+    },
+    {
+      "name": "The isPacketDone parameter is an output parameter used to indicate whether the specified packet has finished processing or not.",
+      "file_offset": "0x10bb060",
+      "preferred_data_va": "0x14bbc60"
+    },
+    {
+      "name": "Is Packet Done",
+      "file_offset": "0x10bb0e0",
+      "preferred_data_va": "0x14bbce0"
+    },
+    {
+      "name": "isPacketDone",
+      "file_offset": "0x10bb0f0",
+      "preferred_data_va": "0x14bbcf0"
+    },
+    {
+      "name": "The packet parameter specifies a pointer to a Packet object whose state is being enquired about.",
+      "file_offset": "0x10bb100",
+      "preferred_data_va": "0x14bbd00"
+    },
+    {
+      "name": "Packet",
+      "file_offset": "0x10bb164",
+      "preferred_data_va": "0x14bbd64"
+    },
+    {
+      "name": "The packet parameter specifies a pointer to the Packet being submitted.",
+      "file_offset": "0x10bb170",
+      "preferred_data_va": "0x14bbd70"
+    },
+    {
+      "name": "Packet being submitted",
+      "file_offset": "0x10bb1b8",
+      "preferred_data_va": "0x14bbdb8"
+    },
+    {
+      "name": "packet",
+      "file_offset": "0x10bb1d0",
+      "preferred_data_va": "0x14bbdd0"
+    },
+    {
+      "name": "RWOBJECTTYPE_ATTRIBUTEPACKET_DELEGATE",
+      "file_offset": "0x10f6160",
+      "preferred_data_va": "0x14f6d60"
+    },
+    {
+      "name": "RWOBJECTTYPE_ATTRIBUTEPACKET",
+      "file_offset": "0x10f6188",
+      "preferred_data_va": "0x14f6d88"
+    }
+  ],
+  "limitations": "Names only. No code xrefs, runtime observations, parameter values, or complete Unicode/resource coverage.",
+  "exact_literal_queries": [
+    {
+      "literal": "lastAbilityMode",
+      "found": true,
+      "file_offset": "0x10651e4"
+    },
+    {
+      "literal": "numKilled",
+      "found": true,
+      "file_offset": "0x10651f4"
+    },
+    {
+      "literal": "numBefriended",
+      "found": true,
+      "file_offset": "0x1065200"
+    },
+    {
+      "literal": "friendlyCount",
+      "found": true,
+      "file_offset": "0x1065210"
+    },
+    {
+      "literal": "relationship",
+      "found": true,
+      "file_offset": "0x1065220"
+    },
+    {
+      "literal": "mSpeciesRelationshipMap",
+      "found": true,
+      "file_offset": "0x1065230"
+    },
+    {
+      "literal": "mNumToImpressForBestFriends",
+      "found": true,
+      "file_offset": "0x106a99c"
+    },
+    {
+      "literal": "mNumToImpressForFriendly",
+      "found": true,
+      "file_offset": "0x106a9b8"
+    },
+    {
+      "literal": "mNumToImpressForCurious",
+      "found": true,
+      "file_offset": "0x106a9d4"
+    },
+    {
+      "literal": "mNumToKillForExtinction",
+      "found": true,
+      "file_offset": "0x106a9ec"
+    },
+    {
+      "literal": "mRespawnRate",
+      "found": true,
+      "file_offset": "0x10712d8"
+    },
+    {
+      "literal": "mTargetHerdSize",
+      "found": true,
+      "file_offset": "0x1071308"
+    },
+    {
+      "literal": "mInitialShortfall",
+      "found": true,
+      "file_offset": "0x1071354"
+    },
+    {
+      "literal": "mScheduleIndex",
+      "found": true,
+      "file_offset": "0x10713a4"
+    },
+    {
+      "literal": "mHuntingStyle",
+      "found": false,
+      "file_offset": null
+    },
+    {
+      "literal": "mAvatarHerd",
+      "found": true,
+      "file_offset": "0x105ec94"
+    },
+    {
+      "literal": "mbExtinction",
+      "found": true,
+      "file_offset": "0x1071100"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "developer-historical-design-not-local-runtime",
+  "files": [
+    {
+      "url": "https://www.cs.cmu.edu/~ajw/s2007/0248-Rigblocks.pdf",
+      "bytes": 552436,
+      "sha256": "05f032e2874d6915c1cf9d64e7a346a46dfb5da970f9d4332f12c74a5c334476",
+      "pages": 1,
+      "read_pages_one_based": [
+        1
+      ],
+      "facts": [
+        "Player handles scrub parameterized deformation tracks.",
+        "Translation, scale and rotation deltas compose, rather than crossfade all shapes.",
+        "Finished edit deformations may be baked into the final part."
+      ],
+      "limits": [
+        "Does not specify Creature procedural skin weights.",
+        "Removal of edit tracks does not imply removal of gameplay animations."
+      ]
+    },
+    {
+      "url": "https://www.cs.cmu.edu/~ajw/s2007/0311-PaintingModels.pdf",
+      "bytes": 4970820,
+      "sha256": "d4d419e0ce2cc81ac64270e106568aba8923baf05fc3aec45c996d575f730fce",
+      "pages": 1,
+      "read_pages_one_based": [
+        1
+      ],
+      "selected_section": "2 Creature Texturing",
+      "facts": [
+        "Main body mesh with attached detail parts.",
+        "Fast body UV generation with cubemap partitioning."
+      ],
+      "limits": [
+        "Building/vehicle projection details do not establish Creature mesh connections."
+      ]
+    },
+    {
+      "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+      "bytes": 3896086,
+      "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+      "pages": 11,
+      "read_pages_one_based": [
+        2
+      ],
+      "selected_section": "1.2 Character Terminology",
+      "facts": [
+        "Body graph stores hierarchical transforms and semantics; reference state is user-created rest pose.",
+        "Scalar deform curves drive internal hands, mouths, eyes and other details."
+      ],
+      "limits": [
+        "Body graph is not established as one-to-one with render bones."
+      ]
+    }
+  ]
+}

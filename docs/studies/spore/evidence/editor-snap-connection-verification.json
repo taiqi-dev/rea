@@ -1,0 +1,61 @@
+{
+  "kind": "independent editor snapping/frame/connection math and sequential state checks, not original execution",
+  "recorded_at_pacific": "2026-10-12T23:31:41-07:00",
+  "scope": "Landed Creature editor before Tribal",
+  "tests": {
+    "script": "../checks/verify_editor_snap_connection_examples.py",
+    "passed": 30,
+    "failed": 0,
+    "script_sha256": "7f4871a23529ba908a18fc902b61bfd4801b5defa2b8a99a6f21db0952696643",
+    "runtime": "Bundled Python -B -X utf8, standard library only"
+  },
+  "document_checks": {
+    "path": "../49-editor-surface-snapping-attachment-and-connection-validation.md",
+    "sha256": "4946512cdc4feb3dac19469238afd713533dad320fec7dc9eac56f016d48057a",
+    "utf8": true,
+    "fences_even": true,
+    "links_checked": 12,
+    "missing_links": []
+  },
+  "source_checks": {
+    "files": 4,
+    "source_manifest_sha256": "41ca483f4d53f7e732054b0cf54438f8f9e3a2f7ab13db714f6162f2e48d5f8a",
+    "recorded_ranges_within_line_bounds": true
+  },
+  "selected_target_identity_reused": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "version": "1.3.0.29",
+    "rehashed_this_module": false
+  },
+  "new_local_resources_read": 0,
+  "new_local_native_instructions_read": 0,
+  "not_run": [
+    "Original game launch or attach",
+    "Private saves",
+    "Original snapping/connection method execution",
+    "Full 3D editor and continuous drag validation",
+    "Production build or performance measurement"
+  ],
+  "limitations": [
+    "Public declarations not verified against selected local ABI",
+    "CSnap coordinate spaces, multiplication order and modelHandle consumers unknown",
+    "Triangle and circle examples demonstrate different stages, not a captured original scene",
+    "Pixel thresholds and shortest limb segment are independent example settings",
+    "Sequential transaction checks do not establish storage/concurrency atomicity"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "12a6a9b270191140a262df68e378eebe717181ca611091e3a2a9b5673425d546",
+    "captured_file_bytes": 2028,
+    "reference_changes": [
+      {
+        "pointer": "/source_checks/source_manifest_sha256",
+        "captured": "8d677417a28e3287c61ef1db8abc77cf419a4890e78de7f8318ec97e76eff0cb",
+        "published": "41ca483f4d53f7e732054b0cf54438f8f9e3a2f7ab13db714f6162f2e48d5f8a",
+        "study_file": "evidence/public-editor-snap-connection-contracts.json"
+      }
+    ]
+  }
+}

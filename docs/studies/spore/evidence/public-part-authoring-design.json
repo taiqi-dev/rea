@@ -1,0 +1,32 @@
+{
+  "kind": "developer-historical-design-not-local-runtime",
+  "retrieved_at_pacific": "2026-10-12T18:45:05-07:00",
+  "timestamp_scope": "investigation start; not exact HTTP response time",
+  "source": {
+    "url": "https://www.cs.cmu.edu/~ajw/s2007/0248-Rigblocks.pdf",
+    "bytes": 552436,
+    "sha256": "05f032e2874d6915c1cf9d64e7a346a46dfb5da970f9d4332f12c74a5c334476",
+    "pages": 1,
+    "read_pages_one_based": [1],
+    "read_sections": ["1 Introduction", "2 Pipeline and Workflow", "3 Animation Technology"],
+    "identity_matches_previous": "public-part-local-animation-design.json",
+    "facts": [
+      "A Rigblock combines geometry with parameter-driven deformation tracks. The edit parameter ranges over a unit interval; it is not elapsed combat time.",
+      "Artist-authored handles are placed near controlled features; a handle may traverse subranges producing different styles rather than a single linear scale.",
+      "Authoring uses a shared skeleton and multiple tracks composed in Maya's non-linear animation workflow. Export propagates handle positions, ranges and associated animation.",
+      "Translation, scale and rotation deltas are accumulated separately; runtime quaternion composition differs from Maya Euler summation. Do not infer order independence.",
+      "The paper describes baking away edit animation. The retained runtime-animation and skeleton-retargeting distinction is documented separately in the previously read slides."
+    ],
+    "limits": [
+      "Historical shared technology also covers other editors; examples in the new study remain Creature-only.",
+      "No exact local mouse-to-parameter mapping, export schema, skeleton reduction algorithm or all-part endpoints recovered.",
+      "Text read, no figure rendering or visual comparison. No proprietary asset is exported."
+    ]
+  },
+  "acquisition": {
+    "web_reader": "two CMU PDF requests timed out; no content returned",
+    "default_shell_reader": "DNS getaddrinfo failure",
+    "formal_escalated_read": "success; urllib request in memory, pypdf text extraction; no target execution",
+    "software_installation": false
+  }
+}

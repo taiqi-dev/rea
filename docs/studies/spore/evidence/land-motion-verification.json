@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "checked_at_pacific": "2026-10-12 02:33:31 PDT",
+  "kind": "static-research-and-independent-examples-not-game-runtime",
+  "markdown": {
+    "files": 29,
+    "relative_links": 149,
+    "utf8": true,
+    "fences_closed": true,
+    "missing_links": []
+  },
+  "local": {
+    "exe_sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "exact_strings_rechecked": 20,
+    "suffix_false_positive_explicitly_preserved": true,
+    "packages": [
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+        "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+        "bytes": 20210108,
+        "index_count": 11529,
+        "index_offset": 19887288,
+        "index_bytes": 322820,
+        "index_flags": 4,
+        "examined_entries": 11529
+      },
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+        "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+        "bytes": 80428851,
+        "index_count": 25535,
+        "index_offset": 79713863,
+        "index_bytes": 714988,
+        "index_flags": 4,
+        "examined_entries": 25535
+      }
+    ],
+    "selected_prop_records": 8,
+    "selected_gait_records": 14,
+    "complete_gait_record_consumption": true,
+    "opaque_spline_tail_distribution_preserved": true,
+    "original_vs_community_tail_difference": "base contains varied uint32 values; selected patch nonzero-taxon gait resources have CDCDCDCD",
+    "reader_identity_matches": true
+  },
+  "checks": [
+    {
+      "path": "checks/verify_movement_reader.py",
+      "passed": 6,
+      "scope": "GAIT boundaries and recorded tuning/key/phase differences"
+    },
+    {
+      "path": "checks/verify_land_motion_examples.py",
+      "passed": 11,
+      "scope": "independent clearance, braking, collision prediction, arrival hysteresis and achieved-motion gait example"
+    }
+  ],
+  "not_run": [
+    "Spore runtime/attachment",
+    "native call tracing/decompilation",
+    "actual body-width passage test",
+    "actual stop and foot-slip measurements",
+    "user product implementation",
+    "repository production build/tests"
+  ],
+  "risks": [
+    "actual navigation shape and width link unknown",
+    "attack arrival/range relationship unknown",
+    "neighbor avoidance algorithm unknown",
+    "actual speed-to-gait conversion unknown",
+    "SDK ABI not aligned; gait opaque fields remain uninterpreted"
+  ]
+}

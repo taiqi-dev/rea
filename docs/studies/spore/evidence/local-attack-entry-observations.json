@@ -1,0 +1,136 @@
+{
+  "kind": "local-read-only-PE-string-observation-not-REA-Evidence",
+  "target": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+  "bytes": 20626168,
+  "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+  "machine": "0x014c",
+  "optional_magic": "0x010b",
+  "preferred_image_base": "0x00400000",
+  "scope": {
+    "sections": {
+      ".rdata": [
+        "0x00fcb400",
+        "0x0110aa00"
+      ],
+      ".data": [
+        "0x0110aa00",
+        "0x011cf600"
+      ]
+    },
+    "interval": "right-open file byte offsets",
+    "encoding": "ASCII",
+    "strings": "complete printable NUL-terminated strings, 4-160 bytes; reject truncated suffixes",
+    "addresses": "preferred data VA, not functions or runtime pointers"
+  },
+  "strings": [
+    {
+      "text": "spitCapRange",
+      "file_offset": "0xfefab4",
+      "preferred_data_va": "0x13f06b4"
+    },
+    {
+      "text": "chargeCapRange",
+      "file_offset": "0xfefac4",
+      "preferred_data_va": "0x13f06c4"
+    },
+    {
+      "text": "strikeCapRange",
+      "file_offset": "0xfefad4",
+      "preferred_data_va": "0x13f06d4"
+    },
+    {
+      "text": "biteCapRange",
+      "file_offset": "0xfefae4",
+      "preferred_data_va": "0x13f06e4"
+    },
+    {
+      "text": "numFeet",
+      "file_offset": "0xfefaf4",
+      "preferred_data_va": "0x13f06f4"
+    },
+    {
+      "text": "totalAttack",
+      "file_offset": "0xfefb04",
+      "preferred_data_va": "0x13f0704"
+    },
+    {
+      "text": "species_query",
+      "file_offset": "0xfefb70",
+      "preferred_data_va": "0x13f0770"
+    },
+    {
+      "text": "Simulator/cCreatureAbility",
+      "file_offset": "0xff01e4",
+      "preferred_data_va": "0x13f0de4"
+    },
+    {
+      "text": "Simulator/cSpeciesProfile",
+      "file_offset": "0xff0200",
+      "preferred_data_va": "0x13f0e00"
+    },
+    {
+      "text": "Simulator/cCreatureAnimal",
+      "file_offset": "0x105d5c0",
+      "preferred_data_va": "0x145e1c0"
+    },
+    {
+      "text": "mUntargetDistanceTime",
+      "file_offset": "0x1069654",
+      "preferred_data_va": "0x146a254"
+    },
+    {
+      "text": "mAbilityStates",
+      "file_offset": "0x1069bc4",
+      "preferred_data_va": "0x146a7c4"
+    },
+    {
+      "text": "mInUseAbilityBits",
+      "file_offset": "0x1069bec",
+      "preferred_data_va": "0x146a7ec"
+    },
+    {
+      "text": "mRechargingAbilityBits",
+      "file_offset": "0x1069c00",
+      "preferred_data_va": "0x146a800"
+    },
+    {
+      "text": "mCurrentAttackAnimId",
+      "file_offset": "0x1069cc8",
+      "preferred_data_va": "0x146a8c8"
+    },
+    {
+      "text": "mCurrentAttackIdx",
+      "file_offset": "0x1069ce0",
+      "preferred_data_va": "0x146a8e0"
+    }
+  ],
+  "excluded_attributions": {
+    "CapRange": "species summarizer/query neighborhood; spatial reach not established",
+    "mHitSphereSize": "city/turret/space weapon neighborhood; land melee not established",
+    "mHeight/mRadius": "canopy/tree/fruit neighborhood",
+    "mMaxDistance/mMinDistance": "screen-size neighborhood",
+    "radiusTarget": "speech/caption/actor neighborhood"
+  },
+  "not_found_in_scanned_sections": [
+    "mRange",
+    "mMinRange",
+    "mMaxRange",
+    "mAttackRange",
+    "mTargetRadius",
+    "mTargetDistance",
+    "mAttackDistance",
+    "mAbilityRange",
+    "mBoundingBox",
+    "mMaxSqrDistance",
+    "mOwnerRadius"
+  ],
+  "unknown": [
+    "land range formula",
+    "scale correction",
+    "animation event receiver",
+    "actual hit geometry",
+    "damage timing"
+  ],
+  "runtime_observed": false,
+  "writer": "root summary of read-only spore_local_evidence agent findings"
+}

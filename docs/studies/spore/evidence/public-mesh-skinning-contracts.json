@@ -1,0 +1,218 @@
+{
+  "kind": "pinned-community-format-and-interface-not-local-runtime",
+  "commits": {
+    "Spore-ModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "SporeModder-FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "files": [
+    {
+      "path": "Editors/cEditorSkinMesh.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorSkinMesh.h",
+      "bytes": 2886,
+      "sha256": "ed49b510ac7d528c2e4fa90f2967d7c71497c66b789b1288986d0a20672df379",
+      "selected_line_ranges_inclusive": [
+        [
+          12,
+          16
+        ],
+        [
+          53,
+          65
+        ],
+        [
+          74,
+          93
+        ]
+      ],
+      "observation": "FromRigblocks accepts part collection; model/texture/UV fields; no method body.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "Editors/BakeManager.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/BakeManager.h",
+      "bytes": 37294,
+      "sha256": "461f65242d2e19c6daaa5d9a1c8c4a61910cdfdc9e7d0914c043483565377209",
+      "selected_line_ranges_inclusive": [
+        [
+          68,
+          91
+        ]
+      ],
+      "observation": "Queue/cancel/BakeModel/TessellateSkin declarations; exact skin parameter semantics unknown.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWVertexElement.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWVertexElement.java",
+      "bytes": 9552,
+      "sha256": "b8ca486e3f1c1c871713dda52702f618d26d3b0017e3a63bfa0cde998bf7de59",
+      "selected_line_ranges_inclusive": [
+        [
+          45,
+          46
+        ],
+        [
+          92,
+          93
+        ],
+        [
+          106,
+          132
+        ],
+        [
+          247,
+          254
+        ]
+      ],
+      "observation": "blendIndices/blendWeights layouts and D3D usage; index mapping unknown; invented secondary flags excluded.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWVertexDescription.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWVertexDescription.java",
+      "bytes": 2687,
+      "sha256": "4dbf9dd82099bf3e3922594cd71889fa637326ba0855ee41935d1e4bc4c7e92d",
+      "selected_line_ranges_inclusive": [
+        [
+          33,
+          41
+        ],
+        [
+          48,
+          79
+        ]
+      ],
+      "observation": "Vertex stride/flags/element layout; not generation.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWVertexBuffer.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWVertexBuffer.java",
+      "bytes": 2330,
+      "sha256": "10b582ae2a04c70e7abaf26d6c9f8f0ebeab12f81aa17bb39f4c4a8413023cf8",
+      "selected_line_ranges_inclusive": [
+        [
+          31,
+          37
+        ],
+        [
+          44,
+          62
+        ]
+      ],
+      "observation": "Description/base resource/count/stride references; no decoded Creature payload.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWSkeleton.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSkeleton.java",
+      "bytes": 3525,
+      "sha256": "643380b44a9339a3a8f2f27b13be96aa296a0db1ee874cb9d75d8d0553ad9be3",
+      "selected_line_ranges_inclusive": [
+        [
+          34,
+          55
+        ],
+        [
+          62,
+          89
+        ],
+        [
+          93,
+          124
+        ]
+      ],
+      "observation": "Bone name/flags/parent references; -1 root; parent numbering does not establish vertex numbering.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWAnimationSkin.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWAnimationSkin.java",
+      "bytes": 2837,
+      "sha256": "44de95965b8e3ceb28a97fa5085ef96e2f74a008598a9b220a97ff3e3e097e31",
+      "selected_line_ranges_inclusive": [
+        [
+          35,
+          40
+        ],
+        [
+          49,
+          71
+        ],
+        [
+          74,
+          88
+        ]
+      ],
+      "observation": "Community named pose matrices and inverse pose translations; multiplication order unknown.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWSkinMatrixBuffer.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSkinMatrixBuffer.java",
+      "bytes": 2237,
+      "sha256": "194880dfd7e8769ac264b833e77395521be44f2275309c65e4ce8aba078abc05",
+      "selected_line_ranges_inclusive": [
+        [
+          33,
+          35
+        ],
+        [
+          42,
+          54
+        ],
+        [
+          57,
+          68
+        ]
+      ],
+      "observation": "Contiguous 3x4 matrix array; slot order/update unknown.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWSkinsInK.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSkinsInK.java",
+      "bytes": 2287,
+      "sha256": "b758e3ec5e01b52e9b3802388f2c8ab02588911395acd997932ab29f0236fdc2",
+      "selected_line_ranges_inclusive": [
+        [
+          31,
+          36
+        ],
+        [
+          43,
+          58
+        ]
+      ],
+      "observation": "Links matrix buffer/skeleton/animation skin via RenderWare object references, not bone indices.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    },
+    {
+      "path": "RWSkeletonsInK.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSkeletonsInK.java",
+      "bytes": 2746,
+      "sha256": "eb1faf755f04cb2f0e57f61eddf8f9e9f070858df452fd2f38e7f6c37ec3486f",
+      "selected_line_ranges_inclusive": [
+        [
+          33,
+          39
+        ],
+        [
+          46,
+          60
+        ],
+        [
+          63,
+          76
+        ]
+      ],
+      "observation": "Skeleton and compiled state object links; vertex mapping missing.",
+      "interpretation": "community declaration/parser; not local ABI or weight generation"
+    }
+  ],
+  "limits": [
+    "No concrete Creature vertex data or blend-index-to-matrix mapping recovered.",
+    "No local ABI, generator, influence limit, normalized weights, LBS or DQS established.",
+    "RenderWare object references, skeleton parent indexes and vertex blend indices remain distinct."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "independent locomotion math and sequential editor state verification, not Spore execution",
+  "recorded_at_pacific": "2026-10-12T22:33:16-07:00",
+  "target_sha256_reused": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+  "target_not_rehashed_this_module": true,
+  "tests": {
+    "script": "../checks/verify_locomotion_rebuild_examples.py",
+    "passed": 24,
+    "failed": 0,
+    "locomotion_tests": 9,
+    "rebuild_tests": 15,
+    "python": "Bundled Python with -B -X utf8, standard library only",
+    "script_sha256": "7b520a76e5852bf52f0838475b0fb6ba737c70469f356269966329c2b52033a5"
+  },
+  "document_checks": [
+    {
+      "path": "43-unusual-bodies-locomotion-modes-and-transitions.md",
+      "utf8_valid": true,
+      "fences_even": true,
+      "links_checked": 9,
+      "missing_links": [],
+      "sha256": "d40812c5c895e47c04295fcc96d0011a6ca96a04c59933d1abf830b700afa429"
+    },
+    {
+      "path": "44-editor-rebuild-undo-and-animation-cache-consistency.md",
+      "utf8_valid": true,
+      "fences_even": true,
+      "links_checked": 11,
+      "missing_links": [],
+      "sha256": "302840013203f26342ee3afeb5c0b038d0bde4c23f0e1664f9f26f9b26ec3dab"
+    }
+  ],
+  "public_sources": {
+    "files_or_papers": 8,
+    "source_manifest_sha256": "388b2cc770bdcbeca296ee3e1c3ac2c77df79255cd14e6100dc9bf2005a02249",
+    "ranges_within_source_bounds": true
+  },
+  "new_local_game_resources_read": 0,
+  "not_run": [
+    "Game startup/attach",
+    "Original native functions",
+    "Private saves",
+    "Complete 3D locomotion or model generation",
+    "Production async/concurrency/crash recovery",
+    "Performance benchmarking"
+  ],
+  "limitations": [
+    "Length grouping and support envelopes are independent approximations",
+    "Mode-transition check validates state publication, not complete support geometry",
+    "Editor examples are sequential, no threaded atomicity guarantee",
+    "Historical paper/community ABI not aligned to shipping local implementation"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "f9b2c9249dfcb78c070824d2071cac8caa4798f67463d061d2d5d5693d83a413",
+    "captured_file_bytes": 2060,
+    "reference_changes": [
+      {
+        "pointer": "/public_sources/source_manifest_sha256",
+        "captured": "e9a42ff726c8175ab234fc2de23f3ff078fd54b94454a9faecc1b1ada06bc24e",
+        "published": "388b2cc770bdcbeca296ee3e1c3ac2c77df79255cd14e6100dc9bf2005a02249",
+        "study_file": "evidence/public-locomotion-rebuild-contracts.json"
+      }
+    ]
+  }
+}

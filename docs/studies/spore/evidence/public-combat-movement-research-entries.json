@@ -1,0 +1,194 @@
+{
+  "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "method": "Read-only pinned public source for research candidates; full files read, selected declarations retained. No local ABI/call-chain verification.",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "sha256": "0d58d8957fbeca887c9c123cdbffe9fb94ba818eba97865563a4a4f92e6919d2",
+      "bytes": 5751,
+      "line_count": 195,
+      "selected_declarations": [
+        {
+          "line": 47,
+          "text": "kSpeed = 14,"
+        },
+        {
+          "line": 140,
+          "text": "/* 40h */\tfloat mRangedDamage;"
+        },
+        {
+          "line": 155,
+          "text": "/* 98h */\tfloat mConeRadius;"
+        },
+        {
+          "line": 159,
+          "text": "/* A8h */\tfloat mRange;  // 10.0"
+        },
+        {
+          "line": 161,
+          "text": "/* B0h */\tfloat mSpeed;  // 5.0"
+        },
+        {
+          "line": 162,
+          "text": "/* B4h */\tunsigned int mSpeedGear;"
+        },
+        {
+          "line": 166,
+          "text": "/* F4h */\tfloat mRushingRange;"
+        },
+        {
+          "line": 168,
+          "text": "/* FCh */\tfloat mRushingSpeed;"
+        },
+        {
+          "line": 169,
+          "text": "/* 100h */\tbool mbRushingTargetedCharge;  // true"
+        },
+        {
+          "line": 184,
+          "text": "/* 134h */\tfloat mRangeMin;"
+        },
+        {
+          "line": 185,
+          "text": "/* 138h */\tfloat mAvatarRangeMin;"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureBase.h",
+      "sha256": "4b813c02ac09a260d34048b8002e2cc694ccad67de4df4409fd45073ea5bec37",
+      "bytes": 18135,
+      "line_count": 429,
+      "selected_declarations": [
+        {
+          "line": 98,
+          "text": "enum SpeedType"
+        },
+        {
+          "line": 100,
+          "text": "kStandardSpeed = 2"
+        },
+        {
+          "line": 119,
+          "text": "void WalkTo(int speedState, const Vector3& dstPos, const Vector3& arg_8, float goalStopDistance = 1.0f, float acceptableStopDistance = 2.0f);"
+        },
+        {
+          "line": 151,
+          "text": "cCreatureAnimal* GetAnimalTarget();"
+        },
+        {
+          "line": 236,
+          "text": "/* 84h */\tvirtual void SetCreatureTarget(cCombatant* pTarget, bool, int intentionTowardsTarget);  //TODO check loc_D3242E"
+        },
+        {
+          "line": 237,
+          "text": "/* 88h */\tvirtual void UpdateHunger(float deltaTimeSeconds);"
+        },
+        {
+          "line": 244,
+          "text": "/* A4h */\tvirtual CreatureMotive UpdateMotiveState();  // returns new motive state"
+        },
+        {
+          "line": 245,
+          "text": "/* A8h */\tvirtual bool HasUpdateMotiveEffect();"
+        },
+        {
+          "line": 283,
+          "text": "/* B61h */\tbool mbUpdateMotiveEffect;"
+        },
+        {
+          "line": 295,
+          "text": "/* B74h */\tint mIntentionTowardsTarget;"
+        },
+        {
+          "line": 302,
+          "text": "/* B90h */\tcGonzagoTimer mHungerDelayTimer;"
+        },
+        {
+          "line": 306,
+          "text": "/* BB8h */\tfloat mHungerDelta;"
+        },
+        {
+          "line": 307,
+          "text": "/* BBCh */\tfloat mHunger;  // 100.0"
+        },
+        {
+          "line": 327,
+          "text": "/* CC0h */\tCreatureMotive mLastMotiveState;"
+        },
+        {
+          "line": 353,
+          "text": "/* E7Ch */\tcCombatant* mpCombatantTarget;  // cCombatant"
+        },
+        {
+          "line": 389,
+          "text": "/* F98h */\tint mSpeedState;"
+        },
+        {
+          "line": 406,
+          "text": "DeclareAddress(WalkTo);"
+        },
+        {
+          "line": 408,
+          "text": "DeclareAddress(GetAnimalTarget);  // C0E740"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cLocomotiveObject.h",
+      "sha256": "850cd29803ab81caeab2cc715bb1ba7af7f5d0c998031c3342864d769ea8a0df",
+      "bytes": 4720,
+      "line_count": 134,
+      "selected_declarations": [
+        {
+          "line": 32,
+          "text": "/* 20h */\tfloat goalStopDistance;"
+        },
+        {
+          "line": 37,
+          "text": "/* 60h */\tfloat acceptableStopDistance;"
+        },
+        {
+          "line": 64,
+          "text": "/* C4h */\tvirtual void SetDesiredSpeed(float speed, int);"
+        },
+        {
+          "line": 65,
+          "text": "/* C8h */\tvirtual float GetDesiredSpeed() const;"
+        },
+        {
+          "line": 66,
+          "text": "/* CCh */\tvirtual float GetStandardSpeed() const;"
+        },
+        {
+          "line": 67,
+          "text": "// returns mStandardSpeed * ?? + creatureBaseAcceleration;"
+        },
+        {
+          "line": 75,
+          "text": "/* E0h */\tvirtual void MoveTo(const Vector3& dst, float goalStopDistance = 1.0f, float acceptableStopDistance = 2.0f, bool unk1 = false);"
+        },
+        {
+          "line": 80,
+          "text": "/* F4h */\tvirtual void ClearNeighbours();"
+        },
+        {
+          "line": 101,
+          "text": "/* 1E0h */\tfloat mDesiredSpeed;"
+        },
+        {
+          "line": 102,
+          "text": "/* 1E4h */\tfloat mStandardSpeed;  // 1.0"
+        },
+        {
+          "line": 103,
+          "text": "/* 1E8h */\tfloat mTurnRate;  // PI"
+        },
+        {
+          "line": 124,
+          "text": "/* 26Ch */\tfloat mNeighborCheckRadius;  // 20.0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "research-artifact-and-independent-example-verification",
+  "status": "passed",
+  "verified_at_pacific": "2026-10-12T15:04:43.638816-07:00",
+  "tests": {
+    "file": "checks/verify_mesh_skinning_examples.py",
+    "passed": 20,
+    "exit_code": 0,
+    "scope": "Independent 2D affine skinning, provenance, compact field and model revision contracts. Not Spore execution or full surface extraction."
+  },
+  "local_identity": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d"
+  },
+  "local_full_ascii_entries_verified": 34,
+  "public_sources": {
+    "hashed_developer_records": 4,
+    "fixed_community_records": 10,
+    "community_digests_reverified": true
+  },
+  "not_performed": [
+    "original game execution/attach",
+    "native decompilation",
+    "actual Creature mesh/weight decoding",
+    "complete 3D mesh/skin renderer implementation",
+    "performance measurement",
+    "production repository build/tests"
+  ],
+  "risks": [
+    "Historical design not fully matched to local version.",
+    "Independent extraction pseudocode still requires topology, contacts and 3D rendering validation.",
+    "Extreme body widths, folds, unauthorized fusion and attachment coverage remain own implementation risks."
+  ],
+  "documentation": {
+    "markdown_files": 32,
+    "relative_links_checked": 203,
+    "utf8_and_fences": "passed",
+    "evidence_json_files_checked": 43
+  }
+}

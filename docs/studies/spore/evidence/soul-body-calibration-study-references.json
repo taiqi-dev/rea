@@ -1,0 +1,100 @@
+{
+  "kind": "soul-body-calibration-independent-design-reference-identities",
+  "new_original_game_payload_reads": false,
+  "inputs": [
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/14-ai-strategy-and-action-scoring.md",
+      "bytes": 7933,
+      "sha256": "bb2ac3f3620ab6f8a02f87f4e8d125a39cfe2639f055439a24e6a6a4edf1d980",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/16-soul-ai-body-assessment.md",
+      "bytes": 15141,
+      "sha256": "7221dc9b2266a1d3ea95719f0eba1366ffc4c02b9e3e3caa55b621f5e1267ca7",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/17-soul-ai-complete-battle.md",
+      "bytes": 13460,
+      "sha256": "d665c1d3a45b3e9ae7ec2392057972427eaee4912f3fd6ba5940bb7c18b389f9",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/46-capability-contributions-body-statistics-and-executor-qualification.md",
+      "bytes": 13756,
+      "sha256": "11dd16c7761b575711de0beb4d48c6d94eaa6001dee3a4ae791010be29db7f68",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/50-complete-creature-recipe-runtime-bones-and-bindings.md",
+      "bytes": 16090,
+      "sha256": "8dbecec934bdc073c8473c6a86e292cfebd0793a858c4421a3599f992eaf7154",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/51-ability-animation-clocks-and-gait-synchronization.md",
+      "bytes": 20287,
+      "sha256": "7600d39679fa1d25182fe32590df8fd9fac739a35338871c62a5b379d528b3ab",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/52-gaze-head-orientation-and-multi-organ-attention.md",
+      "bytes": 14601,
+      "sha256": "4af2331084637d5840b6be4e467f35ac9fb4aac21f580fae44e19f8d8a045889",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/evidence/local-selected-capability-contributions.json",
+      "bytes": 34429,
+      "sha256": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    },
+    {
+      "path": "E:/0Data/Project_Other/rea/docs/studies/spore/evidence/public-capability-aggregation-contracts.json",
+      "bytes": 181741,
+      "sha256": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510",
+      "role": "Existing original/static or explicitly independent specification; no new game read"
+    }
+  ],
+  "created_at": "2026-10-13T01:30:55.271155-07:00",
+  "timezone": "America/Los_Angeles",
+  "authority": "Independent user-product design. No original Spore soul, adaptive body learning or calibration algorithm established.",
+  "limitations": [
+    "No original game execution",
+    "Reference algorithm examples are synthetic, not measured combat or editor trials",
+    "No user product repository supplied"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "291cabd7c4be7b5d73b3f3ce6cdf8aad086787399e45377e0f06d13284224a40",
+    "captured_file_bytes": 3597,
+    "reference_changes": [
+      {
+        "pointer": "/inputs/7/sha256",
+        "captured": "24f41a841ea7f6f6d09700ee1be6d3ef8157b32c5e72ec003b465837661591f4",
+        "published": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/inputs/7/bytes",
+        "captured": 35160,
+        "published": 34429,
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/inputs/8/sha256",
+        "captured": "3826d05f084edcd7020585aa12be9a149b30d7d61d7ec68ac351f03a9b60ee75",
+        "published": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510",
+        "study_file": "evidence/public-capability-aggregation-contracts.json"
+      },
+      {
+        "pointer": "/inputs/8/bytes",
+        "captured": 188718,
+        "published": 181741,
+        "study_file": "evidence/public-capability-aggregation-contracts.json"
+      }
+    ]
+  }
+}

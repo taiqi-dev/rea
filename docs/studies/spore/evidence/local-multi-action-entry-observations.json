@@ -1,0 +1,188 @@
+{
+  "kind": "local-bounded-ASCII-observation-not-REA-Evidence",
+  "target": {
+    "path": "E:\\Steam\\steamapps\\common\\Spore\\SporeBin\\SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d"
+  },
+  "selected": [
+    {
+      "string": "Anim/gait/untagged",
+      "file_offset": "0x1046df4",
+      "preferred_data_va": "0x14479f4"
+    },
+    {
+      "string": "priority",
+      "file_offset": "0x1047af0",
+      "preferred_data_va": "0x14486f0"
+    },
+    {
+      "string": "animName",
+      "file_offset": "0x1047d2c",
+      "preferred_data_va": "0x144892c"
+    },
+    {
+      "string": "animID",
+      "file_offset": "0x1047d38",
+      "preferred_data_va": "0x1448938"
+    },
+    {
+      "string": "durationOverride",
+      "file_offset": "0x1047d18",
+      "preferred_data_va": "0x1448918"
+    },
+    {
+      "string": "priorityOverride",
+      "file_offset": "0x1047d48",
+      "preferred_data_va": "0x1448948"
+    },
+    {
+      "string": "matchVariantForTool",
+      "file_offset": "0x1047d5c",
+      "preferred_data_va": "0x144895c"
+    },
+    {
+      "string": "disableToolOverlay",
+      "file_offset": "0x1047d70",
+      "preferred_data_va": "0x1448970"
+    },
+    {
+      "string": "blendInTime",
+      "file_offset": "0x1047d84",
+      "preferred_data_va": "0x1448984"
+    },
+    {
+      "string": "idle",
+      "file_offset": "0x1047d90",
+      "preferred_data_va": "0x1448990"
+    },
+    {
+      "string": "endMode",
+      "file_offset": "0x1047d98",
+      "preferred_data_va": "0x1448998"
+    },
+    {
+      "string": "allowLocomotion",
+      "file_offset": "0x1047da0",
+      "preferred_data_va": "0x14489a0"
+    },
+    {
+      "string": "randomizeChoicePerLoop",
+      "file_offset": "0x1047db0",
+      "preferred_data_va": "0x14489b0"
+    },
+    {
+      "string": "ArgScript/PriorityOverride",
+      "file_offset": "0x10481ec",
+      "preferred_data_va": "0x1448dec"
+    },
+    {
+      "string": "ArgScript/BlendInTime",
+      "file_offset": "0x104826c",
+      "preferred_data_va": "0x1448e6c"
+    },
+    {
+      "string": "ArgScript/Animation",
+      "file_offset": "0x1048308",
+      "preferred_data_va": "0x1448f08"
+    },
+    {
+      "string": "Anim/World/new_ac",
+      "file_offset": "0x1048460",
+      "preferred_data_va": "0x1449060"
+    },
+    {
+      "string": "Anim/Manager/new_world",
+      "file_offset": "0x10484bc",
+      "preferred_data_va": "0x14490bc"
+    },
+    {
+      "string": "Anim/Manager/singleton",
+      "file_offset": "0x10484d4",
+      "preferred_data_va": "0x14490d4"
+    },
+    {
+      "string": "DisableAnimationOverlay",
+      "file_offset": "0x1069b44",
+      "preferred_data_va": "0x146a744"
+    },
+    {
+      "string": "SetAnimEventControl",
+      "file_offset": "0x1069b5c",
+      "preferred_data_va": "0x146a75c"
+    },
+    {
+      "string": "SetAnimationTarget",
+      "file_offset": "0x1069b70",
+      "preferred_data_va": "0x146a770"
+    },
+    {
+      "string": "mAbilityStates",
+      "file_offset": "0x1069bc4",
+      "preferred_data_va": "0x146a7c4"
+    },
+    {
+      "string": "mInUseAbilityBits",
+      "file_offset": "0x1069bec",
+      "preferred_data_va": "0x146a7ec"
+    },
+    {
+      "string": "mRechargingAbilityBits",
+      "file_offset": "0x1069c00",
+      "preferred_data_va": "0x146a800"
+    },
+    {
+      "string": "mCurrentAttackAnimId",
+      "file_offset": "0x1069cc8",
+      "preferred_data_va": "0x146a8c8"
+    },
+    {
+      "string": "mCurrentAttackIdx",
+      "file_offset": "0x1069ce0",
+      "preferred_data_va": "0x146a8e0"
+    }
+  ],
+  "query_range": {
+    "rdata": [
+      "0xfcb400",
+      "0x110aa00"
+    ],
+    "data": [
+      "0x110aa00",
+      "0x11cf600"
+    ]
+  },
+  "method": "Worker searched complete NUL ASCII4..160; root rechecked 27 selected full strings",
+  "limits": [
+    "Preferred data VA is not function/runtime/SDK offset",
+    "priority near remap/deform/aggregate not proven DOF arbitration priority",
+    "Ability neighborhood includes Scenario names; not all Creature-exclusive"
+  ],
+  "excluded": [
+    {
+      "name": "blendWeight",
+      "file_offset": "0x100c824",
+      "reason": "mesh/vertex data"
+    },
+    {
+      "name": "channel",
+      "file_offset": "0x1011678",
+      "reason": "particle effect"
+    },
+    {
+      "name": "layer",
+      "file_offset": "0x1055284",
+      "reason": "rendering"
+    },
+    {
+      "name": "blend",
+      "file_offset": "0x1058a98",
+      "reason": "image filter"
+    },
+    {
+      "name": "numChannels",
+      "file_offset": "0x10b0ffc",
+      "reason": "audio sampling"
+    }
+  ]
+}

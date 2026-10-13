@@ -1,0 +1,113 @@
+{
+  "kind": "modules57-58 bounded-local-config and independent math/state verification, not original runtime",
+  "recorded_at_pacific": "2026-10-13T01:47:37-07:00",
+  "tests": {
+    "script": "../checks/verify_editor_preview_subtree_examples.py",
+    "passed": 30,
+    "failed": 0,
+    "module57": 14,
+    "module58": 16,
+    "class_counts": {
+      "PreviewExamples": 14,
+      "SubtreeExamples": 16
+    },
+    "script_sha256": "c83374dbc0f4ae059aec901828ba31b74b633af0f4ede062765e1f6e000eaa54",
+    "runtime": "Bundled Python -B -X utf8; standard library only"
+  },
+  "reader": {
+    "script": "../checks/read_selected_editor_preview_properties.py",
+    "sha256": "d651ac0d4bcfec63bb0ac8895010772ab5dafb482473f1c7358e01779471c26f",
+    "local_selected_records": 10,
+    "inventory_counts": {
+      "Spore_Game.package": 105,
+      "PatchData.package": 105
+    },
+    "packages_rehashed": [
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+        "bytes": 20210108,
+        "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+        "index_count": 11529,
+        "index_offset": 19887288,
+        "index_bytes": 322820,
+        "index_flags": 4,
+        "examined_entries": 11529
+      },
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+        "bytes": 80428851,
+        "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+        "index_count": 25535,
+        "index_offset": 79713863,
+        "index_bytes": 714988,
+        "index_flags": 4,
+        "examined_entries": 25535
+      }
+    ],
+    "animation_bodies_read": 0
+  },
+  "sources": {
+    "successful_public_files": 14,
+    "bounded_missing_paths": [
+      {
+        "path": "Editors/cEditorResourceBlock.h",
+        "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorResourceBlock.h",
+        "error": 404
+      }
+    ],
+    "official_manual_sha256": "9a1cd765673454b3fbdf0edf2026b853b3354a4fa6ef144076b10eb508bdae1d",
+    "fully_read_manual_pages": [
+      10,
+      11,
+      14
+    ],
+    "manifest_sha256": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50",
+    "line_ranges_within_bounds": true
+  },
+  "documents": [
+    {
+      "path": "57-editor-animation-preview-and-functional-validation.md",
+      "sha256": "5b6d7d4b766a086193e1eb923bc25f88b04a6fa224ad9e520e3481688e724c1b",
+      "utf8_valid": true,
+      "fences_even": true,
+      "links_checked": 11,
+      "missing_links": []
+    },
+    {
+      "path": "58-limb-subtree-copy-replacement-and-reparenting.md",
+      "sha256": "641caed445ec76e1956ba2f6aa5e98ab4852947353f7cb3f6d64a28045327aa5",
+      "utf8_valid": true,
+      "fences_even": true,
+      "links_checked": 11,
+      "missing_links": []
+    }
+  ],
+  "not_run": [
+    "Game startup/attach/private saves",
+    "Original native preview or subtree operations",
+    "Complete 3D functional sandbox/socket/skin migration",
+    "Production persistence/concurrency/resource devices"
+  ],
+  "limitations": [
+    "Source declarations not aligned to shipping ABI",
+    "Original subtree copy and retained-child replacement behavior unconfirmed",
+    "Math envelope tests are not real attack/ground execution",
+    "Sandbox sample checks protocol isolation, not a production world boundary",
+    "Socket names are migrated in sample, complete 3D connector alignment unimplemented",
+    "Editor ledger/undo example is sequential, not durable atomic storage"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "cc15c91db26c9bacd2f724836b468e1c2c431cacb4ee8892c9e5956205b994cd",
+    "captured_file_bytes": 3687,
+    "reference_changes": [
+      {
+        "pointer": "/sources/manifest_sha256",
+        "captured": "bcfa73bd9bbbbf2f118b8d0513260bb7292c9504398abcd8ac2c6ad33b296064",
+        "published": "da7d8b3dc1206cee7d9b45766e4e5e6e63d1c1be499987c4e3df42dd924e8e50",
+        "study_file": "evidence/public-editor-preview-subtree-contracts.json"
+      }
+    ]
+  }
+}

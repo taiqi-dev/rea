@@ -1,0 +1,4701 @@
+{
+  "schema_version": 1,
+  "module": "39-same-role-animation-context-selectors",
+  "kind": "selected-ANIM-raw-metadata-and-community-format-observations",
+  "rea_evidence_id": null,
+  "prior_evidence": {
+    "path": "docs\\studies\\spore\\evidence\\local-selected-action-channels.json",
+    "bytes": 1394152,
+    "sha256": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d"
+  },
+  "format_commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "reader": {
+    "path": "docs/studies/spore/checks/read_selected_action_channels.py",
+    "sha256": "5102d4aae59a4725860c17d8eb26f519bc9cb70779f483d6be067f402584c88e",
+    "used_unchanged": true,
+    "functions": [
+      "read_anim_metadata",
+      "read_index",
+      "refpack"
+    ]
+  },
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index_sha256": "abd86cb2718f3e7ff4a2e1550e25f4c88ea06191c3c945ac8898cfb9c99188db",
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index_sha256": "075698b95018ce0115d1178e2070ad3b1a2155232be815cf9200a71b7e961ee9",
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "resources": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0af13430"
+      },
+      "offset": 7019770,
+      "stored_bytes": 2946,
+      "memory_bytes": 36884,
+      "compression": 65535,
+      "stored_sha256": "499827a1353654984cc4b372595172cd114c2b013269f260203cdb61c5156c8e",
+      "decoded_sha256": "1c4674d5bb8793155305054934cc17a2c48bfa58efdf77499678834902c1e43f",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_charge_rush.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x2f7ea086"
+      },
+      "offset": 6148670,
+      "stored_bytes": 4590,
+      "memory_bytes": 53684,
+      "compression": 65535,
+      "stored_sha256": "a6b97e886ee4a22e5b2cd186b851022f68c70631c43b20789173780f604ed97b",
+      "decoded_sha256": "845abf0958f5421e8f5e4101ae67e5a3ffd244cfb251b486261c9d636e08699f",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_charge_rush_hit.animation",
+      "channel_count": 14
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x38ed1075"
+      },
+      "offset": 1110088,
+      "stored_bytes": 2873,
+      "memory_bytes": 43152,
+      "compression": 65535,
+      "stored_sha256": "4905e19be6ed784a13d7689ad899db16f0920d721d0fad4139463c6e49accf27",
+      "decoded_sha256": "b96c9ffcd4f6b01ac4fa415e838fe9f15b47b2db0d5b413521718bdf20265433",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_spit.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6a"
+      },
+      "offset": 3082463,
+      "stored_bytes": 12501,
+      "memory_bytes": 171836,
+      "compression": 65535,
+      "stored_sha256": "f62e6873150f49980fd5f54aa45ebc65f1caf27b7e5f5b6d465e928161afa8ae",
+      "decoded_sha256": "d5a2e86cd64264e6107986afb7d9d2b16df459d9a65863b6f565928f20b277c0",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl04.animation",
+      "channel_count": 21
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6b"
+      },
+      "offset": 3109754,
+      "stored_bytes": 12222,
+      "memory_bytes": 185400,
+      "compression": 65535,
+      "stored_sha256": "d1fdf8bfe0759487e526f77ef0cb250ba4e327048999c02dcc5ba2178316fafa",
+      "decoded_sha256": "c634bb07c0a4087321021d36ddb6e30826da56fd614dee31ef045a52adb513c7",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl05.animation",
+      "channel_count": 21
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6c"
+      },
+      "offset": 3127314,
+      "stored_bytes": 7566,
+      "memory_bytes": 93084,
+      "compression": 65535,
+      "stored_sha256": "b694e2dca25f94984a6741dc0e794fa77e75833cb61aa9ae0dcf8912a3e47623",
+      "decoded_sha256": "7604a95d037e6c17f091b2673f6e3866b1e603f6b87976ea9b026b2304dd9f2c",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl02.animation",
+      "channel_count": 17
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6d"
+      },
+      "offset": 3134880,
+      "stored_bytes": 8946,
+      "memory_bytes": 113516,
+      "compression": 65535,
+      "stored_sha256": "c7353170fb3caa232915423027439d77d8b50f4cbad5dec2e3a04da0da1a203d",
+      "decoded_sha256": "be90b268a3475b6877e52b5a8b0c4d68287ac948a40e57255ea84db28eb76c26",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl03.animation",
+      "channel_count": 17
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6f"
+      },
+      "offset": 3148240,
+      "stored_bytes": 4944,
+      "memory_bytes": 58724,
+      "compression": 65535,
+      "stored_sha256": "5f7a15cf69984cf8bfaa1928e39a7e84a97753e556c87a7bf4b4c95a8d7bc7b1",
+      "decoded_sha256": "0a6eb4b8898402f6add7ac2f10975cc01a2c6f9f21b87685f91fe5ebbe7da8e0",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl01.animation",
+      "channel_count": 14
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xdc542b67"
+      },
+      "offset": 3889904,
+      "stored_bytes": 3705,
+      "memory_bytes": 48708,
+      "compression": 65535,
+      "stored_sha256": "ab65451bd33c89affc522309dcc775c8328b4449a0324db8f691dbbdeba0d302",
+      "decoded_sha256": "70ea05d48b0dbf4cd5da9733bf1fe94aa7c78a15bdf72357827b6e547e3249d7",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl01_a.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192a"
+      },
+      "offset": 10832471,
+      "stored_bytes": 6225,
+      "memory_bytes": 82200,
+      "compression": 65535,
+      "stored_sha256": "6f14c2d5000ff9ba00ae14b92ee6bd2c68d05fe0ff2fd7f251c48138ed051622",
+      "decoded_sha256": "5c3fd92ecebde53408d5d9f34449e8296b25afed9970b7fda3985a24f3e72f92",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl04.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192b"
+      },
+      "offset": 10838696,
+      "stored_bytes": 6750,
+      "memory_bytes": 101400,
+      "compression": 65535,
+      "stored_sha256": "c120befde19b7eae98f446449f3f8ebaa00888233cd56f19007712c058c5d38d",
+      "decoded_sha256": "23722589353c53d1be25906c62b995041f7cd2e445510c7c91819548acacd381",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl05.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192c"
+      },
+      "offset": 10860121,
+      "stored_bytes": 4472,
+      "memory_bytes": 56792,
+      "compression": 65535,
+      "stored_sha256": "8ac38102351c8e448635fea957b9ec8bf1a13d4f5659392dba55e0553f3b4389",
+      "decoded_sha256": "166fe253351e956239e4b96402be75cc036843a78c1268a264fcd7319c2d0438",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl02.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192d"
+      },
+      "offset": 10889444,
+      "stored_bytes": 5604,
+      "memory_bytes": 69716,
+      "compression": 65535,
+      "stored_sha256": "6c77f0a9373aba1ea283dfae6b725b87ae214d9c84033259a7426af5ec252342",
+      "decoded_sha256": "1f519b836490408be00719fe5a9863d08ca6511545b5cf765b56f49e7156a6fc",
+      "version": 21,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl03.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0af13430"
+      },
+      "offset": 1803466,
+      "stored_bytes": 2906,
+      "memory_bytes": 19136,
+      "compression": 65535,
+      "stored_sha256": "a9be1e75e16ba20cd654065b0b2e89b3077927ebd574cb2baebccb7ce27c2728",
+      "decoded_sha256": "fbc75353278e96c856ec6f07d779f6a59809234c1aa0285b849623e127b2075e",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_charge_rush.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x2f7ea086"
+      },
+      "offset": 3110389,
+      "stored_bytes": 4443,
+      "memory_bytes": 28192,
+      "compression": 65535,
+      "stored_sha256": "c9d1f3b288b7889b3d2c6ea00fc00dc8996bccc53b1664431b2517287014a0e3",
+      "decoded_sha256": "8de618c79f5d26180cf9a7f30d889b01d5c0f52db2387008562ef300aba30df2",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_charge_rush_hit.animation",
+      "channel_count": 12
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x32183548"
+      },
+      "offset": 18855478,
+      "stored_bytes": 11693,
+      "memory_bytes": 89536,
+      "compression": 65535,
+      "stored_sha256": "2db76bdb54fd894c8b882ecd31861c3994cf5cf32b09cd235f14feb2967a610f",
+      "decoded_sha256": "98023faeee3ffd6bf66bcb87fde833fe2d35deec7ee1de0cab40c9f32c14abdc",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lb_lvl05.animation",
+      "channel_count": 20
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x32183549"
+      },
+      "offset": 18867503,
+      "stored_bytes": 11891,
+      "memory_bytes": 82204,
+      "compression": 65535,
+      "stored_sha256": "5886531f216433c5d94d9599233dcf2f0ac432501bc5b5e2166cc140fcfb70b1",
+      "decoded_sha256": "516a5916ab4868c31b50c07025b88f9cceab440d45cdf9a428299f9f8cf9e65c",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lb_lvl04.animation",
+      "channel_count": 20
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x3218354c"
+      },
+      "offset": 18890895,
+      "stored_bytes": 4945,
+      "memory_bytes": 29904,
+      "compression": 65535,
+      "stored_sha256": "501b85bbaf3cd507015b4dff286257c9c74ee711dd34636760b92742ad079fc4",
+      "decoded_sha256": "0a2ba20c658564946ed929216b648fdcf1f8284e23bdf38f1769b74c8580428b",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_lb_lvl01.animation",
+      "channel_count": 13
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x3218354e"
+      },
+      "offset": 18901371,
+      "stored_bytes": 8519,
+      "memory_bytes": 55944,
+      "compression": 65535,
+      "stored_sha256": "8392d02019964c61b2963f38708a5f6d136289ce82c64fbe652b3d5c7c39c52d",
+      "decoded_sha256": "beff40eacb2c8cb04761ca7e7f52d169fa7f6d46c6c0a5d0270a3fdd2206c0b7",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lb_lvl03.animation",
+      "channel_count": 16
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x3218354f"
+      },
+      "offset": 18913404,
+      "stored_bytes": 7358,
+      "memory_bytes": 46852,
+      "compression": 65535,
+      "stored_sha256": "8d4305bbd5e7527c38e3281e9900198a00d5c1e7a58751f25829910849b01fb4",
+      "decoded_sha256": "4bf0cae0a8ebb25836d4edf148f8b9a6e90f3c00283a15c7e1adb6919450e5f4",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lb_lvl02.animation",
+      "channel_count": 16
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x38ed1075"
+      },
+      "offset": 14038155,
+      "stored_bytes": 2525,
+      "memory_bytes": 17676,
+      "compression": 65535,
+      "stored_sha256": "1eff01d310a72f24ba2f5573866bf42c2e6964a6aa03f332a7a6b93bbe51b16c",
+      "decoded_sha256": "5f35f6c143fe2ad15c887dfea5f9709a0f70fea4b91a364ad2202a2f97489e36",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_spit.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x48287068"
+      },
+      "offset": 1883802,
+      "stored_bytes": 4257,
+      "memory_bytes": 28604,
+      "compression": 65535,
+      "stored_sha256": "a5c1e5430887ef448a594d21b01cd7b3604008e61b477214d5b4aab7ba5ea57a",
+      "decoded_sha256": "86787cfe858d7e3c3dad6e84803681466b554b1d9c8019d90b76dc563bee3622",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_bd_lvl01.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x4828706a"
+      },
+      "offset": 1888849,
+      "stored_bytes": 5702,
+      "memory_bytes": 38032,
+      "compression": 65535,
+      "stored_sha256": "25c69780e206abb612837ddf28e768f8edc43cff5851d21496aa88c5a6e89636",
+      "decoded_sha256": "66b8de6c21adb871e3aa76583af4cd357cbf4841d9131ceba5ae807ed095d21b",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_bd_lvl03.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x4828706b"
+      },
+      "offset": 1894884,
+      "stored_bytes": 5035,
+      "memory_bytes": 33808,
+      "compression": 65535,
+      "stored_sha256": "ef802fd7aef4671cce3e3dc7bd73d03e6d0662e5e3b49a277d37d3bb2b420c66",
+      "decoded_sha256": "07ea06bfbab36b68dcb19f5cb52f0418ca599f0fc5e092acfda97741a1b37c13",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_bd_lvl02.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x4828706c"
+      },
+      "offset": 1901216,
+      "stored_bytes": 7957,
+      "memory_bytes": 55372,
+      "compression": 65535,
+      "stored_sha256": "d4f9b6abb4aa3b0760feb7a57a55feb60f87a63c0831e93f81cee0423466a435",
+      "decoded_sha256": "da3708571d65a884177db32b475febe9ba9f9f34b8855c1f043fdf11033ba5e0",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_bd_lvl05.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x4828706d"
+      },
+      "offset": 1909785,
+      "stored_bytes": 8513,
+      "memory_bytes": 55412,
+      "compression": 65535,
+      "stored_sha256": "95ae00d7e1f6f3cbe1c1dac183be12a4221e96fa1d0e4becd4cd239fca914557",
+      "decoded_sha256": "63632c79fa7e80d9b190456f8582f05c335c286fdd0caa60d9917a908ffff0e5",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_bd_lvl04.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x9a1bf2ca"
+      },
+      "offset": 17225732,
+      "stored_bytes": 11766,
+      "memory_bytes": 71160,
+      "compression": 65535,
+      "stored_sha256": "3c354e09d51ea1f47ed8c16e0bc56b56462810425c73ebc3711844fa6f237ddc",
+      "decoded_sha256": "d3d59823b09e8d6d483bd374824e08cc680690624d24c8f1b315ac2734cfedc2",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_tl_lvl05.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x9a1bf2cb"
+      },
+      "offset": 17246909,
+      "stored_bytes": 7806,
+      "memory_bytes": 45240,
+      "compression": 65535,
+      "stored_sha256": "8ec9164af0adc299688935a463a9a6d9d25071283e6c5e4dbc92bf9390c0b4a7",
+      "decoded_sha256": "dbeedbfc1484f54350af123733e69172ec63898859f56d5ec16dfa821ee6aafb",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_tl_lvl04.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x9a1bf2cc"
+      },
+      "offset": 17254715,
+      "stored_bytes": 7182,
+      "memory_bytes": 43240,
+      "compression": 65535,
+      "stored_sha256": "0ffc7e03caf4457085dbf329a23806aae41ff6c45741e2ed31fa93c9dd86e703",
+      "decoded_sha256": "14100ebff51b5d82a193eda802830c09bc737d72fd85f2ef360e3d3ac751a714",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_tl_lvl03.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x9a1bf2cd"
+      },
+      "offset": 17263079,
+      "stored_bytes": 5949,
+      "memory_bytes": 35276,
+      "compression": 65535,
+      "stored_sha256": "6d9d56c743b640bbfa2302346537437beda17aebff6b1ff7a85fa9d89ab45b20",
+      "decoded_sha256": "5f8d2871ff3b641c21ee76cfbc99cf5db35f665670ccada21269795ce9dd4724",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_tl_lvl02.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x9a1bf2ce"
+      },
+      "offset": 17269028,
+      "stored_bytes": 4307,
+      "memory_bytes": 26320,
+      "compression": 65535,
+      "stored_sha256": "70a4f9acdf90aa878a75028a629df119318ed5992ba880c7118837a49f952358",
+      "decoded_sha256": "903ea7d4eeea79d463ebefaee3a59976d617ba7a904c53744992554dc1352075",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_tl_lvl01.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6a"
+      },
+      "offset": 3057901,
+      "stored_bytes": 11957,
+      "memory_bytes": 84268,
+      "compression": 65535,
+      "stored_sha256": "bd4da371ce467037b2c3827140e21c89076e85ac7cb2c507eb2652b1e83ac770",
+      "decoded_sha256": "ee3d43fc4275c1bf2b1a177d7bed6f3259f2625810f00cc00ba18bbdac60f329",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl04.animation",
+      "channel_count": 20
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6b"
+      },
+      "offset": 3069871,
+      "stored_bytes": 11739,
+      "memory_bytes": 89652,
+      "compression": 65535,
+      "stored_sha256": "c0d2b0f0dc759c2ecd2a3ec0726b77f896955d134bb90b6e705aaf42c098f31c",
+      "decoded_sha256": "34c93b7791fe2a8b02f6a4684d0e9b9ba9f7d9d380a5a68e9e4330a6d7ad0c12",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl05.animation",
+      "channel_count": 20
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6c"
+      },
+      "offset": 3081646,
+      "stored_bytes": 7347,
+      "memory_bytes": 46852,
+      "compression": 65535,
+      "stored_sha256": "c9b2456db833bf0a66c087f15f0199ef883ea97cf967d738f761362df8d52153",
+      "decoded_sha256": "2ffe562bca3732215e835a29272fa686ecb2a00ab39ce17dde2da6664223f830",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl02.animation",
+      "channel_count": 16
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6d"
+      },
+      "offset": 3088993,
+      "stored_bytes": 8495,
+      "memory_bytes": 55944,
+      "compression": 65535,
+      "stored_sha256": "bb0cdb89ea2591e4c038c83487bb0c8ca1c958f4cb4d65287390c4fd88244f6a",
+      "decoded_sha256": "606f4460dba7b3b4eb0384374f7c8bb517e6932bdb66b300dd956c367259e000",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl03.animation",
+      "channel_count": 16
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd4772d6f"
+      },
+      "offset": 3097488,
+      "stored_bytes": 4791,
+      "memory_bytes": 29148,
+      "compression": 65535,
+      "stored_sha256": "4926ce5e390ac2b44b5ed0c86c368ef4090807772fb02718ad4ca9057ec544d9",
+      "decoded_sha256": "9f8e0414eff853eeeb33f3082946d2e1d4aaf52c6ea1ac7bbd87cd804036e231",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_lvl01.animation",
+      "channel_count": 13
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd6787150"
+      },
+      "offset": 1454221,
+      "stored_bytes": 6200,
+      "memory_bytes": 42652,
+      "compression": 65535,
+      "stored_sha256": "bfaff549fb0af0286982d1d0f311b5eff43104ae064c2af9b7d42c3162deb16e",
+      "decoded_sha256": "74eac783af3e7c74b8c582cdba23cefe3d62074dc490b4560f270525b26f1891",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_hd_lvl03.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd6787151"
+      },
+      "offset": 1460421,
+      "stored_bytes": 4464,
+      "memory_bytes": 32188,
+      "compression": 65535,
+      "stored_sha256": "414276e1f237a007f03ad4dc278b92b3acd99350927e1356c353ec03fbd404ac",
+      "decoded_sha256": "789465f9eabf29d2fa2fa6296e5afd591ec0f811ccc5ee94b70f08aded2b90f8",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_hd_lvl02.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd6787152"
+      },
+      "offset": 1464969,
+      "stored_bytes": 4270,
+      "memory_bytes": 31664,
+      "compression": 65535,
+      "stored_sha256": "2db855585692fe0967774227f5a65b456cbbb5f22d9317bf8c45ba1a89565de2",
+      "decoded_sha256": "5de12ff885b2ddcc27b72c920b6b1133ed50aa4dfa2d158f5f01a3827c2bcdda",
+      "version": 25,
+      "embedded_path": "c:\\maxis_projects\\spore_ep1\\data\\creatures\\animations\\_final\\creature\\com_strike_hd_lvl01.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd6787156"
+      },
+      "offset": 1469596,
+      "stored_bytes": 8196,
+      "memory_bytes": 59232,
+      "compression": 65535,
+      "stored_sha256": "a0b89af1f35346bf31877b475ea0e78be0a3c0b37a9c8112091f762446f817af",
+      "decoded_sha256": "1d7079ba24c1385220dcf2f419e3e2172b37b4551b3ace4b0e9cd6dab3c4b8e4",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_hd_lvl05.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xd6787157"
+      },
+      "offset": 1477792,
+      "stored_bytes": 7289,
+      "memory_bytes": 55032,
+      "compression": 65535,
+      "stored_sha256": "c95db8d3e517d91d97da6acbcb51dda733ddd195b4ffd64c6dda614eb10c1b81",
+      "decoded_sha256": "2933d5eed6240834ea5b6c2548aaa71307c5a5e67de79a4bb8e9a547c9887dba",
+      "version": 25,
+      "embedded_path": "C:\\SporePatch\\Data\\Creatures\\Animations\\_final\\creature\\com_strike_hd_lvl04.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xdc542b67"
+      },
+      "offset": 15267263,
+      "stored_bytes": 3565,
+      "memory_bytes": 23372,
+      "compression": 65535,
+      "stored_sha256": "75339d4a5a44befa1929aaf875d21df45825a3b974f8975acd88e67533a4c6e8",
+      "decoded_sha256": "6c472fdbedf1e69af942141c4442a03d3dd1d0d5a7b1c4f935cede6f63b7fa54",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl01_a.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192a"
+      },
+      "offset": 10250076,
+      "stored_bytes": 6047,
+      "memory_bytes": 41008,
+      "compression": 65535,
+      "stored_sha256": "39f96830640d8696a1f48ee90d3af757be5e73ae7e2ced2262610872a4159a05",
+      "decoded_sha256": "3cd7176e270a4a3166b903ea493f077dfabd44e52f0f11dea98a1caecfe5a0b6",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl04.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192b"
+      },
+      "offset": 10256123,
+      "stored_bytes": 6581,
+      "memory_bytes": 50708,
+      "compression": 65535,
+      "stored_sha256": "a49530626fc2e107270b75df4b5017291d654ba43d4128b40c968ddc3d53a111",
+      "decoded_sha256": "46f59dcf7d6e3a13559fb22b82e2ed27ea416143810f72c53c4bfebae9876e15",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl05.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192c"
+      },
+      "offset": 10262788,
+      "stored_bytes": 4361,
+      "memory_bytes": 28660,
+      "compression": 65535,
+      "stored_sha256": "4515bad773f64afc8a7254a10866bfa91cf1ee0539e4b7d05a66eaf4f3b39413",
+      "decoded_sha256": "81e950ed8fb327de8e892b1f1c3866a560613a27d7d2cfb8f28ab723febc4f59",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl02.animation",
+      "channel_count": 11
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xf20c192d"
+      },
+      "offset": 10267149,
+      "stored_bytes": 5443,
+      "memory_bytes": 35384,
+      "compression": 65535,
+      "stored_sha256": "1b2e81e3ed5561d9f026d07bf645d8139568080b6ec7790ccb0f6f83aa015fc6",
+      "decoded_sha256": "77f646085cfa828c2c58b2a68fd8e42704931eb6e6001b7a97d689846d57786f",
+      "version": 25,
+      "embedded_path": "C:\\Spore_P4_Cronus\\Data\\Creatures\\Animations\\_final\\creature\\com_bite_lvl03.animation",
+      "channel_count": 11
+    }
+  ],
+  "coverage": {
+    "resource_records": 46,
+    "distinct_resource_keys": 33,
+    "channels": 612,
+    "contexts": 1224,
+    "scope": "Exactly the46 ANIM records selected by module28 attack/rush TLSA references. No new resource keys.",
+    "actual_reads": "This pass re-read selected compressed storage ranges, decompressed in memory, verified stored/decoded digests, and replayed header/channel metadata against28 for every selected record.",
+    "fully_replayed_prior_metadata": true,
+    "primary_relative_offset": "0x8c",
+    "secondary_relative_offset": "0x9c",
+    "context_bytes_each": 16,
+    "curves_events_predicates_relocations_decoded": false,
+    "old_version_fixups_applied": false,
+    "examples": 26,
+    "offset_definition": "CHAN/context/pointer offsets are within decompressed ANIM. For compression65535, decoded offset cannot be added to package offset; package_file_offset is null.",
+    "count_definition": "Resource/channel-version metadata counts; not executing body parts.",
+    "public_sources": "Two fixed-commit classes re-fetched and complete byte digests verified; selected ranges read for format interpretation."
+  },
+  "statistics": {
+    "unique_context_patterns": [
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "65617200",
+        "capability_ascii": "ear",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 46,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "65796500",
+        "capability_ascii": "eye",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 46,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "6d6f7574",
+        "capability_ascii": "mout",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 104,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "73686f74",
+        "capability_ascii": "shot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 2,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "77696e67",
+        "capability_ascii": "wing",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 4,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "77707073",
+        "capability_ascii": "wpps",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 2,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000001",
+        "capability_bytes": "00000000",
+        "capability_ascii": "",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 47,
+        "selector_decoded": {
+          "type_masked_value": "0x00000001",
+          "type_candidate_name": "root",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000004",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 3,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000004",
+            "candidate_name": "left"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000004",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 37,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000004",
+            "candidate_name": "left"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000004",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 25,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000004",
+            "candidate_name": "left"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000008",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 3,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000008",
+            "candidate_name": "right"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000008",
+        "capability_bytes": "67657374",
+        "capability_ascii": "gest",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 6,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000008",
+            "candidate_name": "right"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000008",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 38,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000008",
+            "candidate_name": "right"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000008",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 25,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000008",
+            "candidate_name": "right"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000104",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 2,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000004",
+            "candidate_name": "left"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000100",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000108",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 2,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000008",
+            "candidate_name": "right"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000100",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00000200",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 5,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000200",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00001000",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 13,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00001000",
+          "community_parent_spine_bit_present": true,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00020000",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 43,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00020000",
+            "candidate_name": "localLeft"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00020000",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 9,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00020000",
+            "candidate_name": "localLeft"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00020000",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 12,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00020000",
+            "candidate_name": "localLeft"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00020004",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 43,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00020004",
+            "candidate_name": "localRight"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00020004",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 8,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00020004",
+            "candidate_name": "localRight"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00020004",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 12,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00020004",
+            "candidate_name": "localRight"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00100000",
+        "capability_bytes": "00000000",
+        "capability_ascii": "",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 44,
+        "selector_decoded": {
+          "type_masked_value": "0x00100000",
+          "type_candidate_name": "frame",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00200000",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 5,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00200000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00800104",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 9,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000004",
+            "candidate_name": "left"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00800000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000100",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00800108",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 12,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000008",
+            "candidate_name": "right"
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00800000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000100",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00810000",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 1,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00800000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00010000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "primaryContext",
+        "flags": "0x00810020",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 4,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000020",
+            "candidate_name": "back"
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00800000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00010000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "secondaryContext",
+        "flags": "0x00000000",
+        "capability_bytes": "6d6f7574",
+        "capability_ascii": "mout",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 1,
+        "selector_decoded": {
+          "type_masked_value": "0x00000000",
+          "type_candidate_name": "cap",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      },
+      {
+        "context_role": "secondaryContext",
+        "flags": "0x00000002",
+        "capability_bytes": "00000000",
+        "capability_ascii": "",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "occurrences": 611,
+        "selector_decoded": {
+          "type_masked_value": "0x00000002",
+          "type_candidate_name": "none",
+          "selectX": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectY": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "selectZ": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "extent": {
+            "masked_value": "0x00000000",
+            "candidate_name": null
+          },
+          "limb_masked_value": "0x00000000",
+          "community_parent_spine_bit_present": false,
+          "unknown_select_flags": "0x00000000",
+          "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+        }
+      }
+    ],
+    "all_field8_and_fieldC_zero": true,
+    "secondary_none_count": 611,
+    "secondary_other_count": 1,
+    "raw_extent_mask_nonzero_count": 0,
+    "observed_component_index_values": [
+      {
+        "component_type": 0,
+        "index": 0,
+        "occurrences": 612
+      },
+      {
+        "component_type": 1,
+        "index": 0,
+        "occurrences": 188
+      },
+      {
+        "component_type": 1,
+        "index": 1,
+        "occurrences": 305
+      },
+      {
+        "component_type": 2,
+        "index": 0,
+        "occurrences": 188
+      },
+      {
+        "component_type": 2,
+        "index": 2,
+        "occurrences": 305
+      },
+      {
+        "component_type": 3,
+        "index": 0,
+        "occurrences": 1128
+      },
+      {
+        "component_type": 3,
+        "index": 3,
+        "occurrences": 254
+      },
+      {
+        "component_type": 3,
+        "index": 4,
+        "occurrences": 155
+      },
+      {
+        "component_type": 3,
+        "index": 5,
+        "occurrences": 69
+      },
+      {
+        "component_type": 3,
+        "index": 6,
+        "occurrences": 35
+      },
+      {
+        "component_type": 3,
+        "index": 7,
+        "occurrences": 1
+      }
+    ]
+  },
+  "examples": [
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 0,
+      "channel_name": "creature Frm",
+      "channel_decoded_offset": 560,
+      "pointer_table_entry_decoded_offset": 512,
+      "context": {
+        "flags": "0x00100000",
+        "capability_bytes": "00000000",
+        "capability_ascii": "",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 700,
+        "decoded_resource_offset_hex": "0x000002bc",
+        "raw_16_bytes": "00001000000000000000000000000000",
+        "capability_or_id_le_u32": "0x00000000",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00000001",
+      "community_blendGroup": 0,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000011"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000012"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00100000",
+        "type_candidate_name": "frame",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "secondaryContext",
+      "channel_index": 0,
+      "channel_name": "creature Frm",
+      "channel_decoded_offset": 560,
+      "pointer_table_entry_decoded_offset": 512,
+      "context": {
+        "flags": "0x00000002",
+        "capability_bytes": "00000000",
+        "capability_ascii": "",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 716,
+        "decoded_resource_offset_hex": "0x000002cc",
+        "raw_16_bytes": "02000000000000000000000000000000",
+        "capability_or_id_le_u32": "0x00000000",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00000001",
+      "community_blendGroup": 0,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000011"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000012"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000002",
+        "type_candidate_name": "none",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 1,
+      "channel_name": "root",
+      "channel_decoded_offset": 1956,
+      "pointer_table_entry_decoded_offset": 516,
+      "context": {
+        "flags": "0x00000001",
+        "capability_bytes": "00000000",
+        "capability_ascii": "",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 2096,
+        "decoded_resource_offset_hex": "0x00000830",
+        "raw_16_bytes": "01000000000000000000000000000000",
+        "capability_or_id_le_u32": "0x00000000",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00010009",
+      "community_blendGroup": 1,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000001",
+        "type_candidate_name": "root",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 2,
+      "channel_name": "shoulders",
+      "channel_decoded_offset": 5552,
+      "pointer_table_entry_decoded_offset": 520,
+      "context": {
+        "flags": "0x00001000",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 5692,
+        "decoded_resource_offset_hex": "0x0000163c",
+        "raw_16_bytes": "00100000677273700000000000000000",
+        "capability_or_id_le_u32": "0x70737267",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00020000",
+      "community_blendGroup": 2,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000021"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000022"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00001000",
+        "community_parent_spine_bit_present": true,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 3,
+      "channel_name": "head",
+      "channel_decoded_offset": 6508,
+      "pointer_table_entry_decoded_offset": 524,
+      "context": {
+        "flags": "0x00000000",
+        "capability_bytes": "6d6f7574",
+        "capability_ascii": "mout",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 6648,
+        "decoded_resource_offset_hex": "0x000019f8",
+        "raw_16_bytes": "000000006d6f75740000000000000000",
+        "capability_or_id_le_u32": "0x74756f6d",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00030009",
+      "community_blendGroup": 3,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 7,
+      "channel_name": "R hand",
+      "channel_decoded_offset": 18252,
+      "pointer_table_entry_decoded_offset": 540,
+      "context": {
+        "flags": "0x00000008",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 18392,
+        "decoded_resource_offset_hex": "0x000047d8",
+        "raw_16_bytes": "08000000677273700000000000000000",
+        "capability_or_id_le_u32": "0x70737267",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00070001",
+      "community_blendGroup": 7,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000008",
+          "candidate_name": "right"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 8,
+      "channel_name": "L hand",
+      "channel_decoded_offset": 21848,
+      "pointer_table_entry_decoded_offset": 544,
+      "context": {
+        "flags": "0x00000004",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 21988,
+        "decoded_resource_offset_hex": "0x000055e4",
+        "raw_16_bytes": "04000000677273700000000000000000",
+        "capability_or_id_le_u32": "0x70737267",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00080001",
+      "community_blendGroup": 8,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000004",
+          "candidate_name": "left"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 9,
+      "channel_name": "R foot",
+      "channel_decoded_offset": 25444,
+      "pointer_table_entry_decoded_offset": 548,
+      "context": {
+        "flags": "0x00020004",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 25584,
+        "decoded_resource_offset_hex": "0x000063f0",
+        "raw_16_bytes": "04000200666f6f740000000000000000",
+        "capability_or_id_le_u32": "0x746f6f66",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00090009",
+      "community_blendGroup": 9,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00020004",
+          "candidate_name": "localRight"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 0,
+      "context_role": "primaryContext",
+      "channel_index": 10,
+      "channel_name": "L foot",
+      "channel_decoded_offset": 29040,
+      "pointer_table_entry_decoded_offset": 552,
+      "context": {
+        "flags": "0x00020000",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 29180,
+        "decoded_resource_offset_hex": "0x000071fc",
+        "raw_16_bytes": "00000200666f6f740000000000000000",
+        "capability_or_id_le_u32": "0x746f6f66",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x000a0009",
+      "community_blendGroup": 10,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00020000",
+          "candidate_name": "localLeft"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 3,
+      "context_role": "primaryContext",
+      "channel_index": 7,
+      "channel_name": "R hand",
+      "channel_decoded_offset": 52608,
+      "pointer_table_entry_decoded_offset": 540,
+      "context": {
+        "flags": "0x00000008",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 52748,
+        "decoded_resource_offset_hex": "0x0000ce0c",
+        "raw_16_bytes": "08000000736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x01070001",
+      "community_blendGroup": 7,
+      "community_variantGroup": 1,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000073"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000008",
+          "candidate_name": "right"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 3,
+      "context_role": "primaryContext",
+      "channel_index": 10,
+      "channel_name": "L hand",
+      "channel_decoded_offset": 80116,
+      "pointer_table_entry_decoded_offset": 552,
+      "context": {
+        "flags": "0x00000004",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 80256,
+        "decoded_resource_offset_hex": "0x00013980",
+        "raw_16_bytes": "04000000736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x02080009",
+      "community_blendGroup": 8,
+      "community_variantGroup": 2,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000073"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000004",
+          "candidate_name": "left"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 5,
+      "context_role": "primaryContext",
+      "channel_index": 7,
+      "channel_name": "L hand",
+      "channel_decoded_offset": 34992,
+      "pointer_table_entry_decoded_offset": 540,
+      "context": {
+        "flags": "0x00020000",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 35132,
+        "decoded_resource_offset_hex": "0x0000893c",
+        "raw_16_bytes": "00000200736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x01070001",
+      "community_blendGroup": 7,
+      "community_variantGroup": 1,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00020000",
+          "candidate_name": "localLeft"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 5,
+      "context_role": "primaryContext",
+      "channel_index": 10,
+      "channel_name": "L hand (base)",
+      "channel_decoded_offset": 50180,
+      "pointer_table_entry_decoded_offset": 552,
+      "context": {
+        "flags": "0x00020000",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 50320,
+        "decoded_resource_offset_hex": "0x0000c490",
+        "raw_16_bytes": "00000200677273700000000000000000",
+        "capability_or_id_le_u32": "0x70737267",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00070001",
+      "community_blendGroup": 7,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00020000",
+          "candidate_name": "localLeft"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 5,
+      "context_role": "primaryContext",
+      "channel_index": 11,
+      "channel_name": "R hand",
+      "channel_decoded_offset": 55976,
+      "pointer_table_entry_decoded_offset": 556,
+      "context": {
+        "flags": "0x00020004",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 56116,
+        "decoded_resource_offset_hex": "0x0000db34",
+        "raw_16_bytes": "04000200736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x02080001",
+      "community_blendGroup": 8,
+      "community_variantGroup": 2,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00020004",
+          "candidate_name": "localRight"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 5,
+      "context_role": "primaryContext",
+      "channel_index": 14,
+      "channel_name": "R hand (base)",
+      "channel_decoded_offset": 72044,
+      "pointer_table_entry_decoded_offset": 568,
+      "context": {
+        "flags": "0x00020004",
+        "capability_bytes": "67727370",
+        "capability_ascii": "grsp",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 72184,
+        "decoded_resource_offset_hex": "0x000119f8",
+        "raw_16_bytes": "04000200677273700000000000000000",
+        "capability_or_id_le_u32": "0x70737267",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00080001",
+      "community_blendGroup": 8,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 0,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 0,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000001",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000002",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000003",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000004",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000005",
+          "flags": "0x00000003"
+        },
+        {
+          "type": 3,
+          "index": 0,
+          "id": "0x00000006",
+          "flags": "0x00000003"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00020004",
+          "candidate_name": "localRight"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 15,
+      "context_role": "primaryContext",
+      "channel_index": 6,
+      "channel_name": "R hand",
+      "channel_decoded_offset": 22680,
+      "pointer_table_entry_decoded_offset": 536,
+      "context": {
+        "flags": "0x00800108",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 22820,
+        "decoded_resource_offset_hex": "0x00005924",
+        "raw_16_bytes": "08018000736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x01070005",
+      "community_blendGroup": 7,
+      "community_variantGroup": 1,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 3,
+          "id": "0x89e06a31",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 4,
+          "id": "0x998bbf67",
+          "flags": "0x00000033"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000008",
+          "candidate_name": "right"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00800000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000100",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 15,
+      "context_role": "primaryContext",
+      "channel_index": 8,
+      "channel_name": "R hand FX",
+      "channel_decoded_offset": 37912,
+      "pointer_table_entry_decoded_offset": 544,
+      "context": {
+        "flags": "0x00000108",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 38052,
+        "decoded_resource_offset_hex": "0x000094a4",
+        "raw_16_bytes": "08010000736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x01070009",
+      "community_blendGroup": 7,
+      "community_variantGroup": 1,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000008",
+          "candidate_name": "right"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000100",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 15,
+      "context_role": "primaryContext",
+      "channel_index": 9,
+      "channel_name": "L hand",
+      "channel_decoded_offset": 38372,
+      "pointer_table_entry_decoded_offset": 548,
+      "context": {
+        "flags": "0x00800104",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 38512,
+        "decoded_resource_offset_hex": "0x00009670",
+        "raw_16_bytes": "04018000736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x02080001",
+      "community_blendGroup": 8,
+      "community_variantGroup": 2,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x00000071"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 3,
+          "id": "0x89e06a31",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 4,
+          "id": "0x998bbf67",
+          "flags": "0x00000033"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000004",
+          "candidate_name": "left"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00800000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000100",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 15,
+      "context_role": "primaryContext",
+      "channel_index": 11,
+      "channel_name": "L hand FX",
+      "channel_decoded_offset": 52924,
+      "pointer_table_entry_decoded_offset": 556,
+      "context": {
+        "flags": "0x00000104",
+        "capability_bytes": "736b7273",
+        "capability_ascii": "skrs",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 53064,
+        "decoded_resource_offset_hex": "0x0000cf48",
+        "raw_16_bytes": "04010000736b72730000000000000000",
+        "capability_or_id_le_u32": "0x73726b73",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x02080009",
+      "community_blendGroup": 8,
+      "community_variantGroup": 2,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000004",
+          "candidate_name": "left"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000100",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 21,
+      "context_role": "primaryContext",
+      "channel_index": 10,
+      "channel_name": "strike",
+      "channel_decoded_offset": 26316,
+      "pointer_table_entry_decoded_offset": 552,
+      "context": {
+        "flags": "0x00000200",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 26456,
+        "decoded_resource_offset_hex": "0x00006758",
+        "raw_16_bytes": "000200007374726b0000000000000000",
+        "capability_or_id_le_u32": "0x6b727473",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x000a0009",
+      "community_blendGroup": 10,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x00000031"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000200",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 26,
+      "context_role": "secondaryContext",
+      "channel_index": 6,
+      "channel_name": "L hand",
+      "channel_decoded_offset": 34652,
+      "pointer_table_entry_decoded_offset": 536,
+      "context": {
+        "flags": "0x00000000",
+        "capability_bytes": "6d6f7574",
+        "capability_ascii": "mout",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 34808,
+        "decoded_resource_offset_hex": "0x000087f8",
+        "raw_16_bytes": "000000006d6f75740000000000000000",
+        "capability_or_id_le_u32": "0x74756f6d",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000020",
+      "bindFlags": "0x00040001",
+      "community_blendGroup": 4,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x000002b1"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000012"
+        },
+        {
+          "type": 3,
+          "index": 3,
+          "id": "0x89e06a31",
+          "flags": "0x00000013"
+        },
+        {
+          "type": 3,
+          "index": 4,
+          "id": "0x75d4c8cd",
+          "flags": "0x00000013"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 26,
+      "context_role": "primaryContext",
+      "channel_index": 7,
+      "channel_name": "R foot",
+      "channel_decoded_offset": 42320,
+      "pointer_table_entry_decoded_offset": 540,
+      "context": {
+        "flags": "0x00000008",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 42460,
+        "decoded_resource_offset_hex": "0x0000a5dc",
+        "raw_16_bytes": "08000000666f6f740000000000000000",
+        "capability_or_id_le_u32": "0x746f6f66",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00070009",
+      "community_blendGroup": 7,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x000000b1"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 3,
+          "id": "0x47f0b3dc",
+          "flags": "0x00000013"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000008",
+          "candidate_name": "right"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 26,
+      "context_role": "primaryContext",
+      "channel_index": 8,
+      "channel_name": "L foot",
+      "channel_decoded_offset": 50596,
+      "pointer_table_entry_decoded_offset": 544,
+      "context": {
+        "flags": "0x00000004",
+        "capability_bytes": "666f6f74",
+        "capability_ascii": "foot",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 50736,
+        "decoded_resource_offset_hex": "0x0000c630",
+        "raw_16_bytes": "04000000666f6f740000000000000000",
+        "capability_or_id_le_u32": "0x746f6f66",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x00060009",
+      "community_blendGroup": 6,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x000000b1"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        },
+        {
+          "type": 3,
+          "index": 3,
+          "id": "0x47f0b3dc",
+          "flags": "0x00000013"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000004",
+          "candidate_name": "left"
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00000000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 26,
+      "context_role": "primaryContext",
+      "channel_index": 9,
+      "channel_name": "tail Wpn",
+      "channel_decoded_offset": 58152,
+      "pointer_table_entry_decoded_offset": 548,
+      "context": {
+        "flags": "0x00810020",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 58292,
+        "decoded_resource_offset_hex": "0x0000e3b4",
+        "raw_16_bytes": "200081007374726b0000000000000000",
+        "capability_or_id_le_u32": "0x6b727473",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x0008000d",
+      "community_blendGroup": 8,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x00000551"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000172"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000020",
+          "candidate_name": "back"
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00800000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00010000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 30,
+      "context_role": "primaryContext",
+      "channel_index": 10,
+      "channel_name": "tail Wpn",
+      "channel_decoded_offset": 22632,
+      "pointer_table_entry_decoded_offset": 552,
+      "context": {
+        "flags": "0x00810000",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 22772,
+        "decoded_resource_offset_hex": "0x000058f4",
+        "raw_16_bytes": "000081007374726b0000000000000000",
+        "capability_or_id_le_u32": "0x6b727473",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x0006000d",
+      "community_blendGroup": 6,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x00000551"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000172"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00800000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00010000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    },
+    {
+      "resource_record_index": 36,
+      "context_role": "primaryContext",
+      "channel_index": 10,
+      "channel_name": "strike",
+      "channel_decoded_offset": 39616,
+      "pointer_table_entry_decoded_offset": 552,
+      "context": {
+        "flags": "0x00200000",
+        "capability_bytes": "7374726b",
+        "capability_ascii": "strk",
+        "field_8": "0x00000000",
+        "field_C": "0x00000000",
+        "decoded_resource_offset": 39756,
+        "decoded_resource_offset_hex": "0x00009b4c",
+        "raw_16_bytes": "000020007374726b0000000000000000",
+        "capability_or_id_le_u32": "0x6b727473",
+        "package_file_offset": null
+      },
+      "movementFlags": "0x00000000",
+      "bindFlags": "0x0001000d",
+      "community_blendGroup": 1,
+      "community_variantGroup": 0,
+      "component_indices": [
+        {
+          "type": 0,
+          "index": 0,
+          "id": "0x4f464e49",
+          "flags": "0x00000000"
+        },
+        {
+          "type": 1,
+          "index": 1,
+          "id": "0x00534f50",
+          "flags": "0x00000031"
+        },
+        {
+          "type": 2,
+          "index": 2,
+          "id": "0x00544f52",
+          "flags": "0x00000032"
+        }
+      ],
+      "selector_decoded": {
+        "type_masked_value": "0x00000000",
+        "type_candidate_name": "cap",
+        "selectX": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectY": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "selectZ": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "extent": {
+          "masked_value": "0x00000000",
+          "candidate_name": null
+        },
+        "limb_masked_value": "0x00000000",
+        "community_parent_spine_bit_present": false,
+        "unknown_select_flags": "0x00200000",
+        "meaning": "Community-format bit decoding only; match cardinality, coordinates, tie-breaking and execution unverified."
+      },
+      "secondary_enable_bit_present": false
+    }
+  ],
+  "unknowns": [
+    "Original selector executor, candidate body-node sets and selected node identities.",
+    "Single vs multiple match semantics, spatial frame, threshold, extrema tie-breaking and no-match handling.",
+    "Meaning of raw selectFlags0x200000 and remaining limb-mask bits.",
+    "Whether skill grade, damage hitbox or channel ownership participates in role selection.",
+    "PCTP tag binding, semantic context expansion, variants and predicates in runtime.",
+    "Effective package load order and old-version fixup consequences."
+  ],
+  "not_performed": [
+    "Runtime or private saves",
+    "Curve/asset export",
+    "New animation selection or other-package scan",
+    "Disassembly/decompilation",
+    "Provider/install/build/configuration changes"
+  ],
+  "sources": [
+    {
+      "path": "src/sporemodder/file/anim/AnimationChannel.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationChannel.java",
+      "bytes": 19403,
+      "sha256": "73c1a794a6199391cc1a622cd4bafd00c0a2ebf8b9846d70a1cdff4d9a950a3c",
+      "line_count": 555,
+      "read_ranges": [
+        [
+          35,
+          180
+        ],
+        [
+          184,
+          240
+        ],
+        [
+          342,
+          356
+        ],
+        [
+          420,
+          455
+        ]
+      ],
+      "identity": "Complete raw source response SHA256 verified against fixed prior identity in this pass.",
+      "observations": [
+        {
+          "lines": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "fact": "Type mask and cap/root/none/frame/frameRoot/noCapability modes are format constants."
+        },
+        {
+          "lines": [
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            104,
+            105,
+            106,
+            107
+          ],
+          "fact": "X options include left/right/center and localLeft/localRight/localCenter aliases."
+        },
+        {
+          "lines": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            118,
+            119,
+            120,
+            121
+          ],
+          "fact": "Y options include front/back/center and local variants."
+        },
+        {
+          "lines": [
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            132,
+            133,
+            134,
+            135
+          ],
+          "fact": "Z options include top/bottom/center and local variants."
+        },
+        {
+          "lines": [
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144
+          ],
+          "fact": "Extent enum names describe leftMost/rightMost/frontMost/backMost/topMost/bottomMost; runtime cardinality and ties are not specified here."
+        },
+        {
+          "lines": [
+            36,
+            38,
+            80,
+            447,
+            448,
+            451,
+            452
+          ],
+          "fact": "A parent-spine constant and unnamed limb-mask bits exist; writer preserves other bits as selectFlags. Parent-spine author comment explicitly questions another encoding."
+        },
+        {
+          "lines": [
+            155,
+            157,
+            158,
+            159,
+            160,
+            161,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            233
+          ],
+          "fact": "Each context is16bytes; capability and numeric ID occupy the same4bytes. Two remaining integer fields are unnamed; bindFlags has separate storage."
+        },
+        {
+          "lines": [
+            196,
+            197
+          ],
+          "fact": "Author comment speculates about an index byte in bindFlags. This is not a confirmed limb or body-part index."
+        },
+        {
+          "lines": [
+            420,
+            421,
+            422,
+            423
+          ],
+          "fact": "Writer emits a secondary numeric ID for masked mode0x100003, distinct from parser numeric-argument mode0x100002; discrepancy retained."
+        }
+      ],
+      "summary": "Community format constants and writer labels support spatial selector representation. They do not execute Spore binding, specify same-role match count, or establish random/highest-skill selection."
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimChannelParser.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimChannelParser.java",
+      "bytes": 7242,
+      "sha256": "bb602b4f52c490b55ec5972725ae76ca92023af0e69a00509b6353a096aa3959",
+      "line_count": 211,
+      "read_ranges": [
+        [
+          99,
+          183
+        ]
+      ],
+      "identity": "Complete raw source response SHA256 verified against fixed prior identity in this pass.",
+      "observations": [
+        {
+          "lines": [
+            99,
+            101,
+            103,
+            126,
+            127,
+            132,
+            133,
+            135,
+            136,
+            138,
+            139,
+            142,
+            143,
+            147
+          ],
+          "fact": "Parser validates capability strings of at most4characters and recognizes noSelect/root/frame/frameRoot."
+        },
+        {
+          "lines": [
+            149,
+            150,
+            152,
+            153
+          ],
+          "fact": "Secondary numeric argument stores id; comment calls it external-target index, not body-part index."
+        },
+        {
+          "lines": [
+            159,
+            160,
+            162,
+            163,
+            165,
+            166,
+            168,
+            169,
+            174,
+            175,
+            176,
+            179,
+            180,
+            181
+          ],
+          "fact": "selectX/Y/Z, extent, limb and selectFlags options populate bit fields. This is ArgScript parsing, not game execution."
+        }
+      ],
+      "summary": "The parser exposes spatial masks and numeric fields. Its representation does not recover the original game selector or its candidate ordering."
+    }
+  ],
+  "selector_format": {
+    "type_mask": "0x00100003",
+    "type_modes": {
+      "0x00000000": "cap",
+      "0x00000001": "root",
+      "0x00000002": "none",
+      "0x00100000": "frame",
+      "0x00100001": "frameRoot",
+      "0x00100002": "noCapability"
+    },
+    "axes": {
+      "X": {
+        "mask": "0x0002000c",
+        "values": {
+          "0x00000004": "left",
+          "0x00000008": "right",
+          "0x0000000c": "center",
+          "0x00020000": "localLeft",
+          "0x00020004": "localRight",
+          "0x00020008": "localCenter"
+        }
+      },
+      "Y": {
+        "mask": "0x00040030",
+        "values": {
+          "0x00000010": "front",
+          "0x00000020": "back",
+          "0x00000030": "center",
+          "0x00040000": "localFront",
+          "0x00040010": "localBack",
+          "0x00040020": "localCenter"
+        }
+      },
+      "Z": {
+        "mask": "0x000800c0",
+        "values": {
+          "0x00000040": "top",
+          "0x00000080": "bottom",
+          "0x000000c0": "center",
+          "0x00080000": "localTop",
+          "0x00080040": "localBottom",
+          "0x00080080": "localCenter"
+        }
+      }
+    },
+    "extent": {
+      "mask": "0x0000e000",
+      "values": {
+        "0x00002000": "leftMost",
+        "0x00004000": "rightMost",
+        "0x00006000": "frontMost",
+        "0x00008000": "backMost",
+        "0x0000a000": "topMost",
+        "0x0000c000": "bottomMost"
+      }
+    },
+    "limb_mask": "0x00801c00",
+    "parent_spine_constant": "0x00001000",
+    "movement_secondary_bit": "0x00000001",
+    "numeric_secondary_writer_mode": "0x00100003",
+    "numeric_secondary_parser_mode": "0x00100002",
+    "meaning": "Names are decoded using pinned community format constants, not recovered game runtime semantics."
+  },
+  "index_interpretation": "channel_index indexes this resource channel list. Component index is component metadata. capability_or_id_le_u32 is the same4bytes as the capability string. None is established as a selected body-part index; unnamed field_8/C stay raw.",
+  "findings": [
+    {
+      "status": "observed-local-and-community-format",
+      "fact": "grsp flags4/8 map to left/right; foot20000/20004 map to localLeft/localRight. strk patterns include Y back20."
+    },
+    {
+      "status": "bounded-negative",
+      "fact": "No extent-mask bits in1224 sampled contexts; format extent options exist, but these attack/rush clips do not use them."
+    },
+    {
+      "status": "unresolved",
+      "fact": "Untyped selectFlags200000 and other unnamed bits are preserved without assigning single/all/random/highest-skill behavior."
+    },
+    {
+      "status": "bounded-observation",
+      "fact": "field_8/C are zero across1224 contexts. Zero does not establish match count or selected body node."
+    },
+    {
+      "status": "non-none-field-not-activation",
+      "fact": "The sole non-none secondary field is Patch com_strike_tl_lvl05 L hand, flags0/tagmout, with movementFlags20 lacking the named secondary-enable bit1; actual use remains unknown."
+    }
+  ],
+  "risk": "Bit names and exact channel data establish selector representation. They do not recover same-role execution selection or prove active secondary binding.",
+  "verification": {
+    "metadata_replay": "All46 resources freshly read and decompressed; stored/decoded digests and all existing header/channel metadata equal28.",
+    "counts": "46resource records,33distinct keys,612channels,1224contexts",
+    "examples": "26representative context patterns; full612channel rows not copied",
+    "offsets": "Decoded ANIM coordinates only when compressed",
+    "sources": "Full fetched SHA256 verified; no provider Evidence ID"
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "6021335a0b27a63a3f2e296905b0880f368828c445f3408936c0a22cb6ec7c7f",
+    "captured_file_bytes": 145478,
+    "reference_changes": [
+      {
+        "pointer": "/prior_evidence/sha256",
+        "captured": "50c75ef6c46b979c43641a5c290743bebd5aba161bd3ca2b608cff10de2ef4a5",
+        "published": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+        "study_file": "evidence/local-selected-action-channels.json"
+      },
+      {
+        "pointer": "/prior_evidence/bytes",
+        "captured": 1437572,
+        "published": 1394152,
+        "study_file": "evidence/local-selected-action-channels.json"
+      }
+    ]
+  }
+}

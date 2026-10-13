@@ -1,0 +1,1467 @@
+{
+  "kind": "selected-part-contributions-and-existing-ability-ranges-not-REA-Evidence",
+  "rea_evidence_id": null,
+  "reader": {
+    "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\checks\\read_capability_contribution_records.py",
+    "sha256": "b06338a71c0c0702e90da2521b2481abe7476699f69787b1f8660dc93d1cf1ad"
+  },
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "selected_parts": [
+    {
+      "package": "PatchData.package",
+      "name": "ce_grasper_bird_01",
+      "registry_line": 1503,
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0xa62cb294"
+      },
+      "offset": 39863224,
+      "stored_bytes": 352,
+      "memory_bytes": 924,
+      "compression": 65535,
+      "stored_sha256": "e99c992b9c775c43f025c3b129f362c987fb2f89963aef8a75de2ce22fd7e543",
+      "decoded_sha256": "0e0e5dd340290b12b07ee6759d0bbc0d35cfd613d86f067e0ee0908083e1ca91",
+      "property_count": 23,
+      "direct_capability_fields": {
+        "modelCapabilitySocial": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3
+          ]
+        },
+        "modelCapabilityGrasper": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityMean": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2
+          ]
+        },
+        "modelCapabilityStrike": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityPosture": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        }
+      },
+      "parent_raw": null,
+      "opaque_bbox_properties": {},
+      "omitted_fields": "not directly present; defaults/ancestors not resolved"
+    },
+    {
+      "package": "PatchData.package",
+      "name": "ce_grasper_bird_02",
+      "registry_line": 1504,
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0xa62cb297"
+      },
+      "offset": 39863941,
+      "stored_bytes": 363,
+      "memory_bytes": 936,
+      "compression": 65535,
+      "stored_sha256": "16aae1a5a434fbb23a9975815fae1cd01f23f27b3add9dbf50edab63479aea3a",
+      "decoded_sha256": "0d366558626d91ec6c9b45b28184b6334ee37adf4f24fc68e4463b3240ed2dfa",
+      "property_count": 24,
+      "direct_capability_fields": {
+        "modelCapabilityHealth": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilitySocial": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5
+          ]
+        },
+        "modelCapabilityGrasper": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityMean": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3
+          ]
+        },
+        "modelCapabilityStrike": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2
+          ]
+        },
+        "modelCapabilityPosture": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2
+          ]
+        }
+      },
+      "parent_raw": null,
+      "opaque_bbox_properties": {},
+      "omitted_fields": "not directly present; defaults/ancestors not resolved"
+    },
+    {
+      "package": "PatchData.package",
+      "name": "ce_mouth_amphibian_omnivore_01",
+      "registry_line": 1539,
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0xde215dcd"
+      },
+      "offset": 45380191,
+      "stored_bytes": 476,
+      "memory_bytes": 1076,
+      "compression": 65535,
+      "stored_sha256": "552982013fdf1084637165e3527b6131da34d8e6c851717b850cdcd86b8eaa5c",
+      "decoded_sha256": "3236324e33ab9331f2766802c0ee981bac5724ed0f7440bc38022ee7527bf2f1",
+      "property_count": 31,
+      "direct_capability_fields": {
+        "modelCapabilityCarnivorous": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityHerbivorous": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityMouth": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityCuteness": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3
+          ]
+        },
+        "modelCapabilityBite": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityVocalize": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2
+          ]
+        }
+      },
+      "parent_raw": null,
+      "opaque_bbox_properties": {
+        "0x1cbb2f62": {
+          "type": "0x0039",
+          "flags": "0x001c",
+          "array": true,
+          "values": [
+            {
+              "raw_24_bytes": "437107be78ef18be048fefbdb16f073e0d6c153e77d6ee3d",
+              "interpretation": "opaque fixed-format BBox; coordinate semantics not evaluated"
+            }
+          ]
+        }
+      },
+      "omitted_fields": "not directly present; defaults/ancestors not resolved"
+    },
+    {
+      "package": "PatchData.package",
+      "name": "ce_mouth_amphibian_omnivore_02",
+      "registry_line": 1540,
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0xde215dce"
+      },
+      "offset": 45380667,
+      "stored_bytes": 439,
+      "memory_bytes": 1036,
+      "compression": 65535,
+      "stored_sha256": "4bdf4b6d129ea3461fec1440b8c95bb7f6a0305624def4b59769b28677405279",
+      "decoded_sha256": "f458af1f80103c61ccae74fcd404c48e49c4734eb6e1285f4162197069aa1558",
+      "property_count": 31,
+      "direct_capability_fields": {
+        "modelCapabilityCarnivorous": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityHerbivorous": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityMouth": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2
+          ]
+        },
+        "modelCapabilityCuteness": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4
+          ]
+        },
+        "modelCapabilityBite": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1
+          ]
+        },
+        "modelCapabilityVocalize": {
+          "type": "0x0009",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3
+          ]
+        }
+      },
+      "parent_raw": null,
+      "opaque_bbox_properties": {
+        "0x1cbb2f62": {
+          "type": "0x0039",
+          "flags": "0x001c",
+          "array": true,
+          "values": [
+            {
+              "raw_24_bytes": "c8cdd0bdf1a174be350833be1dcad03d8f8e0b3e1119b63d",
+              "interpretation": "opaque fixed-format BBox; coordinate semantics not evaluated"
+            }
+          ]
+        }
+      },
+      "omitted_fields": "not directly present; defaults/ancestors not resolved"
+    }
+  ],
+  "diagnostics": [],
+  "existing_ability_evidence": {
+    "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-selected-attack-properties.json",
+    "sha256": "814c236d621cfc4a8fab77096767e3a0f309a30398eb54f6e15d12c205880049"
+  },
+  "selected_ability_requirements": [
+    {
+      "package": "Spore_Game.package",
+      "name": "charge1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808e"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "charge1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808e"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "ChargeTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xae1bf24f"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1701278307
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "ChargeTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xae1bf24f"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1701278307
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureAbilityTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0x7c330ee2"
+      },
+      "fields": {}
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureAbilityTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0x7c330ee2"
+      },
+      "fields": {}
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "charge2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808d"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "charge2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808d"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "charge3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808c"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "charge3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808c"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "charge4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808b"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "charge4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808b"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "charge5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808a"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "charge5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xbb85808a"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "strike2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f237"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "strike2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f237"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "StrikeTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xad00cd69"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1802663027
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "StrikeTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xad00cd69"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1802663027
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "strike3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f236"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "strike3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f236"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "strike1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f234"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "strike1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f234"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "strike4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f231"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "strike4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f231"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "strike5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f230"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "strike5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0xba81f230"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "bite2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c593f"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "bite2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c593f"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "BiteTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xc3d36701"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1702127970
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "BiteTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xc3d36701"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1702127970
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "bite3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c593e"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "bite3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c593e"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "bite1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c593c"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "bite1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c593c"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "bite4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c5939"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "bite4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c5939"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "bite5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c5938"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "bite5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x3a0c5938"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "spit4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf5"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "spit4",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf5"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              4.0,
+              4.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "SpitTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xf28fb79d"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1953067123
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "SpitTemplate",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xd2fcb262",
+        "instance": "0xf28fb79d"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPs": {
+          "id": "0x04052a6b",
+          "type": "0x000a",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            1953067123
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "spit5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf4"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "spit5",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf4"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              5.0,
+              1000.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "spit2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf3"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "spit2",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf3"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              2.0,
+              2.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "spit3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf2"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "spit3",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf2"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "spit1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf0"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "name": "spit1",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xdd91ac58",
+        "instance": "0x172b0cf0"
+      },
+      "fields": {
+        "creatureAbilityRequiredCAPsMaxValueRange": {
+          "id": "0x04052a86",
+          "type": "0x0030",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "coverage": {
+    "new_part_payload_records": 4,
+    "new_ability_payload_records": 0
+  },
+  "format_profile": "Known PROP boundary projection plus unchanged primitive decoder; BBox39 preserves24bytes, Transform38 unsupported",
+  "resolved_profile_gap": "Initial two ordinary mouth reads failed on type39. Fixed PropertyBBox declares39/24bytes; no byte-pattern skip or target modification.",
+  "unknowns": [
+    "native contribution reducer",
+    "default/inheritance execution",
+    "range inclusivity and qualification consumer",
+    "selected gameplay executor relation"
+  ],
+  "not_performed": [
+    "game execution/attach",
+    "private saves",
+    "complete asset export",
+    "provider setup"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "24f41a841ea7f6f6d09700ee1be6d3ef8157b32c5e72ec003b465837661591f4",
+    "captured_file_bytes": 35160,
+    "reference_changes": [
+      {
+        "pointer": "/existing_ability_evidence/sha256",
+        "captured": "10d4c739488f16777c01a0fc40a3669c19b9ff32a027cb2190ae05d25c5bc8d9",
+        "published": "814c236d621cfc4a8fab77096767e3a0f309a30398eb54f6e15d12c205880049",
+        "study_file": "evidence/local-selected-attack-properties.json"
+      }
+    ]
+  }
+}

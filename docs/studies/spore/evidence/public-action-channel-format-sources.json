@@ -1,0 +1,1449 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "kind": "pinned-community-format-source-not-runtime",
+  "files": [
+    {
+      "path": "src/sporemodder/file/anim/AnimationChannel.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationChannel.java",
+      "bytes": 19403,
+      "sha256": "73c1a794a6199391cc1a622cd4bafd00c0a2ebf8b9846d70a1cdff4d9a950a3c",
+      "line_count": 555,
+      "selected_declarations": [
+        {
+          "line": 31,
+          "text": "public class AnimationChannel {"
+        },
+        {
+          "line": 33,
+          "text": "\tprivate final static int MAGIC = 0x4E414843;"
+        },
+        {
+          "line": 34,
+          "text": "\tpublic static final String KEYWORD = \"channel\";"
+        },
+        {
+          "line": 40,
+          "text": "\tpublic static final int SELECT_TYPE_FLAG_MASK = 0x100003;"
+        },
+        {
+          "line": 48,
+          "text": "\tpublic static final int SELECTX_FLAGS = 0x2000C;"
+        },
+        {
+          "line": 56,
+          "text": "\tpublic static final int SELECTY_FLAGS = 0x40030;"
+        },
+        {
+          "line": 64,
+          "text": "\tpublic static final int SELECTZ_FLAGS = 0x800C0;"
+        },
+        {
+          "line": 78,
+          "text": "\tpublic static final int EXTENT_MASK = 0xE000;"
+        },
+        {
+          "line": 80,
+          "text": "\tpublic static final int SELECT_LIMB_MASK = 0x801C00;"
+        },
+        {
+          "line": 85,
+          "text": "\tpublic static final int BIND_FLAG_MIRRORING_MASK = 0x32;"
+        },
+        {
+          "line": 155,
+          "text": "\tpublic static class ContextSelector"
+        },
+        {
+          "line": 157,
+          "text": "\t\tint flags;"
+        },
+        {
+          "line": 164,
+          "text": "\t\t\tswitch (flags & SELECT_TYPE_FLAG_MASK) {"
+        },
+        {
+          "line": 182,
+          "text": "\tpublic int movementFlags;"
+        },
+        {
+          "line": 186,
+          "text": "\t * \tint flags;  // if 4: left, if 8: right"
+        },
+        {
+          "line": 193,
+          "text": "\tpublic final ContextSelector primaryContext = new ContextSelector();"
+        },
+        {
+          "line": 194,
+          "text": "\t// Usually flags is 2 when not used"
+        },
+        {
+          "line": 195,
+          "text": "\tpublic final ContextSelector secondaryContext = new ContextSelector();"
+        },
+        {
+          "line": 196,
+          "text": "\t// Actually, short, byte (index of channel, not used), byte (an index?)"
+        },
+        {
+          "line": 197,
+          "text": "\tpublic int bindFlags;"
+        },
+        {
+          "line": 201,
+          "text": "\tpublic AnimationChannel() {"
+        },
+        {
+          "line": 203,
+          "text": "\t\tsecondaryContext.flags = SELECT_TYPE_NONE;"
+        },
+        {
+          "line": 206,
+          "text": "\tpublic void read(DataStructure stream) throws IOException {"
+        },
+        {
+          "line": 207,
+          "text": "\t\tstream.getStream().seek(stream.getPointer());"
+        },
+        {
+          "line": 209,
+          "text": "\t\tint magic = stream.getStream().readLEInt();"
+        },
+        {
+          "line": 210,
+          "text": "\t\tif (magic != MAGIC) {"
+        },
+        {
+          "line": 211,
+          "text": "\t\t\tthrow new IOException(\"Unsupported channel magic: 0x\" + Integer.toHexString(magic));"
+        },
+        {
+          "line": 217,
+          "text": "\t\tmovementFlags = stream.getInt(0x88);"
+        },
+        {
+          "line": 219,
+          "text": "\t\tprimaryContext.flags = stream.getInt(0x8C);"
+        },
+        {
+          "line": 220,
+          "text": "\t\tstream.getStream().seek(stream.getPointer() + 0x90);"
+        },
+        {
+          "line": 226,
+          "text": "\t\tsecondaryContext.flags = stream.getInt(0x9C);"
+        },
+        {
+          "line": 227,
+          "text": "\t\tstream.getStream().seek(stream.getPointer() + 0xA0);"
+        },
+        {
+          "line": 233,
+          "text": "\t\tbindFlags = stream.getInt(0xAC);"
+        },
+        {
+          "line": 246,
+          "text": "\t\t\tcomp.read(stream, keyframePtr);"
+        },
+        {
+          "line": 250,
+          "text": "\t\t\t\tstream.getStream().seek(keyframePtr + comp.keyframeStride*j + comp.keyframeOffset);"
+        },
+        {
+          "line": 253,
+          "text": "\t\t\t\tkeyframe.read(stream.getStream());"
+        },
+        {
+          "line": 254,
+          "text": "\t\t\t\tcomp.keyframes.add(keyframe);"
+        },
+        {
+          "line": 259,
+          "text": "\tpublic void write(StreamWriter stream, List<Long> offsets) throws IOException {"
+        },
+        {
+          "line": 260,
+          "text": "\t\tstream.writeLEInt(MAGIC);"
+        },
+        {
+          "line": 261,
+          "text": "\t\toffsets.add(stream.getFilePointer());"
+        },
+        {
+          "line": 267,
+          "text": "\t\tstream.writeLEInt(movementFlags);"
+        },
+        {
+          "line": 269,
+          "text": "\t\tstream.writeLEInt(primaryContext.flags);"
+        },
+        {
+          "line": 279,
+          "text": "\t\tstream.writeLEInt(secondaryContext.flags);"
+        },
+        {
+          "line": 289,
+          "text": "\t\tstream.writeLEInt(bindFlags);"
+        },
+        {
+          "line": 293,
+          "text": "\t\tlong keyframePtrOffset = stream.getFilePointer();"
+        },
+        {
+          "line": 295,
+          "text": "\t\toffsets.add(keyframePtrOffset);"
+        },
+        {
+          "line": 298,
+          "text": "\t\toffsets.add(stream.getFilePointer());"
+        },
+        {
+          "line": 302,
+          "text": "\t\t// We don't have the offsets yet, so there's no point in writing the data"
+        },
+        {
+          "line": 306,
+          "text": "\t\tstream.seek(keyframePtrOffset);"
+        },
+        {
+          "line": 308,
+          "text": "\t\tstream.seek(keyframePtr);"
+        },
+        {
+          "line": 313,
+          "text": "\t\t\t\t\tcomp.keyframeOffset = stream.getFilePointer() - keyframePtr;"
+        },
+        {
+          "line": 316,
+          "text": "\t\t\t\t\t// It's the same for all keyframes"
+        },
+        {
+          "line": 317,
+          "text": "\t\t\t\t\tcomp.keyframeStride = (int) (stream.getFilePointer() - (comp.keyframeOffset + keyframePtr));"
+        },
+        {
+          "line": 319,
+          "text": "\t\t\t\tcomp.keyframes.get(i).write(stream);"
+        },
+        {
+          "line": 325,
+          "text": "\t\tstream.seek(componentsPtr);"
+        },
+        {
+          "line": 330,
+          "text": "\t\tstream.seek(endPtr);"
+        },
+        {
+          "line": 333,
+          "text": "\tpublic void fixVersion(int version) {"
+        },
+        {
+          "line": 334,
+          "text": "\t\tif (version >= 0xF && version <= 0x12) {"
+        },
+        {
+          "line": 335,
+          "text": "\t\t\tfixVersion(0x13);"
+        },
+        {
+          "line": 336,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 337,
+          "text": "\t\t\tfloat epsilon = 0.000001f;"
+        },
+        {
+          "line": 338,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 339,
+          "text": "\t\t\tfor (AnimationComponentData comp : components) {"
+        },
+        {
+          "line": 340,
+          "text": "\t\t\t\tif (comp.getType() == RotComponent.TYPE) {"
+        },
+        {
+          "line": 341,
+          "text": "\t\t\t\t\tfor (int i = 0; i < keyframeCount; ++i) {"
+        },
+        {
+          "line": 342,
+          "text": "\t\t\t\t\t\tRotComponent k = (RotComponent) comp.keyframes.get(i);"
+        },
+        {
+          "line": 343,
+          "text": "\t\t\t\t\t\tif (k.rot.getSquaredLength() < epsilon) {"
+        },
+        {
+          "line": 344,
+          "text": "\t\t\t\t\t\t\tk.rot.set(0, 0, 0, 1);"
+        },
+        {
+          "line": 345,
+          "text": "\t\t\t\t\t\t}"
+        },
+        {
+          "line": 346,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 347,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 348,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 349,
+          "text": "\t\t}"
+        },
+        {
+          "line": 350,
+          "text": "\t\telse if (version == 0x13) {"
+        },
+        {
+          "line": 351,
+          "text": "\t\t\tprimaryContext.flags &= ~0x10300;"
+        },
+        {
+          "line": 352,
+          "text": "\t\t\tsecondaryContext.flags &= ~0x10300;"
+        },
+        {
+          "line": 353,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 354,
+          "text": "\t\t\tfor (AnimationComponentData comp : components) {"
+        },
+        {
+          "line": 355,
+          "text": "\t\t\t\tif (comp.getType() == RotComponent.TYPE) {"
+        },
+        {
+          "line": 356,
+          "text": "\t\t\t\t\tint flags = 0;"
+        },
+        {
+          "line": 357,
+          "text": "\t\t\t\t\t"
+        },
+        {
+          "line": 358,
+          "text": "\t\t\t\t\tif ((movementFlags & 1) != 0 && (movementFlags & 6) != 0) {"
+        },
+        {
+          "line": 359,
+          "text": "\t\t\t\t\t\tif (movementFlags == 2 || (comp.flags & 0x40) != 0) {"
+        },
+        {
+          "line": 360,
+          "text": "\t\t\t\t\t\t\tflags = movementFlags + 0x40;"
+        },
+        {
+          "line": 361,
+          "text": "\t\t\t\t\t\t}"
+        },
+        {
+          "line": 362,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 363,
+          "text": "\t\t\t\t\telse if ((comp.flags & 0x20) != 0) flags = 0x20;"
+        },
+        {
+          "line": 364,
+          "text": "\t\t\t\t\t"
+        },
+        {
+          "line": 365,
+          "text": "\t\t\t\t\tcomp.flags &= 0x60;"
+        },
+        {
+          "line": 366,
+          "text": "\t\t\t\t\tcomp.flags |= flags;"
+        },
+        {
+          "line": 367,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 368,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 369,
+          "text": "\t\t\tfixVersion(0x17);"
+        },
+        {
+          "line": 370,
+          "text": "\t\t}"
+        },
+        {
+          "line": 371,
+          "text": "\t\telse if (version >= 0x14 && version <= 0x16) {"
+        },
+        {
+          "line": 372,
+          "text": "\t\t\tfixVersion(0x17);"
+        },
+        {
+          "line": 373,
+          "text": "\t\t}"
+        },
+        {
+          "line": 374,
+          "text": "\t\telse if (version == 0x17) {"
+        },
+        {
+          "line": 375,
+          "text": "\t\t\t// Version 0x17 includes all 6 possible deforms (without its names), "
+        },
+        {
+          "line": 376,
+          "text": "\t\t\t// even for capabilities that don't use them"
+        },
+        {
+          "line": 377,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 378,
+          "text": "\t\t\tList<Integer> deforms = RigblockComponent.getDeforms(primaryContext.getCapability());"
+        },
+        {
+          "line": 379,
+          "text": "\t\t\tint rbIndex = 0;"
+        },
+        {
+          "line": 380,
+          "text": "\t\t\tfor (AnimationComponentData comp : components) {"
+        },
+        {
+          "line": 381,
+          "text": "\t\t\t\tint type = comp.getType();"
+        },
+        {
+          "line": 382,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 383,
+          "text": "\t\t\t\tif (type == RigblockComponent.TYPE) {"
+        },
+        {
+          "line": 384,
+          "text": "\t\t\t\t\tcomp.flags &= ~0x40;"
+        },
+        {
+          "line": 385,
+          "text": "\t\t\t\t\tif (rbIndex < deforms.size()) {"
+        },
+        {
+          "line": 386,
+          "text": "\t\t\t\t\t\tcomp.id = deforms.get(rbIndex);"
+        },
+        {
+          "line": 387,
+          "text": "\t\t\t\t\t} else {"
+        },
+        {
+          "line": 388,
+          "text": "\t\t\t\t\t\t// This deform is not used by the capability, disable it"
+        },
+        {
+          "line": 389,
+          "text": "\t\t\t\t\t\tcomp.id = 0;"
+        },
+        {
+          "line": 390,
+          "text": "\t\t\t\t\t\tcomp.flags &= ~AnimationComponentData.FLAG_USED;"
+        },
+        {
+          "line": 391,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 392,
+          "text": "\t\t\t\t\t"
+        },
+        {
+          "line": 393,
+          "text": "\t\t\t\t\t++rbIndex;"
+        },
+        {
+          "line": 394,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 395,
+          "text": "\t\t\t\telse if (type == PosComponent.TYPE) {"
+        },
+        {
+          "line": 396,
+          "text": "\t\t\t\t\tif ((movementFlags & 1) != 0) {"
+        },
+        {
+          "line": 397,
+          "text": "\t\t\t\t\t\tcomp.flags &= ~0xC0;"
+        },
+        {
+          "line": 398,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 399,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 400,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 401,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 402,
+          "text": "\t\t\tfixVersion(0x18);"
+        },
+        {
+          "line": 403,
+          "text": "\t\t}"
+        },
+        {
+          "line": 404,
+          "text": "\t\telse if (version == 0x18) {"
+        },
+        {
+          "line": 405,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 406,
+          "text": "\t\t\tif ((primaryContext.flags & SELECT_TYPE_FLAG_MASK) == 1 || (primaryContext.flags == 0 && primaryContext.capability == \"root\")) {"
+        },
+        {
+          "line": 407,
+          "text": "\t\t\t\tfor (AnimationComponentData comp : components) {"
+        },
+        {
+          "line": 408,
+          "text": "\t\t\t\t\tif (comp.getType() == InfoComponent.TYPE) {"
+        },
+        {
+          "line": 409,
+          "text": "\t\t\t\t\t\tfor (AbstractComponentKeyframe k : comp.keyframes) {"
+        },
+        {
+          "line": 410,
+          "text": "\t\t\t\t\t\t\t((InfoComponent) k).flags &= ~3;"
+        },
+        {
+          "line": 411,
+          "text": "\t\t\t\t\t\t}"
+        },
+        {
+          "line": 412,
+          "text": "\t\t\t\t\t}"
+        },
+        {
+          "line": 413,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 414,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 415,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 416,
+          "text": "\t\t\t// This is the end, version 0x19 would be the definitive and does not require anything"
+        },
+        {
+          "line": 417,
+          "text": "\t\t}"
+        },
+        {
+          "line": 418,
+          "text": "\t}"
+        },
+        {
+          "line": 419,
+          "text": "\t"
+        },
+        {
+          "line": 420,
+          "text": "\tpublic static void selectorToArgScript(ArgScriptWriter writer, ContextSelector context, boolean isSecondary) {"
+        },
+        {
+          "line": 421,
+          "text": "\t\tif (isSecondary) {"
+        },
+        {
+          "line": 422,
+          "text": "\t\t\tif ((context.flags & SELECT_TYPE_FLAG_MASK) == 0x100003) {"
+        },
+        {
+          "line": 423,
+          "text": "\t\t\t\twriter.ints(context.id);"
+        },
+        {
+          "line": 424,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 425,
+          "text": "\t\t\telse if (context.getCapability() != null) {"
+        },
+        {
+          "line": 426,
+          "text": "\t\t\t\twriter.arguments(context.getCapability());"
+        },
+        {
+          "line": 427,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 428,
+          "text": "\t\t}"
+        },
+        {
+          "line": 429,
+          "text": "\t\telse if (context.getCapability() != null) {"
+        },
+        {
+          "line": 430,
+          "text": "\t\t\twriter.arguments(context.getCapability());"
+        },
+        {
+          "line": 431,
+          "text": "\t\t}"
+        },
+        {
+          "line": 432,
+          "text": "\t\t"
+        },
+        {
+          "line": 433,
+          "text": "\t\tif (context.flags == SELECT_TYPE_NONE) {"
+        },
+        {
+          "line": 434,
+          "text": "\t\t\twriter.option(\"noSelect\");"
+        },
+        {
+          "line": 435,
+          "text": "\t\t}"
+        },
+        {
+          "line": 436,
+          "text": "\t\telse if (context.flags != 0) {"
+        },
+        {
+          "line": 437,
+          "text": "\t\t\tString selectX = ENUM_SELECTX.get(context.flags & SELECTX_FLAGS);"
+        },
+        {
+          "line": 438,
+          "text": "\t\t\tString selectY = ENUM_SELECTY.get(context.flags & SELECTY_FLAGS);"
+        },
+        {
+          "line": 439,
+          "text": "\t\t\tString selectZ = ENUM_SELECTZ.get(context.flags & SELECTZ_FLAGS);"
+        },
+        {
+          "line": 440,
+          "text": "\t\t\tString extent = ENUM_EXTENT.get(context.flags & EXTENT_MASK);"
+        },
+        {
+          "line": 447,
+          "text": "\t\t\tif ((context.flags & SELECT_LIMB_MASK) != 0) {"
+        },
+        {
+          "line": 448,
+          "text": "\t\t\t\twriter.option(\"limb\").arguments(\"0x\" + Integer.toHexString(context.flags & SELECT_LIMB_MASK));"
+        },
+        {
+          "line": 451,
+          "text": "\t\t\tint flags = context.flags & ~(SELECTX_FLAGS | SELECTY_FLAGS | SELECTZ_FLAGS | EXTENT_MASK | SELECT_TYPE_ROOT | SELECT_TYPE_FLAG_MASK | SELECT_LIMB_MASK);"
+        },
+        {
+          "line": 452,
+          "text": "\t\t\tif (flags != 0) writer.option(\"selectFlags\").arguments(\"0x\" + Integer.toHexString(flags));"
+        },
+        {
+          "line": 461,
+          "text": "\t\tselectorToArgScript(writer, primaryContext, false);"
+        },
+        {
+          "line": 463,
+          "text": "\t\tif ((movementFlags & MOVEMENT_FLAG_GROUND_RELATIVE) != 0) {"
+        },
+        {
+          "line": 466,
+          "text": "\t\tif ((movementFlags & MOVEMENT_FLAG_SECONDARY_DIRECTIONAL_ONLY) != 0) {"
+        },
+        {
+          "line": 469,
+          "text": "\t\tif ((movementFlags & MOVEMENT_FLAG_LOOKAT) != 0) {"
+        },
+        {
+          "line": 473,
+          "text": "\t\tint field_88_ = movementFlags & ~(MOVEMENT_FLAG_SECONDARY | MOVEMENT_FLAG_GROUND_RELATIVE | MOVEMENT_FLAG_SECONDARY_DIRECTIONAL_ONLY | MOVEMENT_FLAG_LOOKAT);"
+        },
+        {
+          "line": 475,
+          "text": "\t\t\twriter.option(\"movementFlags\").arguments(\"0x\" + Integer.toHexString(field_88_));"
+        },
+        {
+          "line": 478,
+          "text": "\t\tif ((bindFlags & BIND_FLAG_INTERPOLATE) == 0) writer.option(\"noInterpolate\");"
+        },
+        {
+          "line": 480,
+          "text": "\t\tif ((bindFlags & BIND_FLAG_REQUIRE) != 0) writer.option(\"require\");"
+        },
+        {
+          "line": 482,
+          "text": "\t\tif ((bindFlags & BIND_FLAG_MIRRORING_MASK) != 0) {"
+        },
+        {
+          "line": 483,
+          "text": "\t\t\tString mirroring = ENUM_MIRRORING.get(bindFlags & BIND_FLAG_MIRRORING_MASK);"
+        },
+        {
+          "line": 487,
+          "text": "\t\twriter.option(\"blendGroup\").ints((bindFlags & 0x00FF0000) >> 16);"
+        },
+        {
+          "line": 489,
+          "text": "\t\tif (bindFlags != 0) {"
+        },
+        {
+          "line": 490,
+          "text": "\t\t\tif ((bindFlags & 0xFF000000) != 0) {"
+        },
+        {
+          "line": 491,
+          "text": "\t\t\t\twriter.option(\"variantGroup\").ints((bindFlags & 0xFF000000) >> 24);"
+        },
+        {
+          "line": 494,
+          "text": "\t\t\tint flags = bindFlags & ~(BIND_FLAG_INTERPOLATE | BIND_FLAG_EVENT | BIND_FLAG_REQUIRE | BIND_FLAG_MIRRORING_MASK | 0xFFFF0000);"
+        },
+        {
+          "line": 496,
+          "text": "\t\t\tif (flags != 0) writer.option(\"bindFlags\").arguments(\"0x\" + Integer.toHexString(flags));"
+        },
+        {
+          "line": 499,
+          "text": "\t\tif (secondaryContext.flags != 2 && (movementFlags & MOVEMENT_FLAG_SECONDARY) == 0) {"
+        },
+        {
+          "line": 500,
+          "text": "\t\t\twriter.option(\"field_9C\").arguments(\"0x\" + Integer.toHexString(secondaryContext.flags));"
+        },
+        {
+          "line": 505,
+          "text": "\t\tif ((movementFlags & MOVEMENT_FLAG_SECONDARY) != 0) {"
+        },
+        {
+          "line": 508,
+          "text": "\t\t\tselectorToArgScript(writer, secondaryContext, true);"
+        },
+        {
+          "line": 514,
+          "text": "\t\t\tint type = (comp.flags & 0xF);"
+        },
+        {
+          "line": 515,
+          "text": "\t\t\tint flags = (comp.flags & ~0xF) & ~AnimationComponentData.FLAG_MASK;"
+        },
+        {
+          "line": 518,
+          "text": "\t\t\tif (type != InfoComponent.TYPE && (comp.flags & AnimationComponentData.FLAG_USED) == 0) {"
+        },
+        {
+          "line": 535,
+          "text": "\t\t\tif ((comp.flags & AnimationComponentData.FLAG_RELATIVE) != 0) writer.option(\"relative\");"
+        },
+        {
+          "line": 536,
+          "text": "\t\t\tint scale = comp.flags & AnimationComponentData.FLAG_SCALE_MASK;"
+        },
+        {
+          "line": 539,
+          "text": "\t\t\tif (flags != 0) {"
+        },
+        {
+          "line": 540,
+          "text": "\t\t\t\twriter.option(\"flags\").arguments(\"0x\" + Integer.toHexString(flags));"
+        },
+        {
+          "line": 545,
+          "text": "\t\t\tfor (AbstractComponentKeyframe keyframe : comp.keyframes) {"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationComponentData.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationComponentData.java",
+      "bytes": 3517,
+      "sha256": "c222390d2338e33c19325398fd6f5ddd0e89d7301c86c5f284163acd9fc0ce9d",
+      "line_count": 100,
+      "selected_declarations": [
+        {
+          "line": 39,
+          "text": "\tpublic static final int FLAG_SCALE_MASK = 0xC0;"
+        },
+        {
+          "line": 40,
+          "text": "\tpublic static final int FLAG_MASK = FLAG_USED | FLAG_RELATIVE | FLAG_SCALE_MASK;"
+        },
+        {
+          "line": 48,
+          "text": "\tpublic int flags;"
+        },
+        {
+          "line": 50,
+          "text": "\tpublic long keyframeOffset;"
+        },
+        {
+          "line": 51,
+          "text": "\tpublic int keyframeStride;"
+        },
+        {
+          "line": 54,
+          "text": "\tpublic final List<AbstractComponentKeyframe> keyframes = new ArrayList<>();"
+        },
+        {
+          "line": 57,
+          "text": "\t\treturn flags & 0xF;"
+        },
+        {
+          "line": 60,
+          "text": "\tpublic void read(DataStructure stream, long dataPtr) throws IOException {"
+        },
+        {
+          "line": 61,
+          "text": "\t\t// 00h: flags. If not & 10h, no interpolation?, & Fh is type, 1: position, 2: rotation, 3: ?"
+        },
+        {
+          "line": 62,
+          "text": "\t\tflags = stream.getInt(0);"
+        },
+        {
+          "line": 64,
+          "text": "\t\tkeyframeOffset = stream.getInt(8);"
+        },
+        {
+          "line": 65,
+          "text": "\t\tkeyframeStride = stream.getInt(12);"
+        },
+        {
+          "line": 71,
+          "text": "\t\tstream.writeLEInt(flags);"
+        },
+        {
+          "line": 73,
+          "text": "\t\tstream.writeLEUInt(keyframeOffset);"
+        },
+        {
+          "line": 74,
+          "text": "\t\tstream.writeLEInt(keyframeStride);"
+        },
+        {
+          "line": 80,
+          "text": "\t\tint type = flags & 0xF;"
+        },
+        {
+          "line": 90,
+          "text": "\tpublic void parseFlags(ArgScriptLine line) {"
+        },
+        {
+          "line": 91,
+          "text": "\t\tif (!line.hasFlag(\"disable\")) flags |= AnimationComponentData.FLAG_USED;"
+        },
+        {
+          "line": 92,
+          "text": "\t\tif (line.hasFlag(\"relative\")) flags |= AnimationComponentData.FLAG_RELATIVE;"
+        },
+        {
+          "line": 97,
+          "text": "\t\t\tflags |= ENUM_SCALE.get(args, 0);"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/SPAnimation.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/SPAnimation.java",
+      "bytes": 8639,
+      "sha256": "1497f34e425a7199d590005f023dc3253fcb8184d36fd8161e822c57aa5c7cc3",
+      "line_count": 284,
+      "selected_declarations": [
+        {
+          "line": 37,
+          "text": "\tprivate static final int MAGIC = 0x4D494E41;"
+        },
+        {
+          "line": 42,
+          "text": "\tpublic final List<AnimationChannel> channels = new ArrayList<>();"
+        },
+        {
+          "line": 50,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 51,
+          "text": "\t\tint magic = stream.readLEInt();"
+        },
+        {
+          "line": 52,
+          "text": "\t\tif (magic != MAGIC) {"
+        },
+        {
+          "line": 53,
+          "text": "\t\t\tthrow new IOException(\"Unsupported animation magic: 0x\" + Integer.toHexString(magic));"
+        },
+        {
+          "line": 69,
+          "text": "\t\t// 118h is some flags related to keyframe indices, check sub_99C860"
+        },
+        {
+          "line": 81,
+          "text": "\t\tint channelCount = data.getInt(0x144);"
+        },
+        {
+          "line": 82,
+          "text": "\t\tlong channelPtr = data.getUInt(0x148);"
+        },
+        {
+          "line": 87,
+          "text": "\t\tstream.seek(0x154);"
+        },
+        {
+          "line": 88,
+          "text": "\t\tpredicate.read(stream);"
+        },
+        {
+          "line": 90,
+          "text": "\t\tfor (int i = 0; i < channelCount; ++i) {"
+        },
+        {
+          "line": 91,
+          "text": "\t\t\tdata.setPointer(channelPtr);"
+        },
+        {
+          "line": 95,
+          "text": "\t\t\tAnimationChannel channel = new AnimationChannel();"
+        },
+        {
+          "line": 96,
+          "text": "\t\t\tchannel.read(data);"
+        },
+        {
+          "line": 97,
+          "text": "\t\t\tchannels.add(channel);"
+        },
+        {
+          "line": 101,
+          "text": "\t\t\tstream.seek(eventPtr + i*0x60);"
+        },
+        {
+          "line": 104,
+          "text": "\t\t\tevent.read(stream);"
+        },
+        {
+          "line": 112,
+          "text": "\t\tfor (AnimationChannel c : channels) {"
+        },
+        {
+          "line": 120,
+          "text": "\t\t// - channelPtr (0x148)"
+        },
+        {
+          "line": 121,
+          "text": "\t\t// - the pointers at channelPtr "
+        },
+        {
+          "line": 122,
+          "text": "\t\t// - the pointers to Animation* at channel+04h"
+        },
+        {
+          "line": 123,
+          "text": "\t\t// - the keyframePtr in channels"
+        },
+        {
+          "line": 124,
+          "text": "\t\t// - the component metadata ptr in channels"
+        },
+        {
+          "line": 125,
+          "text": "\t\tList<Long> offsets = new ArrayList<>();"
+        },
+        {
+          "line": 127,
+          "text": "\t\toffsets.add(0x140L);"
+        },
+        {
+          "line": 128,
+          "text": "\t\toffsets.add(0x148L);"
+        },
+        {
+          "line": 130,
+          "text": "\t\tstream.writeLEInt(MAGIC);"
+        },
+        {
+          "line": 140,
+          "text": "\t\t// We are at offset 110h"
+        },
+        {
+          "line": 149,
+          "text": "\t\tstream.writeLEInt(channels.size());"
+        },
+        {
+          "line": 150,
+          "text": "\t\tstream.writeLEInt(0);  // channels ptr,"
+        },
+        {
+          "line": 151,
+          "text": "\t\tstream.writeLEInt(0);  // offsets count,"
+        },
+        {
+          "line": 152,
+          "text": "\t\tstream.writeLEInt(0);  // offsets ptr,"
+        },
+        {
+          "line": 158,
+          "text": "\t\tlong[] channelPtrs = new long[channels.size()];"
+        },
+        {
+          "line": 159,
+          "text": "\t\tlong channelPtrsOffset = stream.getFilePointer();"
+        },
+        {
+          "line": 161,
+          "text": "\t\tstream.writePadding(4 * channels.size());"
+        },
+        {
+          "line": 163,
+          "text": "\t\tfor (int i = 0; i < channels.size(); ++i) {"
+        },
+        {
+          "line": 164,
+          "text": "\t\t\tchannelPtrs[i] = stream.getFilePointer();"
+        },
+        {
+          "line": 166,
+          "text": "\t\t\tchannels.get(i).write(stream, offsets);"
+        },
+        {
+          "line": 168,
+          "text": "\t\t\t// Add a pointer for each channel"
+        },
+        {
+          "line": 169,
+          "text": "\t\t\toffsets.add(channelPtrsOffset + i*4);"
+        },
+        {
+          "line": 172,
+          "text": "\t\tlong offsetsOffset = stream.getFilePointer();"
+        },
+        {
+          "line": 174,
+          "text": "\t\tlong eventOffset = stream.getFilePointer() + 4 * (offsets.size() + eventList.size());"
+        },
+        {
+          "line": 178,
+          "text": "\t\t\t\toffsets.add(eventOffset + 0x60*i + 0x40);"
+        },
+        {
+          "line": 182,
+          "text": "\t\tfor (long offset : offsets) stream.writeLEUInt(offset);"
+        },
+        {
+          "line": 185,
+          "text": "\t\t\tlong eventNamesOffset = eventOffset + eventList.size()*0x60;"
+        },
+        {
+          "line": 188,
+          "text": "\t\t\t\tevent.write(stream, eventNamesOffset);"
+        },
+        {
+          "line": 189,
+          "text": "\t\t\t\teventNamesOffset += event.name.length() + 1;"
+        },
+        {
+          "line": 198,
+          "text": "\t\tstream.seek(4);"
+        },
+        {
+          "line": 201,
+          "text": "\t\t// Fix channel pointers"
+        },
+        {
+          "line": 202,
+          "text": "\t\tstream.seek(channelPtrsOffset);"
+        },
+        {
+          "line": 203,
+          "text": "\t\tstream.writeLEUInts(channelPtrs);"
+        },
+        {
+          "line": 206,
+          "text": "\t\tstream.seek(0x13C);"
+        },
+        {
+          "line": 208,
+          "text": "\t\tstream.writeLEUInt(eventOffset);"
+        },
+        {
+          "line": 209,
+          "text": "\t\tstream.writeLEInt(channels.size());"
+        },
+        {
+          "line": 210,
+          "text": "\t\tstream.writeLEUInt(channelPtrsOffset);"
+        },
+        {
+          "line": 211,
+          "text": "\t\tstream.writeLEInt(offsets.size());"
+        },
+        {
+          "line": 212,
+          "text": "\t\tstream.writeLEUInt(offsetsOffset);"
+        },
+        {
+          "line": 234,
+          "text": "\t\tfor (AnimationChannel channel : channels) {"
+        },
+        {
+          "line": 235,
+          "text": "\t\t\tchannel.toArgScript(writer, this);"
+        },
+        {
+          "line": 244,
+          "text": "\t\tchannels.clear();"
+        },
+        {
+          "line": 247,
+          "text": "\t\tpredicate.flags1 = 0;"
+        },
+        {
+          "line": 248,
+          "text": "\t\tpredicate.flags2 = 0;"
+        },
+        {
+          "line": 279,
+          "text": "\t\tstream.addParser(AnimationChannel.KEYWORD, new AnimChannelParser());"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/InfoComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/InfoComponent.java",
+      "bytes": 5286,
+      "sha256": "876c1b3b13783f271910cdf8f7cfaf609bc4b1d155a9f312bddeda6ab2895aed",
+      "line_count": 160,
+      "selected_declarations": [
+        {
+          "line": 40,
+          "text": "\t// 4 bytes, unknown. Maybe index of channel in whole game?"
+        },
+        {
+          "line": 44,
+          "text": "\tpublic int flags;"
+        },
+        {
+          "line": 47,
+          "text": "\t@Override public void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 53,
+          "text": "\t\tflags = stream.readLEInt();  // 0xC"
+        },
+        {
+          "line": 62,
+          "text": "\t\tstream.writeLEInt(flags);"
+        },
+        {
+          "line": 68,
+          "text": "\t\tif (flags != 0) {"
+        },
+        {
+          "line": 69,
+          "text": "\t\t\twriter.option(\"flags\").arguments(\"0x\" + Integer.toHexString(flags));"
+        },
+        {
+          "line": 79,
+          "text": "\tpublic static ArgScriptParser<SPAnimation> createParser(AnimChannelParser channelParser) {"
+        },
+        {
+          "line": 84,
+          "text": "\t\t\t// We want to show an error in the component line when keyframes number don't match,"
+        },
+        {
+          "line": 86,
+          "text": "\t\t\tDocumentError keyframesError;"
+        },
+        {
+          "line": 89,
+          "text": "\t\t\t\tif (!channelParser.channel.components.isEmpty() "
+        },
+        {
+          "line": 90,
+          "text": "\t\t\t\t\t\t&& compData.keyframes.size() != channelParser.channel.components.get(0).keyframes.size()) {"
+        },
+        {
+          "line": 91,
+          "text": "\t\t\t\t\tstream.addError(keyframesError);"
+        },
+        {
+          "line": 99,
+          "text": "\t\t\t\tcompData.flags = TYPE;"
+        },
+        {
+          "line": 102,
+          "text": "\t\t\t\tchannelParser.channel.components.add(compData);"
+        },
+        {
+          "line": 106,
+          "text": "\t\t\t\tcompData.parseFlags(line);"
+        },
+        {
+          "line": 109,
+          "text": "\t\t\t\tif (line.getOptionArguments(args, \"flags\", 1) &&"
+        },
+        {
+          "line": 111,
+          "text": "\t\t\t\t\tcompData.flags |= value.intValue();"
+        },
+        {
+          "line": 115,
+          "text": "\t\t\t\tkeyframesError = line.createError(AnimChannelParser.KEYFRAMES_ERROR);"
+        },
+        {
+          "line": 116,
+          "text": "\t\t\t\tkeyframesError.setLine(stream.getCurrentLine());"
+        },
+        {
+          "line": 127,
+          "text": "\t\t\t\tcompData.keyframes.add(c);"
+        },
+        {
+          "line": 134,
+          "text": "\t\t\t\tif (l.getOptionArguments(args, \"flags\", 1) &&"
+        },
+        {
+          "line": 136,
+          "text": "\t\t\t\t\tc.flags |= value.intValue();"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimChannelParser.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimChannelParser.java",
+      "sha256": "bb602b4f52c490b55ec5972725ae76ca92023af0e69a00509b6353a096aa3959",
+      "bytes": 7242,
+      "line_count": 211,
+      "selected_declarations": [
+        {
+          "line": 49,
+          "text": "\t\t\tchannel.bindFlags |= AnimationChannel.BIND_FLAG_INTERPOLATE;"
+        },
+        {
+          "line": 52,
+          "text": "\t\t\tchannel.bindFlags |= AnimationChannel.BIND_FLAG_REQUIRE;"
+        },
+        {
+          "line": 56,
+          "text": "\t\t\tchannel.movementFlags |= AnimationChannel.MOVEMENT_FLAG_GROUND_RELATIVE;"
+        },
+        {
+          "line": 59,
+          "text": "\t\t\tchannel.movementFlags |= AnimationChannel.MOVEMENT_FLAG_SECONDARY_DIRECTIONAL_ONLY;"
+        },
+        {
+          "line": 62,
+          "text": "\t\t\tchannel.movementFlags |= AnimationChannel.MOVEMENT_FLAG_LOOKAT;"
+        },
+        {
+          "line": 67,
+          "text": "\t\tif (line.getOptionArguments(args, \"blendGroup\", 1) &&"
+        },
+        {
+          "line": 69,
+          "text": "\t\t\tchannel.bindFlags |= value.intValue() << 16;"
+        },
+        {
+          "line": 71,
+          "text": "\t\tif (line.getOptionArguments(args, \"variantGroup\", 1) &&"
+        },
+        {
+          "line": 73,
+          "text": "\t\t\tchannel.bindFlags |= value.intValue() << 24;"
+        },
+        {
+          "line": 76,
+          "text": "\t\tif ((line.getOptionArguments(args, \"field_88\", 1) || line.getOptionArguments(args, \"movementFlags\", 1)) &&"
+        },
+        {
+          "line": 78,
+          "text": "\t\t\tchannel.movementFlags |= value.intValue();"
+        },
+        {
+          "line": 83,
+          "text": "\t\t\tchannel.primaryContext.flags |= value.intValue();"
+        },
+        {
+          "line": 88,
+          "text": "\t\t\tchannel.secondaryContext.flags |= value.intValue();"
+        },
+        {
+          "line": 91,
+          "text": "\t\tif ((line.getOptionArguments(args, \"field_AC\", 1) || line.getOptionArguments(args, \"bindFlags\", 1)) &&"
+        },
+        {
+          "line": 93,
+          "text": "\t\t\tchannel.bindFlags |= value.intValue();"
+        },
+        {
+          "line": 99,
+          "text": "\t\tcontext.flags = 0;"
+        },
+        {
+          "line": 103,
+          "text": "\t\t\tcontext.flags = AnimationChannel.SELECT_TYPE_NONE;"
+        },
+        {
+          "line": 133,
+          "text": "\t\t\t\tcontext.flags = AnimationChannel.SELECT_TYPE_ROOT;"
+        },
+        {
+          "line": 136,
+          "text": "\t\t\t\tcontext.flags = AnimationChannel.SELECT_TYPE_FRAME;"
+        },
+        {
+          "line": 139,
+          "text": "\t\t\t\tcontext.flags = AnimationChannel.SELECT_TYPE_FRAME_ROOT;"
+        },
+        {
+          "line": 143,
+          "text": "\t\t\t\tcontext.flags = AnimationChannel.SELECT_TYPE_CAP;"
+        },
+        {
+          "line": 147,
+          "text": "\t\t\tcontext.flags = AnimationChannel.SELECT_TYPE_NOCAP;"
+        },
+        {
+          "line": 160,
+          "text": "\t\t\tcontext.flags |= AnimationChannel.ENUM_SELECTX.get(args, 0);"
+        },
+        {
+          "line": 163,
+          "text": "\t\t\tcontext.flags |= AnimationChannel.ENUM_SELECTY.get(args, 0);"
+        },
+        {
+          "line": 166,
+          "text": "\t\t\tcontext.flags |= AnimationChannel.ENUM_SELECTZ.get(args, 0);"
+        },
+        {
+          "line": 169,
+          "text": "\t\t\tcontext.flags |= AnimationChannel.ENUM_EXTENT.get(args, 0);"
+        },
+        {
+          "line": 176,
+          "text": "\t\t\tcontext.flags |= value.intValue() & AnimationChannel.SELECT_LIMB_MASK;"
+        },
+        {
+          "line": 179,
+          "text": "\t\tif (line.getOptionArguments(args, \"selectFlags\", 1) &&"
+        },
+        {
+          "line": 181,
+          "text": "\t\t\tcontext.flags |= value.intValue();"
+        },
+        {
+          "line": 196,
+          "text": "\t\t\tchannel.movementFlags |= AnimationChannel.MOVEMENT_FLAG_SECONDARY;"
+        },
+        {
+          "line": 204,
+          "text": "\t\t\tAnimationComponentData info = channel.components.stream().filter(c -> (c.flags & 0xF) == InfoComponent.TYPE).findFirst().orElse(null);"
+        },
+        {
+          "line": 207,
+          "text": "\t\t\t\tif (hasVFX) channel.bindFlags |= AnimationChannel.BIND_FLAG_EVENT;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimConverter.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimConverter.java",
+      "sha256": "191f1cb373a1622306ac4ca793b96a113ee6c57975720a5a930f756b536aef16",
+      "bytes": 6087,
+      "line_count": 184,
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "\tpublic static final int TYPE_ID = 0xEE17C6AD;"
+        },
+        {
+          "line": 47,
+          "text": "\t\tanim.read(stream);"
+        },
+        {
+          "line": 89,
+          "text": "\t\t\tname.setTypeID(TYPE_ID);  // audioProp or prop"
+        },
+        {
+          "line": 102,
+          "text": "\t\treturn key.getTypeID() == TYPE_ID;"
+        },
+        {
+          "line": 107,
+          "text": "\t\t\textension = HashManager.get().getTypeName(TYPE_ID);"
+        },
+        {
+          "line": 119,
+          "text": "\t\treturn \"Animation File (.\" + HashManager.get().getTypeName(TYPE_ID) + \")\";"
+        },
+        {
+          "line": 131,
+          "text": "\t\treturn TYPE_ID;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/DataStructure.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/DataStructure.java",
+      "sha256": "b90255a286f287ade999963ef4cb8a336255dcd9339fc2fe8fff7eecd4bbeefe",
+      "bytes": 1847,
+      "line_count": 64,
+      "selected_declarations": [
+        {
+          "line": 52,
+          "text": "\t\treturn stream.readLEUInt();"
+        },
+        {
+          "line": 57,
+          "text": "\t\treturn stream.readLEInt();"
+        },
+        {
+          "line": 62,
+          "text": "\t\treturn stream.readLEFloat();"
+        }
+      ]
+    }
+  ]
+}

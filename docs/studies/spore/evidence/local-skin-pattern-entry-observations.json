@@ -1,0 +1,995 @@
+{
+  "schemaVersion": 1,
+  "module": "35-creature-skin-patterns-and-edit-rebuild",
+  "kind": "ordinary-file-string-observations",
+  "reaEvidenceId": null,
+  "target": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "sha256Verified": true,
+    "format": "PE32",
+    "machine": "0x14C",
+    "optionalHeaderMagic": "0x10B",
+    "imageBase": "0x400000",
+    "version": "1.3.0.29",
+    "versionProvenance": "Prior verified identity; current pass independently checked digest/header/sections."
+  },
+  "coverage": {
+    "sections": [
+      {
+        "name": ".rdata",
+        "rawStart": "0xFCB400",
+        "rawEndExclusive": "0x110AA00",
+        "rawSize": "0x13F600",
+        "rva": "0xFCC000",
+        "virtualSize": "0x13F5AE"
+      },
+      {
+        "name": ".data",
+        "rawStart": "0x110AA00",
+        "rawEndExclusive": "0x11CF600",
+        "rawSize": "0xC4C00",
+        "rva": "0x110C000",
+        "virtualSize": "0x212764"
+      }
+    ],
+    "stringDefinition": "Maximal printable ASCII 0x20..0x7E runs, 4..160 bytes, immediately followed by NUL. No printable-predecessor suffix accepted.",
+    "nameQuery": "skinpaint|skinpainter|Skinner\\/Swarm|Skinner\\/PaintSystem",
+    "caseInsensitive": true,
+    "nameQueryMatches": 35,
+    "selectedNeighborhoods": [
+      {
+        "start": "0xFF1840",
+        "endExclusive": "0xFF1960"
+      },
+      {
+        "start": "0xFF1BC0",
+        "endExclusive": "0xFF1D70"
+      },
+      {
+        "start": "0xFF20C0",
+        "endExclusive": "0xFF2200"
+      },
+      {
+        "start": "0xFF26B0",
+        "endExclusive": "0xFF2770"
+      }
+    ],
+    "selectedCount": 104,
+    "addressMeaning": "Preferred image VA is imageBase + measured section RVA + fileOffset - rawOffset; this identifies string data, not functions or live addresses.",
+    "scopeAttribution": "Names and matching public skinpaint format support biological-skin research entry points. No caller establishes local Creature Stage execution. Generic controls are kept only in selected skinpaint neighborhoods.",
+    "negativeFullStringQueries": [
+      {
+        "string": "SkinPaint",
+        "exactMatches": 0
+      },
+      {
+        "string": "spSkinPaintSettings",
+        "exactMatches": 0
+      },
+      {
+        "string": "paintTheme",
+        "exactMatches": 0
+      }
+    ],
+    "negativeMeaning": "Case-sensitive full-string query in the two stated sections only; zero is not feature absence.",
+    "newPackageReads": 0,
+    "privateDataReads": 0
+  },
+  "strings": [
+    {
+      "string": "4SkinPaint",
+      "fileOffset": "0xFF1267",
+      "preferredImageVA": "0x13F1E67",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "4spSkinPaintSettings",
+      "fileOffset": "0xFF136B",
+      "preferredImageVA": "0x13F1F6B",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "spSkinPaintClear",
+      "fileOffset": "0xFF1380",
+      "preferredImageVA": "0x13F1F80",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintClear",
+      "fileOffset": "0xFF1414",
+      "preferredImageVA": "0x13F2014",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "spSkinPaintDistribute",
+      "fileOffset": "0xFF1684",
+      "preferredImageVA": "0x13F2284",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeRegion",
+      "fileOffset": "0xFF16F8",
+      "preferredImageVA": "0x13F22F8",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeLimit",
+      "fileOffset": "0xFF1738",
+      "preferredImageVA": "0x13F2338",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeSpacing",
+      "fileOffset": "0xFF1778",
+      "preferredImageVA": "0x13F2378",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeParticles",
+      "fileOffset": "0xFF17E0",
+      "preferredImageVA": "0x13F23E0",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeParticle",
+      "fileOffset": "0xFF183C",
+      "preferredImageVA": "0x13F243C",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": " %127s -prob %f",
+      "fileOffset": "0xFF1884",
+      "preferredImageVA": "0x13F2484",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ordered",
+      "fileOffset": "0xFF18E4",
+      "preferredImageVA": "0x13F24E4",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "cover",
+      "fileOffset": "0xFF18EC",
+      "preferredImageVA": "0x13F24EC",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "inverse",
+      "fileOffset": "0xFF18F4",
+      "preferredImageVA": "0x13F24F4",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "centerOnly",
+      "fileOffset": "0xFF18FC",
+      "preferredImageVA": "0x13F24FC",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "bodyRange",
+      "fileOffset": "0xFF1908",
+      "preferredImageVA": "0x13F2508",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "belly",
+      "fileOffset": "0xFF1914",
+      "preferredImageVA": "0x13F2514",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "back",
+      "fileOffset": "0xFF191C",
+      "preferredImageVA": "0x13F251C",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "joints",
+      "fileOffset": "0xFF1924",
+      "preferredImageVA": "0x13F2524",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "parts",
+      "fileOffset": "0xFF192C",
+      "preferredImageVA": "0x13F252C",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "limbs",
+      "fileOffset": "0xFF1934",
+      "preferredImageVA": "0x13F2534",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "torso",
+      "fileOffset": "0xFF193C",
+      "preferredImageVA": "0x13F253C",
+      "section": ".rdata",
+      "category": "distribution-region-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeInline",
+      "fileOffset": "0xFF195C",
+      "preferredImageVA": "0x13F255C",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintDistributeEffect",
+      "fileOffset": "0xFF1984",
+      "preferredImageVA": "0x13F2584",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "Swarm/SkinPaint",
+      "fileOffset": "0xFF19F4",
+      "preferredImageVA": "0x13F25F4",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "Skinner/Swarm",
+      "fileOffset": "0xFF1A48",
+      "preferredImageVA": "0x13F2648",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "multiply",
+      "fileOffset": "0xFF1BC0",
+      "preferredImageVA": "0x13F27C0",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "subtract",
+      "fileOffset": "0xFF1BCC",
+      "preferredImageVA": "0x13F27CC",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "SPSkinPaintFlood",
+      "fileOffset": "0xFF1BDC",
+      "preferredImageVA": "0x13F27DC",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "paintMask",
+      "fileOffset": "0xFF1BF0",
+      "preferredImageVA": "0x13F27F0",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "limbType",
+      "fileOffset": "0xFF1BFC",
+      "preferredImageVA": "0x13F27FC",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "limbPos",
+      "fileOffset": "0xFF1C08",
+      "preferredImageVA": "0x13F2808",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "torsoPos",
+      "fileOffset": "0xFF1C10",
+      "preferredImageVA": "0x13F2810",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "boneOffset",
+      "fileOffset": "0xFF1C1C",
+      "preferredImageVA": "0x13F281C",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "bonePos",
+      "fileOffset": "0xFF1C28",
+      "preferredImageVA": "0x13F2828",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "boneAngle",
+      "fileOffset": "0xFF1C30",
+      "preferredImageVA": "0x13F2830",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "worldDist",
+      "fileOffset": "0xFF1C3C",
+      "preferredImageVA": "0x13F283C",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "worldPos",
+      "fileOffset": "0xFF1C48",
+      "preferredImageVA": "0x13F2848",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "worldAngle",
+      "fileOffset": "0xFF1C54",
+      "preferredImageVA": "0x13F2854",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "random",
+      "fileOffset": "0xFF1C60",
+      "preferredImageVA": "0x13F2860",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "userVar4",
+      "fileOffset": "0xFF1C6C",
+      "preferredImageVA": "0x13F286C",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "userVar3",
+      "fileOffset": "0xFF1C78",
+      "preferredImageVA": "0x13F2878",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "userVar2",
+      "fileOffset": "0xFF1C84",
+      "preferredImageVA": "0x13F2884",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "userVar1",
+      "fileOffset": "0xFF1C90",
+      "preferredImageVA": "0x13F2890",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "specularAlpha",
+      "fileOffset": "0xFF1C9C",
+      "preferredImageVA": "0x13F289C",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "specularScale",
+      "fileOffset": "0xFF1CAC",
+      "preferredImageVA": "0x13F28AC",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "bumpAlpha",
+      "fileOffset": "0xFF1CBC",
+      "preferredImageVA": "0x13F28BC",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "bumpScale",
+      "fileOffset": "0xFF1CC8",
+      "preferredImageVA": "0x13F28C8",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "diffuseAlpha",
+      "fileOffset": "0xFF1CD4",
+      "preferredImageVA": "0x13F28D4",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "diffuseVal",
+      "fileOffset": "0xFF1CE4",
+      "preferredImageVA": "0x13F28E4",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "diffuseSat",
+      "fileOffset": "0xFF1CF0",
+      "preferredImageVA": "0x13F28F0",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "diffuseHue",
+      "fileOffset": "0xFF1CFC",
+      "preferredImageVA": "0x13F28FC",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "alpha",
+      "fileOffset": "0xFF1D08",
+      "preferredImageVA": "0x13F2908",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "hairRadius",
+      "fileOffset": "0xFF1D10",
+      "preferredImageVA": "0x13F2910",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "killswitch",
+      "fileOffset": "0xFF1D1C",
+      "preferredImageVA": "0x13F291C",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "rotation",
+      "fileOffset": "0xFF1D28",
+      "preferredImageVA": "0x13F2928",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "aspect",
+      "fileOffset": "0xFF1D34",
+      "preferredImageVA": "0x13F2934",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "size",
+      "fileOffset": "0xFF1D3C",
+      "preferredImageVA": "0x13F293C",
+      "section": ".rdata",
+      "category": "modifier-material-channel-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintFloodEffectBlock",
+      "fileOffset": "0xFF1EF4",
+      "preferredImageVA": "0x13F2AF4",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintFloodEffect",
+      "fileOffset": "0xFF1F34",
+      "preferredImageVA": "0x13F2B34",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "wrap",
+      "fileOffset": "0xFF20C4",
+      "preferredImageVA": "0x13F2CC4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "clamp",
+      "fileOffset": "0xFF20CC",
+      "preferredImageVA": "0x13F2CCC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "open",
+      "fileOffset": "0xFF20D4",
+      "preferredImageVA": "0x13F2CD4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "range",
+      "fileOffset": "0xFF20DC",
+      "preferredImageVA": "0x13F2CDC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "mult",
+      "fileOffset": "0xFF20EC",
+      "preferredImageVA": "0x13F2CEC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "scalePos",
+      "fileOffset": "0xFF20F4",
+      "preferredImageVA": "0x13F2CF4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "scaleNorm",
+      "fileOffset": "0xFF2100",
+      "preferredImageVA": "0x13F2D00",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "offset",
+      "fileOffset": "0xFF210C",
+      "preferredImageVA": "0x13F2D0C",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "vary",
+      "fileOffset": "0xFF2114",
+      "preferredImageVA": "0x13F2D14",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "scale",
+      "fileOffset": "0xFF211C",
+      "preferredImageVA": "0x13F2D1C",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "restrict",
+      "fileOffset": "0xFF21A8",
+      "preferredImageVA": "0x13F2DA8",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "attract",
+      "fileOffset": "0xFF21B4",
+      "preferredImageVA": "0x13F2DB4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "initDir",
+      "fileOffset": "0xFF21BC",
+      "preferredImageVA": "0x13F2DBC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "align",
+      "fileOffset": "0xFF21C4",
+      "preferredImageVA": "0x13F2DC4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "curve",
+      "fileOffset": "0xFF21CC",
+      "preferredImageVA": "0x13F2DCC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "life",
+      "fileOffset": "0xFF21D4",
+      "preferredImageVA": "0x13F2DD4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "delay",
+      "fileOffset": "0xFF21DC",
+      "preferredImageVA": "0x13F2DDC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "chain",
+      "fileOffset": "0xFF21E4",
+      "preferredImageVA": "0x13F2DE4",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "brush",
+      "fileOffset": "0xFF21EC",
+      "preferredImageVA": "0x13F2DEC",
+      "section": ".rdata",
+      "category": "particle-brush-control-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "spSkinPaintParticle",
+      "fileOffset": "0xFF21F4",
+      "preferredImageVA": "0x13F2DF4",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticleinherit",
+      "fileOffset": "0xFF2380",
+      "preferredImageVA": "0x13F2F80",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlebumpBlend",
+      "fileOffset": "0xFF23C0",
+      "preferredImageVA": "0x13F2FC0",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlespecularBlend",
+      "fileOffset": "0xFF2400",
+      "preferredImageVA": "0x13F3000",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlediffuseBlend",
+      "fileOffset": "0xFF2444",
+      "preferredImageVA": "0x13F3044",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlediffuseColor",
+      "fileOffset": "0xFF2488",
+      "preferredImageVA": "0x13F3088",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlelife",
+      "fileOffset": "0xFF24CC",
+      "preferredImageVA": "0x13F30CC",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticledelay",
+      "fileOffset": "0xFF2508",
+      "preferredImageVA": "0x13F3108",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlerestrict",
+      "fileOffset": "0xFF2544",
+      "preferredImageVA": "0x13F3144",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticleattract",
+      "fileOffset": "0xFF2584",
+      "preferredImageVA": "0x13F3184",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticleinitDir",
+      "fileOffset": "0xFF25C4",
+      "preferredImageVA": "0x13F31C4",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlealign",
+      "fileOffset": "0xFF2604",
+      "preferredImageVA": "0x13F3204",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlechain",
+      "fileOffset": "0xFF2640",
+      "preferredImageVA": "0x13F3240",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlecurve",
+      "fileOffset": "0xFF267C",
+      "preferredImageVA": "0x13F327C",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticlebrush",
+      "fileOffset": "0xFF26B8",
+      "preferredImageVA": "0x13F32B8",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "randomStart",
+      "fileOffset": "0xFF26DC",
+      "preferredImageVA": "0x13F32DC",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "reverse",
+      "fileOffset": "0xFF26E8",
+      "preferredImageVA": "0x13F32E8",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "alongspine",
+      "fileOffset": "0xFF26F0",
+      "preferredImageVA": "0x13F32F0",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "aroundspine",
+      "fileOffset": "0xFF26FC",
+      "preferredImageVA": "0x13F32FC",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "alongbone",
+      "fileOffset": "0xFF2708",
+      "preferredImageVA": "0x13F3308",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "aroundbone",
+      "fileOffset": "0xFF2714",
+      "preferredImageVA": "0x13F3314",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "move",
+      "fileOffset": "0xFF2724",
+      "preferredImageVA": "0x13F3324",
+      "section": ".rdata",
+      "category": "bone-spine-direction-neighborhood",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticleEffect",
+      "fileOffset": "0xFF2744",
+      "preferredImageVA": "0x13F3344",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "ArgScript/SPSkinPaintParticleEffectBlock",
+      "fileOffset": "0xFF2768",
+      "preferredImageVA": "0x13F3368",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    },
+    {
+      "string": "Skinner/PaintSystem",
+      "fileOffset": "0xFF81A8",
+      "preferredImageVA": "0x13F8DA8",
+      "section": ".rdata",
+      "category": "system-or-argscript-name",
+      "evidenceType": "string-data-name"
+    }
+  ],
+  "findings": [
+    {
+      "status": "observed",
+      "fact": "Selected EXE has system/parser-like skinpaint strings and nearby region, morphology, direction, brush and material-channel names."
+    },
+    {
+      "status": "observed-boundary",
+      "fact": "4SkinPaint and 4spSkinPaintSettings are the complete printable runs. Their shorter suffixes must not be reported as complete strings at those offsets."
+    },
+    {
+      "status": "candidate-connection",
+      "fact": "Public fixed-commit reader/writer has corresponding Distribute, Particle, Flood and Settings/Clear type keywords and fields; see public-skin-pattern-format-entries.json. This is not a local caller or decoded active resource."
+    }
+  ],
+  "excludedAttributions": [
+    {
+      "names": [
+        "Terrain BrushTexture",
+        "planet cubemap"
+      ],
+      "reason": "Prior shared renderer/terrain names are not biological skinpainting proof and are outside the selected windows."
+    },
+    {
+      "names": [
+        "blendWeight",
+        "blendIndex"
+      ],
+      "reason": "Vertex skinning weights are separate from material-channel painting."
+    },
+    {
+      "names": [
+        "region",
+        "limbs",
+        "torso",
+        "size",
+        "alpha",
+        "scale",
+        "wrap"
+      ],
+      "reason": "Common names cannot establish skin semantics away from their selected neighborhoods."
+    },
+    {
+      "names": [
+        "skinpaint",
+        "skinpainter"
+      ],
+      "reason": "Name match does not identify active stripe/spot recipe, layer or stage."
+    }
+  ],
+  "reusedStudies": [
+    {
+      "path": "docs/studies/spore/07-skin-texturing-and-patterns.md",
+      "bytes": 9135,
+      "sha256": "4a30390a429fc564387d7899932b6315034433192f1cdfa8baa3b0b20444d2a3",
+      "use": "Prior study context only; current literals independently rechecked."
+    },
+    {
+      "path": "docs/studies/spore/29-creature-mesh-joins-and-automatic-skinning.md",
+      "bytes": 21693,
+      "sha256": "457f7ef18bcca5d13e7e68c3252b606a19c53aabde7677de357e4eeff2d02bf5",
+      "use": "Prior study context only; current literals independently rechecked."
+    }
+  ],
+  "unknowns": [
+    "Active skinpaint scripts, resource keys, brush content and palettes.",
+    "Runtime surface particle coordinates, normal evaluation, integration and triangle crossing.",
+    "Region classifier and morphology-coordinate evaluation.",
+    "Exact texture map channel/packing, rasterization, UV charting and seam padding.",
+    "Pattern stretch versus regeneration after body widening, limb elongation or added parts.",
+    "Fixed-count versus fixed-density policy, seed stability and paint ordering.",
+    "Update caller, preview/bake timing, cache invalidation and stale-job ownership.",
+    "Prebuilt rigblock texture joins and how independently attached parts share paint."
+  ],
+  "notPerformed": [
+    "Disassembly/decompilation or string cross-references",
+    "Game execution or process attachment",
+    "Private saves",
+    "New package decoding or extraction",
+    "Configuration/installation/build changes"
+  ],
+  "risk": "Exact names and locations are verified; inferring runtime painting or rebuild rules from them would overstate the evidence."
+}

@@ -1,0 +1,295 @@
+{
+  "kind": "local-selected-PCTP-identities-and-fields-not-runtime",
+  "reader_sha256": "075b0a3545ac35801ff4851dfd29918e45944a7f8ed87ada375320ceb0756fa7",
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "records": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x7c19aa7a",
+        "group": "0x00006f14",
+        "instance": "0xf8ccfe08"
+      },
+      "offset": 957497,
+      "stored_bytes": 1946,
+      "memory_bytes": 3475,
+      "compression": 65535,
+      "stored_sha256": "ec252a2eb8113210e1e158a0c1b7f645d3596ced1e3f95c5f7fed9dd1bad1028",
+      "decoded_sha256": "5bf3afe7ccef107fdce37bd1f30a615710b283109b09c8a9378f48bdd84f2aaa",
+      "version": 3,
+      "status": "unsupported-profile-header-only",
+      "diagnostic": "v3 read/write conditions differ; no effective mapping decoded",
+      "word_at_8_raw": "0x0000003c",
+      "word_at_8_format_candidate": "v3 name count, not a priority float"
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x7c19aa7a",
+        "group": "0x000082d0",
+        "instance": "0x142d3338"
+      },
+      "offset": 18144889,
+      "stored_bytes": 2856,
+      "memory_bytes": 4961,
+      "compression": 65535,
+      "stored_sha256": "4d2806367fb108965fd2dba92d650dcaefc91928463df74623cce136a64e1f82",
+      "decoded_sha256": "c83c0db7dbf029bf0905388476ca2ecb800b8786e0434a0814e84db0f62722c5",
+      "version": 4,
+      "status": "parsed-v4-exact-end",
+      "counts": {
+        "names": 88,
+        "remaps": 168,
+        "aggregates": 8,
+        "deforms": 20
+      },
+      "priority_raw": 2.0,
+      "exact_end": 4961,
+      "selected_roles": [
+        {
+          "role": "mout",
+          "names": [
+            {
+              "offset": 1188,
+              "name": "mouth",
+              "name_ascii_hex": "6d6f757468",
+              "name_fnv1_candidate": "0x3c2a2452",
+              "role": {
+                "stored_hex": "74756f6d",
+                "logical_hex": "6d6f7574",
+                "display": "mout"
+              }
+            }
+          ],
+          "remaps": [
+            {
+              "offset": 2069,
+              "hash": "0x2e9313c9",
+              "role": {
+                "stored_hex": "74756f6d",
+                "logical_hex": "6d6f7574",
+                "display": "mout"
+              },
+              "index_raw": 11
+            },
+            {
+              "offset": 2225,
+              "hash": "0x3c2a2452",
+              "role": {
+                "stored_hex": "74756f6d",
+                "logical_hex": "6d6f7574",
+                "display": "mout"
+              },
+              "index_raw": 11
+            },
+            {
+              "offset": 2909,
+              "hash": "0xb47b571e",
+              "role": {
+                "stored_hex": "74756f6d",
+                "logical_hex": "6d6f7574",
+                "display": "mout"
+              },
+              "index_raw": 11
+            }
+          ],
+          "aggregates": [],
+          "deforms": [
+            {
+              "offset": 4889,
+              "role": {
+                "stored_hex": "74756f6d",
+                "logical_hex": "6d6f7574",
+                "display": "mout"
+              },
+              "entries": [
+                {
+                  "offset": 4897,
+                  "deform_id": "0x89e06a31",
+                  "raw_float_0": 0.0,
+                  "raw_float_1": 1.0,
+                  "flags_raw": "0x00000000"
+                },
+                {
+                  "offset": 4913,
+                  "deform_id": "0x5d8d0055",
+                  "raw_float_0": 0.5,
+                  "raw_float_1": 0.0,
+                  "flags_raw": "0x00000000"
+                },
+                {
+                  "offset": 4929,
+                  "deform_id": "0x892788c6",
+                  "raw_float_0": 0.0,
+                  "raw_float_1": 0.0,
+                  "flags_raw": "0x00000000"
+                },
+                {
+                  "offset": 4945,
+                  "deform_id": "0xdd0dcef4",
+                  "raw_float_0": 0.0,
+                  "raw_float_1": 0.0,
+                  "flags_raw": "0x00000000"
+                }
+              ]
+            }
+          ],
+          "name_fnv1_to_stored_hash_matches": [
+            {
+              "offset": 2225,
+              "hash": "0x3c2a2452",
+              "role": {
+                "stored_hex": "74756f6d",
+                "logical_hex": "6d6f7574",
+                "display": "mout"
+              },
+              "index_raw": 11
+            }
+          ]
+        },
+        {
+          "role": "grsp",
+          "names": [
+            {
+              "offset": 1090,
+              "name": "grasper",
+              "name_ascii_hex": "67726173706572",
+              "name_fnv1_candidate": "0xdd204963",
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              }
+            }
+          ],
+          "remaps": [
+            {
+              "offset": 2273,
+              "hash": "0x44087ed7",
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "index_raw": 8
+            },
+            {
+              "offset": 3377,
+              "hash": "0xda918d52",
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "index_raw": 8
+            },
+            {
+              "offset": 3413,
+              "hash": "0xdd204963",
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "index_raw": 8
+            },
+            {
+              "offset": 3689,
+              "hash": "0xfd3d2eda",
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "index_raw": 8
+            }
+          ],
+          "aggregates": [
+            {
+              "offset": 3825,
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "children": [
+                {
+                  "stored_hex": "74736567",
+                  "logical_hex": "67657374",
+                  "display": "gest"
+                }
+              ]
+            }
+          ],
+          "deforms": [
+            {
+              "offset": 4529,
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "entries": [
+                {
+                  "offset": 4537,
+                  "deform_id": "0x89e06a31",
+                  "raw_float_0": 0.5,
+                  "raw_float_1": 1.0,
+                  "flags_raw": "0x00000000"
+                },
+                {
+                  "offset": 4553,
+                  "deform_id": "0x75d4c8cd",
+                  "raw_float_0": 0.0,
+                  "raw_float_1": 0.0,
+                  "flags_raw": "0x00000000"
+                }
+              ]
+            }
+          ],
+          "name_fnv1_to_stored_hash_matches": [
+            {
+              "offset": 3413,
+              "hash": "0xdd204963",
+              "role": {
+                "stored_hex": "70737267",
+                "logical_hex": "67727370",
+                "display": "grsp"
+              },
+              "index_raw": 8
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_role_policy": "Exact logical role bytes mout/grsp; all sections traversed for boundaries, only these role records exported.",
+  "limits": [
+    "Two resource keys differ; not an override pair.",
+    "Shared PCTP context not proven to be Creature runtime.",
+    "Priority, remap index and deform floats are preserved, not executed.",
+    "FNV candidates are not PROP field IDs or bone indices.",
+    "No game/process/save/model/texture execution or export."
+  ]
+}

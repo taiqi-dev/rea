@@ -1,0 +1,107 @@
+{
+  "kind": "independent-soul-body-calibration-verification-not-original-game-runtime",
+  "module": 59,
+  "status": "passed",
+  "tests_run": 32,
+  "failures": 0,
+  "errors": 0,
+  "scope_counts": {
+    "posterior_numeric": 6,
+    "attribution_identity_and_context": 14,
+    "transfer_scoring_and_probe_policy": 11,
+    "existing_reference_identity": 1
+  },
+  "original_game_runtime_verified": false,
+  "new_original_game_payload_reads": false,
+  "test_suite": {
+    "path": "checks/verify_soul_body_calibration_examples.py",
+    "exit_code": 0,
+    "output": "test_another_soul_or_technique_has_no_direct_motor_samples (__main__.AttributionChecks.test_another_soul_or_technique_has_no_direct_motor_samples) ... ok\r\ntest_array_palette_index_is_not_metric_identity (__main__.AttributionChecks.test_array_palette_index_is_not_metric_identity) ... ok\r\ntest_busy_and_target_gone_not_hit_failures (__main__.AttributionChecks.test_busy_and_target_gone_not_hit_failures) ... ok\r\ntest_clone_and_new_body_do_not_share_observations (__main__.AttributionChecks.test_clone_and_new_body_do_not_share_observations) ... ok\r\ntest_committed_old_body_effect_updates_history_only (__main__.AttributionChecks.test_committed_old_body_effect_updates_history_only) ... ok\r\ntest_duplicate_outcome_not_extra_trial (__main__.AttributionChecks.test_duplicate_outcome_not_extra_trial) ... ok\r\ntest_hit_increments_success (__main__.AttributionChecks.test_hit_increments_success) ... ok\r\ntest_new_context_or_combat_domain_has_no_direct_samples (__main__.AttributionChecks.test_new_context_or_combat_domain_has_no_direct_samples) ... ok\r\ntest_old_control_cannot_update_current_motor_model (__main__.AttributionChecks.test_old_control_cannot_update_current_motor_model) ... ok\r\ntest_shape_change_does_not_invalidate_unrelated_left_scope (__main__.AttributionChecks.test_shape_change_does_not_invalidate_unrelated_left_scope) ... ok\r\ntest_style_change_separates_motor_calibration (__main__.AttributionChecks.test_style_change_separates_motor_calibration) ... ok\r\ntest_uncommitted_late_hit_cannot_be_credited (__main__.AttributionChecks.test_uncommitted_late_hit_cannot_be_credited) ... ok\r\ntest_unknown_and_duplicate_attempt_diagnosed (__main__.AttributionChecks.test_unknown_and_duplicate_attempt_diagnosed) ... ok\r\ntest_valid_miss_increments_failure (__main__.AttributionChecks.test_valid_miss_increments_failure) ... ok\r\ntest_bad_counts_diagnosed (__main__.PosteriorChecks.test_bad_counts_diagnosed) ... ok\r\ntest_large_penalty_is_clamped (__main__.PosteriorChecks.test_large_penalty_is_clamped) ... ok\r\ntest_left_hand_counts_differ (__main__.PosteriorChecks.test_left_hand_counts_differ) ... ok\r\ntest_no_observations_remain_uncertain (__main__.PosteriorChecks.test_no_observations_remain_uncertain) ... ok\r\ntest_nonfinite_prior_and_penalty_diagnosed (__main__.PosteriorChecks.test_nonfinite_prior_and_penalty_diagnosed) ... ok\r\ntest_right_hand_counts_and_penalty (__main__.PosteriorChecks.test_right_hand_counts_and_penalty) ... ok\r\ntest_existing_study_inputs_match_recorded_identities (__main__.ReferenceChecks.test_existing_study_inputs_match_recorded_identities) ... ok\r\ntest_active_hostile_context_does_not_run_editor_probes (__main__.TransferAndPolicyChecks.test_active_hostile_context_does_not_run_editor_probes) ... ok\r\ntest_compatible_transfer_is_capped_weak_prior (__main__.TransferAndPolicyChecks.test_compatible_transfer_is_capped_weak_prior) ... ok\r\ntest_complete_example_selects_right_then_soul_then_right (__main__.TransferAndPolicyChecks.test_complete_example_selects_right_then_soul_then_right) ... ok\r\ntest_hard_condition_not_overridden_by_success_history (__main__.TransferAndPolicyChecks.test_hard_condition_not_overridden_by_success_history) ... ok\r\ntest_incompatible_transfer_not_silent_direct_copy (__main__.TransferAndPolicyChecks.test_incompatible_transfer_not_silent_direct_copy) ... ok\r\ntest_invalid_probe_time_budget_and_duplicate_id (__main__.TransferAndPolicyChecks.test_invalid_probe_time_budget_and_duplicate_id) ... ok\r\ntest_invalid_scoring_values_rejected (__main__.TransferAndPolicyChecks.test_invalid_scoring_values_rejected) ... ok\r\ntest_missing_receipt_or_excess_weight_rejected (__main__.TransferAndPolicyChecks.test_missing_receipt_or_excess_weight_rejected) ... ok\r\ntest_no_source_samples_means_no_transfer_weight (__main__.TransferAndPolicyChecks.test_no_source_samples_means_no_transfer_weight) ... ok\r\ntest_probe_budget_is_bounded_and_repeatable (__main__.TransferAndPolicyChecks.test_probe_budget_is_bounded_and_repeatable) ... ok\r\ntest_stale_plan_rechecked_at_commit (__main__.TransferAndPolicyChecks.test_stale_plan_rechecked_at_commit) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 32 tests in 0.010s\r\n\r\nOK\r\n",
+    "sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6"
+  },
+  "references": "soul-body-calibration-study-references.json",
+  "synthetic_scenario": {
+    "stage": "isolated editor preview protocol",
+    "initial_real_counts": {
+      "right": {
+        "success": 8,
+        "failure": 2
+      },
+      "left": {
+        "success": 4,
+        "failure": 2
+      },
+      "soul_bolt": {
+        "success": 5,
+        "failure": 1
+      }
+    },
+    "choice_before": "RightClaw",
+    "choice_after_right_shape_change": "SoulBolt",
+    "new_right_trials": {
+      "success": 4,
+      "failure": 0
+    },
+    "choice_after_new_trials": "RightClaw",
+    "probe_time_budget_seconds": 3.6,
+    "probe_count_budget": 4,
+    "observations_are_constructed_inputs": true
+  },
+  "diagnostic_corrections": [
+    "Review separated historical from active models so late old-control observations cannot update the active bucket even when keys are equal",
+    "Added learner and technique identity plus same-learner migration receipt; body geometry certificates do not imply inherited previous-soul motor counts",
+    "Conflicting repeated outcome receipts retain explicit errors instead of being folded into an exact duplicate",
+    "Nonfinite or noninteger probe criticality is rejected before sorting; finite time and attempt budgets remain explicit"
+  ],
+  "remaining_risks": [
+    "Counts assume stable comparable outcomes and do not establish real-world probability calibration",
+    "Dependency and compatibility receipts require real geometry/sensing/solver implementations",
+    "Sequential book/budget checks do not validate3D, parallel callbacks, persistence or production AI",
+    "Pure-soul example estimates are explicit unchanged inputs; complete soul-skill/sensing execution is not implemented"
+  ],
+  "not_performed": [
+    "Original Spore learning discovery or execution",
+    "Real editor probes, battle data collection or fitted probability models",
+    "User-product implementation or full3D/concurrent/persistent runtime"
+  ],
+  "files": [
+    {
+      "path": "59-soul-body-calibration-feedback-and-experience-transfer.md",
+      "bytes": 16812,
+      "sha256": "16f97ed025ea06370e8df1bd77474d2b6b398f6d37731c35c6eb450be21c58b4"
+    },
+    {
+      "path": "checks/verify_soul_body_calibration_examples.py",
+      "bytes": 16104,
+      "sha256": "60d00b32754d49b0c9f76ea4ff719d755dca7e4f8a83bd328a69df284aa9c3b6"
+    },
+    {
+      "path": "evidence/soul-body-calibration-study-references.json",
+      "bytes": 4929,
+      "sha256": "58c13c67d36e614c7c9d80dec568aa66c25fd25ee01a84a8b8877b7ee206d40e"
+    }
+  ],
+  "checks_match_final_file_identities": true,
+  "recorded_at_pacific": "2026-10-13T01:56:07.955572-07:00",
+  "timezone": "America/Los_Angeles",
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "9fd784f9efc81883f73f9a54a2cec7c6d9dd482d94669ce3995c8012d4bbd912",
+    "captured_file_bytes": 7712,
+    "reference_changes": [
+      {
+        "pointer": "/files/2/sha256",
+        "captured": "291cabd7c4be7b5d73b3f3ce6cdf8aad086787399e45377e0f06d13284224a40",
+        "published": "58c13c67d36e614c7c9d80dec568aa66c25fd25ee01a84a8b8877b7ee206d40e",
+        "study_file": "evidence/soul-body-calibration-study-references.json"
+      },
+      {
+        "pointer": "/files/2/bytes",
+        "captured": 3597,
+        "published": 4929,
+        "study_file": "evidence/soul-body-calibration-study-references.json"
+      }
+    ]
+  }
+}

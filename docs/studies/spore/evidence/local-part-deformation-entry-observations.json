@@ -1,0 +1,466 @@
+{
+  "kind": "ordinary-file-static-strings-and-reused-resource-metadata-not-runtime",
+  "target": {
+    "path": "E:\\Steam\\steamapps\\common\\Spore\\SporeBin\\SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d"
+  },
+  "query": {
+    "sections": [
+      [
+        ".rdata",
+        "0xFCB400",
+        "0x110AA00"
+      ],
+      [
+        ".data",
+        "0x110AA00",
+        "0x11CF600"
+      ]
+    ],
+    "ends_exclusive": true,
+    "full_nul_ascii_length": [
+      3,
+      160
+    ],
+    "pattern": "deform|morph|rigblock|rest(pose|pos|rot|transform|shape|state)|bindpose",
+    "initial_matches": 23,
+    "selected_including_context": 38,
+    "context_ranges": [
+      [
+        "0xFEB8B0",
+        "0xFEB990"
+      ],
+      [
+        "0x1011090",
+        "0x1011370"
+      ],
+      [
+        "0x1047A90",
+        "0x1047CE0"
+      ]
+    ]
+  },
+  "entries": [
+    {
+      "text": "BDeformBoneBaseJoint",
+      "file_offset": "0xfeb8db",
+      "preferred_data_va": "0x13ec4db"
+    },
+    {
+      "text": "DeformBoneEndJoint",
+      "file_offset": "0xfeb8f0",
+      "preferred_data_va": "0x13ec4f0"
+    },
+    {
+      "text": "DeformBoneMiddle",
+      "file_offset": "0xfeb904",
+      "preferred_data_va": "0x13ec504"
+    },
+    {
+      "text": "invbindpose",
+      "file_offset": "0xfec5d4",
+      "preferred_data_va": "0x13ed1d4"
+    },
+    {
+      "text": "joint_rigblock_%d",
+      "file_offset": "0xff098c",
+      "preferred_data_va": "0x13f158c"
+    },
+    {
+      "text": "rigblockeffect",
+      "file_offset": "0x1011124",
+      "preferred_data_va": "0x1411d24"
+    },
+    {
+      "text": "rigblock",
+      "file_offset": "0x1011134",
+      "preferred_data_va": "0x1411d34"
+    },
+    {
+      "text": "ballConnector",
+      "file_offset": "0x1011140",
+      "preferred_data_va": "0x1411d40"
+    },
+    {
+      "text": "vertebra",
+      "file_offset": "0x1011178",
+      "preferred_data_va": "0x1411d78"
+    },
+    {
+      "text": "animatedCreature",
+      "file_offset": "0x1011190",
+      "preferred_data_va": "0x1411d90"
+    },
+    {
+      "text": "socketConnector",
+      "file_offset": "0x10111a4",
+      "preferred_data_va": "0x1411da4"
+    },
+    {
+      "text": "rotationBall",
+      "file_offset": "0x10111b4",
+      "preferred_data_va": "0x1411db4"
+    },
+    {
+      "text": "rotationRing",
+      "file_offset": "0x10111c4",
+      "preferred_data_va": "0x1411dc4"
+    },
+    {
+      "text": "deformHandleOverdraw",
+      "file_offset": "0x1011218",
+      "preferred_data_va": "0x1411e18"
+    },
+    {
+      "text": "deformHandle",
+      "file_offset": "0x1011230",
+      "preferred_data_va": "0x1411e30"
+    },
+    {
+      "text": "deformChannel",
+      "file_offset": "0x10467b4",
+      "preferred_data_va": "0x14473b4"
+    },
+    {
+      "text": "ArgScript/Deform",
+      "file_offset": "0x1046ac0",
+      "preferred_data_va": "0x14476c0"
+    },
+    {
+      "text": "deformSpec",
+      "file_offset": "0x1047afc",
+      "preferred_data_va": "0x14486fc"
+    },
+    {
+      "text": "deform",
+      "file_offset": "0x1047b08",
+      "preferred_data_va": "0x1448708"
+    },
+    {
+      "text": "aggregate",
+      "file_offset": "0x1047b10",
+      "preferred_data_va": "0x1448710"
+    },
+    {
+      "text": "remap",
+      "file_offset": "0x1047ae8",
+      "preferred_data_va": "0x14486e8"
+    },
+    {
+      "text": "priority",
+      "file_offset": "0x1047af0",
+      "preferred_data_va": "0x14486f0"
+    },
+    {
+      "text": "Anim/partscaps/untagged",
+      "file_offset": "0x1047b58",
+      "preferred_data_va": "0x1448758"
+    },
+    {
+      "text": "Anim/partscaps/deformdesc",
+      "file_offset": "0x1047c0c",
+      "preferred_data_va": "0x144880c"
+    },
+    {
+      "text": "deformSpec capability \"%s\" doesn't exist",
+      "file_offset": "0x1047c28",
+      "preferred_data_va": "0x1448828"
+    },
+    {
+      "text": "remap capability \"%s\" doesn't exist",
+      "file_offset": "0x1047c54",
+      "preferred_data_va": "0x1448854"
+    },
+    {
+      "text": "Anim/deformdesc",
+      "file_offset": "0x1047c78",
+      "preferred_data_va": "0x1448878"
+    },
+    {
+      "text": "Anim/defspcblkcmd",
+      "file_offset": "0x1047c88",
+      "preferred_data_va": "0x1448888"
+    },
+    {
+      "text": "Anim/rmpcmd",
+      "file_offset": "0x1047c9c",
+      "preferred_data_va": "0x144889c"
+    },
+    {
+      "text": "Anim/aggcmd",
+      "file_offset": "0x1047ca8",
+      "preferred_data_va": "0x14488a8"
+    },
+    {
+      "text": "Anim/capcmd",
+      "file_offset": "0x1047cb4",
+      "preferred_data_va": "0x14488b4"
+    },
+    {
+      "text": "Anim/pricmd",
+      "file_offset": "0x1047cc0",
+      "preferred_data_va": "0x14488c0"
+    },
+    {
+      "text": "Simulator/cMorphHandle",
+      "file_offset": "0x105d964",
+      "preferred_data_va": "0x145e564"
+    },
+    {
+      "text": "Simulator/cTargetMorphHandle",
+      "file_offset": "0x105d97c",
+      "preferred_data_va": "0x145e57c"
+    },
+    {
+      "text": "Simulator/cArrowMorphHandle",
+      "file_offset": "0x105d99c",
+      "preferred_data_va": "0x145e59c"
+    },
+    {
+      "text": "cArrowMorphHandle",
+      "file_offset": "0x105e5d0",
+      "preferred_data_va": "0x145f1d0"
+    },
+    {
+      "text": "cTargetMorphHandle",
+      "file_offset": "0x105e5e4",
+      "preferred_data_va": "0x145f1e4"
+    },
+    {
+      "text": "cMorphHandle",
+      "file_offset": "0x105e5f8",
+      "preferred_data_va": "0x145f1f8"
+    }
+  ],
+  "reused_metadata": {
+    "file": "local-selected-action-channels.json",
+    "sha256": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+    "morph_named_channels": 46,
+    "selected_examples": [
+      {
+        "package": "Spore_Game.package",
+        "resource_key": {
+          "type": "0xee17c6ad",
+          "group": "0x00000000",
+          "instance": "0x0af13430"
+        },
+        "version": 21,
+        "channel_metadata": {
+          "resource_channel_index": 4,
+          "name": "mouthMorphs",
+          "movementFlags": "0x00000000",
+          "bindFlags": "0x00040001",
+          "community_blendGroup": 4,
+          "community_variantGroup": 0,
+          "primaryContext": {
+            "flags": "0x00000000",
+            "capability_bytes": "6d6f7574",
+            "capability_ascii": "mout",
+            "field_8": "0x00000000",
+            "field_C": "0x00000000"
+          },
+          "secondaryContext": {
+            "flags": "0x00000002",
+            "capability_bytes": "00000000",
+            "capability_ascii": "",
+            "field_8": "0x00000000",
+            "field_C": "0x00000000"
+          },
+          "keyframe_count": 5,
+          "components": [
+            {
+              "type": 0,
+              "flags": "0x00000000",
+              "id": "0x4f464e49",
+              "keyframe_offset": 0,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 1,
+              "flags": "0x00000021",
+              "id": "0x00534f50",
+              "keyframe_offset": 20,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 2,
+              "flags": "0x00000022",
+              "id": "0x00544f52",
+              "keyframe_offset": 100,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x00000001",
+              "keyframe_offset": 200,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x00000002",
+              "keyframe_offset": 240,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x00000003",
+              "keyframe_offset": 280,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x00000004",
+              "keyframe_offset": 320,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000003",
+              "id": "0x00000005",
+              "keyframe_offset": 360,
+              "keyframe_stride": 440,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000003",
+              "id": "0x00000006",
+              "keyframe_offset": 400,
+              "keyframe_stride": 440,
+              "index": 0
+            }
+          ]
+        },
+        "offset": 7019770,
+        "stored_bytes": 2946,
+        "decoded_bytes": 36884,
+        "stored_sha256": "499827a1353654984cc4b372595172cd114c2b013269f260203cdb61c5156c8e",
+        "decoded_sha256": "1c4674d5bb8793155305054934cc17a2c48bfa58efdf77499678834902c1e43f"
+      },
+      {
+        "package": "PatchData.package",
+        "resource_key": {
+          "type": "0xee17c6ad",
+          "group": "0x00000000",
+          "instance": "0x0af13430"
+        },
+        "version": 25,
+        "channel_metadata": {
+          "resource_channel_index": 3,
+          "name": "mouthMorphs",
+          "movementFlags": "0x00000000",
+          "bindFlags": "0x00040001",
+          "community_blendGroup": 4,
+          "community_variantGroup": 0,
+          "primaryContext": {
+            "flags": "0x00000000",
+            "capability_bytes": "6d6f7574",
+            "capability_ascii": "mout",
+            "field_8": "0x00000000",
+            "field_C": "0x00000000"
+          },
+          "secondaryContext": {
+            "flags": "0x00000002",
+            "capability_bytes": "00000000",
+            "capability_ascii": "",
+            "field_8": "0x00000000",
+            "field_C": "0x00000000"
+          },
+          "keyframe_count": 5,
+          "components": [
+            {
+              "type": 0,
+              "flags": "0x00000000",
+              "id": "0x4f464e49",
+              "keyframe_offset": 0,
+              "keyframe_stride": 180,
+              "index": 0
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x89e06a31",
+              "keyframe_offset": 20,
+              "keyframe_stride": 180,
+              "index": 3
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x5d8d0055",
+              "keyframe_offset": 60,
+              "keyframe_stride": 180,
+              "index": 4
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0x892788c6",
+              "keyframe_offset": 100,
+              "keyframe_stride": 180,
+              "index": 5
+            },
+            {
+              "type": 3,
+              "flags": "0x00000013",
+              "id": "0xdd0dcef4",
+              "keyframe_offset": 140,
+              "keyframe_stride": 180,
+              "index": 6
+            }
+          ]
+        },
+        "offset": 1803466,
+        "stored_bytes": 2906,
+        "decoded_bytes": 19136,
+        "stored_sha256": "a9be1e75e16ba20cd654065b0b2e89b3077927ebd574cb2baebccb7ce27c2728",
+        "decoded_sha256": "fbc75353278e96c856ec6f07d779f6a59809234c1aa0285b849623e127b2075e"
+      }
+    ]
+  },
+  "limits": [
+    "Full leading B retained in BDeformBoneBaseJoint; suffix not claimed as separate literal.",
+    "Descriptor allocation labels not mapped to DBPF keys.",
+    "Simulator handles not established as exclusive Creature Stage controllers.",
+    "Old ANIM IDs 1..6 remain raw, no legacy fixup applied; no six-active-deform claim.",
+    "Raw blendWeight mesh semantics not animation shape weights.",
+    "Preferred VA is data location, not function or member offset.",
+    "Patch scalar key read is a separate new record, not retroactively part of old metadata coverage."
+  ],
+  "excluded": [
+    "Cell-only capability mappings",
+    "Camera/Scenario and font weight candidates"
+  ],
+  "not_performed": [
+    "native decompilation",
+    "game launch/attach",
+    "private save reads",
+    "game file changes"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "0c863392ca4eb9a702bfd93dd055cbb5303c05a43815817d7db7bb60289c7224",
+    "captured_file_bytes": 12738,
+    "reference_changes": [
+      {
+        "pointer": "/reused_metadata/sha256",
+        "captured": "50c75ef6c46b979c43641a5c290743bebd5aba161bd3ca2b608cff10de2ef4a5",
+        "published": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+        "study_file": "evidence/local-selected-action-channels.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,445 @@
+{
+  "kind": "five-land-creature-behavior-and-editor-topics-static-study-and-independent-examples-not-game-runtime",
+  "status": "passed",
+  "modules": [
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "test_suites": [
+    {
+      "path": "checks/verify_animation_predicate_examples.py",
+      "passed": 32,
+      "failed": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "{\"tests_run\": 32, \"failures\": 0, \"errors\": 0, \"status\": \"passed\"}\r\n",
+      "verification_scope": "Research format/evidence checks and independent algorithm examples; not original game runtime",
+      "script_sha256": "2019db1c3e840a39b24e5fb6403814c494b49d338225d81e4eee6f7cb258299d"
+    },
+    {
+      "path": "checks/verify_capability_aggregation_examples.py",
+      "passed": 25,
+      "failed": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "test_actual_four_selected_definitions_and_direct_values (__main__.FormatAndEvidenceChecks.test_actual_four_selected_definitions_and_direct_values) ... ok\r\ntest_actual_reader_and_old_requirement_identity (__main__.FormatAndEvidenceChecks.test_actual_reader_and_old_requirement_identity) ... ok\r\ntest_bbox_bad_size_and_truncation_fail (__main__.FormatAndEvidenceChecks.test_bbox_bad_size_and_truncation_fail) ... ok\r\ntest_bbox_opaque_24_does_not_hide_later_fields (__main__.FormatAndEvidenceChecks.test_bbox_opaque_24_does_not_hide_later_fields) ... ok\r\ntest_duplicate_property_and_trailing_bytes_fail (__main__.FormatAndEvidenceChecks.test_duplicate_property_and_trailing_bytes_fail) ... ok\r\ntest_primitive_projection_matches_unchanged_helper (__main__.FormatAndEvidenceChecks.test_primitive_projection_matches_unchanged_helper) ... ok\r\ntest_registry_explicit_ID_not_name_hash (__main__.FormatAndEvidenceChecks.test_registry_explicit_ID_not_name_hash) ... ok\r\ntest_transform_38_not_mistaken_for_bbox_39 (__main__.FormatAndEvidenceChecks.test_transform_38_not_mistaken_for_bbox_39) ... ok\r\ntest_body_tier_does_not_upgrade_weak_executor (__main__.OwnAggregationExamples.test_body_tier_does_not_upgrade_weak_executor) ... ok\r\ntest_detach_max_provider_reduces_summary (__main__.OwnAggregationExamples.test_detach_max_provider_reduces_summary) ... ok\r\ntest_duplicate_instance_or_contribution_rejected (__main__.OwnAggregationExamples.test_duplicate_instance_or_contribution_rejected) ... ok\r\ntest_explicit_mirror_instances_count_twice (__main__.OwnAggregationExamples.test_explicit_mirror_instances_count_twice) ... ok\r\ntest_max_sum_count_capacity_are_separate (__main__.OwnAggregationExamples.test_max_sum_count_capacity_are_separate) ... ok\r\ntest_missing_profile_is_distinct_from_missing_level (__main__.OwnAggregationExamples.test_missing_profile_is_distinct_from_missing_level) ... ok\r\ntest_one_grade_three_part_is_not_three_providers (__main__.OwnAggregationExamples.test_one_grade_three_part_is_not_three_providers) ... ok\r\ntest_one_mouth_grade_two_is_count_one (__main__.OwnAggregationExamples.test_one_mouth_grade_two_is_count_one) ... ok\r\ntest_qualified_but_busy_is_not_executable (__main__.OwnAggregationExamples.test_qualified_but_busy_is_not_executable) ... ok\r\ntest_same_revision_other_body_cannot_reuse_summary (__main__.OwnAggregationExamples.test_same_revision_other_body_cannot_reuse_summary) ... ok\r\ntest_soul_ability_inventory_not_body_contribution (__main__.OwnAggregationExamples.test_soul_ability_inventory_not_body_contribution) ... ok\r\ntest_stale_snapshot_not_reused_after_change (__main__.OwnAggregationExamples.test_stale_snapshot_not_reused_after_change) ... ok\r\ntest_two_hand_mode_requires_distinct_qualified_parts (__main__.OwnAggregationExamples.test_two_hand_mode_requires_distinct_qualified_parts) ... ok\r\ntest_unknown_or_bad_numeric_capabilities_rejected (__main__.OwnAggregationExamples.test_unknown_or_bad_numeric_capabilities_rejected) ... ok\r\ntest_zero_capacity_preserves_quality_by_own_policy (__main__.OwnAggregationExamples.test_zero_capacity_preserves_quality_by_own_policy) ... ok\r\ntest_zero_capacity_skill_requirement_rejects_executor (__main__.OwnAggregationExamples.test_zero_capacity_skill_requirement_rejects_executor) ... ok\r\ntest_zero_health_provider_excluded (__main__.OwnAggregationExamples.test_zero_health_provider_excluded) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 25 tests in 0.007s\r\n\r\nOK\r\n",
+      "verification_scope": "Research format/evidence checks and independent algorithm examples; not original game runtime",
+      "script_sha256": "53b04c47ada7439acae699dc66b756e6c17c856203966c9bb54e7c9b9f067893"
+    },
+    {
+      "path": "checks/verify_reaction_secondary_examples.py",
+      "passed": 30,
+      "failed": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "..............................\r\n----------------------------------------------------------------------\r\nRan 30 tests in 0.006s\r\n\r\nOK\r\n{\"kind\": \"independent-reaction-secondary-examples\", \"tests_run\": 30, \"failures\": 0, \"errors\": 0, \"success\": true, \"module_counts\": {\"47\": 14, \"48\": 14, \"existing_json\": 2}, \"game_runtime_verified\": false}\r\n",
+      "verification_scope": "Research format/evidence checks and independent algorithm examples; not original game runtime",
+      "script_sha256": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51"
+    },
+    {
+      "path": "checks/verify_editor_snap_connection_examples.py",
+      "passed": 30,
+      "failed": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "test_01_ray_triangle_returns_actual_surface (__main__.SnapConnectionExamples.test_01_ray_triangle_returns_actual_surface) ... ok\r\ntest_02_missed_and_behind_ray_not_hit (__main__.SnapConnectionExamples.test_02_missed_and_behind_ray_not_hit) ... ok\r\ntest_03_parallel_and_degenerate_geometry (__main__.SnapConnectionExamples.test_03_parallel_and_degenerate_geometry) ... ok\r\ntest_04_nonfinite_ray_diagnosed (__main__.SnapConnectionExamples.test_04_nonfinite_ray_diagnosed) ... ok\r\ntest_05_surface_frame_is_proper_and_normal_aligned (__main__.SnapConnectionExamples.test_05_surface_frame_is_proper_and_normal_aligned) ... ok\r\ntest_06_frame_fallback_when_tangent_parallel (__main__.SnapConnectionExamples.test_06_frame_fallback_when_tangent_parallel) ... ok\r\ntest_07_socket_alignment_not_mesh_origin (__main__.SnapConnectionExamples.test_07_socket_alignment_not_mesh_origin) ... ok\r\ntest_08_widen_recomputes_mount_without_child_scale (__main__.SnapConnectionExamples.test_08_widen_recomputes_mount_without_child_scale) ... ok\r\ntest_09_mirrored_surface_frames_keep_handedness (__main__.SnapConnectionExamples.test_09_mirrored_surface_frames_keep_handedness) ... ok\r\ntest_10_inverse_transpose_for_nonuniform_shape (__main__.SnapConnectionExamples.test_10_inverse_transpose_for_nonuniform_shape) ... ok\r\ntest_11_snap_hysteresis_prevents_boundary_chatter (__main__.SnapConnectionExamples.test_11_snap_hysteresis_prevents_boundary_chatter) ... ok\r\ntest_12_stable_tie_and_illegal_snap_filter (__main__.SnapConnectionExamples.test_12_stable_tie_and_illegal_snap_filter) ... ok\r\ntest_13_invalid_snap_input_diagnosed (__main__.SnapConnectionExamples.test_13_invalid_snap_input_diagnosed) ... ok\r\ntest_14_legal_reparent_preserves_identity (__main__.SnapConnectionExamples.test_14_legal_reparent_preserves_identity) ... ok\r\ntest_15_descendant_reparent_rejects_cycle (__main__.SnapConnectionExamples.test_15_descendant_reparent_rejects_cycle) ... ok\r\ntest_16_self_and_missing_parent_rejected (__main__.SnapConnectionExamples.test_16_self_and_missing_parent_rejected) ... ok\r\ntest_17_connector_types_not_distance_only (__main__.SnapConnectionExamples.test_17_connector_types_not_distance_only) ... ok\r\ntest_18_zero_or_nonfinite_chain_diagnosed (__main__.SnapConnectionExamples.test_18_zero_or_nonfinite_chain_diagnosed) ... ok\r\ntest_19_drag_preview_does_not_commit_recipe (__main__.SnapConnectionExamples.test_19_drag_preview_does_not_commit_recipe) ... ok\r\ntest_20_invalid_mirror_edit_has_no_partial_commit (__main__.SnapConnectionExamples.test_20_invalid_mirror_edit_has_no_partial_commit) ... ok\r\ntest_21_stale_commit_refused_without_mutation (__main__.SnapConnectionExamples.test_21_stale_commit_refused_without_mutation) ... ok\r\ntest_22_cancel_keeps_original_parent_graph (__main__.SnapConnectionExamples.test_22_cancel_keeps_original_parent_graph) ... ok\r\ntest_23_undo_restores_content_with_new_generation (__main__.SnapConnectionExamples.test_23_undo_restores_content_with_new_generation) ... ok\r\ntest_24_repeated_preview_uses_committed_base (__main__.SnapConnectionExamples.test_24_repeated_preview_uses_committed_base) ... ok\r\ntest_25_invalid_sample_cannot_commit_older_preview (__main__.SnapConnectionExamples.test_25_invalid_sample_cannot_commit_older_preview) ... ok\r\ntest_26_mirror_partners_must_exist (__main__.SnapConnectionExamples.test_26_mirror_partners_must_exist) ... ok\r\ntest_27_mirror_mapping_reciprocal_and_not_self (__main__.SnapConnectionExamples.test_27_mirror_mapping_reciprocal_and_not_self) ... ok\r\ntest_28_empty_chain_and_extra_root_diagnosed (__main__.SnapConnectionExamples.test_28_empty_chain_and_extra_root_diagnosed) ... ok\r\ntest_29_declared_local_mirror_axis_matches_mount_frame (__main__.SnapConnectionExamples.test_29_declared_local_mirror_axis_matches_mount_frame) ... ok\r\ntest_30_user_roll_socket_alignment_applied_once (__main__.SnapConnectionExamples.test_30_user_roll_socket_alignment_applied_once) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 30 tests in 0.003s\r\n\r\nOK\r\n",
+      "verification_scope": "Research format/evidence checks and independent algorithm examples; not original game runtime",
+      "script_sha256": "7f4871a23529ba908a18fc902b61bfd4801b5defa2b8a99a6f21db0952696643"
+    }
+  ],
+  "passed": 117,
+  "additional_resource_consistency_checks": {
+    "module": 45,
+    "records": 46,
+    "passed": 46,
+    "not_included_in_117_suite_total": true
+  },
+  "game_runtime_tests_run": false,
+  "native_functions_recovered": false,
+  "user_product_implemented": false,
+  "actual_new_local_reads": {
+    "module_45": {
+      "selected_existing_ANIM_version_records": 46,
+      "distinct_resource_keys": 33,
+      "whole_animation_predicates": 46,
+      "event_predicates": 818,
+      "channels": 612,
+      "channels_with_community_require_bit": 15,
+      "EXE_full_hash_rechecked": true
+    },
+    "module_46": {
+      "new_selected_PROP_payloads": 4,
+      "all_from_PatchData": true,
+      "Game_same_keys_matches": 0,
+      "existing_attack_records_reused": 50,
+      "package_full_hashes_rechecked": true,
+      "format_profile": "PROP type 0x39 BBox is retained as opaque 24-byte array data; type 0x38 Transform remains unsupported"
+    },
+    "modules_47_48_49": {
+      "new_game_payload_reads": 0,
+      "public_declarations_and_historical_design": true
+    },
+    "target_modified": false
+  },
+  "module_results": [
+    {
+      "module": 45,
+      "status": "partially_answered_original_and_independent_specification_complete",
+      "original": "Scoped predicate bytes, event gate, channel require flag and public encoding established",
+      "unknown": "Native predicate evaluation, required binding failure and fallback order"
+    },
+    {
+      "module": 46,
+      "status": "partially_answered_original_and_independent_specification_complete",
+      "original": "Four concrete hand/mouth direct contributions and public species-profile statistics established",
+      "unknown": "Original aggregation formulas, defaults/inheritance and skill-to-executor consumers"
+    },
+    {
+      "module": 47,
+      "status": "partially_answered_original_and_independent_specification_complete",
+      "original": "Public damage/reaction/AI entrances and bounded missing direct reaction fields established",
+      "unknown": "Original damage-to-interruption and recovery decision chain"
+    },
+    {
+      "module": 48,
+      "status": "partially_answered_original_and_independent_specification_complete",
+      "original": "Historical IK-goal subtree exclusion and one-way Jiggles feedback boundary established",
+      "unknown": "Current-release passive parameters, active takeover and property consumers"
+    },
+    {
+      "module": 49,
+      "status": "partially_answered_original_and_independent_specification_complete",
+      "original": "Public picking, snap, parenting, symmetry and orientation declarations established",
+      "unknown": "Original ray-hit-to-parent choice, matrix order, snap and validity consumers"
+    }
+  ],
+  "not_performed": [
+    "Game startup, attach, frame-by-frame observation or native provider trace: no matching callable REA/provider and existing launcher lacks built runtime",
+    "Private save reads, full proprietary asset export, target modification or redistribution",
+    "User-product implementation: no user-game repository was supplied",
+    "Repository production build/tests: only study documents, research readers and independent checks changed",
+    "Install, configuration changes or Git writes"
+  ],
+  "remaining_risks": [
+    "Community declarations and historical design have not been aligned to every consumer in the local release",
+    "Missing direct fields or zero predicates are bounded observations and do not establish global absence or runtime behavior",
+    "Independent dismemberment, soul, interruption, damping and editor algorithms require validation in the user product"
+  ],
+  "workflow_diagnostics": [
+    "Two web raw-source cache misses and a sandbox DNS failure were resolved through an approved read-only public-source fetch; no automatic approval rejection",
+    "A narrow mouth-name filter found no keys; a format-aware ordinary-name query found the selected records",
+    "Initial mouth PROP reads rejected type 0x39; fixed sources established Transform=0x38 and BBox=0x39 with 24-byte array entries; the bounded reader profile preserves BBox raw bytes and the old helper remains unchanged",
+    "A worker document was read before creation; the final existing document was subsequently reviewed",
+    "The first module45 verification invocation omitted its mandatory output argument; the corrected invocation completed 32 tests and 46 evidence consistency checks",
+    "A follow-up read of an optional temporary verbose log used a different sandbox temp location and missed the file; the successful module45 stdout and frozen per-module evidence verification remain available",
+    "The initial final-manifest scan guessed the module10 filename incorrectly; corrected to the existing indexed file and repeated the document/identity scan. No test rerun was needed."
+  ],
+  "timezone": "America/Los_Angeles",
+  "structure": {
+    "markdown_files": 52,
+    "relative_file_links": 477,
+    "json_files_including_this_record": 93,
+    "fence_blocks_both_styles": 210,
+    "utf8_fences_and_relative_file_links": true,
+    "internal_anchors_checked": false,
+    "remote_urls_revalidated_in_this_structure_scan": false,
+    "errors": []
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 24757,
+      "sha256": "fe88bbc59d40db5c3b5add167b45f76adfaaa16caa539f8964710902d052a87e"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 12542,
+      "sha256": "facbf25a9895e1ecbbcdeb103721d987d606137113416d3ab5fa2e97c42deed8"
+    },
+    {
+      "path": "10-capability-aggregation-and-ability-eligibility.md",
+      "bytes": 5983,
+      "sha256": "090762e38e814fcbe1240f6ce3b30eaa1113f9f68bbe122f80dcd89a17a91666"
+    },
+    {
+      "path": "44-editor-rebuild-undo-and-animation-cache-consistency.md",
+      "bytes": 15500,
+      "sha256": "8c009958124d41caf1d3ee7b6261f59f14d294b08b90b4ec8efaa64ba873b647"
+    },
+    {
+      "path": "45-animation-predicates-conditional-binding-and-fallbacks.md",
+      "bytes": 15702,
+      "sha256": "691e102e0c5c5f7b0718624a5cd7ea1dceddaeed201f14cd5a6f8f6fcaaa6487"
+    },
+    {
+      "path": "46-capability-contributions-body-statistics-and-executor-qualification.md",
+      "bytes": 13756,
+      "sha256": "11dd16c7761b575711de0beb4d48c6d94eaa6001dee3a4ae791010be29db7f68"
+    },
+    {
+      "path": "47-hit-reactions-action-interruption-and-ai-recovery.md",
+      "bytes": 12436,
+      "sha256": "340a9a64b80ae0f3ee3d9bf0397e43bace27e8cbde9d8f2745e8796d19dbfd61"
+    },
+    {
+      "path": "48-secondary-motion-passive-appendages-and-active-takeover.md",
+      "bytes": 13081,
+      "sha256": "57a8e43d9ba9bfc969581cabbbff5227cf741ff3cf65f15384bae0db8fbb7356"
+    },
+    {
+      "path": "49-editor-surface-snapping-attachment-and-connection-validation.md",
+      "bytes": 18116,
+      "sha256": "4946512cdc4feb3dac19469238afd713533dad320fec7dc9eac56f016d48057a"
+    },
+    {
+      "path": "checks/read_selected_animation_predicates.py",
+      "bytes": 11507,
+      "sha256": "5f61b7c37cbcbad8482e4921b61fa91aa3e94edb6d1fad68acbf8e9110642aad"
+    },
+    {
+      "path": "checks/verify_animation_predicate_examples.py",
+      "bytes": 9517,
+      "sha256": "2019db1c3e840a39b24e5fb6403814c494b49d338225d81e4eee6f7cb258299d"
+    },
+    {
+      "path": "checks/read_capability_contribution_records.py",
+      "bytes": 12495,
+      "sha256": "b06338a71c0c0702e90da2521b2481abe7476699f69787b1f8660dc93d1cf1ad"
+    },
+    {
+      "path": "checks/verify_capability_aggregation_examples.py",
+      "bytes": 12230,
+      "sha256": "53b04c47ada7439acae699dc66b756e6c17c856203966c9bb54e7c9b9f067893"
+    },
+    {
+      "path": "checks/verify_reaction_secondary_examples.py",
+      "bytes": 17278,
+      "sha256": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51"
+    },
+    {
+      "path": "checks/verify_editor_snap_connection_examples.py",
+      "bytes": 13914,
+      "sha256": "7f4871a23529ba908a18fc902b61bfd4801b5defa2b8a99a6f21db0952696643"
+    },
+    {
+      "path": "evidence/public-animation-predicate-contracts.json",
+      "bytes": 7792,
+      "sha256": "1ef207dfdf29857d851ad17b7e9cf78ef890f194f70092aef04bbd4c38df790b"
+    },
+    {
+      "path": "evidence/local-selected-animation-predicates.json",
+      "bytes": 1534277,
+      "sha256": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94"
+    },
+    {
+      "path": "evidence/animation-predicate-verification.json",
+      "bytes": 5382,
+      "sha256": "5e22a51f5028c772607fc26d429dea4e85a1d2f504459aff17a8f0bba066b183"
+    },
+    {
+      "path": "evidence/local-selected-capability-contributions.json",
+      "bytes": 34429,
+      "sha256": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989"
+    },
+    {
+      "path": "evidence/public-capability-aggregation-contracts.json",
+      "bytes": 181741,
+      "sha256": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510"
+    },
+    {
+      "path": "evidence/public-reaction-secondary-contracts.json",
+      "bytes": 25824,
+      "sha256": "412ae11b6736497b817ea1e6014408dc5bc37acdbfc59aa7c71734708f671877"
+    },
+    {
+      "path": "evidence/reaction-secondary-verification.json",
+      "bytes": 7046,
+      "sha256": "ea742b8b1ada309ba013506220edcb41347958e841c5cc6f74a827cd8dd01c57"
+    },
+    {
+      "path": "evidence/public-editor-snap-connection-contracts.json",
+      "bytes": 6600,
+      "sha256": "41ca483f4d53f7e732054b0cf54438f8f9e3a2f7ab13db714f6162f2e48d5f8a"
+    },
+    {
+      "path": "evidence/editor-snap-connection-verification.json",
+      "bytes": 2713,
+      "sha256": "f3d528b8f8f1eea64859adc528e9718bfac23490103c7adc3156c389da9f8661"
+    }
+  ],
+  "limitations": "117 is this delivery's format/evidence and independent-example test total. It does not include earlier111 tests, the additional46 consistency records, or original-game runtime tests.",
+  "verified_at": "2026-10-12T23:56:07.803438-07:00",
+  "frozen_identity_checks": {
+    "checked": 5,
+    "passed": 5
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "91aaf83af29c633fbd749485624bfe51f280cac11fc00ff218ff2937304c3014",
+    "captured_file_bytes": 20176,
+    "reference_changes": [
+      {
+        "pointer": "/files/16/sha256",
+        "captured": "120e9964177ea916751eda169d7e1f241c137ea43a869380f629ba701dbb243e",
+        "published": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94",
+        "study_file": "evidence/local-selected-animation-predicates.json"
+      },
+      {
+        "pointer": "/files/16/bytes",
+        "captured": 1573013,
+        "published": 1534277,
+        "study_file": "evidence/local-selected-animation-predicates.json"
+      },
+      {
+        "pointer": "/files/17/sha256",
+        "captured": "bf1aff9b8cb640b9992a6ab849fe0d86584630954043d47421466f8579667f45",
+        "published": "5e22a51f5028c772607fc26d429dea4e85a1d2f504459aff17a8f0bba066b183",
+        "study_file": "evidence/animation-predicate-verification.json"
+      },
+      {
+        "pointer": "/files/17/bytes",
+        "captured": 4732,
+        "published": 5382,
+        "study_file": "evidence/animation-predicate-verification.json"
+      },
+      {
+        "pointer": "/files/18/sha256",
+        "captured": "24f41a841ea7f6f6d09700ee1be6d3ef8157b32c5e72ec003b465837661591f4",
+        "published": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/files/18/bytes",
+        "captured": 35160,
+        "published": 34429,
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/files/19/sha256",
+        "captured": "3826d05f084edcd7020585aa12be9a149b30d7d61d7ec68ac351f03a9b60ee75",
+        "published": "cd8c6f4c57c5be501b2a8281f1d0237f8f2e1550a215c6e7173d11b5d82e0510",
+        "study_file": "evidence/public-capability-aggregation-contracts.json"
+      },
+      {
+        "pointer": "/files/19/bytes",
+        "captured": 188718,
+        "published": 181741,
+        "study_file": "evidence/public-capability-aggregation-contracts.json"
+      },
+      {
+        "pointer": "/files/20/sha256",
+        "captured": "592d5e8bcc9bfad6c68b321834c9424dd33acfea48bfbd98c4e8fb09e659c462",
+        "published": "412ae11b6736497b817ea1e6014408dc5bc37acdbfc59aa7c71734708f671877",
+        "study_file": "evidence/public-reaction-secondary-contracts.json"
+      },
+      {
+        "pointer": "/files/20/bytes",
+        "captured": 24246,
+        "published": 25824,
+        "study_file": "evidence/public-reaction-secondary-contracts.json"
+      },
+      {
+        "pointer": "/files/21/sha256",
+        "captured": "3ece3e3c6694270686ad59e773d3f3505f7095b710540ecf5cb829273a291dde",
+        "published": "f4cbab8db3b6cda0df19bbce98a11343c4e1f5531b13c086ddb01bb0fb506b15",
+        "study_file": "evidence/reaction-secondary-verification.json"
+      },
+      {
+        "pointer": "/files/21/bytes",
+        "captured": 4352,
+        "published": 5112,
+        "study_file": "evidence/reaction-secondary-verification.json"
+      },
+      {
+        "pointer": "/files/22/sha256",
+        "captured": "8d677417a28e3287c61ef1db8abc77cf419a4890e78de7f8318ec97e76eff0cb",
+        "published": "41ca483f4d53f7e732054b0cf54438f8f9e3a2f7ab13db714f6162f2e48d5f8a",
+        "study_file": "evidence/public-editor-snap-connection-contracts.json"
+      },
+      {
+        "pointer": "/files/22/bytes",
+        "captured": 6815,
+        "published": 6600,
+        "study_file": "evidence/public-editor-snap-connection-contracts.json"
+      },
+      {
+        "pointer": "/files/23/sha256",
+        "captured": "12a6a9b270191140a262df68e378eebe717181ca611091e3a2a9b5673425d546",
+        "published": "f3d528b8f8f1eea64859adc528e9718bfac23490103c7adc3156c389da9f8661",
+        "study_file": "evidence/editor-snap-connection-verification.json"
+      },
+      {
+        "pointer": "/files/23/bytes",
+        "captured": 2028,
+        "published": 2713,
+        "study_file": "evidence/editor-snap-connection-verification.json"
+      }
+    ],
+    "followup_reference_refresh": [
+      {
+        "recorded_at_pacific": "2026-10-13T03:07:56.620444-07:00",
+        "reason": "Remove six trailing blank lines reported by Git whitespace check; preserve source logic and historical values",
+        "reference_changes": [
+          {
+            "pointer": "/test_suites/2/script_sha256",
+            "captured": "3c11be913d412e83ad40bc2e4883dce6c00615c70feb6e7ebb8f192fe78d1ea6",
+            "published": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51",
+            "study_file": "checks/verify_reaction_secondary_examples.py"
+          },
+          {
+            "pointer": "/files/6/sha256",
+            "captured": "a0f9f287d6e24b300783f7b9d3f61a98d7f464e3e5c2fef76bead92cc1d85394",
+            "published": "340a9a64b80ae0f3ee3d9bf0397e43bace27e8cbde9d8f2745e8796d19dbfd61",
+            "study_file": "47-hit-reactions-action-interruption-and-ai-recovery.md"
+          },
+          {
+            "pointer": "/files/6/bytes",
+            "captured": 12437,
+            "published": 12436,
+            "study_file": "47-hit-reactions-action-interruption-and-ai-recovery.md"
+          },
+          {
+            "pointer": "/files/7/sha256",
+            "captured": "22de0abc136e6bb840ff30e395868dc05819c735d995440ac7b26bfa61e83b30",
+            "published": "57a8e43d9ba9bfc969581cabbbff5227cf741ff3cf65f15384bae0db8fbb7356",
+            "study_file": "48-secondary-motion-passive-appendages-and-active-takeover.md"
+          },
+          {
+            "pointer": "/files/7/bytes",
+            "captured": 13082,
+            "published": 13081,
+            "study_file": "48-secondary-motion-passive-appendages-and-active-takeover.md"
+          },
+          {
+            "pointer": "/files/13/sha256",
+            "captured": "3c11be913d412e83ad40bc2e4883dce6c00615c70feb6e7ebb8f192fe78d1ea6",
+            "published": "372ee097dbf272fdcda5223dac203f2a210753f809a1286bd29098ed44afcd51",
+            "study_file": "checks/verify_reaction_secondary_examples.py"
+          },
+          {
+            "pointer": "/files/13/bytes",
+            "captured": 17279,
+            "published": 17278,
+            "study_file": "checks/verify_reaction_secondary_examples.py"
+          },
+          {
+            "pointer": "/files/21/sha256",
+            "captured": "f4cbab8db3b6cda0df19bbce98a11343c4e1f5531b13c086ddb01bb0fb506b15",
+            "published": "ea742b8b1ada309ba013506220edcb41347958e841c5cc6f74a827cd8dd01c57",
+            "study_file": "evidence/reaction-secondary-verification.json"
+          },
+          {
+            "pointer": "/files/21/bytes",
+            "captured": 5112,
+            "published": 7046,
+            "study_file": "evidence/reaction-secondary-verification.json"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "verified_at_pacific": "2026-10-12 14:29:37 PDT",
+  "kind": "research-validation-not-Spore-runtime-or-production-AI",
+  "target_digest_matched": true,
+  "package_digests_matched": true,
+  "local_selected_resources": 8,
+  "local_full_strings_rechecked": 18,
+  "public_pinned_headers": 7,
+  "public_registry_selected_names": 53,
+  "checks": [
+    {
+      "path": "checks/verify_perception_reader.py",
+      "tests": 4,
+      "exit_code": 0
+    },
+    {
+      "path": "checks/verify_perception_motive_examples.py",
+      "tests": 11,
+      "exit_code": 0
+    }
+  ],
+  "documents_utf8_and_fences_checked": 30,
+  "relative_links_checked": 166,
+  "doc_links_status": "passed; verification artifact created by this run",
+  "findings_status": {
+    "perception_tuning": "partially answered: values only",
+    "motive_categories": "partially answered: community declarations",
+    "target_memory": "unresolved original; independent specification supplied",
+    "behavior_selection": "unresolved original; independent specification supplied"
+  },
+  "not_performed": [
+    "decompilation",
+    "game launch/attach",
+    "private save reading",
+    "runtime occlusion/memory/motive observations",
+    "production implementation/build/tests"
+  ],
+  "risks": [
+    "local ABI, tuning units and runtime owner unknown",
+    "inheritance/effective load order unknown",
+    "independent scoring and memory parameters require game calibration"
+  ]
+}

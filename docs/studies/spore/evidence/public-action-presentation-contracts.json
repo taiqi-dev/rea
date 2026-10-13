@@ -1,0 +1,3568 @@
+{
+  "kind": "fixed-public-format-source-locators-not-game-execution",
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "sources": [
+    {
+      "path": "src/sporemodder/file/effects/SoundEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SoundEffect.java",
+      "sha256": "10de95c22008de1a8c6d0599d7f5c90d18fde9088372dda0382525a207d82cb2",
+      "bytes": 7581,
+      "lines": 244,
+      "status": "read",
+      "read_ranges": [
+        [
+          37,
+          76
+        ],
+        [
+          210,
+          242
+        ],
+        [
+          166,
+          210
+        ]
+      ],
+      "selected_lines": [
+        {
+          "line": 37,
+          "text": "@Structure(StructureEndian.BIG_ENDIAN)"
+        },
+        {
+          "line": 38,
+          "text": "public class SoundEffect extends EffectComponent {"
+        },
+        {
+          "line": 39,
+          "text": ""
+        },
+        {
+          "line": 40,
+          "text": "\t/**"
+        },
+        {
+          "line": 41,
+          "text": "\t * The structure metadata used for reading/writing this class."
+        },
+        {
+          "line": 42,
+          "text": "\t */"
+        },
+        {
+          "line": 43,
+          "text": "\tpublic static final StructureMetadata<SoundEffect> STRUCTURE_METADATA = StructureMetadata.generate(SoundEffect.class);"
+        },
+        {
+          "line": 44,
+          "text": "\t"
+        },
+        {
+          "line": 45,
+          "text": "\tpublic static final String KEYWORD = \"sound\";"
+        },
+        {
+          "line": 46,
+          "text": "\tpublic static final int TYPE_CODE = 0x0005;"
+        },
+        {
+          "line": 47,
+          "text": "\t"
+        },
+        {
+          "line": 48,
+          "text": "\tpublic static final EffectComponentFactory FACTORY = new Factory();"
+        },
+        {
+          "line": 49,
+          "text": "\t"
+        },
+        {
+          "line": 50,
+          "text": "\tpublic static final int FLAGS_3D = 1;  // 1 << 0;"
+        },
+        {
+          "line": 51,
+          "text": "\tpublic static final int FLAGS_LOOP = 2;  // 1 << 1;"
+        },
+        {
+          "line": 52,
+          "text": "\tpublic static final int FLAGS_VOLUME = 4;  // 1 << 2;"
+        },
+        {
+          "line": 53,
+          "text": "\tpublic static final int FLAGS_STOP = 8;  // 1 << 3;"
+        },
+        {
+          "line": 54,
+          "text": "\tpublic static final int FLAGS_TRACK = 0x10;  // 1 << 4;"
+        },
+        {
+          "line": 55,
+          "text": "\t"
+        },
+        {
+          "line": 56,
+          "text": "\tpublic static final int MASK_FLAGS = FLAGS_3D | FLAGS_LOOP |"
+        },
+        {
+          "line": 57,
+          "text": "\t\t\tFLAGS_VOLUME | FLAGS_STOP | FLAGS_TRACK;"
+        },
+        {
+          "line": 58,
+          "text": "\t"
+        },
+        {
+          "line": 59,
+          "text": "\tpublic int flags;"
+        },
+        {
+          "line": 60,
+          "text": "\tpublic final ResourceID soundID = new ResourceID();"
+        },
+        {
+          "line": 61,
+          "text": "\tpublic int trackID = 0xCDCDCDCD;  // only used if flags >> 4"
+        },
+        {
+          "line": 62,
+          "text": "\tpublic float invSample = 0.05f;"
+        },
+        {
+          "line": 63,
+          "text": "\tpublic float length;"
+        },
+        {
+          "line": 64,
+          "text": "\tpublic float volume;"
+        },
+        {
+          "line": 65,
+          "text": "\t"
+        },
+        {
+          "line": 66,
+          "text": "\t@Override"
+        },
+        {
+          "line": 67,
+          "text": "\tpublic EffectComponentFactory getFactory() {"
+        },
+        {
+          "line": 68,
+          "text": "\t\treturn FACTORY;"
+        },
+        {
+          "line": 69,
+          "text": "\t}"
+        },
+        {
+          "line": 70,
+          "text": "\t"
+        },
+        {
+          "line": 71,
+          "text": "\tpublic SoundEffect(EffectDirectory effectDirectory, int version) {"
+        },
+        {
+          "line": 72,
+          "text": "\t\tsuper(effectDirectory, version);"
+        },
+        {
+          "line": 73,
+          "text": "\t}"
+        },
+        {
+          "line": 74,
+          "text": "\t"
+        },
+        {
+          "line": 75,
+          "text": "\t@Override public void copy(EffectComponent _effect) {"
+        },
+        {
+          "line": 76,
+          "text": "\t\tSoundEffect effect = (SoundEffect) _effect;"
+        },
+        {
+          "line": 166,
+          "text": "\t}"
+        },
+        {
+          "line": 167,
+          "text": "\t"
+        },
+        {
+          "line": 168,
+          "text": "\tpublic static class Factory implements EffectComponentFactory {"
+        },
+        {
+          "line": 169,
+          "text": "\t\t@Override public Class<? extends EffectComponent> getComponentClass() {"
+        },
+        {
+          "line": 170,
+          "text": "\t\t\treturn SoundEffect.class;"
+        },
+        {
+          "line": 171,
+          "text": "\t\t}"
+        },
+        {
+          "line": 172,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 173,
+          "text": "\t\tpublic int getTypeCode() {"
+        },
+        {
+          "line": 174,
+          "text": "\t\t\treturn TYPE_CODE;"
+        },
+        {
+          "line": 175,
+          "text": "\t\t}"
+        },
+        {
+          "line": 176,
+          "text": ""
+        },
+        {
+          "line": 177,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 178,
+          "text": "\t\tpublic int getMinVersion() {"
+        },
+        {
+          "line": 179,
+          "text": "\t\t\treturn 1;"
+        },
+        {
+          "line": 180,
+          "text": "\t\t}"
+        },
+        {
+          "line": 181,
+          "text": ""
+        },
+        {
+          "line": 182,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 183,
+          "text": "\t\tpublic int getMaxVersion() {"
+        },
+        {
+          "line": 184,
+          "text": "\t\t\treturn 1;"
+        },
+        {
+          "line": 185,
+          "text": "\t\t}"
+        },
+        {
+          "line": 186,
+          "text": "\t\t"
+        },
+        {
+          "line": 187,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 188,
+          "text": "\t\tpublic void addEffectParser(ArgScriptStream<EffectUnit> stream) {"
+        },
+        {
+          "line": 189,
+          "text": "\t\t\tstream.addParser(KEYWORD, new Parser());"
+        },
+        {
+          "line": 190,
+          "text": "\t\t}"
+        },
+        {
+          "line": 191,
+          "text": "\t\t"
+        },
+        {
+          "line": 192,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 193,
+          "text": "\t\tpublic void addGroupEffectParser(ArgScriptBlock<EffectUnit> effectBlock) {"
+        },
+        {
+          "line": 194,
+          "text": "\t\t\teffectBlock.addParser(KEYWORD, new GroupParser());"
+        },
+        {
+          "line": 195,
+          "text": "\t\t}"
+        },
+        {
+          "line": 196,
+          "text": "\t\t"
+        },
+        {
+          "line": 197,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 198,
+          "text": "\t\tpublic EffectComponent create(EffectDirectory effectDirectory, int version) {"
+        },
+        {
+          "line": 199,
+          "text": "\t\t\treturn new SoundEffect(effectDirectory, version);"
+        },
+        {
+          "line": 200,
+          "text": "\t\t}"
+        },
+        {
+          "line": 201,
+          "text": ""
+        },
+        {
+          "line": 202,
+          "text": "\t\t@Override"
+        },
+        {
+          "line": 203,
+          "text": "\t\tpublic boolean onlySupportsInline() {"
+        },
+        {
+          "line": 204,
+          "text": "\t\t\treturn true;"
+        },
+        {
+          "line": 205,
+          "text": "\t\t}"
+        },
+        {
+          "line": 206,
+          "text": ""
+        },
+        {
+          "line": 207,
+          "text": "\t\t@Override public String getKeyword() {"
+        },
+        {
+          "line": 208,
+          "text": "\t\t\treturn KEYWORD;"
+        },
+        {
+          "line": 209,
+          "text": "\t\t}"
+        },
+        {
+          "line": 210,
+          "text": "\t}"
+        },
+        {
+          "line": 211,
+          "text": "\t"
+        },
+        {
+          "line": 212,
+          "text": "\t@Override"
+        },
+        {
+          "line": 213,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 214,
+          "text": "\t\tSTRUCTURE_METADATA.read(this, stream);"
+        },
+        {
+          "line": 215,
+          "text": "\t}"
+        },
+        {
+          "line": 216,
+          "text": ""
+        },
+        {
+          "line": 217,
+          "text": "\t@Override"
+        },
+        {
+          "line": 218,
+          "text": "\tpublic void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 219,
+          "text": "\t\tSTRUCTURE_METADATA.write(this, stream);"
+        },
+        {
+          "line": 220,
+          "text": "\t}"
+        },
+        {
+          "line": 221,
+          "text": ""
+        },
+        {
+          "line": 222,
+          "text": "\t@Override"
+        },
+        {
+          "line": 223,
+          "text": "\tpublic void toArgScript(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 224,
+          "text": "\t\twriter.command(KEYWORD).option(\"name\").arguments(soundID);"
+        },
+        {
+          "line": 225,
+          "text": "\t\t"
+        },
+        {
+          "line": 226,
+          "text": "\t\tif ((flags & FLAGS_TRACK) != 0) writer.option(\"id\").arguments(HashManager.get().getFileName(trackID));"
+        },
+        {
+          "line": 227,
+          "text": "\t\t"
+        },
+        {
+          "line": 228,
+          "text": "\t\twriter.flag(\"loop\", (flags & FLAGS_LOOP) != 0);"
+        },
+        {
+          "line": 229,
+          "text": "\t\twriter.flag(\"stop\", (flags & FLAGS_STOP) != 0);"
+        },
+        {
+          "line": 230,
+          "text": "\t\twriter.flag(\"3d\", (flags & FLAGS_3D) != 0);"
+        },
+        {
+          "line": 231,
+          "text": "\t\t"
+        },
+        {
+          "line": 232,
+          "text": "\t\tif (invSample != 0.05f) {"
+        },
+        {
+          "line": 233,
+          "text": "\t\t\twriter.option(\"sample\").floats(invSample == 0 ? 0 : (1 / invSample));"
+        },
+        {
+          "line": 234,
+          "text": "\t\t}"
+        },
+        {
+          "line": 235,
+          "text": "\t\tif ((flags & FLAGS_VOLUME) != 0) {"
+        },
+        {
+          "line": 236,
+          "text": "\t\t\twriter.option(\"volume\").floats(volume);"
+        },
+        {
+          "line": 237,
+          "text": "\t\t}"
+        },
+        {
+          "line": 238,
+          "text": "\t\t"
+        },
+        {
+          "line": 239,
+          "text": "\t\tint maskedFlags = flags & ~MASK_FLAGS;"
+        },
+        {
+          "line": 240,
+          "text": "\t\tif (maskedFlags != 0) {"
+        },
+        {
+          "line": 241,
+          "text": "\t\t\twriter.option(\"soundFlags\").arguments(\"0x\" + Integer.toHexString(maskedFlags));"
+        },
+        {
+          "line": 242,
+          "text": "\t\t}"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/effects/ParticleEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/ParticleEffect.java",
+      "sha256": "79672d4596aee78121f7924a86ce7f1151a98ee922a06ef1c9e66a8d23bab0e0",
+      "bytes": 70193,
+      "lines": 1945,
+      "status": "read",
+      "selected_lines": [
+        {
+          "line": 46,
+          "text": "@Structure(StructureEndian.BIG_ENDIAN)"
+        },
+        {
+          "line": 53,
+          "text": "\tpublic static final int TYPE_CODE = 0x0001;"
+        },
+        {
+          "line": 120,
+          "text": "\t@StructureFieldMethod(read=\"readFlags\", write=\"writeFlags\")"
+        },
+        {
+          "line": 122,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] life = new float[2];"
+        },
+        {
+          "line": 124,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitDelay = {-1, -1};"
+        },
+        {
+          "line": 125,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitRetrigger = {-1, -1};"
+        },
+        {
+          "line": 126,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitDirectionBBMin = {0, 0, 1};"
+        },
+        {
+          "line": 127,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitDirectionBBMax = {0, 0, 1};"
+        },
+        {
+          "line": 128,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitSpeed = new float[2];"
+        },
+        {
+          "line": 129,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitVolumeBBMin = new float[3];"
+        },
+        {
+          "line": 130,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] emitVolumeBBMax = new float[3];"
+        },
+        {
+          "line": 133,
+          "text": "\t@StructureLength.Value(32) public final List<Float> rate = new ArrayList<Float>();"
+        },
+        {
+          "line": 139,
+          "text": "\t@StructureLength.Value(32) public final List<Float> size = new ArrayList<Float>(Arrays.asList(1.0f));"
+        },
+        {
+          "line": 142,
+          "text": "\t@StructureLength.Value(32) public final List<Float> aspectRatio = new ArrayList<Float>(Arrays.asList(1.0f));"
+        },
+        {
+          "line": 145,
+          "text": "\tpublic float rotationVary;"
+        },
+        {
+          "line": 146,
+          "text": "\tpublic float rotationOffset;"
+        },
+        {
+          "line": 147,
+          "text": "\t@StructureLength.Value(32) public final List<Float> rotate = new ArrayList<Float>(Arrays.asList(0.0f));"
+        },
+        {
+          "line": 149,
+          "text": "\t@StructureLength.Value(32) public final List<Float> alpha = new ArrayList<Float>(Arrays.asList(1.0f));"
+        },
+        {
+          "line": 152,
+          "text": "\t@StructureLength.Value(32) public final List<ColorRGB> color = new ArrayList<ColorRGB>(Arrays.asList(ColorRGB.white()));"
+        },
+        {
+          "line": 157,
+          "text": "\t@StructureUnsigned(8) public int physicsType;"
+        },
+        {
+          "line": 158,
+          "text": "\t@StructureUnsigned(8) public int overrideSet;"
+        },
+        {
+          "line": 159,
+          "text": "\t@StructureUnsigned(8) public final int[] tileCount = {1, 1};"
+        },
+        {
+          "line": 160,
+          "text": "\t@StructureUnsigned(8) public int alignMode;  // byte"
+        },
+        {
+          "line": 161,
+          "text": "\t@StructureUnsigned(8) public int frameStart;  // byte"
+        },
+        {
+          "line": 166,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] directionForcesSum = new float[3];"
+        },
+        {
+          "line": 170,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] radialForceLocation = new float[3];"
+        },
+        {
+          "line": 175,
+          "text": "\t@StructureLength.Value(32) public final List<ParticleWiggle> wiggles = new ArrayList<ParticleWiggle>();"
+        },
+        {
+          "line": 177,
+          "text": "\t@StructureUnsigned(8) public int screenBloomAlphaRate;"
+        },
+        {
+          "line": 178,
+          "text": "\t@StructureUnsigned(8) public int screenBloomAlphaBase = 255;"
+        },
+        {
+          "line": 179,
+          "text": "\t@StructureUnsigned(8) public int screenBloomScaleRate;"
+        },
+        {
+          "line": 180,
+          "text": "\t@StructureUnsigned(8) public int screenBloomScaleBase = 255;"
+        },
+        {
+          "line": 182,
+          "text": "\t@StructureLength.Value(32) public final List<ColorRGB> loopBoxColor = new ArrayList<ColorRGB>();"
+        },
+        {
+          "line": 183,
+          "text": "\t@StructureLength.Value(32) public final List<Float> loopBoxAlpha = new ArrayList<Float>();"
+        },
+        {
+          "line": 185,
+          "text": "\t@StructureFieldMethod(read=\"readSurfaces\", write=\"writeSurfaces\")"
+        },
+        {
+          "line": 195,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] altitudeRange = {-10000, 10000};"
+        },
+        {
+          "line": 203,
+          "text": "\t@StructureFieldEndian(StructureEndian.LITTLE_ENDIAN) public final float[] attractorOrigin = new float[3];"
+        },
+        {
+          "line": 206,
+          "text": "\t@StructureLength.Value(32) public final List<ParticlePathPoint> pathPoints = new ArrayList<ParticlePathPoint>();"
+        },
+        {
+          "line": 238,
+          "text": "\t\trotationVary = effect.rotationVary;"
+        },
+        {
+          "line": 239,
+          "text": "\t\trotationOffset = effect.rotationOffset;"
+        },
+        {
+          "line": 300,
+          "text": "\tvoid readFlags(String fieldName, StreamReader in) throws IOException {"
+        },
+        {
+          "line": 311,
+          "text": "\tvoid writeFlags(String fieldName, StreamWriter out, Object value) throws IOException {"
+        },
+        {
+          "line": 324,
+          "text": "\tvoid readSurfaces(String fieldName, StreamReader in) throws IOException {"
+        },
+        {
+          "line": 333,
+          "text": "\tvoid writeSurfaces(String fieldName, StreamWriter out, Object value) throws IOException {"
+        },
+        {
+          "line": 430,
+          "text": "\t\t\t\t\teffect.rotationVary = value.floatValue();"
+        },
+        {
+          "line": 433,
+          "text": "\t\t\t\t\teffect.rotationOffset = value.floatValue();"
+        },
+        {
+          "line": 679,
+          "text": "\t\t\t\tif (line.hasFlag(\"scaleParticles\")) {"
+        },
+        {
+          "line": 723,
+          "text": "\t\t\t\tif (line.hasFlag(\"scaleExisting\")) effect.flags.set(FLAGBIT_EMIT_SCALE_EXISTING);"
+        },
+        {
+          "line": 834,
+          "text": "\t\t\t\t\tfloat scale = Optional.ofNullable(stream.parseFloat(args, 2)).orElse(0f);"
+        },
+        {
+          "line": 836,
+          "text": "\t\t\t\t\titem.wiggleDirection[0] = (float)Math.cos(ratio * Math.PI * 2) * scale;"
+        },
+        {
+          "line": 837,
+          "text": "\t\t\t\t\titem.wiggleDirection[1] = (float)Math.sin(ratio * Math.PI * 2) * -scale;"
+        },
+        {
+          "line": 1411,
+          "text": "\t\t\treturn TYPE_CODE;"
+        },
+        {
+          "line": 1431,
+          "text": "\t\t\teffectBlock.addParser(KEYWORD, VisualEffectBlock.createGroupParser(TYPE_CODE));"
+        },
+        {
+          "line": 1451,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 1456,
+          "text": "\tpublic void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 1489,
+          "text": "\t\tif (!writer.isDefault(rotate, 0.0f) || rotationVary != 0.0f || rotationOffset != 0.0f)"
+        },
+        {
+          "line": 1492,
+          "text": "\t\t\tif (rotationVary != 0) writer.option(\"vary\").floats(rotationVary);"
+        },
+        {
+          "line": 1493,
+          "text": "\t\t\tif (rotationOffset != 0) writer.option(\"offset\").floats(rotationOffset);"
+        },
+        {
+          "line": 1542,
+          "text": "\tprivate void writeSource(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1585,
+          "text": "\t\t\twriter.flag(\"scaleParticles\", flags.get(FLAGBIT_SOURCE_SCALE_PARTICLES));"
+        },
+        {
+          "line": 1590,
+          "text": "\tprivate void writeEmit(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1631,
+          "text": "\t\t\twriter.option(\"scaleExisting\");"
+        },
+        {
+          "line": 1635,
+          "text": "\tprivate void writeForce(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1682,
+          "text": "\tprivate void writeWiggles(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1695,
+          "text": "\tprivate void writeWarp(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1717,
+          "text": "\tprivate void writeWalk(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1745,
+          "text": "\tprivate void writeLife(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1760,
+          "text": "\tprivate void writeRate(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1819,
+          "text": "\tprivate void writeResource(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1843,
+          "text": "\tprivate void writeFrames(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1853,
+          "text": "\tprivate void writeEmitMap(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1870,
+          "text": "\tprivate void writeCollideMap(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1887,
+          "text": "\tprivate void writeRepelMap(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1902,
+          "text": "\tprivate void writeAdvectMap(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1912,
+          "text": "\tprivate void writeForceMap(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 1928,
+          "text": "\t\t\tlist.add(effectDirectory.getResource(MapResource.TYPE_CODE, surface.surfaceMapID));"
+        },
+        {
+          "line": 1931,
+          "text": "\t\tlist.add(effectDirectory.getResource(MapResource.TYPE_CODE, mapEmitColor));"
+        },
+        {
+          "line": 1932,
+          "text": "\t\tlist.add(effectDirectory.getResource(MapResource.TYPE_CODE, mapForce));"
+        },
+        {
+          "line": 1933,
+          "text": "\t\tlist.add(effectDirectory.getResource(MapResource.TYPE_CODE, mapEmit));"
+        },
+        {
+          "line": 1937,
+          "text": "\t\t\t\tlist.add(effectDirectory.getResource(MaterialResource.TYPE_CODE, texture.resource2));"
+        },
+        {
+          "line": 1939,
+          "text": "\t\t\t\tlist.add(effectDirectory.getResource(MaterialResource.TYPE_CODE, texture.resource));"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/effects/EffectDirectory.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/EffectDirectory.java",
+      "sha256": "4baa199c0b9fa89b67c1f1bde70628a23f60d0a4684b895e7975627a3f7f3952",
+      "bytes": 26708,
+      "lines": 848,
+      "status": "read",
+      "selected_lines": [
+        {
+          "line": 148,
+          "text": "\tprivate final Map<String, VisualEffect> exports = new HashMap<String, VisualEffect>();"
+        },
+        {
+          "line": 149,
+          "text": "\tprivate final List<ImportEffect> imports = new ArrayList<ImportEffect>();"
+        },
+        {
+          "line": 188,
+          "text": "\t\t\t// Now, imports are read last which means that probably, this index does not exist"
+        },
+        {
+          "line": 190,
+          "text": "\t\t\tif (index >= imports.size()) {"
+        },
+        {
+          "line": 191,
+          "text": "\t\t\t\tfor (int i = imports.size(); i <= index; ++i) {"
+        },
+        {
+          "line": 192,
+          "text": "\t\t\t\t\timports.add(new ImportEffect(this));"
+        },
+        {
+          "line": 195,
+          "text": "\t\t\treturn imports.get(index);"
+        },
+        {
+          "line": 243,
+          "text": "\t\t\timports.add(imp);"
+        },
+        {
+          "line": 277,
+          "text": "\t\texports.putAll(unit.getExports());"
+        },
+        {
+          "line": 279,
+          "text": "\t\texportedImports.putAll(unit.getExportedImports());"
+        },
+        {
+          "line": 304,
+          "text": "\t\t\treturn findIndex(imports, (ImportEffect) component) | ImportEffect.MASK;"
+        },
+        {
+          "line": 354,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 429,
+          "text": "\t\tcomponentOffsets[VisualEffect.TYPE_CODE] = stream.getFilePointer();"
+        },
+        {
+          "line": 432,
+          "text": "\t\tcomponents.set(VisualEffect.TYPE_CODE, effectsList);"
+        },
+        {
+          "line": 434,
+          "text": "\t\t\tEffectComponent component = factories[VisualEffect.TYPE_CODE].create(this, version);"
+        },
+        {
+          "line": 461,
+          "text": "\t\t// Visual effects must be read last, because after them come the exports"
+        },
+        {
+          "line": 474,
+          "text": "\t\t\tstream.skip(4);  // groupID, never used"
+        },
+        {
+          "line": 478,
+          "text": "\t\t\t\t// It is exporting an imported effect, but we can add it yet cause we haven't read the imports"
+        },
+        {
+          "line": 482,
+          "text": "\t\t\t\texports.put(name, (VisualEffect) effectsList.get(effectIndex));"
+        },
+        {
+          "line": 499,
+          "text": "\t\t\tstream.skip(4);  // groupID, never used"
+        },
+        {
+          "line": 504,
+          "text": "\t\t\tif (i < imports.size()) {"
+        },
+        {
+          "line": 505,
+          "text": "\t\t\t\teffect = imports.get(i);"
+        },
+        {
+          "line": 508,
+          "text": "\t\t\t\timports.add(effect);"
+        },
+        {
+          "line": 515,
+          "text": "\t\t\texportedImports.put(entry.getValue(), imports.get(entry.getKey()));"
+        },
+        {
+          "line": 519,
+          "text": "\tpublic void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 530,
+          "text": "\t\t\tif (i == VisualEffect.TYPE_CODE) {"
+        },
+        {
+          "line": 553,
+          "text": "\t\t\t// Store the current position (so we can return to it), go back and write the size"
+        },
+        {
+          "line": 582,
+          "text": "\t\t\t// Store the current position (so we can return to it), go back and write the size"
+        },
+        {
+          "line": 593,
+          "text": "\t\tList<EffectComponent> effects = components.get(VisualEffect.TYPE_CODE);"
+        },
+        {
+          "line": 606,
+          "text": "\t\tfor (Map.Entry<String, VisualEffect> entry : exports.entrySet()) {"
+        },
+        {
+          "line": 612,
+          "text": "\t\t\tstream.writeInt(getIndex(VisualEffect.TYPE_CODE, entry.getValue()));"
+        },
+        {
+          "line": 619,
+          "text": "\t\tstream.writeInt(imports.size());"
+        },
+        {
+          "line": 620,
+          "text": "\t\tfor (ImportEffect eff : imports) {"
+        },
+        {
+          "line": 640,
+          "text": "\t\t\twriter.write(new File(outputFolder, \"exported_imports.pfx\"));"
+        },
+        {
+          "line": 658,
+          "text": "\t\tfor (Map.Entry<String, VisualEffect> export : exports.entrySet()) {"
+        },
+        {
+          "line": 690,
+          "text": "\t\tif (writtenEffects[VisualEffect.TYPE_CODE] != null) {"
+        },
+        {
+          "line": 691,
+          "text": "\t\t\tList<EffectComponent> list = components.get(VisualEffect.TYPE_CODE);"
+        },
+        {
+          "line": 692,
+          "text": "\t\t\tfor (int i = 0; i < writtenEffects[VisualEffect.TYPE_CODE].length; ++i) {"
+        },
+        {
+          "line": 693,
+          "text": "\t\t\t\tif (!writtenEffects[VisualEffect.TYPE_CODE][i]) {"
+        },
+        {
+          "line": 740,
+          "text": "\tprivate void writeEffectsPfxRecursive(EffectFileElement element, ArgScriptWriter writer, "
+        },
+        {
+          "line": 744,
+          "text": "\t\t\t// imports"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/effects/VisualEffectBlock.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/VisualEffectBlock.java",
+      "sha256": "42ec423220761ace8969f4e493edb614a51152f2fbf15b5dff33f0ae56e10581",
+      "bytes": 16272,
+      "lines": 479,
+      "status": "read",
+      "read_ranges": [
+        [
+          65,
+          103
+        ],
+        [
+          139,
+          164
+        ]
+      ],
+      "selected_lines": [
+        {
+          "line": 65,
+          "text": "\tpublic static final int FLAGS_PARTICLE_SEQUENCE = 2;  // 1 << 1"
+        },
+        {
+          "line": 66,
+          "text": "\t"
+        },
+        {
+          "line": 67,
+          "text": "\tpublic static final int FLAGS_STATES = 8;  // 1 << 3"
+        },
+        {
+          "line": 68,
+          "text": "\t"
+        },
+        {
+          "line": 69,
+          "text": "\tpublic static final int FLAGS_IGNORE_PARAMS = 0x20;  // 1 << 5"
+        },
+        {
+          "line": 70,
+          "text": "\tpublic static final int FLAGS_RIGID = 0x40;  // 1 << 6"
+        },
+        {
+          "line": 71,
+          "text": "\t"
+        },
+        {
+          "line": 72,
+          "text": "\tpublic static final int MASK_FLAGS = FLAGS_IGNORE_LENGTH | FLAGS_PARTICLE_SEQUENCE |"
+        },
+        {
+          "line": 73,
+          "text": "\t\t\tFLAGS_STATES | FLAGS_IGNORE_PARAMS | FLAGS_RIGID;"
+        },
+        {
+          "line": 74,
+          "text": "\t"
+        },
+        {
+          "line": 75,
+          "text": "\tpublic static final List<String> APP_FLAGS = Arrays.asList(\"kAppFlagDeepWater\", \"kAppFlagShallowWater\", \"kAppFlagLowerAtmosphere\","
+        },
+        {
+          "line": 76,
+          "text": "\t\t\t\"kAppFlagUpperAtmosphere\", \"kAppFlagEnglish\", \"kAppFlagPlanetHasWater\", \"kAppFlagCinematics\", \"kAppFlagCellGameMode\", \"kAppFlagCreatureGameMode\","
+        },
+        {
+          "line": 77,
+          "text": "\t\t\t\"kAppFlagTribeGameMode\", \"kAppFlagGGEMode\", \"kAppFlagCivGameMode\", \"kAppFlagSpaceGameMode\", \"kAppFlagAtmoLow\", \"kAppFlagAtmoMed\","
+        },
+        {
+          "line": 78,
+          "text": "\t\t\t\"kAppFlagAtmoHigh\", \"kAppFlagEditorMode\", \"kAppFlagSpaceGameOutOfUFO\", \"kAppFlagSpaceGameGalaxyMode\", \"kAppFlagSpaceGameSolarMode\","
+        },
+        {
+          "line": 79,
+          "text": "\t\t\t\"kAppFlagSpaceGamePlanetMode\", \"kAppFlagIsNight\", \"kAppFlagIsRaining\", \"kAppFlagWeatherIce\", \"kAppFlagWeatherCold\","
+        },
+        {
+          "line": 80,
+          "text": "\t\t\t\"kAppFlagWeatherWarm\", \"kAppFlagWeatherHot\", \"kAppFlagWeatherLava\");"
+        },
+        {
+          "line": 81,
+          "text": ""
+        },
+        {
+          "line": 82,
+          "text": "\t@StructureUnsigned(8) public int blockType; "
+        },
+        {
+          "line": 83,
+          "text": "\tpublic int flags;"
+        },
+        {
+          "line": 84,
+          "text": "\t@StructureFieldMethod(read=\"readTransform\", write=\"writeTransform\")"
+        },
+        {
+          "line": 85,
+          "text": "\tpublic final Transform transform = new Transform();"
+        },
+        {
+          "line": 86,
+          "text": "\t@StructureUnsigned(8) public int lodBegin = 1;"
+        },
+        {
+          "line": 87,
+          "text": "\t@StructureUnsigned(8) public int lodEnd = 255;"
+        },
+        {
+          "line": 88,
+          "text": "\t@StructureLength.Value(32) public final List<LODScale> lodScales = new ArrayList<LODScale>();"
+        },
+        {
+          "line": 89,
+          "text": "\tpublic float emitScaleBegin = 1.0f;"
+        },
+        {
+          "line": 90,
+          "text": "\tpublic float emitScaleEnd = 1.0f;"
+        },
+        {
+          "line": 91,
+          "text": "\tpublic float sizeScaleBegin = 1.0f;"
+        },
+        {
+          "line": 92,
+          "text": "\tpublic float sizeScaleEnd = 1.0f;"
+        },
+        {
+          "line": 93,
+          "text": "\tpublic float alphaScaleBegin = 1.0f;"
+        },
+        {
+          "line": 94,
+          "text": "\tpublic float alphaScaleEnd = 1.0f;"
+        },
+        {
+          "line": 95,
+          "text": "\tpublic int appFlags;"
+        },
+        {
+          "line": 96,
+          "text": "\tpublic int appFlagsMask;"
+        },
+        {
+          "line": 97,
+          "text": "\t@StructureUnsigned(16) public int selectionGroup;"
+        },
+        {
+          "line": 98,
+          "text": "\t@StructureUnsigned(16) public int selectionChance;"
+        },
+        {
+          "line": 99,
+          "text": "\tpublic float timeScale = 1.0f;"
+        },
+        {
+          "line": 100,
+          "text": "\t@StructureFieldMethod(read=\"readComponent\", write=\"writeComponent\")"
+        },
+        {
+          "line": 101,
+          "text": "\tpublic EffectComponent component;"
+        },
+        {
+          "line": 102,
+          "text": "\t"
+        },
+        {
+          "line": 103,
+          "text": "\t@StructureIgnore private final EffectDirectory effectDirectory; "
+        },
+        {
+          "line": 139,
+          "text": "\tprivate void readTransform(String fieldName, StreamReader in) throws IOException {"
+        },
+        {
+          "line": 140,
+          "text": "\t\tint flags = in.readUShort();"
+        },
+        {
+          "line": 141,
+          "text": "\t\ttransform.setScale(in.readFloat());"
+        },
+        {
+          "line": 142,
+          "text": "\t\ttransform.getRotation().readLE(in);"
+        },
+        {
+          "line": 143,
+          "text": "\t\ttransform.getOffset().readLE(in);"
+        },
+        {
+          "line": 144,
+          "text": "\t\ttransform.setFlags(flags);"
+        },
+        {
+          "line": 145,
+          "text": "\t}"
+        },
+        {
+          "line": 146,
+          "text": "\t"
+        },
+        {
+          "line": 147,
+          "text": "\t@SuppressWarnings(\"unused\")"
+        },
+        {
+          "line": 148,
+          "text": "\tprivate void writeTransform(String fieldName, StreamWriter out, Object value) throws IOException {"
+        },
+        {
+          "line": 149,
+          "text": "\t\tout.writeUShort(transform.getFlags());"
+        },
+        {
+          "line": 150,
+          "text": "\t\tout.writeFloat(transform.getScale());"
+        },
+        {
+          "line": 151,
+          "text": "\t\ttransform.getRotation().writeLE(out);"
+        },
+        {
+          "line": 152,
+          "text": "\t\ttransform.getOffset().writeLE(out);"
+        },
+        {
+          "line": 153,
+          "text": "\t}"
+        },
+        {
+          "line": 154,
+          "text": "\t"
+        },
+        {
+          "line": 155,
+          "text": "\t@SuppressWarnings(\"unused\")"
+        },
+        {
+          "line": 156,
+          "text": "\tprivate void readComponent(String fieldName, StreamReader in) throws IOException {"
+        },
+        {
+          "line": 157,
+          "text": "\t\tcomponent = effectDirectory.getEffect(blockType, in.readInt());"
+        },
+        {
+          "line": 158,
+          "text": "\t}"
+        },
+        {
+          "line": 159,
+          "text": "\t"
+        },
+        {
+          "line": 160,
+          "text": "\t@SuppressWarnings(\"unused\")"
+        },
+        {
+          "line": 161,
+          "text": "\tprivate void writeComponent(String fieldName, StreamWriter out, Object value) throws IOException {"
+        },
+        {
+          "line": 162,
+          "text": "\t\tif (component == null) {"
+        },
+        {
+          "line": 163,
+          "text": "\t\t\tout.writeInt(-1);"
+        },
+        {
+          "line": 164,
+          "text": "\t\t}"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationEvent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationEvent.java",
+      "sha256": "84d425744402b2a4f76fe3ef77d1716888d5d384db95a070a8c4abd6a0bc7333",
+      "bytes": 28346,
+      "lines": 742,
+      "status": "read",
+      "read_ranges": [
+        [
+          39,
+          54
+        ],
+        [
+          169,
+          250
+        ],
+        [
+          292,
+          321
+        ]
+      ],
+      "selected_lines": [
+        {
+          "line": 39,
+          "text": "\tpublic static final int FLAG_DISABLED = 8;"
+        },
+        {
+          "line": 40,
+          "text": "\tpublic static final int FLAG_PREDICATE = 0x1000000;"
+        },
+        {
+          "line": 41,
+          "text": "\tpublic static final int FLAG_CHANCE = 0x2000000;"
+        },
+        {
+          "line": 42,
+          "text": "\tpublic static final int FLAG_TYPE_MASK = 0x20007;"
+        },
+        {
+          "line": 43,
+          "text": "\tpublic static final int FLAG_STOPEFFECT_HARDSTOP = 0x10;"
+        },
+        {
+          "line": 44,
+          "text": "\tpublic static final int FLAG_EFFECT_UPDATEPOSITION = 0x800;"
+        },
+        {
+          "line": 45,
+          "text": "\tpublic static final int FLAG_EFFECT_UPDATEROTATION = 0x4000;"
+        },
+        {
+          "line": 46,
+          "text": "\tpublic static final int FLAG_EFFECT_UPDATESCALE = 0x100000;"
+        },
+        {
+          "line": 47,
+          "text": "\tpublic static final int FLAG_EFFECT_UPDATEPARTICLESCALE = 0x1000;"
+        },
+        {
+          "line": 48,
+          "text": "\t// updates attractor location and intensity"
+        },
+        {
+          "line": 49,
+          "text": "\tpublic static final int FLAG_EFFECT_UPDATEATTRACTOR = 0x2000;"
+        },
+        {
+          "line": 50,
+          "text": "\tpublic static final int FLAG_EFFECT_IDENTITYCOLOR = 0x10000;"
+        },
+        {
+          "line": 51,
+          "text": "\t// by defualt, scale is only applied as kParamParticleSizeScale, with this it's a general effect scale"
+        },
+        {
+          "line": 52,
+          "text": "\tpublic static final int FLAG_EFFECT_APPLYSCALE = 0x200000;"
+        },
+        {
+          "line": 53,
+          "text": "\t"
+        },
+        {
+          "line": 54,
+          "text": "\tpublic static final int FLAG_PARAMETER0_MASK = 0x300;"
+        },
+        {
+          "line": 169,
+          "text": "\t\t\tENUM_FILTER.add(FLAG_FILTER_FIRSTONLY, \"firstOnly\");"
+        },
+        {
+          "line": 170,
+          "text": "\t\t\tENUM_FILTER.add(FLAG_FILTER_ALLEXCEPTFIRST, \"allExceptFirst\");"
+        },
+        {
+          "line": 171,
+          "text": "\t\t\tENUM_FILTER.add(FLAG_FILTER_UNK1, \"unk1\");"
+        },
+        {
+          "line": 172,
+          "text": "\t\t\tENUM_FILTER.add(FLAG_FILTER_UNK2, \"unk2\");"
+        },
+        {
+          "line": 173,
+          "text": "\t\t\tENUM_FILTER.add(FLAG_FILTER_UNK3, \"unk3\");"
+        },
+        {
+          "line": 174,
+          "text": "\t\t\tENUM_FILTER.add(FLAG_FILTER_UNK4, \"unk4\");"
+        },
+        {
+          "line": 175,
+          "text": "\t\t}"
+        },
+        {
+          "line": 176,
+          "text": "\t\t"
+        },
+        {
+          "line": 177,
+          "text": "\t\tpublic static final int FLAG_SCALE_MASK = 0x8180;"
+        },
+        {
+          "line": 178,
+          "text": "\t\tpublic static final int FLAG_SCALE_NOSCALE = 0;"
+        },
+        {
+          "line": 179,
+          "text": "\t\t// The current creature scale"
+        },
+        {
+          "line": 180,
+          "text": "\t\tpublic static final int FLAG_SCALE_CURRENTCREATURESCALE = 0x80;"
+        },
+        {
+          "line": 181,
+          "text": "\t\t// Uses PARAMETER0"
+        },
+        {
+          "line": 182,
+          "text": "\t\tpublic static final int FLAG_SCALE_PARAMETER = 0x100;"
+        },
+        {
+          "line": 183,
+          "text": "\t\t// The creature where the effect is being spawned (may be different than the current creature)"
+        },
+        {
+          "line": 184,
+          "text": "\t\tpublic static final int FLAG_SCALE_CREATURESCALE = 0x180;"
+        },
+        {
+          "line": 185,
+          "text": "\t\t// The current creature scale, multiplied by the boundary distance "
+        },
+        {
+          "line": 186,
+          "text": "\t\tpublic static final int FLAG_SCALE_REALCURRENTCREATURESCALE = 0x8000;"
+        },
+        {
+          "line": 187,
+          "text": "\t\t"
+        },
+        {
+          "line": 188,
+          "text": "\t\tpublic static final ArgScriptEnum ENUM_SCALE = new ArgScriptEnum();"
+        },
+        {
+          "line": 189,
+          "text": "\t\tstatic {"
+        },
+        {
+          "line": 190,
+          "text": "\t\t\tENUM_SCALE.add(FLAG_SCALE_NOSCALE, \"noScale\");"
+        },
+        {
+          "line": 191,
+          "text": "\t\t\tENUM_SCALE.add(FLAG_SCALE_CURRENTCREATURESCALE, \"currentCreatureScale\");"
+        },
+        {
+          "line": 192,
+          "text": "\t\t\tENUM_SCALE.add(FLAG_SCALE_PARAMETER, \"parameter\");"
+        },
+        {
+          "line": 193,
+          "text": "\t\t\tENUM_SCALE.add(FLAG_SCALE_CREATURESCALE, \"creatureScale\");"
+        },
+        {
+          "line": 194,
+          "text": "\t\t\tENUM_SCALE.add(FLAG_SCALE_REALCURRENTCREATURESCALE, \"realCurrentCreatureScale\");"
+        },
+        {
+          "line": 195,
+          "text": "\t\t}"
+        },
+        {
+          "line": 196,
+          "text": "\t\t"
+        },
+        {
+          "line": 197,
+          "text": "\t\tpublic static final int FLAG_ADDPOSITION_MASK = 0x22000;"
+        },
+        {
+          "line": 198,
+          "text": "\t\tpublic static final int FLAG_ADDPOSITION_NONE = 0;"
+        },
+        {
+          "line": 199,
+          "text": "\t\tpublic static final int FLAG_ADDPOSITION_RESTPOSITION = 0x2000;"
+        },
+        {
+          "line": 200,
+          "text": "\t\tpublic static final int FLAG_ADDPOSITION_RANDOM = 0x20000;"
+        },
+        {
+          "line": 201,
+          "text": "\t\tpublic static final int FLAG_ADDPOSITION_RESTEFFECTSORIGIN = 0x22000;"
+        },
+        {
+          "line": 202,
+          "text": "\t\t"
+        },
+        {
+          "line": 203,
+          "text": "\t\tpublic static final ArgScriptEnum ENUM_ADDPOSITION = new ArgScriptEnum();"
+        },
+        {
+          "line": 204,
+          "text": "\t\tstatic {"
+        },
+        {
+          "line": 205,
+          "text": "\t\t\tENUM_ADDPOSITION.add(FLAG_ADDPOSITION_RESTPOSITION, \"restPosition\");"
+        },
+        {
+          "line": 206,
+          "text": "\t\t\tENUM_ADDPOSITION.add(FLAG_ADDPOSITION_RANDOM, \"random\");"
+        },
+        {
+          "line": 207,
+          "text": "\t\t\tENUM_ADDPOSITION.add(FLAG_ADDPOSITION_RESTEFFECTSORIGIN, \"restEffectsOrigin\");"
+        },
+        {
+          "line": 208,
+          "text": "\t\t}"
+        },
+        {
+          "line": 209,
+          "text": "\t\t"
+        },
+        {
+          "line": 210,
+          "text": "\t\tpublic static final int FLAG_POSITION_MASK = 0x11000;"
+        },
+        {
+          "line": 211,
+          "text": "\t\tpublic static final int FLAG_POSITION_DEFAULT = 0;  // just uses the block position"
+        },
+        {
+          "line": 212,
+          "text": "\t\tpublic static final int FLAG_POSITION_USEGROUNDHEIGHT = 0x1000;"
+        },
+        {
+          "line": 213,
+          "text": "\t\tpublic static final int FLAG_POSITION_USEGROUNDHEIGHT2 = 0x10000;"
+        },
+        {
+          "line": 214,
+          "text": "\t\tpublic static final int FLAG_POSITION_UNK = 0x11000;"
+        },
+        {
+          "line": 215,
+          "text": "\t\t"
+        },
+        {
+          "line": 216,
+          "text": "\t\tpublic static final ArgScriptEnum ENUM_POSITION = new ArgScriptEnum();"
+        },
+        {
+          "line": 217,
+          "text": "\t\tstatic {"
+        },
+        {
+          "line": 218,
+          "text": "\t\t\tENUM_POSITION.add(FLAG_POSITION_USEGROUNDHEIGHT, \"groundHeight\");"
+        },
+        {
+          "line": 219,
+          "text": "\t\t\tENUM_POSITION.add(FLAG_POSITION_USEGROUNDHEIGHT2, \"groundHeight2\");"
+        },
+        {
+          "line": 220,
+          "text": "\t\t\tENUM_POSITION.add(FLAG_POSITION_UNK, \"unk\");"
+        },
+        {
+          "line": 221,
+          "text": "\t\t}"
+        },
+        {
+          "line": 222,
+          "text": "\t\t"
+        },
+        {
+          "line": 223,
+          "text": "\t\tpublic static final int FLAG_ROTATION_MASK = 0xE00;"
+        },
+        {
+          "line": 224,
+          "text": "\t\tpublic static final int FLAG_ROTATION_DEFAULT = 0;"
+        },
+        {
+          "line": 225,
+          "text": "\t\tpublic static final int FLAG_ROTATION_UNK1 = 0x200;"
+        },
+        {
+          "line": 226,
+          "text": "\t\tpublic static final int FLAG_ROTATION_CREATUREROTATION = 0x400;"
+        },
+        {
+          "line": 227,
+          "text": "\t\tpublic static final int FLAG_ROTATION_UNK2 = 0x600;"
+        },
+        {
+          "line": 228,
+          "text": "\t\tpublic static final int FLAG_ROTATION_GROUNDNORMAL = 0x800;"
+        },
+        {
+          "line": 229,
+          "text": "\t\tpublic static final int FLAG_ROTATION_NOROTATION = 0xA00;"
+        },
+        {
+          "line": 230,
+          "text": "\t\t"
+        },
+        {
+          "line": 231,
+          "text": "\t\tpublic static final ArgScriptEnum ENUM_ROTATION = new ArgScriptEnum();"
+        },
+        {
+          "line": 232,
+          "text": "\t\tstatic {"
+        },
+        {
+          "line": 233,
+          "text": "\t\t\tENUM_ROTATION.add(FLAG_ROTATION_UNK1, \"unk1\");"
+        },
+        {
+          "line": 234,
+          "text": "\t\t\tENUM_ROTATION.add(FLAG_ROTATION_CREATUREROTATION, \"creatureRotation\");"
+        },
+        {
+          "line": 235,
+          "text": "\t\t\tENUM_ROTATION.add(FLAG_ROTATION_UNK2, \"unk2\");"
+        },
+        {
+          "line": 236,
+          "text": "\t\t\tENUM_ROTATION.add(FLAG_ROTATION_GROUNDNORMAL, \"groundNormal\");"
+        },
+        {
+          "line": 237,
+          "text": "\t\t\tENUM_ROTATION.add(FLAG_ROTATION_NOROTATION, \"noRotation\");"
+        },
+        {
+          "line": 238,
+          "text": "\t\t}"
+        },
+        {
+          "line": 239,
+          "text": "\t\t"
+        },
+        {
+          "line": 240,
+          "text": "\t\t// applies some weird thing to the rotation, only if the body.x > 0 (right hand)"
+        },
+        {
+          "line": 241,
+          "text": "\t\tpublic static final int FLAG_HANDEDNESS_MASK = 0x70000000;"
+        },
+        {
+          "line": 242,
+          "text": "\t\tpublic static final int FLAG_HANDEDNESS_NONE = 0x00000000;"
+        },
+        {
+          "line": 243,
+          "text": "\t\tpublic static final int FLAG_HANDEDNESS_UNK1 = 0x10000000;"
+        },
+        {
+          "line": 244,
+          "text": "\t\tpublic static final int FLAG_HANDEDNESS_UNK2 = 0x20000000;"
+        },
+        {
+          "line": 245,
+          "text": "\t\tpublic static final int FLAG_HANDEDNESS_UNK3 = 0x30000000;"
+        },
+        {
+          "line": 246,
+          "text": "\t\t"
+        },
+        {
+          "line": 247,
+          "text": "\t\tpublic static final ArgScriptEnum ENUM_HANDEDNESS = new ArgScriptEnum();"
+        },
+        {
+          "line": 248,
+          "text": "\t\tstatic {"
+        },
+        {
+          "line": 249,
+          "text": "\t\t\tENUM_HANDEDNESS.add(FLAG_HANDEDNESS_UNK1, \"unk1\");"
+        },
+        {
+          "line": 250,
+          "text": "\t\t\tENUM_HANDEDNESS.add(FLAG_HANDEDNESS_UNK2, \"unk2\");"
+        },
+        {
+          "line": 292,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 293,
+          "text": "\t\tflags = stream.readLEInt();"
+        },
+        {
+          "line": 294,
+          "text": "\t\t"
+        },
+        {
+          "line": 295,
+          "text": "\t\tfor (int i = 0; i < 4; ++i) {"
+        },
+        {
+          "line": 296,
+          "text": "\t\t\tselectors[i].flags = stream.readLEInt();"
+        },
+        {
+          "line": 297,
+          "text": "\t\t\tselectors[i].selectFlags = stream.readLEInt();"
+        },
+        {
+          "line": 298,
+          "text": "\t\t\tselectors[i].selectCapability = stream.readString(StringEncoding.ASCII, 4);"
+        },
+        {
+          "line": 299,
+          "text": "\t\t}"
+        },
+        {
+          "line": 300,
+          "text": "\t\t"
+        },
+        {
+          "line": 301,
+          "text": "\t\tint value = stream.readLEInt();"
+        },
+        {
+          "line": 302,
+          "text": "\t\tif (value == -1) archetype = \"default\";"
+        },
+        {
+          "line": 303,
+          "text": "\t\telse if (value == 0) archetype = null;"
+        },
+        {
+          "line": 304,
+          "text": "\t\telse {"
+        },
+        {
+          "line": 305,
+          "text": "\t\t\tarchetype = new String(new byte[] {(byte)(value & 0xFF), (byte)((value & 0xFF00) >> 8), (byte)((value & 0xFF0000) >> 16), (byte)((value & 0xFF000000) >> 24)}, \"US-ASCII\");"
+        },
+        {
+          "line": 306,
+          "text": "\t\t}"
+        },
+        {
+          "line": 307,
+          "text": ""
+        },
+        {
+          "line": 308,
+          "text": "\t\teventGroup = stream.readLEInt();"
+        },
+        {
+          "line": 309,
+          "text": "\t\tid = stream.readLEInt();"
+        },
+        {
+          "line": 310,
+          "text": "\t\tlong offset = stream.readLEUInt();"
+        },
+        {
+          "line": 311,
+          "text": "\t\tparameter0 = stream.readLEInt();"
+        },
+        {
+          "line": 312,
+          "text": "\t\tmaxSqrDist = stream.readLEFloat();"
+        },
+        {
+          "line": 313,
+          "text": "\t\tparameter1 = stream.readLEInt();"
+        },
+        {
+          "line": 314,
+          "text": "\t\tpredicate.read(stream);"
+        },
+        {
+          "line": 315,
+          "text": "\t\t"
+        },
+        {
+          "line": 316,
+          "text": "\t\tif (id != 0) {"
+        },
+        {
+          "line": 317,
+          "text": "\t\t\tstream.seek(offset);"
+        },
+        {
+          "line": 318,
+          "text": "\t\t\tname = stream.readCString(StringEncoding.ASCII);"
+        },
+        {
+          "line": 319,
+          "text": "\t\t}"
+        },
+        {
+          "line": 320,
+          "text": "\t}"
+        },
+        {
+          "line": 321,
+          "text": "\t"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/effects/ResourceID.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/ResourceID.java",
+      "sha256": "d5a56f70a4afb6eeec718068d28e29b0b9ff37fc07110d0e1749f0e212363711",
+      "bytes": 6197,
+      "lines": 238,
+      "status": "read",
+      "read_ranges": [
+        [
+          25,
+          140
+        ]
+      ],
+      "selected_lines": [
+        {
+          "line": 25,
+          "text": "import sporemodder.file.filestructures.Structure;"
+        },
+        {
+          "line": 26,
+          "text": "import sporemodder.file.filestructures.StructureEndian;"
+        },
+        {
+          "line": 27,
+          "text": "import sporemodder.file.filestructures.metadata.StructureMetadata;"
+        },
+        {
+          "line": 28,
+          "text": "import sporemodder.HashManager;"
+        },
+        {
+          "line": 29,
+          "text": "import sporemodder.file.DocumentError;"
+        },
+        {
+          "line": 30,
+          "text": "import sporemodder.file.argscript.ArgScriptArguments;"
+        },
+        {
+          "line": 31,
+          "text": ""
+        },
+        {
+          "line": 32,
+          "text": "@Structure(StructureEndian.BIG_ENDIAN)"
+        },
+        {
+          "line": 33,
+          "text": "/**"
+        },
+        {
+          "line": 34,
+          "text": " * A basic class that points to a resource, using a group ID (folder) and instance ID (file)."
+        },
+        {
+          "line": 35,
+          "text": " */"
+        },
+        {
+          "line": 36,
+          "text": "public class ResourceID {"
+        },
+        {
+          "line": 37,
+          "text": "\t/**"
+        },
+        {
+          "line": 38,
+          "text": "\t * The structure metadata used for reading/writing this class."
+        },
+        {
+          "line": 39,
+          "text": "\t */"
+        },
+        {
+          "line": 40,
+          "text": "\tpublic static final StructureMetadata<ResourceID> STRUCTURE_METADATA = StructureMetadata.generate(ResourceID.class);"
+        },
+        {
+          "line": 41,
+          "text": ""
+        },
+        {
+          "line": 42,
+          "text": "\tprivate int groupID = -1;"
+        },
+        {
+          "line": 43,
+          "text": "\tprivate int instanceID = -1;"
+        },
+        {
+          "line": 44,
+          "text": "\t"
+        },
+        {
+          "line": 45,
+          "text": "\t/**"
+        },
+        {
+          "line": 46,
+          "text": "\t * Creates a new resource ID with the given group and instance IDs."
+        },
+        {
+          "line": 47,
+          "text": "\t * @param groupID"
+        },
+        {
+          "line": 48,
+          "text": "\t * @param instanceID"
+        },
+        {
+          "line": 49,
+          "text": "\t */"
+        },
+        {
+          "line": 50,
+          "text": "\tpublic ResourceID(int groupID, int instanceID) {"
+        },
+        {
+          "line": 51,
+          "text": "\t\tthis.groupID = groupID;"
+        },
+        {
+          "line": 52,
+          "text": "\t\tthis.instanceID = instanceID;"
+        },
+        {
+          "line": 53,
+          "text": "\t}"
+        },
+        {
+          "line": 54,
+          "text": "\t"
+        },
+        {
+          "line": 55,
+          "text": "\t/**"
+        },
+        {
+          "line": 56,
+          "text": "\t * Creates a new resource ID with the same group and instance IDs as the given resource."
+        },
+        {
+          "line": 57,
+          "text": "\t */"
+        },
+        {
+          "line": 58,
+          "text": "\tpublic ResourceID(ResourceID other) {"
+        },
+        {
+          "line": 59,
+          "text": "\t\tcopy(other);"
+        },
+        {
+          "line": 60,
+          "text": "\t}"
+        },
+        {
+          "line": 61,
+          "text": "\t"
+        },
+        {
+          "line": 62,
+          "text": "\t/**"
+        },
+        {
+          "line": 63,
+          "text": "\t * Creates a new resource ID with group=0xFFFFFFFF, instance=0xFFFFFFFF."
+        },
+        {
+          "line": 64,
+          "text": "\t */"
+        },
+        {
+          "line": 65,
+          "text": "\tpublic ResourceID() {}"
+        },
+        {
+          "line": 66,
+          "text": "\t"
+        },
+        {
+          "line": 67,
+          "text": "\tpublic void copy(ResourceID other) {"
+        },
+        {
+          "line": 68,
+          "text": "\t\tif (other != null) {"
+        },
+        {
+          "line": 69,
+          "text": "\t\t\tthis.groupID = other.groupID;"
+        },
+        {
+          "line": 70,
+          "text": "\t\t\tthis.instanceID = other.instanceID;"
+        },
+        {
+          "line": 71,
+          "text": "\t\t}"
+        },
+        {
+          "line": 72,
+          "text": "\t}"
+        },
+        {
+          "line": 73,
+          "text": ""
+        },
+        {
+          "line": 74,
+          "text": "\tpublic int getGroupID() {"
+        },
+        {
+          "line": 75,
+          "text": "\t\treturn groupID;"
+        },
+        {
+          "line": 76,
+          "text": "\t}"
+        },
+        {
+          "line": 77,
+          "text": ""
+        },
+        {
+          "line": 78,
+          "text": "\tpublic void setGroupID(int groupID) {"
+        },
+        {
+          "line": 79,
+          "text": "\t\tthis.groupID = groupID;"
+        },
+        {
+          "line": 80,
+          "text": "\t}"
+        },
+        {
+          "line": 81,
+          "text": ""
+        },
+        {
+          "line": 82,
+          "text": "\tpublic int getInstanceID() {"
+        },
+        {
+          "line": 83,
+          "text": "\t\treturn instanceID;"
+        },
+        {
+          "line": 84,
+          "text": "\t}"
+        },
+        {
+          "line": 85,
+          "text": ""
+        },
+        {
+          "line": 86,
+          "text": "\tpublic void setInstanceID(int instanceID) {"
+        },
+        {
+          "line": 87,
+          "text": "\t\tthis.instanceID = instanceID;"
+        },
+        {
+          "line": 88,
+          "text": "\t}"
+        },
+        {
+          "line": 89,
+          "text": "\t"
+        },
+        {
+          "line": 90,
+          "text": "\tpublic boolean parseSpecial(ArgScriptArguments args, int index) {"
+        },
+        {
+          "line": 91,
+          "text": "\t\treturn parseSpecial(args, index, null);"
+        },
+        {
+          "line": 92,
+          "text": "\t}"
+        },
+        {
+          "line": 93,
+          "text": "\t"
+        },
+        {
+          "line": 94,
+          "text": "\tpublic boolean parseSpecial(ArgScriptArguments args, int index, String[] originalWords) {"
+        },
+        {
+          "line": 95,
+          "text": "\t\tswitch (args.get(index)) {"
+        },
+        {
+          "line": 96,
+          "text": "\t\tcase \"terrain\":"
+        },
+        {
+          "line": 97,
+          "text": "\t\t\tgroupID = 0;"
+        },
+        {
+          "line": 98,
+          "text": "\t\t\tinstanceID = 0;"
+        },
+        {
+          "line": 99,
+          "text": "\t\t\treturn true;"
+        },
+        {
+          "line": 100,
+          "text": "\t\tcase \"water\":"
+        },
+        {
+          "line": 101,
+          "text": "\t\t\tgroupID = 1;"
+        },
+        {
+          "line": 102,
+          "text": "\t\t\tinstanceID = 0;"
+        },
+        {
+          "line": 103,
+          "text": "\t\t\treturn true;"
+        },
+        {
+          "line": 104,
+          "text": "\t\tdefault:"
+        },
+        {
+          "line": 105,
+          "text": "\t\t\treturn parse(args, index, originalWords);"
+        },
+        {
+          "line": 106,
+          "text": "\t\t}"
+        },
+        {
+          "line": 107,
+          "text": "\t}"
+        },
+        {
+          "line": 108,
+          "text": "\t"
+        },
+        {
+          "line": 109,
+          "text": "\tpublic boolean isDefault() {"
+        },
+        {
+          "line": 110,
+          "text": "\t\treturn groupID == -1 && instanceID == -1;"
+        },
+        {
+          "line": 111,
+          "text": "\t}"
+        },
+        {
+          "line": 112,
+          "text": "\t"
+        },
+        {
+          "line": 113,
+          "text": "\tpublic boolean isZero() {"
+        },
+        {
+          "line": 114,
+          "text": "\t\treturn groupID == 0 && instanceID == 0;"
+        },
+        {
+          "line": 115,
+          "text": "\t}"
+        },
+        {
+          "line": 116,
+          "text": "\t"
+        },
+        {
+          "line": 117,
+          "text": "\tpublic void parse(String text) {"
+        },
+        {
+          "line": 118,
+          "text": "\t\tparse(text, null);"
+        },
+        {
+          "line": 119,
+          "text": "\t}"
+        },
+        {
+          "line": 120,
+          "text": "\t"
+        },
+        {
+          "line": 121,
+          "text": "\tpublic void parse(String text, String[] originalWords) {"
+        },
+        {
+          "line": 122,
+          "text": "\t\tString[] splits = text.split(\"!\", 2);"
+        },
+        {
+          "line": 123,
+          "text": "\t\t"
+        },
+        {
+          "line": 124,
+          "text": "\t\tif (splits.length == 1) {"
+        },
+        {
+          "line": 125,
+          "text": "\t\t\tgroupID = 0;"
+        },
+        {
+          "line": 126,
+          "text": "\t\t\tinstanceID = HashManager.get().getFileHash(splits[0]);"
+        },
+        {
+          "line": 127,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 128,
+          "text": "\t\t\tif (originalWords != null) originalWords[1] = splits[0];"
+        },
+        {
+          "line": 129,
+          "text": "\t\t}"
+        },
+        {
+          "line": 130,
+          "text": "\t\telse {"
+        },
+        {
+          "line": 131,
+          "text": "\t\t\tgroupID = HashManager.get().getFileHash(splits[0]);"
+        },
+        {
+          "line": 132,
+          "text": "\t\t\tinstanceID = HashManager.get().getFileHash(splits[1]);"
+        },
+        {
+          "line": 133,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 134,
+          "text": "\t\t\tif (originalWords != null) {"
+        },
+        {
+          "line": 135,
+          "text": "\t\t\t\toriginalWords[0] = splits[0];"
+        },
+        {
+          "line": 136,
+          "text": "\t\t\t\toriginalWords[1] = splits[1];"
+        },
+        {
+          "line": 137,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 138,
+          "text": "\t\t}"
+        },
+        {
+          "line": 139,
+          "text": "\t}"
+        },
+        {
+          "line": 140,
+          "text": "\t"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/effects/ImportEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/ImportEffect.java",
+      "sha256": "cac3a494f20469ef22134a181d0f225db13d3295c0ddb2e9476ecc2bb26c1631",
+      "bytes": 1805,
+      "lines": 62,
+      "status": "read",
+      "read_ranges": [
+        [
+          25,
+          95
+        ]
+      ],
+      "selected_lines": [
+        {
+          "line": 25,
+          "text": "import sporemodder.file.argscript.ArgScriptWriter;"
+        },
+        {
+          "line": 26,
+          "text": ""
+        },
+        {
+          "line": 27,
+          "text": "public class ImportEffect extends EffectComponent {"
+        },
+        {
+          "line": 28,
+          "text": "\t"
+        },
+        {
+          "line": 29,
+          "text": "\tpublic static final int MASK = 0x7F000000;"
+        },
+        {
+          "line": 30,
+          "text": "\tpublic static final String KEYWORD = \"import\";"
+        },
+        {
+          "line": 31,
+          "text": ""
+        },
+        {
+          "line": 32,
+          "text": "\tpublic ImportEffect(EffectDirectory effectDirectory) {"
+        },
+        {
+          "line": 33,
+          "text": "\t\tsuper(effectDirectory, 0);"
+        },
+        {
+          "line": 34,
+          "text": "\t}"
+        },
+        {
+          "line": 35,
+          "text": ""
+        },
+        {
+          "line": 36,
+          "text": "\t@Override"
+        },
+        {
+          "line": 37,
+          "text": "\tpublic EffectComponentFactory getFactory() {"
+        },
+        {
+          "line": 38,
+          "text": "\t\treturn null;"
+        },
+        {
+          "line": 39,
+          "text": "\t}"
+        },
+        {
+          "line": 40,
+          "text": "\t"
+        },
+        {
+          "line": 41,
+          "text": "\t@Override public String toString() {"
+        },
+        {
+          "line": 42,
+          "text": "\t\treturn KEYWORD + ' '  + getName();"
+        },
+        {
+          "line": 43,
+          "text": "\t}"
+        },
+        {
+          "line": 44,
+          "text": ""
+        },
+        {
+          "line": 45,
+          "text": "\t@Override"
+        },
+        {
+          "line": 46,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 47,
+          "text": "\t}"
+        },
+        {
+          "line": 48,
+          "text": ""
+        },
+        {
+          "line": 49,
+          "text": "\t@Override"
+        },
+        {
+          "line": 50,
+          "text": "\tpublic void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 51,
+          "text": "\t}"
+        },
+        {
+          "line": 52,
+          "text": ""
+        },
+        {
+          "line": 53,
+          "text": "\t@Override"
+        },
+        {
+          "line": 54,
+          "text": "\tpublic void toArgScript(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 55,
+          "text": "\t\twriter.command(\"import\").arguments(name);"
+        },
+        {
+          "line": 56,
+          "text": "\t}"
+        },
+        {
+          "line": 57,
+          "text": ""
+        },
+        {
+          "line": 58,
+          "text": "\t@Override"
+        },
+        {
+          "line": 59,
+          "text": "\tpublic void copy(EffectComponent component) {"
+        },
+        {
+          "line": 60,
+          "text": "\t}"
+        },
+        {
+          "line": 61,
+          "text": "\t"
+        },
+        {
+          "line": 62,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "path": "reg_type.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_type.txt",
+      "status": "read",
+      "sha256": "3e0ff520a9e0793f29e82a00aee5de56dc5a83a1fbef0d8e8b5fe2754147caa9",
+      "bytes": 13944,
+      "lines": 607,
+      "selected_lines": [
+        {
+          "line": 1,
+          "text": "prop\t0xb1b104"
+        },
+        {
+          "line": 2,
+          "text": "soundProp\t0x2b9f662"
+        },
+        {
+          "line": 3,
+          "text": "audioProp\t0x2b9f662"
+        },
+        {
+          "line": 4,
+          "text": "gmdl\t0xe6bce5"
+        },
+        {
+          "line": 5,
+          "text": "plt\t0x11989b7"
+        },
+        {
+          "line": 254,
+          "text": "kResourceProjectile\t0x5776A2C"
+        },
+        {
+          "line": 255,
+          "text": "kICBM\t0x49CEC61"
+        },
+        {
+          "line": 256,
+          "text": "kSoundLoopObject\t0x18EB641"
+        },
+        {
+          "line": 257,
+          "text": "kRotationRing\t0x2EE8CE8"
+        },
+        {
+          "line": 258,
+          "text": "kRotationBall\t0x7292112"
+        },
+        {
+          "line": 259,
+          "text": "kMorphHandle\t0x7A30A12"
+        },
+        {
+          "line": 278,
+          "text": "kFindMission\t0x14D9597F"
+        },
+        {
+          "line": 279,
+          "text": "kNanoDrone\t0x6EF0F11"
+        },
+        {
+          "line": 280,
+          "text": "kPlaceableSound\t0x74E0069"
+        },
+        {
+          "line": 281,
+          "text": "kPlaceableEffect\t0x7B38BA7"
+        },
+        {
+          "line": 282,
+          "text": ""
+        },
+        {
+          "line": 283,
+          "text": "cGameData\t0x17f243b"
+        },
+        {
+          "line": 366,
+          "text": "cResourceProjectile\t0x5776a2c"
+        },
+        {
+          "line": 367,
+          "text": "cICBM\t0x49cec61"
+        },
+        {
+          "line": 368,
+          "text": "cSoundLoopObject\t0x18eb641"
+        },
+        {
+          "line": 369,
+          "text": "cRotationRing\t0x2ee8ce8"
+        },
+        {
+          "line": 370,
+          "text": "cRotationBall\t0x7292112"
+        },
+        {
+          "line": 371,
+          "text": "cMorphHandle\t0x7a30a12"
+        },
+        {
+          "line": 390,
+          "text": "cFindMission\t0x14d9597f"
+        },
+        {
+          "line": 391,
+          "text": "cNanoDrone\t0x6ef0f11"
+        },
+        {
+          "line": 392,
+          "text": "cPlaceableSound\t0x74e0069"
+        },
+        {
+          "line": 393,
+          "text": "cPlaceableEffect\t0x7b38ba7"
+        },
+        {
+          "line": 394,
+          "text": "cPlanetRecord\t0x5220cb8"
+        },
+        {
+          "line": 395,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropConverter.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropConverter.java",
+      "status": "read",
+      "sha256": "2c7ff7147e8b8b1a5bfc63d1db6802895991b50e1ccb0fbbf7597ae2a4712a27",
+      "bytes": 11772,
+      "lines": 332,
+      "selected_lines": [
+        {
+          "line": 38,
+          "text": "import sporemodder.file.Converter;"
+        },
+        {
+          "line": 39,
+          "text": "import sporemodder.file.DocumentException;"
+        },
+        {
+          "line": 40,
+          "text": "import sporemodder.file.ResourceKey;"
+        },
+        {
+          "line": 41,
+          "text": "import sporemodder.file.argscript.ArgScriptStream;"
+        },
+        {
+          "line": 42,
+          "text": "import sporemodder.file.dbpf.DBPFPacker;"
+        },
+        {
+          "line": 43,
+          "text": "import sporemodder.file.filestructures.FileStream;"
+        },
+        {
+          "line": 49,
+          "text": "public class PropConverter implements Converter {"
+        },
+        {
+          "line": 50,
+          "text": "\t"
+        },
+        {
+          "line": 51,
+          "text": "\tprivate static String extension = null;"
+        },
+        {
+          "line": 52,
+          "text": "\tprivate static String soundExtension = \"soundProp\"; // Deprecated"
+        },
+        {
+          "line": 53,
+          "text": "\tprivate static String audioExtension = null;"
+        },
+        {
+          "line": 54,
+          "text": "\tprivate static String submixExtension = null;"
+        },
+        {
+          "line": 55,
+          "text": "\tprivate static String modeExtension = null;"
+        },
+        {
+          "line": 56,
+          "text": "\tprivate static String childrenExtension = null;"
+        },
+        {
+          "line": 57,
+          "text": "\t"
+        },
+        {
+          "line": 58,
+          "text": "\tprivate boolean decode(StreamReader stream, File outputFile) throws IOException {"
+        },
+        {
+          "line": 59,
+          "text": "\t\tPropertyList list = new PropertyList();"
+        },
+        {
+          "line": 60,
+          "text": "\t\tlist.read(stream);"
+        },
+        {
+          "line": 61,
+          "text": "\t\tlist.toArgScript().write(outputFile);"
+        },
+        {
+          "line": 62,
+          "text": "\t\treturn true;"
+        },
+        {
+          "line": 64,
+          "text": ""
+        },
+        {
+          "line": 65,
+          "text": "\t@Override"
+        },
+        {
+          "line": 66,
+          "text": "\tpublic boolean decode(StreamReader stream, File outputFolder, ResourceKey key) throws IOException {"
+        },
+        {
+          "line": 67,
+          "text": "\t\treturn decode(stream, Converter.getOutputFile(key, outputFolder, \"prop_t\"));"
+        },
+        {
+          "line": 68,
+          "text": "\t}"
+        },
+        {
+          "line": 69,
+          "text": ""
+        },
+        {
+          "line": 78,
+          "text": "\t\t}"
+        },
+        {
+          "line": 79,
+          "text": "\t\telse {"
+        },
+        {
+          "line": 80,
+          "text": "\t\t\tPropertyList list = new PropertyList();"
+        },
+        {
+          "line": 81,
+          "text": "\t\t\tArgScriptStream<PropertyList> stream = list.generateStream();"
+        },
+        {
+          "line": 82,
+          "text": "\t\t\tstream.setFolder(input.getParentFile());"
+        },
+        {
+          "line": 83,
+          "text": "\t\t\tstream.setFastParsing(true);"
+        },
+        {
+          "line": 84,
+          "text": "\t\t\tstream.process(input);"
+        },
+        {
+          "line": 91,
+          "text": "\t\tif (autoLocale != null) {"
+        },
+        {
+          "line": 92,
+          "text": "\t\t\tbyte[] data = autoLocale.getBytes(\"US-ASCII\");"
+        },
+        {
+          "line": 93,
+          "text": "\t\t\tResourceKey name = new ResourceKey();"
+        },
+        {
+          "line": 94,
+          "text": "\t\t\tname.setInstanceID(tableID);"
+        },
+        {
+          "line": 95,
+          "text": "\t\t\tname.setGroupID(0x02FABF01);  // locale~"
+        },
+        {
+          "line": 96,
+          "text": "\t\t\tname.setTypeID(0x02FAC0B6);  // .locale"
+        },
+        {
+          "line": 97,
+          "text": "\t\t\tpacker.writeFile(name, data, data.length);"
+        },
+        {
+          "line": 98,
+          "text": "\t\t}"
+        },
+        {
+          "line": 99,
+          "text": "\t}"
+        },
+        {
+          "line": 100,
+          "text": "\t"
+        },
+        {
+          "line": 101,
+          "text": "\tprivate void addPropItem(String name, String extension, int groupID, DBPFPacker packer, byte[] data, int length) throws IOException {"
+        },
+        {
+          "line": 102,
+          "text": "\t\tResourceKey key = packer.getTemporaryName();"
+        },
+        {
+          "line": 103,
+          "text": "\t\tkey.setInstanceID(HashManager.get().getFileHash(name));"
+        },
+        {
+          "line": 104,
+          "text": "\t\tkey.setGroupID(groupID);"
+        },
+        {
+          "line": 105,
+          "text": "\t\tif (extension.startsWith(audioExtension) || extension.startsWith(soundExtension)) {"
+        },
+        {
+          "line": 106,
+          "text": "\t\t\tkey.setTypeID(0x02B9F662);"
+        },
+        {
+          "line": 107,
+          "text": "\t\t} else if (extension.startsWith(submixExtension)) {"
+        },
+        {
+          "line": 108,
+          "text": "\t\t\tkey.setTypeID(0x02C9EFF2);"
+        },
+        {
+          "line": 109,
+          "text": "\t\t} else if (extension.startsWith(modeExtension)) {"
+        },
+        {
+          "line": 110,
+          "text": "\t\t\tkey.setTypeID(0x0497925E);"
+        },
+        {
+          "line": 111,
+          "text": "\t\t} else if (extension.startsWith(childrenExtension)) {"
+        },
+        {
+          "line": 112,
+          "text": "\t\t\tkey.setTypeID(0x03F51892);"
+        },
+        {
+          "line": 113,
+          "text": "\t\t} else {"
+        },
+        {
+          "line": 114,
+          "text": "\t\t\tkey.setTypeID(0x00B1B104);"
+        },
+        {
+          "line": 115,
+          "text": "\t\t}"
+        },
+        {
+          "line": 116,
+          "text": "\t\tpacker.writeFile(key, data, length);"
+        },
+        {
+          "line": 117,
+          "text": "\t}"
+        },
+        {
+          "line": 127,
+          "text": "\t@Override"
+        },
+        {
+          "line": 128,
+          "text": "\tpublic boolean encode(File input, DBPFPacker packer, int groupID) throws Exception {"
+        },
+        {
+          "line": 129,
+          "text": "\t\tcheckExtensions();"
+        },
+        {
+          "line": 130,
+          "text": "\t\t"
+        },
+        {
+          "line": 131,
+          "text": "\t\tString[] splits = input.getName().split(\"\\\\.\", 2);"
+        },
+        {
+          "line": 132,
+          "text": "\t\tif (splits.length < 2) return false;  // no extension"
+        },
+        {
+          "line": 133,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 134,
+          "text": "\t\tif ("
+        },
+        {
+          "line": 135,
+          "text": "\t\t\tsplits[1].equals(extension + \".xml\") ||"
+        },
+        {
+          "line": 136,
+          "text": "\t\t\tsplits[1].equals(soundExtension + \".xml\") ||"
+        },
+        {
+          "line": 137,
+          "text": "\t\t\tsplits[1].equals(audioExtension + \".xml\") ||"
+        },
+        {
+          "line": 138,
+          "text": "\t\t\tsplits[1].equals(submixExtension + \".xml\") || "
+        },
+        {
+          "line": 139,
+          "text": "\t\t\tsplits[1].equals(modeExtension + \".xml\") || "
+        },
+        {
+          "line": 140,
+          "text": "\t\t\tsplits[1].equals(childrenExtension + \".xml\")"
+        },
+        {
+          "line": 141,
+          "text": "\t\t) {"
+        },
+        {
+          "line": 142,
+          "text": "\t\t\tpacker.setCurrentFile(input);"
+        },
+        {
+          "line": 143,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 150,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 151,
+          "text": "\t\t\t\t// Use getFileHash instead of fnvHash because we want it to be saved into the project registry"
+        },
+        {
+          "line": 152,
+          "text": "\t\t\t\taddAutoLocale(PropertyList.createAutolocaleFile(autoLocaleStrings), HashManager.get().getFileHash(autoLocaleName), packer);"
+        },
+        {
+          "line": 153,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 154,
+          "text": "\t\t\t\taddPropItem(splits[0], splits[1], groupID, packer, output.getRawData(), (int) output.length());"
+        },
+        {
+          "line": 155,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 158,
+          "text": "\t\t}"
+        },
+        {
+          "line": 159,
+          "text": "\t\telse if ("
+        },
+        {
+          "line": 160,
+          "text": "\t\t\tsplits[1].equals(extension + \".prop_t\") ||"
+        },
+        {
+          "line": 161,
+          "text": "\t\t\tsplits[1].equals(soundExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 162,
+          "text": "\t\t\tsplits[1].equals(audioExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 163,
+          "text": "\t\t\tsplits[1].equals(submixExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 164,
+          "text": "\t\t\tsplits[1].equals(modeExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 165,
+          "text": "\t\t\tsplits[1].equals(childrenExtension + \".prop_t\")"
+        },
+        {
+          "line": 166,
+          "text": "\t\t) {"
+        },
+        {
+          "line": 167,
+          "text": "\t\t\tpacker.setCurrentFile(input);"
+        },
+        {
+          "line": 168,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 171,
+          "text": "\t\t\t\tint tableID = HashManager.get().getFileHash(getTableIDString(input, splits));"
+        },
+        {
+          "line": 172,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 173,
+          "text": "\t\t\t\tPropertyList list = new PropertyList();"
+        },
+        {
+          "line": 174,
+          "text": "\t\t\t\tArgScriptStream<PropertyList> stream = list.generateStream();"
+        },
+        {
+          "line": 175,
+          "text": "\t\t\t\tstream.setFastParsing(true);"
+        },
+        {
+          "line": 176,
+          "text": "\t\t\t\tstream.process(input);"
+        },
+        {
+          "line": 177,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 193,
+          "text": ""
+        },
+        {
+          "line": 194,
+          "text": "\t@Override"
+        },
+        {
+          "line": 195,
+          "text": "\tpublic boolean isDecoder(ResourceKey key) {"
+        },
+        {
+          "line": 196,
+          "text": "\t\t// prop | audioProp | submix | mode | children"
+        },
+        {
+          "line": 197,
+          "text": "\t\treturn key.getTypeID() == 0x00B1B104 || "
+        },
+        {
+          "line": 198,
+          "text": "\t\tkey.getTypeID() == 0x02B9F662 || "
+        },
+        {
+          "line": 199,
+          "text": "\t\tkey.getTypeID() == 0x02C9EFF2 || "
+        },
+        {
+          "line": 200,
+          "text": "\t\tkey.getTypeID() == 0x0497925E || "
+        },
+        {
+          "line": 201,
+          "text": "\t\tkey.getTypeID() == 0x03F51892;"
+        },
+        {
+          "line": 202,
+          "text": "\t}"
+        },
+        {
+          "line": 203,
+          "text": ""
+        },
+        {
+          "line": 204,
+          "text": "\tprivate void checkExtensions() {"
+        },
+        {
+          "line": 205,
+          "text": "\t\tif (extension == null) {"
+        },
+        {
+          "line": 206,
+          "text": "\t\t\textension = HashManager.get().getTypeName(0x00B1B104);"
+        },
+        {
+          "line": 207,
+          "text": "\t\t\taudioExtension = HashManager.get().getTypeName(0x02B9F662);"
+        },
+        {
+          "line": 208,
+          "text": "\t\t\tsubmixExtension = HashManager.get().getTypeName(0x02C9EFF2);"
+        },
+        {
+          "line": 209,
+          "text": "\t\t\tmodeExtension = HashManager.get().getTypeName(0x0497925E);"
+        },
+        {
+          "line": 210,
+          "text": "\t\t\tchildrenExtension = HashManager.get().getTypeName(0x03F51892);"
+        },
+        {
+          "line": 211,
+          "text": "\t\t}"
+        },
+        {
+          "line": 212,
+          "text": "\t}"
+        },
+        {
+          "line": 213,
+          "text": "\t"
+        },
+        {
+          "line": 214,
+          "text": "\t@Override"
+        },
+        {
+          "line": 215,
+          "text": "\tpublic boolean isEncoder(File file) {"
+        },
+        {
+          "line": 216,
+          "text": "\t\tcheckExtensions();"
+        },
+        {
+          "line": 217,
+          "text": "\t\treturn file.isFile() && ("
+        },
+        {
+          "line": 218,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + extension + \".xml\") || "
+        },
+        {
+          "line": 219,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + extension + \".prop_t\") ||"
+        },
+        {
+          "line": 220,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + soundExtension + \".xml\") || "
+        },
+        {
+          "line": 221,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + soundExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 222,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + audioExtension + \".xml\") || "
+        },
+        {
+          "line": 223,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + audioExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 224,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + submixExtension + \".xml\") || "
+        },
+        {
+          "line": 225,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + submixExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 226,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + modeExtension + \".xml\") || "
+        },
+        {
+          "line": 227,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + modeExtension + \".prop_t\") ||"
+        },
+        {
+          "line": 228,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + childrenExtension + \".xml\") || "
+        },
+        {
+          "line": 229,
+          "text": "\t\t\tfile.getName().endsWith(\".\" + childrenExtension + \".prop_t\")"
+        },
+        {
+          "line": 230,
+          "text": "\t\t);"
+        },
+        {
+          "line": 231,
+          "text": "\t}"
+        },
+        {
+          "line": 232,
+          "text": ""
+        },
+        {
+          "line": 235,
+          "text": "\t\treturn \"Properties File (.\" +"
+        },
+        {
+          "line": 236,
+          "text": "\t\tHashManager.get().getTypeName(0x00B1B104) + \", .\" +"
+        },
+        {
+          "line": 237,
+          "text": "\t\tHashManager.get().getTypeName(0x02B9F662) + \", .\" +"
+        },
+        {
+          "line": 238,
+          "text": "\t\tHashManager.get().getTypeName(0x02C9EFF2) + \", .\" +"
+        },
+        {
+          "line": 239,
+          "text": "\t\tHashManager.get().getTypeName(0x0497925E) + \", .\" +"
+        },
+        {
+          "line": 240,
+          "text": "\t\tHashManager.get().getTypeName(0x03F51892) + \")\";"
+        },
+        {
+          "line": 247,
+          "text": ""
+        },
+        {
+          "line": 248,
+          "text": "\t@Override"
+        },
+        {
+          "line": 249,
+          "text": "\tpublic int getOriginalTypeID(String extension) {"
+        },
+        {
+          "line": 250,
+          "text": "\t\tcheckExtensions();"
+        },
+        {
+          "line": 251,
+          "text": "\t\tif (extension.startsWith(\".\" + audioExtension) || extension.startsWith(\".\" + soundExtension)) {"
+        },
+        {
+          "line": 252,
+          "text": "\t\t\treturn 0x02B9F662;"
+        },
+        {
+          "line": 253,
+          "text": "\t\t} else if (extension.startsWith(\".\" + submixExtension)) {"
+        },
+        {
+          "line": 254,
+          "text": "\t\t\treturn 0x02C9EFF2;"
+        },
+        {
+          "line": 255,
+          "text": "\t\t} else if (extension.startsWith(\".\" + modeExtension)) {"
+        },
+        {
+          "line": 256,
+          "text": "\t\t\treturn 0x0497925E;"
+        },
+        {
+          "line": 257,
+          "text": "\t\t} else if (extension.startsWith(\".\" + childrenExtension)) {"
+        },
+        {
+          "line": 258,
+          "text": "\t\t\treturn 0x03F51892;"
+        },
+        {
+          "line": 259,
+          "text": "\t\t}"
+        },
+        {
+          "line": 260,
+          "text": "\t\treturn 0x00B1B104;"
+        },
+        {
+          "line": 281,
+          "text": "\t\t\t\tmenuItem.setMnemonicParsing(false);"
+        },
+        {
+          "line": 282,
+          "text": "\t\t\t\tmenuItem.setOnAction(event -> {"
+        },
+        {
+          "line": 283,
+          "text": "\t\t\t\t\t// This is after isEncoder(), so we can assume it has extension"
+        },
+        {
+          "line": 284,
+          "text": "\t\t\t\t\tfinal String name = item.getName().substring(0, item.getName().lastIndexOf(\".\"));"
+        },
+        {
+          "line": 285,
+          "text": "\t\t\t\t\tFile file = new File(item.getFile().getParentFile(), name);"
+        },
+        {
+          "line": 286,
+          "text": "\t\t\t\t\t"
+        },
+        {
+          "line": 300,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 301,
+          "text": "\t\t\telse {"
+        },
+        {
+          "line": 302,
+          "text": "\t\t\t\tResourceKey key = ProjectManager.get().getResourceKey(item);"
+        },
+        {
+          "line": 303,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 304,
+          "text": "\t\t\t\tTreeItem<ProjectItem> parentItem = item.getTreeItem().getParent();"
+        },
+        {
+          "line": 305,
+          "text": "\t\t\t\tif (parentItem != null && !parentItem.getValue().isRoot()) {"
+        }
+      ]
+    },
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "status": "read",
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "bytes": 191259,
+      "lines": 6368,
+      "exact_query_ids": [
+        "0x12d2a4d4",
+        "0x25df0108",
+        "0x5f6317d5",
+        "0x6dd08218",
+        "0x701ed91e",
+        "0x71bc3009",
+        "0x7f28acc",
+        "0xba03d0cd",
+        "0xbaf7f4f9"
+      ],
+      "selected_lines": [
+        {
+          "line": 2937,
+          "id": "0x12d2a4d4",
+          "text": "is3d\t0x12D2A4D4"
+        },
+        {
+          "line": 3020,
+          "id": "0x25df0108",
+          "text": "gain\t0x25DF0108"
+        },
+        {
+          "line": 3329,
+          "id": "0x6dd08218",
+          "text": "islooped\t0x6DD08218"
+        },
+        {
+          "line": 3346,
+          "id": "0x701ed91e",
+          "text": "samples\t0x701ED91E"
+        },
+        {
+          "line": 3375,
+          "id": "0x71bc3009",
+          "text": "pitch\t0x71BC3009"
+        },
+        {
+          "line": 3699,
+          "id": "0xbaf7f4f9",
+          "text": "polyphony\t0xBAF7F4F9"
+        },
+        {
+          "line": 4023,
+          "id": "0x5f6317d5",
+          "text": "musicTemplate\t0x5F6317D5"
+        },
+        {
+          "line": 5868,
+          "id": "0x5f6317d5",
+          "text": "parentAudio\t0x5F6317D5"
+        }
+      ]
+    },
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "status": "read",
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "bytes": 2860453,
+      "lines": 125506,
+      "exact_query_ids": [
+        "0x1ed6f938",
+        "0x1ed6f939",
+        "0x1ed6f93a",
+        "0x1ed6f93f",
+        "0x25fa122c",
+        "0x25fa122e",
+        "0x7a5f4440",
+        "0x7a5f4449",
+        "0x7a5f444a",
+        "0x7a5f444b",
+        "0x7a5f444c",
+        "0x7a5f444d",
+        "0x7a5f444e",
+        "0x7a5f444f",
+        "0x8402a82e",
+        "0xa949dbef",
+        "0xca93d433",
+        "0xd05b58ed",
+        "0xee8347b0"
+      ],
+      "initial_hex_query_matches": [],
+      "selected_names": [
+        {
+          "line": 9404,
+          "name": "block",
+          "registered_id": "0xee8347b0",
+          "computed_id": "0xee8347b0",
+          "explicit_id": null
+        },
+        {
+          "line": 14846,
+          "name": "scom_bite1",
+          "registered_id": "0x7a5f4449",
+          "computed_id": "0x7a5f4449",
+          "explicit_id": null
+        },
+        {
+          "line": 14847,
+          "name": "scom_bite2",
+          "registered_id": "0x7a5f444a",
+          "computed_id": "0x7a5f444a",
+          "explicit_id": null
+        },
+        {
+          "line": 14848,
+          "name": "scom_bite3",
+          "registered_id": "0x7a5f444b",
+          "computed_id": "0x7a5f444b",
+          "explicit_id": null
+        },
+        {
+          "line": 14849,
+          "name": "scom_bite4",
+          "registered_id": "0x7a5f444c",
+          "computed_id": "0x7a5f444c",
+          "explicit_id": null
+        },
+        {
+          "line": 14850,
+          "name": "scom_bite5",
+          "registered_id": "0x7a5f444d",
+          "computed_id": "0x7a5f444d",
+          "explicit_id": null
+        },
+        {
+          "line": 14851,
+          "name": "scom_bite6",
+          "registered_id": "0x7a5f444e",
+          "computed_id": "0x7a5f444e",
+          "explicit_id": null
+        },
+        {
+          "line": 14852,
+          "name": "scom_bite7",
+          "registered_id": "0x7a5f444f",
+          "computed_id": "0x7a5f444f",
+          "explicit_id": null
+        },
+        {
+          "line": 14853,
+          "name": "scom_bite8",
+          "registered_id": "0x7a5f4440",
+          "computed_id": "0x7a5f4440",
+          "explicit_id": null
+        },
+        {
+          "line": 14854,
+          "name": "scom_charge_rush_hit4",
+          "registered_id": "0xca93d433",
+          "computed_id": "0xca93d433",
+          "explicit_id": null
+        },
+        {
+          "line": 14862,
+          "name": "sfx_crg_mucus_launch1",
+          "registered_id": "0x1ed6f93a",
+          "computed_id": "0x1ed6f93a",
+          "explicit_id": null
+        },
+        {
+          "line": 14863,
+          "name": "sfx_crg_mucus_launch2",
+          "registered_id": "0x1ed6f939",
+          "computed_id": "0x1ed6f939",
+          "explicit_id": null
+        },
+        {
+          "line": 14864,
+          "name": "sfx_crg_mucus_launch3",
+          "registered_id": "0x1ed6f938",
+          "computed_id": "0x1ed6f938",
+          "explicit_id": null
+        },
+        {
+          "line": 14865,
+          "name": "sfx_crg_mucus_launch4",
+          "registered_id": "0x1ed6f93f",
+          "computed_id": "0x1ed6f93f",
+          "explicit_id": null
+        },
+        {
+          "line": 14866,
+          "name": "sfx_crg_rip",
+          "registered_id": "0xd05b58ed",
+          "computed_id": "0xd05b58ed",
+          "explicit_id": null
+        },
+        {
+          "line": 14872,
+          "name": "sfx_crg_strike_lvl1_swish1",
+          "registered_id": "0x25fa122e",
+          "computed_id": "0x25fa122e",
+          "explicit_id": null
+        },
+        {
+          "line": 14873,
+          "name": "sfx_crg_strike_lvl1_swish3",
+          "registered_id": "0x25fa122c",
+          "computed_id": "0x25fa122c",
+          "explicit_id": null
+        },
+        {
+          "line": 14908,
+          "name": "_crg_fight_sfx_base",
+          "registered_id": "0xa949dbef",
+          "computed_id": "0xa949dbef",
+          "explicit_id": null
+        },
+        {
+          "line": 14909,
+          "name": "_crg_sfx_base",
+          "registered_id": "0x8402a82e",
+          "computed_id": "0x8402a82e",
+          "explicit_id": null
+        },
+        {
+          "line": 122386,
+          "name": "Block",
+          "registered_id": "0xee8347b0",
+          "computed_id": "0xee8347b0",
+          "explicit_id": null
+        },
+        {
+          "line": 122391,
+          "name": "Block",
+          "registered_id": "0xee8347b0",
+          "computed_id": "0xee8347b0",
+          "explicit_id": null
+        }
+      ],
+      "name_registry_query": "name-only rows use lowercase UTF-16-code-unit FNV1; explicit hex overrides are preserved separately"
+    }
+  ],
+  "prior_failed_attempts": [
+    {
+      "path": "src/sporemodder/file/effects/SoundEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SoundEffect.java",
+      "status": "failed",
+      "diagnostic": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "path": "src/sporemodder/file/effects/ParticleEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/ParticleEffect.java",
+      "status": "failed",
+      "diagnostic": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "path": "src/sporemodder/file/effects/EffectDirectory.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/EffectDirectory.java",
+      "status": "failed",
+      "diagnostic": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "path": "src/sporemodder/file/effects/VisualEffectBlock.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/VisualEffectBlock.java",
+      "status": "failed",
+      "diagnostic": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationEvent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationEvent.java",
+      "status": "failed",
+      "diagnostic": "<urlopen error [Errno 11001] getaddrinfo failed>"
+    }
+  ],
+  "limitations": "Selected declarations/read/write locations; no full source copy and no original native consumer recovered."
+}

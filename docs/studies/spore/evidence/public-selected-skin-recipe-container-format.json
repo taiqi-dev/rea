@@ -1,0 +1,928 @@
+{
+  "schema_version": 1,
+  "study": "Spore Creature Stage selected skin recipe — public container format",
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "authority": "Public community format implementation, not Maxis source or recovered native implementation.",
+  "scope": {
+    "read_only_game": true,
+    "game_executed": false,
+    "local_package_scanned_by_this_agent": false,
+    "local_particle_decoded": false,
+    "downloaded_source_persisted": false,
+    "output": "docs/studies/spore/evidence/public-selected-skin-recipe-container-format.json"
+  },
+  "sources": [
+    {
+      "path": "src/sporemodder/file/effects/SequenceEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SequenceEffect.java",
+      "bytes": 8293,
+      "sha256": "23d63f9523c4b1e26db084fdb17f3f20865ecadeb258fac7dc611b7a13a7aa02",
+      "lines": 264,
+      "read_ranges": [
+        [
+          19,
+          209
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Type 4 is Sequence, version 1. Each record contains a counted list of time ranges and Visual type-0 references, then flags. Null references can represent waits in ArgScript. Native timing units and scheduling are unknown."
+    },
+    {
+      "path": "src/sporemodder/file/effects/EffectDirectory.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/EffectDirectory.java",
+      "bytes": 26708,
+      "sha256": "4baa199c0b9fa89b67c1f1bde70628a23f60d0a4684b895e7975627a3f7f3952",
+      "lines": 848,
+      "read_ranges": [
+        [
+          6,
+          12
+        ],
+        [
+          50,
+          63
+        ],
+        [
+          77,
+          87
+        ],
+        [
+          93,
+          151
+        ],
+        [
+          156,
+          186
+        ],
+        [
+          188,
+          194
+        ],
+        [
+          196,
+          201
+        ],
+        [
+          203,
+          210
+        ],
+        [
+          215,
+          227
+        ],
+        [
+          231,
+          249
+        ],
+        [
+          254,
+          266
+        ],
+        [
+          271,
+          277
+        ],
+        [
+          289,
+          295
+        ],
+        [
+          299,
+          316
+        ],
+        [
+          338,
+          345
+        ],
+        [
+          352,
+          533
+        ],
+        [
+          537,
+          588
+        ],
+        [
+          591,
+          624
+        ],
+        [
+          641,
+          661
+        ],
+        [
+          673,
+          678
+        ],
+        [
+          688,
+          701
+        ],
+        [
+          703,
+          717
+        ],
+        [
+          720,
+          734
+        ],
+        [
+          739,
+          746
+        ],
+        [
+          751,
+          762
+        ],
+        [
+          766,
+          776
+        ],
+        [
+          783,
+          793
+        ],
+        [
+          799,
+          812
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Community reader supports directory version 4 and places ordinary components, resources, Visual records, exports, then imports. Ordinary/resource section lengths include their count prefix. Visual records lack a section length. Index lookup is per component type; imports use a mask. Writer emits separate export and string-assignment sentinels. This reader is not a hardened parser: component offsets are indexed before type validation and resource factory access lacks equivalent checks."
+    },
+    {
+      "path": "src/sporemodder/file/effects/SkinpaintDistributeEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SkinpaintDistributeEffect.java",
+      "bytes": 14674,
+      "sha256": "81fc7fe8092dc7575bda1bffd98f97c27dff0d73b219c944b78c281eb6d8347b",
+      "lines": 447,
+      "read_ranges": [
+        [
+          26,
+          242
+        ],
+        [
+          333,
+          447
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Type 0x23 supports versions 1–2. Sequential metadata and custom readers establish string, particle reference, distribution parameters, flags, select pairs, and final selectAll. The body-range pair is little endian. A stored selection value must remain raw; ArgScript emission can subtract adjacent values."
+    },
+    {
+      "path": "src/sporemodder/file/effects/SkinpaintParticleEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SkinpaintParticleEffect.java",
+      "bytes": 40350,
+      "sha256": "28288ed7d6de621bdf0d65ac16e81b1757ac4629236a3bc6b80550ae14c5f4e7",
+      "lines": 1198,
+      "read_ranges": [
+        [
+          26,
+          200
+        ],
+        [
+          260,
+          337
+        ],
+        [
+          860,
+          991
+        ],
+        [
+          234,
+          259
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Type 0x26 supports version 1. Lists have 32-bit count prefixes, with modifier and variable elements of 16 and 20 bytes. Four color/direction vectors are little endian; other scalar fields are big endian. Chain is a typed particle reference. Operation comments are explicitly uncertain. No local particle record was decoded by this agent."
+    },
+    {
+      "path": "src/sporemodder/file/effects/VisualEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/VisualEffect.java",
+      "bytes": 20784,
+      "sha256": "ec09953f04d302010818166f1754836821f129456f88a076178f959af996a72e",
+      "lines": 600,
+      "read_ranges": [
+        [
+          30,
+          160
+        ],
+        [
+          410,
+          441
+        ],
+        [
+          452,
+          483
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Visual type 0 supports version 1 only. Sequential fields contain little-endian screen and extended-LOD arrays plus big-endian scalar/list fields. The block list is counted, not length-delimited. Names are assigned by directory exports rather than stored inline."
+    },
+    {
+      "path": "src/sporemodder/file/effects/VisualEffectBlock.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/VisualEffectBlock.java",
+      "bytes": 16272,
+      "sha256": "42ec423220761ace8969f4e493edb614a51152f2fbf15b5dff33f0ae56e10581",
+      "lines": 480,
+      "read_ranges": [
+        [
+          30,
+          182
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "The wrapper has a byte-sized type selector, fixed transform, LOD scales, numeric selection and timing fields, then a typed component index. Transform flags do not omit payload fields in this reader. Unknown component types can remain unresolved references while the known wrapper is skipped."
+    },
+    {
+      "path": "src/sporemodder/file/effects/EffectsConverter.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/EffectsConverter.java",
+      "bytes": 6607,
+      "sha256": "abd477586a03ebdac7531a97f28e49a47630982107aed00e28530896734fdbd6",
+      "lines": 205,
+      "read_ranges": [
+        [
+          25,
+          65
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Resource type is 0xea5118b0. The converter only accepts groups whose low byte is 2 for its preferred quality; that policy is not an EffectDirectory format restriction. Do not invoke its exporter for this bounded investigation."
+    },
+    {
+      "path": "src/sporemodder/file/effects/ImportEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/ImportEffect.java",
+      "bytes": 1805,
+      "sha256": "cac3a494f20469ef22134a181d0f225db13d3295c0ddb2e9476ecc2bb26c1631",
+      "lines": 63,
+      "read_ranges": [
+        [
+          18,
+          63
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Imports use mask 0x7f000000; their class read/write methods contain no inline payload. Directory import entries supply group/name hashes."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/metadata/StructureMetadata.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/metadata/StructureMetadata.java",
+      "bytes": 7533,
+      "sha256": "c59516cd19d9ce32b46b55bb6fe014765f21a95582ff1532b076b53445db9521",
+      "lines": 225,
+      "read_ranges": [
+        [
+          33,
+          180
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Metadata walks eligible declared fields sequentially and processes an annotated superclass if present. Static and ignored fields are excluded. This establishes the community reader layout; it is not a promise about native ABI."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/metadata/StringFieldMetadata.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/metadata/StringFieldMetadata.java",
+      "bytes": 3203,
+      "sha256": "db64d99760554e30b21d12222e2ee3f18bafc2686396808620aa8e15a78dd340",
+      "lines": 107,
+      "read_ranges": [
+        [
+          1,
+          107
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Unannotated strings default to US-ASCII C strings; a negative default length selects readCString."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/metadata/ListFieldMetadata.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/metadata/ListFieldMetadata.java",
+      "bytes": 4191,
+      "sha256": "782fd48ce30a0a95b29727f47982aae0729044c293ff3abd169bbfec44e2db1b",
+      "lines": 133,
+      "read_ranges": [
+        [
+          1,
+          133
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Counted list metadata reads length before numeric or nested-structure elements."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/metadata/BooleanFieldMetadata.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/metadata/BooleanFieldMetadata.java",
+      "bytes": 1106,
+      "sha256": "beacbff53b2c6d113f3d1d3574a3096a5d4b244caef29d601a920b23e9b0a908",
+      "lines": 41,
+      "read_ranges": [
+        [
+          1,
+          41
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Boolean metadata delegates to readBoolean and writeBoolean."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/StructureLength.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/StructureLength.java",
+      "bytes": 1822,
+      "sha256": "e162e4d304be0980f6273b7cdc03cf4e57009a6d2ae3fe9f30b631cadbc342c9",
+      "lines": 62,
+      "read_ranges": [
+        [
+          1,
+          62
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Value(32) denotes a 32-bit length prefix; it does not denote 32 fixed elements."
+    },
+    {
+      "path": "src/sporemodder/util/Transform.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/util/Transform.java",
+      "bytes": 6078,
+      "sha256": "e09730816bb87982fa9cf933c771e3e5f2d976e1f40277d1977ada6544034399",
+      "lines": 218,
+      "read_ranges": [
+        [
+          19,
+          90
+        ],
+        [
+          215,
+          218
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Rotation is a Matrix and offset is Vector3. Generic read agrees with the explicit block reader: flags and scale precede little-endian rotation and offset."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/FixedMemoryStream.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/FixedMemoryStream.java",
+      "bytes": 23148,
+      "sha256": "9a26e6d53f783e66ccc78af2d983876aa9bd9dadfd8a37dceb05500c9aaa684f",
+      "lines": 821,
+      "read_ranges": [
+        [
+          60,
+          155
+        ],
+        [
+          185,
+          250
+        ],
+        [
+          303,
+          318
+        ],
+        [
+          673,
+          690
+        ],
+        [
+          708,
+          723
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Default short/int reads are big endian; boolean accepts one byte equal to 0 or 1. ASCII CString consumes a terminating byte. A bounded reader must check its own section limit rather than copy this implementation."
+    },
+    {
+      "path": "src/sporemodder/file/filestructures/metadata/FieldLength.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/filestructures/metadata/FieldLength.java",
+      "bytes": 9465,
+      "sha256": "d74f401788154b2d6e7a541c135e4cd0a1038d3d02c47109cb7424098f5a9b68",
+      "lines": 246,
+      "read_ranges": [
+        [
+          19,
+          230
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Value length prefixes use declared bit width and inherited endian unless overridden; a 32-bit big-endian prefix calls readInt."
+    },
+    {
+      "path": "src/sporemodder/file/effects/EffectComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/EffectComponent.java",
+      "bytes": 1781,
+      "sha256": "32b07545931640009b4f794700048c60f0d3b620c52d963ae5327c2675ee3459",
+      "lines": 55,
+      "read_ranges": [
+        [
+          19,
+          55
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "The base has no structure annotation and its name, version, and directory fields are ignored, so it adds no serialized header."
+    },
+    {
+      "path": "src/sporemodder/util/Matrix.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/util/Matrix.java",
+      "bytes": 5832,
+      "sha256": "f750899d70028a0b9638ea43c2dffb16a3e59b4bb8c2bba44aa9ef3988adbbb2",
+      "lines": 196,
+      "read_ranges": [
+        [
+          24,
+          39
+        ],
+        [
+          127,
+          145
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "Matrix is 3 by 3; readLE performs nine little-endian float reads."
+    },
+    {
+      "path": "src/sporemodder/util/Vector3.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/util/Vector3.java",
+      "bytes": 3616,
+      "sha256": "327422b61c18d05067d63fc4a9381b882fea00578c78bb377f1d1419b3b82cae",
+      "lines": 160,
+      "read_ranges": [
+        [
+          95,
+          113
+        ]
+      ],
+      "source_level": "community_format_implementation",
+      "observation": "readLE consumes three little-endian floats."
+    }
+  ],
+  "container": {
+    "source": "EffectDirectory.java",
+    "locators": [
+      [
+        354,
+        435
+      ],
+      [
+        461,
+        515
+      ],
+      [
+        539,
+        624
+      ]
+    ],
+    "default_endian": "big",
+    "resource_type": {
+      "value": "0xea5118b0",
+      "source": "EffectsConverter.java",
+      "lines": [
+        37,
+        44
+      ]
+    },
+    "directory_version": 4,
+    "order": [
+      "directory version",
+      "ordinary component sections",
+      "i16 -1 terminator",
+      "resource sections",
+      "i16 -1 terminator",
+      "Visual version and count",
+      "Visual records",
+      "export entries",
+      "i32 -1 export terminator",
+      "one i32 stringAssignments",
+      "import count and entries"
+    ],
+    "section_header": [
+      {
+        "name": "type",
+        "encoding": "BE i16; -1 terminates list"
+      },
+      {
+        "name": "version",
+        "encoding": "BE i16"
+      },
+      {
+        "name": "bodyLength",
+        "encoding": "BE i32"
+      },
+      {
+        "name": "recordCount",
+        "encoding": "BE i32, included in bodyLength"
+      }
+    ],
+    "section_end": "bodyStart + bodyLength, where bodyStart is immediately after bodyLength; records start at bodyStart+4.",
+    "unknown_sections": "Retain kind/type/version/count/range/hash as opaque. Checked length permits skipping the entire ordinary/resource section; it does not reveal individual record boundaries.",
+    "visual_header": [
+      {
+        "name": "version",
+        "encoding": "BE i16; supported min=max=1"
+      },
+      {
+        "name": "recordCount",
+        "encoding": "BE i32"
+      }
+    ],
+    "visual_unknown_version": "Stop with unsupported-version and offset. No total length allows reliable skip to exports.",
+    "export_record": [
+      {
+        "name": "effectIndex",
+        "encoding": "BE i32; -1 terminates"
+      },
+      {
+        "name": "groupID",
+        "encoding": "BE u32 raw; community reader ignores"
+      },
+      {
+        "name": "nameHash",
+        "encoding": "BE u32 raw; community registry may resolve text"
+      }
+    ],
+    "export_resolution": "An unmasked index selects the zero-based Visual list. Import mask 0x7f000000 selects an import entry; clearing that mask produces the import index. Never flatten all component types into one index list.",
+    "string_assignments": "Reader consumes one i32 without interpreting it; writer emits -1. Meaning and any alternative encoding are unknown.",
+    "import_record": "BE i32 importCount; each entry BE u32 groupID + BE u32 nameHash.",
+    "import_source": {
+      "path": "ImportEffect.java",
+      "lines": [
+        29,
+        50
+      ]
+    },
+    "quality_filter": "Converter group-low-byte==2 is a tool preference, not a container validity condition."
+  },
+  "visual_v1": {
+    "source": "VisualEffect.java",
+    "locators": [
+      [
+        86,
+        104
+      ],
+      [
+        411,
+        417
+      ],
+      [
+        453,
+        459
+      ]
+    ],
+    "fields": [
+      {
+        "name": "flags,componentAppFlagsMask,notifyMessageID",
+        "encoding": "3 × BE i32"
+      },
+      {
+        "name": "screenSizeRange",
+        "encoding": "LE f32[2]"
+      },
+      {
+        "name": "cursorActiveDistance",
+        "encoding": "BE f32"
+      },
+      {
+        "name": "cursorButton",
+        "encoding": "i8"
+      },
+      {
+        "name": "lodDistances",
+        "encoding": "BE i32 count + count × BE f32"
+      },
+      {
+        "name": "extendedLodWeights",
+        "encoding": "LE f32[3]"
+      },
+      {
+        "name": "seed",
+        "encoding": "BE i32"
+      },
+      {
+        "name": "blocks",
+        "encoding": "BE i32 count + Block records"
+      }
+    ],
+    "derived_size": "49 + 4*lodDistanceCount + sum(blockByteLengths)",
+    "derivation_boundary": "Dense layout follows this metadata reader; not a native class size."
+  },
+  "block": {
+    "source": "VisualEffectBlock.java",
+    "locators": [
+      [
+        51,
+        61
+      ],
+      [
+        82,
+        103
+      ],
+      [
+        139,
+        168
+      ]
+    ],
+    "fields": [
+      {
+        "name": "blockType",
+        "encoding": "u8"
+      },
+      {
+        "name": "flags",
+        "encoding": "BE i32"
+      },
+      {
+        "name": "transform",
+        "encoding": "BE u16 flags; BE f32 scale; LE f32[9] rotation; LE f32[3] offset"
+      },
+      {
+        "name": "lodBegin,lodEnd",
+        "encoding": "2 × u8"
+      },
+      {
+        "name": "lodScales",
+        "encoding": "BE i32 count + each 3 × BE f32 (emit,size,alpha)"
+      },
+      {
+        "name": "emitScaleBegin,emitScaleEnd,sizeScaleBegin,sizeScaleEnd,alphaScaleBegin,alphaScaleEnd",
+        "encoding": "6 × BE f32"
+      },
+      {
+        "name": "appFlags,appFlagsMask",
+        "encoding": "2 × BE i32"
+      },
+      {
+        "name": "selectionGroup,selectionChance",
+        "encoding": "2 × BE u16"
+      },
+      {
+        "name": "timeScale",
+        "encoding": "BE f32"
+      },
+      {
+        "name": "componentIndex",
+        "encoding": "BE i32, resolved within blockType list; -1 null"
+      }
+    ],
+    "derived_size": "109 + 12*lodScaleCount",
+    "transform_bytes": 54,
+    "transform_evidence": [
+      {
+        "path": "Transform.java",
+        "lines": [
+          31,
+          46
+        ]
+      },
+      {
+        "path": "Matrix.java",
+        "lines": [
+          130,
+          136
+        ]
+      },
+      {
+        "path": "Vector3.java",
+        "lines": [
+          98,
+          102
+        ]
+      }
+    ]
+  },
+  "distribute": {
+    "source": "SkinpaintDistributeEffect.java",
+    "type": "0x23",
+    "version_min": 1,
+    "version_max": 2,
+    "locators": [
+      [
+        73,
+        88
+      ],
+      [
+        116,
+        162
+      ],
+      [
+        348,
+        354
+      ],
+      [
+        384,
+        390
+      ]
+    ],
+    "fields": [
+      {
+        "name": "field_8",
+        "encoding": "ASCII NUL CString"
+      },
+      {
+        "name": "particleIndex",
+        "encoding": "BE i32, typed 0x26 reference; -1 null"
+      },
+      {
+        "name": "spacing",
+        "encoding": "BE f32"
+      },
+      {
+        "name": "distributeLimit,region",
+        "encoding": "2 × BE i32"
+      },
+      {
+        "name": "regionBack,regionBelly",
+        "encoding": "2 × BE f32"
+      },
+      {
+        "name": "regionBodyRange",
+        "encoding": "LE f32[2]"
+      },
+      {
+        "name": "regionInverse,regionCenterOnly,cover,ordered",
+        "encoding": "4 × bool byte 0/1"
+      },
+      {
+        "name": "particleSelect",
+        "encoding": "BE i32 count + each (BE i32 typed 0x26 reference, BE f32 storedValue)"
+      },
+      {
+        "name": "selectAll",
+        "encoding": "bool byte 0/1"
+      }
+    ],
+    "derived_size": "N + 42 + 8*selectCount, where N excludes the string NUL.",
+    "stored_selection_value": "Keep raw; probability interpolation/selection and units are not established."
+  },
+  "sequence_v1": {
+    "source": "SequenceEffect.java",
+    "type": "0x0004",
+    "version_min": 1,
+    "version_max": 1,
+    "locators": [
+      [
+        55,
+        69
+      ],
+      [
+        85,
+        105
+      ],
+      [
+        141,
+        172
+      ],
+      [
+        189,
+        195
+      ]
+    ],
+    "fields": [
+      {
+        "name": "instances",
+        "encoding": "BE i32 count; each LE f32[2] timeRange + BE i32 Visual type-0 index"
+      },
+      {
+        "name": "flags",
+        "encoding": "BE i32"
+      }
+    ],
+    "derived_size": "8 + 12*instanceCount",
+    "reference_boundary": "Sequence instance references Visual type 0, not an arbitrary component list. -1 is null and can represent wait. Imported references follow directory mask conventions.",
+    "unknowns": "Time units, scheduling, overlap and flag evaluation are not established by serialization."
+  },
+  "particle_format_only": {
+    "source": "SkinpaintParticleEffect.java",
+    "type": "0x26",
+    "version_min": 1,
+    "version_max": 1,
+    "locators": [
+      [
+        118,
+        190
+      ],
+      [
+        239,
+        254
+      ],
+      [
+        875,
+        881
+      ],
+      [
+        911,
+        918
+      ]
+    ],
+    "fields": [
+      {
+        "name": "brushes",
+        "encoding": "BE i32 count + BE i32 IDs"
+      },
+      {
+        "name": "chainParticles",
+        "encoding": "BE i32 typed 0x26 reference; -1 null"
+      },
+      {
+        "name": "flags",
+        "encoding": "BE i32"
+      },
+      {
+        "name": "diffuseColor",
+        "encoding": "LE f32[3]"
+      },
+      {
+        "name": "diffuseColorIndex,alignFlag,initDirFlag,attractFlag",
+        "encoding": "4 × i8"
+      },
+      {
+        "name": "align,initDir,attract",
+        "encoding": "3 × LE f32[3]"
+      },
+      {
+        "name": "attractForce,delay_0,delay_1,life_0,life_1",
+        "encoding": "5 × BE f32"
+      },
+      {
+        "name": "inheritFlags",
+        "encoding": "BE i32"
+      },
+      {
+        "name": "varModifiers",
+        "encoding": "BE i32 count + 16-byte elements"
+      },
+      {
+        "name": "variables",
+        "encoding": "BE i32 count + 20-byte elements"
+      },
+      {
+        "name": "variableValues",
+        "encoding": "BE i32 count + BE f32 values"
+      },
+      {
+        "name": "diffuseBlend,specularBlend,bumpBlend",
+        "encoding": "3 × i8"
+      }
+    ],
+    "var_modifier": "3 × BE f32, i8 modifierType, i8 valueCount, BE i16 valueIndex.",
+    "variable": "BE f32[2] range, BE f32[2] values, i8 channel,varModifierIndex,operationType,flag.",
+    "derived_size": "103 + 4*brushCount + 16*varModifierCount + 20*variableCount + 4*variableValueCount.",
+    "local_status": "Opaque count/range only in current local investigation; no partial particle record claimed."
+  },
+  "bounded_reader_contract": [
+    "Check header availability, signed counts >=0, length >=4, checked end <= enclosing decoded resource; diagnose duplicate type sections rather than overwrite indexes.",
+    "Preserve per-type count and index identity even for opaque sections. Resolve references only after relevant section counts are known.",
+    "Bound CString NUL search to section end. Reject missing terminator and boolean bytes outside 0/1.",
+    "Before loops or allocations, bound each count using remaining bytes and minimum record width; use checked arithmetic.",
+    "Known-record parsing must end exactly at section end; retain trailing-byte diagnostic rather than silently discard.",
+    "Scan all Visual wrappers to reach exports, retaining only selected metadata. Do not recursively materialize the complete effect tree.",
+    "Unknown component type inside a known Block can retain an unresolved typed reference; unknown Visual version must stop.",
+    "Keep raw name hashes and group IDs; registry display text is supplementary identity.",
+    "Choose one explicit resource and a finite export/hash set. Decode complete Distribute records; leave Particle and unrelated sections opaque.",
+    "When following Sequence to Visual to Blocks, preserve edges and bound graph depth/visited nodes; report cycles rather than recurse indefinitely.",
+    "No serialized declaration establishes game painting behavior, execution frequency, native ABI, units, or the recipe actually selected by runtime."
+  ],
+  "example": {
+    "evidence_level": "Parent-reported local observation; this agent did not read package bytes.",
+    "resource_key": {
+      "type": "0xea5118b0",
+      "group": "0x40450200",
+      "instance": "0x2c978da4"
+    },
+    "decoded_bytes": 57862,
+    "component_prefix_end": 41285,
+    "sections_reported": [
+      {
+        "type": "0x22",
+        "version": 3,
+        "count": 14,
+        "body_bytes": 1362
+      },
+      {
+        "type": "0x23",
+        "version": 2,
+        "count": 34,
+        "body_bytes": 1432
+      },
+      {
+        "type": "0x26",
+        "version": 1,
+        "count": 52,
+        "body_bytes": 27164
+      }
+    ],
+    "distribute_check": "1432-4 = 1428 = 34*42. Under the verified layout and exact complete parse, this forces every string empty and every selectCount zero because extra sizes are nonnegative. The aggregate alone is a consistency check, not a substitute for parsing.",
+    "next_link": "Resolve a ce_skinpaint PROP.effect raw hash to export and Visual index, then retain typed Block references. The parent-reported direct type4 references require Sequence to Visual traversal before any skinpaint component association can be asserted.",
+    "parent_followup": "Parent reports exact end parsing for csa (84 Visual,42 exports) and editors (981 Visual,485 exports). Five selected name hashes matched exports whose direct Blocks all had type4. This narrows the next traversal to Sequence→Visual; it does not identify a Distribute record."
+  },
+  "unknowns": [
+    "Native implementation and whether every community-supported version matches every original resource.",
+    "StringAssignments semantics beyond the one i32 consumed by this reader.",
+    "Meaning/units and application rules for region, spacing, limits, probabilities, modifier operations, and blend modes.",
+    "Runtime recipe selection, random seeds, paint ordering, surface reprojection, seams, and shader evaluation.",
+    "Exact downstream typed graph after the five parent-reported export matches, until Sequence references are decoded and checked.",
+    "SkinSettings and Flood record layout reuse earlier evidence; not newly decoded or independently revalidated here."
+  ],
+  "verification": {
+    "json_syntax": "passed after on-disk validation",
+    "source_hashes": "SHA256 computed from fetched bytes; source bodies not persisted",
+    "scope": "Public static format examination; no game runtime or native provider execution."
+  }
+}

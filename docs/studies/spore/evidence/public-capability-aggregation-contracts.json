@@ -1,0 +1,6977 @@
+{
+  "kind": "pinned-capability-contribution-contracts-not-native-aggregation",
+  "commits": {
+    "SDK": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "sources": [
+    {
+      "name": "cSpeciesProfile.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpeciesProfile.h",
+      "bytes": 6236,
+      "sha256": "2003ab3cfcb87549462ba5ffb82ec8b153ce030e463564f2b504591f65b349e3",
+      "encoding": "utf-8",
+      "line_count": 188,
+      "selected_declarations": [
+        {
+          "line": 95,
+          "text": "/* 594h */\tfloat mNumMouths;"
+        },
+        {
+          "line": 101,
+          "text": "/* 5ACh */\tfloat mSocialSum;"
+        },
+        {
+          "line": 102,
+          "text": "/* 5B0h */\tfloat mAttackSum;"
+        },
+        {
+          "line": 103,
+          "text": "/* 5B4h */\tfloat mAttackMaxLevel;"
+        },
+        {
+          "line": 104,
+          "text": "/* 5B8h */\tfloat mSocialMaxLevel;"
+        },
+        {
+          "line": 111,
+          "text": "/* 5D4h */\tint mBiteLevel;"
+        },
+        {
+          "line": 112,
+          "text": "/* 5D8h */\tint mChargeLevel;"
+        },
+        {
+          "line": 113,
+          "text": "/* 5DCh */\tint mSpitLevel;"
+        },
+        {
+          "line": 114,
+          "text": "/* 5E0h */\tint mStrikeLevel;"
+        },
+        {
+          "line": 124,
+          "text": "/* 608h */\tint mMouthCarnivorous;"
+        },
+        {
+          "line": 125,
+          "text": "/* 60Ch */\tint mMouthHerbivorous;"
+        },
+        {
+          "line": 173,
+          "text": "/* 7A4h */\teastl::fixed_vector<unsigned long, 20> mSocialAbilityIndexes;"
+        },
+        {
+          "line": 177,
+          "text": "/* 878h */\teastl::fixed_vector<unsigned long, 20> mMouthIndexes;"
+        },
+        {
+          "line": 179,
+          "text": "/* 948h */\teastl::fixed_vector<unsigned long, 20> mMouthsIndexes2;"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "cCreatureAbility.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "bytes": 5751,
+      "sha256": "0d58d8957fbeca887c9c123cdbffe9fb94ba818eba97865563a4a4f92e6919d2",
+      "encoding": "utf-8",
+      "line_count": 195,
+      "selected_declarations": [
+        {
+          "line": 131,
+          "text": "/* 10h */\tint mSocialCategory;"
+        },
+        {
+          "line": 174,
+          "text": "/* 110h */\tfloat mLevelMultiplier;  // 1.0"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "encoding": "utf-8",
+      "line_count": 514,
+      "selected_declarations": [
+        {
+          "line": 44,
+          "text": "enum modelCapability"
+        },
+        {
+          "line": 46,
+          "text": "kModelCapabilityPerch = 0x0551bf16,"
+        },
+        {
+          "line": 47,
+          "text": "kModelCapabilitySpine = 0x100f0f5a,"
+        },
+        {
+          "line": 48,
+          "text": "kModelCapabilityLimb = 0xb00f0fdf,"
+        },
+        {
+          "line": 49,
+          "text": "kModelCapabilityNoStretch = 0x06F079DF,"
+        },
+        {
+          "line": 50,
+          "text": "kModelCapabilityGrasper = 0xb00f0fe2,"
+        },
+        {
+          "line": 51,
+          "text": "kModelCapabilityEar = 0xb00f0fe5,"
+        },
+        {
+          "line": 52,
+          "text": "kModelCapabilityEye = 0xb00f0fe9,"
+        },
+        {
+          "line": 53,
+          "text": "kModelCapabilityMouth = 0xb00f0fec,"
+        },
+        {
+          "line": 54,
+          "text": "kModelCapabilityFoot = 0xb00f0fef,"
+        },
+        {
+          "line": 55,
+          "text": "kModelCapabilitySlash = 0xb00f0ff2,"
+        },
+        {
+          "line": 56,
+          "text": "kModelCapabilityPoke = 0xb00f0ff4,"
+        },
+        {
+          "line": 57,
+          "text": "kModelCapabilityBash = 0xb00f0ff7,"
+        },
+        {
+          "line": 58,
+          "text": "kModelCapabilityFruit = 0xd00f0ffb,"
+        },
+        {
+          "line": 59,
+          "text": "kModelCapabilityFin = 0xd00f0ffe,"
+        },
+        {
+          "line": 60,
+          "text": "kModelCapabilityLiquid = 0x02294de1,"
+        },
+        {
+          "line": 61,
+          "text": "kModelCapabilityDayVision = 0x022e7977,"
+        },
+        {
+          "line": 62,
+          "text": "kModelCapabilityNightVision = 0x022e7777,"
+        },
+        {
+          "line": 63,
+          "text": "kModelCapabilityCarnivorous = 0x022e7847,"
+        },
+        {
+          "line": 64,
+          "text": "kModelCapabilityHerbivorous = 0x022e785c,"
+        },
+        {
+          "line": 65,
+          "text": "kModelCapabilityDetail = 0x025c6878,"
+        },
+        {
+          "line": 66,
+          "text": "kModelCapabilitySocial = 0x91a570ba,"
+        },
+        {
+          "line": 67,
+          "text": "kModelCapabilityHealth = 0x31c3e5b2,"
+        },
+        {
+          "line": 68,
+          "text": "kModelCapabilityStealth = 0x51c3e5b4,"
+        },
+        {
+          "line": 69,
+          "text": "kModelCapabilityCuteness = 0xb1c3e5b5,"
+        },
+        {
+          "line": 70,
+          "text": "kModelCapabilityJump = 0x330c117a,"
+        },
+        {
+          "line": 71,
+          "text": "kModelCapabilityBlock = 0xf354a879,"
+        },
+        {
+          "line": 72,
+          "text": "kModelCapabilityCall = 0xf354a87a,"
+        },
+        {
+          "line": 73,
+          "text": "kModelCapabilityCreatureSpeed = 0xb354a87c,"
+        },
+        {
+          "line": 74,
+          "text": "kModelCapabilitySprint = 0x3386c531,"
+        },
+        {
+          "line": 75,
+          "text": "kModelCapabilityWing = 0x04f4d188,"
+        },
+        {
+          "line": 76,
+          "text": "kModelCapabilitySense = 0xb3e30313,"
+        },
+        {
+          "line": 78,
+          "text": "kModelCapabilityMean = 0xb1c3e5b6,"
+        },
+        {
+          "line": 79,
+          "text": "kModelCapabilityBite = 0xb1c3e5b7,"
+        },
+        {
+          "line": 80,
+          "text": "kModelCapabilityCharge = 0xb1c3e5b8,"
+        },
+        {
+          "line": 81,
+          "text": "kModelCapabilitySpit = 0xb1c3e5b9,"
+        },
+        {
+          "line": 82,
+          "text": "kModelCapabilityStrike = 0xb1c3e5c0,"
+        },
+        {
+          "line": 83,
+          "text": "kModelCapabilityDance = 0xb1c3e5c1,"
+        },
+        {
+          "line": 84,
+          "text": "kModelCapabilityVocalize = 0xb1c3e5c2,"
+        },
+        {
+          "line": 85,
+          "text": "kModelCapabilityFlaunt = 0xb1c3e5c3,"
+        },
+        {
+          "line": 86,
+          "text": "kModelCapabilityPosture = 0xb1c3e5c4,"
+        },
+        {
+          "line": 87,
+          "text": "kModelCapabilityGlide = 0x04f4e1b4,"
+        },
+        {
+          "line": 89,
+          "text": "kModelCapabilityTribeAttack = 0x055d370e,"
+        },
+        {
+          "line": 90,
+          "text": "kModelCapabilityTribeSocial = 0x055d3747,"
+        },
+        {
+          "line": 91,
+          "text": "kModelCapabilityTribeArmor = 0x055d374c,"
+        },
+        {
+          "line": 92,
+          "text": "kModelCapabilityTribeGather = 0x055d3750,"
+        },
+        {
+          "line": 93,
+          "text": "kModelCapabilityTribeFishing = 0x055d3754,"
+        },
+        {
+          "line": 95,
+          "text": "kModelCapabilityEnergyRegen = 0x073ce5dd,"
+        },
+        {
+          "line": 96,
+          "text": "kModelCapabilityAdventurerMissile = 0x0732c356,"
+        },
+        {
+          "line": 97,
+          "text": "kModelCapabilityAdventurerEnergyBlade = 0x073930ea,"
+        },
+        {
+          "line": 98,
+          "text": "kModelCapabilityAdventurerShieldGenerator = 0x073e33c7,"
+        },
+        {
+          "line": 99,
+          "text": "kModelCapabilityAdventurerHoloCharm = 0x074260ec,"
+        },
+        {
+          "line": 100,
+          "text": "kModelCapabilityAdventurerLightningSword = 0x075f5ba0,"
+        },
+        {
+          "line": 101,
+          "text": "kModelCapabilityAdventurerPulseGun = 0x075f5ba6,"
+        },
+        {
+          "line": 102,
+          "text": "kModelCapabilityAdventurerBattleArmor = 0x075f5bab,"
+        },
+        {
+          "line": 103,
+          "text": "kModelCapabilityAdventurerPoweredArmor = 0x075f5baf,"
+        },
+        {
+          "line": 104,
+          "text": "kModelCapabilityAdventurerAbsorptionShield = 0x075f5bb4,"
+        },
+        {
+          "line": 105,
+          "text": "kModelCapabilityAdventurerHealthRegen = 0x075f5bb7,"
+        },
+        {
+          "line": 106,
+          "text": "kModelCapabilityAdventurerHealthBonus = 0x075f5bbc,"
+        },
+        {
+          "line": 107,
+          "text": "kModelCapabilityAdventurerSummonSwarm = 0x075f5bbf,"
+        },
+        {
+          "line": 108,
+          "text": "kModelCapabilityAdventurerMindMeld = 0x075f5bc3,"
+        },
+        {
+          "line": 109,
+          "text": "kModelCapabilityAdventurerPoisonBlade = 0x075f5bc8,"
+        },
+        {
+          "line": 110,
+          "text": "kModelCapabilityAdventurerFreeze = 0x075f5bcb,"
+        },
+        {
+          "line": 111,
+          "text": "kModelCapabilityAdventurerGracefulWaltz = 0x075f5bcf,"
+        },
+        {
+          "line": 112,
+          "text": "kModelCapabilityAdventurerHarmoniousSong = 0x075f5bd2,"
+        },
+        {
+          "line": 113,
+          "text": "kModelCapabilityAdventurerRoyalCharm = 0x075f5bd6,"
+        },
+        {
+          "line": 114,
+          "text": "kModelCapabilityAdventurerRadiantPose = 0x075f5bda,"
+        },
+        {
+          "line": 115,
+          "text": "kModelCapabilityAdventurerSprintBurst = 0x075f5bde,"
+        },
+        {
+          "line": 116,
+          "text": "kModelCapabilityAdventurerHover = 0x075f5be3,"
+        },
+        {
+          "line": 117,
+          "text": "kModelCapabilityAdventurerStealthField = 0x075f5be6,"
+        },
+        {
+          "line": 118,
+          "text": "kModelCapabilityAdventurerJumpJet = 0x075f5bea,"
+        },
+        {
+          "line": 119,
+          "text": "kModelCapabilityAdventurerInspiringSong = 0x075f5bee,"
+        },
+        {
+          "line": 120,
+          "text": "kModelCapabilityAdventurerStunningDance = 0x075f5bf2,"
+        },
+        {
+          "line": 121,
+          "text": "kModelCapabilityAdventurerConfettiPose = 0x075f5bf7,"
+        },
+        {
+          "line": 122,
+          "text": "kModelCapabilityAdventurerEnergyStorage = 0x075f5bfa,"
+        },
+        {
+          "line": 124,
+          "text": "kModelCapabilityVehicleSpeed = 0x11b78a70,"
+        },
+        {
+          "line": 125,
+          "text": "kModelCapabilityVehicleDefense = 0x11b78a71,"
+        },
+        {
+          "line": 126,
+          "text": "kModelCapabilityVehiclePower = 0x11b78a72,"
+        },
+        {
+          "line": 127,
+          "text": "kModelCapabilityVehicleMilitaryPower = 0x06329468,"
+        },
+        {
+          "line": 128,
+          "text": "kModelCapabilityVehicleReligiousPower = 0x06329469,"
+        },
+        {
+          "line": 129,
+          "text": "kModelCapabilityVehicleEconomicPower = 0x0632946a,"
+        },
+        {
+          "line": 131,
+          "text": "kModelCapabilityCellFilter = 0x11b79a70,"
+        },
+        {
+          "line": 132,
+          "text": "kModelCapabilityCellSpike = 0x11b79a71,"
+        },
+        {
+          "line": 133,
+          "text": "kModelCapabilityCellJet = 0x11b79a72,"
+        },
+        {
+          "line": 134,
+          "text": "kModelCapabilityCellFlagella = 0x032f92e6,"
+        },
+        {
+          "line": 135,
+          "text": "kModelCapabilityCellJaw = 0x11b79a74,"
+        },
+        {
+          "line": 136,
+          "text": "kModelCapabilityCellElectric = 0x11b79a75,"
+        },
+        {
+          "line": 137,
+          "text": "kModelCapabilityCellPoison = 0x11b79a76,"
+        },
+        {
+          "line": 138,
+          "text": "kModelCapabilityCellCilia = 0x11b79a77,"
+        },
+        {
+          "line": 139,
+          "text": "kModelCapabilityCellPoker = 0x11b79a78,"
+        },
+        {
+          "line": 141,
+          "text": "kModelCapabilityCellEye = 0x11b79a73,"
+        },
+        {
+          "line": 142,
+          "text": "kModelCapabilityCellMouth = 0x11b79301,"
+        },
+        {
+          "line": 143,
+          "text": "kModelCapabilityCellMovement = 0x11b79302,"
+        },
+        {
+          "line": 144,
+          "text": "kModelCapabilityCellWeapon = 0x11b79303,"
+        },
+        {
+          "line": 145,
+          "text": "kModelCapabilityCellWeaponCharging = 0x11b79304,"
+        },
+        {
+          "line": 146,
+          "text": "kModelCapabilityCellGameSpeed = 0x066783b4,"
+        },
+        {
+          "line": 148,
+          "text": "kModelCapabilityCellCarnivore = 0x4d192a1,"
+        },
+        {
+          "line": 149,
+          "text": "kModelCapabilityCellOmnivore = 0x4d18972,"
+        },
+        {
+          "line": 150,
+          "text": "kModelCapabilityCellStarvivore = 0x4d18c4c,"
+        },
+        {
+          "line": 151,
+          "text": "kModelCapabilityCellStarvivore2 = 0x4d192a14,"
+        },
+        {
+          "line": 152,
+          "text": "kModelCapabilityCellHealth = 0x4d18efd,"
+        },
+        {
+          "line": 153,
+          "text": "kModelCapabilityCellHerbivore = 0x4d192a2,"
+        },
+        {
+          "line": 154,
+          "text": "kModelCapabilityCellProboscis = 0x4d192a3,"
+        },
+        {
+          "line": 156,
+          "text": "kModelCapabilityCell_herbivore_carnivore_proboscis = 0x50c34699,"
+        },
+        {
+          "line": 157,
+          "text": "kModelCapabilityCell_herbivore_carnivore = 0x177209ee,"
+        },
+        {
+          "line": 158,
+          "text": "kModelCapabilityCell_herbivore_proboscis = 0x64e7222b,"
+        },
+        {
+          "line": 159,
+          "text": "kModelCapabilityCell_carnivore_proboscis = 0xf613df04,"
+        },
+        {
+          "line": 161,
+          "text": "kModelCapabilityEyeOverlayEffect = 0xF354A870,"
+        },
+        {
+          "line": 164,
+          "text": "struct EditorRigblockCapability"
+        },
+        {
+          "line": 166,
+          "text": "/// Property ID used to check the capability, such as `modelCapabilityAdventurerMissile`"
+        },
+        {
+          "line": 170,
+          "text": "/* 08h */\tint mCapabilityLevel;"
+        },
+        {
+          "line": 171,
+          "text": "/* 0Ch */\tint mCapabilityLevel2;"
+        },
+        {
+          "line": 174,
+          "text": "ASSERT_SIZE(EditorRigblockCapability, 0x14);"
+        },
+        {
+          "line": 496,
+          "text": "/* C0Ch */\teastl::fixed_vector<EditorRigblockCapability, 20> mCapabilities;"
+        },
+        {
+          "line": 500,
+          "text": "/* DB8h */\tuint32_t mMouthType;"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "encoding": "utf-8",
+      "line_count": 101,
+      "selected_declarations": [
+        {
+          "line": 21,
+          "text": "struct CapabilityTag"
+        },
+        {
+          "line": 62,
+          "text": "/* 0Ch */\tint16_t mCapabilityIndex;"
+        },
+        {
+          "line": 86,
+          "text": "/* ACh */\teastl::vector<CapabilityTag> mCapabilityIDs;"
+        },
+        {
+          "line": 87,
+          "text": "/* C0h */\teastl::vector<int8_t> mCapabilityLevels;"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "encoding": "utf-8",
+      "line_count": 6368,
+      "selected_declarations": [
+        {
+          "line": 509,
+          "text": "modelCapabilityLiquid\t0x02294DE1"
+        },
+        {
+          "line": 511,
+          "text": "modelCapabilityNightVision\t0x022E7777"
+        },
+        {
+          "line": 512,
+          "text": "modelCapabilityCarnivorous\t0x022E7847"
+        },
+        {
+          "line": 513,
+          "text": "modelCapabilityHerbivorous\t0x022E785C"
+        },
+        {
+          "line": 514,
+          "text": "modelCapabilityDayVision\t0x022E7977"
+        },
+        {
+          "line": 588,
+          "text": "modelCapabilityDetail\t0x025C6878"
+        },
+        {
+          "line": 852,
+          "text": "modelCapabilityCellFlagella\t0x032F92E6"
+        },
+        {
+          "line": 1119,
+          "text": "creatureAbilityRequiredCAPs\t0x04052A6B"
+        },
+        {
+          "line": 1120,
+          "text": "creatureAbilityRequiredCAPsMaxValueRange\t0x04052A86"
+        },
+        {
+          "line": 1121,
+          "text": "creatureAbilityRequiredCAPsSumValueRange\t0x04052B30"
+        },
+        {
+          "line": 1350,
+          "text": "modelCapabilityToPropFileMap\t0x047BE907"
+        },
+        {
+          "line": 1351,
+          "text": "modelCapabilityAnimKeys\t0x047BE908"
+        },
+        {
+          "line": 1352,
+          "text": "modelCapabilityDefaultAnimValues\t0x047BE96F"
+        },
+        {
+          "line": 1541,
+          "text": "creatureAbilityAttackStatSumValueRange\t0x04AC8D53"
+        },
+        {
+          "line": 1542,
+          "text": "creatureAbilitySocialStatSumValueRange\t0x04AC8D56"
+        },
+        {
+          "line": 1708,
+          "text": "modelCapabilityWing\t0x04F4D188"
+        },
+        {
+          "line": 1709,
+          "text": "modelCapabilityGlide\t0x04F4E1B4"
+        },
+        {
+          "line": 1975,
+          "text": "modelCapabilityPerch\t0x0551BF16"
+        },
+        {
+          "line": 2073,
+          "text": "modelCapabilityTribeAttack\t0x055D370E"
+        },
+        {
+          "line": 2074,
+          "text": "modelCapabilityTribeSocial\t0x055D3747"
+        },
+        {
+          "line": 2075,
+          "text": "modelCapabilityTribeArmor\t0x055D374C"
+        },
+        {
+          "line": 2076,
+          "text": "modelCapabilityTribeGather\t0x055D3750"
+        },
+        {
+          "line": 2077,
+          "text": "modelCapabilityTribeFishing\t0x055D3754"
+        },
+        {
+          "line": 2596,
+          "text": "modelCapabilityMilitaryPower\t0x06329468"
+        },
+        {
+          "line": 2597,
+          "text": "modelCapabilityReligiousPower\t0x06329469"
+        },
+        {
+          "line": 2598,
+          "text": "modelCapabilityEconomicPower\t0x0632946A"
+        },
+        {
+          "line": 2719,
+          "text": "modelCapabilityCellGameSpeed\t0x066783B4"
+        },
+        {
+          "line": 2795,
+          "text": "modelCapabilityDefaultAnimWeights\t0x0684D16C"
+        },
+        {
+          "line": 2865,
+          "text": "modelCapabilitySpine\t0x100F0F5A"
+        },
+        {
+          "line": 2910,
+          "text": "modelCapabilitySpeed\t0x11B78A70"
+        },
+        {
+          "line": 2911,
+          "text": "modelCapabilityDefense\t0x11B78A71"
+        },
+        {
+          "line": 2912,
+          "text": "modelCapabilityPower\t0x11B78A72"
+        },
+        {
+          "line": 2913,
+          "text": "modelCapabilityCellMouth\t0x11B79301"
+        },
+        {
+          "line": 2914,
+          "text": "modelCapabilityCellMovement\t0x11B79302"
+        },
+        {
+          "line": 2915,
+          "text": "modelCapabilityCellWeapon\t0x11B79303"
+        },
+        {
+          "line": 2916,
+          "text": "modelCapabilityCellWeaponCharging\t0x11B79304"
+        },
+        {
+          "line": 2917,
+          "text": "modelCapabilityCellFilter\t0x11B79A70"
+        },
+        {
+          "line": 2918,
+          "text": "modelCapabilityCellSpike\t0x11B79A71"
+        },
+        {
+          "line": 2919,
+          "text": "modelCapabilityCellJet\t0x11B79A72"
+        },
+        {
+          "line": 2920,
+          "text": "modelCapabilityCellEye\t0x11B79A73"
+        },
+        {
+          "line": 2921,
+          "text": "modelCapabilityCellJaw\t0x11B79A74"
+        },
+        {
+          "line": 2922,
+          "text": "modelCapabilityCellElectric\t0x11B79A75"
+        },
+        {
+          "line": 2923,
+          "text": "modelCapabilityCellPoison\t0x11B79A76"
+        },
+        {
+          "line": 2924,
+          "text": "modelCapabilityCellCilia\t0x11B79A77"
+        },
+        {
+          "line": 2925,
+          "text": "modelCapabilityCellPoker\t0x11B79A78"
+        },
+        {
+          "line": 3089,
+          "text": "modelCapabilityHealth\t0x31C3E5B2"
+        },
+        {
+          "line": 3102,
+          "text": "modelCapabilityJump\t0x330C117A"
+        },
+        {
+          "line": 3106,
+          "text": "modelCapabilitySprint\t0x3386C531"
+        },
+        {
+          "line": 3230,
+          "text": "modelCapabilityStealth\t0x51C3E5B4"
+        },
+        {
+          "line": 3510,
+          "text": "modelCapabilitySocial\t0x91A570BA"
+        },
+        {
+          "line": 3604,
+          "text": "modelCapabilityLimb\t0xB00F0FDF"
+        },
+        {
+          "line": 3605,
+          "text": "modelCapabilityGrasper\t0xB00F0FE2"
+        },
+        {
+          "line": 3606,
+          "text": "modelCapabilityEar\t0xB00F0FE5"
+        },
+        {
+          "line": 3607,
+          "text": "modelCapabilityEye\t0xB00F0FE9"
+        },
+        {
+          "line": 3608,
+          "text": "modelCapabilityMouth\t0xB00F0FEC"
+        },
+        {
+          "line": 3609,
+          "text": "modelCapabilityFoot\t0xB00F0FEF"
+        },
+        {
+          "line": 3610,
+          "text": "modelCapabilitySlash\t0xB00F0FF2"
+        },
+        {
+          "line": 3611,
+          "text": "modelCapabilityPoke\t0xB00F0FF4"
+        },
+        {
+          "line": 3612,
+          "text": "modelCapabilityBash\t0xB00F0FF7"
+        },
+        {
+          "line": 3649,
+          "text": "modelCapabilityCuteness\t0xB1C3E5B5"
+        },
+        {
+          "line": 3650,
+          "text": "modelCapabilityMean\t0xB1C3E5B6"
+        },
+        {
+          "line": 3651,
+          "text": "modelCapabilityBite\t0xB1C3E5B7"
+        },
+        {
+          "line": 3652,
+          "text": "modelCapabilityCharge\t0xB1C3E5B8"
+        },
+        {
+          "line": 3653,
+          "text": "modelCapabilitySpit\t0xB1C3E5B9"
+        },
+        {
+          "line": 3654,
+          "text": "modelCapabilityStrike\t0xB1C3E5C0"
+        },
+        {
+          "line": 3655,
+          "text": "modelCapabilityDance\t0xB1C3E5C1"
+        },
+        {
+          "line": 3656,
+          "text": "modelCapabilityVocalize\t0xB1C3E5C2"
+        },
+        {
+          "line": 3657,
+          "text": "modelCapabilityFlaunt\t0xB1C3E5C3"
+        },
+        {
+          "line": 3658,
+          "text": "modelCapabilityPosture\t0xB1C3E5C4"
+        },
+        {
+          "line": 3670,
+          "text": "modelCapabilityCreatureSpeed\t0xB354A87C"
+        },
+        {
+          "line": 3676,
+          "text": "modelCapabilitySense\t0xB3E30313"
+        },
+        {
+          "line": 3754,
+          "text": "modelCapabilityFruit\t0xD00F0FFB"
+        },
+        {
+          "line": 3755,
+          "text": "modelCapabilityFin\t0xD00F0FFE"
+        },
+        {
+          "line": 3955,
+          "text": "modelCapabilityBlock\t0xF354A879"
+        },
+        {
+          "line": 3956,
+          "text": "modelCapabilityCall\t0xF354A87A"
+        },
+        {
+          "line": 4654,
+          "text": "modelCapabilityEnergyRegen\t0x073ce5dd"
+        },
+        {
+          "line": 4655,
+          "text": "modelCapabilityAdventurerMissile\t0x0732c356"
+        },
+        {
+          "line": 4656,
+          "text": "modelCapabilityAdventurerEnergyBlade\t0x073930ea"
+        },
+        {
+          "line": 4657,
+          "text": "modelCapabilityAdventurerShieldGenerator\t0x073e33c7"
+        },
+        {
+          "line": 4658,
+          "text": "modelCapabilityAdventurerHoloCharm\t0x074260ec"
+        },
+        {
+          "line": 4659,
+          "text": "modelCapabilityAdventurerLightningSword\t0x075f5ba0"
+        },
+        {
+          "line": 4660,
+          "text": "modelCapabilityAdventurerPulseGun\t0x075f5ba6"
+        },
+        {
+          "line": 4661,
+          "text": "modelCapabilityAdventurerBattleArmor\t0x075f5bab"
+        },
+        {
+          "line": 4662,
+          "text": "modelCapabilityAdventurerPoweredArmor\t0x075f5baf"
+        },
+        {
+          "line": 4663,
+          "text": "modelCapabilityAdventurerAbsorptionShield\t0x075f5bb4"
+        },
+        {
+          "line": 4664,
+          "text": "modelCapabilityAdventurerHealthRegen\t0x075f5bb7"
+        },
+        {
+          "line": 4665,
+          "text": "modelCapabilityAdventurerHealthBonus\t0x075f5bbc"
+        },
+        {
+          "line": 4666,
+          "text": "modelCapabilityAdventurerSummonSwarm\t0x075f5bbf"
+        },
+        {
+          "line": 4667,
+          "text": "modelCapabilityAdventurerMindMeld\t0x075f5bc3"
+        },
+        {
+          "line": 4668,
+          "text": "modelCapabilityAdventurerPoisonBlade\t0x075f5bc8"
+        },
+        {
+          "line": 4669,
+          "text": "modelCapabilityAdventurerFreeze\t0x075f5bcb"
+        },
+        {
+          "line": 4670,
+          "text": "modelCapabilityAdventurerGracefulWaltz\t0x075f5bcf"
+        },
+        {
+          "line": 4671,
+          "text": "modelCapabilityAdventurerHarmoniousSong\t0x075f5bd2"
+        },
+        {
+          "line": 4672,
+          "text": "modelCapabilityAdventurerRoyalCharm\t0x075f5bd6"
+        },
+        {
+          "line": 4673,
+          "text": "modelCapabilityAdventurerRadiantPose\t0x075f5bda"
+        },
+        {
+          "line": 4674,
+          "text": "modelCapabilityAdventurerSprintBurst\t0x075f5bde"
+        },
+        {
+          "line": 4675,
+          "text": "modelCapabilityAdventurerHover\t0x075f5be3"
+        },
+        {
+          "line": 4676,
+          "text": "modelCapabilityAdventurerStealthField\t0x075f5be6"
+        },
+        {
+          "line": 4677,
+          "text": "modelCapabilityAdventurerJumpJet\t0x075f5bea"
+        },
+        {
+          "line": 4678,
+          "text": "modelCapabilityAdventurerInspiringSong\t0x075f5bee"
+        },
+        {
+          "line": 4679,
+          "text": "modelCapabilityAdventurerStunningDance\t0x075f5bf2"
+        },
+        {
+          "line": 4680,
+          "text": "modelCapabilityAdventurerConfettiPose\t0x075f5bf7"
+        },
+        {
+          "line": 4681,
+          "text": "modelCapabilityAdventurerEnergyStorage\t0x075f5bfa"
+        },
+        {
+          "line": 4710,
+          "text": "creatureAbilityExcludedCAPs\t0x07352141"
+        },
+        {
+          "line": 4711,
+          "text": "creatureAbilityLevelMultiplier\t0xf96c61b7"
+        },
+        {
+          "line": 4763,
+          "text": "modelCapabilityNoStretch\t0x06F079DF"
+        },
+        {
+          "line": 5246,
+          "text": "findPercentageLevelMultiplier"
+        },
+        {
+          "line": 5286,
+          "text": "numSocialProposals"
+        },
+        {
+          "line": 6329,
+          "text": "numSocialRounds"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "bytes": 2860453,
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "encoding": "utf-8",
+      "line_count": 125506,
+      "selected_declarations": [
+        {
+          "line": 1499,
+          "text": "ce_grasper_amphibian_01"
+        },
+        {
+          "line": 1500,
+          "text": "ce_grasper_amphibian_02"
+        },
+        {
+          "line": 1501,
+          "text": "ce_grasper_amphibian_03"
+        },
+        {
+          "line": 1502,
+          "text": "ce_grasper_amphibian_04"
+        },
+        {
+          "line": 1503,
+          "text": "ce_grasper_bird_01"
+        },
+        {
+          "line": 1504,
+          "text": "ce_grasper_bird_02"
+        },
+        {
+          "line": 1505,
+          "text": "ce_grasper_bird_03"
+        },
+        {
+          "line": 1506,
+          "text": "ce_grasper_bird_04"
+        },
+        {
+          "line": 1507,
+          "text": "ce_grasper_default_01"
+        },
+        {
+          "line": 1508,
+          "text": "ce_grasper_dino_01"
+        },
+        {
+          "line": 1509,
+          "text": "ce_grasper_dino_02"
+        },
+        {
+          "line": 1510,
+          "text": "ce_grasper_dino_03"
+        },
+        {
+          "line": 1511,
+          "text": "ce_grasper_dino_04"
+        },
+        {
+          "line": 1512,
+          "text": "ce_grasper_insect_01"
+        },
+        {
+          "line": 1513,
+          "text": "ce_grasper_insect_02"
+        },
+        {
+          "line": 1514,
+          "text": "ce_grasper_insect_03"
+        },
+        {
+          "line": 1515,
+          "text": "ce_grasper_insect_04"
+        },
+        {
+          "line": 1516,
+          "text": "ce_grasper_null"
+        },
+        {
+          "line": 1517,
+          "text": "ce_grasper_paw_01"
+        },
+        {
+          "line": 1518,
+          "text": "ce_grasper_paw_02"
+        },
+        {
+          "line": 1519,
+          "text": "ce_grasper_paw_03"
+        },
+        {
+          "line": 1520,
+          "text": "ce_grasper_paw_04"
+        },
+        {
+          "line": 1521,
+          "text": "ce_grasper_primate_01"
+        },
+        {
+          "line": 1522,
+          "text": "ce_grasper_primate_02"
+        },
+        {
+          "line": 1523,
+          "text": "ce_grasper_primate_03"
+        },
+        {
+          "line": 1524,
+          "text": "ce_grasper_primate_04"
+        },
+        {
+          "line": 1525,
+          "text": "ce_grasper_radial_01"
+        },
+        {
+          "line": 1526,
+          "text": "ce_grasper_radial_02"
+        },
+        {
+          "line": 1527,
+          "text": "ce_grasper_radial_03"
+        },
+        {
+          "line": 1528,
+          "text": "ce_grasper_radial_04"
+        },
+        {
+          "line": 1539,
+          "text": "ce_mouth_amphibian_omnivore_01"
+        },
+        {
+          "line": 1540,
+          "text": "ce_mouth_amphibian_omnivore_02"
+        },
+        {
+          "line": 1541,
+          "text": "ce_mouth_amphibian_omnivore_03"
+        },
+        {
+          "line": 1542,
+          "text": "ce_mouth_amphibian_omnivore_04"
+        },
+        {
+          "line": 1543,
+          "text": "ce_mouth_beak_carnivore_01"
+        },
+        {
+          "line": 1544,
+          "text": "ce_mouth_beak_carnivore_02"
+        },
+        {
+          "line": 1545,
+          "text": "ce_mouth_beak_carnivore_03"
+        },
+        {
+          "line": 1546,
+          "text": "ce_mouth_beak_carnivore_04"
+        },
+        {
+          "line": 1547,
+          "text": "ce_mouth_beak_herbivore_01"
+        },
+        {
+          "line": 1548,
+          "text": "ce_mouth_beak_herbivore_02"
+        },
+        {
+          "line": 1549,
+          "text": "ce_mouth_beak_herbivore_03"
+        },
+        {
+          "line": 1550,
+          "text": "ce_mouth_beak_herbivore_04"
+        },
+        {
+          "line": 1551,
+          "text": "ce_mouth_beak_herbivore_04_dan"
+        },
+        {
+          "line": 1552,
+          "text": "ce_mouth_fish_carnivore_01"
+        },
+        {
+          "line": 1553,
+          "text": "ce_mouth_fish_carnivore_02"
+        },
+        {
+          "line": 1554,
+          "text": "ce_mouth_fish_carnivore_03"
+        },
+        {
+          "line": 1555,
+          "text": "ce_mouth_fish_carnivore_04"
+        },
+        {
+          "line": 1556,
+          "text": "ce_mouth_jaw_carnivore_01"
+        },
+        {
+          "line": 1557,
+          "text": "ce_mouth_jaw_carnivore_02"
+        },
+        {
+          "line": 1558,
+          "text": "ce_mouth_jaw_carnivore_03"
+        },
+        {
+          "line": 1559,
+          "text": "ce_mouth_jaw_carnivore_04"
+        },
+        {
+          "line": 1560,
+          "text": "ce_mouth_jaw_herbivore_01"
+        },
+        {
+          "line": 1561,
+          "text": "ce_mouth_jaw_herbivore_02"
+        },
+        {
+          "line": 1562,
+          "text": "ce_mouth_jaw_herbivore_03"
+        },
+        {
+          "line": 1563,
+          "text": "ce_mouth_jaw_herbivore_04"
+        },
+        {
+          "line": 1564,
+          "text": "ce_mouth_mandible_carnivore_01"
+        },
+        {
+          "line": 1565,
+          "text": "ce_mouth_mandible_carnivore_02"
+        },
+        {
+          "line": 1566,
+          "text": "ce_mouth_mandible_carnivore_03"
+        },
+        {
+          "line": 1567,
+          "text": "ce_mouth_mandible_carnivore_04"
+        },
+        {
+          "line": 1568,
+          "text": "ce_mouth_primate_omnivore_01"
+        },
+        {
+          "line": 1569,
+          "text": "ce_mouth_primate_omnivore_02"
+        },
+        {
+          "line": 1570,
+          "text": "ce_mouth_primate_omnivore_03"
+        },
+        {
+          "line": 1571,
+          "text": "ce_mouth_primate_omnivore_04"
+        },
+        {
+          "line": 1572,
+          "text": "ce_mouth_radial_omnivore_01"
+        },
+        {
+          "line": 1573,
+          "text": "ce_mouth_radial_omnivore_02"
+        },
+        {
+          "line": 1574,
+          "text": "ce_mouth_radial_omnivore_03"
+        },
+        {
+          "line": 1575,
+          "text": "ce_mouth_radial_omnivore_04"
+        },
+        {
+          "line": 1576,
+          "text": "ce_mouth_snout_herbivore_01"
+        },
+        {
+          "line": 1577,
+          "text": "ce_mouth_snout_herbivore_02"
+        },
+        {
+          "line": 1578,
+          "text": "ce_mouth_snout_herbivore_03"
+        },
+        {
+          "line": 1579,
+          "text": "ce_mouth_snout_herbivore_04"
+        },
+        {
+          "line": 9730,
+          "text": "ce_mouth_modtest"
+        },
+        {
+          "line": 9731,
+          "text": "ce_mouth_amphibian_omnivore_01_auto"
+        },
+        {
+          "line": 9732,
+          "text": "ce_mouth_modtest1.prop.xml"
+        },
+        {
+          "line": 9733,
+          "text": "ce_mouth_modtest1"
+        },
+        {
+          "line": 9734,
+          "text": "ce_mouth_modtest1_auto"
+        },
+        {
+          "line": 9777,
+          "text": "ce_mouth_modtest_auto"
+        },
+        {
+          "line": 10691,
+          "text": "ce_grasper_horror_04"
+        },
+        {
+          "line": 40227,
+          "text": "ce_mouth_cute_herbivore_03"
+        },
+        {
+          "line": 40228,
+          "text": "ce_mouth_cute_herbivore_01"
+        },
+        {
+          "line": 40229,
+          "text": "ce_mouth_cute_herbivore_02"
+        },
+        {
+          "line": 40230,
+          "text": "ce_mouth_cute_herbivore_04"
+        },
+        {
+          "line": 40256,
+          "text": "ce_grasper_horror_01"
+        },
+        {
+          "line": 40257,
+          "text": "ce_grasper_horror_02"
+        },
+        {
+          "line": 40258,
+          "text": "ce_grasper_horror_03"
+        },
+        {
+          "line": 40267,
+          "text": "ce_mouth_cute_omnivore_01"
+        },
+        {
+          "line": 40268,
+          "text": "ce_mouth_cute_omnivore_02"
+        },
+        {
+          "line": 40269,
+          "text": "ce_mouth_cute_omnivore_03"
+        },
+        {
+          "line": 40270,
+          "text": "ce_mouth_cute_omnivore_04"
+        },
+        {
+          "line": 40279,
+          "text": "ce_grasper_cute_02"
+        },
+        {
+          "line": 40280,
+          "text": "ce_grasper_cute_01"
+        },
+        {
+          "line": 40281,
+          "text": "ce_grasper_cute_03"
+        },
+        {
+          "line": 40282,
+          "text": "ce_grasper_cute_04"
+        },
+        {
+          "line": 40283,
+          "text": "ce_grasper_cute_05"
+        },
+        {
+          "line": 40284,
+          "text": "ce_grasper_cute_06"
+        },
+        {
+          "line": 40285,
+          "text": "ce_grasper_cute_07"
+        },
+        {
+          "line": 40286,
+          "text": "ce_grasper_cute_08"
+        },
+        {
+          "line": 40307,
+          "text": "ce_mouth_horror_carnivore_02"
+        },
+        {
+          "line": 40308,
+          "text": "ce_mouth_horror_carnivore_01"
+        },
+        {
+          "line": 40309,
+          "text": "ce_mouth_horror_carnivore_03"
+        },
+        {
+          "line": 40310,
+          "text": "ce_mouth_horror_carnivore_04"
+        },
+        {
+          "line": 41098,
+          "text": "ce_grasper_dino_04-symmetric"
+        },
+        {
+          "line": 41099,
+          "text": "ce_grasper_dino_01-symmetric"
+        },
+        {
+          "line": 41100,
+          "text": "ce_grasper_dino_02-symmetric"
+        },
+        {
+          "line": 41101,
+          "text": "ce_grasper_dino_03-symmetric"
+        },
+        {
+          "line": 41119,
+          "text": "ce_grasper_radial_02-symmetric"
+        },
+        {
+          "line": 41120,
+          "text": "ce_grasper_radial_01-symmetric"
+        },
+        {
+          "line": 41121,
+          "text": "ce_grasper_radial_03-symmetric"
+        },
+        {
+          "line": 41122,
+          "text": "ce_grasper_radial_04-symmetric"
+        },
+        {
+          "line": 41143,
+          "text": "ce_grasper_bird_03-symmetric"
+        },
+        {
+          "line": 41144,
+          "text": "ce_grasper_bird_01-symmetric"
+        },
+        {
+          "line": 41145,
+          "text": "ce_grasper_bird_02-symmetric"
+        },
+        {
+          "line": 41146,
+          "text": "ce_grasper_bird_04-symmetric"
+        },
+        {
+          "line": 41156,
+          "text": "ce_grasper_amphibian_03-symmetric"
+        },
+        {
+          "line": 41157,
+          "text": "ce_grasper_amphibian_01-symmetric"
+        },
+        {
+          "line": 41158,
+          "text": "ce_grasper_amphibian_02-symmetric"
+        },
+        {
+          "line": 41159,
+          "text": "ce_grasper_amphibian_04-symmetric"
+        },
+        {
+          "line": 41191,
+          "text": "ce_grasper_insect_04-symmetric"
+        },
+        {
+          "line": 41192,
+          "text": "ce_grasper_insect_02-symmetric"
+        },
+        {
+          "line": 41193,
+          "text": "ce_grasper_insect_03-symmetric"
+        },
+        {
+          "line": 41199,
+          "text": "ce_grasper_default_01-symmetric"
+        },
+        {
+          "line": 41200,
+          "text": "ce_grasper_paw_01-symmetric"
+        },
+        {
+          "line": 41201,
+          "text": "ce_grasper_paw_02-symmetric"
+        },
+        {
+          "line": 41202,
+          "text": "ce_grasper_paw_03-symmetric"
+        },
+        {
+          "line": 41203,
+          "text": "ce_grasper_paw_04-symmetric"
+        },
+        {
+          "line": 41204,
+          "text": "ce_grasper_primate_01-symmetric"
+        },
+        {
+          "line": 41205,
+          "text": "ce_grasper_primate_02-symmetric"
+        },
+        {
+          "line": 41206,
+          "text": "ce_grasper_primate_03-symmetric"
+        },
+        {
+          "line": 41207,
+          "text": "ce_grasper_primate_04-symmetric"
+        },
+        {
+          "line": 42504,
+          "text": "ce_grasper_cute_01-symmetric"
+        },
+        {
+          "line": 42505,
+          "text": "ce_grasper_cute_02-symmetric"
+        },
+        {
+          "line": 42506,
+          "text": "ce_grasper_cute_03-symmetric"
+        },
+        {
+          "line": 42507,
+          "text": "ce_grasper_cute_04-symmetric"
+        },
+        {
+          "line": 42508,
+          "text": "ce_grasper_cute_05-symmetric"
+        },
+        {
+          "line": 42509,
+          "text": "ce_grasper_cute_06-symmetric"
+        },
+        {
+          "line": 42510,
+          "text": "ce_grasper_cute_07-symmetric"
+        },
+        {
+          "line": 42511,
+          "text": "ce_grasper_cute_08-symmetric"
+        },
+        {
+          "line": 42512,
+          "text": "ce_grasper_horror_01-symmetric"
+        },
+        {
+          "line": 42513,
+          "text": "ce_grasper_horror_02-symmetric"
+        },
+        {
+          "line": 42514,
+          "text": "ce_grasper_horror_03-symmetric"
+        },
+        {
+          "line": 42515,
+          "text": "ce_grasper_horror_04-symmetric"
+        },
+        {
+          "line": 45484,
+          "text": "ce_mouth_Itzkool"
+        },
+        {
+          "line": 45922,
+          "text": "ce_mouth_1"
+        },
+        {
+          "line": 45923,
+          "text": "ce_mouth_10"
+        },
+        {
+          "line": 45924,
+          "text": "ce_mouth_11"
+        },
+        {
+          "line": 45925,
+          "text": "ce_mouth_12"
+        },
+        {
+          "line": 45926,
+          "text": "ce_mouth_13"
+        },
+        {
+          "line": 45927,
+          "text": "ce_mouth_14"
+        },
+        {
+          "line": 45928,
+          "text": "ce_mouth_15"
+        },
+        {
+          "line": 45929,
+          "text": "ce_mouth_16"
+        },
+        {
+          "line": 45930,
+          "text": "ce_mouth_17"
+        },
+        {
+          "line": 45931,
+          "text": "ce_mouth_18"
+        },
+        {
+          "line": 45932,
+          "text": "ce_mouth_19"
+        },
+        {
+          "line": 45933,
+          "text": "ce_mouth_2"
+        },
+        {
+          "line": 45934,
+          "text": "ce_mouth_20"
+        },
+        {
+          "line": 45935,
+          "text": "ce_mouth_21"
+        },
+        {
+          "line": 45936,
+          "text": "ce_mouth_22"
+        },
+        {
+          "line": 45937,
+          "text": "ce_mouth_23"
+        },
+        {
+          "line": 45938,
+          "text": "ce_mouth_24"
+        },
+        {
+          "line": 45939,
+          "text": "ce_mouth_25"
+        },
+        {
+          "line": 45940,
+          "text": "ce_mouth_26"
+        },
+        {
+          "line": 45941,
+          "text": "ce_mouth_27"
+        },
+        {
+          "line": 45942,
+          "text": "ce_mouth_28"
+        },
+        {
+          "line": 45943,
+          "text": "ce_mouth_29"
+        },
+        {
+          "line": 45944,
+          "text": "ce_mouth_3"
+        },
+        {
+          "line": 45945,
+          "text": "ce_mouth_30"
+        },
+        {
+          "line": 45946,
+          "text": "ce_mouth_31"
+        },
+        {
+          "line": 45947,
+          "text": "ce_mouth_32"
+        },
+        {
+          "line": 45948,
+          "text": "ce_mouth_33"
+        },
+        {
+          "line": 45949,
+          "text": "ce_mouth_34"
+        },
+        {
+          "line": 45950,
+          "text": "ce_mouth_35"
+        },
+        {
+          "line": 45951,
+          "text": "ce_mouth_36"
+        },
+        {
+          "line": 45952,
+          "text": "ce_mouth_37"
+        },
+        {
+          "line": 45953,
+          "text": "ce_mouth_38"
+        },
+        {
+          "line": 45954,
+          "text": "ce_mouth_39"
+        },
+        {
+          "line": 45955,
+          "text": "ce_mouth_4"
+        },
+        {
+          "line": 45956,
+          "text": "ce_mouth_40"
+        },
+        {
+          "line": 45957,
+          "text": "ce_mouth_5"
+        },
+        {
+          "line": 45958,
+          "text": "ce_mouth_6"
+        },
+        {
+          "line": 45959,
+          "text": "ce_mouth_7"
+        },
+        {
+          "line": 45960,
+          "text": "ce_mouth_8"
+        },
+        {
+          "line": 45961,
+          "text": "ce_mouth_9"
+        },
+        {
+          "line": 45962,
+          "text": "ce_mouth_fish_1"
+        },
+        {
+          "line": 45963,
+          "text": "ce_mouth_fish_2"
+        },
+        {
+          "line": 48949,
+          "text": "ce_mouth_poisonRavager_02"
+        },
+        {
+          "line": 48950,
+          "text": "ce_mouth_poisonRavager_01"
+        },
+        {
+          "line": 48951,
+          "text": "ce_mouth_supportTempest_02"
+        },
+        {
+          "line": 48952,
+          "text": "ce_mouth_supportTempest_01"
+        },
+        {
+          "line": 48961,
+          "text": "ce_grasper_beastSentinel_01"
+        },
+        {
+          "line": 48962,
+          "text": "ce_grasper_beastSentinel_01-symmetric"
+        },
+        {
+          "line": 49043,
+          "text": "ce_mouth_treeSentinel_02"
+        },
+        {
+          "line": 49044,
+          "text": "ce_mouth_treeSentinel_01"
+        },
+        {
+          "line": 49064,
+          "text": "ce_grasper_supportTempest_01"
+        },
+        {
+          "line": 49065,
+          "text": "ce_grasper_supportTempest_01-symmetric"
+        },
+        {
+          "line": 49071,
+          "text": "ce_grasper_quantumRavager_01"
+        },
+        {
+          "line": 49072,
+          "text": "ce_grasper_quantumRavager_01-symmetric"
+        },
+        {
+          "line": 49073,
+          "text": "ce_mouth_gravityTempest_02"
+        },
+        {
+          "line": 49074,
+          "text": "ce_mouth_gravityTempest_01"
+        },
+        {
+          "line": 49084,
+          "text": "ce_mouth_binarySentinel_02"
+        },
+        {
+          "line": 49085,
+          "text": "ce_mouth_binarySentinel_01"
+        },
+        {
+          "line": 49094,
+          "text": "ce_grasper_gravityTempest_01"
+        },
+        {
+          "line": 49095,
+          "text": "ce_grasper_gravityTempest_02"
+        },
+        {
+          "line": 49096,
+          "text": "ce_grasper_gravityTempest_01-symmetric"
+        },
+        {
+          "line": 49097,
+          "text": "ce_grasper_gravityTempest_02-symmetric"
+        },
+        {
+          "line": 49127,
+          "text": "ce_grasper_binarySentinel_01"
+        },
+        {
+          "line": 49128,
+          "text": "ce_grasper_binarySentinel_02"
+        },
+        {
+          "line": 49129,
+          "text": "ce_grasper_binarySentinel_01-symmetric"
+        },
+        {
+          "line": 49130,
+          "text": "ce_grasper_binarySentinel_02-symmetric"
+        },
+        {
+          "line": 49139,
+          "text": "ce_grasper_lightspeedTempest_01"
+        },
+        {
+          "line": 49140,
+          "text": "ce_grasper_lightspeedTempest_01-symmetric"
+        },
+        {
+          "line": 49141,
+          "text": "ce_mouth_lightspeedTempest_01"
+        },
+        {
+          "line": 49157,
+          "text": "ce_grasper_timeRavager_01"
+        },
+        {
+          "line": 49158,
+          "text": "ce_grasper_timeRavager_01-symmetric"
+        },
+        {
+          "line": 49159,
+          "text": "ce_mouth_quantumRavager_01"
+        },
+        {
+          "line": 49161,
+          "text": "ce_mouth_timeRavager_01"
+        },
+        {
+          "line": 49591,
+          "text": "ce_mouth_medicTempest_01"
+        },
+        {
+          "line": 49596,
+          "text": "ce_grasper_medicTempest_01"
+        },
+        {
+          "line": 49597,
+          "text": "ce_grasper_medicTempest_01-symmetric"
+        },
+        {
+          "line": 51996,
+          "text": "ce_mouth_trapperRavager_01"
+        },
+        {
+          "line": 51997,
+          "text": "ce_mouth_trapperRavager_01-symmetric"
+        },
+        {
+          "line": 52000,
+          "text": "ce_grasper_Tech_03"
+        },
+        {
+          "line": 52001,
+          "text": "ce_grasper_Tech_03-symmetric"
+        },
+        {
+          "line": 52002,
+          "text": "ce_grasper_Tech_04"
+        },
+        {
+          "line": 52003,
+          "text": "ce_grasper_Tech_04-symmetric"
+        },
+        {
+          "line": 52004,
+          "text": "ce_grasper_Tech_05"
+        },
+        {
+          "line": 52005,
+          "text": "ce_grasper_Tech_05-symmetric"
+        },
+        {
+          "line": 52006,
+          "text": "ce_grasper_Tech_06"
+        },
+        {
+          "line": 52007,
+          "text": "ce_grasper_Tech_06-symmetric"
+        },
+        {
+          "line": 52008,
+          "text": "ce_grasper_Tech_07"
+        },
+        {
+          "line": 52009,
+          "text": "ce_grasper_Tech_07-symmetric"
+        },
+        {
+          "line": 52010,
+          "text": "ce_grasper_Tech_08"
+        },
+        {
+          "line": 52011,
+          "text": "ce_grasper_Tech_08-symmetric"
+        },
+        {
+          "line": 52012,
+          "text": "ce_grasper_Tech_09"
+        },
+        {
+          "line": 52013,
+          "text": "ce_grasper_Tech_09-symmetric"
+        },
+        {
+          "line": 52014,
+          "text": "ce_grasper_Tech_10"
+        },
+        {
+          "line": 52015,
+          "text": "ce_grasper_Tech_10-symmetric"
+        },
+        {
+          "line": 52016,
+          "text": "ce_grasper_Tech_11"
+        },
+        {
+          "line": 52017,
+          "text": "ce_grasper_Tech_11-symmetric"
+        },
+        {
+          "line": 52018,
+          "text": "ce_grasper_Tech_12"
+        },
+        {
+          "line": 52019,
+          "text": "ce_grasper_Tech_12-symmetric"
+        },
+        {
+          "line": 52020,
+          "text": "ce_grasper_Tech_13"
+        },
+        {
+          "line": 52021,
+          "text": "ce_grasper_Tech_13-symmetric"
+        },
+        {
+          "line": 52022,
+          "text": "ce_grasper_Tech_14"
+        },
+        {
+          "line": 52023,
+          "text": "ce_grasper_Tech_14-symmetric"
+        },
+        {
+          "line": 52029,
+          "text": "ce_grasper_trapperRavager_01"
+        },
+        {
+          "line": 52030,
+          "text": "ce_grasper_trapperRavager_01-symmetric"
+        },
+        {
+          "line": 52031,
+          "text": "ce_mouth_missileTempest_01"
+        },
+        {
+          "line": 52033,
+          "text": "ce_grasper_plasmaSentinel_02"
+        },
+        {
+          "line": 52034,
+          "text": "ce_grasper_plasmaSentinel_02-symmetric"
+        },
+        {
+          "line": 52035,
+          "text": "ce_grasper_plasmaSentinel_01"
+        },
+        {
+          "line": 52036,
+          "text": "ce_grasper_plasmaSentinel_01-symmetric"
+        },
+        {
+          "line": 52037,
+          "text": "ce_grasper_plasmaSentinel_03"
+        },
+        {
+          "line": 52038,
+          "text": "ce_grasper_plasmaSentinel_03-symmetric"
+        },
+        {
+          "line": 52063,
+          "text": "ce_mouth_fireRavager_01"
+        },
+        {
+          "line": 52064,
+          "text": "ce_mouth_fireRavager_02"
+        },
+        {
+          "line": 52065,
+          "text": "ce_grasper_fireTempest_01"
+        },
+        {
+          "line": 52066,
+          "text": "ce_grasper_fireTempest_01-symmetric"
+        },
+        {
+          "line": 52071,
+          "text": "ce_grasper_lightningTempest_01"
+        },
+        {
+          "line": 52072,
+          "text": "ce_grasper_lightningTempest_01-symmetric"
+        },
+        {
+          "line": 52077,
+          "text": "ce_mouth_plasmaSentinel_02"
+        },
+        {
+          "line": 52078,
+          "text": "ce_mouth_plasmaSentinel_01"
+        },
+        {
+          "line": 52083,
+          "text": "ce_mouth_fireTempest_02"
+        },
+        {
+          "line": 52084,
+          "text": "ce_mouth_fireTempest_01"
+        },
+        {
+          "line": 52093,
+          "text": "ce_grasper_fireRavager_01"
+        },
+        {
+          "line": 52094,
+          "text": "ce_grasper_fireRavager_01-symmetric"
+        },
+        {
+          "line": 52101,
+          "text": "ce_mouth_lightningRavager_01"
+        },
+        {
+          "line": 52102,
+          "text": "ce_mouth_lightningRavager_01-symmetric"
+        },
+        {
+          "line": 52109,
+          "text": "ce_mouth_lightningTempest_01"
+        },
+        {
+          "line": 52190,
+          "text": "ce_mouth_soulRavager_01"
+        },
+        {
+          "line": 52191,
+          "text": "ce_mouth_soulRavager_01-symmetric"
+        },
+        {
+          "line": 52194,
+          "text": "ce_grasper_shadowRavager_02"
+        },
+        {
+          "line": 52195,
+          "text": "ce_grasper_shadowRavager_02-symmetric"
+        },
+        {
+          "line": 52196,
+          "text": "ce_grasper_shadowRavager_01"
+        },
+        {
+          "line": 52197,
+          "text": "ce_grasper_shadowRavager_01-symmetric"
+        },
+        {
+          "line": 52202,
+          "text": "ce_grasper_psychicTempest_01"
+        },
+        {
+          "line": 52203,
+          "text": "ce_grasper_psychicTempest_01-symmetric"
+        },
+        {
+          "line": 52204,
+          "text": "ce_grasper_psychicTempest_02"
+        },
+        {
+          "line": 52205,
+          "text": "ce_grasper_psychicTempest_02-symmetric"
+        },
+        {
+          "line": 52252,
+          "text": "ce_grasper_ghostSentinel_02"
+        },
+        {
+          "line": 52253,
+          "text": "ce_grasper_ghostSentinel_02-symmetric"
+        },
+        {
+          "line": 52254,
+          "text": "ce_grasper_ghostSentinel_01"
+        },
+        {
+          "line": 52255,
+          "text": "ce_grasper_ghostSentinel_01-symmetric"
+        },
+        {
+          "line": 52262,
+          "text": "ce_mouth_voodooTempest_01"
+        },
+        {
+          "line": 52263,
+          "text": "ce_mouth_voodooTempest_01-symmetric"
+        },
+        {
+          "line": 52266,
+          "text": "ce_mouth_ghostSentinel_02"
+        },
+        {
+          "line": 52267,
+          "text": "ce_mouth_ghostSentinel_02-symmetric"
+        },
+        {
+          "line": 52268,
+          "text": "ce_mouth_ghostSentinel_01"
+        },
+        {
+          "line": 52269,
+          "text": "ce_mouth_psychicTempest_01"
+        },
+        {
+          "line": 52270,
+          "text": "ce_mouth_psychicTempest_02"
+        },
+        {
+          "line": 52271,
+          "text": "ce_mouth_shadowRavager_01"
+        },
+        {
+          "line": 52272,
+          "text": "ce_mouth_shadowRavager_02"
+        },
+        {
+          "line": 52277,
+          "text": "ce_grasper_poisonRavager_01"
+        },
+        {
+          "line": 52278,
+          "text": "ce_grasper_poisonRavager_01-symmetric"
+        },
+        {
+          "line": 52284,
+          "text": "ce_mouth_shroomTempest_01"
+        },
+        {
+          "line": 52289,
+          "text": "ce_grasper_shroomTempest_01"
+        },
+        {
+          "line": 52290,
+          "text": "ce_grasper_shroomTempest_01-symmetric"
+        },
+        {
+          "line": 52295,
+          "text": "ce_mouth_beastSentinel_01"
+        },
+        {
+          "line": 52304,
+          "text": "ce_grasper_treeSentinel_01"
+        },
+        {
+          "line": 52305,
+          "text": "ce_grasper_treeSentinel_01-symmetric"
+        },
+        {
+          "line": 52486,
+          "text": "ce_grasper_treeSentinelWeapon_02"
+        },
+        {
+          "line": 52487,
+          "text": "ce_grasper_treeSentinelWeapon_02-symmetric"
+        },
+        {
+          "line": 52492,
+          "text": "ce_mouth_shieldedSentinel_01"
+        },
+        {
+          "line": 52493,
+          "text": "ce_grasper_shieldedSentinel_01"
+        },
+        {
+          "line": 52494,
+          "text": "ce_grasper_shieldedSentinel_01-symmetric"
+        },
+        {
+          "line": 52496,
+          "text": "ce_mouth_energySentinel_01"
+        },
+        {
+          "line": 52534,
+          "text": "ce_grasper_lightspeedTempestWeapon_01"
+        },
+        {
+          "line": 52535,
+          "text": "ce_grasper_lightspeedTempestWeapon_01-symmetric"
+        },
+        {
+          "line": 52536,
+          "text": "ce_grasper_energySentinelWeapon_01"
+        },
+        {
+          "line": 52537,
+          "text": "ce_grasper_energySentinelWeapon_01-symmetric"
+        },
+        {
+          "line": 52564,
+          "text": "ce_grasper_lightningTempestWeapon_01"
+        },
+        {
+          "line": 52565,
+          "text": "ce_grasper_lightningTempestWeapon_01-symmetric"
+        },
+        {
+          "line": 53313,
+          "text": "ce_grasper_horror_default"
+        },
+        {
+          "line": 53315,
+          "text": "ce_grasper_horror_default-symmetric"
+        },
+        {
+          "line": 54894,
+          "text": "ce_mouth_beak_carnivore_03__diffuse"
+        },
+        {
+          "line": 54895,
+          "text": "ce_mouth_beak_carnivore_02__diffuse"
+        },
+        {
+          "line": 54896,
+          "text": "ce_mouth_beak_carnivore_01__diffuse"
+        },
+        {
+          "line": 54897,
+          "text": "ce_mouth_beak_carnivore_04__diffuse"
+        },
+        {
+          "line": 54898,
+          "text": "ce_mouth_amphibian_omnivore_01__diffuse"
+        },
+        {
+          "line": 54899,
+          "text": "ce_mouth_amphibian_omnivore_02__diffuse"
+        },
+        {
+          "line": 54900,
+          "text": "ce_mouth_amphibian_omnivore_03__diffuse"
+        },
+        {
+          "line": 54901,
+          "text": "ce_mouth_amphibian_omnivore_04__diffuse"
+        },
+        {
+          "line": 54902,
+          "text": "ce_mouth_beak_herbivore_01__diffuse"
+        },
+        {
+          "line": 54903,
+          "text": "ce_mouth_beak_herbivore_02__diffuse"
+        },
+        {
+          "line": 54904,
+          "text": "ce_mouth_beak_herbivore_03__diffuse"
+        },
+        {
+          "line": 54905,
+          "text": "ce_mouth_beak_herbivore_04__diffuse"
+        },
+        {
+          "line": 54906,
+          "text": "ce_mouth_fish_carnivore_01__diffuse"
+        },
+        {
+          "line": 54907,
+          "text": "ce_mouth_fish_carnivore_02__diffuse"
+        },
+        {
+          "line": 54908,
+          "text": "ce_mouth_fish_carnivore_03__diffuse"
+        },
+        {
+          "line": 54909,
+          "text": "ce_mouth_fish_carnivore_04__diffuse"
+        },
+        {
+          "line": 54910,
+          "text": "ce_mouth_jaw_carnivore_01__diffuse"
+        },
+        {
+          "line": 54911,
+          "text": "ce_mouth_jaw_carnivore_02__diffuse"
+        },
+        {
+          "line": 54912,
+          "text": "ce_mouth_jaw_carnivore_03__diffuse"
+        },
+        {
+          "line": 54913,
+          "text": "ce_mouth_jaw_carnivore_04__diffuse"
+        },
+        {
+          "line": 54914,
+          "text": "ce_mouth_jaw_herbivore_01__diffuse"
+        },
+        {
+          "line": 54915,
+          "text": "ce_mouth_jaw_herbivore_02__diffuse"
+        },
+        {
+          "line": 54916,
+          "text": "ce_mouth_jaw_herbivore_03__diffuse"
+        },
+        {
+          "line": 54917,
+          "text": "ce_mouth_jaw_herbivore_04__diffuse"
+        },
+        {
+          "line": 54918,
+          "text": "ce_mouth_mandible_carnivore_01__diffuse"
+        },
+        {
+          "line": 54919,
+          "text": "ce_mouth_mandible_carnivore_02__diffuse"
+        },
+        {
+          "line": 54920,
+          "text": "ce_mouth_mandible_carnivore_03__diffuse"
+        },
+        {
+          "line": 54921,
+          "text": "ce_mouth_mandible_carnivore_04__diffuse"
+        },
+        {
+          "line": 54922,
+          "text": "ce_mouth_primate_omnivore_01__diffuse"
+        },
+        {
+          "line": 54923,
+          "text": "ce_mouth_primate_omnivore_02__diffuse"
+        },
+        {
+          "line": 54924,
+          "text": "ce_mouth_primate_omnivore_03__diffuse"
+        },
+        {
+          "line": 54925,
+          "text": "ce_mouth_primate_omnivore_04__diffuse"
+        },
+        {
+          "line": 54926,
+          "text": "ce_mouth_radial_omnivore_01__diffuse"
+        },
+        {
+          "line": 54927,
+          "text": "ce_mouth_radial_omnivore_02__diffuse"
+        },
+        {
+          "line": 54928,
+          "text": "ce_mouth_radial_omnivore_03__diffuse"
+        },
+        {
+          "line": 54929,
+          "text": "ce_mouth_radial_omnivore_04__diffuse"
+        },
+        {
+          "line": 54930,
+          "text": "ce_mouth_snout_herbivore_01__diffuse"
+        },
+        {
+          "line": 54931,
+          "text": "ce_mouth_snout_herbivore_02__diffuse"
+        },
+        {
+          "line": 54932,
+          "text": "ce_mouth_snout_herbivore_03__diffuse"
+        },
+        {
+          "line": 54933,
+          "text": "ce_mouth_snout_herbivore_04__diffuse"
+        },
+        {
+          "line": 55046,
+          "text": "ce_grasper_amphibian_01-symmetric__diffuse"
+        },
+        {
+          "line": 55047,
+          "text": "ce_grasper_amphibian_02-symmetric__diffuse"
+        },
+        {
+          "line": 55048,
+          "text": "ce_grasper_amphibian_03-symmetric__diffuse"
+        },
+        {
+          "line": 55049,
+          "text": "ce_grasper_amphibian_04-symmetric__diffuse"
+        },
+        {
+          "line": 55050,
+          "text": "ce_grasper_bird_01-symmetric__diffuse"
+        },
+        {
+          "line": 55051,
+          "text": "ce_grasper_bird_02-symmetric__diffuse"
+        },
+        {
+          "line": 55052,
+          "text": "ce_grasper_bird_03-symmetric__diffuse"
+        },
+        {
+          "line": 55053,
+          "text": "ce_grasper_bird_04-symmetric__diffuse"
+        },
+        {
+          "line": 55054,
+          "text": "ce_grasper_default_01-symmetric__diffuse"
+        },
+        {
+          "line": 55055,
+          "text": "ce_grasper_dino_01-symmetric__diffuse"
+        },
+        {
+          "line": 55056,
+          "text": "ce_grasper_dino_02-symmetric__diffuse"
+        },
+        {
+          "line": 55057,
+          "text": "ce_grasper_dino_03-symmetric__diffuse"
+        },
+        {
+          "line": 55058,
+          "text": "ce_grasper_dino_04-symmetric__diffuse"
+        },
+        {
+          "line": 55059,
+          "text": "ce_grasper_insect_01-symmetric__diffuse"
+        },
+        {
+          "line": 55060,
+          "text": "ce_grasper_insect_01__diffuse"
+        },
+        {
+          "line": 55061,
+          "text": "ce_grasper_insect_02-symmetric__diffuse"
+        },
+        {
+          "line": 55062,
+          "text": "ce_grasper_insect_03-symmetric__diffuse"
+        },
+        {
+          "line": 55063,
+          "text": "ce_grasper_insect_04-symmetric__diffuse"
+        },
+        {
+          "line": 55064,
+          "text": "ce_grasper_paw_01-symmetric__diffuse"
+        },
+        {
+          "line": 55065,
+          "text": "ce_grasper_paw_02-symmetric__diffuse"
+        },
+        {
+          "line": 55066,
+          "text": "ce_grasper_paw_03-symmetric__diffuse"
+        },
+        {
+          "line": 55067,
+          "text": "ce_grasper_paw_04-symmetric__diffuse"
+        },
+        {
+          "line": 55068,
+          "text": "ce_grasper_primate_01-symmetric__diffuse"
+        },
+        {
+          "line": 55069,
+          "text": "ce_grasper_primate_02-symmetric__diffuse"
+        },
+        {
+          "line": 55070,
+          "text": "ce_grasper_primate_03-symmetric__diffuse"
+        },
+        {
+          "line": 55071,
+          "text": "ce_grasper_primate_04-symmetric__diffuse"
+        },
+        {
+          "line": 55072,
+          "text": "ce_grasper_radial_01-symmetric__diffuse"
+        },
+        {
+          "line": 55073,
+          "text": "ce_grasper_radial_02-symmetric__diffuse"
+        },
+        {
+          "line": 55074,
+          "text": "ce_grasper_radial_03-symmetric__diffuse"
+        },
+        {
+          "line": 55075,
+          "text": "ce_grasper_radial_04-symmetric__diffuse"
+        },
+        {
+          "line": 55400,
+          "text": "ce_mouth_beak_carnivore_03__specBump"
+        },
+        {
+          "line": 55401,
+          "text": "ce_mouth_beak_carnivore_02__specBump"
+        },
+        {
+          "line": 55402,
+          "text": "ce_mouth_beak_carnivore_01__specBump"
+        },
+        {
+          "line": 55403,
+          "text": "ce_mouth_beak_carnivore_04__specBump"
+        },
+        {
+          "line": 55404,
+          "text": "ce_mouth_amphibian_omnivore_01__specBump"
+        },
+        {
+          "line": 55405,
+          "text": "ce_mouth_amphibian_omnivore_02__specBump"
+        },
+        {
+          "line": 55406,
+          "text": "ce_mouth_amphibian_omnivore_03__specBump"
+        },
+        {
+          "line": 55407,
+          "text": "ce_mouth_amphibian_omnivore_04__specBump"
+        },
+        {
+          "line": 55408,
+          "text": "ce_mouth_beak_herbivore_01__specBump"
+        },
+        {
+          "line": 55409,
+          "text": "ce_mouth_beak_herbivore_02__specBump"
+        },
+        {
+          "line": 55410,
+          "text": "ce_mouth_beak_herbivore_03__specBump"
+        },
+        {
+          "line": 55411,
+          "text": "ce_mouth_beak_herbivore_04__specBump"
+        },
+        {
+          "line": 55412,
+          "text": "ce_mouth_fish_carnivore_01__specBump"
+        },
+        {
+          "line": 55413,
+          "text": "ce_mouth_fish_carnivore_02__specBump"
+        },
+        {
+          "line": 55414,
+          "text": "ce_mouth_fish_carnivore_03__specBump"
+        },
+        {
+          "line": 55415,
+          "text": "ce_mouth_fish_carnivore_04__specBump"
+        },
+        {
+          "line": 55416,
+          "text": "ce_mouth_jaw_carnivore_01__specBump"
+        },
+        {
+          "line": 55417,
+          "text": "ce_mouth_jaw_carnivore_02__specBump"
+        },
+        {
+          "line": 55418,
+          "text": "ce_mouth_jaw_carnivore_03__specBump"
+        },
+        {
+          "line": 55419,
+          "text": "ce_mouth_jaw_carnivore_04__specBump"
+        },
+        {
+          "line": 55420,
+          "text": "ce_mouth_jaw_herbivore_01__specBump"
+        },
+        {
+          "line": 55421,
+          "text": "ce_mouth_jaw_herbivore_02__specBump"
+        },
+        {
+          "line": 55422,
+          "text": "ce_mouth_jaw_herbivore_03__specBump"
+        },
+        {
+          "line": 55423,
+          "text": "ce_mouth_jaw_herbivore_04__specBump"
+        },
+        {
+          "line": 55424,
+          "text": "ce_mouth_mandible_carnivore_01__specBump"
+        },
+        {
+          "line": 55425,
+          "text": "ce_mouth_mandible_carnivore_02__specBump"
+        },
+        {
+          "line": 55426,
+          "text": "ce_mouth_mandible_carnivore_03__specBump"
+        },
+        {
+          "line": 55427,
+          "text": "ce_mouth_mandible_carnivore_04__specBump"
+        },
+        {
+          "line": 55428,
+          "text": "ce_mouth_primate_omnivore_01__specBump"
+        },
+        {
+          "line": 55429,
+          "text": "ce_mouth_primate_omnivore_02__specBump"
+        },
+        {
+          "line": 55430,
+          "text": "ce_mouth_primate_omnivore_03__specBump"
+        },
+        {
+          "line": 55431,
+          "text": "ce_mouth_primate_omnivore_04__specBump"
+        },
+        {
+          "line": 55432,
+          "text": "ce_mouth_radial_omnivore_01__specBump"
+        },
+        {
+          "line": 55433,
+          "text": "ce_mouth_radial_omnivore_02__specBump"
+        },
+        {
+          "line": 55434,
+          "text": "ce_mouth_radial_omnivore_03__specBump"
+        },
+        {
+          "line": 55435,
+          "text": "ce_mouth_radial_omnivore_04__specBump"
+        },
+        {
+          "line": 55436,
+          "text": "ce_mouth_snout_herbivore_01__specBump"
+        },
+        {
+          "line": 55437,
+          "text": "ce_mouth_snout_herbivore_02__specBump"
+        },
+        {
+          "line": 55438,
+          "text": "ce_mouth_snout_herbivore_03__specBump"
+        },
+        {
+          "line": 55439,
+          "text": "ce_mouth_snout_herbivore_04__specBump"
+        },
+        {
+          "line": 55552,
+          "text": "ce_grasper_amphibian_01-symmetric__specBump"
+        },
+        {
+          "line": 55553,
+          "text": "ce_grasper_amphibian_02-symmetric__specBump"
+        },
+        {
+          "line": 55554,
+          "text": "ce_grasper_amphibian_03-symmetric__specBump"
+        },
+        {
+          "line": 55555,
+          "text": "ce_grasper_amphibian_04-symmetric__specBump"
+        },
+        {
+          "line": 55556,
+          "text": "ce_grasper_bird_01-symmetric__specBump"
+        },
+        {
+          "line": 55557,
+          "text": "ce_grasper_bird_02-symmetric__specBump"
+        },
+        {
+          "line": 55558,
+          "text": "ce_grasper_bird_03-symmetric__specBump"
+        },
+        {
+          "line": 55559,
+          "text": "ce_grasper_bird_04-symmetric__specBump"
+        },
+        {
+          "line": 55560,
+          "text": "ce_grasper_default_01-symmetric__specBump"
+        },
+        {
+          "line": 55561,
+          "text": "ce_grasper_dino_01-symmetric__specBump"
+        },
+        {
+          "line": 55562,
+          "text": "ce_grasper_dino_02-symmetric__specBump"
+        },
+        {
+          "line": 55563,
+          "text": "ce_grasper_dino_03-symmetric__specBump"
+        },
+        {
+          "line": 55564,
+          "text": "ce_grasper_dino_04-symmetric__specBump"
+        },
+        {
+          "line": 55565,
+          "text": "ce_grasper_insect_01-symmetric__specBump"
+        },
+        {
+          "line": 55566,
+          "text": "ce_grasper_insect_01__specBump"
+        },
+        {
+          "line": 55567,
+          "text": "ce_grasper_insect_02-symmetric__specBump"
+        },
+        {
+          "line": 55568,
+          "text": "ce_grasper_insect_03-symmetric__specBump"
+        },
+        {
+          "line": 55569,
+          "text": "ce_grasper_insect_04-symmetric__specBump"
+        },
+        {
+          "line": 55570,
+          "text": "ce_grasper_paw_01-symmetric__specBump"
+        },
+        {
+          "line": 55571,
+          "text": "ce_grasper_paw_02-symmetric__specBump"
+        },
+        {
+          "line": 55572,
+          "text": "ce_grasper_paw_03-symmetric__specBump"
+        },
+        {
+          "line": 55573,
+          "text": "ce_grasper_paw_04-symmetric__specBump"
+        },
+        {
+          "line": 55574,
+          "text": "ce_grasper_primate_01-symmetric__specBump"
+        },
+        {
+          "line": 55575,
+          "text": "ce_grasper_primate_02-symmetric__specBump"
+        },
+        {
+          "line": 55576,
+          "text": "ce_grasper_primate_03-symmetric__specBump"
+        },
+        {
+          "line": 55577,
+          "text": "ce_grasper_primate_04-symmetric__specBump"
+        },
+        {
+          "line": 55578,
+          "text": "ce_grasper_radial_01-symmetric__specBump"
+        },
+        {
+          "line": 55579,
+          "text": "ce_grasper_radial_02-symmetric__specBump"
+        },
+        {
+          "line": 55580,
+          "text": "ce_grasper_radial_03-symmetric__specBump"
+        },
+        {
+          "line": 55581,
+          "text": "ce_grasper_radial_04-symmetric__specBump"
+        },
+        {
+          "line": 55810,
+          "text": "ce_mouth_beak_carnivore_03__tintMask"
+        },
+        {
+          "line": 55811,
+          "text": "ce_mouth_beak_carnivore_02__tintMask"
+        },
+        {
+          "line": 55812,
+          "text": "ce_mouth_beak_carnivore_01__tintMask"
+        },
+        {
+          "line": 55813,
+          "text": "ce_mouth_beak_carnivore_04__tintMask"
+        },
+        {
+          "line": 55814,
+          "text": "ce_mouth_amphibian_omnivore_01__tintMask"
+        },
+        {
+          "line": 55815,
+          "text": "ce_mouth_amphibian_omnivore_02__tintMask"
+        },
+        {
+          "line": 55816,
+          "text": "ce_mouth_amphibian_omnivore_03__tintMask"
+        },
+        {
+          "line": 55817,
+          "text": "ce_mouth_amphibian_omnivore_04__tintMask"
+        },
+        {
+          "line": 55818,
+          "text": "ce_mouth_beak_herbivore_01__tintMask"
+        },
+        {
+          "line": 55819,
+          "text": "ce_mouth_beak_herbivore_02__tintMask"
+        },
+        {
+          "line": 55820,
+          "text": "ce_mouth_beak_herbivore_03__tintMask"
+        },
+        {
+          "line": 55821,
+          "text": "ce_mouth_beak_herbivore_04__tintMask"
+        },
+        {
+          "line": 55822,
+          "text": "ce_mouth_fish_carnivore_01__tintMask"
+        },
+        {
+          "line": 55823,
+          "text": "ce_mouth_fish_carnivore_02__tintMask"
+        },
+        {
+          "line": 55824,
+          "text": "ce_mouth_fish_carnivore_03__tintMask"
+        },
+        {
+          "line": 55825,
+          "text": "ce_mouth_fish_carnivore_04__tintMask"
+        },
+        {
+          "line": 55826,
+          "text": "ce_mouth_jaw_carnivore_01__tintMask"
+        },
+        {
+          "line": 55827,
+          "text": "ce_mouth_jaw_carnivore_02__tintMask"
+        },
+        {
+          "line": 55828,
+          "text": "ce_mouth_jaw_carnivore_03__tintMask"
+        },
+        {
+          "line": 55829,
+          "text": "ce_mouth_jaw_carnivore_04__tintMask"
+        },
+        {
+          "line": 55830,
+          "text": "ce_mouth_jaw_herbivore_01__tintMask"
+        },
+        {
+          "line": 55831,
+          "text": "ce_mouth_jaw_herbivore_02__tintMask"
+        },
+        {
+          "line": 55832,
+          "text": "ce_mouth_jaw_herbivore_03__tintMask"
+        },
+        {
+          "line": 55833,
+          "text": "ce_mouth_jaw_herbivore_04__tintMask"
+        },
+        {
+          "line": 55834,
+          "text": "ce_mouth_mandible_carnivore_01__tintMask"
+        },
+        {
+          "line": 55835,
+          "text": "ce_mouth_mandible_carnivore_02__tintMask"
+        },
+        {
+          "line": 55836,
+          "text": "ce_mouth_mandible_carnivore_03__tintMask"
+        },
+        {
+          "line": 55837,
+          "text": "ce_mouth_mandible_carnivore_04__tintMask"
+        },
+        {
+          "line": 55838,
+          "text": "ce_mouth_primate_omnivore_01__tintMask"
+        },
+        {
+          "line": 55839,
+          "text": "ce_mouth_primate_omnivore_02__tintMask"
+        },
+        {
+          "line": 55840,
+          "text": "ce_mouth_primate_omnivore_03__tintMask"
+        },
+        {
+          "line": 55841,
+          "text": "ce_mouth_primate_omnivore_04__tintMask"
+        },
+        {
+          "line": 55842,
+          "text": "ce_mouth_radial_omnivore_01__tintMask"
+        },
+        {
+          "line": 55843,
+          "text": "ce_mouth_radial_omnivore_02__tintMask"
+        },
+        {
+          "line": 55844,
+          "text": "ce_mouth_radial_omnivore_03__tintMask"
+        },
+        {
+          "line": 55845,
+          "text": "ce_mouth_radial_omnivore_04__tintMask"
+        },
+        {
+          "line": 55846,
+          "text": "ce_mouth_snout_herbivore_01__tintMask"
+        },
+        {
+          "line": 55847,
+          "text": "ce_mouth_snout_herbivore_02__tintMask"
+        },
+        {
+          "line": 55848,
+          "text": "ce_mouth_snout_herbivore_03__tintMask"
+        },
+        {
+          "line": 55849,
+          "text": "ce_mouth_snout_herbivore_04__tintMask"
+        },
+        {
+          "line": 55962,
+          "text": "ce_grasper_amphibian_01-symmetric__tintMask"
+        },
+        {
+          "line": 55963,
+          "text": "ce_grasper_amphibian_02-symmetric__tintMask"
+        },
+        {
+          "line": 55964,
+          "text": "ce_grasper_amphibian_03-symmetric__tintMask"
+        },
+        {
+          "line": 55965,
+          "text": "ce_grasper_amphibian_04-symmetric__tintMask"
+        },
+        {
+          "line": 55966,
+          "text": "ce_grasper_bird_01-symmetric__tintMask"
+        },
+        {
+          "line": 55967,
+          "text": "ce_grasper_bird_02-symmetric__tintMask"
+        },
+        {
+          "line": 55968,
+          "text": "ce_grasper_bird_03-symmetric__tintMask"
+        },
+        {
+          "line": 55969,
+          "text": "ce_grasper_bird_04-symmetric__tintMask"
+        },
+        {
+          "line": 55970,
+          "text": "ce_grasper_default_01-symmetric__tintMask"
+        },
+        {
+          "line": 55971,
+          "text": "ce_grasper_dino_01-symmetric__tintMask"
+        },
+        {
+          "line": 55972,
+          "text": "ce_grasper_dino_02-symmetric__tintMask"
+        },
+        {
+          "line": 55973,
+          "text": "ce_grasper_dino_03-symmetric__tintMask"
+        },
+        {
+          "line": 55974,
+          "text": "ce_grasper_dino_04-symmetric__tintMask"
+        },
+        {
+          "line": 55975,
+          "text": "ce_grasper_insect_01-symmetric__tintMask"
+        },
+        {
+          "line": 55976,
+          "text": "ce_grasper_insect_01__tintMask"
+        },
+        {
+          "line": 55977,
+          "text": "ce_grasper_insect_02-symmetric__tintMask"
+        },
+        {
+          "line": 55978,
+          "text": "ce_grasper_insect_03-symmetric__tintMask"
+        },
+        {
+          "line": 55979,
+          "text": "ce_grasper_insect_04-symmetric__tintMask"
+        },
+        {
+          "line": 55980,
+          "text": "ce_grasper_paw_01-symmetric__tintMask"
+        },
+        {
+          "line": 55981,
+          "text": "ce_grasper_paw_02-symmetric__tintMask"
+        },
+        {
+          "line": 55982,
+          "text": "ce_grasper_paw_03-symmetric__tintMask"
+        },
+        {
+          "line": 55983,
+          "text": "ce_grasper_paw_04-symmetric__tintMask"
+        },
+        {
+          "line": 55984,
+          "text": "ce_grasper_primate_01-symmetric__tintMask"
+        },
+        {
+          "line": 55985,
+          "text": "ce_grasper_primate_02-symmetric__tintMask"
+        },
+        {
+          "line": 55986,
+          "text": "ce_grasper_primate_03-symmetric__tintMask"
+        },
+        {
+          "line": 55987,
+          "text": "ce_grasper_primate_04-symmetric__tintMask"
+        },
+        {
+          "line": 55988,
+          "text": "ce_grasper_radial_01-symmetric__tintMask"
+        },
+        {
+          "line": 55989,
+          "text": "ce_grasper_radial_02-symmetric__tintMask"
+        },
+        {
+          "line": 55990,
+          "text": "ce_grasper_radial_03-symmetric__tintMask"
+        },
+        {
+          "line": 55991,
+          "text": "ce_grasper_radial_04-symmetric__tintMask"
+        },
+        {
+          "line": 58393,
+          "text": "ce_grasper_cute_02-symmetric__diffuse"
+        },
+        {
+          "line": 58394,
+          "text": "ce_grasper_cute_01-symmetric__diffuse"
+        },
+        {
+          "line": 58395,
+          "text": "ce_grasper_cute_02-symmetric__specBump"
+        },
+        {
+          "line": 58396,
+          "text": "ce_grasper_cute_02-symmetric__tintMask"
+        },
+        {
+          "line": 58397,
+          "text": "ce_grasper_horror_01-symmetric__diffuse"
+        },
+        {
+          "line": 58398,
+          "text": "ce_grasper_horror_02-symmetric__diffuse"
+        },
+        {
+          "line": 58399,
+          "text": "ce_grasper_horror_03-symmetric__diffuse"
+        },
+        {
+          "line": 58400,
+          "text": "ce_grasper_horror_04-symmetric__diffuse"
+        },
+        {
+          "line": 58401,
+          "text": "ce_grasper_horror_04-symmetric__specBump"
+        },
+        {
+          "line": 58402,
+          "text": "ce_grasper_horror_03-symmetric__specBump"
+        },
+        {
+          "line": 58403,
+          "text": "ce_grasper_horror_02-symmetric__specBump"
+        },
+        {
+          "line": 58404,
+          "text": "ce_grasper_horror_01-symmetric__specBump"
+        },
+        {
+          "line": 58405,
+          "text": "ce_grasper_horror_01-symmetric__tintMask"
+        },
+        {
+          "line": 58406,
+          "text": "ce_grasper_horror_02-symmetric__tintMask"
+        },
+        {
+          "line": 58407,
+          "text": "ce_grasper_horror_03-symmetric__tintMask"
+        },
+        {
+          "line": 58408,
+          "text": "ce_mouth_cute_herbivore_01__diffuse"
+        },
+        {
+          "line": 58409,
+          "text": "ce_mouth_cute_herbivore_02__diffuse"
+        },
+        {
+          "line": 58410,
+          "text": "ce_mouth_cute_herbivore_03__diffuse"
+        },
+        {
+          "line": 58411,
+          "text": "ce_mouth_cute_herbivore_04__diffuse"
+        },
+        {
+          "line": 58412,
+          "text": "ce_mouth_cute_herbivore_01__specBump"
+        },
+        {
+          "line": 58413,
+          "text": "ce_mouth_cute_herbivore_02__specBump"
+        },
+        {
+          "line": 58414,
+          "text": "ce_mouth_cute_herbivore_03__specBump"
+        },
+        {
+          "line": 58415,
+          "text": "ce_mouth_cute_herbivore_04__specBump"
+        },
+        {
+          "line": 58416,
+          "text": "ce_mouth_cute_herbivore_04__tintMask"
+        },
+        {
+          "line": 58417,
+          "text": "ce_mouth_cute_herbivore_03__tintMask"
+        },
+        {
+          "line": 58418,
+          "text": "ce_mouth_cute_herbivore_02__tintMask"
+        },
+        {
+          "line": 58419,
+          "text": "ce_mouth_cute_herbivore_01__tintMask"
+        },
+        {
+          "line": 58420,
+          "text": "ce_grasper_cute_08-symmetric__diffuse"
+        },
+        {
+          "line": 58421,
+          "text": "ce_grasper_cute_07-symmetric__diffuse"
+        },
+        {
+          "line": 58422,
+          "text": "ce_grasper_cute_06-symmetric__diffuse"
+        },
+        {
+          "line": 58423,
+          "text": "ce_grasper_cute_05-symmetric__diffuse"
+        },
+        {
+          "line": 58424,
+          "text": "ce_grasper_cute_04-symmetric__diffuse"
+        },
+        {
+          "line": 58429,
+          "text": "ce_grasper_cute_03-symmetric__diffuse"
+        },
+        {
+          "line": 58430,
+          "text": "ce_grasper_cute_08-symmetric__specBump"
+        },
+        {
+          "line": 58431,
+          "text": "ce_grasper_cute_07-symmetric__specBump"
+        },
+        {
+          "line": 58432,
+          "text": "ce_grasper_cute_06-symmetric__specBump"
+        },
+        {
+          "line": 58433,
+          "text": "ce_grasper_cute_05-symmetric__specBump"
+        },
+        {
+          "line": 58434,
+          "text": "ce_grasper_cute_04-symmetric__specBump"
+        },
+        {
+          "line": 58435,
+          "text": "ce_grasper_cute_03-symmetric__specBump"
+        },
+        {
+          "line": 58436,
+          "text": "ce_grasper_cute_01-symmetric__specBump"
+        },
+        {
+          "line": 58437,
+          "text": "ce_grasper_cute_01-symmetric__tintMask"
+        },
+        {
+          "line": 58438,
+          "text": "ce_grasper_cute_03-symmetric__tintMask"
+        },
+        {
+          "line": 58439,
+          "text": "ce_grasper_cute_04-symmetric__tintMask"
+        },
+        {
+          "line": 58440,
+          "text": "ce_grasper_cute_05-symmetric__tintMask"
+        },
+        {
+          "line": 58441,
+          "text": "ce_grasper_cute_06-symmetric__tintMask"
+        },
+        {
+          "line": 58442,
+          "text": "ce_grasper_cute_07-symmetric__tintMask"
+        },
+        {
+          "line": 58443,
+          "text": "ce_grasper_cute_08-symmetric__tintMask"
+        },
+        {
+          "line": 58444,
+          "text": "ce_grasper_horror_04-symmetric__tintMask"
+        },
+        {
+          "line": 58445,
+          "text": "ce_mouth_cute_omnivore_01__diffuse"
+        },
+        {
+          "line": 58446,
+          "text": "ce_mouth_cute_omnivore_02__diffuse"
+        },
+        {
+          "line": 58447,
+          "text": "ce_mouth_cute_omnivore_03__diffuse"
+        },
+        {
+          "line": 58448,
+          "text": "ce_mouth_cute_omnivore_04__diffuse"
+        },
+        {
+          "line": 58449,
+          "text": "ce_mouth_cute_omnivore_04__specBump"
+        },
+        {
+          "line": 58450,
+          "text": "ce_mouth_cute_omnivore_03__specBump"
+        },
+        {
+          "line": 58451,
+          "text": "ce_mouth_cute_omnivore_02__specBump"
+        },
+        {
+          "line": 58452,
+          "text": "ce_mouth_cute_omnivore_01__specBump"
+        },
+        {
+          "line": 58453,
+          "text": "ce_mouth_cute_omnivore_01__tintMask"
+        },
+        {
+          "line": 58454,
+          "text": "ce_mouth_cute_omnivore_02__tintMask"
+        },
+        {
+          "line": 58455,
+          "text": "ce_mouth_cute_omnivore_03__tintMask"
+        },
+        {
+          "line": 58456,
+          "text": "ce_mouth_cute_omnivore_04__tintMask"
+        },
+        {
+          "line": 58457,
+          "text": "ce_mouth_horror_carnivore_01__diffuse"
+        },
+        {
+          "line": 58458,
+          "text": "ce_mouth_horror_carnivore_02__diffuse"
+        },
+        {
+          "line": 58459,
+          "text": "ce_mouth_horror_carnivore_03__diffuse"
+        },
+        {
+          "line": 58460,
+          "text": "ce_mouth_horror_carnivore_04__diffuse"
+        },
+        {
+          "line": 58461,
+          "text": "ce_mouth_horror_carnivore_04__specBump"
+        },
+        {
+          "line": 58462,
+          "text": "ce_mouth_horror_carnivore_03__specBump"
+        },
+        {
+          "line": 58463,
+          "text": "ce_mouth_horror_carnivore_02__specBump"
+        },
+        {
+          "line": 58464,
+          "text": "ce_mouth_horror_carnivore_01__specBump"
+        },
+        {
+          "line": 58465,
+          "text": "ce_mouth_horror_carnivore_01__tintMask"
+        },
+        {
+          "line": 58466,
+          "text": "ce_mouth_horror_carnivore_02__tintMask"
+        },
+        {
+          "line": 58467,
+          "text": "ce_mouth_horror_carnivore_03__tintMask"
+        },
+        {
+          "line": 58468,
+          "text": "ce_mouth_horror_carnivore_04__tintMask"
+        },
+        {
+          "line": 70980,
+          "text": "ce_grasper_treeSentinel_02-symmetric"
+        },
+        {
+          "line": 71419,
+          "text": "ce_mouth_mandible_carnivore_015"
+        },
+        {
+          "line": 71423,
+          "text": "ce_mouth_mandible_carnivore_005"
+        },
+        {
+          "line": 83000,
+          "text": "ce_grasper_horror_default-symmetric__diffuse"
+        },
+        {
+          "line": 83001,
+          "text": "ce_grasper_horror_default-symmetric__specBump"
+        },
+        {
+          "line": 83002,
+          "text": "ce_grasper_horror_default-symmetric__tintMask"
+        },
+        {
+          "line": 88445,
+          "text": "ce_mouth_psychicTempest_01__diffuse"
+        },
+        {
+          "line": 88446,
+          "text": "ce_mouth_psychicTempest_01__specBump"
+        },
+        {
+          "line": 88447,
+          "text": "ce_mouth_psychicTempest_01__tintMask"
+        },
+        {
+          "line": 88448,
+          "text": "ce_mouth_psychicTempest_02__diffuse"
+        },
+        {
+          "line": 88449,
+          "text": "ce_mouth_psychicTempest_02__specBump"
+        },
+        {
+          "line": 88450,
+          "text": "ce_mouth_psychicTempest_02__tintMask"
+        },
+        {
+          "line": 88451,
+          "text": "ce_mouth_ghostSentinel_01__diffuse"
+        },
+        {
+          "line": 88452,
+          "text": "ce_mouth_ghostSentinel_01__specBump"
+        },
+        {
+          "line": 88453,
+          "text": "ce_mouth_ghostSentinel_01__tintMask"
+        },
+        {
+          "line": 88454,
+          "text": "ce_mouth_ghostSentinel_02__diffuse"
+        },
+        {
+          "line": 88455,
+          "text": "ce_mouth_ghostSentinel_02__specBump"
+        },
+        {
+          "line": 88456,
+          "text": "ce_mouth_ghostSentinel_02__tintMask"
+        },
+        {
+          "line": 88457,
+          "text": "ce_mouth_shadowRavager_01__diffuse"
+        },
+        {
+          "line": 88458,
+          "text": "ce_mouth_shadowRavager_01__specBump"
+        },
+        {
+          "line": 88459,
+          "text": "ce_mouth_shadowRavager_01__tintMask"
+        },
+        {
+          "line": 88460,
+          "text": "ce_mouth_shadowRavager_02__diffuse"
+        },
+        {
+          "line": 88461,
+          "text": "ce_mouth_shadowRavager_02__specBump"
+        },
+        {
+          "line": 88462,
+          "text": "ce_mouth_shadowRavager_02__tintMask"
+        },
+        {
+          "line": 88463,
+          "text": "ce_mouth_soulRavager_01__diffuse"
+        },
+        {
+          "line": 88464,
+          "text": "ce_mouth_soulRavager_01__specBump"
+        },
+        {
+          "line": 88465,
+          "text": "ce_mouth_soulRavager_01__tintMask"
+        },
+        {
+          "line": 88466,
+          "text": "ce_mouth_voodooTempest_01__diffuse"
+        },
+        {
+          "line": 88467,
+          "text": "ce_mouth_voodooTempest_01__specBump"
+        },
+        {
+          "line": 88468,
+          "text": "ce_mouth_voodooTempest_01__tintMask"
+        },
+        {
+          "line": 88469,
+          "text": "ce_mouth_energySentinel_01__diffuse"
+        },
+        {
+          "line": 88470,
+          "text": "ce_mouth_energySentinel_01__specBump"
+        },
+        {
+          "line": 88471,
+          "text": "ce_mouth_energySentinel_01__tintMask"
+        },
+        {
+          "line": 88472,
+          "text": "ce_mouth_missileTempest_01__diffuse"
+        },
+        {
+          "line": 88473,
+          "text": "ce_mouth_missileTempest_01__specBump"
+        },
+        {
+          "line": 88474,
+          "text": "ce_mouth_missileTempest_01__tintMask"
+        },
+        {
+          "line": 88475,
+          "text": "ce_mouth_shieldedSentinel_01__diffuse"
+        },
+        {
+          "line": 88476,
+          "text": "ce_mouth_shieldedSentinel_01__specBump"
+        },
+        {
+          "line": 88477,
+          "text": "ce_mouth_shieldedSentinel_01__tintMask"
+        },
+        {
+          "line": 88478,
+          "text": "ce_mouth_medicTempest_01__diffuse"
+        },
+        {
+          "line": 88479,
+          "text": "ce_mouth_medicTempest_01__specBump"
+        },
+        {
+          "line": 88480,
+          "text": "ce_mouth_medicTempest_01__tintMask"
+        },
+        {
+          "line": 88481,
+          "text": "ce_mouth_trapperRavager_01__diffuse"
+        },
+        {
+          "line": 88482,
+          "text": "ce_mouth_trapperRavager_01__specBump"
+        },
+        {
+          "line": 88483,
+          "text": "ce_mouth_trapperRavager_01__tintMask"
+        },
+        {
+          "line": 88484,
+          "text": "ce_mouth_beastSentinel_01__diffuse"
+        },
+        {
+          "line": 88485,
+          "text": "ce_mouth_beastSentinel_01__specBump"
+        },
+        {
+          "line": 88486,
+          "text": "ce_mouth_beastSentinel_01__tintMask"
+        },
+        {
+          "line": 88487,
+          "text": "ce_mouth_poisonRavager_01__diffuse"
+        },
+        {
+          "line": 88488,
+          "text": "ce_mouth_poisonRavager_01__specBump"
+        },
+        {
+          "line": 88489,
+          "text": "ce_mouth_poisonRavager_01__tintMask"
+        },
+        {
+          "line": 88490,
+          "text": "ce_mouth_poisonRavager_02__diffuse"
+        },
+        {
+          "line": 88491,
+          "text": "ce_mouth_poisonRavager_02__specBump"
+        },
+        {
+          "line": 88492,
+          "text": "ce_mouth_poisonRavager_02__tintMask"
+        },
+        {
+          "line": 88493,
+          "text": "ce_mouth_shroomTempest_01__diffuse"
+        },
+        {
+          "line": 88494,
+          "text": "ce_mouth_shroomTempest_01__specBump"
+        },
+        {
+          "line": 88495,
+          "text": "ce_mouth_shroomTempest_01__tintMask"
+        },
+        {
+          "line": 88496,
+          "text": "ce_mouth_supportTempest_01__diffuse"
+        },
+        {
+          "line": 88497,
+          "text": "ce_mouth_supportTempest_01__specBump"
+        },
+        {
+          "line": 88498,
+          "text": "ce_mouth_supportTempest_01__tintMask"
+        },
+        {
+          "line": 88499,
+          "text": "ce_mouth_supportTempest_02__diffuse"
+        },
+        {
+          "line": 88500,
+          "text": "ce_mouth_supportTempest_02__specBump"
+        },
+        {
+          "line": 88501,
+          "text": "ce_mouth_supportTempest_02__tintMask"
+        },
+        {
+          "line": 88502,
+          "text": "ce_mouth_treeSentinel_01__diffuse"
+        },
+        {
+          "line": 88503,
+          "text": "ce_mouth_treeSentinel_01__specBump"
+        },
+        {
+          "line": 88504,
+          "text": "ce_mouth_treeSentinel_01__tintMask"
+        },
+        {
+          "line": 88505,
+          "text": "ce_mouth_treeSentinel_02__diffuse"
+        },
+        {
+          "line": 88506,
+          "text": "ce_mouth_treeSentinel_02__specBump"
+        },
+        {
+          "line": 88507,
+          "text": "ce_mouth_treeSentinel_02__tintMask"
+        },
+        {
+          "line": 88508,
+          "text": "ce_mouth_binarySentinel_01__diffuse"
+        },
+        {
+          "line": 88509,
+          "text": "ce_mouth_binarySentinel_01__specBump"
+        },
+        {
+          "line": 88510,
+          "text": "ce_mouth_binarySentinel_01__tintMask"
+        },
+        {
+          "line": 88511,
+          "text": "ce_mouth_binarySentinel_02__diffuse"
+        },
+        {
+          "line": 88512,
+          "text": "ce_mouth_binarySentinel_02__specBump"
+        },
+        {
+          "line": 88513,
+          "text": "ce_mouth_binarySentinel_02__tintMask"
+        },
+        {
+          "line": 88514,
+          "text": "ce_mouth_gravityTempest_01__diffuse"
+        },
+        {
+          "line": 88515,
+          "text": "ce_mouth_gravityTempest_01__specBump"
+        },
+        {
+          "line": 88516,
+          "text": "ce_mouth_gravityTempest_01__tintMask"
+        },
+        {
+          "line": 88517,
+          "text": "ce_mouth_gravityTempest_02__diffuse"
+        },
+        {
+          "line": 88518,
+          "text": "ce_mouth_gravityTempest_02__specBump"
+        },
+        {
+          "line": 88519,
+          "text": "ce_mouth_gravityTempest_02__tintMask"
+        },
+        {
+          "line": 88520,
+          "text": "ce_mouth_lightspeedTempest_01__diffuse"
+        },
+        {
+          "line": 88521,
+          "text": "ce_mouth_lightspeedTempest_01__specBump"
+        },
+        {
+          "line": 88522,
+          "text": "ce_mouth_lightspeedTempest_01__tintMask"
+        },
+        {
+          "line": 88523,
+          "text": "ce_mouth_quantumRavager_01__diffuse"
+        },
+        {
+          "line": 88524,
+          "text": "ce_mouth_quantumRavager_01__specBump"
+        },
+        {
+          "line": 88525,
+          "text": "ce_mouth_quantumRavager_01__tintMask"
+        },
+        {
+          "line": 88526,
+          "text": "ce_mouth_timeRavager_01__diffuse"
+        },
+        {
+          "line": 88527,
+          "text": "ce_mouth_timeRavager_01__specBump"
+        },
+        {
+          "line": 88528,
+          "text": "ce_mouth_timeRavager_01__tintMask"
+        },
+        {
+          "line": 88529,
+          "text": "ce_mouth_fireRavager_01__diffuse"
+        },
+        {
+          "line": 88530,
+          "text": "ce_mouth_fireRavager_01__specBump"
+        },
+        {
+          "line": 88531,
+          "text": "ce_mouth_fireRavager_01__tintMask"
+        },
+        {
+          "line": 88532,
+          "text": "ce_mouth_fireRavager_02__diffuse"
+        },
+        {
+          "line": 88533,
+          "text": "ce_mouth_fireRavager_02__specBump"
+        },
+        {
+          "line": 88534,
+          "text": "ce_mouth_fireRavager_02__tintMask"
+        },
+        {
+          "line": 88535,
+          "text": "ce_mouth_fireTempest_01__diffuse"
+        },
+        {
+          "line": 88536,
+          "text": "ce_mouth_fireTempest_01__specBump"
+        },
+        {
+          "line": 88537,
+          "text": "ce_mouth_fireTempest_01__tintMask"
+        },
+        {
+          "line": 88538,
+          "text": "ce_mouth_fireTempest_02__diffuse"
+        },
+        {
+          "line": 88539,
+          "text": "ce_mouth_fireTempest_02__specBump"
+        },
+        {
+          "line": 88540,
+          "text": "ce_mouth_fireTempest_02__tintMask"
+        },
+        {
+          "line": 88541,
+          "text": "ce_mouth_lightningRavager_01__diffuse"
+        },
+        {
+          "line": 88542,
+          "text": "ce_mouth_lightningRavager_01__specBump"
+        },
+        {
+          "line": 88543,
+          "text": "ce_mouth_lightningRavager_01__tintMask"
+        },
+        {
+          "line": 88544,
+          "text": "ce_mouth_lightningTempest_01__diffuse"
+        },
+        {
+          "line": 88545,
+          "text": "ce_mouth_lightningTempest_01__specBump"
+        },
+        {
+          "line": 88546,
+          "text": "ce_mouth_lightningTempest_01__tintMask"
+        },
+        {
+          "line": 88547,
+          "text": "ce_mouth_plasmaSentinel_01__diffuse"
+        },
+        {
+          "line": 88548,
+          "text": "ce_mouth_plasmaSentinel_01__specBump"
+        },
+        {
+          "line": 88549,
+          "text": "ce_mouth_plasmaSentinel_01__tintMask"
+        },
+        {
+          "line": 88550,
+          "text": "ce_mouth_plasmaSentinel_02__diffuse"
+        },
+        {
+          "line": 88551,
+          "text": "ce_mouth_plasmaSentinel_02__specBump"
+        },
+        {
+          "line": 88552,
+          "text": "ce_mouth_plasmaSentinel_02__tintMask"
+        },
+        {
+          "line": 89497,
+          "text": "ce_grasper_binarySentinel_01-symmetric__diffuse"
+        },
+        {
+          "line": 89498,
+          "text": "ce_grasper_binarySentinel_01-symmetric__specBump"
+        },
+        {
+          "line": 89499,
+          "text": "ce_grasper_binarySentinel_01-symmetric__tintMask"
+        },
+        {
+          "line": 89500,
+          "text": "ce_grasper_binarySentinel_02-symmetric__diffuse"
+        },
+        {
+          "line": 89501,
+          "text": "ce_grasper_binarySentinel_02-symmetric__specBump"
+        },
+        {
+          "line": 89502,
+          "text": "ce_grasper_binarySentinel_02-symmetric__tintMask"
+        },
+        {
+          "line": 89503,
+          "text": "ce_grasper_gravityTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89504,
+          "text": "ce_grasper_gravityTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89505,
+          "text": "ce_grasper_gravityTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89506,
+          "text": "ce_grasper_gravityTempest_02-symmetric__diffuse"
+        },
+        {
+          "line": 89507,
+          "text": "ce_grasper_gravityTempest_02-symmetric__specBump"
+        },
+        {
+          "line": 89508,
+          "text": "ce_grasper_gravityTempest_02-symmetric__tintMask"
+        },
+        {
+          "line": 89509,
+          "text": "ce_grasper_psychicTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89510,
+          "text": "ce_grasper_psychicTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89511,
+          "text": "ce_grasper_psychicTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89512,
+          "text": "ce_grasper_psychicTempest_02-symmetric__diffuse"
+        },
+        {
+          "line": 89513,
+          "text": "ce_grasper_psychicTempest_02-symmetric__specBump"
+        },
+        {
+          "line": 89514,
+          "text": "ce_grasper_psychicTempest_02-symmetric__tintMask"
+        },
+        {
+          "line": 89515,
+          "text": "ce_grasper_quantumRavager_01-symmetric__diffuse"
+        },
+        {
+          "line": 89516,
+          "text": "ce_grasper_quantumRavager_01-symmetric__specBump"
+        },
+        {
+          "line": 89517,
+          "text": "ce_grasper_quantumRavager_01-symmetric__tintMask"
+        },
+        {
+          "line": 89518,
+          "text": "ce_grasper_timeRavager_01-symmetric__diffuse"
+        },
+        {
+          "line": 89519,
+          "text": "ce_grasper_timeRavager_01-symmetric__specBump"
+        },
+        {
+          "line": 89520,
+          "text": "ce_grasper_timeRavager_01-symmetric__tintMask"
+        },
+        {
+          "line": 89521,
+          "text": "ce_grasper_lightspeedTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89522,
+          "text": "ce_grasper_lightspeedTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89523,
+          "text": "ce_grasper_lightspeedTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89524,
+          "text": "ce_grasper_lightningTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89525,
+          "text": "ce_grasper_lightningTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89526,
+          "text": "ce_grasper_lightningTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89527,
+          "text": "ce_grasper_fireRavager_01-symmetric__diffuse"
+        },
+        {
+          "line": 89528,
+          "text": "ce_grasper_fireRavager_01-symmetric__specBump"
+        },
+        {
+          "line": 89529,
+          "text": "ce_grasper_fireRavager_01-symmetric__tintMask"
+        },
+        {
+          "line": 89530,
+          "text": "ce_grasper_fireTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89531,
+          "text": "ce_grasper_fireTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89532,
+          "text": "ce_grasper_fireTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89533,
+          "text": "ce_grasper_plasmaSentinel_01-symmetric__diffuse"
+        },
+        {
+          "line": 89534,
+          "text": "ce_grasper_plasmaSentinel_01-symmetric__specBump"
+        },
+        {
+          "line": 89535,
+          "text": "ce_grasper_plasmaSentinel_01-symmetric__tintMask"
+        },
+        {
+          "line": 89536,
+          "text": "ce_grasper_plasmaSentinel_02-symmetric__diffuse"
+        },
+        {
+          "line": 89537,
+          "text": "ce_grasper_plasmaSentinel_02-symmetric__specBump"
+        },
+        {
+          "line": 89538,
+          "text": "ce_grasper_plasmaSentinel_02-symmetric__tintMask"
+        },
+        {
+          "line": 89539,
+          "text": "ce_grasper_plasmaSentinel_03-symmetric__diffuse"
+        },
+        {
+          "line": 89540,
+          "text": "ce_grasper_plasmaSentinel_03-symmetric__specBump"
+        },
+        {
+          "line": 89541,
+          "text": "ce_grasper_plasmaSentinel_03-symmetric__tintMask"
+        },
+        {
+          "line": 89542,
+          "text": "ce_grasper_trapperRavager_01-symmetric__diffuse"
+        },
+        {
+          "line": 89543,
+          "text": "ce_grasper_trapperRavager_01-symmetric__specBump"
+        },
+        {
+          "line": 89544,
+          "text": "ce_grasper_trapperRavager_01-symmetric__tintMask"
+        },
+        {
+          "line": 89545,
+          "text": "ce_grasper_ghostSentinel_01-symmetric__diffuse"
+        },
+        {
+          "line": 89546,
+          "text": "ce_grasper_ghostSentinel_01-symmetric__specBump"
+        },
+        {
+          "line": 89547,
+          "text": "ce_grasper_ghostSentinel_01-symmetric__tintMask"
+        },
+        {
+          "line": 89548,
+          "text": "ce_grasper_ghostSentinel_02-symmetric__diffuse"
+        },
+        {
+          "line": 89549,
+          "text": "ce_grasper_ghostSentinel_02-symmetric__specBump"
+        },
+        {
+          "line": 89550,
+          "text": "ce_grasper_ghostSentinel_02-symmetric__tintMask"
+        },
+        {
+          "line": 89551,
+          "text": "ce_grasper_shadowRavager_01-symmetric__diffuse"
+        },
+        {
+          "line": 89552,
+          "text": "ce_grasper_shadowRavager_01-symmetric__specBump"
+        },
+        {
+          "line": 89553,
+          "text": "ce_grasper_shadowRavager_01-symmetric__tintMask"
+        },
+        {
+          "line": 89554,
+          "text": "ce_grasper_shadowRavager_02-symmetric__diffuse"
+        },
+        {
+          "line": 89555,
+          "text": "ce_grasper_shadowRavager_02-symmetric__specBump"
+        },
+        {
+          "line": 89556,
+          "text": "ce_grasper_shadowRavager_02-symmetric__tintMask"
+        },
+        {
+          "line": 89557,
+          "text": "ce_grasper_beastSentinel_01-symmetric__diffuse"
+        },
+        {
+          "line": 89558,
+          "text": "ce_grasper_beastSentinel_01-symmetric__specBump"
+        },
+        {
+          "line": 89559,
+          "text": "ce_grasper_beastSentinel_01-symmetric__tintMask"
+        },
+        {
+          "line": 89560,
+          "text": "ce_grasper_poisonRavager_01-symmetric__diffuse"
+        },
+        {
+          "line": 89561,
+          "text": "ce_grasper_poisonRavager_01-symmetric__specBump"
+        },
+        {
+          "line": 89562,
+          "text": "ce_grasper_poisonRavager_01-symmetric__tintMask"
+        },
+        {
+          "line": 89563,
+          "text": "ce_grasper_shroomTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89564,
+          "text": "ce_grasper_shroomTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89565,
+          "text": "ce_grasper_shroomTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89566,
+          "text": "ce_grasper_supportTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89567,
+          "text": "ce_grasper_supportTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89568,
+          "text": "ce_grasper_supportTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89569,
+          "text": "ce_grasper_treeSentinel_02"
+        },
+        {
+          "line": 89570,
+          "text": "ce_grasper_treeSentinel_01-symmetric__diffuse"
+        },
+        {
+          "line": 89571,
+          "text": "ce_grasper_treeSentinel_01-symmetric__specBump"
+        },
+        {
+          "line": 89572,
+          "text": "ce_grasper_treeSentinel_01-symmetric__tintMask"
+        },
+        {
+          "line": 89573,
+          "text": "ce_grasper_treeSentinel_02-symmetric__diffuse"
+        },
+        {
+          "line": 89574,
+          "text": "ce_grasper_treeSentinel_02-symmetric__specBump"
+        },
+        {
+          "line": 89575,
+          "text": "ce_grasper_treeSentinel_02-symmetric__tintMask"
+        },
+        {
+          "line": 89576,
+          "text": "ce_grasper_treeSentinel_02__diffuse"
+        },
+        {
+          "line": 89577,
+          "text": "ce_grasper_treeSentinel_02__specBump"
+        },
+        {
+          "line": 89578,
+          "text": "ce_grasper_treeSentinel_02__tintMask"
+        },
+        {
+          "line": 89579,
+          "text": "ce_grasper_medicTempest_01-symmetric__diffuse"
+        },
+        {
+          "line": 89580,
+          "text": "ce_grasper_medicTempest_01-symmetric__specBump"
+        },
+        {
+          "line": 89581,
+          "text": "ce_grasper_medicTempest_01-symmetric__tintMask"
+        },
+        {
+          "line": 89582,
+          "text": "ce_grasper_shieldedSentinel_01-symmetric__diffuse"
+        },
+        {
+          "line": 89583,
+          "text": "ce_grasper_shieldedSentinel_01-symmetric__specBump"
+        },
+        {
+          "line": 89584,
+          "text": "ce_grasper_shieldedSentinel_01-symmetric__tintMask"
+        },
+        {
+          "line": 89585,
+          "text": "ce_grasper_Tech_03-symmetric__diffuse"
+        },
+        {
+          "line": 89586,
+          "text": "ce_grasper_Tech_03-symmetric__specBump"
+        },
+        {
+          "line": 89587,
+          "text": "ce_grasper_Tech_03-symmetric__tintMask"
+        },
+        {
+          "line": 89588,
+          "text": "ce_grasper_Tech_04-symmetric__diffuse"
+        },
+        {
+          "line": 89589,
+          "text": "ce_grasper_Tech_04-symmetric__specBump"
+        },
+        {
+          "line": 89590,
+          "text": "ce_grasper_Tech_04-symmetric__tintMask"
+        },
+        {
+          "line": 89591,
+          "text": "ce_grasper_Tech_05-symmetric__diffuse"
+        },
+        {
+          "line": 89592,
+          "text": "ce_grasper_Tech_05-symmetric__specBump"
+        },
+        {
+          "line": 89593,
+          "text": "ce_grasper_Tech_05-symmetric__tintMask"
+        },
+        {
+          "line": 89594,
+          "text": "ce_grasper_Tech_06-symmetric__diffuse"
+        },
+        {
+          "line": 89595,
+          "text": "ce_grasper_Tech_06-symmetric__specBump"
+        },
+        {
+          "line": 89596,
+          "text": "ce_grasper_Tech_06-symmetric__tintMask"
+        },
+        {
+          "line": 89597,
+          "text": "ce_grasper_Tech_07-symmetric__diffuse"
+        },
+        {
+          "line": 89598,
+          "text": "ce_grasper_Tech_07-symmetric__specBump"
+        },
+        {
+          "line": 89599,
+          "text": "ce_grasper_Tech_07-symmetric__tintMask"
+        },
+        {
+          "line": 89600,
+          "text": "ce_grasper_Tech_08-symmetric__diffuse"
+        },
+        {
+          "line": 89601,
+          "text": "ce_grasper_Tech_08-symmetric__specBump"
+        },
+        {
+          "line": 89602,
+          "text": "ce_grasper_Tech_08-symmetric__tintMask"
+        },
+        {
+          "line": 89603,
+          "text": "ce_grasper_Tech_09-symmetric__diffuse"
+        },
+        {
+          "line": 89604,
+          "text": "ce_grasper_Tech_09-symmetric__specBump"
+        },
+        {
+          "line": 89605,
+          "text": "ce_grasper_Tech_09-symmetric__tintMask"
+        },
+        {
+          "line": 89606,
+          "text": "ce_grasper_Tech_10-symmetric__diffuse"
+        },
+        {
+          "line": 89607,
+          "text": "ce_grasper_Tech_10-symmetric__specBump"
+        },
+        {
+          "line": 89608,
+          "text": "ce_grasper_Tech_10-symmetric__tintMask"
+        },
+        {
+          "line": 89609,
+          "text": "ce_grasper_Tech_11-symmetric__diffuse"
+        },
+        {
+          "line": 89610,
+          "text": "ce_grasper_Tech_11-symmetric__specBump"
+        },
+        {
+          "line": 89611,
+          "text": "ce_grasper_Tech_11-symmetric__tintMask"
+        },
+        {
+          "line": 89612,
+          "text": "ce_grasper_Tech_12-symmetric__diffuse"
+        },
+        {
+          "line": 89613,
+          "text": "ce_grasper_Tech_12-symmetric__specBump"
+        },
+        {
+          "line": 89614,
+          "text": "ce_grasper_Tech_12-symmetric__tintMask"
+        },
+        {
+          "line": 89615,
+          "text": "ce_grasper_Tech_13-symmetric__diffuse"
+        },
+        {
+          "line": 89616,
+          "text": "ce_grasper_Tech_13-symmetric__specBump"
+        },
+        {
+          "line": 89617,
+          "text": "ce_grasper_Tech_13-symmetric__tintMask"
+        },
+        {
+          "line": 89618,
+          "text": "ce_grasper_Tech_14-symmetric__diffuse"
+        },
+        {
+          "line": 89619,
+          "text": "ce_grasper_Tech_14-symmetric__specBump"
+        },
+        {
+          "line": 89620,
+          "text": "ce_grasper_Tech_14-symmetric__tintMask"
+        },
+        {
+          "line": 89621,
+          "text": "ce_grasper_gravityTempestWeapon_01"
+        },
+        {
+          "line": 89622,
+          "text": "ce_grasper_gravityTempestWeapon_02"
+        },
+        {
+          "line": 89623,
+          "text": "ce_grasper_gravityTempestWeapon_03"
+        },
+        {
+          "line": 89624,
+          "text": "ce_grasper_gravityTempestWeapon_01-symmetric"
+        },
+        {
+          "line": 89625,
+          "text": "ce_grasper_gravityTempestWeapon_02-symmetric"
+        },
+        {
+          "line": 89626,
+          "text": "ce_grasper_gravityTempestWeapon_03-symmetric"
+        },
+        {
+          "line": 89627,
+          "text": "ce_grasper_gravityTempestWeapon_01-symmetric__diffuse"
+        },
+        {
+          "line": 89628,
+          "text": "ce_grasper_gravityTempestWeapon_01-symmetric__specBump"
+        },
+        {
+          "line": 89629,
+          "text": "ce_grasper_gravityTempestWeapon_01-symmetric__tintMask"
+        },
+        {
+          "line": 89630,
+          "text": "ce_grasper_gravityTempestWeapon_02-symmetric__diffuse"
+        },
+        {
+          "line": 89631,
+          "text": "ce_grasper_gravityTempestWeapon_02-symmetric__specBump"
+        },
+        {
+          "line": 89632,
+          "text": "ce_grasper_gravityTempestWeapon_02-symmetric__tintMask"
+        },
+        {
+          "line": 89633,
+          "text": "ce_grasper_gravityTempestWeapon_03-symmetric__diffuse"
+        },
+        {
+          "line": 89634,
+          "text": "ce_grasper_gravityTempestWeapon_03-symmetric__specBump"
+        },
+        {
+          "line": 89635,
+          "text": "ce_grasper_gravityTempestWeapon_03-symmetric__tintMask"
+        },
+        {
+          "line": 90689,
+          "text": "ce_grasper_voodooTempestWeapon_01"
+        },
+        {
+          "line": 90690,
+          "text": "ce_grasper_voodooTempestWeapon_01-symmetric"
+        },
+        {
+          "line": 90691,
+          "text": "ce_grasper_voodooTempestWeapon_01-symmetric__diffuse"
+        },
+        {
+          "line": 90692,
+          "text": "ce_grasper_voodooTempestWeapon_01-symmetric__specBump"
+        },
+        {
+          "line": 90693,
+          "text": "ce_grasper_voodooTempestWeapon_01-symmetric__tintMask"
+        },
+        {
+          "line": 90847,
+          "text": "ce_grasper_ghostSentinelWeapon_02-symmetric"
+        },
+        {
+          "line": 90848,
+          "text": "ce_grasper_ghostSentinelWeapon_02-symmetric__diffuse"
+        },
+        {
+          "line": 90849,
+          "text": "ce_grasper_ghostSentinelWeapon_02-symmetric__specBump"
+        },
+        {
+          "line": 90850,
+          "text": "ce_grasper_ghostSentinelWeapon_02-symmetric__tintMask"
+        },
+        {
+          "line": 90851,
+          "text": "ce_grasper_ghostSentinelWeapon_02"
+        },
+        {
+          "line": 109518,
+          "text": "ce_mouth_beak_carnivore_03__shinyMask"
+        },
+        {
+          "line": 109519,
+          "text": "ce_mouth_beak_carnivore_02__shinyMask"
+        },
+        {
+          "line": 109520,
+          "text": "ce_mouth_beak_carnivore_01__shinyMask"
+        },
+        {
+          "line": 109521,
+          "text": "ce_mouth_beak_carnivore_04__shinyMask"
+        },
+        {
+          "line": 109522,
+          "text": "ce_mouth_amphibian_omnivore_01__shinyMask"
+        },
+        {
+          "line": 109523,
+          "text": "ce_mouth_amphibian_omnivore_02__shinyMask"
+        },
+        {
+          "line": 109524,
+          "text": "ce_mouth_amphibian_omnivore_03__shinyMask"
+        },
+        {
+          "line": 109525,
+          "text": "ce_mouth_amphibian_omnivore_04__shinyMask"
+        },
+        {
+          "line": 109526,
+          "text": "ce_mouth_beak_herbivore_01__shinyMask"
+        },
+        {
+          "line": 109527,
+          "text": "ce_mouth_beak_herbivore_02__shinyMask"
+        },
+        {
+          "line": 109528,
+          "text": "ce_mouth_beak_herbivore_03__shinyMask"
+        },
+        {
+          "line": 109529,
+          "text": "ce_mouth_beak_herbivore_04__shinyMask"
+        },
+        {
+          "line": 109530,
+          "text": "ce_mouth_fish_carnivore_01__shinyMask"
+        },
+        {
+          "line": 109531,
+          "text": "ce_mouth_fish_carnivore_02__shinyMask"
+        },
+        {
+          "line": 109532,
+          "text": "ce_mouth_fish_carnivore_03__shinyMask"
+        },
+        {
+          "line": 109533,
+          "text": "ce_mouth_fish_carnivore_04__shinyMask"
+        },
+        {
+          "line": 109534,
+          "text": "ce_mouth_jaw_carnivore_01__shinyMask"
+        },
+        {
+          "line": 109535,
+          "text": "ce_mouth_jaw_carnivore_02__shinyMask"
+        },
+        {
+          "line": 109536,
+          "text": "ce_mouth_jaw_carnivore_03__shinyMask"
+        },
+        {
+          "line": 109537,
+          "text": "ce_mouth_jaw_carnivore_04__shinyMask"
+        },
+        {
+          "line": 109538,
+          "text": "ce_mouth_jaw_herbivore_01__shinyMask"
+        },
+        {
+          "line": 109539,
+          "text": "ce_mouth_jaw_herbivore_02__shinyMask"
+        },
+        {
+          "line": 109540,
+          "text": "ce_mouth_jaw_herbivore_03__shinyMask"
+        },
+        {
+          "line": 109541,
+          "text": "ce_mouth_jaw_herbivore_04__shinyMask"
+        },
+        {
+          "line": 109542,
+          "text": "ce_mouth_mandible_carnivore_01__shinyMask"
+        },
+        {
+          "line": 109543,
+          "text": "ce_mouth_mandible_carnivore_02__shinyMask"
+        },
+        {
+          "line": 109544,
+          "text": "ce_mouth_mandible_carnivore_03__shinyMask"
+        },
+        {
+          "line": 109545,
+          "text": "ce_mouth_mandible_carnivore_04__shinyMask"
+        },
+        {
+          "line": 109546,
+          "text": "ce_mouth_primate_omnivore_01__shinyMask"
+        },
+        {
+          "line": 109547,
+          "text": "ce_mouth_primate_omnivore_02__shinyMask"
+        },
+        {
+          "line": 109548,
+          "text": "ce_mouth_primate_omnivore_03__shinyMask"
+        },
+        {
+          "line": 109549,
+          "text": "ce_mouth_primate_omnivore_04__shinyMask"
+        },
+        {
+          "line": 109550,
+          "text": "ce_mouth_radial_omnivore_01__shinyMask"
+        },
+        {
+          "line": 109551,
+          "text": "ce_mouth_radial_omnivore_02__shinyMask"
+        },
+        {
+          "line": 109552,
+          "text": "ce_mouth_radial_omnivore_03__shinyMask"
+        },
+        {
+          "line": 109553,
+          "text": "ce_mouth_radial_omnivore_04__shinyMask"
+        },
+        {
+          "line": 109554,
+          "text": "ce_mouth_snout_herbivore_01__shinyMask"
+        },
+        {
+          "line": 109555,
+          "text": "ce_mouth_snout_herbivore_02__shinyMask"
+        },
+        {
+          "line": 109556,
+          "text": "ce_mouth_snout_herbivore_03__shinyMask"
+        },
+        {
+          "line": 109557,
+          "text": "ce_mouth_snout_herbivore_04__shinyMask"
+        },
+        {
+          "line": 109670,
+          "text": "ce_grasper_amphibian_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109671,
+          "text": "ce_grasper_amphibian_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109672,
+          "text": "ce_grasper_amphibian_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109673,
+          "text": "ce_grasper_amphibian_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109674,
+          "text": "ce_grasper_bird_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109675,
+          "text": "ce_grasper_bird_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109676,
+          "text": "ce_grasper_bird_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109677,
+          "text": "ce_grasper_bird_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109678,
+          "text": "ce_grasper_default_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109679,
+          "text": "ce_grasper_dino_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109680,
+          "text": "ce_grasper_dino_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109681,
+          "text": "ce_grasper_dino_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109682,
+          "text": "ce_grasper_dino_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109683,
+          "text": "ce_grasper_insect_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109684,
+          "text": "ce_grasper_insect_01__shinyMask"
+        },
+        {
+          "line": 109685,
+          "text": "ce_grasper_insect_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109686,
+          "text": "ce_grasper_insect_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109687,
+          "text": "ce_grasper_insect_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109688,
+          "text": "ce_grasper_paw_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109689,
+          "text": "ce_grasper_paw_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109690,
+          "text": "ce_grasper_paw_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109691,
+          "text": "ce_grasper_paw_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109692,
+          "text": "ce_grasper_primate_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109693,
+          "text": "ce_grasper_primate_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109694,
+          "text": "ce_grasper_primate_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109695,
+          "text": "ce_grasper_primate_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109696,
+          "text": "ce_grasper_radial_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109697,
+          "text": "ce_grasper_radial_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109698,
+          "text": "ce_grasper_radial_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109699,
+          "text": "ce_grasper_radial_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109831,
+          "text": "ce_grasper_cute_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109832,
+          "text": "ce_grasper_cute_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109833,
+          "text": "ce_grasper_horror_01-symmetric__shinyMask"
+        },
+        {
+          "line": 109834,
+          "text": "ce_grasper_horror_02-symmetric__shinyMask"
+        },
+        {
+          "line": 109835,
+          "text": "ce_grasper_horror_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109836,
+          "text": "ce_grasper_horror_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109837,
+          "text": "ce_mouth_cute_herbivore_01__shinyMask"
+        },
+        {
+          "line": 109838,
+          "text": "ce_mouth_cute_herbivore_02__shinyMask"
+        },
+        {
+          "line": 109839,
+          "text": "ce_mouth_cute_herbivore_03__shinyMask"
+        },
+        {
+          "line": 109840,
+          "text": "ce_mouth_cute_herbivore_04__shinyMask"
+        },
+        {
+          "line": 109841,
+          "text": "ce_grasper_cute_08-symmetric__shinyMask"
+        },
+        {
+          "line": 109842,
+          "text": "ce_grasper_cute_07-symmetric__shinyMask"
+        },
+        {
+          "line": 109843,
+          "text": "ce_grasper_cute_06-symmetric__shinyMask"
+        },
+        {
+          "line": 109844,
+          "text": "ce_grasper_cute_05-symmetric__shinyMask"
+        },
+        {
+          "line": 109845,
+          "text": "ce_grasper_cute_04-symmetric__shinyMask"
+        },
+        {
+          "line": 109846,
+          "text": "ce_grasper_cute_03-symmetric__shinyMask"
+        },
+        {
+          "line": 109847,
+          "text": "ce_mouth_cute_omnivore_01__shinyMask"
+        },
+        {
+          "line": 109848,
+          "text": "ce_mouth_cute_omnivore_02__shinyMask"
+        },
+        {
+          "line": 109849,
+          "text": "ce_mouth_cute_omnivore_03__shinyMask"
+        },
+        {
+          "line": 109850,
+          "text": "ce_mouth_cute_omnivore_04__shinyMask"
+        },
+        {
+          "line": 109851,
+          "text": "ce_mouth_horror_carnivore_01__shinyMask"
+        },
+        {
+          "line": 109852,
+          "text": "ce_mouth_horror_carnivore_02__shinyMask"
+        },
+        {
+          "line": 109853,
+          "text": "ce_mouth_horror_carnivore_03__shinyMask"
+        },
+        {
+          "line": 109854,
+          "text": "ce_mouth_horror_carnivore_04__shinyMask"
+        },
+        {
+          "line": 109879,
+          "text": "ce_grasper_horror_default-symmetric__shinyMask"
+        },
+        {
+          "line": 109934,
+          "text": "ce_mouth_psychicTempest_01__shinyMask"
+        },
+        {
+          "line": 109935,
+          "text": "ce_mouth_psychicTempest_02__shinyMask"
+        },
+        {
+          "line": 109936,
+          "text": "ce_mouth_ghostSentinel_01__shinyMask"
+        },
+        {
+          "line": 109937,
+          "text": "ce_mouth_ghostSentinel_02__shinyMask"
+        },
+        {
+          "line": 109938,
+          "text": "ce_mouth_shadowRavager_01__shinyMask"
+        },
+        {
+          "line": 109939,
+          "text": "ce_mouth_shadowRavager_02__shinyMask"
+        },
+        {
+          "line": 109940,
+          "text": "ce_mouth_soulRavager_01__shinyMask"
+        },
+        {
+          "line": 109941,
+          "text": "ce_mouth_voodooTempest_01__shinyMask"
+        },
+        {
+          "line": 109942,
+          "text": "ce_mouth_energySentinel_01__shinyMask"
+        },
+        {
+          "line": 109943,
+          "text": "ce_mouth_missileTempest_01__shinyMask"
+        },
+        {
+          "line": 109944,
+          "text": "ce_mouth_shieldedSentinel_01__shinyMask"
+        },
+        {
+          "line": 109945,
+          "text": "ce_mouth_medicTempest_01__shinyMask"
+        },
+        {
+          "line": 109946,
+          "text": "ce_mouth_trapperRavager_01__shinyMask"
+        },
+        {
+          "line": 109947,
+          "text": "ce_mouth_beastSentinel_01__shinyMask"
+        },
+        {
+          "line": 109948,
+          "text": "ce_mouth_poisonRavager_01__shinyMask"
+        },
+        {
+          "line": 109949,
+          "text": "ce_mouth_poisonRavager_02__shinyMask"
+        },
+        {
+          "line": 109950,
+          "text": "ce_mouth_shroomTempest_01__shinyMask"
+        },
+        {
+          "line": 109951,
+          "text": "ce_mouth_supportTempest_01__shinyMask"
+        },
+        {
+          "line": 109952,
+          "text": "ce_mouth_supportTempest_02__shinyMask"
+        },
+        {
+          "line": 109953,
+          "text": "ce_mouth_treeSentinel_01__shinyMask"
+        },
+        {
+          "line": 109954,
+          "text": "ce_mouth_treeSentinel_02__shinyMask"
+        },
+        {
+          "line": 109955,
+          "text": "ce_mouth_binarySentinel_01__shinyMask"
+        },
+        {
+          "line": 109956,
+          "text": "ce_mouth_binarySentinel_02__shinyMask"
+        },
+        {
+          "line": 109957,
+          "text": "ce_mouth_gravityTempest_01__shinyMask"
+        },
+        {
+          "line": 109958,
+          "text": "ce_mouth_gravityTempest_02__shinyMask"
+        },
+        {
+          "line": 109959,
+          "text": "ce_mouth_lightspeedTempest_01__shinyMask"
+        },
+        {
+          "line": 109960,
+          "text": "ce_mouth_quantumRavager_01__shinyMask"
+        },
+        {
+          "line": 109961,
+          "text": "ce_mouth_timeRavager_01__shinyMask"
+        },
+        {
+          "line": 109962,
+          "text": "ce_mouth_fireRavager_01__shinyMask"
+        },
+        {
+          "line": 109963,
+          "text": "ce_mouth_fireRavager_02__shinyMask"
+        },
+        {
+          "line": 109964,
+          "text": "ce_mouth_fireTempest_01__shinyMask"
+        },
+        {
+          "line": 109965,
+          "text": "ce_mouth_fireTempest_02__shinyMask"
+        },
+        {
+          "line": 109966,
+          "text": "ce_mouth_lightningRavager_01__shinyMask"
+        },
+        {
+          "line": 109967,
+          "text": "ce_mouth_lightningTempest_01__shinyMask"
+        },
+        {
+          "line": 109968,
+          "text": "ce_mouth_plasmaSentinel_01__shinyMask"
+        },
+        {
+          "line": 109969,
+          "text": "ce_mouth_plasmaSentinel_02__shinyMask"
+        },
+        {
+          "line": 110277,
+          "text": "ce_grasper_binarySentinel_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110278,
+          "text": "ce_grasper_binarySentinel_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110279,
+          "text": "ce_grasper_gravityTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110280,
+          "text": "ce_grasper_gravityTempest_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110281,
+          "text": "ce_grasper_psychicTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110282,
+          "text": "ce_grasper_psychicTempest_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110283,
+          "text": "ce_grasper_quantumRavager_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110284,
+          "text": "ce_grasper_timeRavager_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110285,
+          "text": "ce_grasper_lightspeedTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110286,
+          "text": "ce_grasper_lightningTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110287,
+          "text": "ce_grasper_fireRavager_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110288,
+          "text": "ce_grasper_fireTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110289,
+          "text": "ce_grasper_plasmaSentinel_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110290,
+          "text": "ce_grasper_plasmaSentinel_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110291,
+          "text": "ce_grasper_plasmaSentinel_03-symmetric__shinyMask"
+        },
+        {
+          "line": 110292,
+          "text": "ce_grasper_trapperRavager_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110293,
+          "text": "ce_grasper_ghostSentinel_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110294,
+          "text": "ce_grasper_ghostSentinel_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110295,
+          "text": "ce_grasper_shadowRavager_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110296,
+          "text": "ce_grasper_shadowRavager_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110297,
+          "text": "ce_grasper_beastSentinel_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110298,
+          "text": "ce_grasper_poisonRavager_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110299,
+          "text": "ce_grasper_shroomTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110300,
+          "text": "ce_grasper_supportTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110301,
+          "text": "ce_grasper_treeSentinel_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110302,
+          "text": "ce_grasper_treeSentinel_02__shinyMask"
+        },
+        {
+          "line": 110303,
+          "text": "ce_grasper_medicTempest_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110304,
+          "text": "ce_grasper_shieldedSentinel_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110305,
+          "text": "ce_grasper_Tech_03-symmetric__shinyMask"
+        },
+        {
+          "line": 110306,
+          "text": "ce_grasper_Tech_04-symmetric__shinyMask"
+        },
+        {
+          "line": 110307,
+          "text": "ce_grasper_Tech_05-symmetric__shinyMask"
+        },
+        {
+          "line": 110308,
+          "text": "ce_grasper_Tech_06-symmetric__shinyMask"
+        },
+        {
+          "line": 110309,
+          "text": "ce_grasper_Tech_07-symmetric__shinyMask"
+        },
+        {
+          "line": 110310,
+          "text": "ce_grasper_Tech_08-symmetric__shinyMask"
+        },
+        {
+          "line": 110311,
+          "text": "ce_grasper_Tech_09-symmetric__shinyMask"
+        },
+        {
+          "line": 110312,
+          "text": "ce_grasper_Tech_10-symmetric__shinyMask"
+        },
+        {
+          "line": 110313,
+          "text": "ce_grasper_Tech_11-symmetric__shinyMask"
+        },
+        {
+          "line": 110314,
+          "text": "ce_grasper_Tech_12-symmetric__shinyMask"
+        },
+        {
+          "line": 110315,
+          "text": "ce_grasper_Tech_13-symmetric__shinyMask"
+        },
+        {
+          "line": 110316,
+          "text": "ce_grasper_Tech_14-symmetric__shinyMask"
+        },
+        {
+          "line": 110317,
+          "text": "ce_grasper_gravityTempestWeapon_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110318,
+          "text": "ce_grasper_gravityTempestWeapon_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110319,
+          "text": "ce_grasper_gravityTempestWeapon_03-symmetric__shinyMask"
+        },
+        {
+          "line": 110662,
+          "text": "ce_grasper_voodooTempestWeapon_01-symmetric__shinyMask"
+        },
+        {
+          "line": 110700,
+          "text": "ce_grasper_ghostSentinelWeapon_02-symmetric__shinyMask"
+        },
+        {
+          "line": 110783,
+          "text": "ce_mouth_beak_carnivore_03__effectsMask"
+        },
+        {
+          "line": 110784,
+          "text": "ce_mouth_beak_carnivore_02__effectsMask"
+        },
+        {
+          "line": 110785,
+          "text": "ce_mouth_beak_carnivore_01__effectsMask"
+        },
+        {
+          "line": 110786,
+          "text": "ce_mouth_beak_carnivore_04__effectsMask"
+        },
+        {
+          "line": 110787,
+          "text": "ce_mouth_amphibian_omnivore_01__effectsMask"
+        },
+        {
+          "line": 110788,
+          "text": "ce_mouth_amphibian_omnivore_02__effectsMask"
+        },
+        {
+          "line": 110789,
+          "text": "ce_mouth_amphibian_omnivore_03__effectsMask"
+        },
+        {
+          "line": 110790,
+          "text": "ce_mouth_amphibian_omnivore_04__effectsMask"
+        },
+        {
+          "line": 110791,
+          "text": "ce_mouth_beak_herbivore_01__effectsMask"
+        },
+        {
+          "line": 110792,
+          "text": "ce_mouth_beak_herbivore_02__effectsMask"
+        },
+        {
+          "line": 110793,
+          "text": "ce_mouth_beak_herbivore_03__effectsMask"
+        },
+        {
+          "line": 110794,
+          "text": "ce_mouth_beak_herbivore_04__effectsMask"
+        },
+        {
+          "line": 110795,
+          "text": "ce_mouth_fish_carnivore_01__effectsMask"
+        },
+        {
+          "line": 110796,
+          "text": "ce_mouth_fish_carnivore_02__effectsMask"
+        },
+        {
+          "line": 110797,
+          "text": "ce_mouth_fish_carnivore_03__effectsMask"
+        },
+        {
+          "line": 110798,
+          "text": "ce_mouth_fish_carnivore_04__effectsMask"
+        },
+        {
+          "line": 110799,
+          "text": "ce_mouth_jaw_carnivore_01__effectsMask"
+        },
+        {
+          "line": 110800,
+          "text": "ce_mouth_jaw_carnivore_02__effectsMask"
+        },
+        {
+          "line": 110801,
+          "text": "ce_mouth_jaw_carnivore_03__effectsMask"
+        },
+        {
+          "line": 110802,
+          "text": "ce_mouth_jaw_carnivore_04__effectsMask"
+        },
+        {
+          "line": 110803,
+          "text": "ce_mouth_jaw_herbivore_01__effectsMask"
+        },
+        {
+          "line": 110804,
+          "text": "ce_mouth_jaw_herbivore_02__effectsMask"
+        },
+        {
+          "line": 110805,
+          "text": "ce_mouth_jaw_herbivore_03__effectsMask"
+        },
+        {
+          "line": 110806,
+          "text": "ce_mouth_jaw_herbivore_04__effectsMask"
+        },
+        {
+          "line": 110807,
+          "text": "ce_mouth_mandible_carnivore_01__effectsMask"
+        },
+        {
+          "line": 110808,
+          "text": "ce_mouth_mandible_carnivore_02__effectsMask"
+        },
+        {
+          "line": 110809,
+          "text": "ce_mouth_mandible_carnivore_03__effectsMask"
+        },
+        {
+          "line": 110810,
+          "text": "ce_mouth_mandible_carnivore_04__effectsMask"
+        },
+        {
+          "line": 110811,
+          "text": "ce_mouth_primate_omnivore_01__effectsMask"
+        },
+        {
+          "line": 110812,
+          "text": "ce_mouth_primate_omnivore_02__effectsMask"
+        },
+        {
+          "line": 110813,
+          "text": "ce_mouth_primate_omnivore_03__effectsMask"
+        },
+        {
+          "line": 110814,
+          "text": "ce_mouth_primate_omnivore_04__effectsMask"
+        },
+        {
+          "line": 110815,
+          "text": "ce_mouth_radial_omnivore_01__effectsMask"
+        },
+        {
+          "line": 110816,
+          "text": "ce_mouth_radial_omnivore_02__effectsMask"
+        },
+        {
+          "line": 110817,
+          "text": "ce_mouth_radial_omnivore_03__effectsMask"
+        },
+        {
+          "line": 110818,
+          "text": "ce_mouth_radial_omnivore_04__effectsMask"
+        },
+        {
+          "line": 110819,
+          "text": "ce_mouth_snout_herbivore_01__effectsMask"
+        },
+        {
+          "line": 110820,
+          "text": "ce_mouth_snout_herbivore_02__effectsMask"
+        },
+        {
+          "line": 110821,
+          "text": "ce_mouth_snout_herbivore_03__effectsMask"
+        },
+        {
+          "line": 110822,
+          "text": "ce_mouth_snout_herbivore_04__effectsMask"
+        },
+        {
+          "line": 110935,
+          "text": "ce_grasper_amphibian_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110936,
+          "text": "ce_grasper_amphibian_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110937,
+          "text": "ce_grasper_amphibian_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110938,
+          "text": "ce_grasper_amphibian_04-symmetric__effectsMask"
+        },
+        {
+          "line": 110939,
+          "text": "ce_grasper_bird_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110940,
+          "text": "ce_grasper_bird_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110941,
+          "text": "ce_grasper_bird_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110942,
+          "text": "ce_grasper_bird_04-symmetric__effectsMask"
+        },
+        {
+          "line": 110943,
+          "text": "ce_grasper_default_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110944,
+          "text": "ce_grasper_dino_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110945,
+          "text": "ce_grasper_dino_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110946,
+          "text": "ce_grasper_dino_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110947,
+          "text": "ce_grasper_dino_04-symmetric__effectsMask"
+        },
+        {
+          "line": 110948,
+          "text": "ce_grasper_insect_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110949,
+          "text": "ce_grasper_insect_01__effectsMask"
+        },
+        {
+          "line": 110950,
+          "text": "ce_grasper_insect_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110951,
+          "text": "ce_grasper_insect_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110952,
+          "text": "ce_grasper_insect_04-symmetric__effectsMask"
+        },
+        {
+          "line": 110953,
+          "text": "ce_grasper_paw_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110954,
+          "text": "ce_grasper_paw_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110955,
+          "text": "ce_grasper_paw_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110956,
+          "text": "ce_grasper_paw_04-symmetric__effectsMask"
+        },
+        {
+          "line": 110957,
+          "text": "ce_grasper_primate_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110958,
+          "text": "ce_grasper_primate_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110959,
+          "text": "ce_grasper_primate_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110960,
+          "text": "ce_grasper_primate_04-symmetric__effectsMask"
+        },
+        {
+          "line": 110961,
+          "text": "ce_grasper_radial_01-symmetric__effectsMask"
+        },
+        {
+          "line": 110962,
+          "text": "ce_grasper_radial_02-symmetric__effectsMask"
+        },
+        {
+          "line": 110963,
+          "text": "ce_grasper_radial_03-symmetric__effectsMask"
+        },
+        {
+          "line": 110964,
+          "text": "ce_grasper_radial_04-symmetric__effectsMask"
+        },
+        {
+          "line": 111096,
+          "text": "ce_grasper_cute_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111097,
+          "text": "ce_grasper_cute_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111098,
+          "text": "ce_grasper_horror_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111099,
+          "text": "ce_grasper_horror_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111100,
+          "text": "ce_grasper_horror_03-symmetric__effectsMask"
+        },
+        {
+          "line": 111101,
+          "text": "ce_grasper_horror_04-symmetric__effectsMask"
+        },
+        {
+          "line": 111102,
+          "text": "ce_mouth_cute_herbivore_01__effectsMask"
+        },
+        {
+          "line": 111103,
+          "text": "ce_mouth_cute_herbivore_02__effectsMask"
+        },
+        {
+          "line": 111104,
+          "text": "ce_mouth_cute_herbivore_03__effectsMask"
+        },
+        {
+          "line": 111105,
+          "text": "ce_mouth_cute_herbivore_04__effectsMask"
+        },
+        {
+          "line": 111106,
+          "text": "ce_grasper_cute_08-symmetric__effectsMask"
+        },
+        {
+          "line": 111107,
+          "text": "ce_grasper_cute_07-symmetric__effectsMask"
+        },
+        {
+          "line": 111108,
+          "text": "ce_grasper_cute_06-symmetric__effectsMask"
+        },
+        {
+          "line": 111109,
+          "text": "ce_grasper_cute_05-symmetric__effectsMask"
+        },
+        {
+          "line": 111110,
+          "text": "ce_grasper_cute_04-symmetric__effectsMask"
+        },
+        {
+          "line": 111111,
+          "text": "ce_grasper_cute_03-symmetric__effectsMask"
+        },
+        {
+          "line": 111112,
+          "text": "ce_mouth_cute_omnivore_01__effectsMask"
+        },
+        {
+          "line": 111113,
+          "text": "ce_mouth_cute_omnivore_02__effectsMask"
+        },
+        {
+          "line": 111114,
+          "text": "ce_mouth_cute_omnivore_03__effectsMask"
+        },
+        {
+          "line": 111115,
+          "text": "ce_mouth_cute_omnivore_04__effectsMask"
+        },
+        {
+          "line": 111116,
+          "text": "ce_mouth_horror_carnivore_01__effectsMask"
+        },
+        {
+          "line": 111117,
+          "text": "ce_mouth_horror_carnivore_02__effectsMask"
+        },
+        {
+          "line": 111118,
+          "text": "ce_mouth_horror_carnivore_03__effectsMask"
+        },
+        {
+          "line": 111119,
+          "text": "ce_mouth_horror_carnivore_04__effectsMask"
+        },
+        {
+          "line": 111144,
+          "text": "ce_grasper_horror_default-symmetric__effectsMask"
+        },
+        {
+          "line": 111199,
+          "text": "ce_mouth_psychicTempest_01__effectsMask"
+        },
+        {
+          "line": 111200,
+          "text": "ce_mouth_psychicTempest_02__effectsMask"
+        },
+        {
+          "line": 111201,
+          "text": "ce_mouth_ghostSentinel_01__effectsMask"
+        },
+        {
+          "line": 111202,
+          "text": "ce_mouth_ghostSentinel_02__effectsMask"
+        },
+        {
+          "line": 111203,
+          "text": "ce_mouth_shadowRavager_01__effectsMask"
+        },
+        {
+          "line": 111204,
+          "text": "ce_mouth_shadowRavager_02__effectsMask"
+        },
+        {
+          "line": 111205,
+          "text": "ce_mouth_soulRavager_01__effectsMask"
+        },
+        {
+          "line": 111206,
+          "text": "ce_mouth_voodooTempest_01__effectsMask"
+        },
+        {
+          "line": 111207,
+          "text": "ce_mouth_energySentinel_01__effectsMask"
+        },
+        {
+          "line": 111208,
+          "text": "ce_mouth_missileTempest_01__effectsMask"
+        },
+        {
+          "line": 111209,
+          "text": "ce_mouth_shieldedSentinel_01__effectsMask"
+        },
+        {
+          "line": 111210,
+          "text": "ce_mouth_medicTempest_01__effectsMask"
+        },
+        {
+          "line": 111211,
+          "text": "ce_mouth_trapperRavager_01__effectsMask"
+        },
+        {
+          "line": 111212,
+          "text": "ce_mouth_beastSentinel_01__effectsMask"
+        },
+        {
+          "line": 111213,
+          "text": "ce_mouth_poisonRavager_01__effectsMask"
+        },
+        {
+          "line": 111214,
+          "text": "ce_mouth_poisonRavager_02__effectsMask"
+        },
+        {
+          "line": 111215,
+          "text": "ce_mouth_shroomTempest_01__effectsMask"
+        },
+        {
+          "line": 111216,
+          "text": "ce_mouth_supportTempest_01__effectsMask"
+        },
+        {
+          "line": 111217,
+          "text": "ce_mouth_supportTempest_02__effectsMask"
+        },
+        {
+          "line": 111218,
+          "text": "ce_mouth_treeSentinel_01__effectsMask"
+        },
+        {
+          "line": 111219,
+          "text": "ce_mouth_treeSentinel_02__effectsMask"
+        },
+        {
+          "line": 111220,
+          "text": "ce_mouth_binarySentinel_01__effectsMask"
+        },
+        {
+          "line": 111221,
+          "text": "ce_mouth_binarySentinel_02__effectsMask"
+        },
+        {
+          "line": 111222,
+          "text": "ce_mouth_gravityTempest_01__effectsMask"
+        },
+        {
+          "line": 111223,
+          "text": "ce_mouth_gravityTempest_02__effectsMask"
+        },
+        {
+          "line": 111224,
+          "text": "ce_mouth_lightspeedTempest_01__effectsMask"
+        },
+        {
+          "line": 111225,
+          "text": "ce_mouth_quantumRavager_01__effectsMask"
+        },
+        {
+          "line": 111226,
+          "text": "ce_mouth_timeRavager_01__effectsMask"
+        },
+        {
+          "line": 111227,
+          "text": "ce_mouth_fireRavager_01__effectsMask"
+        },
+        {
+          "line": 111228,
+          "text": "ce_mouth_fireRavager_02__effectsMask"
+        },
+        {
+          "line": 111229,
+          "text": "ce_mouth_fireTempest_01__effectsMask"
+        },
+        {
+          "line": 111230,
+          "text": "ce_mouth_fireTempest_02__effectsMask"
+        },
+        {
+          "line": 111231,
+          "text": "ce_mouth_lightningRavager_01__effectsMask"
+        },
+        {
+          "line": 111232,
+          "text": "ce_mouth_lightningTempest_01__effectsMask"
+        },
+        {
+          "line": 111233,
+          "text": "ce_mouth_plasmaSentinel_01__effectsMask"
+        },
+        {
+          "line": 111234,
+          "text": "ce_mouth_plasmaSentinel_02__effectsMask"
+        },
+        {
+          "line": 111542,
+          "text": "ce_grasper_binarySentinel_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111543,
+          "text": "ce_grasper_binarySentinel_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111544,
+          "text": "ce_grasper_gravityTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111545,
+          "text": "ce_grasper_gravityTempest_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111546,
+          "text": "ce_grasper_psychicTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111547,
+          "text": "ce_grasper_psychicTempest_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111548,
+          "text": "ce_grasper_quantumRavager_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111549,
+          "text": "ce_grasper_timeRavager_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111550,
+          "text": "ce_grasper_lightspeedTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111551,
+          "text": "ce_grasper_lightningTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111552,
+          "text": "ce_grasper_fireRavager_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111553,
+          "text": "ce_grasper_fireTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111554,
+          "text": "ce_grasper_plasmaSentinel_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111555,
+          "text": "ce_grasper_plasmaSentinel_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111556,
+          "text": "ce_grasper_plasmaSentinel_03-symmetric__effectsMask"
+        },
+        {
+          "line": 111557,
+          "text": "ce_grasper_trapperRavager_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111558,
+          "text": "ce_grasper_ghostSentinel_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111559,
+          "text": "ce_grasper_ghostSentinel_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111560,
+          "text": "ce_grasper_shadowRavager_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111561,
+          "text": "ce_grasper_shadowRavager_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111562,
+          "text": "ce_grasper_beastSentinel_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111563,
+          "text": "ce_grasper_poisonRavager_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111564,
+          "text": "ce_grasper_shroomTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111565,
+          "text": "ce_grasper_supportTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111566,
+          "text": "ce_grasper_treeSentinel_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111567,
+          "text": "ce_grasper_treeSentinel_02__effectsMask"
+        },
+        {
+          "line": 111568,
+          "text": "ce_grasper_medicTempest_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111569,
+          "text": "ce_grasper_shieldedSentinel_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111570,
+          "text": "ce_grasper_Tech_03-symmetric__effectsMask"
+        },
+        {
+          "line": 111571,
+          "text": "ce_grasper_Tech_04-symmetric__effectsMask"
+        },
+        {
+          "line": 111572,
+          "text": "ce_grasper_Tech_05-symmetric__effectsMask"
+        },
+        {
+          "line": 111573,
+          "text": "ce_grasper_Tech_06-symmetric__effectsMask"
+        },
+        {
+          "line": 111574,
+          "text": "ce_grasper_Tech_07-symmetric__effectsMask"
+        },
+        {
+          "line": 111575,
+          "text": "ce_grasper_Tech_08-symmetric__effectsMask"
+        },
+        {
+          "line": 111576,
+          "text": "ce_grasper_Tech_09-symmetric__effectsMask"
+        },
+        {
+          "line": 111577,
+          "text": "ce_grasper_Tech_10-symmetric__effectsMask"
+        },
+        {
+          "line": 111578,
+          "text": "ce_grasper_Tech_11-symmetric__effectsMask"
+        },
+        {
+          "line": 111579,
+          "text": "ce_grasper_Tech_12-symmetric__effectsMask"
+        },
+        {
+          "line": 111580,
+          "text": "ce_grasper_Tech_13-symmetric__effectsMask"
+        },
+        {
+          "line": 111581,
+          "text": "ce_grasper_Tech_14-symmetric__effectsMask"
+        },
+        {
+          "line": 111582,
+          "text": "ce_grasper_gravityTempestWeapon_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111583,
+          "text": "ce_grasper_gravityTempestWeapon_02-symmetric__effectsMask"
+        },
+        {
+          "line": 111584,
+          "text": "ce_grasper_gravityTempestWeapon_03-symmetric__effectsMask"
+        },
+        {
+          "line": 111927,
+          "text": "ce_grasper_voodooTempestWeapon_01-symmetric__effectsMask"
+        },
+        {
+          "line": 111965,
+          "text": "ce_grasper_ghostSentinelWeapon_02-symmetric__effectsMask"
+        },
+        {
+          "line": 112277,
+          "text": "ce_grasper_energySentinelWeapon_01-symmetric__diffuse"
+        },
+        {
+          "line": 112278,
+          "text": "ce_grasper_energySentinelWeapon_01-symmetric__specBump"
+        },
+        {
+          "line": 112279,
+          "text": "ce_grasper_energySentinelWeapon_01-symmetric__tintMask"
+        },
+        {
+          "line": 112280,
+          "text": "ce_grasper_energySentinelWeapon_01-symmetric__shinyMask"
+        },
+        {
+          "line": 112281,
+          "text": "ce_grasper_energySentinelWeapon_01-symmetric__effectsMask"
+        },
+        {
+          "line": 112282,
+          "text": "ce_grasper_lightningTempestWeapon_01-symmetric__diffuse"
+        },
+        {
+          "line": 112283,
+          "text": "ce_grasper_lightningTempestWeapon_01-symmetric__specBump"
+        },
+        {
+          "line": 112284,
+          "text": "ce_grasper_lightningTempestWeapon_01-symmetric__tintMask"
+        },
+        {
+          "line": 112285,
+          "text": "ce_grasper_lightningTempestWeapon_01-symmetric__shinyMask"
+        },
+        {
+          "line": 112286,
+          "text": "ce_grasper_lightningTempestWeapon_01-symmetric__effectsMask"
+        },
+        {
+          "line": 112287,
+          "text": "ce_grasper_treeSentinelWeapon_02-symmetric__diffuse"
+        },
+        {
+          "line": 112288,
+          "text": "ce_grasper_treeSentinelWeapon_02-symmetric__specBump"
+        },
+        {
+          "line": 112289,
+          "text": "ce_grasper_treeSentinelWeapon_02-symmetric__tintMask"
+        },
+        {
+          "line": 112290,
+          "text": "ce_grasper_treeSentinelWeapon_02-symmetric__shinyMask"
+        },
+        {
+          "line": 112291,
+          "text": "ce_grasper_treeSentinelWeapon_02-symmetric__effectsMask"
+        },
+        {
+          "line": 112454,
+          "text": "ce_grasper_lightspeedTempestWeapon_01-symmetric__diffuse"
+        },
+        {
+          "line": 112455,
+          "text": "ce_grasper_lightspeedTempestWeapon_01-symmetric__specBump"
+        },
+        {
+          "line": 112456,
+          "text": "ce_grasper_lightspeedTempestWeapon_01-symmetric__tintMask"
+        },
+        {
+          "line": 112457,
+          "text": "ce_grasper_lightspeedTempestWeapon_01-symmetric__shinyMask"
+        },
+        {
+          "line": 112458,
+          "text": "ce_grasper_lightspeedTempestWeapon_01-symmetric__effectsMask"
+        },
+        {
+          "line": 112915,
+          "text": "ce_mouth_beak_carnivore_03_runtimerig"
+        },
+        {
+          "line": 112944,
+          "text": "ce_mouth_amphibian_omnivore_01_runtimerig"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "properties.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/Documentation/properties.txt",
+      "bytes": 186035,
+      "sha256": "f1f93dda12d78f3010c9186604d5b79c0e306e5ef61f82bdcb05e0a52fd233ba",
+      "encoding": "utf-8",
+      "line_count": 4274,
+      "selected_declarations": [
+        {
+          "line": 886,
+          "text": "modelCapabilityToPropFileMap=[keys] Maps capabilities to prop files: <capability id>!<propfile id>."
+        },
+        {
+          "line": 887,
+          "text": "modelCapabilityAnimKeys=[keys] Array of anim keys a given capability has."
+        },
+        {
+          "line": 888,
+          "text": "modelCapabilityDefaultAnimValues=[floats] Array of default anim values for a capability."
+        },
+        {
+          "line": 889,
+          "text": "modelCapabilityDefaultAnimWeights=[floats] Array of default anim weights for a capability."
+        },
+        {
+          "line": 890,
+          "text": "modelCapabilityPerch=[int32][0]"
+        },
+        {
+          "line": 891,
+          "text": "modelCapabilitySpine=[int32][1]"
+        },
+        {
+          "line": 892,
+          "text": "modelCapabilityLimb=[int32][1]"
+        },
+        {
+          "line": 893,
+          "text": "modelCapabilityNoStretch=[int32][1] Pseudo-cap to disallow ik solver stretching."
+        },
+        {
+          "line": 894,
+          "text": "modelCapabilityGrasper=[int32][1]"
+        },
+        {
+          "line": 895,
+          "text": "modelCapabilityEar=[int32][1]"
+        },
+        {
+          "line": 896,
+          "text": "modelCapabilityEye=[int32][1]"
+        },
+        {
+          "line": 897,
+          "text": "modelCapabilityMouth=[int32][1]"
+        },
+        {
+          "line": 898,
+          "text": "modelCapabilityFoot=[int32][1]"
+        },
+        {
+          "line": 899,
+          "text": "modelCapabilitySlash=[int32][1]"
+        },
+        {
+          "line": 900,
+          "text": "modelCapabilityPoke=[int32][1]"
+        },
+        {
+          "line": 901,
+          "text": "modelCapabilityBash=[int32][1]"
+        },
+        {
+          "line": 902,
+          "text": "modelCapabilityFruit=[int32][1]"
+        },
+        {
+          "line": 903,
+          "text": "modelCapabilityFin=[int32][1]"
+        },
+        {
+          "line": 904,
+          "text": "modelCapabilityLiquid=[int32][1]"
+        },
+        {
+          "line": 905,
+          "text": "modelCapabilityDayVision=[int32][0]"
+        },
+        {
+          "line": 906,
+          "text": "modelCapabilityNightVision=[int32][0]"
+        },
+        {
+          "line": 907,
+          "text": "modelCapabilityCarnivorous=[int32][0]"
+        },
+        {
+          "line": 908,
+          "text": "modelCapabilityHerbivorous=[int32][0]"
+        },
+        {
+          "line": 909,
+          "text": "modelCapabilityDetail=[int32][0]"
+        },
+        {
+          "line": 910,
+          "text": "modelCapabilitySocial=[int32][0]"
+        },
+        {
+          "line": 911,
+          "text": "modelCapabilityHealth=[int32][0]"
+        },
+        {
+          "line": 912,
+          "text": "modelCapabilityStealth=[int32][0]"
+        },
+        {
+          "line": 913,
+          "text": "modelCapabilityCuteness=[int32][0]"
+        },
+        {
+          "line": 914,
+          "text": "modelCapabilityJump=[int32][0]"
+        },
+        {
+          "line": 915,
+          "text": "modelCapabilityBlock=[int32][0]"
+        },
+        {
+          "line": 916,
+          "text": "modelCapabilityCall=[int32][0]"
+        },
+        {
+          "line": 917,
+          "text": "modelCapabilityCreatureSpeed=[int32][0]"
+        },
+        {
+          "line": 918,
+          "text": "modelCapabilitySprint=[int32][0]"
+        },
+        {
+          "line": 919,
+          "text": "modelCapabilityWing=[int32][0]"
+        },
+        {
+          "line": 920,
+          "text": "modelCapabilitySense=[int32][0]"
+        },
+        {
+          "line": 921,
+          "text": "modelCapabilityMean=[int32][0]"
+        },
+        {
+          "line": 922,
+          "text": "modelCapabilityBite=[int32][0]"
+        },
+        {
+          "line": 923,
+          "text": "modelCapabilityCharge=[int32][0]"
+        },
+        {
+          "line": 924,
+          "text": "modelCapabilitySpit=[int32][0]"
+        },
+        {
+          "line": 925,
+          "text": "modelCapabilityStrike=[int32][0]"
+        },
+        {
+          "line": 926,
+          "text": "modelCapabilityDance=[int32][0]"
+        },
+        {
+          "line": 927,
+          "text": "modelCapabilityVocalize=[int32][0]"
+        },
+        {
+          "line": 928,
+          "text": "modelCapabilityFlaunt=[int32][0]"
+        },
+        {
+          "line": 929,
+          "text": "modelCapabilityPosture=[int32][0]"
+        },
+        {
+          "line": 930,
+          "text": "modelCapabilityGlide=[int32][0]"
+        },
+        {
+          "line": 931,
+          "text": "modelCapabilityTribeAttack=[int32][0]"
+        },
+        {
+          "line": 932,
+          "text": "modelCapabilityTribeSocial=[int32][0]"
+        },
+        {
+          "line": 933,
+          "text": "modelCapabilityTribeArmor=[int32][0]"
+        },
+        {
+          "line": 934,
+          "text": "modelCapabilityTribeGather=[int32][0]"
+        },
+        {
+          "line": 935,
+          "text": "modelCapabilityTribeFishing=[int32][0]"
+        },
+        {
+          "line": 936,
+          "text": "modelCapabilityEnergyRegen=[int32][0]"
+        },
+        {
+          "line": 937,
+          "text": "modelCapabilityAdventurerMissile=[vector3]"
+        },
+        {
+          "line": 938,
+          "text": "modelCapabilityAdventurerEnergyBlade=[vector3]"
+        },
+        {
+          "line": 939,
+          "text": "modelCapabilityAdventurerShieldGenerator=[int32][0]"
+        },
+        {
+          "line": 940,
+          "text": "modelCapabilityAdventurerHoloCharm=[vector3]"
+        },
+        {
+          "line": 941,
+          "text": "modelCapabilityAdventurerLightningSword=[vector3]"
+        },
+        {
+          "line": 942,
+          "text": "modelCapabilityAdventurerPulseGun=[vector3]"
+        },
+        {
+          "line": 943,
+          "text": "modelCapabilityAdventurerBattleArmor=[int32]"
+        },
+        {
+          "line": 944,
+          "text": "modelCapabilityAdventurerPoweredArmor=[int32]"
+        },
+        {
+          "line": 945,
+          "text": "modelCapabilityAdventurerAbsorptionShield=[int32]"
+        },
+        {
+          "line": 946,
+          "text": "modelCapabilityAdventurerHealthRegen=[int32]"
+        },
+        {
+          "line": 947,
+          "text": "modelCapabilityAdventurerHealthBonus=[int32]"
+        },
+        {
+          "line": 948,
+          "text": "modelCapabilityAdventurerSummonSwarm=[int32]"
+        },
+        {
+          "line": 949,
+          "text": "modelCapabilityAdventurerMindMeld=[int32]"
+        },
+        {
+          "line": 950,
+          "text": "modelCapabilityAdventurerPoisonBlade=[int32]"
+        },
+        {
+          "line": 951,
+          "text": "modelCapabilityAdventurerFreeze=[int32]"
+        },
+        {
+          "line": 952,
+          "text": "modelCapabilityAdventurerGracefulWaltz=[int32]"
+        },
+        {
+          "line": 953,
+          "text": "modelCapabilityAdventurerHarmoniousSong=[int32]"
+        },
+        {
+          "line": 954,
+          "text": "modelCapabilityAdventurerRoyalCharm=[int32]"
+        },
+        {
+          "line": 955,
+          "text": "modelCapabilityAdventurerRadiantPose=[int32]"
+        },
+        {
+          "line": 956,
+          "text": "modelCapabilityAdventurerSprintBurst=[int32]"
+        },
+        {
+          "line": 957,
+          "text": "modelCapabilityAdventurerHover=[int32]"
+        },
+        {
+          "line": 958,
+          "text": "modelCapabilityAdventurerStealthField=[int32]"
+        },
+        {
+          "line": 959,
+          "text": "modelCapabilityAdventurerJumpJet=[int32]"
+        },
+        {
+          "line": 960,
+          "text": "modelCapabilityAdventurerInspiringSong=[vector3]"
+        },
+        {
+          "line": 961,
+          "text": "modelCapabilityAdventurerStunningDance=[vector3]"
+        },
+        {
+          "line": 962,
+          "text": "modelCapabilityAdventurerConfettiPose=[vector3]"
+        },
+        {
+          "line": 963,
+          "text": "modelCapabilityAdventurerEnergyStorage=[int32]"
+        },
+        {
+          "line": 994,
+          "text": "modelCapabilitySpeed=[int32][0]"
+        },
+        {
+          "line": 995,
+          "text": "modelCapabilityDefense=[int32][0]"
+        },
+        {
+          "line": 996,
+          "text": "modelCapabilityPower=[int32][0]"
+        },
+        {
+          "line": 997,
+          "text": "modelCapabilityMilitaryPower=[int32][0]"
+        },
+        {
+          "line": 998,
+          "text": "modelCapabilityReligiousPower=[int32][0]"
+        },
+        {
+          "line": 999,
+          "text": "modelCapabilityEconomicPower=[int32][0]"
+        },
+        {
+          "line": 1000,
+          "text": "modelCapabilityCellFilter=[int32][0]"
+        },
+        {
+          "line": 1001,
+          "text": "modelCapabilityCellSpike=[int32][0]"
+        },
+        {
+          "line": 1002,
+          "text": "modelCapabilityCellJet=[int32][0]"
+        },
+        {
+          "line": 1003,
+          "text": "modelCapabilityCellFlagella=[int32][0]"
+        },
+        {
+          "line": 1004,
+          "text": "modelCapabilityCellJaw=[int32][0]"
+        },
+        {
+          "line": 1005,
+          "text": "modelCapabilityCellElectric=[int32][0]"
+        },
+        {
+          "line": 1006,
+          "text": "modelCapabilityCellPoison=[int32][0]"
+        },
+        {
+          "line": 1007,
+          "text": "modelCapabilityCellCilia=[int32][0]"
+        },
+        {
+          "line": 1008,
+          "text": "modelCapabilityCellPoker=[int32][0]"
+        },
+        {
+          "line": 1009,
+          "text": "modelCapabilityCellEye=[int32][0]"
+        },
+        {
+          "line": 1010,
+          "text": "modelCapabilityCellMouth=[int32][0]"
+        },
+        {
+          "line": 1011,
+          "text": "modelCapabilityCellMovement=[int32][0]"
+        },
+        {
+          "line": 1012,
+          "text": "modelCapabilityCellWeapon=[int32][0]"
+        },
+        {
+          "line": 1013,
+          "text": "modelCapabilityCellWeaponCharging=[int32][0]"
+        },
+        {
+          "line": 1014,
+          "text": "modelCapabilityCellGameSpeed=[int32][0]"
+        },
+        {
+          "line": 2294,
+          "text": "creatureAbilityRequiredCAPs=[uint32s]"
+        },
+        {
+          "line": 2295,
+          "text": "creatureAbilityExcludedCAPs=[uint32s]"
+        },
+        {
+          "line": 2296,
+          "text": "creatureAbilityRequiredCAPsMaxValueRange=[vector2s]"
+        },
+        {
+          "line": 2297,
+          "text": "creatureAbilityRequiredCAPsSumValueRange=[vector2s]"
+        },
+        {
+          "line": 2298,
+          "text": "creatureAbilityAttackStatSumValueRange=[vector2]"
+        },
+        {
+          "line": 2299,
+          "text": "creatureAbilitySocialStatSumValueRange=[vector2]"
+        },
+        {
+          "line": 2309,
+          "text": "creatureAbilityLevelMultiplier=[float]"
+        },
+        {
+          "line": 4070,
+          "text": "findPercentageLevelMultiplier=[float]"
+        },
+        {
+          "line": 4110,
+          "text": "numSocialProposals=[uint32]"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "PropertyTransform.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyTransform.java",
+      "bytes": 8198,
+      "sha256": "2c7881c0e391d62fac8acabb0120e12eacb508e9b502b508be6b5db4f51ae7b7",
+      "encoding": "utf-8",
+      "line_count": 266,
+      "selected_declarations": [
+        {
+          "line": 38,
+          "text": "import sporemodder.util.Transform;"
+        },
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0038;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 56;"
+        },
+        {
+          "line": 49,
+          "text": "super(TYPE_CODE, 0);"
+        },
+        {
+          "line": 58,
+          "text": "super(TYPE_CODE, 0, ARRAY_SIZE, values.length);"
+        },
+        {
+          "line": 63,
+          "text": "super(TYPE_CODE, 0, ARRAY_SIZE, values.size());"
+        },
+        {
+          "line": 72,
+          "text": "public void read(StreamReader stream, int itemCount) throws IOException {"
+        },
+        {
+          "line": 76,
+          "text": "value.readComplete(stream);"
+        },
+        {
+          "line": 82,
+          "text": "public void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 84,
+          "text": "value.writeComplete(stream);"
+        },
+        {
+          "line": 199,
+          "text": "stream.writeInt(flags);"
+        },
+        {
+          "line": 200,
+          "text": "stream.writeLEFloats(offset);"
+        },
+        {
+          "line": 201,
+          "text": "stream.writeLEFloat(scale);"
+        },
+        {
+          "line": 202,
+          "text": "for (int i = 0; i < 3; i++) stream.writeLEFloat(matrix.m[i][0]);"
+        },
+        {
+          "line": 203,
+          "text": "for (int i = 0; i < 3; i++) stream.writeLEFloat(matrix.m[i][1]);"
+        },
+        {
+          "line": 204,
+          "text": "for (int i = 0; i < 3; i++) stream.writeLEFloat(matrix.m[i][2]);"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    },
+    {
+      "name": "PropertyBBox.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyBBox.java",
+      "bytes": 4414,
+      "sha256": "d809af07c5c602f1fb322847f08c6f9e4e766c797045c61bf214f18b8d1add2d",
+      "encoding": "utf-8",
+      "line_count": 143,
+      "selected_declarations": [
+        {
+          "line": 38,
+          "text": "public static final int TYPE_CODE = 0x0039;"
+        },
+        {
+          "line": 40,
+          "text": "public static final int ARRAY_SIZE = 24;"
+        },
+        {
+          "line": 45,
+          "text": "super(TYPE_CODE, 0);"
+        },
+        {
+          "line": 54,
+          "text": "super(TYPE_CODE, 0, ARRAY_SIZE, values.length);"
+        },
+        {
+          "line": 59,
+          "text": "super(TYPE_CODE, 0, ARRAY_SIZE, values.size());"
+        },
+        {
+          "line": 68,
+          "text": "public void read(StreamReader stream, int itemCount) throws IOException {"
+        },
+        {
+          "line": 72,
+          "text": "value.read(stream);"
+        },
+        {
+          "line": 78,
+          "text": "public void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 80,
+          "text": "value.write(stream);"
+        }
+      ],
+      "scope": "community declarations/registry/documentation, not local consumer"
+    }
+  ],
+  "property_registry": {
+    "modelCapabilityLiquid": {
+      "id": "0x02294de1",
+      "line": 509
+    },
+    "modelCapabilityNightVision": {
+      "id": "0x022e7777",
+      "line": 511
+    },
+    "modelCapabilityCarnivorous": {
+      "id": "0x022e7847",
+      "line": 512
+    },
+    "modelCapabilityHerbivorous": {
+      "id": "0x022e785c",
+      "line": 513
+    },
+    "modelCapabilityDayVision": {
+      "id": "0x022e7977",
+      "line": 514
+    },
+    "modelCapabilityDetail": {
+      "id": "0x025c6878",
+      "line": 588
+    },
+    "modelCapabilityCellFlagella": {
+      "id": "0x032f92e6",
+      "line": 852
+    },
+    "creatureAbilityRequiredCAPs": {
+      "id": "0x04052a6b",
+      "line": 1119
+    },
+    "creatureAbilityRequiredCAPsMaxValueRange": {
+      "id": "0x04052a86",
+      "line": 1120
+    },
+    "creatureAbilityRequiredCAPsSumValueRange": {
+      "id": "0x04052b30",
+      "line": 1121
+    },
+    "modelCapabilityToPropFileMap": {
+      "id": "0x047be907",
+      "line": 1350
+    },
+    "modelCapabilityAnimKeys": {
+      "id": "0x047be908",
+      "line": 1351
+    },
+    "modelCapabilityDefaultAnimValues": {
+      "id": "0x047be96f",
+      "line": 1352
+    },
+    "creatureAbilityAttackStatSumValueRange": {
+      "id": "0x04ac8d53",
+      "line": 1541
+    },
+    "creatureAbilitySocialStatSumValueRange": {
+      "id": "0x04ac8d56",
+      "line": 1542
+    },
+    "modelCapabilityWing": {
+      "id": "0x04f4d188",
+      "line": 1708
+    },
+    "modelCapabilityGlide": {
+      "id": "0x04f4e1b4",
+      "line": 1709
+    },
+    "modelCapabilityPerch": {
+      "id": "0x0551bf16",
+      "line": 1975
+    },
+    "modelCapabilityTribeAttack": {
+      "id": "0x055d370e",
+      "line": 2073
+    },
+    "modelCapabilityTribeSocial": {
+      "id": "0x055d3747",
+      "line": 2074
+    },
+    "modelCapabilityTribeArmor": {
+      "id": "0x055d374c",
+      "line": 2075
+    },
+    "modelCapabilityTribeGather": {
+      "id": "0x055d3750",
+      "line": 2076
+    },
+    "modelCapabilityTribeFishing": {
+      "id": "0x055d3754",
+      "line": 2077
+    },
+    "modelCapabilityMilitaryPower": {
+      "id": "0x06329468",
+      "line": 2596
+    },
+    "modelCapabilityReligiousPower": {
+      "id": "0x06329469",
+      "line": 2597
+    },
+    "modelCapabilityEconomicPower": {
+      "id": "0x0632946a",
+      "line": 2598
+    },
+    "modelCapabilityCellGameSpeed": {
+      "id": "0x066783b4",
+      "line": 2719
+    },
+    "modelCapabilityDefaultAnimWeights": {
+      "id": "0x0684d16c",
+      "line": 2795
+    },
+    "modelCapabilitySpine": {
+      "id": "0x100f0f5a",
+      "line": 2865
+    },
+    "modelCapabilitySpeed": {
+      "id": "0x11b78a70",
+      "line": 2910
+    },
+    "modelCapabilityDefense": {
+      "id": "0x11b78a71",
+      "line": 2911
+    },
+    "modelCapabilityPower": {
+      "id": "0x11b78a72",
+      "line": 2912
+    },
+    "modelCapabilityCellMouth": {
+      "id": "0x11b79301",
+      "line": 2913
+    },
+    "modelCapabilityCellMovement": {
+      "id": "0x11b79302",
+      "line": 2914
+    },
+    "modelCapabilityCellWeapon": {
+      "id": "0x11b79303",
+      "line": 2915
+    },
+    "modelCapabilityCellWeaponCharging": {
+      "id": "0x11b79304",
+      "line": 2916
+    },
+    "modelCapabilityCellFilter": {
+      "id": "0x11b79a70",
+      "line": 2917
+    },
+    "modelCapabilityCellSpike": {
+      "id": "0x11b79a71",
+      "line": 2918
+    },
+    "modelCapabilityCellJet": {
+      "id": "0x11b79a72",
+      "line": 2919
+    },
+    "modelCapabilityCellEye": {
+      "id": "0x11b79a73",
+      "line": 2920
+    },
+    "modelCapabilityCellJaw": {
+      "id": "0x11b79a74",
+      "line": 2921
+    },
+    "modelCapabilityCellElectric": {
+      "id": "0x11b79a75",
+      "line": 2922
+    },
+    "modelCapabilityCellPoison": {
+      "id": "0x11b79a76",
+      "line": 2923
+    },
+    "modelCapabilityCellCilia": {
+      "id": "0x11b79a77",
+      "line": 2924
+    },
+    "modelCapabilityCellPoker": {
+      "id": "0x11b79a78",
+      "line": 2925
+    },
+    "modelCapabilityHealth": {
+      "id": "0x31c3e5b2",
+      "line": 3089
+    },
+    "modelCapabilityJump": {
+      "id": "0x330c117a",
+      "line": 3102
+    },
+    "modelCapabilitySprint": {
+      "id": "0x3386c531",
+      "line": 3106
+    },
+    "modelCapabilityStealth": {
+      "id": "0x51c3e5b4",
+      "line": 3230
+    },
+    "modelCapabilitySocial": {
+      "id": "0x91a570ba",
+      "line": 3510
+    },
+    "modelCapabilityLimb": {
+      "id": "0xb00f0fdf",
+      "line": 3604
+    },
+    "modelCapabilityGrasper": {
+      "id": "0xb00f0fe2",
+      "line": 3605
+    },
+    "modelCapabilityEar": {
+      "id": "0xb00f0fe5",
+      "line": 3606
+    },
+    "modelCapabilityEye": {
+      "id": "0xb00f0fe9",
+      "line": 3607
+    },
+    "modelCapabilityMouth": {
+      "id": "0xb00f0fec",
+      "line": 3608
+    },
+    "modelCapabilityFoot": {
+      "id": "0xb00f0fef",
+      "line": 3609
+    },
+    "modelCapabilitySlash": {
+      "id": "0xb00f0ff2",
+      "line": 3610
+    },
+    "modelCapabilityPoke": {
+      "id": "0xb00f0ff4",
+      "line": 3611
+    },
+    "modelCapabilityBash": {
+      "id": "0xb00f0ff7",
+      "line": 3612
+    },
+    "modelCapabilityCuteness": {
+      "id": "0xb1c3e5b5",
+      "line": 3649
+    },
+    "modelCapabilityMean": {
+      "id": "0xb1c3e5b6",
+      "line": 3650
+    },
+    "modelCapabilityBite": {
+      "id": "0xb1c3e5b7",
+      "line": 3651
+    },
+    "modelCapabilityCharge": {
+      "id": "0xb1c3e5b8",
+      "line": 3652
+    },
+    "modelCapabilitySpit": {
+      "id": "0xb1c3e5b9",
+      "line": 3653
+    },
+    "modelCapabilityStrike": {
+      "id": "0xb1c3e5c0",
+      "line": 3654
+    },
+    "modelCapabilityDance": {
+      "id": "0xb1c3e5c1",
+      "line": 3655
+    },
+    "modelCapabilityVocalize": {
+      "id": "0xb1c3e5c2",
+      "line": 3656
+    },
+    "modelCapabilityFlaunt": {
+      "id": "0xb1c3e5c3",
+      "line": 3657
+    },
+    "modelCapabilityPosture": {
+      "id": "0xb1c3e5c4",
+      "line": 3658
+    },
+    "modelCapabilityCreatureSpeed": {
+      "id": "0xb354a87c",
+      "line": 3670
+    },
+    "modelCapabilitySense": {
+      "id": "0xb3e30313",
+      "line": 3676
+    },
+    "modelCapabilityFruit": {
+      "id": "0xd00f0ffb",
+      "line": 3754
+    },
+    "modelCapabilityFin": {
+      "id": "0xd00f0ffe",
+      "line": 3755
+    },
+    "modelCapabilityBlock": {
+      "id": "0xf354a879",
+      "line": 3955
+    },
+    "modelCapabilityCall": {
+      "id": "0xf354a87a",
+      "line": 3956
+    },
+    "modelCapabilityEnergyRegen": {
+      "id": "0x073ce5dd",
+      "line": 4654
+    },
+    "modelCapabilityAdventurerMissile": {
+      "id": "0x0732c356",
+      "line": 4655
+    },
+    "modelCapabilityAdventurerEnergyBlade": {
+      "id": "0x073930ea",
+      "line": 4656
+    },
+    "modelCapabilityAdventurerShieldGenerator": {
+      "id": "0x073e33c7",
+      "line": 4657
+    },
+    "modelCapabilityAdventurerHoloCharm": {
+      "id": "0x074260ec",
+      "line": 4658
+    },
+    "modelCapabilityAdventurerLightningSword": {
+      "id": "0x075f5ba0",
+      "line": 4659
+    },
+    "modelCapabilityAdventurerPulseGun": {
+      "id": "0x075f5ba6",
+      "line": 4660
+    },
+    "modelCapabilityAdventurerBattleArmor": {
+      "id": "0x075f5bab",
+      "line": 4661
+    },
+    "modelCapabilityAdventurerPoweredArmor": {
+      "id": "0x075f5baf",
+      "line": 4662
+    },
+    "modelCapabilityAdventurerAbsorptionShield": {
+      "id": "0x075f5bb4",
+      "line": 4663
+    },
+    "modelCapabilityAdventurerHealthRegen": {
+      "id": "0x075f5bb7",
+      "line": 4664
+    },
+    "modelCapabilityAdventurerHealthBonus": {
+      "id": "0x075f5bbc",
+      "line": 4665
+    },
+    "modelCapabilityAdventurerSummonSwarm": {
+      "id": "0x075f5bbf",
+      "line": 4666
+    },
+    "modelCapabilityAdventurerMindMeld": {
+      "id": "0x075f5bc3",
+      "line": 4667
+    },
+    "modelCapabilityAdventurerPoisonBlade": {
+      "id": "0x075f5bc8",
+      "line": 4668
+    },
+    "modelCapabilityAdventurerFreeze": {
+      "id": "0x075f5bcb",
+      "line": 4669
+    },
+    "modelCapabilityAdventurerGracefulWaltz": {
+      "id": "0x075f5bcf",
+      "line": 4670
+    },
+    "modelCapabilityAdventurerHarmoniousSong": {
+      "id": "0x075f5bd2",
+      "line": 4671
+    },
+    "modelCapabilityAdventurerRoyalCharm": {
+      "id": "0x075f5bd6",
+      "line": 4672
+    },
+    "modelCapabilityAdventurerRadiantPose": {
+      "id": "0x075f5bda",
+      "line": 4673
+    },
+    "modelCapabilityAdventurerSprintBurst": {
+      "id": "0x075f5bde",
+      "line": 4674
+    },
+    "modelCapabilityAdventurerHover": {
+      "id": "0x075f5be3",
+      "line": 4675
+    },
+    "modelCapabilityAdventurerStealthField": {
+      "id": "0x075f5be6",
+      "line": 4676
+    },
+    "modelCapabilityAdventurerJumpJet": {
+      "id": "0x075f5bea",
+      "line": 4677
+    },
+    "modelCapabilityAdventurerInspiringSong": {
+      "id": "0x075f5bee",
+      "line": 4678
+    },
+    "modelCapabilityAdventurerStunningDance": {
+      "id": "0x075f5bf2",
+      "line": 4679
+    },
+    "modelCapabilityAdventurerConfettiPose": {
+      "id": "0x075f5bf7",
+      "line": 4680
+    },
+    "modelCapabilityAdventurerEnergyStorage": {
+      "id": "0x075f5bfa",
+      "line": 4681
+    },
+    "creatureAbilityExcludedCAPs": {
+      "id": "0x07352141",
+      "line": 4710
+    },
+    "creatureAbilityLevelMultiplier": {
+      "id": "0xf96c61b7",
+      "line": 4711
+    },
+    "modelCapabilityNoStretch": {
+      "id": "0x06f079df",
+      "line": 4763
+    }
+  },
+  "unknowns": [
+    "native contribution reducer",
+    "default/inheritance execution",
+    "range inclusivity and qualification consumer",
+    "selected gameplay executor relation"
+  ],
+  "network_fallback": "Web reader cache miss; authorized fixed public URLs read directly; no config changes"
+}

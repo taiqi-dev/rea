@@ -1,0 +1,4781 @@
+{
+  "schema_version": 1,
+  "module": 56,
+  "kind": "bounded-idle-reference-metadata-not-REA-Evidence",
+  "rea_evidence_id": null,
+  "target_runtime_verified": false,
+  "selection_origin": "SDK Anim/Animations.cpp lines26–38,40–69,71–88 ordinary idle IDs only; CSA/epic excluded",
+  "selected_ids": {
+    "0x04866d8e": "idle_walk_lookat_start",
+    "0x04866dab": "idle_walk_lookat_loop",
+    "0x04866db9": "idle_walk_lookat_stop"
+  },
+  "package_load_order": "unknown; same-package references retained, no winning overlay guessed",
+  "prior": {
+    "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-selected-action-channels.json",
+    "sha256": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d"
+  },
+  "reader": {
+    "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\checks\\read_selected_idle_posture_metadata.py",
+    "sha256": "530444e6df2df83edd8201c7ae687e98aa271434dd4526d2efd20ae6cd4e5e90"
+  },
+  "helper_sha256": {
+    "read_selected_ability_properties.py": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+    "read_selected_action_channels.py": "5102d4aae59a4725860c17d8eb26f519bc9cb70779f483d6be067f402584c88e",
+    "read_selected_animation_predicates.py": "5f61b7c37cbcbad8482e4921b61fa91aa3e94edb6d1fad68acbf8e9110642aad"
+  },
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "tlsa_records": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x4aeb6bc6",
+        "group": "0x00006f14",
+        "instance": "0xf8cc4670"
+      },
+      "offset": 10347975,
+      "stored_bytes": 41323,
+      "memory_bytes": 208414,
+      "compression": 65535,
+      "stored_sha256": "fc1ae4c5a121406677cd896592cc57ad542f6cfa3d2bb1a663f6cd86982d5dc5",
+      "decoded_sha256": "e7aa0b888a1edbbd80a6bfb09e9ddf21fb834b56105177fedef6241202106728",
+      "tlsa": {
+        "version": 7,
+        "groups_examined": 1864,
+        "fully_consumed_bytes": 208414,
+        "selected_groups": [
+          {
+            "id": "0x04866d8e",
+            "name": null,
+            "priorityOverride": null,
+            "blendInTime": -1.0,
+            "idle": false,
+            "allowLocomotion": true,
+            "randomizeChoicePerLoop": null,
+            "matchVariantForToolMask": "0x00000000",
+            "disableToolOverlayMask": "0x00000000",
+            "endMode": 0,
+            "choices": [
+              {
+                "probabilityThreshold": null,
+                "animations": [
+                  {
+                    "id": "0xcb38a593",
+                    "description": "_final/creature/idle_walk_lookat_start",
+                    "durationScale": 1.0,
+                    "duration": -1.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0x04866dab",
+            "name": null,
+            "priorityOverride": null,
+            "blendInTime": -1.0,
+            "idle": true,
+            "allowLocomotion": true,
+            "randomizeChoicePerLoop": null,
+            "matchVariantForToolMask": "0x00000000",
+            "disableToolOverlayMask": "0x00000000",
+            "endMode": 1,
+            "choices": [
+              {
+                "probabilityThreshold": null,
+                "animations": [
+                  {
+                    "id": "0xcee6aab3",
+                    "description": "_final/creature/idle_walk_lookat_loop",
+                    "durationScale": 1.0,
+                    "duration": -1.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0x04866db9",
+            "name": null,
+            "priorityOverride": null,
+            "blendInTime": -1.0,
+            "idle": false,
+            "allowLocomotion": true,
+            "randomizeChoicePerLoop": null,
+            "matchVariantForToolMask": "0x00000000",
+            "disableToolOverlayMask": "0x00000000",
+            "endMode": 0,
+            "choices": [
+              {
+                "probabilityThreshold": null,
+                "animations": [
+                  {
+                    "id": "0x0921d851",
+                    "description": "_final/creature/idle_walk_lookat_stop",
+                    "durationScale": 1.0,
+                    "duration": -1.0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x4aeb6bc6",
+        "group": "0x000082d0",
+        "instance": "0x142cba20"
+      },
+      "offset": 11540521,
+      "stored_bytes": 56816,
+      "memory_bytes": 342835,
+      "compression": 65535,
+      "stored_sha256": "0afe71ceb5ed0d459d1cc09cfe6b183adc214a83d4d548fb80afd86da8a23c8c",
+      "decoded_sha256": "df812c5d070e2c3efe6985198e3499f4f74212c9bb901bc0041a3a4bc2e64868",
+      "tlsa": {
+        "version": 10,
+        "groups_examined": 1875,
+        "fully_consumed_bytes": 342835,
+        "selected_groups": [
+          {
+            "id": "0x04866d8e",
+            "name": "idle_walk_lookat_start",
+            "priorityOverride": 1.0,
+            "blendInTime": -1.0,
+            "idle": false,
+            "allowLocomotion": true,
+            "randomizeChoicePerLoop": false,
+            "matchVariantForToolMask": "0x00000000",
+            "disableToolOverlayMask": "0x00000000",
+            "endMode": 0,
+            "choices": [
+              {
+                "probabilityThreshold": 1.0,
+                "animations": [
+                  {
+                    "id": "0xcb38a593",
+                    "description": "_final/creature/idle_walk_lookat_start",
+                    "durationScale": 1.0,
+                    "duration": -1.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0x04866dab",
+            "name": "idle_walk_lookat_loop",
+            "priorityOverride": 1.0,
+            "blendInTime": -1.0,
+            "idle": true,
+            "allowLocomotion": true,
+            "randomizeChoicePerLoop": false,
+            "matchVariantForToolMask": "0x00000000",
+            "disableToolOverlayMask": "0x00000000",
+            "endMode": 1,
+            "choices": [
+              {
+                "probabilityThreshold": 1.0,
+                "animations": [
+                  {
+                    "id": "0xcee6aab3",
+                    "description": "_final/creature/idle_walk_lookat_loop",
+                    "durationScale": 1.0,
+                    "duration": -1.0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "0x04866db9",
+            "name": "idle_walk_lookat_stop",
+            "priorityOverride": 1.0,
+            "blendInTime": -1.0,
+            "idle": false,
+            "allowLocomotion": true,
+            "randomizeChoicePerLoop": false,
+            "matchVariantForToolMask": "0x00000000",
+            "disableToolOverlayMask": "0x00000000",
+            "endMode": 0,
+            "choices": [
+              {
+                "probabilityThreshold": 1.0,
+                "animations": [
+                  {
+                    "id": "0x0921d851",
+                    "description": "_final/creature/idle_walk_lookat_stop",
+                    "durationScale": 1.0,
+                    "duration": -1.0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "anim_records": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0921d851"
+      },
+      "offset": 904743,
+      "stored_bytes": 1248,
+      "memory_bytes": 15780,
+      "compression": 65535,
+      "stored_sha256": "391961f055b5928078b21c963a4ca3a98447bcea055c064aae9882c17b3dfb1a",
+      "decoded_sha256": "0187c8f243f495dd4d0b2fe79105aa4c1675edcf4125348fc4214b33bb8c1429",
+      "anim": {
+        "version": 21,
+        "declared_bytes": 15780,
+        "embedded_path": "C:\\Spore_Executables_Latest\\Data\\Creatures\\Animations\\_final\\creature\\idle_walk_lookat_stop.animation",
+        "animation_id": "0x0921d851",
+        "length_raw": 14.0,
+        "channels": [
+          {
+            "resource_channel_index": 0,
+            "name": "root",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00000000",
+            "community_blendGroup": 0,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000001",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 1,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 1,
+            "name": "Shoulders",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00010000",
+            "community_blendGroup": 1,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00001000",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 1,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 2,
+            "name": "Head",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00020009",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 3,
+            "name": "Head lookat",
+            "movementFlags": "0x00000003",
+            "bindFlags": "0x00020000",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000012",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 4,
+            "name": "Eyes",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00030001",
+            "community_blendGroup": 3,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65796500",
+              "capability_ascii": "eye",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 5,
+            "name": "ears",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00040001",
+            "community_blendGroup": 4,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65617200",
+              "capability_ascii": "ear",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 3,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 6,
+            "name": "R hand",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00050000",
+            "community_blendGroup": 5,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000008",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 7,
+            "name": "L hand",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00060000",
+            "community_blendGroup": 6,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000004",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 8,
+            "name": "EyeCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00070001",
+            "community_blendGroup": 7,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6579636c",
+              "capability_ascii": "eycl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 9,
+            "name": "MoveCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00080001",
+            "community_blendGroup": 8,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d76636c",
+              "capability_ascii": "mvcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 10,
+            "name": "MouthCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00090001",
+            "community_blendGroup": 9,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d74636c",
+              "capability_ascii": "mtcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          }
+        ],
+        "coverage": "header/channel/component metadata only; curves, events, predicates and relocation table not decoded",
+        "version_semantics": "raw fields; no old-version fixup or runtime binding applied"
+      },
+      "whole_predicate": {
+        "decoded_offset": 340,
+        "raw_8_bytes": "0000000000000000",
+        "flags1": "0x00000000",
+        "flags2": "0x00000000",
+        "community_requirements": [],
+        "unknown_flags1": "0x00000000",
+        "unknown_flags2": "0x00000000",
+        "values_outside_selected_mask": "0x00000000",
+        "is_default": true,
+        "native_evaluation": "not-performed"
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcb38a593"
+      },
+      "offset": 5105561,
+      "stored_bytes": 1384,
+      "memory_bytes": 19616,
+      "compression": 65535,
+      "stored_sha256": "2fb39169118334143fc2fd16e1c6479c99b56b96f348a3bc481aa5a619939cea",
+      "decoded_sha256": "d401212791e033ab9c6c94b3873a0c6b56abbfd740d2a7f23d5eaecc6b16eb4e",
+      "anim": {
+        "version": 21,
+        "declared_bytes": 19616,
+        "embedded_path": "C:\\Spore_Executables_Latest\\Data\\Creatures\\Animations\\_final\\creature\\idle_walk_lookat_start.animation",
+        "animation_id": "0xcb38a593",
+        "length_raw": 21.0,
+        "channels": [
+          {
+            "resource_channel_index": 0,
+            "name": "root",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00000000",
+            "community_blendGroup": 0,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000001",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 1,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 1,
+            "name": "Shoulders",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00010000",
+            "community_blendGroup": 1,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00001000",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 1,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 2,
+            "name": "Head",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00020001",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 4,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 3,
+            "name": "Head lookat",
+            "movementFlags": "0x00000003",
+            "bindFlags": "0x00020000",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 3,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000012",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 4,
+            "name": "Eyes",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00030001",
+            "community_blendGroup": 3,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65796500",
+              "capability_ascii": "eye",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 5,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 5,
+            "name": "ears",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00040001",
+            "community_blendGroup": 4,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65617200",
+              "capability_ascii": "ear",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 4,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 6,
+            "name": "R hand",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00050000",
+            "community_blendGroup": 5,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000008",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 3,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 7,
+            "name": "L hand",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00060000",
+            "community_blendGroup": 6,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000004",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 3,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 8,
+            "name": "EyeCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00070001",
+            "community_blendGroup": 7,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6579636c",
+              "capability_ascii": "eycl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 9,
+            "name": "MoveCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00080001",
+            "community_blendGroup": 8,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d76636c",
+              "capability_ascii": "mvcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 10,
+            "name": "MouthCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00090001",
+            "community_blendGroup": 9,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d74636c",
+              "capability_ascii": "mtcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          }
+        ],
+        "coverage": "header/channel/component metadata only; curves, events, predicates and relocation table not decoded",
+        "version_semantics": "raw fields; no old-version fixup or runtime binding applied"
+      },
+      "whole_predicate": {
+        "decoded_offset": 340,
+        "raw_8_bytes": "0000000000000000",
+        "flags1": "0x00000000",
+        "flags2": "0x00000000",
+        "community_requirements": [],
+        "unknown_flags1": "0x00000000",
+        "unknown_flags2": "0x00000000",
+        "values_outside_selected_mask": "0x00000000",
+        "is_default": true,
+        "native_evaluation": "not-performed"
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcee6aab3"
+      },
+      "offset": 9765968,
+      "stored_bytes": 1187,
+      "memory_bytes": 15216,
+      "compression": 65535,
+      "stored_sha256": "ebcfd8090461aba3460906a0f86db7f870bae1e5849d38ec01ced2b3ef6fbe0a",
+      "decoded_sha256": "9239459cf8c21093f52d6f98fbc41e501fa35b4344f0d7b334e4833e5ef3ff44",
+      "anim": {
+        "version": 21,
+        "declared_bytes": 15216,
+        "embedded_path": "C:\\Spore_Executables_Latest\\Data\\Creatures\\Animations\\_final\\creature\\idle_walk_lookat_loop.animation",
+        "animation_id": "0xcee6aab3",
+        "length_raw": 30.0,
+        "channels": [
+          {
+            "resource_channel_index": 0,
+            "name": "root",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00000000",
+            "community_blendGroup": 0,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000001",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 1,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 1,
+            "name": "Shoulders",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00010000",
+            "community_blendGroup": 1,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00001000",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 1,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 2,
+            "name": "Head",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00020001",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 3,
+            "name": "Head lookat",
+            "movementFlags": "0x00000003",
+            "bindFlags": "0x00020000",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000012",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 4,
+            "name": "Eyes",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00030001",
+            "community_blendGroup": 3,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65796500",
+              "capability_ascii": "eye",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 5,
+            "name": "ears",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00040001",
+            "community_blendGroup": 4,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65617200",
+              "capability_ascii": "ear",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 6,
+            "name": "R hand",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00050000",
+            "community_blendGroup": 5,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000008",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 7,
+            "name": "L hand",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00060000",
+            "community_blendGroup": 6,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000004",
+              "capability_bytes": "67727370",
+              "capability_ascii": "grsp",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 8,
+            "name": "EyeCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00070001",
+            "community_blendGroup": 7,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6579636c",
+              "capability_ascii": "eycl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000023",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 9,
+            "name": "MoveCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00080001",
+            "community_blendGroup": 8,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d76636c",
+              "capability_ascii": "mvcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000033",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 10,
+            "name": "MouthCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00090001",
+            "community_blendGroup": 9,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d74636c",
+              "capability_ascii": "mtcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000061",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000022",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000001",
+                "keyframe_offset": 200,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000002",
+                "keyframe_offset": 240,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000003",
+                "keyframe_offset": 280,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x00000004",
+                "keyframe_offset": 320,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000005",
+                "keyframe_offset": 360,
+                "keyframe_stride": 440,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000003",
+                "id": "0x00000006",
+                "keyframe_offset": 400,
+                "keyframe_stride": 440,
+                "index": 0
+              }
+            ]
+          }
+        ],
+        "coverage": "header/channel/component metadata only; curves, events, predicates and relocation table not decoded",
+        "version_semantics": "raw fields; no old-version fixup or runtime binding applied"
+      },
+      "whole_predicate": {
+        "decoded_offset": 340,
+        "raw_8_bytes": "0000000000000000",
+        "flags1": "0x00000000",
+        "flags2": "0x00000000",
+        "community_requirements": [],
+        "unknown_flags1": "0x00000000",
+        "unknown_flags2": "0x00000000",
+        "values_outside_selected_mask": "0x00000000",
+        "is_default": true,
+        "native_evaluation": "not-performed"
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0921d851"
+      },
+      "offset": 14445519,
+      "stored_bytes": 891,
+      "memory_bytes": 4848,
+      "compression": 65535,
+      "stored_sha256": "d34d104512eaad85dda1a5e72f0efd78e5293290c6bfbd9a35e3a25a4849c222",
+      "decoded_sha256": "4a165aa07f65b0f5dc022334e9631393db2bf3b9858911be39d5b955d5b991c2",
+      "anim": {
+        "version": 25,
+        "declared_bytes": 4848,
+        "embedded_path": "C:\\Spore_Executables_Latest\\Data\\Creatures\\Animations\\_final\\creature\\idle_walk_lookat_stop.animation",
+        "animation_id": "0x0921d851",
+        "length_raw": 14.0,
+        "channels": [
+          {
+            "resource_channel_index": 0,
+            "name": "Head",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00020009",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 280,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 20,
+                "keyframe_stride": 280,
+                "index": 2
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 120,
+                "keyframe_stride": 280,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x5d8d0055",
+                "keyframe_offset": 160,
+                "keyframe_stride": 280,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x892788c6",
+                "keyframe_offset": 200,
+                "keyframe_stride": 280,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0xdd0dcef4",
+                "keyframe_offset": 240,
+                "keyframe_stride": 280,
+                "index": 6
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 1,
+            "name": "Eyes",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00030001",
+            "community_blendGroup": 3,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65796500",
+              "capability_ascii": "eye",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 140,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 140,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x9891eec7",
+                "keyframe_offset": 60,
+                "keyframe_stride": 140,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x30ee8f49",
+                "keyframe_offset": 100,
+                "keyframe_stride": 140,
+                "index": 5
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 2,
+            "name": "ears",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00040001",
+            "community_blendGroup": 4,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65617200",
+              "capability_ascii": "ear",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 3,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x39e912e1",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 3
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 3,
+            "name": "EyeCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00070001",
+            "community_blendGroup": 7,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6579636c",
+              "capability_ascii": "eycl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 3
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 4,
+            "name": "MoveCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00080001",
+            "community_blendGroup": 8,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d76636c",
+              "capability_ascii": "mvcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000053",
+                "id": "0xb37b55b2",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 4
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 5,
+            "name": "MouthCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00090001",
+            "community_blendGroup": 9,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d74636c",
+              "capability_ascii": "mtcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 360,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 360,
+                "index": 1
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 360,
+                "index": 2
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 200,
+                "keyframe_stride": 360,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x114bb90c",
+                "keyframe_offset": 240,
+                "keyframe_stride": 360,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x15054351",
+                "keyframe_offset": 280,
+                "keyframe_stride": 360,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0xc2299aa7",
+                "keyframe_offset": 320,
+                "keyframe_stride": 360,
+                "index": 6
+              }
+            ]
+          }
+        ],
+        "coverage": "header/channel/component metadata only; curves, events, predicates and relocation table not decoded",
+        "version_semantics": "raw fields; no old-version fixup or runtime binding applied"
+      },
+      "whole_predicate": {
+        "decoded_offset": 340,
+        "raw_8_bytes": "0000000000000000",
+        "flags1": "0x00000000",
+        "flags2": "0x00000000",
+        "community_requirements": [],
+        "unknown_flags1": "0x00000000",
+        "unknown_flags2": "0x00000000",
+        "values_outside_selected_mask": "0x00000000",
+        "is_default": true,
+        "native_evaluation": "not-performed"
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcb38a593"
+      },
+      "offset": 10440896,
+      "stored_bytes": 915,
+      "memory_bytes": 5764,
+      "compression": 65535,
+      "stored_sha256": "f190b043f13ea913d5ab40d4d35454fe8a5a3eb9d199b14b5eb30fd14d4d8f0f",
+      "decoded_sha256": "15ce3b02aafb250dd2f5cc0eb6dc6ee4c78c8f299d5b65fa688a318ed16ed0cb",
+      "anim": {
+        "version": 25,
+        "declared_bytes": 5764,
+        "embedded_path": "C:\\Spore_Executables_Latest\\Data\\Creatures\\Animations\\_final\\creature\\idle_walk_lookat_start.animation",
+        "animation_id": "0xcb38a593",
+        "length_raw": 21.0,
+        "channels": [
+          {
+            "resource_channel_index": 0,
+            "name": "Head",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00020001",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 4,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 280,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 20,
+                "keyframe_stride": 280,
+                "index": 2
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 120,
+                "keyframe_stride": 280,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x5d8d0055",
+                "keyframe_offset": 160,
+                "keyframe_stride": 280,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x892788c6",
+                "keyframe_offset": 200,
+                "keyframe_stride": 280,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0xdd0dcef4",
+                "keyframe_offset": 240,
+                "keyframe_stride": 280,
+                "index": 6
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 1,
+            "name": "Eyes",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00030001",
+            "community_blendGroup": 3,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65796500",
+              "capability_ascii": "eye",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 5,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 140,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 140,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x9891eec7",
+                "keyframe_offset": 60,
+                "keyframe_stride": 140,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x30ee8f49",
+                "keyframe_offset": 100,
+                "keyframe_stride": 140,
+                "index": 5
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 2,
+            "name": "ears",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00040001",
+            "community_blendGroup": 4,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65617200",
+              "capability_ascii": "ear",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 4,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x39e912e1",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 3
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 3,
+            "name": "EyeCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00070001",
+            "community_blendGroup": 7,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6579636c",
+              "capability_ascii": "eycl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 3
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 4,
+            "name": "MoveCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00080001",
+            "community_blendGroup": 8,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d76636c",
+              "capability_ascii": "mvcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000053",
+                "id": "0xb37b55b2",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 4
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 5,
+            "name": "MouthCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00090001",
+            "community_blendGroup": 9,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d74636c",
+              "capability_ascii": "mtcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 360,
+                "index": 0
+              },
+              {
+                "type": 1,
+                "flags": "0x00000071",
+                "id": "0x00534f50",
+                "keyframe_offset": 20,
+                "keyframe_stride": 360,
+                "index": 1
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 100,
+                "keyframe_stride": 360,
+                "index": 2
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 200,
+                "keyframe_stride": 360,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x114bb90c",
+                "keyframe_offset": 240,
+                "keyframe_stride": 360,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x15054351",
+                "keyframe_offset": 280,
+                "keyframe_stride": 360,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0xc2299aa7",
+                "keyframe_offset": 320,
+                "keyframe_stride": 360,
+                "index": 6
+              }
+            ]
+          }
+        ],
+        "coverage": "header/channel/component metadata only; curves, events, predicates and relocation table not decoded",
+        "version_semantics": "raw fields; no old-version fixup or runtime binding applied"
+      },
+      "whole_predicate": {
+        "decoded_offset": 340,
+        "raw_8_bytes": "0000000000000000",
+        "flags1": "0x00000000",
+        "flags2": "0x00000000",
+        "community_requirements": [],
+        "unknown_flags1": "0x00000000",
+        "unknown_flags2": "0x00000000",
+        "values_outside_selected_mask": "0x00000000",
+        "is_default": true,
+        "native_evaluation": "not-performed"
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcee6aab3"
+      },
+      "offset": 6816119,
+      "stored_bytes": 804,
+      "memory_bytes": 4576,
+      "compression": 65535,
+      "stored_sha256": "52f15c94d18c00b37d4ac8ce869871463b728e257e21f410f2fdc6f5688ba605",
+      "decoded_sha256": "bd958d906f069e4be350c3541bcccf2c5a2fd6542358bc0a6865ad9f29880f62",
+      "anim": {
+        "version": 25,
+        "declared_bytes": 4576,
+        "embedded_path": "C:\\Spore_Executables_Latest\\Data\\Creatures\\Animations\\_final\\creature\\idle_walk_lookat_loop.animation",
+        "animation_id": "0xcee6aab3",
+        "length_raw": 30.0,
+        "channels": [
+          {
+            "resource_channel_index": 0,
+            "name": "Head",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00020001",
+            "community_blendGroup": 2,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d6f7574",
+              "capability_ascii": "mout",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 280,
+                "index": 0
+              },
+              {
+                "type": 2,
+                "flags": "0x00000032",
+                "id": "0x00544f52",
+                "keyframe_offset": 20,
+                "keyframe_stride": 280,
+                "index": 2
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 120,
+                "keyframe_stride": 280,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x5d8d0055",
+                "keyframe_offset": 160,
+                "keyframe_stride": 280,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x892788c6",
+                "keyframe_offset": 200,
+                "keyframe_stride": 280,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0xdd0dcef4",
+                "keyframe_offset": 240,
+                "keyframe_stride": 280,
+                "index": 6
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 1,
+            "name": "Eyes",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00030001",
+            "community_blendGroup": 3,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65796500",
+              "capability_ascii": "eye",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 140,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 140,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x9891eec7",
+                "keyframe_offset": 60,
+                "keyframe_stride": 140,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x30ee8f49",
+                "keyframe_offset": 100,
+                "keyframe_stride": 140,
+                "index": 5
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 2,
+            "name": "ears",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00040001",
+            "community_blendGroup": 4,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "65617200",
+              "capability_ascii": "ear",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x39e912e1",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 3
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 3,
+            "name": "EyeCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00070001",
+            "community_blendGroup": 7,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6579636c",
+              "capability_ascii": "eycl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 60,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 60,
+                "index": 3
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 4,
+            "name": "MoveCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00080001",
+            "community_blendGroup": 8,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d76636c",
+              "capability_ascii": "mvcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 180,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x6fb760ff",
+                "keyframe_offset": 20,
+                "keyframe_stride": 180,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000053",
+                "id": "0xb37b55b2",
+                "keyframe_offset": 60,
+                "keyframe_stride": 180,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x15054351",
+                "keyframe_offset": 100,
+                "keyframe_stride": 180,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000033",
+                "id": "0xc2299aa7",
+                "keyframe_offset": 140,
+                "keyframe_stride": 180,
+                "index": 6
+              }
+            ]
+          },
+          {
+            "resource_channel_index": 5,
+            "name": "MouthCell",
+            "movementFlags": "0x00000000",
+            "bindFlags": "0x00090001",
+            "community_blendGroup": 9,
+            "community_variantGroup": 0,
+            "primaryContext": {
+              "flags": "0x00000000",
+              "capability_bytes": "6d74636c",
+              "capability_ascii": "mtcl",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "secondaryContext": {
+              "flags": "0x00000002",
+              "capability_bytes": "00000000",
+              "capability_ascii": "",
+              "field_8": "0x00000000",
+              "field_C": "0x00000000"
+            },
+            "keyframe_count": 2,
+            "components": [
+              {
+                "type": 0,
+                "flags": "0x00000000",
+                "id": "0x4f464e49",
+                "keyframe_offset": 0,
+                "keyframe_stride": 180,
+                "index": 0
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x89e06a31",
+                "keyframe_offset": 20,
+                "keyframe_stride": 180,
+                "index": 3
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x114bb90c",
+                "keyframe_offset": 60,
+                "keyframe_stride": 180,
+                "index": 4
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0x15054351",
+                "keyframe_offset": 100,
+                "keyframe_stride": 180,
+                "index": 5
+              },
+              {
+                "type": 3,
+                "flags": "0x00000013",
+                "id": "0xc2299aa7",
+                "keyframe_offset": 140,
+                "keyframe_stride": 180,
+                "index": 6
+              }
+            ]
+          }
+        ],
+        "coverage": "header/channel/component metadata only; curves, events, predicates and relocation table not decoded",
+        "version_semantics": "raw fields; no old-version fixup or runtime binding applied"
+      },
+      "whole_predicate": {
+        "decoded_offset": 340,
+        "raw_8_bytes": "0000000000000000",
+        "flags1": "0x00000000",
+        "flags2": "0x00000000",
+        "community_requirements": [],
+        "unknown_flags1": "0x00000000",
+        "unknown_flags2": "0x00000000",
+        "values_outside_selected_mask": "0x00000000",
+        "is_default": true,
+        "native_evaluation": "not-performed"
+      }
+    }
+  ],
+  "index_candidates": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0921d851"
+      },
+      "offset": 904743,
+      "stored_bytes": 1248,
+      "memory_bytes": 15780,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcb38a593"
+      },
+      "offset": 5105561,
+      "stored_bytes": 1384,
+      "memory_bytes": 19616,
+      "compression": 65535
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcee6aab3"
+      },
+      "offset": 9765968,
+      "stored_bytes": 1187,
+      "memory_bytes": 15216,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0921d851"
+      },
+      "offset": 14445519,
+      "stored_bytes": 891,
+      "memory_bytes": 4848,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcb38a593"
+      },
+      "offset": 10440896,
+      "stored_bytes": 915,
+      "memory_bytes": 5764,
+      "compression": 65535
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0xcee6aab3"
+      },
+      "offset": 6816119,
+      "stored_bytes": 804,
+      "memory_bytes": 4576,
+      "compression": 65535
+    }
+  ],
+  "diagnostics": [],
+  "coverage": {
+    "tlsa_count": 2,
+    "selected_groups": 6,
+    "anim_count": 6,
+    "channels": 51,
+    "curves_decoded": false,
+    "events_decoded": false,
+    "model_or_private_recipe_read": false
+  },
+  "limits": [
+    "Name/idle flag does not establish neutral standing height, character personality or editor default selection.",
+    "Whole predicates read, not executed; no body morphology classifier recovered.",
+    "No reference-pose evaluation or original animation samples exported."
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "e526dec7880fd6626883484b55f3e31b052584bb1a8a4ca0aea0fc032c1fe05d",
+    "captured_file_bytes": 154462,
+    "reference_changes": [
+      {
+        "pointer": "/prior/sha256",
+        "captured": "50c75ef6c46b979c43641a5c290743bebd5aba161bd3ca2b608cff10de2ef4a5",
+        "published": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+        "study_file": "evidence/local-selected-action-channels.json"
+      }
+    ]
+  }
+}

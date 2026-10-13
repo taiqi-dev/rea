@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "module": "51-ability-animation-clocks-and-gait-synchronization",
+  "kind": "public-source-contracts-and-reused-static-observations-not-REA-Evidence",
+  "rea_evidence_id": null,
+  "target_runtime_verified": false,
+  "scope": "Land Creature Stage clocks only; communities describe format/interface; no original execution or engine algorithm recovery",
+  "sources": [
+    {
+      "path": "src/sporemodder/file/anim/SPAnimation.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/SPAnimation.java",
+      "bytes": 8639,
+      "sha256": "1497f34e425a7199d590005f023dc3253fcb8184d36fd8161e822c57aa5c7cc3",
+      "lines": 284,
+      "read_ranges": [
+        [
+          31,
+          158
+        ],
+        [
+          164,
+          206
+        ],
+        [
+          214,
+          284
+        ]
+      ],
+      "id": "C01",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    },
+    {
+      "path": "src/sporemodder/file/anim/InfoComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/InfoComponent.java",
+      "bytes": 5286,
+      "sha256": "876c1b3b13783f271910cdf8f7cfaf609bc4b1d155a9f312bddeda6ab2895aed",
+      "lines": 160,
+      "read_ranges": [
+        [
+          31,
+          160
+        ]
+      ],
+      "id": "C02",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    },
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAAnimation.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAAnimation.java",
+      "bytes": 1845,
+      "sha256": "5430087b32af1798dd2a0db47d8b80fff823cbbfb8ee6d81be216f57ac31ddcb",
+      "lines": 58,
+      "read_ranges": [
+        [
+          19,
+          58
+        ]
+      ],
+      "id": "C03",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    },
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAAnimationGroup.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAAnimationGroup.java",
+      "bytes": 8575,
+      "sha256": "09cc1816fccac90442f355bd1b23f1873013acdafb3b6d2f3b6a173edf9b694c",
+      "lines": 275,
+      "read_ranges": [
+        [
+          30,
+          165
+        ],
+        [
+          170,
+          275
+        ]
+      ],
+      "id": "C04",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/SPAnimation.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/SPAnimation.h",
+      "bytes": 1069,
+      "sha256": "b38771106d6efae667e04a71d671f7b77f08b5c357cd66ead2a0395809b73903",
+      "lines": 55,
+      "read_ranges": [
+        [
+          1,
+          55
+        ]
+      ],
+      "id": "C05",
+      "provenance": "community SDK declaration, not Maxis source",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/IAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/IAnimWorld.h",
+      "bytes": 2546,
+      "sha256": "68e1b28df2cc6c5cc9052875ab756424ca902e27f1976f093200b9f0cf7bd52c",
+      "lines": 58,
+      "read_ranges": [
+        [
+          1,
+          58
+        ]
+      ],
+      "id": "C06",
+      "provenance": "community SDK declaration, not Maxis source",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "lines": 267,
+      "read_ranges": [
+        [
+          51,
+          108
+        ],
+        [
+          162,
+          208
+        ]
+      ],
+      "id": "C07",
+      "provenance": "community SDK declaration, not Maxis source",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "bytes": 5751,
+      "sha256": "0d58d8957fbeca887c9c123cdbffe9fb94ba818eba97865563a4a4f92e6919d2",
+      "lines": 195,
+      "read_ranges": [
+        [
+          124,
+          131
+        ],
+        [
+          139,
+          158
+        ],
+        [
+          179,
+          182
+        ]
+      ],
+      "id": "C08",
+      "provenance": "community SDK declaration, not Maxis source",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+    },
+    {
+      "path": "src/sporemodder/file/gait/GaitStepLengthKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/gait/GaitStepLengthKey.java",
+      "bytes": 1646,
+      "sha256": "226a96f04299ef33e4fd7702c4622fac96d6dbbb4ee6bbdc455883f72ae2f9d2",
+      "lines": 56,
+      "read_ranges": [
+        [
+          1,
+          56
+        ]
+      ],
+      "id": "C09",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    },
+    {
+      "path": "src/sporemodder/file/gait/GaitGroupKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/gait/GaitGroupKey.java",
+      "bytes": 11111,
+      "sha256": "8ba76588677921c96991f536222cc5bd8f0c2d02da508f3629c51d4fa230f2ee",
+      "lines": 267,
+      "read_ranges": [
+        [
+          20,
+          20
+        ],
+        [
+          25,
+          140
+        ],
+        [
+          145,
+          145
+        ],
+        [
+          228,
+          228
+        ]
+      ],
+      "id": "C10",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    },
+    {
+      "path": "src/sporemodder/view/editors/AnimEditor.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/view/editors/AnimEditor.java",
+      "bytes": 8075,
+      "sha256": "3d06dc63ddc6e631976997faa29d18a48940bc11eb08aa10fed2942f4b31df05",
+      "lines": 262,
+      "read_ranges": [
+        [
+          80,
+          149
+        ]
+      ],
+      "additional_read": "case-insensitive duration/frame/time/play/speed/length/pause matching lines across all 262 lines; bounded substring scan, not call graph",
+      "id": "C11",
+      "provenance": "community source format/editor implementation, not Maxis source",
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+    }
+  ],
+  "contracts": [
+    {
+      "source": "C01",
+      "locator": "lines43,69–71,108,139–145,220,258–264",
+      "fact": "ANIM length is an LE float at 0x120; text length is emitted/parsed as a float without unit conversion. Writer emits fixed word 0x3d088889 at 0x11c. Reader does not expose 0x11c as a field; read calls fixVersion.",
+      "limit": "Producer constant is not a native clock consumer. Preserve raw resource version; no seconds/FPS conversion established."
+    },
+    {
+      "source": "C02",
+      "locator": "lines38–39,47–68,128–131",
+      "fact": "INFO record time is LE int32 at +0; eventStart LE uint16 at +8 and count byte at +10; writer preserves integer time. Text parser bounds integer time to 0..(int)(animation.length-1). Binary reader is not that validity check.",
+      "limit": "No unit conversion, frame multiplication, interpolation or gameplay-effect dispatch implementation here. Type and raw bounds support index-like interpretation only as inference."
+    },
+    {
+      "source": "C03",
+      "locator": "lines30–41,45–55",
+      "fact": "durationScale defaults 1 and duration defaults -1; for version>8 they are BE floats preceding animationID and UTF16LE description.",
+      "limit": "Native meaning of -1 and multiply/divide playback formula unknown."
+    },
+    {
+      "source": "C04",
+      "locator": "lines39–46,48–82,123–160,219–222,256–257",
+      "fact": "Old TLSA group read shares one durationScale/duration pair across its animations; new layout contains a pair per animation reference. blendInTime, allowLocomotion, endMode and version10 randomizeChoicePerLoop are represented separately.",
+      "limit": "No runtime speed, transition curve, loop-end enum interpretation or sentinel resolution; presence does not prove target simultaneous gameplay skills."
+    },
+    {
+      "source": "C05",
+      "locator": "lines33–34",
+      "fact": "SDK names 0x11c frameLength (comment 1/30) and 0x120 length.",
+      "limit": "Declaration/comment only, not validated native consumer/ABI; does not prove INFO integer time is frames or clip duration equals length*frameLength."
+    },
+    {
+      "source": "C06",
+      "locator": "lines31–36",
+      "fact": "IAnimWorld declares Update/UpdateCreatures/PostUpdateCreatures with float deltaTime. Comment suggests delta seconds with a question mark.",
+      "limit": "Uncertain community annotation stays uncertain. Actual update sequence, rate and pause ownership not recovered."
+    },
+    {
+      "source": "C07",
+      "locator": "lines71–90,104–106,162–190",
+      "fact": "SetAnimationBlendInTime, SetLoop, SetLoopTimes, GetCurrentAnimation(dstTime), GetAnimationLength and anim_query duration/durationScale/blendInTime fields exist. SetLoopTimes comment permits fractional counts, >1 only with looping, and -1 indefinite.",
+      "limit": "Community documented interface, not target execution. Unnamed float methods remain unnamed; field_A8 comment current time? is not a verified progress field. No rate/pause consumer."
+    },
+    {
+      "source": "C08",
+      "locator": "lines139–158,179–182",
+      "fact": "Ability has mAnimationIDs, mEffectDuration, mRefresh, mDuration, mRecharge and mReactionDuration as separate declarations.",
+      "limit": "No original-unit or equality rule connecting ability duration, effect duration, recharge and animation length."
+    },
+    {
+      "source": "C09",
+      "locator": "lines14–32,48–52",
+      "fact": "GAIT step-length key stores speedi and stepLength as LE floats; text parser/writer preserve those floats.",
+      "limit": "No velocity unit or native frequency formula in this format class."
+    },
+    {
+      "source": "C10",
+      "locator": "lines53–95,97–139",
+      "fact": "GAIT group key stores speedi and phase/bias fields, then LE int taxonCount/pathDataCount, paired LE float trigger/duty values and path records. Writer mirrors this order.",
+      "limit": "No actual legs-to-slot map, native trigger phase origin or runtime interpolation implementation."
+    },
+    {
+      "source": "C11",
+      "locator": "lines84–108,134–143",
+      "fact": "AnimEditor Timer at 2000ms schedules file lastModified polling and reload.",
+      "limit": "Excluded as playback clock evidence; editor file reload is not game animation advancement."
+    }
+  ],
+  "developer_paper": {
+    "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+    "bytes": 3896086,
+    "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+    "pages": 11,
+    "actual_read_pages_one_based": [
+      5,
+      6,
+      7
+    ],
+    "read_method": "in-memory public HTTP bytes + bundled pypdf; no PDF/assets persisted",
+    "locators": [
+      "PDF5 section3.3 and section4 opening",
+      "PDF6 section4.2 Leg Groups/Foot and Hip Posing",
+      "PDF7 section4.2 continued"
+    ],
+    "summary": "Historical design records curves and discrete visual/sound/data events. Runtime specializes/blends goals each frame, combines locomotion, runs IK, then secondary animation. Roughly equal-length leg groups use small-rational length ratios for relative cycle frequencies. Duty is grounded fraction of cycle; trigger is cycle offset. Speed interpolates authored gait parameters; different leg groups may use different styles.",
+    "limits": [
+      "Not current local runtime trace.",
+      "Does not define raw INFO time unit, frameLength consumer or ability clock relation."
+    ]
+  },
+  "reused_local_inputs": [
+    {
+      "path": "evidence/local-selected-action-events.json",
+      "bytes": 381153,
+      "sha256": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c",
+      "read_scope": "records[0..7]: identity/header and info_event_references; 8 resources, 48 nonzero INFO rows spanning 60 event occurrences, raw times only"
+    },
+    {
+      "path": "evidence/local-selected-action-channels.json",
+      "bytes": 1394152,
+      "sha256": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+      "read_scope": "two TLSA records: all 13 selected groups each, all choices/animation references; 13/128 references"
+    },
+    {
+      "path": "evidence/local-selected-movement-resources.json",
+      "bytes": 221158,
+      "sha256": "ef1b3a3fcb015e96055d6af8c229757882b90abf3e64b0b784a45c8c717faea7",
+      "read_scope": "two gait6 records key25df0112:00000000:b00eaf60: 8 stepLength and 8 group keys, six trigger/duty slots per group"
+    },
+    {
+      "path": "evidence/public-gait-format-sources.json",
+      "bytes": 19112,
+      "sha256": "30f0d2111baaa7a82fbeaa48af0c2d7b4ee4a94013ffa402c9688481122b6e74",
+      "read_scope": "GaitGroupKey/GaitStepLengthKey source identity and selected declarations; fixed raw source reread matches hashes"
+    },
+    {
+      "path": "evidence/public-multi-action-paper-observations.json",
+      "bytes": 1244,
+      "sha256": "cd686bbf8bf1751ab731909ffaceb82e12eb996748ced24fc25a50ff933f6e11",
+      "read_scope": "prior paper identity/5–7 page locator; same PDF freshly reread pages5–7"
+    }
+  ],
+  "reused_observations": {
+    "fresh_game_reads": false,
+    "local_selected_animation_clocks_file_created": false,
+    "reason": "Required raw header/time/GAIT/TLSA data already retained; new conversion would be inference, not new target observation.",
+    "ANIM": {
+      "records": 8,
+      "resource_versions": [
+        21,
+        25
+      ],
+      "four_keys_per_package": [
+        "ee17c6ad:00000000:2f7ea086",
+        "ee17c6ad:00000000:38ed1075",
+        "ee17c6ad:00000000:d4772d6f",
+        "ee17c6ad:00000000:dc542b67"
+      ],
+      "length_raw_by_instance": {
+        "2f7ea086": 51,
+        "38ed1075": 50,
+        "d4772d6f": 46,
+        "dc542b67": 39
+      },
+      "frameLengthWordRaw": "0x3d088889",
+      "frameLengthSDKFloatCandidate": 0.03333333507180214,
+      "INFO_reference_count": 60,
+      "nonzero_INFO_rows": 48,
+      "spit_reference_times_raw": [
+        0,
+        16
+      ],
+      "unit": "unresolved"
+    },
+    "TLSA": {
+      "keys": [
+        "4aeb6bc6:00006f14:f8cc4670",
+        "4aeb6bc6:000082d0:142cba20"
+      ],
+      "versions": [
+        7,
+        10
+      ],
+      "selected_groups_each": 13,
+      "references_per_version": [
+        13,
+        128
+      ],
+      "durationScale_set": [
+        1
+      ],
+      "duration_set": [
+        -1
+      ],
+      "blendInTime_set": [
+        -1
+      ],
+      "native_sentinel_meaning": "unresolved"
+    },
+    "GAIT": {
+      "key": "25df0112:00000000:b00eaf60",
+      "packages": 2,
+      "version": 11,
+      "speedi": [
+        0,
+        2.5,
+        4,
+        5.5,
+        6.5,
+        7.5,
+        8.5,
+        10
+      ],
+      "trigger_slots_at_speed0": [
+        0,
+        0.5,
+        0.33329999446868896,
+        0.833299994468689,
+        0.6665999889373779,
+        0.16660000383853912
+      ],
+      "duty_at_speed0": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "units_and_limb_binding": "unresolved"
+    }
+  },
+  "search_limits": {
+    "FX_filename_search": {
+      "url": "https://api.github.com/repos/Spore-Community/SporeModder-FX/git/trees/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5?recursive=1",
+      "truncated": false,
+      "matching_paths": [
+        "Animation Editor/_SporeModder_AnimEditor.animation",
+        "Animation Editor/_SporeModder_AnimEditor.animation.anim_t",
+        "src/sporemodder/view/editors/AnimEditor.java",
+        "src/sporemodder/view/editors/AnimEditorItem.java"
+      ],
+      "scope": "case-insensitive filename search for four player/editor strings"
+    },
+    "network_diagnostic": [
+      "Ordinary Python raw GitHub HTTP attempt failed getaddrinfo Errno11001 before response.",
+      "Formal read-only network recovery successfully fetched the fixed GAIT/AnimEditor source and original developer PDF; no install/config changes."
+    ],
+    "AnimationPlayer": "No matching AnimationPlayer/AnimPlayer filename in examined fixed FX tree; this is a bounded path query, not evidence of no class/implementation in Spore.",
+    "native_provider": "Existing unavailable REA/native provider blocker reused; no setup or retry diagnostic."
+  },
+  "unresolved": [
+    "INFO_time_to_seconds",
+    "ANIM_length_frameLength_consumer_formula",
+    "TLSA_durationScale_consumer_formula",
+    "TLSA_duration_minus1_and_blend_minus1_native_resolution",
+    "ability_duration_native_unit_and_relation_to_clip",
+    "playback_rate_pause_update_native_implementation",
+    "loop_boundary_event_and_duplicate_native_policy",
+    "transition_clock_and_gameplay_effect_authority",
+    "GAIT_speed_unit_and_phase_origin",
+    "GAIT_frequency_and_body_leg_slot_map",
+    "long_arm_native_retiming_policy"
+  ],
+  "not_performed": [
+    "game launch/attach",
+    "private saves",
+    "new game/package payload reads",
+    "full animation/mesh/texture exports",
+    "native decompilation",
+    "install/config/provider setup",
+    "Git write"
+  ],
+  "independent_example": {
+    "units": "own seconds/metres/rational cycle phase; no original raw-time conversion",
+    "authoritative_action_duration": 1,
+    "markers_seconds": [
+      0.35,
+      0.65
+    ],
+    "visual_clip_seconds": 1,
+    "visual_transition_seconds": 0.2,
+    "leg_count": 6,
+    "stride_metres": 1,
+    "actual_speed_metres_per_second": 2,
+    "phase_offsets": [
+      0,
+      0.5,
+      "1/3",
+      "5/6",
+      "2/3",
+      "1/6"
+    ],
+    "action_pause_world_interval_seconds": [
+      0.4,
+      0.6
+    ],
+    "rate2_after_world_seconds": 0.6,
+    "recovery_marker_world_seconds": 0.725,
+    "action_complete_world_seconds": 0.9,
+    "emergency_stop_world_seconds": 0.9,
+    "settle_duration_seconds": 0.15,
+    "arm_paths_metres": [
+      0.4,
+      0.8
+    ],
+    "attack_to_hit_interval_seconds": 0.35,
+    "minimum_jerk_peak_factor": 1.875,
+    "own_peak_speed_limit": 5
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "eb8ec4e34d105dd185f8f11ce5c20eb8e0ca561f4c4ea2cad60be6d03386b5ec",
+    "captured_file_bytes": 19574,
+    "reference_changes": [
+      {
+        "pointer": "/reused_local_inputs/0/sha256",
+        "captured": "d25e6f854fc11adae64b0d5ca4bd8a96e64a89c9f26f0a4c3911d0ed09c1f5d9",
+        "published": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c",
+        "study_file": "evidence/local-selected-action-events.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/0/bytes",
+        "captured": 380443,
+        "published": 381153,
+        "study_file": "evidence/local-selected-action-events.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/1/sha256",
+        "captured": "50c75ef6c46b979c43641a5c290743bebd5aba161bd3ca2b608cff10de2ef4a5",
+        "published": "dd1aaf22d1dcd4e7cb4d36071be0d0c0156cf4b27cf6cf62682b20234533a08d",
+        "study_file": "evidence/local-selected-action-channels.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/1/bytes",
+        "captured": 1437572,
+        "published": 1394152,
+        "study_file": "evidence/local-selected-action-channels.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/2/sha256",
+        "captured": "4d7d8e35829b37879f1c35f7e827247fa66309c858363e27db1e595e99c5332f",
+        "published": "ef1b3a3fcb015e96055d6af8c229757882b90abf3e64b0b784a45c8c717faea7",
+        "study_file": "evidence/local-selected-movement-resources.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/2/bytes",
+        "captured": 228264,
+        "published": 221158,
+        "study_file": "evidence/local-selected-movement-resources.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/3/sha256",
+        "captured": "0cc3a450b2892e80dc31c2a54a5f6a29302fedc8d62d87e8fc32367c64aad69c",
+        "published": "30f0d2111baaa7a82fbeaa48af0c2d7b4ee4a94013ffa402c9688481122b6e74",
+        "study_file": "evidence/public-gait-format-sources.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/3/bytes",
+        "captured": 19840,
+        "published": 19112,
+        "study_file": "evidence/public-gait-format-sources.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/4/sha256",
+        "captured": "209c1c664be27497b78b4297b9ea4a65fa3082a07d193ea7964be07d0d2b080b",
+        "published": "cd686bbf8bf1751ab731909ffaceb82e12eb996748ced24fc25a50ff933f6e11",
+        "study_file": "evidence/public-multi-action-paper-observations.json"
+      },
+      {
+        "pointer": "/reused_local_inputs/4/bytes",
+        "captured": 1282,
+        "published": 1244,
+        "study_file": "evidence/public-multi-action-paper-observations.json"
+      }
+    ]
+  }
+}

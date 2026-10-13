@@ -1,0 +1,791 @@
+{
+  "schema_version": 1,
+  "module": 50,
+  "kind": "public-and-bounded-local-research-not-REA-Evidence",
+  "commits": {
+    "SporeModderFX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "SporeModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+  },
+  "public_sources": [
+    {
+      "path": "Editors/cEditorResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorResource.h",
+      "bytes": 2617,
+      "sha256": "3c5a9abeff825e90aa1d3f2e8f554bf86960282b70eebfbd5f889af63f20d747",
+      "line_count": 80,
+      "examined_line_ranges": [
+        [
+          31,
+          58
+        ],
+        [
+          73,
+          76
+        ]
+      ],
+      "summary": "Saved editor blocks declare asset group/instance, hierarchy and symmetry indices, transform, handles and paint arrays; these are object declarations, not a verified local serializer or permanent part UUID.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "Editors/cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "line_count": 101,
+      "examined_line_ranges": [
+        [
+          52,
+          90
+        ]
+      ],
+      "summary": "Compiled resource separates rigblock parent/symmetry, capability and morph start indices from global capability tags/levels and animation IDs/value/weight arrays. Socket distance comment is explicitly uncertain.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "Anim/CreatureBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/CreatureBlock.h",
+      "bytes": 4035,
+      "sha256": "958b8dbc70774f76cc47c76654714651a9b33b0c97278bfae1e4f3ceea5c1ca2",
+      "line_count": 149,
+      "examined_line_ranges": [
+        [
+          22,
+          29
+        ],
+        [
+          52,
+          66
+        ]
+      ],
+      "summary": "Runtime descriptor declares blockIndex, parentIndex, blockID and bone-name storage; these are distinct integer spaces, without a demonstrated persistent identity or recipe-to-bone compiler.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "Anim/anim_csd.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/anim_csd.h",
+      "bytes": 1602,
+      "sha256": "67cc9a09e7acdb2f6a32a023c4b0569ecc5dc6761dd01608afc19da200b67ef7",
+      "line_count": 52,
+      "examined_line_ranges": [
+        [
+          9,
+          45
+        ]
+      ],
+      "summary": "Creature descriptor holds vector<CreatureBlock> and root-block index; most fields remain unknown.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "Anim/anim_cid.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/anim_cid.h",
+      "bytes": 1896,
+      "sha256": "05c17775a188df717ddacaf4196faad1381d045c2fa301ce84b3c81d7f57499a",
+      "line_count": 76,
+      "examined_line_ranges": [
+        [
+          31,
+          38
+        ],
+        [
+          59,
+          73
+        ]
+      ],
+      "summary": "Runtime instance links csd and AnimatedCreature, then vector<anim_block>; each anim_block links descriptor and parent. No destruction/rebuild protocol is supplied here.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "Editors/BakeManager.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/BakeManager.h",
+      "bytes": 37294,
+      "sha256": "461f65242d2e19c6daaa5d9a1c8c4a61910cdfdc9e7d0914c043483565377209",
+      "line_count": 1282,
+      "examined_line_ranges": [
+        [
+          68,
+          86
+        ]
+      ],
+      "summary": "Queue, cancellation, BakeModel and GetBlockRuntimeModelKey interfaces exist; method bodies, recipe input schema, bone reduction and publication order are not recovered.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "src/sporemodder/file/creaturedata/CreatureData.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/creaturedata/CreatureData.java",
+      "bytes": 4466,
+      "sha256": "8ff970656e035528e4d082525e5595791e48242192953bbb11fa8aeaa6dbfcdf",
+      "line_count": 138,
+      "examined_line_ranges": [
+        [
+          12,
+          53
+        ],
+        [
+          55,
+          77
+        ],
+        [
+          79,
+          124
+        ]
+      ],
+      "summary": "Community experimental reader accepts magicABB455B7/version9..10, skips0x8c bytes per rigblock and reads separate tag/level/morph arrays. Its buffer literal path uses currentBuffer[0], and expected properties-buffer length is68; this source is not assumed a complete reliable parser for the selected local data.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    },
+    {
+      "path": "reg_type.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_type.txt",
+      "bytes": 13944,
+      "sha256": "3e0ff520a9e0793f29e82a00aee5de56dc5a83a1fbef0d8e8b5fe2754147caa9",
+      "line_count": 607,
+      "examined_line_ranges": [
+        [
+          50,
+          50
+        ],
+        [
+          96,
+          96
+        ]
+      ],
+      "summary": "Explicit labels crt=0x2b978c46 and creaturedata=0x0f43029a identify inventory types only.",
+      "evidence_kind": "community-source-declaration-or-format-not-original-runtime"
+    }
+  ],
+  "timestamp_utc": "2026-10-13 07:23:18 UTC",
+  "timestamp_pacific": "2026-10-13 00:23:18 PDT",
+  "target_executable_identity": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "identity_scope": "reused45; EXE not reread in50/52",
+    "executed": false
+  },
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529,
+      "header96_sha256": "e20c5ca45957a66027aad302c1998855df733d23d2f0df4a42af8370fa169595",
+      "index_sha256": "abd86cb2718f3e7ff4a2e1550e25f4c88ea06191c3c945ac8898cfb9c99188db",
+      "full_file_sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "full_file_digest_fresh": true,
+      "exact_type_counts": {
+        "crt_2b978c46": 47,
+        "creaturedata_0f43029a": 0
+      },
+      "creaturedata_groups": []
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535,
+      "header96_sha256": "2b38fd555205b08c58a7873cf54194b75082971163696de576eee72e3f628cd9",
+      "index_sha256": "075698b95018ce0115d1178e2070ad3b1a2155232be815cf9200a71b7e961ee9",
+      "full_file_sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "full_file_digest_fresh": true,
+      "exact_type_counts": {
+        "crt_2b978c46": 47,
+        "creaturedata_0f43029a": 0
+      },
+      "creaturedata_groups": []
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Content.package",
+      "bytes": 995268083,
+      "index_count": 17119,
+      "index_offset": 994788743,
+      "index_bytes": 479340,
+      "index_flags": 4,
+      "examined_entries": 17119,
+      "header96_sha256": "471e3dd2dabbb8452d074334bc51034b063a50d58aac45e0dcf6fb2d1663d03c",
+      "index_sha256": "6d40e0b8a9e156aac8a56d58b5f880d5de055f359464ce195ee40dd050819341",
+      "full_file_sha256": null,
+      "full_file_digest_fresh": false,
+      "exact_type_counts": {
+        "crt_2b978c46": 0,
+        "creaturedata_0f43029a": 1022
+      },
+      "creaturedata_groups": [
+        {
+          "group": "0x40616200",
+          "entries": 44
+        },
+        {
+          "group": "0x40626200",
+          "entries": 758
+        },
+        {
+          "group": "0x40666200",
+          "entries": 153
+        },
+        {
+          "group": "0x406b6200",
+          "entries": 67
+        }
+      ]
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Graphics.package",
+      "bytes": 942881325,
+      "index_count": 24707,
+      "index_offset": 942189521,
+      "index_bytes": 691804,
+      "index_flags": 4,
+      "examined_entries": 24707,
+      "header96_sha256": "0ab1f43303b6d32436d919419b57db9656df67f077790d58a3f190448d8fbd97",
+      "index_sha256": "bfc7feb82d2d3a17a828f20e0d1ad924fea94426808490e586ee3225c1240595",
+      "full_file_sha256": null,
+      "full_file_digest_fresh": false,
+      "exact_type_counts": {
+        "crt_2b978c46": 0,
+        "creaturedata_0f43029a": 0
+      },
+      "creaturedata_groups": []
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Pack_03.package",
+      "bytes": 9580183,
+      "index_count": 266,
+      "index_offset": 9572727,
+      "index_bytes": 7456,
+      "index_flags": 4,
+      "examined_entries": 266,
+      "header96_sha256": "2cbb82309f9fc2a58896e0d12f90e58de8ccc44ab3bb2aeb088708a18aa34a2c",
+      "index_sha256": "017e552e3e862d291de7c31558e4c5add1d0924f11159d936774564b85bfb31b",
+      "full_file_sha256": null,
+      "full_file_digest_fresh": false,
+      "exact_type_counts": {
+        "crt_2b978c46": 0,
+        "creaturedata_0f43029a": 0
+      },
+      "creaturedata_groups": []
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Audio1.package",
+      "bytes": 1019011830,
+      "index_count": 17651,
+      "index_offset": 1018588194,
+      "index_bytes": 423636,
+      "index_flags": 6,
+      "examined_entries": 17651,
+      "header96_sha256": "b4db95a03badc5e7967b7315f5438b682a63ce0f98086d43f3167c84066c6272",
+      "index_sha256": "842a91473974e736a0991cc65655a2989bd82ce0d05563cb211a64e303bf298d",
+      "full_file_sha256": null,
+      "full_file_digest_fresh": false,
+      "exact_type_counts": {
+        "crt_2b978c46": 0,
+        "creaturedata_0f43029a": 0
+      },
+      "creaturedata_groups": []
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Audio2.package",
+      "bytes": 1021382650,
+      "index_count": 12111,
+      "index_offset": 1021043534,
+      "index_bytes": 339116,
+      "index_flags": 4,
+      "examined_entries": 12111,
+      "header96_sha256": "7623a51224dfca5c0f966aae85616f7dfe3693e864ff157257c79436908e45f9",
+      "index_sha256": "070acd28e4a3f6acf9a13fb03205eec8447a1767524eb160f8ffbdde71dc298e",
+      "full_file_sha256": null,
+      "full_file_digest_fresh": false,
+      "exact_type_counts": {
+        "crt_2b978c46": 0,
+        "creaturedata_0f43029a": 0
+      },
+      "creaturedata_groups": []
+    }
+  ],
+  "selected_resources": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x2b978c46",
+        "group": "0x40626200",
+        "instance": "0x135ff099"
+      },
+      "offset": 12462817,
+      "stored_bytes": 787,
+      "memory_bytes": 2421,
+      "compression": 65535,
+      "stored_sha256": "eee667fbc6514dd1f4e0fb5cb6f3799d43626ba755326c415f9ad6d1178293c8",
+      "decoded_sha256": "865492e657490559cdaa9579cabc0540bf411a18845c435fa63bb011625dff9a",
+      "raw_prefix64": "3c3f786d6c2076657273696f6e3d22312e302220656e636f64696e673d225554462d38223f3e3c73706f72656d6f64656c3e0d0a20203c666f726d6174766572",
+      "metadata": {
+        "root_tag": "sporemodel",
+        "formatversion_raw": "16",
+        "modeltype_raw": "0x9ea3031a",
+        "declared_blocks": 3,
+        "blocks": [
+          {
+            "block_array_index": 0,
+            "blockid_raw": "0x40626000, 0xd05c53a3",
+            "child_array_indices": [
+              1
+            ],
+            "transform_fields": [
+              "scale",
+              "position",
+              "triangledirection",
+              "trianglepickorigin",
+              "orientation"
+            ],
+            "scale_raw": "0.666074",
+            "position_raw": "0,-0.0462407,0.333077",
+            "snapped_raw": "false"
+          },
+          {
+            "block_array_index": 1,
+            "blockid_raw": "0x40626000, 0xd05c53a3",
+            "child_array_indices": [
+              2
+            ],
+            "transform_fields": [
+              "scale",
+              "position",
+              "triangledirection",
+              "trianglepickorigin",
+              "orientation"
+            ],
+            "scale_raw": "0.824338",
+            "position_raw": "0,0.0560771,0.287781",
+            "snapped_raw": "false"
+          },
+          {
+            "block_array_index": 2,
+            "blockid_raw": "0x40626000, 0xd05c53a3",
+            "child_array_indices": [],
+            "transform_fields": [
+              "scale",
+              "position",
+              "triangledirection",
+              "trianglepickorigin",
+              "orientation"
+            ],
+            "scale_raw": "0.591213",
+            "position_raw": "0,0.158385,0.243237",
+            "snapped_raw": "false"
+          }
+        ],
+        "inspected_XML_nodes": 56,
+        "classification": "Three vertebra asset references only; not a full multi-organ Creature proof.",
+        "full_XML_exported": false,
+        "runtime_bones_derived": false
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x2b978c46",
+        "group": "0x40626200",
+        "instance": "0x135ff099"
+      },
+      "offset": 7995779,
+      "stored_bytes": 787,
+      "memory_bytes": 2421,
+      "compression": 65535,
+      "stored_sha256": "eee667fbc6514dd1f4e0fb5cb6f3799d43626ba755326c415f9ad6d1178293c8",
+      "decoded_sha256": "865492e657490559cdaa9579cabc0540bf411a18845c435fa63bb011625dff9a",
+      "raw_prefix64": "3c3f786d6c2076657273696f6e3d22312e302220656e636f64696e673d225554462d38223f3e3c73706f72656d6f64656c3e0d0a20203c666f726d6174766572",
+      "metadata": {
+        "root_tag": "sporemodel",
+        "formatversion_raw": "16",
+        "modeltype_raw": "0x9ea3031a",
+        "declared_blocks": 3,
+        "blocks": [
+          {
+            "block_array_index": 0,
+            "blockid_raw": "0x40626000, 0xd05c53a3",
+            "child_array_indices": [
+              1
+            ],
+            "transform_fields": [
+              "scale",
+              "position",
+              "triangledirection",
+              "trianglepickorigin",
+              "orientation"
+            ],
+            "scale_raw": "0.666074",
+            "position_raw": "0,-0.0462407,0.333077",
+            "snapped_raw": "false"
+          },
+          {
+            "block_array_index": 1,
+            "blockid_raw": "0x40626000, 0xd05c53a3",
+            "child_array_indices": [
+              2
+            ],
+            "transform_fields": [
+              "scale",
+              "position",
+              "triangledirection",
+              "trianglepickorigin",
+              "orientation"
+            ],
+            "scale_raw": "0.824338",
+            "position_raw": "0,0.0560771,0.287781",
+            "snapped_raw": "false"
+          },
+          {
+            "block_array_index": 2,
+            "blockid_raw": "0x40626000, 0xd05c53a3",
+            "child_array_indices": [],
+            "transform_fields": [
+              "scale",
+              "position",
+              "triangledirection",
+              "trianglepickorigin",
+              "orientation"
+            ],
+            "scale_raw": "0.591213",
+            "position_raw": "0,0.158385,0.243237",
+            "snapped_raw": "false"
+          }
+        ],
+        "inspected_XML_nodes": 56,
+        "classification": "Three vertebra asset references only; not a full multi-organ Creature proof.",
+        "full_XML_exported": false,
+        "runtime_bones_derived": false
+      }
+    },
+    {
+      "package": "Spore_Content.package",
+      "key": {
+        "type": "0x0f43029a",
+        "group": "0x406b6200",
+        "instance": "0x2a56398b"
+      },
+      "offset": 556639159,
+      "stored_bytes": 272,
+      "memory_bytes": 386,
+      "compression": 65535,
+      "stored_sha256": "86e549899cadda9de925a7b046a0bffdc54d5356369e6d5e21739660a38f5f42",
+      "decoded_sha256": "9be51f5d094fe5fedf37058e1d5b3818089ab337f74c98f0bc3deeeede1fb9e9",
+      "raw_prefix64": "b755b4ab090000000200000002000000000000004600893ed7bc00fe0316868cd48fa348cfa59153dd341200002683090040073784c5c5453fc5c5453fc5c545",
+      "metadata": {
+        "magic_raw": "0xabb455b7",
+        "version": 9,
+        "count_words": [
+          2,
+          2,
+          0
+        ],
+        "header_decoded_offset": 0,
+        "raw_header_bytes": "b755b4ab09000000020000000200000000000000",
+        "first_buffer_size_word_offset": 20,
+        "first_buffer_bytes": 70,
+        "first_buffer_token_output_count": 128,
+        "community_expected_properties_bytes": 68,
+        "complete_decode_status": "not-established",
+        "diagnostic": "FX expected68bytes differs from first chunk token output; literal read uses buffer[0]. No original full decoder inferred.",
+        "conditional_alignment": {
+          "assumption": "First whole chunk ends properties; no reliable properties decode established.",
+          "rigblock_bytes_start": 92,
+          "capability_bytes_start": 372,
+          "calculated_end": 386,
+          "actual_bytes": 386,
+          "end_matches": true,
+          "tag_byte_candidates": [
+            {
+              "offset": 372,
+              "raw": "6c696d62",
+              "ascii_candidate": "limb"
+            },
+            {
+              "offset": 376,
+              "raw": "7370696e",
+              "ascii_candidate": "spin"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Content.package",
+      "key": {
+        "type": "0x0f43029a",
+        "group": "0x40626200",
+        "instance": "0x067b1055"
+      },
+      "offset": 322373162,
+      "stored_bytes": 809,
+      "memory_bytes": 1573,
+      "compression": 65535,
+      "stored_sha256": "ff806657a4b58fd5fdbff3c59d47b06b7dcc45e313e345276532075b94b67449",
+      "decoded_sha256": "b44d338a1a107210f3898496b9e6ac037c66133e78c96d1718c753884753ff6a",
+      "raw_prefix64": "b755b4ab0900000008000000100000001700000047001a03a39ec0000000090854958fa348cfa59153ddd2040000b30b0000001f00007c81013fa7b1313fa7b1",
+      "metadata": {
+        "magic_raw": "0xabb455b7",
+        "version": 9,
+        "count_words": [
+          8,
+          16,
+          23
+        ],
+        "header_decoded_offset": 0,
+        "raw_header_bytes": "b755b4ab09000000080000001000000017000000",
+        "first_buffer_size_word_offset": 20,
+        "first_buffer_bytes": 71,
+        "first_buffer_token_output_count": 128,
+        "community_expected_properties_bytes": 68,
+        "complete_decode_status": "not-established",
+        "diagnostic": "FX expected68bytes differs from first chunk token output; literal read uses buffer[0]. No original full decoder inferred.",
+        "conditional_alignment": {
+          "assumption": "First whole chunk ends properties; no reliable properties decode established.",
+          "rigblock_bytes_start": 93,
+          "capability_bytes_start": 1213,
+          "calculated_end": 1573,
+          "actual_bytes": 1573,
+          "end_matches": true,
+          "tag_byte_candidates": [
+            {
+              "offset": 1213,
+              "raw": "7370696e",
+              "ascii_candidate": "spin"
+            },
+            {
+              "offset": 1217,
+              "raw": "7370696e",
+              "ascii_candidate": "spin"
+            },
+            {
+              "offset": 1221,
+              "raw": "7370696e",
+              "ascii_candidate": "spin"
+            },
+            {
+              "offset": 1225,
+              "raw": "7370696e",
+              "ascii_candidate": "spin"
+            },
+            {
+              "offset": 1229,
+              "raw": "7370696e",
+              "ascii_candidate": "spin"
+            },
+            {
+              "offset": 1233,
+              "raw": "6361726e",
+              "ascii_candidate": "carn"
+            },
+            {
+              "offset": 1237,
+              "raw": "6d6f7574",
+              "ascii_candidate": "mout"
+            },
+            {
+              "offset": 1241,
+              "raw": "62697465",
+              "ascii_candidate": "bite"
+            },
+            {
+              "offset": 1245,
+              "raw": "766f6361",
+              "ascii_candidate": "voca"
+            },
+            {
+              "offset": 1249,
+              "raw": "63616c6c",
+              "ascii_candidate": "call"
+            },
+            {
+              "offset": 1253,
+              "raw": "6579636c",
+              "ascii_candidate": "eycl"
+            },
+            {
+              "offset": 1257,
+              "raw": "65796500",
+              "ascii_candidate": "eye"
+            },
+            {
+              "offset": 1261,
+              "raw": "73656e73",
+              "ascii_candidate": "sens"
+            },
+            {
+              "offset": 1265,
+              "raw": "6579636c",
+              "ascii_candidate": "eycl"
+            },
+            {
+              "offset": 1269,
+              "raw": "65796500",
+              "ascii_candidate": "eye"
+            },
+            {
+              "offset": 1273,
+              "raw": "73656e73",
+              "ascii_candidate": "sens"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "reused_evidence": [
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-part-definition-observations.json",
+      "sha256": "75f1ea6173d468f87ed18c948ca3e20e4161605057413fdb6574b4ec18fdf355",
+      "read_scope": "Identity and existing evidence summary; no original payload re-read here."
+    },
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-selected-rigblock-metadata.json",
+      "sha256": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e",
+      "read_scope": "Identity and existing evidence summary; no original payload re-read here."
+    },
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-selected-capability-mappings.json",
+      "sha256": "8ede8b3706ab2928b9a205748d350e089859cf0e82ff3da441e6422a12b8a965",
+      "read_scope": "Identity and existing evidence summary; no original payload re-read here."
+    },
+    {
+      "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\local-same-role-selector-observations.json",
+      "sha256": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75",
+      "read_scope": "Identity and existing evidence summary; no original payload re-read here."
+    }
+  ],
+  "coverage": {
+    "all_seven_DBPF_indexes_read": true,
+    "selected_resource_versions": 4,
+    "decoded_bytes_total": 6801,
+    "complete_creature_recipe_to_runtime_chain_recovered": false,
+    "models_curves_or_textures_exported": false
+  },
+  "unknowns": [
+    "Native full creaturedata parsing",
+    "Editable complete Creature instance recipe linked to compiled counterpart",
+    "Stable instance identity and bone/weight/socket compiler",
+    "Effective package resolution and runtime binding"
+  ],
+  "registry": {
+    "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+    "bytes": 2860453,
+    "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+    "selected_id_query": [
+      "0x40626200",
+      "0x406b6200",
+      "0x40666200",
+      "0x40616200",
+      "0x135ff099",
+      "0x2a56398b",
+      "0x067b1055",
+      "0xd05c53a3"
+    ],
+    "matches": [
+      {
+        "line": 31,
+        "raw": "floraModelsFLR~\t0x40666200",
+        "name": "floraModelsFLR~",
+        "id": "0x40666200",
+        "computed_fnv1": "0x0f31a211",
+        "explicit_id": "0x40666200"
+      },
+      {
+        "line": 171,
+        "raw": "creature_editorModel~\t0x40626200",
+        "name": "creature_editorModel~",
+        "id": "0x40626200",
+        "computed_fnv1": "0xcd106aed",
+        "explicit_id": "0x40626200"
+      },
+      {
+        "line": 272,
+        "raw": "A_13",
+        "name": "A_13",
+        "id": "0x135ff099",
+        "computed_fnv1": "0x135ff099",
+        "explicit_id": null
+      },
+      {
+        "line": 1659,
+        "raw": "ce_vertebra",
+        "name": "ce_vertebra",
+        "id": "0xd05c53a3",
+        "computed_fnv1": "0xd05c53a3",
+        "explicit_id": null
+      },
+      {
+        "line": 14100,
+        "raw": "cellModelsCLL~\t0x40616200",
+        "name": "cellModelsCLL~",
+        "id": "0x40616200",
+        "computed_fnv1": "0x9b60c830",
+        "explicit_id": "0x40616200"
+      },
+      {
+        "line": 42889,
+        "raw": "palette_editorModel~\t0x406B6200",
+        "name": "palette_editorModel~",
+        "id": "0x406b6200",
+        "computed_fnv1": "0x1ecf7745",
+        "explicit_id": "0x406B6200"
+      },
+      {
+        "line": 95220,
+        "raw": "cell_editorModel~\t0x40616200",
+        "name": "cell_editorModel~",
+        "id": "0x40616200",
+        "computed_fnv1": "0xbf34449c",
+        "explicit_id": "0x40616200"
+      },
+      {
+        "line": 95224,
+        "raw": "flora_editorModel~\t0x40666200",
+        "name": "flora_editorModel~",
+        "id": "0x40666200",
+        "computed_fnv1": "0xc12156e0",
+        "explicit_id": "0x40666200"
+      },
+      {
+        "line": 99935,
+        "raw": "FE_assembly_taproot",
+        "name": "FE_assembly_taproot",
+        "id": "0x2a56398b",
+        "computed_fnv1": "0x2a56398b",
+        "explicit_id": null
+      }
+    ],
+    "unmatched": [
+      "0x067b1055"
+    ],
+    "interpretation": "Explicit aliases retained; name-only lines matched by lowercase FNV1. Names/groups classify candidates, not stage or runtime use."
+  },
+  "reader_sha256": "9128af5d5a55c25a6d5db8526a90c1013f73f29deb2d6f7cf4c0f8649b02fd3a",
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "2647a5d5f479289adeef1db656e1e637ff992442ef07347d40db54fd567e5ad7",
+    "captured_file_bytes": 27674,
+    "reference_changes": [
+      {
+        "pointer": "/reused_evidence/1/sha256",
+        "captured": "fa54ec5aecc93525de0caba77a16da22ed6464642411dde74c7a1ac26371a8f5",
+        "published": "fc8797a9a50613098d403ff5d9b176dde0a9d2fb6cce3b360ac7c47e66ab821e",
+        "study_file": "evidence/local-selected-rigblock-metadata.json"
+      },
+      {
+        "pointer": "/reused_evidence/2/sha256",
+        "captured": "ea106c9080c19ef332bbf839c942d940b32cab5c3d85f9dfb9998dcf9b463d25",
+        "published": "8ede8b3706ab2928b9a205748d350e089859cf0e82ff3da441e6422a12b8a965",
+        "study_file": "evidence/local-selected-capability-mappings.json"
+      },
+      {
+        "pointer": "/reused_evidence/3/sha256",
+        "captured": "6021335a0b27a63a3f2e296905b0880f368828c445f3408936c0a22cb6ec7c7f",
+        "published": "e38d32423f07487fe99fd4c51ba0a6a446e51d7769cdc417ede382b7d222fd75",
+        "study_file": "evidence/local-same-role-selector-observations.json"
+      }
+    ]
+  }
+}

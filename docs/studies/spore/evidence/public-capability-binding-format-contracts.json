@@ -1,0 +1,1038 @@
+{
+  "schema_version": 1,
+  "kind": "pinned-public-capability-binding-contracts-not-native-implementation",
+  "commits": {
+    "Spore-ModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "SporeModder-FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "scope": {
+    "target": "Spore land Creature editor capability/role/deform binding",
+    "game_executed": false,
+    "game_modified": false,
+    "private_data_read": false,
+    "package_scan_by_this_agent": false,
+    "asset_exported": false,
+    "provider_state": "Prior native-provider gap reused; no setup, install or native function analysis.",
+    "local_scope_warning": "Selected Patch PCTP contains a broad vocabulary; Creature-only scope and its active editor consumer are unconfirmed."
+  },
+  "reused_records": [
+    "public-part-definition-contracts.json",
+    "public-part-deformation-contracts.json",
+    "public-dbpf-prop-format-sources.json"
+  ],
+  "files": [
+    {
+      "path": "src/sporemodder/file/pctp/PCTPConverter.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/pctp/PCTPConverter.java",
+      "bytes": 5754,
+      "sha256": "3c0957824df674e4a4f174d8fa4c6bd8ba1999553a455acb2631fb2e35d6f245",
+      "lines": 183,
+      "read_ranges": [
+        [
+          19,
+          183
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/pctp/PCTPUnit.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/pctp/PCTPUnit.java",
+      "bytes": 12735,
+      "sha256": "d120d5a96020ca8394314731bcd064d55f6a4ae500913d42fcda5c4b6acad7a9",
+      "lines": 387,
+      "read_ranges": [
+        [
+          43,
+          387
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/view/editors/PctpEditor.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/view/editors/PctpEditor.java",
+      "bytes": 1585,
+      "sha256": "c9c584128c8fd9b2477ec1500b713a3b0d6c07f181be73c7785d81d0f715ed50",
+      "lines": 49,
+      "read_ranges": [
+        [
+          19,
+          49
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Graphics/cModelInstanceAnimations.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Graphics/cModelInstanceAnimations.h",
+      "bytes": 1972,
+      "sha256": "be7b85917b23c7b7d9c3f395053a5ed8f25f9c64baea298390f6cfbebab1dfd9",
+      "lines": 74,
+      "read_ranges": [
+        [
+          1,
+          74
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/RenderWare/Animations.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/RenderWare/Animations.h",
+      "bytes": 211,
+      "sha256": "9e481ccda9543ccf58bd81c0dbaf9064d531c9e784e1ae2d4d99d085a7cf1918",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "lines": 101,
+      "read_ranges": [
+        [
+          1,
+          101
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/SourceCode/Anim/Animations.cpp",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Anim/Animations.cpp",
+      "bytes": 1766,
+      "sha256": "5e816fc1fdb35c518a923a62cc78c6757fb61e93c002509ae5c63bc0760c06b0",
+      "lines": 89,
+      "read_ranges": [
+        [
+          1,
+          89
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyKey.java",
+      "bytes": 5513,
+      "sha256": "f126064596ee4758eaa728942f6d1a6ef11d68113ce14e354766228b74f94e7f",
+      "lines": 190,
+      "read_ranges": [
+        [
+          27,
+          99
+        ],
+        [
+          125,
+          189
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyFloat.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyFloat.java",
+      "bytes": 4550,
+      "sha256": "697c4903a959494eed9ea6f0bb61b3fa03960a2d5402534a9e5b8f9f3cffed0a",
+      "lines": 155,
+      "read_ranges": [
+        [
+          38,
+          95
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/ResourceKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/ResourceKey.java",
+      "bytes": 10056,
+      "sha256": "f4ce2c740c1cb104a942bf407b4f8efc5b6999b13a0201da2a78616db85bf859",
+      "lines": 342,
+      "read_ranges": [
+        [
+          38,
+          259
+        ],
+        [
+          266,
+          342
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/HashManager.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/HashManager.java",
+      "bytes": 29592,
+      "sha256": "100685b5c0ea19332bb891abdbc2d061d448246649fb78fe8be786e7a56b0889",
+      "lines": 792,
+      "read_ranges": [
+        [
+          210,
+          228
+        ],
+        [
+          376,
+          466
+        ],
+        [
+          485,
+          503
+        ],
+        [
+          705,
+          735
+        ],
+        [
+          759,
+          792
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "lines": 6368,
+      "read_ranges": [
+        [
+          1350,
+          1350
+        ],
+        [
+          1351,
+          1351
+        ],
+        [
+          1352,
+          1352
+        ],
+        [
+          2795,
+          2795
+        ],
+        [
+          3651,
+          3651
+        ],
+        [
+          3654,
+          3654
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_registry"
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyList.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyList.java",
+      "bytes": 13073,
+      "sha256": "1ad1dc535f0469a4f0336d793e4f8e801f1bed67a14157ca20d906a2d92f386a",
+      "lines": 405,
+      "read_ranges": [
+        [
+          45,
+          80
+        ],
+        [
+          240,
+          335
+        ],
+        [
+          164,
+          172
+        ],
+        [
+          193,
+          201
+        ],
+        [
+          197,
+          205
+        ],
+        [
+          205,
+          213
+        ],
+        [
+          213,
+          221
+        ],
+        [
+          228,
+          236
+        ],
+        [
+          81,
+          150
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/prop/BaseProperty.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/BaseProperty.java",
+      "bytes": 1925,
+      "sha256": "9df154f6f01c774ee050f151eec217c1888f91f4715cc53d99482fd6213a0225",
+      "lines": 54,
+      "read_ranges": [
+        [
+          19,
+          54
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_tool_implementation"
+    },
+    {
+      "path": "Documentation/properties.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/Documentation/properties.txt",
+      "bytes": 186035,
+      "sha256": "f1f93dda12d78f3010c9186604d5b79c0e306e5ef61f82bdcb05e0a52fd233ba",
+      "lines": 4274,
+      "read_ranges": [
+        [
+          884,
+          967
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_property_documentation",
+      "reused_from": "public-part-definition-contracts.json"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/CreatureBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/CreatureBlock.h",
+      "bytes": 4035,
+      "sha256": "958b8dbc70774f76cc47c76654714651a9b33b0c97278bfae1e4f3ceea5c1ca2",
+      "lines": 149,
+      "read_ranges": [
+        [
+          11,
+          77
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration",
+      "reused_from": "public-part-definition-contracts.json"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "pctp_identity_and_header",
+      "source": "PCTPConverter.java",
+      "lines": [
+        [
+          85,
+          101
+        ],
+        [
+          127,
+          129
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "resource_type": "0x7c19aa7a",
+      "format_source": "PCTPUnit.java",
+      "format_lines": [
+        [
+          98,
+          112
+        ]
+      ],
+      "magic_be_u32": "0x70637470",
+      "version_be_i32": [
+        3,
+        4
+      ],
+      "priority": {
+        "version4": "BE f32 at +8",
+        "version3": "absent; +8 is nameCount"
+      },
+      "unknown": "priority ordering/override semantics in original runtime"
+    },
+    {
+      "id": "pctp_v4_record_layout",
+      "source": "PCTPUnit.java",
+      "lines": [
+        [
+          70,
+          88
+        ],
+        [
+          112,
+          159
+        ],
+        [
+          174,
+          208
+        ]
+      ],
+      "evidence": "community_tool_format",
+      "numeric_endian": "BE except four-byte tags",
+      "tag": {
+        "bytes": 4,
+        "physical_order": "reversed ASCII with zero padding",
+        "community_display": "readLEInt then big-endian bytes; converts NUL to spaces",
+        "safe_identity": "retain raw bytes; display conversion is lossy"
+      },
+      "ordered_sections": [
+        {
+          "section": "names",
+          "prefix": "BE i32 count",
+          "record": [
+            "BE i32 ASCII byte length",
+            "exact length ASCII bytes, no NUL terminator",
+            "tag4"
+          ],
+          "minimum_bytes": 8
+        },
+        {
+          "section": "remaps",
+          "prefix": "BE i32 count",
+          "record": [
+            "BE u32 numeric hash",
+            "tag4",
+            "BE signed i32 index"
+          ],
+          "bytes": 12
+        },
+        {
+          "section": "aggregates",
+          "prefix": "BE i32 count",
+          "record": [
+            "tag4 owner",
+            "BE i32 child count",
+            "child count * tag4"
+          ],
+          "minimum_bytes": 8
+        },
+        {
+          "section": "deform roles",
+          "prefix": "BE i32 count",
+          "record": [
+            "tag4 owner",
+            "BE i32 deform count",
+            "deform count * deform16"
+          ],
+          "minimum_bytes": 8
+        },
+        {
+          "section": "deform16",
+          "record": [
+            "BE u32 deformID",
+            "BE f32 raw0",
+            "BE f32 raw1",
+            "BE i32 flags"
+          ],
+          "bytes": 16
+        }
+      ],
+      "unknown": "No section lengths or universal unknown-section skipping contract."
+    },
+    {
+      "id": "pctp_v3_diagnostic",
+      "source": "PCTPUnit.java",
+      "lines": [
+        [
+          104,
+          110
+        ],
+        [
+          153,
+          156
+        ],
+        [
+          202,
+          208
+        ],
+        [
+          359,
+          376
+        ]
+      ],
+      "evidence": "community_tool_inconsistency",
+      "reader": "version >= 3 consumes raw1; record16",
+      "writer": "version > 3 emits raw1; v3 record12",
+      "arg_script": "v3 asks for 3 arguments but proceeds to ID/value/rendered/wrap fields",
+      "safe_policy": "v3 header-only unless an independently established v3 record contract is supplied; do not silently retry layouts"
+    },
+    {
+      "id": "pctp_index_and_producer",
+      "source": "PCTPUnit.java",
+      "lines": [
+        [
+          169,
+          185
+        ],
+        [
+          220,
+          243
+        ],
+        [
+          302,
+          338
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "cap_producer": "cap command records name/tag; mapping.index = insertion order; getFileHash(name)",
+      "remap_producer": "numeric input aliases an existing mapping object found by FNV of target name",
+      "name_writer": "alphabetically sorts names; no mapping.index rewrite shown",
+      "arg_script_consumer": "uses mapping.index to recover compile order",
+      "constraints": [
+        "index is signed",
+        "index is not proven bone/part/channel index",
+        "sorted name-table position is not its demonstrated namespace",
+        "aggregate child list does not establish max/sum ability aggregation"
+      ]
+    },
+    {
+      "id": "pctp_default_and_flag_comment",
+      "source": "PCTPUnit.java",
+      "lines": [
+        [
+          247,
+          265
+        ],
+        [
+          365,
+          376
+        ]
+      ],
+      "evidence": "community_comments_and_arg_script_conversion",
+      "raw0": "default_value (community comment)",
+      "raw1": "default_weight (community comment)",
+      "range_warning": "not actually range",
+      "flags": [
+        {
+          "bit": 0,
+          "mask": "0x1",
+          "arg_script_rendered": 0,
+          "comment": "helper deform"
+        },
+        {
+          "bit": 1,
+          "mask": "0x2",
+          "arg_script_wrap": 1,
+          "comment": "curve wraps mod 1"
+        }
+      ],
+      "zero_bit0_comment": "rendered=1: sent to animation channels",
+      "unknown": [
+        "runtime mixing formula",
+        "units",
+        "other bits",
+        "role-dependent geometric meaning"
+      ]
+    },
+    {
+      "id": "community_pctp_call_chain",
+      "source": "PCTPConverter.java",
+      "lines": [
+        [
+          43,
+          90
+        ],
+        [
+          139,
+          172
+        ]
+      ],
+      "evidence": "actual_community_calls",
+      "calls": [
+        "decode -> new PCTPUnit -> read -> toArgScript",
+        "encode -> generateStream -> process -> write",
+        "packer encode -> parse-error check -> resource type assignment -> writeFile"
+      ],
+      "caution": "Direct file encode overload does not show the packer overload's explicit stream-error check. These calls are tool conversion, not Spore runtime binding."
+    },
+    {
+      "id": "community_editor_consumer",
+      "source": "PctpEditor.java",
+      "lines": [
+        [
+          25,
+          35
+        ]
+      ],
+      "evidence": "actual_community_calls",
+      "calls": [
+        "constructs PCTPUnit and its ArgScript stream",
+        "on parse clears editor unit"
+      ],
+      "unknown": "Original game consumer"
+    },
+    {
+      "id": "capability_property_declarations",
+      "source": "properties.txt",
+      "lines": [
+        [
+          886,
+          889
+        ],
+        [
+          890,
+          930
+        ]
+      ],
+      "evidence": "community_property_documentation",
+      "fields": [
+        {
+          "name": "modelCapabilityToPropFileMap",
+          "type": "keys",
+          "description": "capability ID ! PROP file ID pairs"
+        },
+        {
+          "name": "modelCapabilityAnimKeys",
+          "type": "keys"
+        },
+        {
+          "name": "modelCapabilityDefaultAnimValues",
+          "type": "floats"
+        },
+        {
+          "name": "modelCapabilityDefaultAnimWeights",
+          "type": "floats"
+        },
+        {
+          "name": "modelCapabilityBite",
+          "type": "int32"
+        },
+        {
+          "name": "modelCapabilityStrike",
+          "type": "int32"
+        }
+      ],
+      "unknown": [
+        "fixed descriptor PROP group",
+        "array alignment/mapping rule",
+        "ability-level to role selection rule",
+        "default override order"
+      ]
+    },
+    {
+      "id": "property_numeric_identity",
+      "source": "reg_property.txt",
+      "lines": [
+        [
+          1350,
+          1352
+        ],
+        [
+          2795,
+          2795
+        ],
+        [
+          3651,
+          3651
+        ],
+        [
+          3654,
+          3654
+        ]
+      ],
+      "evidence": "community_registry",
+      "ids": {
+        "modelCapabilityToPropFileMap": "0x047be907",
+        "modelCapabilityAnimKeys": "0x047be908",
+        "modelCapabilityDefaultAnimValues": "0x047be96f",
+        "modelCapabilityDefaultAnimWeights": "0x0684d16c",
+        "modelCapabilityBite": "0xb1c3e5b7",
+        "modelCapabilityStrike": "0xb1c3e5c0"
+      }
+    },
+    {
+      "id": "prop_container_and_producer",
+      "source": "PropertyList.java",
+      "lines": [
+        [
+          55,
+          80
+        ],
+        [
+          84,
+          105
+        ],
+        [
+          167,
+          168
+        ],
+        [
+          196,
+          209
+        ],
+        [
+          228,
+          236
+        ],
+        [
+          249,
+          274
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "header": [
+        "BE i32 propertyCount",
+        "each BE u32 propertyID, BE i16 type, BE i16 flags"
+      ],
+      "array_condition": "(flags & 0x30) != 0 and (flags & 0x40) == 0; then BE i32 count and itemSize",
+      "calls": [
+        "get(name), add(name,property), getOrAdd(name) -> getPropHash",
+        "read -> create(type) -> property.read",
+        "write -> property.write"
+      ],
+      "diagnostics": [
+        "unsupported create(type) can return null in this reader; independent readers must report unknown type",
+        "flag0x40 branch is not a complete safe skip contract",
+        "a bounded array can be retained opaque only when its declared size is itself validated"
+      ]
+    },
+    {
+      "id": "keys_array",
+      "source": "PropertyKey.java",
+      "lines": [
+        [
+          40,
+          42
+        ],
+        [
+          70,
+          88
+        ],
+        [
+          140,
+          188
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "type": "0x20",
+      "item_bytes": 12,
+      "calls": [
+        "read -> ResourceKey.readLE",
+        "write -> ResourceKey.writeLE",
+        "ArgScript keys -> ResourceKey.parse"
+      ],
+      "scalar_padding_bytes": 4
+    },
+    {
+      "id": "float_array",
+      "source": "PropertyFloat.java",
+      "lines": [
+        [
+          38,
+          45
+        ],
+        [
+          74,
+          82
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "type": "0x0d",
+      "item_bytes": 4,
+      "encoding": "BE IEEE754 f32 through default stream readFloats/writeFloats",
+      "warning": "Use count and itemSize from property framing; retain raw float bits and diagnose non-finite values."
+    },
+    {
+      "id": "resource_key_identity",
+      "source": "ResourceKey.java",
+      "lines": [
+        [
+          82,
+          101
+        ],
+        [
+          112,
+          146
+        ],
+        [
+          210,
+          245
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "binary_key_order": [
+        "instance",
+        "type",
+        "group"
+      ],
+      "keys_array_endian": "LE",
+      "text_form": "group!instance.type; absent type parses to zero",
+      "to_prop_map_interpretation": "Documentation uses capabilityID!propfileID: its group/instance roles follow this text syntax, but no native lookup fallback is recovered.",
+      "minimal_local_entry": "Read one already-selected part/property owner containing 0x047be907. Preserve its raw keys; use exact observed instance/type/group or report incomplete lookup. Do not invent group0x40626000 or coerce missing type0 to PROP."
+    },
+    {
+      "id": "hash_namespaces",
+      "source": "HashManager.java",
+      "lines": [
+        [
+          213,
+          220
+        ],
+        [
+          708,
+          735
+        ],
+        [
+          759,
+          792
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "ordinary_file_name": "lowercase FNV-1 with 32-bit overflow",
+      "property_name": "getPropHash uses property registry when known; otherwise FNV",
+      "warning": "Property field ID, capability-name hash, four-byte role, deformID and RW handle/channel IDs are separate representations. Equal labels do not establish equal values."
+    },
+    {
+      "id": "compiled_creature_resource",
+      "source": "cCreatureDataResource.h",
+      "lines": [
+        [
+          15,
+          24
+        ],
+        [
+          52,
+          65
+        ],
+        [
+          76,
+          90
+        ],
+        [
+          96,
+          99
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "resource_type": "0x03e1c247",
+      "rigblock_fields": {
+        "mCapabilityIndex": "int16 start in capabilities vector (comment)",
+        "mMorphsIndex": "int16 start in morphs vector (comment)",
+        "mNumCapabilities": "int8",
+        "mGroupID": "u32",
+        "mInstanceID": "u32"
+      },
+      "vectors": {
+        "mCapabilityIDs": "CapabilityTag chars[4]; comment: PCTP identifiers",
+        "mCapabilityLevels": "int8",
+        "mAnimationIDs": "u32",
+        "mAnimationValues": "float",
+        "mAnimationWeights": "float"
+      },
+      "read_write": "Declared only; address declarations contain no parsing or binding body",
+      "unknown": [
+        "who populates arrays",
+        "whether animation vectors are always zipped",
+        "morph slice length",
+        "level aggregation",
+        "binary serialization",
+        "which PCTP is selected"
+      ]
+    },
+    {
+      "id": "runtime_capability_slots",
+      "source": "CreatureBlock.h",
+      "lines": [
+        [
+          11,
+          42
+        ],
+        [
+          44,
+          77
+        ]
+      ],
+      "evidence": "reused_community_native_declaration",
+      "fields": [
+        "capFlags",
+        "capLvlFlags",
+        "capabilities[32] (comment: PCTPCapability*)",
+        "capLevels[32]"
+      ],
+      "unknown": "PCTPCapability definition, population, lifetime and native action selection not recovered"
+    },
+    {
+      "id": "model_animation_declared_boundary",
+      "source": "cModelInstanceAnimations.h",
+      "lines": [
+        [
+          15,
+          18
+        ],
+        [
+          34,
+          56
+        ]
+      ],
+      "evidence": "community_native_declaration_and_comments",
+      "fields": [
+        "mAnimationGroups",
+        "mSkeletonsInK",
+        "mBlendShapeConfig",
+        "mAnimNames: pair<uint32_t,RenderWare::KeyframeAnim>",
+        "mpRenderWare"
+      ],
+      "comments": "mAnimNames related to morph handles; keyframe processing may fill SkinMatrixBuffer",
+      "unknown": "No examined function body consumes PCTP or the four capability properties; comments do not recover execution."
+    },
+    {
+      "id": "rw_animation_collection",
+      "source": "Animations.h",
+      "lines": [
+        [
+          7,
+          12
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "KeyframeAnim* mpAnims",
+        "int mSize"
+      ],
+      "type": "0x00ff0001",
+      "unknown": "No capability binding consumer body"
+    },
+    {
+      "id": "examined_animation_cpp_limit",
+      "source": "Animations.cpp",
+      "lines": [
+        [
+          9,
+          89
+        ]
+      ],
+      "evidence": "community_source_coverage",
+      "observed": "Reference counting and idle/walk ID helpers; no PCTP/capability-array consumer in this examined file.",
+      "warning": "This does not prove consumers absent elsewhere."
+    }
+  ],
+  "independent_safe_reader_requirements": {
+    "classification": "independent proposed validation, not original behavior",
+    "v4": [
+      "check magic and exact version",
+      "before each allocation require nonnegative count/length and count*minimum <= bytes remaining",
+      "bound cumulative ASCII length and records to resource bytes",
+      "retain duplicate records in order before semantic validation",
+      "preserve reversed raw tags and NUL padding",
+      "preserve signed mapping index and float bit patterns",
+      "diagnose duplicate/conflicting hash remaps and unresolved/cyclic aggregate references",
+      "retain unknown flag bits",
+      "require exact resource end or record trailing-byte diagnostic"
+    ],
+    "excluded_inferences": [
+      "mapping index as bone index",
+      "aggregate as gameplay level sum/max",
+      "raw defaults as allowed range",
+      "global deformID as unique semantic name",
+      "memory-layout offsets as on-disk serialization"
+    ]
+  },
+  "parent_reported_local_observations": {
+    "evidence": "Parent report only; byte hashes/offset coverage belong to parent's local evidence record.",
+    "patch_v4": {
+      "key": "7c19aa7a:000082d0:142d3338",
+      "decoded_bytes": 4961,
+      "priority": 2,
+      "counts": {
+        "names": 88,
+        "remaps": 168,
+        "aggregates": 8,
+        "deform_roles": 20
+      },
+      "exact_end": 4961,
+      "remaps": [
+        {
+          "hash": "0xdd204963",
+          "name": "grasper",
+          "tag": "grsp",
+          "index": 8
+        },
+        {
+          "hash": "0x3c2a2452",
+          "name": "mouth",
+          "tag": "mout",
+          "index": 11
+        }
+      ],
+      "shared_deform_example": {
+        "id": "0x89e06a31",
+        "grsp": [
+          0.5,
+          1
+        ],
+        "mout": [
+          0,
+          1
+        ]
+      },
+      "warning": "Broad editor vocabulary; active land Creature consumer and context selection unconfirmed."
+    },
+    "game_v3": {
+      "key": "7c19aa7a:00006f14:f8ccfe08",
+      "decoded_bytes": 3475,
+      "offset8_be_u32": 60,
+      "coverage": "header only; no second-float layout assumption"
+    }
+  },
+  "evidence_flow": {
+    "established": [
+      "community PCTP text producer -> binary reader/writer -> tool text consumer",
+      "numeric remap -> four-byte role and signed compile-order index",
+      "role -> deform ID/default/flag records",
+      "SDK compiled creature declares role/level and animation/default vectors"
+    ],
+    "partial_bridge": "Parent reports selected hand modelRigBlockType.instance 0xdd204963 matching selected PCTP grasper remap. This is a selected cross-resource value match, not a complete binding algorithm.",
+    "unrecovered": [
+      "native property/PCTP lookup",
+      "capability descriptor PROP selection",
+      "construction of PCTPCapability slots",
+      "level aggregation and animator selection",
+      "default/application/blending order",
+      "role/deform IDs to RW handle channels"
+    ]
+  },
+  "verification": {
+    "game_runtime_tests_run": false,
+    "reason": "Readonly public format study; original runtime/provider scope unchanged.",
+    "source_and_json_checks": {
+      "status": "pass",
+      "checks": [
+        "UTF8 JSON parse",
+        "unique pinned source URLs",
+        "SHA256 shape and read ranges",
+        "all contract locators covered",
+        "reused source hashes match prior manifest",
+        "tag reversal and 12/16-byte record arithmetic",
+        "ASCII capability FNV examples",
+        "unique contract IDs"
+      ],
+      "source_count": 16,
+      "contract_count": 19,
+      "reused_hash_matches": 3
+    }
+  }
+}

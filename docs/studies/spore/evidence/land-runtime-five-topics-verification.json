@@ -1,0 +1,464 @@
+{
+  "kind": "five-land-creature-runtime-mapping-study-not-game-runtime",
+  "status": "passed",
+  "modules": [
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "test_suites": [
+    {
+      "id": "recipe_gaze",
+      "path": "checks/verify_creature_recipe_and_gaze_examples.py",
+      "passed": 42,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "{\"tests_run\": 42, \"failures\": 0, \"errors\": 0, \"status\": \"passed\"}\r\n",
+      "script_sha256": "6db23bbe3aaf6fabe2dc8ab48fbfaac93badd2c369b97925ca569ab649a4b758"
+    },
+    {
+      "id": "animation_clocks",
+      "path": "checks/verify_animation_clock_examples.py",
+      "passed": 35,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "...................................\r\n----------------------------------------------------------------------\r\nRan 35 tests in 0.025s\r\n\r\nOK\r\n{\"kind\": \"independent-animation-clock-examples\", \"tests_run\": 35, \"failures\": 0, \"errors\": 0, \"success\": true, \"counts\": {\"action_visual_clocks\": 20, \"gait_geometry\": 8, \"complete_scenario\": 1, \"reused_evidence\": 6}, \"game_runtime_verified\": false}\r\n",
+      "script_sha256": "0ef156367caefe69d5bcb2d344f33ecc0da62c40f2b946ffa839a163280c0ce8"
+    },
+    {
+      "id": "action_presentation",
+      "path": "checks/verify_action_presentation_examples.py",
+      "passed": 38,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "test_actual_catalog_scope_and_counts (__main__.EvidenceChecks.test_actual_catalog_scope_and_counts) ... ok\r\ntest_actual_disabled_sound_and_scale_flags (__main__.EvidenceChecks.test_actual_disabled_sound_and_scale_flags) ... ok\r\ntest_actual_gain_and_sample_array_counts (__main__.EvidenceChecks.test_actual_gain_and_sample_array_counts) ... ok\r\ntest_alias_and_sound_prop_format_source (__main__.EvidenceChecks.test_alias_and_sound_prop_format_source) ... ok\r\ntest_input_and_reader_identity (__main__.EvidenceChecks.test_input_and_reader_identity) ... ok\r\ntest_component_index_diagnosed (__main__.FormatChecks.test_component_index_diagnosed) ... ok\r\ntest_import_mask_is_7f_not_high_sign_bit (__main__.FormatChecks.test_import_mask_is_7f_not_high_sign_bit) ... ok\r\ntest_import_reference_retains_distinct_pair (__main__.FormatChecks.test_import_reference_retains_distinct_pair) ... ok\r\ntest_null_and_unsupported_negative_separate (__main__.FormatChecks.test_null_and_unsupported_negative_separate) ... ok\r\ntest_partial_import_mask_rejected (__main__.FormatChecks.test_partial_import_mask_rejected) ... ok\r\ntest_reference_outside_namespace_rejected (__main__.FormatChecks.test_reference_outside_namespace_rejected) ... ok\r\ntest_sound_big_endian_pair_and_inactive_volume (__main__.FormatChecks.test_sound_big_endian_pair_and_inactive_volume) ... ok\r\ntest_sound_identity_mismatch_rejected (__main__.FormatChecks.test_sound_identity_mismatch_rejected) ... ok\r\ntest_sound_length_mismatch_rejected (__main__.FormatChecks.test_sound_length_mismatch_rejected) ... ok\r\ntest_sound_nonfinite_rejected (__main__.FormatChecks.test_sound_nonfinite_rejected) ... ok\r\ntest_sound_version_rejected (__main__.FormatChecks.test_sound_version_rejected) ... ok\r\ntest_visual_cycle_diagnosed (__main__.FormatChecks.test_visual_cycle_diagnosed) ... ok\r\ntest_visual_empty_export_is_not_missing (__main__.FormatChecks.test_visual_empty_export_is_not_missing) ... ok\r\ntest_visual_truncated_or_trailing_rejected (__main__.FormatChecks.test_visual_truncated_or_trailing_rejected) ... ok\r\ntest_visual_unsupported_version_rejected (__main__.FormatChecks.test_visual_unsupported_version_rejected) ... ok\r\ntest_detach_retires_follow_but_preserves_world_effect (__main__.OwnPolicyChecks.test_detach_retires_follow_but_preserves_world_effect) ... ok\r\ntest_direction_normalized_independent_of_uniform_scale (__main__.OwnPolicyChecks.test_direction_normalized_independent_of_uniform_scale) ... ok\r\ntest_duplicate_channels_share_semantic_cue (__main__.OwnPolicyChecks.test_duplicate_channels_share_semantic_cue) ... ok\r\ntest_duplicate_voice_id_diagnosed (__main__.OwnPolicyChecks.test_duplicate_voice_id_diagnosed) ... ok\r\ntest_effect_and_sound_slots_are_separate (__main__.OwnPolicyChecks.test_effect_and_sound_slots_are_separate) ... ok\r\ntest_explicit_dual_volley_has_two_ordinals (__main__.OwnPolicyChecks.test_explicit_dual_volley_has_two_ordinals) ... ok\r\ntest_foot_contacts_mix_energy_and_cap_gain (__main__.OwnPolicyChecks.test_foot_contacts_mix_energy_and_cap_gain) ... ok\r\ntest_invalid_audio_numbers_diagnosed (__main__.OwnPolicyChecks.test_invalid_audio_numbers_diagnosed) ... ok\r\ntest_invalid_scale_and_zero_direction_diagnosed (__main__.OwnPolicyChecks.test_invalid_scale_and_zero_direction_diagnosed) ... ok\r\ntest_missing_emitter_does_not_create_effect (__main__.OwnPolicyChecks.test_missing_emitter_does_not_create_effect) ... ok\r\ntest_other_actor_or_time_bucket_not_merged (__main__.OwnPolicyChecks.test_other_actor_or_time_bucket_not_merged) ... ok\r\ntest_presentation_drop_cannot_undo_damage (__main__.OwnPolicyChecks.test_presentation_drop_cannot_undo_damage) ... ok\r\ntest_repeat_contact_serial_is_not_second_step (__main__.OwnPolicyChecks.test_repeat_contact_serial_is_not_second_step) ... ok\r\ntest_socket_scale_and_yaw_applied_once (__main__.OwnPolicyChecks.test_socket_scale_and_yaw_applied_once) ... ok\r\ntest_stale_body_and_binding_rejected (__main__.OwnPolicyChecks.test_stale_body_and_binding_rejected) ... ok\r\ntest_voice_cap_zero_and_bad_input (__main__.OwnPolicyChecks.test_voice_cap_zero_and_bad_input) ... ok\r\ntest_voice_priority_audibility_and_stable_tie (__main__.OwnPolicyChecks.test_voice_priority_audibility_and_stable_tie) ... ok\r\ntest_world_effect_position_does_not_follow_new_root (__main__.OwnPolicyChecks.test_world_effect_position_does_not_follow_new_root) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 38 tests in 0.031s\r\n\r\nOK\r\n",
+      "script_sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc"
+    },
+    {
+      "id": "creature_lod",
+      "path": "checks/verify_creature_lod_examples.py",
+      "passed": 24,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "output": "test_01_hysteresis_high_boundary (__main__.CreatureLODExamples.test_01_hysteresis_high_boundary) ... ok\r\ntest_02_hysteresis_far_boundary_and_teleport (__main__.CreatureLODExamples.test_02_hysteresis_far_boundary_and_teleport) ... ok\r\ntest_03_invalid_lod_keeps_diagnostic (__main__.CreatureLODExamples.test_03_invalid_lod_keeps_diagnostic) ... ok\r\ntest_04_staggered_exact_population_counts (__main__.CreatureLODExamples.test_04_staggered_exact_population_counts) ... ok\r\ntest_05_population_peak_fits_example_budget (__main__.CreatureLODExamples.test_05_population_peak_fits_example_budget) ... ok\r\ntest_06_staggering_spreads_visual_work (__main__.CreatureLODExamples.test_06_staggering_spreads_visual_work) ... ok\r\ntest_07_budget_keeps_mandatory_ai_before_visual (__main__.CreatureLODExamples.test_07_budget_keeps_mandatory_ai_before_visual) ... ok\r\ntest_08_overload_is_explicit_not_lost_mandatory_work (__main__.CreatureLODExamples.test_08_overload_is_explicit_not_lost_mandatory_work) ... ok\r\ntest_09_upgrade_continues_phase_not_restart (__main__.CreatureLODExamples.test_09_upgrade_continues_phase_not_restart) ... ok\r\ntest_10_damage_independent_of_planner_or_visual_cadence (__main__.CreatureLODExamples.test_10_damage_independent_of_planner_or_visual_cadence) ... ok\r\ntest_11_time_jump_visits_intermediate_events (__main__.CreatureLODExamples.test_11_time_jump_visits_intermediate_events) ... ok\r\ntest_12_duplicate_events_no_extra_damage (__main__.CreatureLODExamples.test_12_duplicate_events_no_extra_damage) ... ok\r\ntest_13_dismembered_executor_event_invalidated (__main__.CreatureLODExamples.test_13_dismembered_executor_event_invalidated) ... ok\r\ntest_14_catchup_reject_does_not_consume_time (__main__.CreatureLODExamples.test_14_catchup_reject_does_not_consume_time) ... ok\r\ntest_15_async_pose_rejects_body_or_lod_mismatch (__main__.CreatureLODExamples.test_15_async_pose_rejects_body_or_lod_mismatch) ... ok\r\ntest_16_visual_upgrade_does_not_change_capability_or_cooldown (__main__.CreatureLODExamples.test_16_visual_upgrade_does_not_change_capability_or_cooldown) ... ok\r\ntest_21_lod_roundtrip_rejects_matching_but_old_quality (__main__.CreatureLODExamples.test_21_lod_roundtrip_rejects_matching_but_old_quality) ... ok\r\ntest_22_older_pose_cannot_overwrite_newer_sample (__main__.CreatureLODExamples.test_22_older_pose_cannot_overwrite_newer_sample) ... ok\r\ntest_23_camera_far_actor_promoted_for_actual_combat (__main__.CreatureLODExamples.test_23_camera_far_actor_promoted_for_actual_combat) ... ok\r\ntest_24_committed_projectile_survives_attacker_revision (__main__.CreatureLODExamples.test_24_committed_projectile_survives_attacker_revision) ... ok\r\ntest_17_registry_explicit_ids_and_bare_fnv (__main__.LODReaderExamples.test_17_registry_explicit_ids_and_bare_fnv) ... ok\r\ntest_18_prop_float_values_and_selected_absence (__main__.LODReaderExamples.test_18_prop_float_values_and_selected_absence) ... ok\r\ntest_19_malformed_prop_not_defaulted (__main__.LODReaderExamples.test_19_malformed_prop_not_defaulted) ... ok\r\ntest_20_real_local_lod_values_and_eight_selected_keys (__main__.LODReaderExamples.test_20_real_local_lod_values_and_eight_selected_keys) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 24 tests in 0.022s\r\n\r\nOK\r\n",
+      "script_sha256": "4407295494ee753a05740707b61bd0bbd0092ce99faa3adb044c6e5fe539c2ec"
+    }
+  ],
+  "passed": 139,
+  "independent_scope": {
+    "recipe": 22,
+    "gaze": 20,
+    "action_and_visual_clock": 20,
+    "gait_geometry": 8,
+    "complete_clock_scenario": 1,
+    "reused_clock_evidence": 6,
+    "presentation_format": 15,
+    "presentation_evidence": 5,
+    "presentation_policy": 18,
+    "lod_policy": 20,
+    "lod_reader": 4
+  },
+  "original_game_runtime_tests_run": false,
+  "native_functions_recovered": false,
+  "user_product_implemented": false,
+  "actual_scope": {
+    "module50": {
+      "package_indexes": 7,
+      "new_small_resource_versions": 4,
+      "decoded_resource_bytes": 6801,
+      "Game_Patch_full_hashes_rechecked": true,
+      "other_five_package_whole_hashes_rechecked": false,
+      "complete_original_body_pipeline_established": false
+    },
+    "module51": {
+      "new_game_payload_reads": 0,
+      "ANIM_records_reused": 8,
+      "TLSA_records_reused": 2,
+      "gait6_records_reused": 2,
+      "INFO_nonzero_rows": 48,
+      "event_reference_occurrences": 60,
+      "raw_time_to_seconds_confirmed": false
+    },
+    "module52": {
+      "new_ANIM_payload_reads": 0,
+      "existing_channels_reexamined": 612,
+      "LOOKAT_bit_channels": 9,
+      "all_LOOKAT_primary_caps": "skrs",
+      "original_gaze_algorithm_established": false
+    },
+    "module53": {
+      "new_FX_directories": 6,
+      "all_selected_directories_from": "PatchData.package",
+      "directory_group": "0x40450200",
+      "decoded_directory_bytes": 9033983,
+      "matched_exports": 10,
+      "trace_leaves": 20,
+      "selected_sound_components": 1,
+      "new_audioProp_payloads": 4,
+      "particle_payloads_decoded": false,
+      "waveforms_read": false
+    },
+    "module54": {
+      "selected_existing_PROP_payloads_reread": 8,
+      "Game_Patch_hashes_rechecked": true,
+      "parent_direct_simulation_LOD_values": {
+        "Low": 100,
+        "Med": 75
+      },
+      "native_units_and_schedule_known": false
+    }
+  },
+  "question_results": [
+    {
+      "module": 50,
+      "original": "partially_answered",
+      "finding": "Three-vertebra XML and compiled Creature-group candidate found; attribute-chunk format mismatch preserves complete-decode diagnostic",
+      "independent": "Complete31-part57-bone four-hand six-foot two-head mapping example with identity, weight and detach checks"
+    },
+    {
+      "module": 51,
+      "original": "partially_answered",
+      "finding": "Time encodings and independent API/configuration fields established; native unit/clock conversion unknown",
+      "independent": "Action/visual/gait clocks, segmented event queue, loops, pause, rates and stop"
+    },
+    {
+      "module": 52,
+      "original": "partially_answered",
+      "finding": "Editor-look declarations and hand LOOKAT channels establish entrances, not multi-eye gaze behavior",
+      "independent": "Two-head bounded attention, shared spine arbitration, rate limits and soul/body invalidation"
+    },
+    {
+      "module": 53,
+      "original": "partially_answered",
+      "finding": "Selected event IDs reach10 FX exports/20 leaves and4 audioProp definitions; native dispatch unresolved",
+      "independent": "Presentation cues, source frames, world/follow ownership, foot mix and voice budgeting"
+    },
+    {
+      "module": 54,
+      "original": "partially_answered",
+      "finding": "Separate model/animation/simulation representations and selected100/75 direct values established; actual scheduling unknown",
+      "independent": "100 NPC staggered scheduling, protected authoritative events, LOD hysteresis and async epoch rejection"
+    }
+  ],
+  "not_performed": [
+    "Original game startup, attach or native consumer tracing: matching callable REA/provider remains unavailable and existing launcher lacks built runtime",
+    "Private save reads or complete proprietary asset/audio export",
+    "User game implementation: no user product repository supplied",
+    "Original runtime or CPU/GPU/audio measurements and full3D scene validation",
+    "Repository production build/tests: research documents/readers/examples only",
+    "Install/configuration changes, target modifications, Git writes or automations"
+  ],
+  "remaining_risks": [
+    "Community declarations and historical designs are not aligned to every local native consumer",
+    "The original complete-body pipeline was not recovered, and compiled-data candidate alignment is conditional",
+    "Original time/LOD units, multi-organ target control and audio/FX consumers remain unknown",
+    "Independent sequential examples do not establish generic3D, concurrency, real-time cost or product balance"
+  ],
+  "workflow_diagnostics": [
+    "Two worker dispatch capacity failures were resolved by retrying the same authorized scopes without changing models",
+    "Fixed public-source reads recovered through official read-only network escalation after cache/DNS failures; no approval rejection",
+    "A shared multi-file index patch used a wrong module09 header; validation failed before writes, bounded inspection confirmed no partial change, then corrected exact context",
+    "Research fixture and source-query corrections are preserved in each module; game data were not patched",
+    "Module50/52 final rerun output was placed at an explicit workspace runtime-output path to avoid per-shell temp-location ambiguity"
+  ],
+  "timezone": "America/Los_Angeles",
+  "verified_at": "2026-10-13T00:31:16.111173-07:00",
+  "structure": {
+    "markdown_files": 57,
+    "relative_file_links": 548,
+    "json_files_including_this_record": 105,
+    "fence_blocks_both_styles": 225,
+    "utf8_fences_and_relative_file_links": true,
+    "internal_anchors_checked": false,
+    "remote_urls_revalidated_by_this_scan": false,
+    "errors": []
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 27078,
+      "sha256": "101917070e8e75ed087f7c03b2104487c30de46a17ca3bd3c7502badb2526ed1"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 13665,
+      "sha256": "3dd538005381557861e3828c45b01294e37a5ac4a3a47dbb33a8484600957581"
+    },
+    {
+      "path": "09-related-systems-and-verification.md",
+      "bytes": 6478,
+      "sha256": "3d402e85f89f5ba8fa205a79ee661f34f9b6803d253d8d6368fb86367ae085ab"
+    },
+    {
+      "path": "12-body-recipes-and-runtime-reconstruction.md",
+      "bytes": 7155,
+      "sha256": "be097ad5208219c565f4e78f6c1ea89b3d8546a82354a2bac0bb1422f0fc4d2e"
+    },
+    {
+      "path": "50-complete-creature-recipe-runtime-bones-and-bindings.md",
+      "bytes": 16090,
+      "sha256": "8dbecec934bdc073c8473c6a86e292cfebd0793a858c4421a3599f992eaf7154"
+    },
+    {
+      "path": "51-ability-animation-clocks-and-gait-synchronization.md",
+      "bytes": 20287,
+      "sha256": "7600d39679fa1d25182fe32590df8fd9fac739a35338871c62a5b379d528b3ab"
+    },
+    {
+      "path": "52-gaze-head-orientation-and-multi-organ-attention.md",
+      "bytes": 14601,
+      "sha256": "4af2331084637d5840b6be4e467f35ac9fb4aac21f580fae44e19f8d8a045889"
+    },
+    {
+      "path": "53-action-effects-audio-resources-and-presentation-ownership.md",
+      "bytes": 14689,
+      "sha256": "cd2390973be44ba3f664e14bde3dd860b1c129ed185246a71138b0be17b53ac3"
+    },
+    {
+      "path": "54-creature-population-animation-and-simulation-lod.md",
+      "bytes": 17807,
+      "sha256": "4ab19699e3110733325362e67b0e5b23d04bcc22ebb2e49a3402d2d7e3795c45"
+    },
+    {
+      "path": "checks/read_creature_recipe_and_gaze_metadata.py",
+      "bytes": 12346,
+      "sha256": "9128af5d5a55c25a6d5db8526a90c1013f73f29deb2d6f7cf4c0f8649b02fd3a"
+    },
+    {
+      "path": "checks/verify_creature_recipe_and_gaze_examples.py",
+      "bytes": 19842,
+      "sha256": "6db23bbe3aaf6fabe2dc8ab48fbfaac93badd2c369b97925ca569ab649a4b758"
+    },
+    {
+      "path": "checks/verify_animation_clock_examples.py",
+      "bytes": 19292,
+      "sha256": "0ef156367caefe69d5bcb2d344f33ecc0da62c40f2b946ffa839a163280c0ce8"
+    },
+    {
+      "path": "checks/read_action_presentation_resources.py",
+      "bytes": 18844,
+      "sha256": "794b6a7243c1bf8b13be057ef1823f76474bcdd870217d02d7ad1beac87f1117"
+    },
+    {
+      "path": "checks/verify_action_presentation_examples.py",
+      "bytes": 13179,
+      "sha256": "e7d73f8549c0743df6155415ade7f34fe429d9455cf2673290533ded2a2e12fc"
+    },
+    {
+      "path": "checks/read_selected_creature_lod_properties.py",
+      "bytes": 4929,
+      "sha256": "398e1b9893e8e3086f530ea3287610cb3288611593f0473a7823c2c97b60a02a"
+    },
+    {
+      "path": "checks/verify_creature_lod_examples.py",
+      "bytes": 12739,
+      "sha256": "4407295494ee753a05740707b61bd0bbd0092ce99faa3adb044c6e5fe539c2ec"
+    },
+    {
+      "path": "evidence/complete-creature-recipe-observations.json",
+      "bytes": 28256,
+      "sha256": "242eda17fd17c100fd241c0784695b2b5a4425cb3c82589a3eb33a6a5290b7fa"
+    },
+    {
+      "path": "evidence/gaze-head-attention-observations.json",
+      "bytes": 30632,
+      "sha256": "a8a1261ed838023b050b3c628bb65073148c69982fe3aa4ec40a96f99e8a6736"
+    },
+    {
+      "path": "evidence/creature-recipe-and-gaze-verification.json",
+      "bytes": 33095,
+      "sha256": "92a5d346ceef5a7c1538a2a321f22cd4e7686b4f5cba1a28b0299a1aa5a0a267"
+    },
+    {
+      "path": "evidence/public-animation-clock-contracts.json",
+      "bytes": 22526,
+      "sha256": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9"
+    },
+    {
+      "path": "evidence/animation-clock-verification.json",
+      "bytes": 8347,
+      "sha256": "65524e635da3cd9a6e19f9b612290bcc45b1e86a68fae33c3b2249c03d633dfa"
+    },
+    {
+      "path": "evidence/public-action-presentation-contracts.json",
+      "bytes": 95808,
+      "sha256": "19c7ae6fca1b583cab8d0573c3480d557cc20c8d917963956119a5c71b34ae98"
+    },
+    {
+      "path": "evidence/local-selected-action-presentation-resources.json",
+      "bytes": 214128,
+      "sha256": "43de285ee3832099ff0b462069688016073901a31cd4ad15921a6c36682f26e5"
+    },
+    {
+      "path": "evidence/action-presentation-verification.json",
+      "bytes": 9373,
+      "sha256": "ca33a8a8f5a26940c56884361b3dbceab253b77e297fafcdbb42a7baed657c7f"
+    },
+    {
+      "path": "evidence/public-creature-lod-contracts.json",
+      "bytes": 26595,
+      "sha256": "803bb94f2ce9485a069891d76a79eb6a2300a1e02c1d7aa982ea6b490ef329a5"
+    },
+    {
+      "path": "evidence/local-selected-creature-lod-properties.json",
+      "bytes": 14709,
+      "sha256": "9f095176d4f289a9bda3308438b0c715c8fb9d4cedf44723eba688ab1e5ba325"
+    },
+    {
+      "path": "evidence/creature-lod-verification.json",
+      "bytes": 3909,
+      "sha256": "f834156478ac72f70125e502f933dab975ed2722c4d8c05440aa30225ebd0f2d"
+    }
+  ],
+  "limitations": "139 is only this delivery's research-reader/evidence and independent-example test total. Earlier117/111 and original-game runtime checks are not included.",
+  "frozen_identity_checks": {
+    "checked": 8,
+    "passed": 8
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "7aa6c0f7f979406a2a70038ac4d04e1580b881b25bfa397a42de5a1bc15f6863",
+    "captured_file_bytes": 20973,
+    "reference_changes": [
+      {
+        "pointer": "/files/16/sha256",
+        "captured": "2647a5d5f479289adeef1db656e1e637ff992442ef07347d40db54fd567e5ad7",
+        "published": "242eda17fd17c100fd241c0784695b2b5a4425cb3c82589a3eb33a6a5290b7fa",
+        "study_file": "evidence/complete-creature-recipe-observations.json"
+      },
+      {
+        "pointer": "/files/16/bytes",
+        "captured": 27674,
+        "published": 28256,
+        "study_file": "evidence/complete-creature-recipe-observations.json"
+      },
+      {
+        "pointer": "/files/17/sha256",
+        "captured": "fd5665367bc309e4be68e227e2d505c378412b2b6117afa20e769ca6c74382f8",
+        "published": "a8a1261ed838023b050b3c628bb65073148c69982fe3aa4ec40a96f99e8a6736",
+        "study_file": "evidence/gaze-head-attention-observations.json"
+      },
+      {
+        "pointer": "/files/17/bytes",
+        "captured": 30723,
+        "published": 30632,
+        "study_file": "evidence/gaze-head-attention-observations.json"
+      },
+      {
+        "pointer": "/files/18/sha256",
+        "captured": "baa5f5a8db7153a1df7d86a11c8b6e5bda4fec9533ceaf48a2bc17e7b11c07fa",
+        "published": "92a5d346ceef5a7c1538a2a321f22cd4e7686b4f5cba1a28b0299a1aa5a0a267",
+        "study_file": "evidence/creature-recipe-and-gaze-verification.json"
+      },
+      {
+        "pointer": "/files/18/bytes",
+        "captured": 33695,
+        "published": 33095,
+        "study_file": "evidence/creature-recipe-and-gaze-verification.json"
+      },
+      {
+        "pointer": "/files/19/sha256",
+        "captured": "eb8ec4e34d105dd185f8f11ce5c20eb8e0ca561f4c4ea2cad60be6d03386b5ec",
+        "published": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9",
+        "study_file": "evidence/public-animation-clock-contracts.json"
+      },
+      {
+        "pointer": "/files/19/bytes",
+        "captured": 19574,
+        "published": 22526,
+        "study_file": "evidence/public-animation-clock-contracts.json"
+      },
+      {
+        "pointer": "/files/20/sha256",
+        "captured": "72807fb863db3df6dc095feb3f73f9549ac1f72abd8749e1e11c633169c2b160",
+        "published": "65524e635da3cd9a6e19f9b612290bcc45b1e86a68fae33c3b2249c03d633dfa",
+        "study_file": "evidence/animation-clock-verification.json"
+      },
+      {
+        "pointer": "/files/20/bytes",
+        "captured": 7464,
+        "published": 8347,
+        "study_file": "evidence/animation-clock-verification.json"
+      },
+      {
+        "pointer": "/files/21/sha256",
+        "captured": "3e239a48584a8371221cbcdf02f75008df431f0b5c15f140c37fe4840a5016a3",
+        "published": "19c7ae6fca1b583cab8d0573c3480d557cc20c8d917963956119a5c71b34ae98",
+        "study_file": "evidence/public-action-presentation-contracts.json"
+      },
+      {
+        "pointer": "/files/21/bytes",
+        "captured": 99376,
+        "published": 95808,
+        "study_file": "evidence/public-action-presentation-contracts.json"
+      },
+      {
+        "pointer": "/files/22/sha256",
+        "captured": "bef1eb8fd7f082dea78cfdd095cc489628caefde91afa63a357c150f0ec8bad4",
+        "published": "43de285ee3832099ff0b462069688016073901a31cd4ad15921a6c36682f26e5",
+        "study_file": "evidence/local-selected-action-presentation-resources.json"
+      },
+      {
+        "pointer": "/files/22/bytes",
+        "captured": 220350,
+        "published": 214128,
+        "study_file": "evidence/local-selected-action-presentation-resources.json"
+      },
+      {
+        "pointer": "/files/23/sha256",
+        "captured": "8cb1645bed68bcb947a4474547ad3217a5de548ef7b2782a1461f3f187094282",
+        "published": "ca33a8a8f5a26940c56884361b3dbceab253b77e297fafcdbb42a7baed657c7f",
+        "study_file": "evidence/action-presentation-verification.json"
+      },
+      {
+        "pointer": "/files/23/bytes",
+        "captured": 8065,
+        "published": 9373,
+        "study_file": "evidence/action-presentation-verification.json"
+      },
+      {
+        "pointer": "/files/24/sha256",
+        "captured": "8b3bdc9ef34d7b6e7b54ea24fcdb3aa610ae2fa7706a35c5578a62954cc0625e",
+        "published": "803bb94f2ce9485a069891d76a79eb6a2300a1e02c1d7aa982ea6b490ef329a5",
+        "study_file": "evidence/public-creature-lod-contracts.json"
+      },
+      {
+        "pointer": "/files/24/bytes",
+        "captured": 27641,
+        "published": 26595,
+        "study_file": "evidence/public-creature-lod-contracts.json"
+      },
+      {
+        "pointer": "/files/25/sha256",
+        "captured": "f83e592e20f09a4f702b64ca28e1eb7f4d61bb619ab69e98aef5a3def5a3c5c0",
+        "published": "9f095176d4f289a9bda3308438b0c715c8fb9d4cedf44723eba688ab1e5ba325",
+        "study_file": "evidence/local-selected-creature-lod-properties.json"
+      },
+      {
+        "pointer": "/files/25/bytes",
+        "captured": 15200,
+        "published": 14709,
+        "study_file": "evidence/local-selected-creature-lod-properties.json"
+      },
+      {
+        "pointer": "/files/26/sha256",
+        "captured": "e0da967350d35327e351948be642cbd170e6f784cb5c4f034f72f724f1e83dd7",
+        "published": "f834156478ac72f70125e502f933dab975ed2722c4d8c05440aa30225ebd0f2d",
+        "study_file": "evidence/creature-lod-verification.json"
+      },
+      {
+        "pointer": "/files/26/bytes",
+        "captured": 3285,
+        "published": 3909,
+        "study_file": "evidence/creature-lod-verification.json"
+      }
+    ]
+  }
+}

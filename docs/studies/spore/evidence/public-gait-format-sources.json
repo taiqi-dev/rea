@@ -1,0 +1,728 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "files": [
+    {
+      "path": "src/sporemodder/file/gait/GaitFile.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/gait/GaitFile.java",
+      "sha256": "a2dd59f0ea8eeb3f20a238221bee8afc7b5d508259b42278d42732ff268b2add",
+      "bytes": 3567,
+      "line_count": 121,
+      "selected_declarations": [
+        {
+          "line": 22,
+          "text": "\tpublic void read(StreamReader in) throws IOException {"
+        },
+        {
+          "line": 23,
+          "text": "\t\t//minharmo -> field_4"
+        },
+        {
+          "line": 24,
+          "text": "\t\tif (in.readLEInt() != MAGIC)"
+        },
+        {
+          "line": 25,
+          "text": "\t\t\tthrow new IOException(\"GAIT Error: unexpected MAGIC, file pointer \" + in.getFilePointer());"
+        },
+        {
+          "line": 26,
+          "text": "\t\t"
+        },
+        {
+          "line": 27,
+          "text": "\t\tif (in.readLEInt() != in.length())"
+        },
+        {
+          "line": 28,
+          "text": "\t\t\tthrow new IOException(\"GAIT Error: unexpected file size, file pointer \" + in.getFilePointer());"
+        },
+        {
+          "line": 29,
+          "text": "\t\t"
+        },
+        {
+          "line": 30,
+          "text": "\t\tif (in.readLEInt() != VERSION)"
+        },
+        {
+          "line": 31,
+          "text": "\t\t\tthrow new IOException(\"GAIT Error: unexpected version, file pointer \" + in.getFilePointer());"
+        },
+        {
+          "line": 32,
+          "text": "\t\t"
+        },
+        {
+          "line": 33,
+          "text": "\t\tif (in.readLEInt() != 1)"
+        },
+        {
+          "line": 34,
+          "text": "\t\t\tthrow new IOException(\"GAIT Error: unexpected 1 value, file pointer \" + in.getFilePointer());"
+        },
+        {
+          "line": 35,
+          "text": "\t\t"
+        },
+        {
+          "line": 36,
+          "text": "\t\tint stepLengthKeysCount = in.readLEInt();"
+        },
+        {
+          "line": 37,
+          "text": "\t\tint gaitGroupKeysCount = in.readLEInt();"
+        },
+        {
+          "line": 38,
+          "text": "\t\t"
+        },
+        {
+          "line": 39,
+          "text": "\t\tfor (int i = 0; i < stepLengthKeysCount; i++) {"
+        },
+        {
+          "line": 40,
+          "text": "\t\t\tGaitStepLengthKey stepLengthKey = new GaitStepLengthKey();"
+        },
+        {
+          "line": 41,
+          "text": "\t\t\tstepLengthKey.read(in);"
+        },
+        {
+          "line": 42,
+          "text": "\t\t\tstepLengthKeys.add(stepLengthKey);"
+        },
+        {
+          "line": 43,
+          "text": "\t\t}"
+        },
+        {
+          "line": 44,
+          "text": "\t\t"
+        },
+        {
+          "line": 45,
+          "text": "\t\tfor (int i = 0; i < gaitGroupKeysCount; i++) {"
+        },
+        {
+          "line": 46,
+          "text": "\t\t\tGaitGroupKey gaitGroupKey = new GaitGroupKey();"
+        },
+        {
+          "line": 47,
+          "text": "\t\t\tgaitGroupKey.read(in);"
+        },
+        {
+          "line": 48,
+          "text": "\t\t\tgaitGroupKeys.add(gaitGroupKey);"
+        },
+        {
+          "line": 49,
+          "text": "\t\t}"
+        },
+        {
+          "line": 50,
+          "text": "\t\t"
+        },
+        {
+          "line": 51,
+          "text": "\t}"
+        }
+      ],
+      "selected_structural_declarations": [
+        {
+          "line": 15,
+          "text": "\tprivate static final int VERSION = 11;"
+        },
+        {
+          "line": 16,
+          "text": "\tprivate static final int MAGIC = 0x54494147;  //'GAIT' in little endian"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/gait/GaitGroupKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/gait/GaitGroupKey.java",
+      "sha256": "8ba76588677921c96991f536222cc5bd8f0c2d02da508f3629c51d4fa230f2ee",
+      "bytes": 11111,
+      "line_count": 267,
+      "selected_declarations": [
+        {
+          "line": 53,
+          "text": "\tpublic void read(StreamReader in) throws IOException {"
+        },
+        {
+          "line": 54,
+          "text": "\t\tspeedi = in.readLEFloat();"
+        },
+        {
+          "line": 55,
+          "text": "\t\tstepHeight = in.readLEFloat();"
+        },
+        {
+          "line": 56,
+          "text": "\t\ttaxon = in.readLEInt();"
+        },
+        {
+          "line": 57,
+          "text": "\t\tstepGallop = in.readLEFloat();"
+        },
+        {
+          "line": 58,
+          "text": "\t\tstepPhaseBiasH = in.readLEFloat();"
+        },
+        {
+          "line": 59,
+          "text": "\t\tstepPhaseBiasV = in.readLEFloat();"
+        },
+        {
+          "line": 60,
+          "text": "\t\tstepSkew = in.readLEFloat();"
+        },
+        {
+          "line": 61,
+          "text": "\t\tfootTilt = in.readLEFloat();"
+        },
+        {
+          "line": 62,
+          "text": "\t\ttiltPoint = in.readLEFloat();"
+        },
+        {
+          "line": 63,
+          "text": "\t\ttoeCurlMax = in.readLEFloat();"
+        },
+        {
+          "line": 64,
+          "text": "\t\ttoeCurlBegin = in.readLEFloat();"
+        },
+        {
+          "line": 65,
+          "text": "\t\ttoeCurlEnd = in.readLEFloat();"
+        },
+        {
+          "line": 66,
+          "text": "\t\tswayAmplitude = in.readLEFloat();"
+        },
+        {
+          "line": 67,
+          "text": "\t\tswayPhase = in.readLEFloat();"
+        },
+        {
+          "line": 68,
+          "text": "\t\ttrackWidthReduction = in.readLEFloat();"
+        },
+        {
+          "line": 69,
+          "text": "\t\tverticalPhaseOffset = in.readLEFloat();"
+        },
+        {
+          "line": 70,
+          "text": "\t\tsagittalPhaseOffset = in.readLEFloat();"
+        },
+        {
+          "line": 71,
+          "text": "\t\tlateralPhaseOffset = in.readLEFloat();"
+        },
+        {
+          "line": 72,
+          "text": "\t\tmaxVerticalOffset = in.readLEFloat();"
+        },
+        {
+          "line": 73,
+          "text": "\t\tverticalDist = in.readLEFloat();"
+        },
+        {
+          "line": 74,
+          "text": "\t\twalkRunShape = in.readLEFloat();"
+        },
+        {
+          "line": 75,
+          "text": "\t\tmaxSagittalOffset = in.readLEFloat();"
+        },
+        {
+          "line": 76,
+          "text": "\t\tmaxLateralOffset = in.readLEFloat();"
+        },
+        {
+          "line": 77,
+          "text": "\t\tyawPhaseOffset = in.readLEFloat();"
+        },
+        {
+          "line": 78,
+          "text": "\t\tpitchPhaseOffset = in.readLEFloat();"
+        },
+        {
+          "line": 79,
+          "text": "\t\trollPhaseOffset = in.readLEFloat();"
+        },
+        {
+          "line": 80,
+          "text": "\t\tmaxYawAngle = in.readLEFloat();"
+        },
+        {
+          "line": 81,
+          "text": "\t\tmaxPitchAngle = in.readLEFloat();"
+        },
+        {
+          "line": 82,
+          "text": "\t\tmaxRollAngle = in.readLEFloat();"
+        },
+        {
+          "line": 83,
+          "text": "\t\t"
+        },
+        {
+          "line": 84,
+          "text": "\t\tint taxonCount = in.readLEInt();"
+        },
+        {
+          "line": 85,
+          "text": "\t\tint pathDataCount = in.readLEInt();"
+        },
+        {
+          "line": 86,
+          "text": "\t\tfor (int f = 0; f < taxonCount; f++) {"
+        },
+        {
+          "line": 87,
+          "text": "\t\t\ttriggers.add(in.readLEFloat());"
+        },
+        {
+          "line": 88,
+          "text": "\t\t\tdutyFactors.add(in.readLEFloat());"
+        },
+        {
+          "line": 89,
+          "text": "\t\t}"
+        },
+        {
+          "line": 90,
+          "text": "\t\tfor (int i = 0; i < pathDataCount; i++) {"
+        },
+        {
+          "line": 91,
+          "text": "\t\t\tGaitPathData path = new GaitPathData();"
+        },
+        {
+          "line": 92,
+          "text": "\t\t\tpath.read(in);"
+        },
+        {
+          "line": 93,
+          "text": "\t\t\tpathData.add(path);"
+        },
+        {
+          "line": 94,
+          "text": "\t\t}"
+        },
+        {
+          "line": 95,
+          "text": "\t}"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/gait/GaitStepLengthKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/gait/GaitStepLengthKey.java",
+      "sha256": "226a96f04299ef33e4fd7702c4622fac96d6dbbb4ee6bbdc455883f72ae2f9d2",
+      "bytes": 1646,
+      "line_count": 56,
+      "selected_declarations": [
+        {
+          "line": 18,
+          "text": "\tpublic void read(StreamReader in) throws IOException {"
+        },
+        {
+          "line": 19,
+          "text": "\t\tspeedi = in.readLEFloat();"
+        },
+        {
+          "line": 20,
+          "text": "\t\tstepLength = in.readLEFloat();"
+        },
+        {
+          "line": 21,
+          "text": "\t}"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/gait/GaitPathData.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/gait/GaitPathData.java",
+      "sha256": "e32545e10dab205e2085e2bb2549344780ac14e0aec354e7415fc58d0d76443f",
+      "bytes": 10782,
+      "line_count": 369,
+      "selected_declarations": [
+        {
+          "line": 27,
+          "text": "\t\tpublic void read(StreamReader in) throws IOException"
+        },
+        {
+          "line": 28,
+          "text": "\t\t{"
+        },
+        {
+          "line": 29,
+          "text": "\t\t\tin.readLEFloats(spl);"
+        },
+        {
+          "line": 30,
+          "text": "\t\t\ttanFl[0] = in.readByte();"
+        },
+        {
+          "line": 31,
+          "text": "\t\t\ttanFl[1] = in.readByte();"
+        },
+        {
+          "line": 32,
+          "text": "\t\t\therFl = in.readLEShort();"
+        },
+        {
+          "line": 33,
+          "text": "\t\t\tif (in.readLEInt() != 0xCDCDCDCD) {"
+        },
+        {
+          "line": 34,
+          "text": "\t\t\t\tthrow new IOException(\"GAIT Error: 4th spline param is not 0, file offset: \" + in.getFilePointer());"
+        },
+        {
+          "line": 35,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 36,
+          "text": "\t\t}"
+        },
+        {
+          "line": 54,
+          "text": "\t\tpublic void read(StreamReader in) throws IOException"
+        },
+        {
+          "line": 55,
+          "text": "\t\t{"
+        },
+        {
+          "line": 56,
+          "text": "\t\t\tin.readLEInt();  // vftable"
+        },
+        {
+          "line": 57,
+          "text": "\t\t\ttick = in.readLEInt();"
+        },
+        {
+          "line": 58,
+          "text": "\t\t\tpos.readLE(in);"
+        },
+        {
+          "line": 59,
+          "text": "\t\t\tfor (int i = 0; i < spl.length; i++) {"
+        },
+        {
+          "line": 60,
+          "text": "\t\t\t\tspl[i] = new GaitSplineParams();"
+        },
+        {
+          "line": 61,
+          "text": "\t\t\t\tspl[i].read(in);"
+        },
+        {
+          "line": 62,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 63,
+          "text": "\t\t}"
+        },
+        {
+          "line": 82,
+          "text": "\t\tpublic void read(StreamReader in) throws IOException"
+        },
+        {
+          "line": 83,
+          "text": "\t\t{"
+        },
+        {
+          "line": 84,
+          "text": "\t\t\tin.readLEInt();  // vftable"
+        },
+        {
+          "line": 85,
+          "text": "\t\t\ttick = in.readLEInt();"
+        },
+        {
+          "line": 86,
+          "text": "\t\t\trot.readLE(in);"
+        },
+        {
+          "line": 87,
+          "text": "\t\t\tfor (int i = 0; i < spl.length; i++) {"
+        },
+        {
+          "line": 88,
+          "text": "\t\t\t\tspl[i] = new GaitSplineParams();"
+        },
+        {
+          "line": 89,
+          "text": "\t\t\t\tspl[i].read(in);"
+        },
+        {
+          "line": 90,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 91,
+          "text": "\t\t}"
+        },
+        {
+          "line": 110,
+          "text": "\t\tpublic void read(StreamReader in) throws IOException"
+        },
+        {
+          "line": 111,
+          "text": "\t\t{"
+        },
+        {
+          "line": 112,
+          "text": "\t\t\tin.readLEInt();  // vftable"
+        },
+        {
+          "line": 113,
+          "text": "\t\t\ttick = in.readLEInt();"
+        },
+        {
+          "line": 114,
+          "text": "\t\t\tbnd = in.readLEFloat();"
+        },
+        {
+          "line": 115,
+          "text": "\t\t\tspl.read(in);"
+        },
+        {
+          "line": 116,
+          "text": "\t\t}"
+        },
+        {
+          "line": 131,
+          "text": "\tpublic void read(StreamReader in) throws IOException"
+        },
+        {
+          "line": 132,
+          "text": "\t{"
+        },
+        {
+          "line": 133,
+          "text": "\t\tint numPosKeys = in.readLEInt();"
+        },
+        {
+          "line": 134,
+          "text": "\t\tint numRotKeys = in.readLEInt();"
+        },
+        {
+          "line": 135,
+          "text": "\t\tint numBndKeys = in.readLEInt();"
+        },
+        {
+          "line": 136,
+          "text": "\t\t"
+        },
+        {
+          "line": 137,
+          "text": "\t\tfor (int i = 0; i < numPosKeys; i++) {"
+        },
+        {
+          "line": 138,
+          "text": "\t\t\tGaitPathPosKey key = new GaitPathPosKey();"
+        },
+        {
+          "line": 139,
+          "text": "\t\t\tkey.read(in);"
+        },
+        {
+          "line": 140,
+          "text": "\t\t\tposKeys.add(key);"
+        },
+        {
+          "line": 141,
+          "text": "\t\t}"
+        },
+        {
+          "line": 142,
+          "text": "\t\t"
+        },
+        {
+          "line": 143,
+          "text": "\t\tfor (int i = 0; i < numRotKeys; i++) {"
+        },
+        {
+          "line": 144,
+          "text": "\t\t\tGaitPathRotKey key = new GaitPathRotKey();"
+        },
+        {
+          "line": 145,
+          "text": "\t\t\tkey.read(in);"
+        },
+        {
+          "line": 146,
+          "text": "\t\t\trotKeys.add(key);"
+        },
+        {
+          "line": 147,
+          "text": "\t\t}"
+        },
+        {
+          "line": 148,
+          "text": "\t\t"
+        },
+        {
+          "line": 149,
+          "text": "\t\tfor (int i = 0; i < numBndKeys; i++) {"
+        },
+        {
+          "line": 150,
+          "text": "\t\t\tGaitPathBndKey key = new GaitPathBndKey();"
+        },
+        {
+          "line": 151,
+          "text": "\t\t\tkey.read(in);"
+        },
+        {
+          "line": 152,
+          "text": "\t\t\tbndKeys.add(key);"
+        },
+        {
+          "line": 153,
+          "text": "\t\t}"
+        },
+        {
+          "line": 154,
+          "text": "\t}"
+        }
+      ],
+      "selected_structural_declarations": [
+        {
+          "line": 23,
+          "text": "\t\tpublic final float[] spl = new float[2];"
+        },
+        {
+          "line": 24,
+          "text": "\t\tpublic final int[] tanFl = new int[2];  // byte"
+        },
+        {
+          "line": 25,
+          "text": "\t\tpublic int herFl;  // short"
+        },
+        {
+          "line": 32,
+          "text": "\t\t\therFl = in.readLEShort();"
+        },
+        {
+          "line": 43,
+          "text": "\t\t\tout.writeLEShort(herFl);"
+        },
+        {
+          "line": 52,
+          "text": "\t\tpublic final GaitSplineParams[] spl = new GaitSplineParams[3];"
+        },
+        {
+          "line": 80,
+          "text": "\t\tpublic final GaitSplineParams[] spl = new GaitSplineParams[4];"
+        },
+        {
+          "line": 108,
+          "text": "\t\tpublic final GaitSplineParams spl = new GaitSplineParams();"
+        },
+        {
+          "line": 174,
+          "text": "\t\twriter.command(\"herFl\");"
+        },
+        {
+          "line": 175,
+          "text": "\t\tfor (GaitSplineParams param : params) writer.ints(param.herFl);"
+        },
+        {
+          "line": 341,
+          "text": "\t\t\t\tstream.addParser(\"herFl\", ArgScriptParser.create((parser, line) -> {"
+        },
+        {
+          "line": 361,
+          "text": "\t\t\t\t\t\t\t\tparams[i].herFl = n1.intValue();"
+        }
+      ],
+      "selected_value_declarations": [
+        {
+          "line": 16,
+          "text": "import sporemodder.util.Vector3;"
+        },
+        {
+          "line": 17,
+          "text": "import sporemodder.util.Vector4;"
+        },
+        {
+          "line": 51,
+          "text": "\t\tpublic final Vector3 pos = new Vector3();"
+        },
+        {
+          "line": 52,
+          "text": "\t\tpublic final GaitSplineParams[] spl = new GaitSplineParams[3];"
+        },
+        {
+          "line": 60,
+          "text": "\t\t\t\tspl[i] = new GaitSplineParams();"
+        },
+        {
+          "line": 79,
+          "text": "\t\tpublic final Vector4 rot = new Vector4();"
+        },
+        {
+          "line": 80,
+          "text": "\t\tpublic final GaitSplineParams[] spl = new GaitSplineParams[4];"
+        },
+        {
+          "line": 88,
+          "text": "\t\t\t\tspl[i] = new GaitSplineParams();"
+        },
+        {
+          "line": 108,
+          "text": "\t\tpublic final GaitSplineParams spl = new GaitSplineParams();"
+        },
+        {
+          "line": 241,
+          "text": "\t\t\t\t\tfor (int i = 0; i < key.spl.length; i++) key.spl[i] = new GaitSplineParams(); "
+        },
+        {
+          "line": 246,
+          "text": "\t\t\t\t\tif (line.getArguments(args, 1) && stream.parseVector3(args, 0, values)) {"
+        },
+        {
+          "line": 247,
+          "text": "\t\t\t\t\t\tkey.pos.set(new Vector3(values));"
+        },
+        {
+          "line": 258,
+          "text": "\t\t\t\t\tfor (int i = 0; i < key.spl.length; i++) key.spl[i] = new GaitSplineParams(); "
+        },
+        {
+          "line": 263,
+          "text": "\t\t\t\t\tif (line.getArguments(args, 1) && stream.parseVector4(args, 0, values)) {"
+        },
+        {
+          "line": 264,
+          "text": "\t\t\t\t\t\tkey.rot.set(new Vector4(values));"
+        },
+        {
+          "line": 298,
+          "text": "\t\t\t\t\t\tparams = new GaitSplineParams[] { pathData.bndKeys.get(pathData.bndKeys.size() - 1).spl };"
+        },
+        {
+          "line": 326,
+          "text": "\t\t\t\t\t\tparams = new GaitSplineParams[] { pathData.bndKeys.get(pathData.bndKeys.size() - 1).spl };"
+        },
+        {
+          "line": 354,
+          "text": "\t\t\t\t\t\tparams = new GaitSplineParams[] { pathData.bndKeys.get(pathData.bndKeys.size() - 1).spl };"
+        }
+      ]
+    }
+  ],
+  "scope": "whole files read; binary read methods inspected; exporter not original runtime implementation"
+}

@@ -1,0 +1,1373 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "query": "locomot|steer|avoid|footprint|stopdistance|navigation|pathfind|gait|creature.*(?:speed|radius|walk|run|accel|turn|move)|(?:speed|radius|walk|run|accel|turn|move).*creature",
+  "scope": "whole registries read; selected names only; not runtime evidence",
+  "files": [
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "bytes": 191259,
+      "line_count": 6368,
+      "selected_declarations": [
+        {
+          "line": 158,
+          "text": "creatureAvatarMinMouseRadius\t0x0175AE53"
+        },
+        {
+          "line": 159,
+          "text": "creatureAvatarMaxMouseRadius\t0x0175AE5D"
+        },
+        {
+          "line": 160,
+          "text": "creatureSpeedMediumLODMultiplier\t0x017DC905"
+        },
+        {
+          "line": 303,
+          "text": "cameraEnableTreeAvoidance\t0x019BDD9C"
+        },
+        {
+          "line": 387,
+          "text": "creatureAvatarSpeedMultiplier\t0x01AD0705"
+        },
+        {
+          "line": 594,
+          "text": "creatureAvatarWASDTurningSpeed\t0x02648458"
+        },
+        {
+          "line": 596,
+          "text": "creatureStepEffectMinSpeed\t0x0269988A"
+        },
+        {
+          "line": 606,
+          "text": "creatureAvatarGoalStopDistance\t0x0275B79A"
+        },
+        {
+          "line": 926,
+          "text": "creatureAbilitySpeed\t0x03601C39"
+        },
+        {
+          "line": 1066,
+          "text": "creatureAvatarWASDSlowTurningSpeed\t0x03D03D69"
+        },
+        {
+          "line": 1082,
+          "text": "obstacleUses2DFootprint\t0x03EB2E21"
+        },
+        {
+          "line": 1200,
+          "text": "terrainModelFootprints\t0x043B29E1"
+        },
+        {
+          "line": 1201,
+          "text": "terrainModelFootprintTransforms\t0x043B29E2"
+        },
+        {
+          "line": 1528,
+          "text": "creatureAbilityRushingSpeed\t0x04AB0DAF"
+        },
+        {
+          "line": 1834,
+          "text": "creatureAbilityConeRadius\t0x051DDDDA"
+        },
+        {
+          "line": 2192,
+          "text": "modelOverrideFootprintRadius\t0x0579EF6C"
+        },
+        {
+          "line": 2292,
+          "text": "modelLocomotionHint\t0x05B567D1"
+        },
+        {
+          "line": 2317,
+          "text": "RelationshipEventSpaceAvoidedContact\t0x05B942D0"
+        },
+        {
+          "line": 2608,
+          "text": "modelFootprintVertices\t0x0637D439"
+        },
+        {
+          "line": 3085,
+          "text": "avoidStrangerForce\t0x319C4ADF"
+        },
+        {
+          "line": 3389,
+          "text": "creatureAbilitySpeedGear\t0x73561A8F"
+        },
+        {
+          "line": 3670,
+          "text": "modelCapabilityCreatureSpeed\t0xB354A87C"
+        },
+        {
+          "line": 3778,
+          "text": "avoidEnemyDistance\t0xD19C4ADB"
+        },
+        {
+          "line": 3779,
+          "text": "avoidEnemyForce\t0xD19C4ADC"
+        },
+        {
+          "line": 3780,
+          "text": "avoidStrangerDistance\t0xD19C4ADE"
+        },
+        {
+          "line": 4174,
+          "text": "debugDrawModelFootprints\t0x077b5b17"
+        },
+        {
+          "line": 4227,
+          "text": "maxActiveCreaturePlantRadius\t0x02979cd6"
+        },
+        {
+          "line": 4228,
+          "text": "DistributeRocksAffectPathfindingData\t0x04233e37"
+        },
+        {
+          "line": 4361,
+          "text": "GrassTrampling_AdditionalFootprintRadius\t0x05b58961"
+        },
+        {
+          "line": 4385,
+          "text": "VehicleLocomotionEnum\t0xd6d405ab"
+        },
+        {
+          "line": 4392,
+          "text": "VehicleLocomotionEnum\t0xD6D405AB"
+        },
+        {
+          "line": 4562,
+          "text": "creatureSpeedSliderValues\t0x07cc8a48"
+        },
+        {
+          "line": 4905,
+          "text": "creatureSightRadius"
+        },
+        {
+          "line": 4910,
+          "text": "creatureCallStartRadius"
+        },
+        {
+          "line": 4911,
+          "text": "creatureHealingRadius"
+        },
+        {
+          "line": 4913,
+          "text": "creatureBaseAcceleration"
+        },
+        {
+          "line": 4918,
+          "text": "creatureGlideSpeed"
+        },
+        {
+          "line": 5064,
+          "text": "DefaultCreatureWanderRadius"
+        },
+        {
+          "line": 5194,
+          "text": "GaitBlendTime"
+        },
+        {
+          "line": 5197,
+          "text": "PolypodGaitStyle"
+        },
+        {
+          "line": 5255,
+          "text": "globalCreatureSpeedGear0"
+        },
+        {
+          "line": 5256,
+          "text": "globalCreatureSpeedGear1"
+        },
+        {
+          "line": 5257,
+          "text": "globalCreatureSpeedGear2"
+        },
+        {
+          "line": 5258,
+          "text": "globalCreatureSpeedGear3"
+        },
+        {
+          "line": 5259,
+          "text": "globalCreatureSpeedGear4"
+        },
+        {
+          "line": 5260,
+          "text": "globalCreatureSpeedGear5"
+        },
+        {
+          "line": 5261,
+          "text": "globalCreatureSprintSpeedBoost"
+        },
+        {
+          "line": 5430,
+          "text": "locomotionType"
+        },
+        {
+          "line": 5431,
+          "text": "hasLocomotion"
+        },
+        {
+          "line": 5547,
+          "text": "GaitIsWalkingThreshold"
+        },
+        {
+          "line": 5578,
+          "text": "footprintScale"
+        },
+        {
+          "line": 6048,
+          "text": "creatureMouseMoveGoalDistance"
+        },
+        {
+          "line": 6049,
+          "text": "creatureMouseMoveMinRadius"
+        },
+        {
+          "line": 6051,
+          "text": "creatureMouseHeldMovementThreshold"
+        },
+        {
+          "line": 6053,
+          "text": "creatureMaxPerceptionRadius"
+        },
+        {
+          "line": 6055,
+          "text": "creatureLoudnessSprintingSpeedMultiplier"
+        },
+        {
+          "line": 6056,
+          "text": "creatureLoudnessNormalSpeedMultiplier"
+        },
+        {
+          "line": 6087,
+          "text": "creatureMigrationRadius"
+        },
+        {
+          "line": 6128,
+          "text": "creatureHelpAllyInRadius"
+        },
+        {
+          "line": 6138,
+          "text": "creatureHitPointsTurnAndFightPercentage"
+        },
+        {
+          "line": 6140,
+          "text": "creatureDecelerationSpeedMultiplier"
+        },
+        {
+          "line": 6142,
+          "text": "creatureAccelerationSpeedMultiplier"
+        },
+        {
+          "line": 6143,
+          "text": "creatureBaseAcceleration"
+        }
+      ]
+    },
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "bytes": 2860453,
+      "line_count": 125506,
+      "selected_declarations": [
+        {
+          "line": 2360,
+          "text": "cr_feature_footprint"
+        },
+        {
+          "line": 2672,
+          "text": "crg-movecreature"
+        },
+        {
+          "line": 3858,
+          "text": "gait0"
+        },
+        {
+          "line": 3859,
+          "text": "gait1"
+        },
+        {
+          "line": 3860,
+          "text": "gait2"
+        },
+        {
+          "line": 3861,
+          "text": "gait3"
+        },
+        {
+          "line": 3862,
+          "text": "gait4"
+        },
+        {
+          "line": 3863,
+          "text": "gait5"
+        },
+        {
+          "line": 3864,
+          "text": "gait6"
+        },
+        {
+          "line": 3865,
+          "text": "gait_epic1"
+        },
+        {
+          "line": 3866,
+          "text": "gait_epic2"
+        },
+        {
+          "line": 3867,
+          "text": "gait_epic3"
+        },
+        {
+          "line": 3868,
+          "text": "gait_epic4"
+        },
+        {
+          "line": 3869,
+          "text": "gait_epic5"
+        },
+        {
+          "line": 3870,
+          "text": "gait_epic6"
+        },
+        {
+          "line": 10604,
+          "text": "auto_creatureabilities_ch06FireRun"
+        },
+        {
+          "line": 10606,
+          "text": "auto_creatureabilities_ch07FireRun"
+        },
+        {
+          "line": 10608,
+          "text": "auto_creatureabilities_ch07FreezeRun"
+        },
+        {
+          "line": 10610,
+          "text": "auto_creatureabilities_ch08FreezeRun"
+        },
+        {
+          "line": 10612,
+          "text": "auto_creatureabilities_ch08TeslaRun"
+        },
+        {
+          "line": 10614,
+          "text": "auto_creatureabilities_ch09MeldRun"
+        },
+        {
+          "line": 10616,
+          "text": "auto_creatureabilities_ch09TeslaRun"
+        },
+        {
+          "line": 10618,
+          "text": "auto_creatureabilities_ch10SickRun"
+        },
+        {
+          "line": 10661,
+          "text": "invisible_footprint"
+        },
+        {
+          "line": 13663,
+          "text": "CreatureCellMovementTemplate"
+        },
+        {
+          "line": 14028,
+          "text": "debugDrawModelFootprints"
+        },
+        {
+          "line": 40204,
+          "text": "VehicleLocomotionEnum"
+        },
+        {
+          "line": 40526,
+          "text": "RegionFilter_VE_Locomotion"
+        },
+        {
+          "line": 45868,
+          "text": "auto_creatureabilities_speed50"
+        },
+        {
+          "line": 46855,
+          "text": "auto_creature_parts~_DG_ce_movement_amphibian_01"
+        },
+        {
+          "line": 46856,
+          "text": "auto_creature_parts~_DG_ce_movement_amphibian_02"
+        },
+        {
+          "line": 46857,
+          "text": "auto_creature_parts~_DG_ce_movement_amphibian_03"
+        },
+        {
+          "line": 46858,
+          "text": "auto_creature_parts~_DG_ce_movement_amphibian_04"
+        },
+        {
+          "line": 46859,
+          "text": "auto_creature_parts~_DG_ce_movement_bird_01"
+        },
+        {
+          "line": 46860,
+          "text": "auto_creature_parts~_DG_ce_movement_bird_02"
+        },
+        {
+          "line": 46861,
+          "text": "auto_creature_parts~_DG_ce_movement_bird_03"
+        },
+        {
+          "line": 46862,
+          "text": "auto_creature_parts~_DG_ce_movement_bird_04"
+        },
+        {
+          "line": 46863,
+          "text": "auto_creature_parts~_DG_ce_movement_default_01"
+        },
+        {
+          "line": 46864,
+          "text": "auto_creature_parts~_DG_ce_movement_dino_01"
+        },
+        {
+          "line": 46865,
+          "text": "auto_creature_parts~_DG_ce_movement_dino_02"
+        },
+        {
+          "line": 46866,
+          "text": "auto_creature_parts~_DG_ce_movement_dino_03"
+        },
+        {
+          "line": 46867,
+          "text": "auto_creature_parts~_DG_ce_movement_dino_04"
+        },
+        {
+          "line": 46868,
+          "text": "auto_creature_parts~_DG_ce_movement_fin_ventral_01"
+        },
+        {
+          "line": 46869,
+          "text": "auto_creature_parts~_DG_ce_movement_fin_ventral_02"
+        },
+        {
+          "line": 46870,
+          "text": "auto_creature_parts~_DG_ce_movement_fin_ventral_03"
+        },
+        {
+          "line": 46871,
+          "text": "auto_creature_parts~_DG_ce_movement_fin_ventral_04"
+        },
+        {
+          "line": 46872,
+          "text": "auto_creature_parts~_DG_ce_movement_hoof_01"
+        },
+        {
+          "line": 46873,
+          "text": "auto_creature_parts~_DG_ce_movement_hoof_02"
+        },
+        {
+          "line": 46874,
+          "text": "auto_creature_parts~_DG_ce_movement_hoof_03"
+        },
+        {
+          "line": 46875,
+          "text": "auto_creature_parts~_DG_ce_movement_hoof_04"
+        },
+        {
+          "line": 46876,
+          "text": "auto_creature_parts~_DG_ce_movement_insect_01"
+        },
+        {
+          "line": 46877,
+          "text": "auto_creature_parts~_DG_ce_movement_insect_02"
+        },
+        {
+          "line": 46878,
+          "text": "auto_creature_parts~_DG_ce_movement_insect_03"
+        },
+        {
+          "line": 46879,
+          "text": "auto_creature_parts~_DG_ce_movement_insect_04"
+        },
+        {
+          "line": 46881,
+          "text": "auto_creature_parts~_DG_ce_movement_null"
+        },
+        {
+          "line": 46882,
+          "text": "auto_creature_parts~_DG_ce_movement_paw_01"
+        },
+        {
+          "line": 46883,
+          "text": "auto_creature_parts~_DG_ce_movement_paw_02"
+        },
+        {
+          "line": 46884,
+          "text": "auto_creature_parts~_DG_ce_movement_paw_03"
+        },
+        {
+          "line": 46885,
+          "text": "auto_creature_parts~_DG_ce_movement_paw_04"
+        },
+        {
+          "line": 46886,
+          "text": "auto_creature_parts~_DG_ce_movement_primate_01"
+        },
+        {
+          "line": 46887,
+          "text": "auto_creature_parts~_DG_ce_movement_primate_02"
+        },
+        {
+          "line": 46888,
+          "text": "auto_creature_parts~_DG_ce_movement_primate_03"
+        },
+        {
+          "line": 46889,
+          "text": "auto_creature_parts~_DG_ce_movement_primate_04"
+        },
+        {
+          "line": 46890,
+          "text": "auto_creature_parts~_DG_ce_movement_sucker_01"
+        },
+        {
+          "line": 46891,
+          "text": "auto_creature_parts~_DG_ce_movement_sucker_02"
+        },
+        {
+          "line": 46892,
+          "text": "auto_creature_parts~_DG_ce_movement_sucker_03"
+        },
+        {
+          "line": 46893,
+          "text": "auto_creature_parts~_DG_ce_movement_sucker_04"
+        },
+        {
+          "line": 49652,
+          "text": "AuthoredGait_NPC_Rezzer"
+        },
+        {
+          "line": 49762,
+          "text": "AuthoredGait_SNArakna"
+        },
+        {
+          "line": 49822,
+          "text": "AuthoredGait_TCMedicTempest_Drone"
+        },
+        {
+          "line": 49826,
+          "text": "AuthoredGait_TCTrapper"
+        },
+        {
+          "line": 49843,
+          "text": "idle_gen_gait_override_regshader"
+        },
+        {
+          "line": 49850,
+          "text": "AuthoredGait_NPC_HypnoMantis"
+        },
+        {
+          "line": 49873,
+          "text": "AuthoredGait_TCMissileTempest"
+        },
+        {
+          "line": 49894,
+          "text": "AuthoredGait_PlasmaSentinel_Pet"
+        },
+        {
+          "line": 49907,
+          "text": "authoredgait_snghostsentinel"
+        },
+        {
+          "line": 49952,
+          "text": "AuthoredGait_LFRavager"
+        },
+        {
+          "line": 49960,
+          "text": "authoredgait_lfbeastsentinel"
+        },
+        {
+          "line": 49973,
+          "text": "AuthoredGait_NPC_Healer"
+        },
+        {
+          "line": 49994,
+          "text": "AuthoredGait_LFTreeSentinel"
+        },
+        {
+          "line": 50012,
+          "text": "authoredgait_sptimeravager"
+        },
+        {
+          "line": 50037,
+          "text": "AuthoredGait_NPC_Blink"
+        },
+        {
+          "line": 50046,
+          "text": "AuthoredGait_SNShadowRavager"
+        },
+        {
+          "line": 50088,
+          "text": "zlm_minn_sp_04_authoredgait"
+        },
+        {
+          "line": 50091,
+          "text": "idle_gen_gait_override_regShader_Jinx"
+        },
+        {
+          "line": 50124,
+          "text": "AuthoredGait_NPC_BumbleBee"
+        },
+        {
+          "line": 50142,
+          "text": "AuthoredGait_NPC_Stealthy"
+        },
+        {
+          "line": 50179,
+          "text": "idle_gen_gait_override_regShader_Missile"
+        },
+        {
+          "line": 50200,
+          "text": "AuthoredGait_PLRavager"
+        },
+        {
+          "line": 50316,
+          "text": "AuthoredGait_NPC_SuicideBot"
+        },
+        {
+          "line": 50349,
+          "text": "AuthoredGait_PlasmaFireTempest"
+        },
+        {
+          "line": 50434,
+          "text": "idle_gen_gait_override_regShader_Serraph"
+        },
+        {
+          "line": 50463,
+          "text": "AuthoredGait_LFShroom"
+        },
+        {
+          "line": 50468,
+          "text": "authoredgait_spsentinel"
+        },
+        {
+          "line": 50516,
+          "text": "AuthoredGait_NPC_Haste"
+        },
+        {
+          "line": 50765,
+          "text": "authoredgait_npc_generic_biped_v3"
+        },
+        {
+          "line": 50766,
+          "text": "authoredgait_npc_generic_biped_v2"
+        },
+        {
+          "line": 50824,
+          "text": "authoredgait_plasmasentinel"
+        },
+        {
+          "line": 50845,
+          "text": "idle_gen_gait_override"
+        },
+        {
+          "line": 50954,
+          "text": "AuthoredGait_SPLightSpeedTempest"
+        },
+        {
+          "line": 50970,
+          "text": "AuthoredGait_PLRavager_fullgait"
+        },
+        {
+          "line": 50982,
+          "text": "AuthoredGait_TCMedicTempest"
+        },
+        {
+          "line": 51110,
+          "text": "idle_gen_gait_override_regShader_Lumin"
+        },
+        {
+          "line": 51165,
+          "text": "AuthoredGait_tcenergysentinel"
+        },
+        {
+          "line": 51192,
+          "text": "AuthoredGait_LFTempest"
+        },
+        {
+          "line": 51267,
+          "text": "AuthoredGait_FireRavager"
+        },
+        {
+          "line": 51273,
+          "text": "AuthoredGait_NPC_NoctSleeper"
+        },
+        {
+          "line": 51285,
+          "text": "authoredgait_spgravitytempest"
+        },
+        {
+          "line": 51286,
+          "text": "AuthoredGait_NPC_MaserTank"
+        },
+        {
+          "line": 51289,
+          "text": "AuthoredGait_SNVoodoo"
+        },
+        {
+          "line": 51326,
+          "text": "authoredgait_snpsychictempest"
+        },
+        {
+          "line": 51343,
+          "text": "authoredgait_npc_lowblow"
+        },
+        {
+          "line": 51397,
+          "text": "authoredgait_npc_frognomad"
+        },
+        {
+          "line": 51410,
+          "text": "authoredgait_npc_cryoschargy"
+        },
+        {
+          "line": 51488,
+          "text": "AuthoredGait_TCShieldedSentinel"
+        },
+        {
+          "line": 51544,
+          "text": "authoredgait_npc_generic_biped"
+        },
+        {
+          "line": 51549,
+          "text": "AuthoredGait_NPC_Copter"
+        },
+        {
+          "line": 51581,
+          "text": "AuthoredGait_SPQuantumRavager"
+        },
+        {
+          "line": 51626,
+          "text": "AuthoredGait_PLLightningTempest"
+        },
+        {
+          "line": 51719,
+          "text": "AuthoredGait_NPC_ShadowBoss"
+        },
+        {
+          "line": 52631,
+          "text": "CreatureMoved"
+        },
+        {
+          "line": 58089,
+          "text": "CreatureCellMovementCiliaTemplate"
+        },
+        {
+          "line": 58090,
+          "text": "CreatureCellMovementFlagellaTemplate"
+        },
+        {
+          "line": 58091,
+          "text": "CreatureCellMovementJetTemplate"
+        },
+        {
+          "line": 77550,
+          "text": "creatureSpeed"
+        },
+        {
+          "line": 81454,
+          "text": "playModeCreatureWalked"
+        },
+        {
+          "line": 94005,
+          "text": "feature_footprint_decal"
+        },
+        {
+          "line": 94006,
+          "text": "feature_footprint_stamp"
+        },
+        {
+          "line": 94620,
+          "text": "edi-playmodecreaturewalked"
+        },
+        {
+          "line": 95144,
+          "text": "gait2_sneak"
+        },
+        {
+          "line": 95145,
+          "text": "gait3_sneak"
+        },
+        {
+          "line": 95146,
+          "text": "gait4_sneak"
+        },
+        {
+          "line": 107967,
+          "text": "gait2_mage"
+        },
+        {
+          "line": 117813,
+          "text": "NoGroup_CreatureGameMovementVerbTray-00"
+        },
+        {
+          "line": 121285,
+          "text": "slider-lg-footprint2"
+        },
+        {
+          "line": 121293,
+          "text": "slider-lg-footprint"
+        },
+        {
+          "line": 122092,
+          "text": "CreatureGameMovementVerbTray"
+        },
+        {
+          "line": 122976,
+          "text": "VE_Theme_TextureGroup_fantasy_RegionFilter_VE_Locomotion_Parts"
+        },
+        {
+          "line": 122983,
+          "text": "VE_Theme_TextureGroup_Tech_RegionFilter_VE_Locomotion_Parts"
+        },
+        {
+          "line": 122984,
+          "text": "VE_Theme_TextureGroup_Tech_RegionFilter_VE_Locomotion_Parts_2"
+        },
+        {
+          "line": 122991,
+          "text": "VE_Theme_TextureGroup_OldFashioned_RegionFilter_VE_Locomotion_Parts"
+        },
+        {
+          "line": 122992,
+          "text": "VE_Theme_TextureGroup_OldFashioned_RegionFilter_VE_Locomotion_Parts_2"
+        },
+        {
+          "line": 122996,
+          "text": "VE_Theme_TextureGroup_fantasy_RegionFilter_VE_Locomotion"
+        },
+        {
+          "line": 123003,
+          "text": "VE_Theme_TextureGroup_Tech_RegionFilter_VE_Locomotion"
+        },
+        {
+          "line": 123004,
+          "text": "VE_Theme_TextureGroup_Tech_RegionFilter_VE_Locomotion_2"
+        },
+        {
+          "line": 123011,
+          "text": "VE_Theme_TextureGroup_OldFashioned_RegionFilter_VE_Locomotion"
+        },
+        {
+          "line": 123012,
+          "text": "VE_Theme_TextureGroup_OldFashioned_RegionFilter_VE_Locomotion_2"
+        }
+      ]
+    }
+  ],
+  "configuration_name_candidates": [
+    {
+      "line": 1,
+      "text": "CreatureGame"
+    },
+    {
+      "line": 23,
+      "text": "animations~\t0x00000000"
+    },
+    {
+      "line": 2645,
+      "text": "CreatureGameTuning"
+    },
+    {
+      "line": 4802,
+      "text": "mixmode_creaturegame"
+    },
+    {
+      "line": 9329,
+      "text": "GGENewCreatureGame"
+    },
+    {
+      "line": 11618,
+      "text": "TriggerConfigCreatureGame"
+    },
+    {
+      "line": 41812,
+      "text": "CreatureEditorInSpaceGame"
+    },
+    {
+      "line": 41818,
+      "text": "CellToCreatureEditorInGame"
+    },
+    {
+      "line": 43706,
+      "text": "modelCapabilityCellMovement~\t0x11B79302"
+    },
+    {
+      "line": 82601,
+      "text": "telemetry_CreatureGame"
+    },
+    {
+      "line": 86277,
+      "text": "TelemetryQueryCreatureGame"
+    },
+    {
+      "line": 86859,
+      "text": "ThumbCreatureRenderingConfig"
+    },
+    {
+      "line": 87970,
+      "text": "creature_game"
+    },
+    {
+      "line": 99927,
+      "text": "CreatureTuning"
+    },
+    {
+      "line": 123938,
+      "text": "simulator_scripts~\t0x024A4F5A"
+    },
+    {
+      "line": 123939,
+      "text": "simulator_scripts_cityPlans~\t0x024B4A2F"
+    }
+  ],
+  "property_context": [
+    {
+      "line": 4885,
+      "text": "mastervolume"
+    },
+    {
+      "line": 4886,
+      "text": "musicvolume"
+    },
+    {
+      "line": 4887,
+      "text": "voxvolume"
+    },
+    {
+      "line": 4888,
+      "text": "sfxvolume"
+    },
+    {
+      "line": 4889,
+      "text": "ambiencevolume"
+    },
+    {
+      "line": 4890,
+      "text": "heartbeatIntensity"
+    },
+    {
+      "line": 4891,
+      "text": "voiceActive"
+    },
+    {
+      "line": 4892,
+      "text": "shadowboss"
+    },
+    {
+      "line": 4893,
+      "text": "ActivationType"
+    },
+    {
+      "line": 4894,
+      "text": "Acc_SpaceShopper"
+    },
+    {
+      "line": 4895,
+      "text": "Acc_TribeShopper"
+    },
+    {
+      "line": 4896,
+      "text": "Acc_CivShopper"
+    },
+    {
+      "line": 4897,
+      "text": "AvatarOnly"
+    },
+    {
+      "line": 4898,
+      "text": "Avatar"
+    },
+    {
+      "line": 4899,
+      "text": "Avatarspecies"
+    },
+    {
+      "line": 4900,
+      "text": "AvatarStartingNode"
+    },
+    {
+      "line": 4901,
+      "text": "cameraDeadZone"
+    },
+    {
+      "line": 4902,
+      "text": "cameraMinLerp"
+    },
+    {
+      "line": 4903,
+      "text": "creatureMaxHealth"
+    },
+    {
+      "line": 4904,
+      "text": "creatureSightAngle"
+    },
+    {
+      "line": 4905,
+      "text": "creatureSightRadius"
+    },
+    {
+      "line": 4906,
+      "text": "eggScaleMultiplier"
+    },
+    {
+      "line": 4907,
+      "text": "creatureVerbtrayCollection"
+    },
+    {
+      "line": 4908,
+      "text": "creatureScaleMultiplier"
+    },
+    {
+      "line": 4909,
+      "text": "creatureMaxEvoPoints"
+    },
+    {
+      "line": 4910,
+      "text": "creatureCallStartRadius"
+    },
+    {
+      "line": 4911,
+      "text": "creatureHealingRadius"
+    },
+    {
+      "line": 4912,
+      "text": "creatureFleeTime"
+    },
+    {
+      "line": 4913,
+      "text": "creatureBaseAcceleration"
+    },
+    {
+      "line": 4914,
+      "text": "creatureFleeDistance"
+    },
+    {
+      "line": 4915,
+      "text": "creatureChaseDistance"
+    },
+    {
+      "line": 4916,
+      "text": "creatureCallDuration"
+    },
+    {
+      "line": 4917,
+      "text": "creatureMaxJumpHeight"
+    },
+    {
+      "line": 4918,
+      "text": "creatureGlideSpeed"
+    },
+    {
+      "line": 4919,
+      "text": "Beats0"
+    },
+    {
+      "line": 4920,
+      "text": "Beats1"
+    },
+    {
+      "line": 4921,
+      "text": "Beats2"
+    },
+    {
+      "line": 4922,
+      "text": "Beats3"
+    },
+    {
+      "line": 4923,
+      "text": "Beats4"
+    },
+    {
+      "line": 4924,
+      "text": "Beats5"
+    },
+    {
+      "line": 4925,
+      "text": "Beats6"
+    },
+    {
+      "line": 5185,
+      "text": "DrawRootBodyWhiteInDebug"
+    },
+    {
+      "line": 5186,
+      "text": "CullBlocksOnUnderwaterPass"
+    },
+    {
+      "line": 5187,
+      "text": "DefaultFillerAnimationID"
+    },
+    {
+      "line": 5188,
+      "text": "TimeScale"
+    },
+    {
+      "line": 5189,
+      "text": "IsAnimLogOn"
+    },
+    {
+      "line": 5190,
+      "text": "AnimLogIPAddress"
+    },
+    {
+      "line": 5191,
+      "text": "AnimLogPort"
+    },
+    {
+      "line": 5192,
+      "text": "AnimLogCacheSize"
+    },
+    {
+      "line": 5193,
+      "text": "VerboseActivateAnimationSpew"
+    },
+    {
+      "line": 5194,
+      "text": "GaitBlendTime"
+    },
+    {
+      "line": 5195,
+      "text": "ProcBakeBlendTime"
+    },
+    {
+      "line": 5196,
+      "text": "JigglabilityDeterminedByRigBlock"
+    },
+    {
+      "line": 5197,
+      "text": "PolypodGaitStyle"
+    },
+    {
+      "line": 5198,
+      "text": "AnimViewerFKeyAnimIDs"
+    },
+    {
+      "line": 5199,
+      "text": "ScenarioStarEffectsEnabled\t0x08069a6c"
+    },
+    {
+      "line": 5200,
+      "text": "ScenarioGAEditorEffectsEnabled\t0x0806dbba"
+    },
+    {
+      "line": 5250,
+      "text": "eyeEffectEnabled"
+    },
+    {
+      "line": 5251,
+      "text": "cameraIsMayaStyle"
+    },
+    {
+      "line": 5252,
+      "text": "plantSummaryVersionForPollinator"
+    },
+    {
+      "line": 5253,
+      "text": "creatureSummaryVersionForPollinator"
+    },
+    {
+      "line": 5254,
+      "text": "creatureNPCMinBabyTime"
+    },
+    {
+      "line": 5255,
+      "text": "globalCreatureSpeedGear0"
+    },
+    {
+      "line": 5256,
+      "text": "globalCreatureSpeedGear1"
+    },
+    {
+      "line": 5257,
+      "text": "globalCreatureSpeedGear2"
+    },
+    {
+      "line": 5258,
+      "text": "globalCreatureSpeedGear3"
+    },
+    {
+      "line": 5259,
+      "text": "globalCreatureSpeedGear4"
+    },
+    {
+      "line": 5260,
+      "text": "globalCreatureSpeedGear5"
+    },
+    {
+      "line": 5261,
+      "text": "globalCreatureSprintSpeedBoost"
+    },
+    {
+      "line": 5262,
+      "text": "creatureBaseHealth_Level1"
+    },
+    {
+      "line": 5263,
+      "text": "creatureBaseHealth_Level2"
+    },
+    {
+      "line": 5264,
+      "text": "creatureBaseHealth_Level3"
+    },
+    {
+      "line": 5265,
+      "text": "creatureBaseHealth_Level4"
+    },
+    {
+      "line": 5266,
+      "text": "creatureBaseHealth_Level5"
+    },
+    {
+      "line": 6038,
+      "text": "chieftainHealthScale"
+    },
+    {
+      "line": 6039,
+      "text": "chieftainDamageScale"
+    },
+    {
+      "line": 6040,
+      "text": "chieftainScale"
+    },
+    {
+      "line": 6041,
+      "text": "creatureHitBoxDisableAngle"
+    },
+    {
+      "line": 6042,
+      "text": "maxCreatureHitboxWidth"
+    },
+    {
+      "line": 6043,
+      "text": "maxCreatureVelocityForSizeInc"
+    },
+    {
+      "line": 6044,
+      "text": "minCreatureVelocityForSizeInc"
+    },
+    {
+      "line": 6045,
+      "text": "maxCreatureDistForSizeInc"
+    },
+    {
+      "line": 6046,
+      "text": "minCreatureDistForSizeInc"
+    },
+    {
+      "line": 6047,
+      "text": "maxCreatureHitBoxSizeMult"
+    },
+    {
+      "line": 6048,
+      "text": "creatureMouseMoveGoalDistance"
+    },
+    {
+      "line": 6049,
+      "text": "creatureMouseMoveMinRadius"
+    },
+    {
+      "line": 6050,
+      "text": "creatureMouseDoubleClickThreshold"
+    },
+    {
+      "line": 6051,
+      "text": "creatureMouseHeldMovementThreshold"
+    },
+    {
+      "line": 6052,
+      "text": "creatureFoodSearchTravelDistance"
+    },
+    {
+      "line": 6053,
+      "text": "creatureMaxPerceptionRadius"
+    },
+    {
+      "line": 6054,
+      "text": "creatureLoudnessInCombatMultiplier"
+    },
+    {
+      "line": 6055,
+      "text": "creatureLoudnessSprintingSpeedMultiplier"
+    },
+    {
+      "line": 6056,
+      "text": "creatureLoudnessNormalSpeedMultiplier"
+    },
+    {
+      "line": 6057,
+      "text": "creatureAlertSightMultiplier_LookAt"
+    },
+    {
+      "line": 6058,
+      "text": "creatureAlertHearingMultiplier_LookAt"
+    },
+    {
+      "line": 6059,
+      "text": "creatureAlertSightMultiplier"
+    },
+    {
+      "line": 6060,
+      "text": "creatureAlertHearingMultiplier"
+    },
+    {
+      "line": 6136,
+      "text": "creatureDamagePercentageMin"
+    },
+    {
+      "line": 6137,
+      "text": "npcAttackMissPercentage"
+    },
+    {
+      "line": 6138,
+      "text": "creatureHitPointsTurnAndFightPercentage"
+    },
+    {
+      "line": 6139,
+      "text": "creatureAvatarHitPointsMultiplier"
+    },
+    {
+      "line": 6140,
+      "text": "creatureDecelerationSpeedMultiplier"
+    },
+    {
+      "line": 6141,
+      "text": "creatureBaseDeceleration"
+    },
+    {
+      "line": 6142,
+      "text": "creatureAccelerationSpeedMultiplier"
+    },
+    {
+      "line": 6143,
+      "text": "creatureBaseAcceleration"
+    },
+    {
+      "line": 6144,
+      "text": "avatarNestSafeZone"
+    },
+    {
+      "line": 6145,
+      "text": "mateNestTetherRadius"
+    },
+    {
+      "line": 6146,
+      "text": "checkForMateTimer"
+    },
+    {
+      "line": 6147,
+      "text": "creatureEvoPointsForMateCall"
+    },
+    {
+      "line": 6148,
+      "text": "creaturePercentEvoForAlphas"
+    }
+  ]
+}

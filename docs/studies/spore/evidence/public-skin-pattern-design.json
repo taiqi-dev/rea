@@ -1,0 +1,145 @@
+{
+  "kind": "developer-primary-historical-skin-pattern-design-not-local-runtime",
+  "scope": "Land Creature skin painting only; generic baking slides are context, and mineral/building/vehicle UV claims are excluded from Creature facts.",
+  "method": {
+    "tools": "Existing bundled Python 3.12.14, urllib.request, pypdf 6.10.0, standard-library HTMLParser",
+    "storage": "Only this paraphrase/locator record saved; no PDF, page images, full HTML or full paper text persisted.",
+    "coverage": "Complete one-page paper read. Slide text inventories located candidates, then complete selected pages read. Complete Creature Texturing HTML section plus footnote 7 read; Creature Skin Mesh section excluded.",
+    "visual_review": "Not performed; no figure-dependent claim or image/layout assertion.",
+    "parse_note": "pypdf emitted a nonfatal offset warning while reading the slide PDF; selected complete-page text extraction succeeded."
+  },
+  "sources": [
+    {
+      "source_id": "maxis-2007-painting-sketch",
+      "url": "https://www.cs.cmu.edu/~ajw/s2007/0311-PaintingModels.pdf",
+      "bytes": 4970820,
+      "sha256": "d4d419e0ce2cc81ac64270e106568aba8923baf05fc3aec45c996d575f730fce",
+      "pages": 1,
+      "complete_pages_read_one_based": [
+        1
+      ],
+      "locator": "Section 2, Creature Texturing; Figure 1 caption identified, illustration not visually reviewed.",
+      "paraphrase": "The creature has a body mesh and attached details. Surface particle brushes write diffuse, specular and bump textures. Body UVs use cubemap partitioning. Custom components guide paint along the spine and limbs and create oriented strokes. Players combine base, coat and detail scripts, colours and preset themes.",
+      "exclusions": [
+        "Section 3 runtime planar/cylindrical/box projection is building/vehicle material processing, not evidence of Creature triplanar mapping."
+      ]
+    },
+    {
+      "source_id": "maxis-2007-painting-talk",
+      "url": "https://www.cs.cmu.edu/~ajw/s2007/0311-PaintingModels-slides.pdf",
+      "bytes": 3637880,
+      "sha256": "bf622985fdd3288b6187656c670eef8c0d3d574a510117f52723fe1c3a904a1b",
+      "pages": 28,
+      "complete_pages_read_one_based": [
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        26
+      ],
+      "locators": [
+        {
+          "page_one_based": 15,
+          "title": "Two Solutions",
+          "scope": "Creature/Flora/Cell skinpaint versus mineral UV distinction"
+        },
+        {
+          "page_one_based": 16,
+          "title": "1: Skinpaint",
+          "scope": "UV destination splatting, skeleton-influenced surface particles"
+        },
+        {
+          "page_one_based": 17,
+          "title": "Skinpaint: Early Prototype",
+          "scope": "Prototype title only; no visual/demo behavior inferred"
+        },
+        {
+          "page_one_based": 23,
+          "title": "Unique UVs: Charting",
+          "scope": "Shared final-model baking context; not an exact Creature chart algorithm"
+        },
+        {
+          "page_one_based": 26,
+          "title": "Baking Details",
+          "scope": "Shared pipeline background job/cache notes"
+        }
+      ],
+      "paraphrase": "Creature painting layers parameterized effects scripts. A brush at a mesh point splats into the UV texture; surface particle motion uses frame adjustments and skeleton influence. Shared baking slides discuss face-cluster charts, optional relaxation, background asset loading/baking, disk caching and main-thread graphics creation.",
+      "exclusions": [
+        "Page 18 projection modes belong to mineral processing.",
+        "Pages 21–24 shared model consolidation/second UV set do not prove every Creature uses the identical UV packer or relaxation step.",
+        "Background baking does not identify repaint triggers or particle persistence after shape edits."
+      ]
+    },
+    {
+      "source_id": "hecker-developer-liner-notes",
+      "url": "https://chrishecker.com/My_Liner_Notes_for_Spore",
+      "resolved_url": "https://chrishecker.com/My_Liner_Notes_for_Spore",
+      "bytes": 52702,
+      "sha256": "457d197f4317b7023f89050dd06395b9013fd03fd0c2454ad0f589b530dd264a",
+      "format": "HTML; mutable developer retrospective, response bytes pinned for this read",
+      "locator": {
+        "complete_section": "Creature Texturing",
+        "subsections": [
+          "Texture Charting",
+          "Lowlevel Texture Painting",
+          "Particle Paint"
+        ],
+        "final_shipping_correction": "Footnote 7, referenced from Lowlevel Texture Painting",
+        "excluded_section": "Creature Skin Mesh"
+      },
+      "paraphrase": "Creature edits require rapid atlas creation for immediate Play/Paint Mode. The charter floods adjacent similarly facing triangles, projects to cardinal planes and packs charts. Prototype brushes collect affected triangles and splat in 3D brush coordinates; particles used barycentric surface coordinates. Henry replaced the Swarm hookup with morphology-aware, limb-relative control and ported painting into the background game engine. Footnote 7 corrects the shipping version: skirts were disabled for speed; dilation remained, with editor seams disappearing after painting completes.",
+      "history_split": [
+        "Mouse/tablet painting, skirt polygons and the initial Swarm plugin describe prototypes.",
+        "The custom morphology system and shipping dilation correction must not be merged with those prototype mechanisms."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "Does widening, lengthening or adding parts rerun paint or reproject persistent particles?",
+      "status": "unknown",
+      "established": "Rapid atlas creation after mesh editing is described; dynamic surface painting exists.",
+      "boundary": "No explicit edit-trigger matrix, repaint/reprojection choice, persistent walker identity, dirty-region algorithm or cached-texture invalidation rule found in the selected complete text."
+    },
+    {
+      "question": "How do stripe/spot direction and scale follow morphology?",
+      "status": "partially_answered",
+      "established": "Spine/limb-relative motion, skeleton-influenced frames and oriented strokes are described.",
+      "boundary": "No exact stripe spacing, spot count, world-scale versus normalized-scale policy, brush radius formula or deterministic seed transition supplied."
+    },
+    {
+      "question": "Do the body and attached rigblocks share a continuous pattern?",
+      "status": "unknown",
+      "established": "The paper names body mesh plus attached detail parts and mesh-surface brushes.",
+      "boundary": "It does not establish one continuous field across separately attached parts, a shared atlas for all details or part-boundary pattern correspondence."
+    },
+    {
+      "question": "Which seams are addressed?",
+      "status": "partially_answered",
+      "established": "Texture chart seams and filtering are addressed; shipping correction uses dilation after painting.",
+      "boundary": "Dilation is texture-sampling protection, not evidence of geometric attachment welding or continuity between independent body/part paint fields."
+    }
+  ],
+  "negative_claim_policy": [
+    "Unknown means absent from the specified read scope, not disproved throughout Spore.",
+    "A dynamic mesh painting capability does not prove live repainting on every geometric edit.",
+    "Cubemap partitioning for Creature body UVs is distinct from runtime mineral projection.",
+    "No current EXE implementation, resource parameters, GPU behavior or pixel comparison verified."
+  ],
+  "related_existing_records": [
+    "public-mesh-related-papers.json (paper bytes/digest agree)",
+    "../07-skin-texturing-and-patterns.md (prior independent painting specification)",
+    "../29-creature-mesh-joins-and-automatic-skinning.md (geometric joins kept separate)"
+  ],
+  "unavailable_followup_source": {
+    "url": "https://oceanquigley.blogspot.com/2009/04/spores-creature-skin-painting.html",
+    "tool": "web open via developer reference",
+    "result": "Redirected to Google sorry/CAPTCHA page; non-retryable inaccessible response. Content not read or used as evidence; no bypass attempted."
+  }
+}

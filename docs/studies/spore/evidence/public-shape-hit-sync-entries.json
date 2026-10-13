@@ -1,0 +1,276 @@
+{
+  "kind": "pinned-community-entry-declarations-not-runtime",
+  "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "files": [
+    {
+      "path": "Simulator/cSpatialObject.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpatialObject.h",
+      "bytes": 7548,
+      "sha256": "9c3f44b21370988c3b47a3286a666076ceaa9b0c4c91c0924839b70dbbca4de3",
+      "line_count": 199,
+      "full_text_read": true,
+      "selected_declarations": [
+        {
+          "line": 25,
+          "text": "#include <Spore\\Graphics\\Model.h>"
+        },
+        {
+          "line": 26,
+          "text": "#include <Spore\\Graphics\\IModelWorld.h>"
+        },
+        {
+          "line": 41,
+          "text": "/// and therefore need a position, orientation, and scale in 3D space. Models are identified by a"
+        },
+        {
+          "line": 42,
+          "text": "/// ResourceKey (using the SetModelKey() and GetModelKey() methods). The graphical model itself is"
+        },
+        {
+          "line": 43,
+          "text": "/// loaded in the SetModelWorld() method."
+        },
+        {
+          "line": 56,
+          "text": "/// Sets this model as invisible in its IModelWorld and sets the model and model world to nullptr."
+        },
+        {
+          "line": 69,
+          "text": "/* 34h */\tvirtual float GetScale();"
+        },
+        {
+          "line": 70,
+          "text": "/* 38h */\tvirtual void SetPosition(const Math::Vector3& value);"
+        },
+        {
+          "line": 71,
+          "text": "/* 3Ch */\tvirtual void SetOrientation(const Math::Quaternion& value);"
+        },
+        {
+          "line": 72,
+          "text": "/* 40h */\tvirtual void SetScale(float fValue);"
+        },
+        {
+          "line": 89,
+          "text": "/* 64h */\tvirtual void SetLocalExtents(const Math::BoundingBox& localExtents, float fScale);"
+        },
+        {
+          "line": 90,
+          "text": "/* 68h */\tvirtual const Math::BoundingBox& GetLocalExtents();"
+        },
+        {
+          "line": 92,
+          "text": "/* 70h */\tvirtual float GetBoundingRadius();"
+        },
+        {
+          "line": 93,
+          "text": "/* 74h */\tvirtual float GetFootprintRadius();"
+        },
+        {
+          "line": 100,
+          "text": "/* 88h */\tvirtual bool HasModelChanged();"
+        },
+        {
+          "line": 101,
+          "text": "/* 8Ch */\tvirtual void SetHasModelChanged(bool bValue);"
+        },
+        {
+          "line": 102,
+          "text": "/* 90h */\tvirtual bool HasModel();"
+        },
+        {
+          "line": 103,
+          "text": "/* 94h */\tvirtual void SetModelKey(const ResourceKey& modelKey);"
+        },
+        {
+          "line": 104,
+          "text": "/* 98h */\tvirtual const ResourceKey& GetModelKey();"
+        },
+        {
+          "line": 106,
+          "text": "/* A0h */\tvirtual void SetModelWorld(Graphics::IModelWorld* pModelWorld);"
+        },
+        {
+          "line": 108,
+          "text": "/* A8h */\tvirtual void SetModel(Graphics::Model* pModel, Graphics::IModelWorld* pModelWorld);"
+        },
+        {
+          "line": 109,
+          "text": "/* ACh */\tvirtual Graphics::Model* GetModel();"
+        },
+        {
+          "line": 110,
+          "text": "/* B0h */\tvirtual Graphics::IModelWorld* GetModelWorld();"
+        },
+        {
+          "line": 126,
+          "text": "/* 20h */\tMath::BoundingBox mOriginalLocalExtents;"
+        },
+        {
+          "line": 127,
+          "text": "/* 38h */\tMath::BoundingBox mLocalExtents;"
+        },
+        {
+          "line": 131,
+          "text": "/* 5Ch */\tfloat mBoundingRadius;"
+        },
+        {
+          "line": 132,
+          "text": "/* 60h */\tfloat mFootprintRadius;"
+        },
+        {
+          "line": 133,
+          "text": "/* 64h */\tfloat mScale;"
+        },
+        {
+          "line": 143,
+          "text": "/* 73h */\tbool mbModelChanged;"
+        },
+        {
+          "line": 155,
+          "text": "/* 90h */\tResourceKey mModelKey;"
+        },
+        {
+          "line": 156,
+          "text": "/* 9Ch */\tModelPtr mpModel;"
+        },
+        {
+          "line": 157,
+          "text": "/* A0h */\tIModelWorldPtr mpModelWorld;"
+        },
+        {
+          "line": 174,
+          "text": "DeclareAddress(SetModelKey);  // 0xC87B30 0xC889A0"
+        }
+      ]
+    },
+    {
+      "path": "Simulator/cCreatureBase.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureBase.h",
+      "bytes": 18135,
+      "sha256": "4b813c02ac09a260d34048b8002e2cc694ccad67de4df4409fd45073ea5bec37",
+      "line_count": 429,
+      "full_text_read": true,
+      "selected_declarations": [
+        {
+          "line": 151,
+          "text": "cCreatureAnimal* GetAnimalTarget();"
+        },
+        {
+          "line": 235,
+          "text": "/* 80h */\tvirtual float CalculateScale(bool isBaby);"
+        },
+        {
+          "line": 236,
+          "text": "/* 84h */\tvirtual void SetCreatureTarget(cCombatant* pTarget, bool, int intentionTowardsTarget);  //TODO check loc_D3242E"
+        },
+        {
+          "line": 295,
+          "text": "/* B74h */\tint mIntentionTowardsTarget;"
+        },
+        {
+          "line": 353,
+          "text": "/* E7Ch */\tcCombatant* mpCombatantTarget;  // cCombatant"
+        },
+        {
+          "line": 359,
+          "text": "/* E90h */\tuint32_t mCurrentAttackAnimId;  // -1"
+        },
+        {
+          "line": 408,
+          "text": "DeclareAddress(GetAnimalTarget);  // C0E740"
+        },
+        {
+          "line": 425,
+          "text": "DeclareAddress(TakeDamage);"
+        }
+      ]
+    },
+    {
+      "path": "Simulator/cCreatureAbility.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureAbility.h",
+      "bytes": 5751,
+      "sha256": "0d58d8957fbeca887c9c123cdbffe9fb94ba818eba97865563a4a4f92e6919d2",
+      "line_count": 195,
+      "full_text_read": true,
+      "selected_declarations": [
+        {
+          "line": 140,
+          "text": "/* 40h */\tfloat mRangedDamage;"
+        },
+        {
+          "line": 159,
+          "text": "/* A8h */\tfloat mRange;  // 10.0"
+        },
+        {
+          "line": 166,
+          "text": "/* F4h */\tfloat mRushingRange;"
+        },
+        {
+          "line": 169,
+          "text": "/* 100h */\tbool mbRushingTargetedCharge;  // true"
+        },
+        {
+          "line": 184,
+          "text": "/* 134h */\tfloat mRangeMin;"
+        },
+        {
+          "line": 185,
+          "text": "/* 138h */\tfloat mAvatarRangeMin;"
+        }
+      ]
+    },
+    {
+      "path": "Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "line_count": 267,
+      "full_text_read": true,
+      "selected_declarations": [
+        {
+          "line": 22,
+          "text": "#include <Spore\\Graphics\\Model.h>"
+        },
+        {
+          "line": 110,
+          "text": "/* 70h */\tvirtual Graphics::IModelWorld* zGetModelWorld() = 0; // Broken."
+        },
+        {
+          "line": 116,
+          "text": "Graphics::IModelWorld* GetModelWorld() { return GetModel() ? GetModel()->GetModelWorld() : nullptr; }"
+        },
+        {
+          "line": 126,
+          "text": "Graphics::Model* GetModel();"
+        },
+        {
+          "line": 135,
+          "text": "/* 74h */ ColorRGBA mColor; // gets copied to model color initially. At runtime, color should be applied directly to the mpModel."
+        },
+        {
+          "line": 146,
+          "text": "/* 180h */\tModelPtr mpModel;"
+        },
+        {
+          "line": 167,
+          "text": "float durationScale;  // 1.0"
+        },
+        {
+          "line": 264,
+          "text": "inline Graphics::Model* AnimatedCreature::GetModel() {"
+        },
+        {
+          "line": 265,
+          "text": "return mpModel.get();"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Generic spatial objects are shared; no specific Creature update chain proven.",
+    "No mapping from skin edit to collider, hit shape, navigation or AI cache recovered.",
+    "Default-looking values and helper names do not establish executed hit formulas.",
+    "Animation target, world bounds and gameplay damage remain distinct concepts."
+  ]
+}

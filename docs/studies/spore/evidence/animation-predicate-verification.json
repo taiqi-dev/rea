@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "module": 45,
+  "tests_run": 32,
+  "failures": 0,
+  "errors": 0,
+  "status": "passed",
+  "log": "test_animation_event_scopes_separate (__main__.PredicateTests.test_animation_event_scopes_separate) ... ok\ntest_bad_magic (__main__.PredicateTests.test_bad_magic) ... ok\ntest_body_only_fallback (__main__.PredicateTests.test_body_only_fallback) ... ok\ntest_body_revision_invalidation (__main__.PredicateTests.test_body_revision_invalidation) ... ok\ntest_boolean_mismatch (__main__.PredicateTests.test_boolean_mismatch) ... ok\ntest_channel_bounds (__main__.PredicateTests.test_channel_bounds) ... ok\ntest_channel_require_separate (__main__.PredicateTests.test_channel_require_separate) ... ok\ntest_declared_size (__main__.PredicateTests.test_declared_size) ... ok\ntest_default_policy (__main__.PredicateTests.test_default_policy) ... ok\ntest_event_bounds (__main__.PredicateTests.test_event_bounds) ... ok\ntest_event_budget (__main__.PredicateTests.test_event_budget) ... ok\ntest_event_bytes_without_gate_preserved (__main__.PredicateTests.test_event_bytes_without_gate_preserved) ... ok\ntest_false_dominates_unknown (__main__.PredicateTests.test_false_dominates_unknown) ... ok\ntest_false_requirement (__main__.PredicateTests.test_false_requirement) ... ok\ntest_invalid_word (__main__.PredicateTests.test_invalid_word) ... ok\ntest_negative_predicate_offset (__main__.PredicateTests.test_negative_predicate_offset) ... ok\ntest_no_silent_fallback (__main__.PredicateTests.test_no_silent_fallback) ... ok\ntest_nonboolean_fact (__main__.PredicateTests.test_nonboolean_fact) ... ok\ntest_removed_part_invalidation (__main__.PredicateTests.test_removed_part_invalidation) ... ok\ntest_same_category_wrong_side (__main__.PredicateTests.test_same_category_wrong_side) ... ok\ntest_short_predicate (__main__.PredicateTests.test_short_predicate) ... ok\ntest_soul_revision_invalidation (__main__.PredicateTests.test_soul_revision_invalidation) ... ok\ntest_stable_binding_order (__main__.PredicateTests.test_stable_binding_order) ... ok\ntest_true_requirement (__main__.PredicateTests.test_true_requirement) ... ok\ntest_unknown_bit_policy (__main__.PredicateTests.test_unknown_bit_policy) ... ok\ntest_unknown_condition_rejected (__main__.PredicateTests.test_unknown_condition_rejected) ... ok\ntest_unknown_fact (__main__.PredicateTests.test_unknown_fact) ... ok\ntest_unsupported_version (__main__.PredicateTests.test_unsupported_version) ... ok\ntest_valid_plan (__main__.PredicateTests.test_valid_plan) ... ok\ntest_wire_boolean_requirements (__main__.PredicateTests.test_wire_boolean_requirements) ... ok\ntest_wire_unknown_bits_retained (__main__.PredicateTests.test_wire_unknown_bits_retained) ... ok\ntest_wire_unselected_value_retained (__main__.PredicateTests.test_wire_unselected_value_retained) ... ok\n\n----------------------------------------------------------------------\nRan 32 tests in 0.001s\n\nOK\n",
+  "local_consistency": {
+    "status": "passed",
+    "resource_checks": 46,
+    "counts": {
+      "resources": 46,
+      "channels": 612,
+      "events": 818,
+      "require": 15
+    },
+    "evidence_sha256": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94",
+    "scope": "Evidence raw-byte/metadata consistency against28; no additional package reads in verifier."
+  },
+  "independent_example": {
+    "facts": {
+      "hasGraspers": true,
+      "hasFeet": true,
+      "uprightSpine": false
+    },
+    "initial": {
+      "status": "ready",
+      "clip": "right-swipe",
+      "bindings": {
+        "rightGrasper": "R22"
+      },
+      "body_revision": 8,
+      "soul_revision": 3,
+      "rejected": []
+    },
+    "after_right_hand_removed": {
+      "status": "ready",
+      "clip": "left-swipe",
+      "bindings": {
+        "leftGrasper": "L11"
+      },
+      "body_revision": 9,
+      "soul_revision": 3,
+      "rejected": [
+        {
+          "clip": "right-swipe",
+          "reason": "missing-role",
+          "role": "rightGrasper"
+        }
+      ]
+    },
+    "after_all_hands_removed": {
+      "status": "ready",
+      "clip": "body-shove",
+      "bindings": {
+        "torso": "T0"
+      },
+      "body_revision": 10,
+      "soul_revision": 3,
+      "rejected": [
+        {
+          "clip": "right-swipe",
+          "reason": "condition-fail"
+        },
+        {
+          "clip": "left-swipe",
+          "reason": "condition-fail"
+        }
+      ]
+    }
+  },
+  "verifier_sha256": "2019db1c3e840a39b24e5fb6403814c494b49d338225d81e4eee6f7cb258299d",
+  "limitations": "Synthetic format tests and independent policy tests do not verify original fallback or runtime execution.",
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "bf1aff9b8cb640b9992a6ab849fe0d86584630954043d47421466f8579667f45",
+    "captured_file_bytes": 4732,
+    "reference_changes": [
+      {
+        "pointer": "/local_consistency/evidence_sha256",
+        "captured": "120e9964177ea916751eda169d7e1f241c137ea43a869380f629ba701dbb243e",
+        "published": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94",
+        "study_file": "evidence/local-selected-animation-predicates.json"
+      }
+    ]
+  }
+}

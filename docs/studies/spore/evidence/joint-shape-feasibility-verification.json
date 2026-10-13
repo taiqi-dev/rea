@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "module": 55,
+  "tests_run": 39,
+  "failures": 0,
+  "errors": 0,
+  "status": "passed",
+  "log": "test_3d_swing (__main__.Examples.test_3d_swing) ... ok\ntest_after_power_contact (__main__.Examples.test_after_power_contact) ... ok\ntest_after_windup_flex (__main__.Examples.test_after_windup_flex) ... ok\ntest_asymmetric_mirror_bounds (__main__.Examples.test_asymmetric_mirror_bounds) ... ok\ntest_bad_limit (__main__.Examples.test_bad_limit) ... ok\ntest_before_power (__main__.Examples.test_before_power) ... ok\ntest_before_windup (__main__.Examples.test_before_windup) ... ok\ntest_composed_swing_twist (__main__.Examples.test_composed_swing_twist) ... ok\ntest_cone_reject (__main__.Examples.test_cone_reject) ... ok\ntest_double_mirror (__main__.Examples.test_double_mirror) ... ok\ntest_equal_lengths_zero_target (__main__.Examples.test_equal_lengths_zero_target) ... ok\ntest_half_turn_singularity (__main__.Examples.test_half_turn_singularity) ... ok\ntest_identity_joint (__main__.Examples.test_identity_joint) ... ok\ntest_invalid_contact (__main__.Examples.test_invalid_contact) ... ok\ntest_invalid_length (__main__.Examples.test_invalid_length) ... ok\ntest_invalid_quaternion (__main__.Examples.test_invalid_quaternion) ... ok\ntest_invalid_reference_retained (__main__.Examples.test_invalid_reference_retained) ... ok\ntest_length_minimum_with_joint_limit (__main__.Examples.test_length_minimum_with_joint_limit) ... ok\ntest_length_too_far (__main__.Examples.test_length_too_far) ... ok\ntest_length_too_near (__main__.Examples.test_length_too_near) ... ok\ntest_lengths_preserved (__main__.Examples.test_lengths_preserved) ... ok\ntest_mirror_twist (__main__.Examples.test_mirror_twist) ... ok\ntest_no_swept_guarantee (__main__.Examples.test_no_swept_guarantee) ... ok\ntest_nonfinite_quaternion (__main__.Examples.test_nonfinite_quaternion) ... ok\ntest_parallel_pole (__main__.Examples.test_parallel_pole) ... ok\ntest_quaternion_sign (__main__.Examples.test_quaternion_sign) ... ok\ntest_reference_separate (__main__.Examples.test_reference_separate) ... ok\ntest_removed_neighbor_only_fixes_contact (__main__.Examples.test_removed_neighbor_only_fixes_contact) ... ok\ntest_reverse_branch_reject (__main__.Examples.test_reverse_branch_reject) ... ok\ntest_rotation_diagnostic (__main__.Examples.test_rotation_diagnostic) ... ok\ntest_rotation_zero (__main__.Examples.test_rotation_zero) ... ok\ntest_segment_closest_endpoint (__main__.Examples.test_segment_closest_endpoint) ... ok\ntest_shape_revision_identity (__main__.Examples.test_shape_revision_identity) ... ok\ntest_skin_pose_bounds (__main__.Examples.test_skin_pose_bounds) ... ok\ntest_skin_pose_budget (__main__.Examples.test_skin_pose_budget) ... ok\ntest_skin_pose_nonfinite (__main__.Examples.test_skin_pose_nonfinite) ... ok\ntest_skin_pose_prefix (__main__.Examples.test_skin_pose_prefix) ... ok\ntest_twist_reject (__main__.Examples.test_twist_reject) ... ok\ntest_zero_segment_contact (__main__.Examples.test_zero_segment_contact) ... ok\n\n----------------------------------------------------------------------\nRan 39 tests in 0.002s\n\nOK\n",
+  "evidence_input": {
+    "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\evidence\\joint-limits-shape-feasibility-observations.json",
+    "sha256": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66"
+  },
+  "document_input": {
+    "path": "E:\\0Data\\Project_Other\\rea\\docs\\studies\\spore\\55-joint-limits-shape-edits-and-motion-feasibility.md",
+    "sha256": "6a2c5b6d4a96f3b82a3a306bb930a75b96df77493372d9e40f0ce584842c78c7"
+  },
+  "local_raw_consistency": {
+    "checked_rows": 14,
+    "status": "passed"
+  },
+  "own_example": {
+    "before": {
+      "length1": 1.0,
+      "length2": 0.8,
+      "radius": 0.08,
+      "reference_flex": 90,
+      "shoulder_swing_max": 80,
+      "elbow_min": 10,
+      "elbow_max": 130,
+      "hand_twist_min": -35,
+      "hand_twist_max": 35,
+      "body_revision": 8
+    },
+    "after": {
+      "length1": 1.6,
+      "length2": 0.8,
+      "radius": 0.28,
+      "reference_flex": 110,
+      "shoulder_swing_max": 80,
+      "elbow_min": 10,
+      "elbow_max": 130,
+      "hand_twist_min": -35,
+      "hand_twist_max": 35,
+      "body_revision": 9
+    },
+    "phases": {
+      "windup": {
+        "target": [
+          0.8,
+          0.6,
+          0
+        ],
+        "hand_twist": 15
+      },
+      "power": {
+        "target": [
+          1.4,
+          0.2,
+          0
+        ],
+        "hand_twist": 30
+      }
+    },
+    "neighbor": {
+      "center": [
+        1.4,
+        0.55,
+        0
+      ],
+      "radius": 0.12
+    },
+    "results": {
+      "before": {
+        "windup": {
+          "shape_valid": true,
+          "reference_within_hard_limits": true,
+          "body_revision": 8,
+          "pose": {
+            "status": "geometry-solved",
+            "distance": 1.0,
+            "elbow": [
+              0.5439999999999999,
+              0.408,
+              0.7332121111929345
+            ],
+            "wrist": [
+              0.8,
+              0.6,
+              0
+            ],
+            "flex_degrees": 113.57817847820183,
+            "shoulder_swing_degrees": 57.04364640896862,
+            "length_errors": [
+              0.0,
+              1.1102230246251565e-16
+            ]
+          },
+          "reasons": [],
+          "swept_path_validated": false,
+          "contacts": [
+            {
+              "parameter": 0.9859999999999999,
+              "axis_distance": 1.1359154898142731,
+              "clearance": 0.9359154898142731
+            },
+            {
+              "parameter": 1,
+              "axis_distance": 0.6020797289396146,
+              "clearance": 0.40207972893961463
+            }
+          ],
+          "reference_preference_error_degrees": 23.578178478201835,
+          "feasible": true
+        },
+        "power": {
+          "shape_valid": true,
+          "reference_within_hard_limits": true,
+          "body_revision": 8,
+          "pose": {
+            "status": "geometry-solved",
+            "distance": 1.414213562373095,
+            "elbow": [
+              0.8259999999999998,
+              0.118,
+              0.551180551180827
+            ],
+            "wrist": [
+              1.4,
+              0.2,
+              0
+            ],
+            "flex_degrees": 76.99712183708608,
+            "shoulder_swing_degrees": 34.30999268790314,
+            "length_errors": [
+              0.0,
+              2.220446049250313e-16
+            ]
+          },
+          "reasons": [],
+          "swept_path_validated": false,
+          "contacts": [
+            {
+              "parameter": 1,
+              "axis_distance": 0.9054832963671944,
+              "clearance": 0.7054832963671944
+            },
+            {
+              "parameter": 1,
+              "axis_distance": 0.35000000000000003,
+              "clearance": 0.15000000000000002
+            }
+          ],
+          "reference_preference_error_degrees": -13.002878162913916,
+          "feasible": true
+        }
+      },
+      "after": {
+        "windup": {
+          "shape_valid": true,
+          "reference_within_hard_limits": true,
+          "body_revision": 9,
+          "pose": {
+            "status": "geometry-solved",
+            "distance": 1.0,
+            "elbow": [
+              1.1680000000000001,
+              0.8760000000000001,
+              0.6545227268781428
+            ],
+            "wrist": [
+              0.8,
+              0.6,
+              0
+            ],
+            "flex_degrees": 149.24648019189593,
+            "shoulder_swing_degrees": 43.113605945898705,
+            "length_errors": [
+              0.0,
+              0.0
+            ]
+          },
+          "reasons": [
+            "ElbowFlexExceeded"
+          ],
+          "swept_path_validated": false,
+          "contacts": [
+            {
+              "parameter": 0.826953125,
+              "axis_distance": 0.7154301044651391,
+              "clearance": 0.3154301044651391
+            },
+            {
+              "parameter": 0.6765625,
+              "axis_distance": 0.5436436677640969,
+              "clearance": 0.14364366776409687
+            }
+          ],
+          "reference_preference_error_degrees": 39.24648019189593,
+          "feasible": false
+        },
+        "power": {
+          "shape_valid": true,
+          "reference_within_hard_limits": true,
+          "body_revision": 9,
+          "pose": {
+            "status": "geometry-solved",
+            "distance": 1.414213562373095,
+            "elbow": [
+              1.3720000000000003,
+              0.19600000000000006,
+              0.7994998436522673
+            ],
+            "wrist": [
+              1.4,
+              0.2,
+              0
+            ],
+            "flex_degrees": 117.95318688338116,
+            "shoulder_swing_degrees": 30.962968709327708,
+            "length_errors": [
+              2.220446049250313e-16,
+              -1.1102230246251565e-16
+            ]
+          },
+          "reasons": [
+            "NeighborPenetration"
+          ],
+          "swept_path_validated": false,
+          "contacts": [
+            {
+              "parameter": 0.7924218749999998,
+              "axis_distance": 0.8093163685327264,
+              "clearance": 0.40931636853272635
+            },
+            {
+              "parameter": 1,
+              "axis_distance": 0.35000000000000003,
+              "clearance": -0.04999999999999999
+            }
+          ],
+          "reference_preference_error_degrees": 7.953186883381164,
+          "feasible": false
+        }
+      }
+    },
+    "radial_minimum_with_elbow_max": {
+      "before": 0.7820101179022795,
+      "after": 1.2467813437818436
+    }
+  },
+  "verifier_sha256": "7eb61cab766b89d5c08b0e1a5642dcfbe0e43fb47a2c32d0acb2ff2bb51796cd",
+  "limitations": "Independent circular swing cone/twist checks, two-link pose samples and capsule-sphere examples only; no native solver, full trajectory or muscle physics verified.",
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "c0e5b786e56916c3c9edf3aadeb94bbb4074bddf1243fd172a88aac1cad0943c",
+    "captured_file_bytes": 10291,
+    "reference_changes": [
+      {
+        "pointer": "/evidence_input/sha256",
+        "captured": "f69d8c41d80900fd0b441bec5008a689596b135c16fe881364fb881a17777342",
+        "published": "62a0422de6a269eb70996649986a30a517036447dfa387409de602023bc16b66",
+        "study_file": "evidence/joint-limits-shape-feasibility-observations.json"
+      }
+    ]
+  }
+}

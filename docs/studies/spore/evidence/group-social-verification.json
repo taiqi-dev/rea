@@ -1,0 +1,16 @@
+{
+  "markdown_files_checked": 25,
+  "relative_links_checked": 103,
+  "json_files_parsed": 4,
+  "exact_literals_found_checked": 16,
+  "public_source_provenance_records_checked": 8,
+  "target_sha256_rechecked": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+  "errors": [],
+  "limitations": "Documentation consistency and bounded static literal/provenance checks; no native disassembly, game runtime, concurrency or persistence verification.",
+  "independent_example_tests": {
+    "path": "checks/verify_group_social_examples.py",
+    "passed": 7,
+    "exit_code": 0,
+    "limitations": "Sequential executable examples only; not original game tests, real animation, persistence, navigation or concurrency."
+  }
+}

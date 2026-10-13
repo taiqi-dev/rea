@@ -1,0 +1,38 @@
+{
+  "kind": "developer-historical-design-not-local-runtime",
+  "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+  "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+  "bytes": 3896086,
+  "pages": 11,
+  "selected_pdf_pages_one_based": [
+    5,
+    6,
+    7
+  ],
+  "facts": [
+    {
+      "section": "3.2.3 and footnote5",
+      "page": 5,
+      "summary": "Channel ownership per animated degree of freedom; matching blend group admits sharing; authored weighted position/rotation blends"
+    },
+    {
+      "section": "4 opening",
+      "page": 5,
+      "summary": "Weighted animation layering; specialize and blend pose goals, compose with synthesized locomotion, IK then secondary animation"
+    },
+    {
+      "section": "4.1.2",
+      "page": 6,
+      "summary": "Variant selection by game; channels may covary, such as grasper and shoulder"
+    },
+    {
+      "section": "4.2",
+      "page": 7,
+      "summary": "Locomotion gait system separate from authored foot posing; multiple gait styles possible"
+    }
+  ],
+  "limits": [
+    "Historical design; not local executable call trace",
+    "Animation layer support does not establish simultaneous gameplay skills or damage commits"
+  ]
+}

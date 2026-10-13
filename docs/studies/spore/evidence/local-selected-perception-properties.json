@@ -1,0 +1,1274 @@
+{
+  "kind": "local-config-observation-not-REA-Evidence",
+  "scope": "CreatureGameTuning PROP variants only; selected perception/hunger/flee/target names",
+  "package_load_order": "unknown; variants remain separate",
+  "absence_semantics": "not written in this record, not a claim of absent runtime/default/inherited behavior",
+  "registry_commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "registry_sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+  "reader_sha256": "1bfe1b0ae787d2f50563a2b5258c7e6e94d1321066f02d062a3e343dbfd33f88",
+  "shared_reader_sha256": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "records": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7c340397"
+      },
+      "offset": 12597699,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "e6aa5b8d599d5a3a44ce629cd98543cd358b148b973209141c86d1ec480d5ccb",
+      "decoded_sha256": "e6aa5b8d599d5a3a44ce629cd98543cd358b148b973209141c86d1ec480d5ccb",
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            35.0
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        }
+      },
+      "not_written_here": [
+        "creatureUntargetDistance",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureFleeTime",
+        "creatureChaseDistance",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureMaxPerceptionRadius",
+        "creatureLoudnessInCombatMultiplier",
+        "creatureLoudnessSprintingSpeedMultiplier",
+        "creatureLoudnessNormalSpeedMultiplier",
+        "creatureAlertSightMultiplier_LookAt",
+        "creatureAlertHearingMultiplier_LookAt",
+        "creatureAlertSightMultiplier",
+        "creatureAlertHearingMultiplier",
+        "creatureTargetMethod",
+        "creatureHelpAllyInRadius",
+        "creatureFleeForceStay",
+        "creatureFleeDirectionBiasHerd",
+        "creatureFleeDirectionBiasAwayFromCamera",
+        "creatureFleeDirectionBiasAwayFromThreat",
+        "creatureFleeTiredTime",
+        "creatureFleeTimeToTired",
+        "creatureFleeStealthTime",
+        "creatureFleeRememberTime",
+        "creatureFleeDodgeTime",
+        "creatureFleeDodgeDistance",
+        "creatureCallMaxLoudness",
+        "creatureFleeJumpFrequency",
+        "creatureHitPointsTurnAndFightPercentage"
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x02ae0c7e",
+        "instance": "0x7c340397"
+      },
+      "offset": 12867744,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "eea2fb3fc798a9b5c7408f68e4f386677515966df0bc3f4335a670d55d70f624",
+      "decoded_sha256": "eea2fb3fc798a9b5c7408f68e4f386677515966df0bc3f4335a670d55d70f624",
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            45.0
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        }
+      },
+      "not_written_here": [
+        "creatureUntargetDistance",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureFleeTime",
+        "creatureChaseDistance",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureMaxPerceptionRadius",
+        "creatureLoudnessInCombatMultiplier",
+        "creatureLoudnessSprintingSpeedMultiplier",
+        "creatureLoudnessNormalSpeedMultiplier",
+        "creatureAlertSightMultiplier_LookAt",
+        "creatureAlertHearingMultiplier_LookAt",
+        "creatureAlertSightMultiplier",
+        "creatureAlertHearingMultiplier",
+        "creatureTargetMethod",
+        "creatureHelpAllyInRadius",
+        "creatureFleeForceStay",
+        "creatureFleeDirectionBiasHerd",
+        "creatureFleeDirectionBiasAwayFromCamera",
+        "creatureFleeDirectionBiasAwayFromThreat",
+        "creatureFleeTiredTime",
+        "creatureFleeTimeToTired",
+        "creatureFleeStealthTime",
+        "creatureFleeRememberTime",
+        "creatureFleeDodgeTime",
+        "creatureFleeDodgeDistance",
+        "creatureCallMaxLoudness",
+        "creatureFleeJumpFrequency",
+        "creatureHitPointsTurnAndFightPercentage"
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xad56080c",
+        "instance": "0x7c340397"
+      },
+      "offset": 12641977,
+      "stored_bytes": 2412,
+      "memory_bytes": 3808,
+      "compression": 65535,
+      "stored_sha256": "4121c12f833cb157237865120845193a9cfcb7722ad464ce9ca26ffd3c41d796",
+      "decoded_sha256": "d270d441e1c6d7ce3fb6d7076dfad5d9c77fa90ea6d8377fe82807b7dac3fda7",
+      "property_count": 249,
+      "selected_properties": {
+        "creatureUntargetDistance": {
+          "id": "0x01c2301b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            17.5
+          ]
+        },
+        "creatureChaseDistance": {
+          "id": "0x0e98ea09",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureHelpAllyInRadius": {
+          "id": "0x13138bd2",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureFleeForceStay": {
+          "id": "0x2babcdfc",
+          "type": "0x0001",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            false
+          ]
+        },
+        "creatureFleeStealthTime": {
+          "id": "0x2eba30a8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureFleeDodgeDistance": {
+          "id": "0x322d5dd6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.25
+          ]
+        },
+        "creatureLoudnessSprintingSpeedMultiplier": {
+          "id": "0x34877c4f",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureFleeRememberTime": {
+          "id": "0x35cd8f0c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            90.0
+          ]
+        },
+        "creatureFleeTimeToTired": {
+          "id": "0x3757372c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureFleeDodgeTime": {
+          "id": "0x45ee098c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureFleeDirectionBiasHerd": {
+          "id": "0x5be9d5f9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            25.0
+          ]
+        },
+        "creatureFleeTime": {
+          "id": "0x6a3e31f9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureCallMaxLoudness": {
+          "id": "0x703b9a9d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            500.0
+          ]
+        },
+        "creatureFleeDirectionBiasAwayFromCamera": {
+          "id": "0x82e52579",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureFleeJumpFrequency": {
+          "id": "0x82fb1acc",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            50.0
+          ]
+        },
+        "creatureFleeDirectionBiasAwayFromThreat": {
+          "id": "0x8836316c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureHitPointsTurnAndFightPercentage": {
+          "id": "0x967f9546",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.75
+          ]
+        },
+        "creatureFleeTiredTime": {
+          "id": "0x9c2ad71b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.5
+          ]
+        },
+        "creatureLoudnessNormalSpeedMultiplier": {
+          "id": "0xce6bd0a6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.5
+          ]
+        }
+      },
+      "not_written_here": [
+        "parent",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureAlertSightMultiplier_LookAt",
+        "creatureAlertHearingMultiplier_LookAt",
+        "creatureAlertSightMultiplier",
+        "creatureAlertHearingMultiplier",
+        "creatureTargetMethod"
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xf71fa311",
+        "instance": "0x7c340397"
+      },
+      "offset": 13243116,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535,
+      "stored_sha256": "00ccd62be22e69ed8592e37cb0225bed3c67e09ca1918919e6039ee43c45ef8a",
+      "decoded_sha256": "448f108ae640b7ceae02acc80b94fdb7d35fbe31dd0db1cc6cb9a5df120a5545",
+      "property_count": 28,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureAlertHearingMultiplier": {
+          "id": "0x283d6bf9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            30.0
+          ]
+        },
+        "creatureAlertSightMultiplier_LookAt": {
+          "id": "0xa5164107",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureAlertSightMultiplier": {
+          "id": "0xb49d89aa",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureAlertHearingMultiplier_LookAt": {
+          "id": "0xc3f32fe6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        }
+      },
+      "not_written_here": [
+        "creatureUntargetDistance",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureFleeTime",
+        "creatureFleeDistance",
+        "creatureChaseDistance",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureLoudnessSprintingSpeedMultiplier",
+        "creatureLoudnessNormalSpeedMultiplier",
+        "creatureTargetMethod",
+        "creatureHelpAllyInRadius",
+        "creatureFleeForceStay",
+        "creatureFleeDirectionBiasHerd",
+        "creatureFleeDirectionBiasAwayFromCamera",
+        "creatureFleeDirectionBiasAwayFromThreat",
+        "creatureFleeTiredTime",
+        "creatureFleeTimeToTired",
+        "creatureFleeStealthTime",
+        "creatureFleeRememberTime",
+        "creatureFleeDodgeTime",
+        "creatureFleeDodgeDistance",
+        "creatureCallMaxLoudness",
+        "creatureFleeJumpFrequency",
+        "creatureHitPointsTurnAndFightPercentage"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7c340397"
+      },
+      "offset": 18774990,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "b234434ff7bbfe6c71f4af8c471101056b4cbcd67aa23c1a08e1cd0a951c6309",
+      "decoded_sha256": "b234434ff7bbfe6c71f4af8c471101056b4cbcd67aa23c1a08e1cd0a951c6309",
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            35.0
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        }
+      },
+      "not_written_here": [
+        "creatureUntargetDistance",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureFleeTime",
+        "creatureChaseDistance",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureMaxPerceptionRadius",
+        "creatureLoudnessInCombatMultiplier",
+        "creatureLoudnessSprintingSpeedMultiplier",
+        "creatureLoudnessNormalSpeedMultiplier",
+        "creatureAlertSightMultiplier_LookAt",
+        "creatureAlertHearingMultiplier_LookAt",
+        "creatureAlertSightMultiplier",
+        "creatureAlertHearingMultiplier",
+        "creatureTargetMethod",
+        "creatureHelpAllyInRadius",
+        "creatureFleeForceStay",
+        "creatureFleeDirectionBiasHerd",
+        "creatureFleeDirectionBiasAwayFromCamera",
+        "creatureFleeDirectionBiasAwayFromThreat",
+        "creatureFleeTiredTime",
+        "creatureFleeTimeToTired",
+        "creatureFleeStealthTime",
+        "creatureFleeRememberTime",
+        "creatureFleeDodgeTime",
+        "creatureFleeDodgeDistance",
+        "creatureCallMaxLoudness",
+        "creatureFleeJumpFrequency",
+        "creatureHitPointsTurnAndFightPercentage"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x02ae0c7e",
+        "instance": "0x7c340397"
+      },
+      "offset": 3819892,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "7d775fc82a6f5ab72d5040f3a0adbb2369ebaa3e074243f359bec5d7c37b87e4",
+      "decoded_sha256": "7d775fc82a6f5ab72d5040f3a0adbb2369ebaa3e074243f359bec5d7c37b87e4",
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            45.0
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        }
+      },
+      "not_written_here": [
+        "creatureUntargetDistance",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureFleeTime",
+        "creatureChaseDistance",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureMaxPerceptionRadius",
+        "creatureLoudnessInCombatMultiplier",
+        "creatureLoudnessSprintingSpeedMultiplier",
+        "creatureLoudnessNormalSpeedMultiplier",
+        "creatureAlertSightMultiplier_LookAt",
+        "creatureAlertHearingMultiplier_LookAt",
+        "creatureAlertSightMultiplier",
+        "creatureAlertHearingMultiplier",
+        "creatureTargetMethod",
+        "creatureHelpAllyInRadius",
+        "creatureFleeForceStay",
+        "creatureFleeDirectionBiasHerd",
+        "creatureFleeDirectionBiasAwayFromCamera",
+        "creatureFleeDirectionBiasAwayFromThreat",
+        "creatureFleeTiredTime",
+        "creatureFleeTimeToTired",
+        "creatureFleeStealthTime",
+        "creatureFleeRememberTime",
+        "creatureFleeDodgeTime",
+        "creatureFleeDodgeDistance",
+        "creatureCallMaxLoudness",
+        "creatureFleeJumpFrequency",
+        "creatureHitPointsTurnAndFightPercentage"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xad56080c",
+        "instance": "0x7c340397"
+      },
+      "offset": 13758115,
+      "stored_bytes": 2413,
+      "memory_bytes": 3808,
+      "compression": 65535,
+      "stored_sha256": "627f3d9b6c6a4a8f63fb5bc21603645c5a61010634ed3779b28290d3e1da3047",
+      "decoded_sha256": "731f7bd8c29f5524ce568ee22855faf96488b0090389bad3a49ec5137fef916a",
+      "property_count": 249,
+      "selected_properties": {
+        "creatureUntargetDistance": {
+          "id": "0x01c2301b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            17.5
+          ]
+        },
+        "creatureChaseDistance": {
+          "id": "0x0e98ea09",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureHelpAllyInRadius": {
+          "id": "0x13138bd2",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureFleeForceStay": {
+          "id": "0x2babcdfc",
+          "type": "0x0001",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            false
+          ]
+        },
+        "creatureFleeStealthTime": {
+          "id": "0x2eba30a8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureFleeDodgeDistance": {
+          "id": "0x322d5dd6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.25
+          ]
+        },
+        "creatureLoudnessSprintingSpeedMultiplier": {
+          "id": "0x34877c4f",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureFleeRememberTime": {
+          "id": "0x35cd8f0c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            90.0
+          ]
+        },
+        "creatureFleeTimeToTired": {
+          "id": "0x3757372c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureFleeDodgeTime": {
+          "id": "0x45ee098c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureFleeDirectionBiasHerd": {
+          "id": "0x5be9d5f9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            25.0
+          ]
+        },
+        "creatureFleeTime": {
+          "id": "0x6a3e31f9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureCallMaxLoudness": {
+          "id": "0x703b9a9d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            500.0
+          ]
+        },
+        "creatureFleeDirectionBiasAwayFromCamera": {
+          "id": "0x82e52579",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureFleeJumpFrequency": {
+          "id": "0x82fb1acc",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            50.0
+          ]
+        },
+        "creatureFleeDirectionBiasAwayFromThreat": {
+          "id": "0x8836316c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureHitPointsTurnAndFightPercentage": {
+          "id": "0x967f9546",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.75
+          ]
+        },
+        "creatureFleeTiredTime": {
+          "id": "0x9c2ad71b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.5
+          ]
+        },
+        "creatureLoudnessNormalSpeedMultiplier": {
+          "id": "0xce6bd0a6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.5
+          ]
+        }
+      },
+      "not_written_here": [
+        "parent",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureAlertSightMultiplier_LookAt",
+        "creatureAlertHearingMultiplier_LookAt",
+        "creatureAlertSightMultiplier",
+        "creatureAlertHearingMultiplier",
+        "creatureTargetMethod"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xf71fa311",
+        "instance": "0x7c340397"
+      },
+      "offset": 13325243,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535,
+      "stored_sha256": "cc50c774dd3b6202940051c3a68bdbe7d9f3855dfd9b576e5d7f579eb936b29b",
+      "decoded_sha256": "2a8f5cbeee60de330fc930d4ec2dd8b24080d26cd20688c6f43825ee05a93faf",
+      "property_count": 28,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureAlertHearingMultiplier": {
+          "id": "0x283d6bf9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureFleeWatchTime": {
+          "id": "0x3d3e2988",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            30.0
+          ]
+        },
+        "creatureAlertSightMultiplier_LookAt": {
+          "id": "0xa5164107",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureAlertSightMultiplier": {
+          "id": "0xb49d89aa",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureFleeDirectionBiasNest": {
+          "id": "0xbd82fae8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureAlertHearingMultiplier_LookAt": {
+          "id": "0xc3f32fe6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        }
+      },
+      "not_written_here": [
+        "creatureUntargetDistance",
+        "creatureHungerCostForBuildNest",
+        "creatureHungerDrain",
+        "creatureStartingMotive_HealthMin",
+        "creatureStartingMotive_HealthMax",
+        "creatureStartingMotive_HungerMin",
+        "creatureStartingMotive_HungerMax",
+        "creatureAbilityRushingTargetedCharge",
+        "CreaturesToFoodRatioMax",
+        "creatureHungerSatisfiedPerMeatPerSec",
+        "creatureHungerSatisfiedPerEgg",
+        "creatureHungerSatisfiedPerFruit",
+        "CreaturesToFoodRatioMin",
+        "creatureSightAngle",
+        "creatureSightRadius",
+        "creatureFleeTime",
+        "creatureFleeDistance",
+        "creatureChaseDistance",
+        "creatureBasePerception",
+        "creatureBaseLoudness",
+        "creatureStrengthDelta_GreatThreat",
+        "creatureStrengthDelta_EqualThreat",
+        "creatureStrengthDelta_MildThreat",
+        "creatureStrengthDelta_NoThreat",
+        "creatureFoodSearchTravelDistance",
+        "creatureLoudnessSprintingSpeedMultiplier",
+        "creatureLoudnessNormalSpeedMultiplier",
+        "creatureTargetMethod",
+        "creatureHelpAllyInRadius",
+        "creatureFleeForceStay",
+        "creatureFleeDirectionBiasHerd",
+        "creatureFleeDirectionBiasAwayFromCamera",
+        "creatureFleeDirectionBiasAwayFromThreat",
+        "creatureFleeTiredTime",
+        "creatureFleeTimeToTired",
+        "creatureFleeStealthTime",
+        "creatureFleeRememberTime",
+        "creatureFleeDodgeTime",
+        "creatureFleeDodgeDistance",
+        "creatureCallMaxLoudness",
+        "creatureFleeJumpFrequency",
+        "creatureHitPointsTurnAndFightPercentage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "kind": "pinned-community-editor-budget-source-entries",
+  "commits": {
+    "Spore-ModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "SporeModder-FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "files": [
+    {
+      "sha256": "6f24b7f1e0828c48e8c16f8ad1e09e42c805a372454c81dc72bb086e03b509f1",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorLimits.h",
+      "lines": 57,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 1744,
+      "path": "Spore ModAPI/Spore/Editors/EditorLimits.h",
+      "selected_line_ranges_inclusive": [
+        [
+          20,
+          25
+        ],
+        [
+          31,
+          54
+        ]
+      ],
+      "keyword_match_excerpt_count": 38,
+      "observation": "Budget and complexity are distinct enum entries; HasEnough/GetValue/SetLimit; community comments describe capping and notifications, without target method bodies or active values.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "e592a7d0bc6a6941f2c0baa8f3e8cd6bd8e2418c6d5b623f7d6260479218fe3c",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorModel.h",
+      "lines": 139,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 4575,
+      "path": "Spore ModAPI/Spore/Editors/EditorModel.h",
+      "selected_line_ranges_inclusive": [
+        [
+          53,
+          56
+        ],
+        [
+          64,
+          65
+        ],
+        [
+          81,
+          96
+        ],
+        [
+          130,
+          134
+        ]
+      ],
+      "keyword_match_excerpt_count": 4,
+      "observation": "Rigblock collection and direct size accessor; dirty/loading/bounds fields. No budget aggregation formula identified.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "5cb5d4d9fb17194e329effd08597bb33656bf5a6d7521a20b3a4ba3c6661aaa1",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/Editor.h",
+      "lines": 701,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 27192,
+      "path": "Spore ModAPI/Spore/Editors/Editor.h",
+      "selected_line_ranges_inclusive": [
+        [
+          98,
+          112
+        ],
+        [
+          420,
+          460
+        ],
+        [
+          540,
+          543
+        ]
+      ],
+      "keyword_match_excerpt_count": 46,
+      "observation": "Separate block/bone/baked-block/geometry declarations plus bounds and minimum-playable size. Generic editor; activation and values for land creature remain unknown.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "ce5d9e601c07815aba4f66ff15b41d03562338e6737bdfb0f6bb24554ab2401b",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorCreatureController.h",
+      "lines": 74,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 2082,
+      "path": "Spore ModAPI/Spore/Editors/EditorCreatureController.h",
+      "selected_line_ranges_inclusive": [],
+      "keyword_match_excerpt_count": 0,
+      "observation": "Scoped keyword search returned no matches. No claimed runtime budget interface.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "c13dcbe7f6608291f47d983ddc125bb2d6de683eafd7f866f67a11e4308b4df6",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorPlayMode.h",
+      "lines": 117,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 4464,
+      "path": "Spore ModAPI/Spore/Editors/EditorPlayMode.h",
+      "selected_line_ranges_inclusive": [],
+      "keyword_match_excerpt_count": 0,
+      "observation": "Scoped keyword search returned no matches. No claimed animation LOD cost interface.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "lines": 267,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 9805,
+      "path": "Spore ModAPI/Spore/Anim/AnimatedCreature.h",
+      "selected_line_ranges_inclusive": [
+        [
+          51,
+          113
+        ],
+        [
+          162,
+          190
+        ]
+      ],
+      "keyword_match_excerpt_count": 0,
+      "observation": "Playback declarations and partially identified anim_query; no scoped cost/LOD identifier. Array lengths do not establish a parallel action cap.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "cd9ee21c488cc5fccd243284bf2b9ea60c8acc27fa784f724791b776ceff4f16",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Editors/Editor.cpp",
+      "lines": 215,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 6742,
+      "path": "Spore ModAPI/SourceCode/Editors/Editor.cpp",
+      "selected_line_ranges_inclusive": [
+        [
+          28,
+          38
+        ]
+      ],
+      "keyword_match_excerpt_count": 12,
+      "observation": "Community reference count methods; keyword matches do not recover original limit evaluation.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    },
+    {
+      "sha256": "461f65242d2e19c6daaa5d9a1c8c4a61910cdfdc9e7d0914c043483565377209",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/BakeManager.h",
+      "lines": 1283,
+      "examined": "complete UTF8 text for bounded keyword search",
+      "bytes": 37294,
+      "path": "Spore ModAPI/Spore/Editors/BakeManager.h",
+      "selected_line_ranges_inclusive": [
+        [
+          32,
+          54
+        ],
+        [
+          67,
+          92
+        ]
+      ],
+      "keyword_match_excerpt_count": 67,
+      "observation": "Queue, cancel, tag/priority, stats time fields and tessellation declarations; no unit, algorithm, cache or target implementation verified.",
+      "evidence_level": "pinned-community-declaration-or-helper-not-original-runtime"
+    }
+  ],
+  "registry": {
+    "path": "reg_property.txt",
+    "bytes": 191259,
+    "examined": "complete UTF8 registry; exact scoped regex",
+    "lines": 6369,
+    "pattern": "(?i)editor.*(?:complexity|budget|limit|bound|playable)|(?:complexity|budget).*editor|model(?:Price|Complexity|RunTimeBone|Bake|LOD)|creature.*LOD|anim.*LOD",
+    "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+    "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+    "selected_declarations": [
+      {
+        "line": 160,
+        "text": "creatureSpeedMediumLODMultiplier\t0x017DC905"
+      },
+      {
+        "line": 495,
+        "text": "modelPrice\t0x02166464"
+      },
+      {
+        "line": 708,
+        "text": "modelLODDistances\t0x02E33A81"
+      },
+      {
+        "line": 719,
+        "text": "modelLODFactor0\t0x02E765CF"
+      },
+      {
+        "line": 720,
+        "text": "modelLODFactor1\t0x02E765D0"
+      },
+      {
+        "line": 721,
+        "text": "modelLODFactor2\t0x02E765D1"
+      },
+      {
+        "line": 722,
+        "text": "modelLODFactor3\t0x02E765D2"
+      },
+      {
+        "line": 936,
+        "text": "modelBakeComplete\t0x03704E55"
+      },
+      {
+        "line": 1236,
+        "text": "modelBakeLevel\t0x04460B63"
+      },
+      {
+        "line": 1255,
+        "text": "modelLODFlags0\t0x0452027C"
+      },
+      {
+        "line": 1256,
+        "text": "modelLODFlags1\t0x0452027D"
+      },
+      {
+        "line": 1257,
+        "text": "modelLODFlags2\t0x0452027E"
+      },
+      {
+        "line": 1258,
+        "text": "modelLODFlags3\t0x0452027F"
+      },
+      {
+        "line": 1353,
+        "text": "editorBoneComplexityLimit\t0x047C1D1B"
+      },
+      {
+        "line": 1591,
+        "text": "modelBakeTextureSize\t0x04C6BA29"
+      },
+      {
+        "line": 1592,
+        "text": "modelBakeQuality\t0x04C6BA3C"
+      },
+      {
+        "line": 1792,
+        "text": "editorUseBoundsForDelete\t0x05134BDF"
+      },
+      {
+        "line": 1852,
+        "text": "creatureSimulationLOD_MinDistanceLow\t0x052583BC"
+      },
+      {
+        "line": 1853,
+        "text": "creatureSimulationLOD_MinDistanceMed\t0x052583D4"
+      },
+      {
+        "line": 1917,
+        "text": "modelBakeTextureDXT\t0x052F7B17"
+      },
+      {
+        "line": 1952,
+        "text": "editorMinPlayableHeight\t0x0538B031"
+      },
+      {
+        "line": 1953,
+        "text": "editorMinPlayableWidth\t0x0538B032"
+      },
+      {
+        "line": 1954,
+        "text": "editorMinPlayableDepth\t0x0538B033"
+      },
+      {
+        "line": 1955,
+        "text": "editorMinPlayableHeightAboveGround\t0x0538B034"
+      },
+      {
+        "line": 2466,
+        "text": "editorViewableComplexityFlags\t0x05FA1567"
+      },
+      {
+        "line": 2658,
+        "text": "editorBudgetTooltip\t0x065238B1"
+      },
+      {
+        "line": 2690,
+        "text": "editorMaxBudget\t0x065E9BE8"
+      },
+      {
+        "line": 2707,
+        "text": "editorMinimumLoadBudget\t0x0664EA09"
+      },
+      {
+        "line": 2773,
+        "text": "modelBakeMeshBudget\t0x067B804D"
+      },
+      {
+        "line": 2779,
+        "text": "modelBakeTextureDilate\t0x0680A2B1"
+      },
+      {
+        "line": 3142,
+        "text": "modelComplexityScore\t0x3C652302"
+      },
+      {
+        "line": 3233,
+        "text": "modelRunTimeBoneCount\t0x51FA9DFA"
+      },
+      {
+        "line": 3343,
+        "text": "editorBoundSize\t0x700DB77D"
+      },
+      {
+        "line": 3509,
+        "text": "editorComplexityLimit\t0x9187AEE3"
+      },
+      {
+        "line": 3648,
+        "text": "editorDefaultInitialBudget\t0xB1B76A19"
+      },
+      {
+        "line": 3974,
+        "text": "editorFeetBoundSize\t0xF8DDBF2C"
+      },
+      {
+        "line": 4436,
+        "text": "modelLODDistanceScale\t0x00000027"
+      },
+      {
+        "line": 4682,
+        "text": "modelBakeHighLODComplete\t0x03704e56"
+      },
+      {
+        "line": 4683,
+        "text": "modelBakeStatsBatches\t0xafb4cda4"
+      },
+      {
+        "line": 4684,
+        "text": "modelBakeStatsOrigBatches\t0x098e3be5"
+      },
+      {
+        "line": 5486,
+        "text": "useHighModelLOD"
+      },
+      {
+        "line": 5487,
+        "text": "useHighAnimLOD"
+      }
+    ],
+    "evidence_level": "pinned-community-name-registry-not-property-values",
+    "observation": "Names are lookup candidates; no land selected PROP decoded, default resolved or caller verified."
+  },
+  "reused_records": [
+    {
+      "path": "public-part-deformation-contracts.json",
+      "source_path": "Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "selected_line_ranges_inclusive": [
+        [
+          470,
+          486
+        ]
+      ],
+      "observation": "mModelPrice, mModelComplexityScore, mModelRunTimeBoneCount and mModelBakeLevel declarations; no sum or execution cost formula."
+    },
+    {
+      "path": "public-mesh-skinning-contracts.json",
+      "source_path": "Editors/cEditorSkinMesh.h",
+      "bytes": 2886,
+      "sha256": "ed49b510ac7d528c2e4fa90f2967d7c71497c66b789b1288986d0a20672df379",
+      "selected_line_ranges_inclusive": [
+        [
+          91,
+          93
+        ]
+      ],
+      "observation": "Realtime/HQ resolution fields do not establish distance LOD thresholds."
+    }
+  ],
+  "limitations": [
+    "No current local ABI, methods, threshold values, performance measurements, thread scheduling or DNA ledger semantics recovered.",
+    "Generic editor/baker declarations may serve other creation types; land activation must be independently verified.",
+    "No source code copied into independent production deliverables."
+  ]
+}

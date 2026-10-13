@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "kind": "pinned-public-part-definition-contracts-not-native-implementation",
+  "commits": {
+    "Spore-ModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "SporeModder-FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "scope": {
+    "target": "Spore land Creature editor parts",
+    "game_executed": false,
+    "game_modified": false,
+    "package_scan_by_this_agent": false,
+    "asset_exported": false,
+    "provider_state": "Previously recorded native-provider gap reused; no setup attempted."
+  },
+  "reused_records": [
+    "public-part-deformation-contracts.json",
+    "public-part-local-animation-design.json",
+    "public-mesh-skinning-contracts.json",
+    "public-dbpf-prop-format-sources.json",
+    "public-action-channel-format-sources.json",
+    "local-selected-part-deform-keys.json"
+  ],
+  "files": [
+    {
+      "path": "Spore ModAPI/Spore/Editors/EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "lines": 514,
+      "read_ranges": [
+        [
+          10,
+          200
+        ],
+        [
+          225,
+          345
+        ],
+        [
+          350,
+          505
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/CreatureBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/CreatureBlock.h",
+      "bytes": 4035,
+      "sha256": "958b8dbc70774f76cc47c76654714651a9b33b0c97278bfae1e4f3ceea5c1ca2",
+      "lines": 149,
+      "read_ranges": [
+        [
+          1,
+          149
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWMorphHandle.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWMorphHandle.java",
+      "bytes": 2244,
+      "sha256": "4264122df72932d20eb27f8a6347c353a8dd6149d6068706dccc51353e1c3005",
+      "lines": 73,
+      "read_ranges": [
+        [
+          19,
+          73
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWSkeleton.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSkeleton.java",
+      "bytes": 3525,
+      "sha256": "643380b44a9339a3a8f2f27b13be96aa296a0db1ee874cb9d75d8d0553ad9be3",
+      "lines": 138,
+      "read_ranges": [
+        [
+          19,
+          124
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWAnimationSkin.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWAnimationSkin.java",
+      "bytes": 2837,
+      "sha256": "44de95965b8e3ceb28a97fa5085ef96e2f74a008598a9b220a97ff3e3e097e31",
+      "lines": 100,
+      "read_ranges": [
+        [
+          19,
+          95
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWKeyframeAnim.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWKeyframeAnim.java",
+      "bytes": 7401,
+      "sha256": "0745328bba8643c6f0387bc37459d2a6afd76108b962945ed5cd310a88a2c580",
+      "lines": 245,
+      "read_ranges": [
+        [
+          30,
+          165
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RenderWare.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RenderWare.java",
+      "bytes": 17612,
+      "sha256": "cae071aa16caffc8a250d7bbae00451a94ee33af44f1faed013f7c65b661eb2a",
+      "lines": 536,
+      "read_ranges": [
+        [
+          36,
+          103
+        ],
+        [
+          125,
+          208
+        ],
+        [
+          306,
+          325
+        ],
+        [
+          327,
+          346
+        ],
+        [
+          348,
+          371
+        ],
+        [
+          375,
+          413
+        ],
+        [
+          418,
+          437
+        ],
+        [
+          457,
+          477
+        ],
+        [
+          506,
+          527
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/anim/RigblockComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/RigblockComponent.java",
+      "bytes": 8010,
+      "sha256": "259ce6cea41bd5a871840222069b0caf866b1345812cb5c29135b0942c002705",
+      "lines": 215,
+      "read_ranges": [
+        [
+          37,
+          130
+        ],
+        [
+          154,
+          215
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/view/editors/RWModelViewer.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/view/editors/RWModelViewer.java",
+      "bytes": 40746,
+      "sha256": "2dc34d229e2ca55add4bad6abee4d4224154e0bb8aa3e825a461fcb82a971425",
+      "lines": 1244,
+      "read_ranges": [
+        [
+          705,
+          734
+        ],
+        [
+          789,
+          817
+        ],
+        [
+          855,
+          970
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWKeyframe.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWKeyframe.java",
+      "bytes": 3567,
+      "sha256": "9348c45f4cf2fd00ce25072e4951970c10c5c0d3b22c5006ea026e8fce160ee2",
+      "lines": 143,
+      "read_ranges": [
+        [
+          20,
+          143
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWSectionInfo.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSectionInfo.java",
+      "bytes": 2451,
+      "sha256": "39d650ab70fd445a8587a777dee7e11bdc02d1c481eb19147cd3ad2f1a011a55",
+      "lines": 66,
+      "read_ranges": [
+        [
+          12,
+          66
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/pctp/PCTPUnit.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/pctp/PCTPUnit.java",
+      "bytes": 12735,
+      "sha256": "d120d5a96020ca8394314731bcd064d55f6a4ae500913d42fcda5c4b6acad7a9",
+      "lines": 387,
+      "read_ranges": [
+        [
+          29,
+          35
+        ],
+        [
+          43,
+          83
+        ],
+        [
+          90,
+          108
+        ],
+        [
+          110,
+          163
+        ],
+        [
+          168,
+          207
+        ],
+        [
+          216,
+          222
+        ],
+        [
+          225,
+          231
+        ],
+        [
+          235,
+          241
+        ],
+        [
+          245,
+          263
+        ],
+        [
+          270,
+          279
+        ],
+        [
+          284,
+          292
+        ],
+        [
+          305,
+          322
+        ],
+        [
+          330,
+          352
+        ],
+        [
+          355,
+          361
+        ],
+        [
+          363,
+          369
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "Documentation/properties.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/Documentation/properties.txt",
+      "bytes": 186035,
+      "sha256": "f1f93dda12d78f3010c9186604d5b79c0e306e5ef61f82bdcb05e0a52fd233ba",
+      "lines": 4274,
+      "read_ranges": [
+        [
+          735,
+          741
+        ],
+        [
+          884,
+          967
+        ],
+        [
+          992,
+          1018
+        ],
+        [
+          1437,
+          1443
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationChannel.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationChannel.java",
+      "bytes": 19403,
+      "sha256": "73c1a794a6199391cc1a622cd4bafd00c0a2ebf8b9846d70a1cdff4d9a950a3c",
+      "lines": 555,
+      "read_ranges": [
+        [
+          155,
+          230
+        ],
+        [
+          374,
+          391
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWSkinsInK.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWSkinsInK.java",
+      "bytes": 2287,
+      "sha256": "b758e3ec5e01b52e9b3802388f2c8ab02588911395acd997932ab29f0236fdc2",
+      "lines": 70,
+      "read_ranges": [
+        [
+          19,
+          68
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWHeader.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWHeader.java",
+      "bytes": 4319,
+      "sha256": "264761d29ec58a7e400f57f8ae3d5fd7d015ec250e498ba8d3d932edaee3692b",
+      "lines": 144,
+      "read_ranges": [
+        [
+          19,
+          144
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/anim_cid.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/anim_cid.h",
+      "bytes": 1896,
+      "sha256": "05c17775a188df717ddacaf4196faad1381d045c2fa301ce84b3c81d7f57499a",
+      "lines": 76,
+      "read_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/anim_csd.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/anim_csd.h",
+      "bytes": 1602,
+      "sha256": "67cc9a09e7acdb2f6a32a023c4b0569ecc5dc6761dd01608afc19da200b67ef7",
+      "lines": 52,
+      "read_ranges": [
+        [
+          1,
+          15
+        ],
+        [
+          28,
+          46
+        ]
+      ],
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "source_level": "community_native_declaration"
+    },
+    {
+      "path": "src/sporemodder/file/rw4/RWBaseResource.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWBaseResource.java",
+      "bytes": 1625,
+      "sha256": "8aceb3647951a9ff6fa06a92f9b989bc02d06d2ad67b4945ea979f983a1388e7",
+      "lines": 58,
+      "read_ranges": [
+        [
+          19,
+          58
+        ]
+      ],
+      "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+      "source_level": "community_format_or_tool_implementation"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "editor_definition",
+      "source": "EditorRigblock.h",
+      "lines": [
+        [
+          230,
+          288
+        ],
+        [
+          389,
+          409
+        ],
+        [
+          413,
+          424
+        ],
+        [
+          442,
+          450
+        ],
+        [
+          461,
+          496
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": {
+        "geometry_edit": [
+          "mDeformBoneEndJointIndex",
+          "mDeformBoneBaseJointIndex",
+          "mDeformBoneMiddleIndex",
+          "mLimbType",
+          "mMuscleScale",
+          "mBaseMuscleScale",
+          "mModelMinScale",
+          "mModelMaxScale",
+          "mModelEditorInitialRotation"
+        ],
+        "control": [
+          "mMorphHandles",
+          "mMorphHandleWeights",
+          "mMorphHandleChannels"
+        ],
+        "attachment": [
+          "mCSnapBoneTransform1",
+          "mCSnapBoneTransform2",
+          "mCSnapBoneIndex",
+          "mpParent",
+          "mChildren",
+          "mpBallConnectorHandle",
+          "mpSocketConnectorModel",
+          "mModelMinSocketConnectorOffset",
+          "mModelMaxSocketConnectorOffset",
+          "mSocketConnectorOffset"
+        ],
+        "constraints": [
+          "mModelNumberOfSnapAxes",
+          "mModelSnapDownTo",
+          "mModelSnapToParentTypes",
+          "mModelStayAbove",
+          "mModelAlignLateralWith",
+          "mModelAlignHeightWith",
+          "mModelAlignXYWith",
+          "mModelTypesToInteractWith",
+          "mModelTypesToSnapReplace",
+          "mModelTypesNotToInteractWith"
+        ]
+      },
+      "observation": "Control arrays, named deform-bone indices, connector transforms and parent graph are distinct declarations. Header names suggest roles; bodies do not establish validation, drag mapping, coordinate systems or solver order.",
+      "warnings": [
+        "Bool attribute 0xA has conflicting UseSkin/HasSocketAndBallConnector names with TODO; not assigned authoritative meaning.",
+        "fixed_vector capacities are not proven game maxima.",
+        "No local ABI/offset compatibility is claimed."
+      ]
+    },
+    {
+      "id": "handle_record",
+      "source": "RWMorphHandle.java",
+      "lines": [
+        [
+          28,
+          37
+        ],
+        [
+          44,
+          60
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "type": "0x00ff0000",
+      "alignment": 4,
+      "record_bytes": 64,
+      "endianness": "little",
+      "fields": [
+        {
+          "offset": 0,
+          "name": "handleID",
+          "format": "i32"
+        },
+        {
+          "offset": 4,
+          "name": "field_4",
+          "format": "i32; unknown"
+        },
+        {
+          "offset": 8,
+          "name": "startPos",
+          "format": "f64[3]"
+        },
+        {
+          "offset": 32,
+          "name": "endPos",
+          "format": "f64[3]"
+        },
+        {
+          "offset": 56,
+          "name": "defaultTime",
+          "format": "f32"
+        },
+        {
+          "offset": 60,
+          "name": "animation",
+          "format": "encoded i32 RW object reference; expected RWKeyframeAnim"
+        }
+      ],
+      "observation": "The handle stores control endpoints and an animation reference, not a bone hierarchy. defaultTime is the morph animation progress used without modified handles, per community comment.",
+      "unknowns": [
+        "Endpoint coordinate frame, cursor projection, normalization, clamp/wrap rules, and exact original units.",
+        "Whether handleID matches a deform ID, channel ID or skeleton name in a given part."
+      ]
+    },
+    {
+      "id": "community_handle_consumer",
+      "source": "RWModelViewer.java",
+      "lines": [
+        [
+          710,
+          718
+        ],
+        [
+          860,
+          875
+        ],
+        [
+          879,
+          951
+        ]
+      ],
+      "evidence": "community_tool_implementation",
+      "observation": "The tool resolves handleID for display and edits handleID, defaultTime, startPos and endPos with undo/redo. UI interprets defaultTime as seconds with 24 frames per second; this is a community interpretation, not local runtime verification.",
+      "unknowns": [
+        "This inspected consumer does not establish original dragging or curve sampling; it changes serialized metadata."
+      ]
+    },
+    {
+      "id": "rw_reference_space",
+      "source": "RenderWare.java",
+      "lines": [
+        [
+          45,
+          82
+        ],
+        [
+          310,
+          325
+        ],
+        [
+          327,
+          343
+        ],
+        [
+          379,
+          403
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "observation": "RW object references encode object, no-object or sub-reference kind. The reader creates a full section-index list before reading payloads, preserving index identity even for unknown types.",
+      "representation": {
+        "kind_shift": 22,
+        "direct_kind": 0,
+        "null_kind": 1,
+        "sub_reference_kind": 2,
+        "writer_null": "0x00400000",
+        "community_sub_reference_mask": "0x0003ffff"
+      },
+      "unknowns": [
+        "Reserved bit semantics and general compatibility of the narrow community sub-reference mask.",
+        "RW object index must not be interpreted as skeleton bone index, handle ID, or ANIM component index."
+      ]
+    },
+    {
+      "id": "local_skeleton",
+      "source": "RWSkeleton.java",
+      "lines": [
+        [
+          31,
+          55
+        ],
+        [
+          62,
+          89
+        ],
+        [
+          93,
+          124
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "type": "0x00070002",
+      "alignment": 4,
+      "header_bytes": 24,
+      "header": "LE u32 flagsPtr,parentsPtr,namesPtr; LE i32 count,skeletonID; one skipped i32 (writer repeats count).",
+      "arrays": "Each has count LE i32 entries: names are hashed identifiers, flags raw, parent -1 is root otherwise a skeleton-list index.",
+      "observation": "Hierarchy is serialized separately from pose matrices. Bone ordering does not establish vertex blend numbering or handle channel binding."
+    },
+    {
+      "id": "reference_pose",
+      "source": "RWAnimationSkin.java",
+      "lines": [
+        [
+          32,
+          42
+        ],
+        [
+          49,
+          71
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "type": "0x00070003",
+      "fields": [
+        "offset",
+        "count",
+        "field_8",
+        "field_C",
+        "BonePose.absBindPose",
+        "BonePose.invPoseTranslation"
+      ],
+      "observation": "Community reader obtains a matrix rotation and three translation floats for each bone pose. Names do not establish inverse-bind multiplication order or the editor's final rest pose."
+    },
+    {
+      "id": "skeleton_pose_links",
+      "source": "RWSkinsInK.java",
+      "lines": [
+        [
+          28,
+          36
+        ],
+        [
+          43,
+          58
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "type": "0x0007000c",
+      "record_bytes": 20,
+      "fields": "5 LE i32 fields: field_0 RW reference, field_4 raw, matrix-buffer reference, skeleton reference, animation-skin reference.",
+      "observation": "This provides explicit RW object links among hierarchy, pose and matrix buffer; these links remain distinct from bone names and indices."
+    },
+    {
+      "id": "handle_animation_directory",
+      "source": "RWKeyframeAnim.java",
+      "lines": [
+        [
+          33,
+          69
+        ],
+        [
+          77,
+          149
+        ],
+        [
+          151,
+          161
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "type": "0x00070001",
+      "alignment": 16,
+      "header_bytes": 48,
+      "fields": [
+        {
+          "offset": "0x00",
+          "name": "pChannelNames",
+          "format": "LE u32 absolute resource offset"
+        },
+        {
+          "offset": "0x04",
+          "name": "channelCount",
+          "format": "LE i32"
+        },
+        {
+          "offset": "0x08",
+          "name": "skeletonID",
+          "format": "LE i32"
+        },
+        {
+          "offset": "0x0c",
+          "name": "field_C",
+          "format": "LE i32"
+        },
+        {
+          "offset": "0x10",
+          "name": "pChannelData",
+          "format": "LE u32; ignored by reader"
+        },
+        {
+          "offset": "0x14",
+          "name": "pPaddingEnd",
+          "format": "LE u32"
+        },
+        {
+          "offset": "0x18",
+          "name": "repeatedCount",
+          "format": "LE i32; skipped"
+        },
+        {
+          "offset": "0x1c",
+          "name": "field_1C",
+          "format": "LE i32"
+        },
+        {
+          "offset": "0x20",
+          "name": "length",
+          "format": "LE f32"
+        },
+        {
+          "offset": "0x24",
+          "name": "field_24",
+          "format": "LE i32"
+        },
+        {
+          "offset": "0x28",
+          "name": "flags",
+          "format": "LE i32"
+        },
+        {
+          "offset": "0x2c",
+          "name": "pChannelInfo",
+          "format": "LE u32 absolute resource offset"
+        }
+      ],
+      "directory": "Name list: channelCount LE i32 channelIDs. Info list: channelCount triplets (LE u32 channelPosition relative to animation base, LE i32 poseSize, LE i32 components).",
+      "warning": "Community last-channel reader reads until time decreases, without an explicit resource bound. A bounded metadata reader must not copy that sentinel loop.",
+      "unknowns": [
+        "Channel ID to skeleton name and morph ID matching must be observed for one asset; declaration alone is insufficient.",
+        "Interpolation and runtime composition are not in this parser."
+      ]
+    },
+    {
+      "id": "rw_curve_records",
+      "source": "RWKeyframe.java",
+      "lines": [
+        [
+          38,
+          75
+        ],
+        [
+          77,
+          111
+        ],
+        [
+          113,
+          143
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "variants": [
+        {
+          "components": "0x601",
+          "name": "LocRotScale",
+          "bytes": 48,
+          "fields": "LE f32[4] rotation, f32[3] location, f32[3] scale, 4 skipped bytes, f32 time"
+        },
+        {
+          "components": "0x101",
+          "name": "LocRot",
+          "bytes": 32,
+          "fields": "LE f32[4] rotation, f32[3] location, f32 time"
+        },
+        {
+          "components": "0x100",
+          "name": "BlendFactor",
+          "bytes": 8,
+          "fields": "LE f32 factor,time"
+        }
+      ],
+      "observation": "RW curves have typed local records. They are distinct from Creature ANIM rigblock scalar curves; matching or conversion is not established."
+    },
+    {
+      "id": "runtime_block_descriptor",
+      "source": "CreatureBlock.h",
+      "lines": [
+        [
+          11,
+          42
+        ],
+        [
+          44,
+          77
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "capFlags",
+        "capLvlFlags",
+        "capabilities[32] (comment: PCTPCapability*)",
+        "capLevels[32]",
+        "blockIndex",
+        "parentIndex",
+        "symmetricIndex",
+        "pParent",
+        "blockID",
+        "cal3DBoneName",
+        "cal3DOrigin",
+        "effectsOrigin",
+        "submeshIndex",
+        "scale",
+        "deforms.count",
+        "deforms[8].id"
+      ],
+      "observation": "CreatureBlock contains runtime hierarchy/capability/deform descriptors. It does not inline literal four-character tags; unknown Deform floats/ints remain unknown. Slot counts and commented offsets are not recovered local limits/ABI."
+    },
+    {
+      "id": "runtime_compiled_input",
+      "source": "anim_csd.h",
+      "lines": [
+        [
+          8,
+          15
+        ],
+        [
+          31,
+          34
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "cal3DRootBlockIndex",
+        "blocks vector<CreatureBlock>"
+      ],
+      "observation": "Named Creature Skinning Data has a block vector; no construction or binding implementation is shown."
+    },
+    {
+      "id": "runtime_instance_links",
+      "source": "anim_cid.h",
+      "lines": [
+        [
+          31,
+          38
+        ],
+        [
+          59,
+          75
+        ]
+      ],
+      "evidence": "community_native_declaration",
+      "fields": [
+        "anim_block.pBlock",
+        "anim_block.p_cid",
+        "anim_block.pParent",
+        "anim_cid.csd",
+        "anim_cid.pCreature",
+        "anim_cid.blocks"
+      ],
+      "observation": "Instance state links compiled block descriptors, parent instance blocks and AnimatedCreature. Exact ownership, update order and selector execution remain unproven."
+    },
+    {
+      "id": "animation_role_selector",
+      "source": "AnimationChannel.java",
+      "lines": [
+        [
+          155,
+          199
+        ],
+        [
+          206,
+          230
+        ],
+        [
+          374,
+          391
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "observation": "Channel selectors interpret a flags-dependent payload as a four-byte capability string or numeric ID. Primary capability bytes are at channel+0x90, secondary at+0xa0. Legacy version0x17 maps rigblock slots through capability-specific deform IDs.",
+      "unknowns": [
+        "Selection execution, choosing among multiple eligible parts and local compiled-context integration."
+      ]
+    },
+    {
+      "id": "capability_bridge",
+      "source": "PCTPUnit.java",
+      "lines": [
+        [
+          45,
+          68
+        ],
+        [
+          112,
+          159
+        ],
+        [
+          245,
+          263
+        ],
+        [
+          305,
+          312
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "representations": [
+        "CapabilityName(name,identifier)",
+        "numeric hash → CapabilityMapping(identifier,index)",
+        "identifier → aggregate identifier list",
+        "identifier → DeformSpec(deformID,two raw floats,flags)"
+      ],
+      "observation": "PCTP explicitly bridges long names/numeric hashes and short role identifiers. This supports related representations, not equality of PROP field IDs, animation role bytes and deform IDs.",
+      "warnings": [
+        "The field named range is explicitly questioned and emission comments call its values default value/default weight; do not treat it as geometric limits.",
+        "Version3 read/write mismatch: reader L155 consumes second float for version>=3; writer L205 consumes it only for version>3. Do not assume v3 symmetry."
+      ]
+    },
+    {
+      "id": "gameplay_prop_levels",
+      "source": "properties.txt",
+      "lines": [
+        [
+          886,
+          889
+        ],
+        [
+          890,
+          930
+        ]
+      ],
+      "evidence": "community_property_documentation",
+      "fields": [
+        "modelCapabilityToPropFileMap",
+        "modelCapabilityAnimKeys",
+        "modelCapabilityDefaultAnimValues",
+        "modelCapabilityDefaultAnimWeights",
+        "modelCapabilityMouth int32",
+        "modelCapabilityBite int32",
+        "modelCapabilityStrike int32"
+      ],
+      "observation": "Property declarations distinguish role capabilities, gameplay capability levels and capability-specific animation/default arrays. They are not formulas for ability aggregation or proof of a local tag mapping."
+    },
+    {
+      "id": "anim_deform_curve",
+      "source": "RigblockComponent.java",
+      "lines": [
+        [
+          43,
+          66
+        ],
+        [
+          85,
+          110
+        ],
+        [
+          154,
+          168
+        ]
+      ],
+      "evidence": "community_format_implementation",
+      "observation": "ANIM type3 scalar records store value, weight and two interpolators. Capability-specific tables assign deform IDs; community ArgScript conversion sets component.index=3+deform-table position.",
+      "land_mouth_deforms": [
+        "0x89e06a31",
+        "0x5d8d0055",
+        "0x892788c6",
+        "0xdd0dcef4"
+      ],
+      "unknowns": [
+        "These are not established handleID, RW channelID or bone index aliases.",
+        "Scalar units, meaning such as mouth-open, interpolation evaluation and blending with edit parameters are unknown."
+      ]
+    }
+  ],
+  "identity_spaces": [
+    {
+      "name": "PROP capability field ID",
+      "example": "modelCapabilityBite=0xb1c3e5b7",
+      "relation": "EditorRigblock modelCapability enum carries gameplay/stat field IDs.",
+      "source": "EditorRigblock.h",
+      "lines": [
+        79,
+        82
+      ]
+    },
+    {
+      "name": "PCTP numeric hash and identifier",
+      "example": "hash maps to identifier+index",
+      "relation": "Explicit remap data, not native binding code.",
+      "source": "PCTPUnit.java",
+      "lines": [
+        121,
+        127
+      ]
+    },
+    {
+      "name": "ANIM role tag",
+      "example": "mout",
+      "relation": "Four ASCII selector bytes; not a PROP level.",
+      "source": "AnimationChannel.java",
+      "lines": [
+        219,
+        224
+      ]
+    },
+    {
+      "name": "ANIM deform ID",
+      "example": "0x89e06a31",
+      "relation": "Typed scalar curve ID under a role; common across some role tables.",
+      "source": "RigblockComponent.java",
+      "lines": [
+        45,
+        53
+      ]
+    },
+    {
+      "name": "RW handleID",
+      "relation": "Control-handle identity; refers separately to RW animation object.",
+      "source": "RWMorphHandle.java",
+      "lines": [
+        31,
+        50
+      ]
+    },
+    {
+      "name": "RW channelID/skeletonID",
+      "relation": "Serialized identifiers; link candidates must be verified in an asset.",
+      "source": "RWKeyframeAnim.java",
+      "lines": [
+        36,
+        69
+      ]
+    },
+    {
+      "name": "RW object reference",
+      "relation": "Tagged object/sub-reference lookup, not a bone index.",
+      "source": "RenderWare.java",
+      "lines": [
+        310,
+        320
+      ]
+    },
+    {
+      "name": "Skeleton parent index",
+      "relation": "Local ordered bone-array index.",
+      "source": "RWSkeleton.java",
+      "lines": [
+        85,
+        88
+      ]
+    },
+    {
+      "name": "Compiled blockID/blockIndex",
+      "relation": "Creature descriptor identity and list index are distinct fields.",
+      "source": "CreatureBlock.h",
+      "lines": [
+        53,
+        65
+      ]
+    }
+  ],
+  "minimal_rw_metadata_reader": {
+    "source": "RWHeader.java",
+    "lines": [
+      [
+        29,
+        35
+      ],
+      [
+        75,
+        109
+      ],
+      [
+        117,
+        143
+      ]
+    ],
+    "writer_magic_hex": "89525734773332000d0a1a0a00200400343534003030300000000000",
+    "reader_magic_behavior": "Community reader skips 28 bytes without validating magic; an independent reader should explicitly compare chosen format identity.",
+    "header_fields": [
+      {
+        "offset": "0x1c",
+        "name": "type",
+        "format": "LE i32; model1,texture0x04000000,special0xcafed00d"
+      },
+      {
+        "offset": "0x24",
+        "name": "sectionCount",
+        "format": "LE i32"
+      },
+      {
+        "offset": "0x30",
+        "name": "sectionInfoOffset",
+        "format": "LE u32"
+      },
+      {
+        "offset": "0x44",
+        "name": "baseBufferDataOffset",
+        "format": "LE u32"
+      }
+    ],
+    "section_entry": {
+      "source": "RWSectionInfo.java",
+      "lines": [
+        40,
+        46
+      ],
+      "bytes": 24,
+      "fields": "LE u32 pData; LE i32 field04,size,alignment,typeCodeIndex,typeCode"
+    },
+    "base_resource": {
+      "type": "0x00010030",
+      "source": "RWBaseResource.java",
+      "lines": [
+        28,
+        29
+      ],
+      "rule": "Only this type receives pBufferData addition under RWHeader.read."
+    },
+    "selection": "Read section table; preserve all object indices and unknown section bounds. Parse only MorphHandle64, Skeleton header24/counts, and handle-linked KeyframeAnim header48/name/info directory; leave vertices/textures/materials opaque.",
+    "validation": [
+      "Nonnegative count/size; checked tableOffset+count*24 within decoded resource.",
+      "Checked pData plus size within resource, with base-resource offset adjustment.",
+      "Explicit handle size64; decode reference kind then bounds/type-check direct target0x70001.",
+      "For skeleton count and optional arrays, checked count*4 and pointers; root parent -1 otherwise index in [0,count).",
+      "Preserve unknown reference kind/section type and unsupported sub-reference rather than guessing.",
+      "Bound all relative animation offsets; do not read curve payload or use last-time-decrease sentinel."
+    ]
+  },
+  "local_entry": {
+    "evidence_level": "Parent-reported chosen part plus reused module30 local ANIM metadata; this agent did not read game package.",
+    "selected_part": {
+      "label": "ce_grasper_default_01",
+      "prop_key": {
+        "type": "0x00b1b104",
+        "group": "0x40626000",
+        "instance": "0x0df11468"
+      },
+      "rw4_lod0_key": {
+        "type": "0x2f4e681b",
+        "group": "0x40606000",
+        "instance": "0x0df11468"
+      },
+      "runtime_bone_count_reported": 4,
+      "rw4_resource_location_reported": {
+        "package_label": "Graphics",
+        "file_offset": 152564158,
+        "stored_bytes": 33479,
+        "decoded_bytes": 55388,
+        "compression_raw": "0xffff",
+        "source": "Parent message; no byte read or resource digest verified by this agent."
+      },
+      "status": "ModelMeshLOD0 reference and Graphics location reported by parent; resource digest and parsed metadata remain parent reader work."
+    },
+    "already_located_anim": {
+      "record": "local-selected-part-deform-keys.json",
+      "package": "E:/Steam/steamapps/common/Spore/Data/PatchData.package",
+      "resource_key": {
+        "type": "0xee17c6ad",
+        "group": "0x00000000",
+        "instance": "0x0af13430"
+      },
+      "file_offset": 1803466,
+      "stored_bytes": 2906,
+      "decoded_sha256": "fbc75353278e96c856ec6f07d779f6a59809234c1aa0285b849623e127b2075e",
+      "channel": "mouthMorphs",
+      "role": "mout",
+      "meaning": "Concrete scalar-curve entry only; not a reference from the selected grasper."
+    }
+  },
+  "new_findings_over_module30": [
+    "Exact 64-byte handle layout and tagged RW reference semantics.",
+    "Explicit connector/snap-bone/parent structures kept separate from morph-handle arrays.",
+    "Actual community handle property consumer with unit-interpretation boundary.",
+    "PCTP hash-to-short-identifier bridge and v3 mismatch.",
+    "Concrete cid/csd instance and compiled block links.",
+    "Bounded minimal metadata entry for one reported grasper; no mesh decoding required."
+  ],
+  "unknowns": [
+    "Native attach, drag, deformation, bind, selector, sampling and composition functions remain unavailable.",
+    "No proven handleID↔deformID↔RW channelID↔bone-name bijection.",
+    "No proof modelRuntimeBoneCount equals RW skeleton count or animation channel count.",
+    "No selected PCTP proves Bite/Strike mappings to a particular role tag.",
+    "No complete local part resource graph or execution was observed by this agent."
+  ],
+  "verification": {
+    "utf8_json": "passed after on-disk source-range and identity validation",
+    "hashes": "Computed from complete fetched public bytes; only metadata and paraphrases saved.",
+    "runtime": "not run",
+    "production_code": "none"
+  }
+}

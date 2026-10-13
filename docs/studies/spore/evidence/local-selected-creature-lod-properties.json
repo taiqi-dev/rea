@@ -1,0 +1,491 @@
+{
+  "kind": "bounded-local-selected-creature-lod-properties-not-runtime",
+  "scope": "Previously selected CreatureGameTuning four group variants, two packages; direct fields only",
+  "reader_sha256": "398e1b9893e8e3086f530ea3287610cb3288611593f0473a7823c2c97b60a02a",
+  "shared_reader_sha256": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+  "registry_commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "packages": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535
+    }
+  ],
+  "query_ids": {
+    "parent": "0x00b2cccb",
+    "creatureSimulationLOD_MinDistanceLow": "0x052583bc",
+    "creatureSimulationLOD_MinDistanceMed": "0x052583d4",
+    "creatureSpeedMediumLODMultiplier": "0x017dc905",
+    "modelLODDistances": "0x02e33a81",
+    "modelLODDistanceScale": "0x00000027",
+    "modelMeshLOD0": "0x00f9efbb",
+    "modelMeshLOD1": "0x00f9efbc",
+    "modelMeshLOD2": "0x00f9efbd",
+    "modelMeshLOD3": "0x00f9efbe",
+    "useHighModelLOD": "0x8c097722",
+    "useHighAnimLOD": "0x7be24bf6",
+    "TintCreaturesByAnimLOD": "0xe0e98b25",
+    "LODMaxHigh": "0x17128238",
+    "LODMaxMedium": "0xf2f23c29",
+    "LODMaxLow": "0xf987c782",
+    "LODCutoffHigh": "0xa22260b1",
+    "LODCutoffMedium": "0x18c01e40",
+    "characterLODDistance": "0x68e23f96",
+    "objectLODDeactivationDistance": "0x35a44d51"
+  },
+  "records": [
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x02ae0c7e",
+        "instance": "0x7c340397"
+      },
+      "offset": 12867744,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "eea2fb3fc798a9b5c7408f68e4f386677515966df0bc3f4335a670d55d70f624",
+      "decoded_sha256": "eea2fb3fc798a9b5c7408f68e4f386677515966df0bc3f4335a670d55d70f624",
+      "prior_identity_matched": true,
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "creatureSimulationLOD_MinDistanceLow",
+        "creatureSimulationLOD_MinDistanceMed",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xf71fa311",
+        "instance": "0x7c340397"
+      },
+      "offset": 13243116,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535,
+      "stored_sha256": "00ccd62be22e69ed8592e37cb0225bed3c67e09ca1918919e6039ee43c45ef8a",
+      "decoded_sha256": "448f108ae640b7ceae02acc80b94fdb7d35fbe31dd0db1cc6cb9a5df120a5545",
+      "prior_identity_matched": true,
+      "property_count": 28,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "creatureSimulationLOD_MinDistanceLow",
+        "creatureSimulationLOD_MinDistanceMed",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xad56080c",
+        "instance": "0x7c340397"
+      },
+      "offset": 12641977,
+      "stored_bytes": 2412,
+      "memory_bytes": 3808,
+      "compression": 65535,
+      "stored_sha256": "4121c12f833cb157237865120845193a9cfcb7722ad464ce9ca26ffd3c41d796",
+      "decoded_sha256": "d270d441e1c6d7ce3fb6d7076dfad5d9c77fa90ea6d8377fe82807b7dac3fda7",
+      "prior_identity_matched": true,
+      "property_count": 249,
+      "selected_properties": {
+        "creatureSimulationLOD_MinDistanceLow": {
+          "id": "0x052583bc",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            100.0
+          ]
+        },
+        "creatureSimulationLOD_MinDistanceMed": {
+          "id": "0x052583d4",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            75.0
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "parent",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "Spore_Game.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7c340397"
+      },
+      "offset": 12597699,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "e6aa5b8d599d5a3a44ce629cd98543cd358b148b973209141c86d1ec480d5ccb",
+      "decoded_sha256": "e6aa5b8d599d5a3a44ce629cd98543cd358b148b973209141c86d1ec480d5ccb",
+      "prior_identity_matched": true,
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "creatureSimulationLOD_MinDistanceLow",
+        "creatureSimulationLOD_MinDistanceMed",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7c340397"
+      },
+      "offset": 18774990,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "b234434ff7bbfe6c71f4af8c471101056b4cbcd67aa23c1a08e1cd0a951c6309",
+      "decoded_sha256": "b234434ff7bbfe6c71f4af8c471101056b4cbcd67aa23c1a08e1cd0a951c6309",
+      "prior_identity_matched": true,
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "creatureSimulationLOD_MinDistanceLow",
+        "creatureSimulationLOD_MinDistanceMed",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xf71fa311",
+        "instance": "0x7c340397"
+      },
+      "offset": 13325243,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535,
+      "stored_sha256": "cc50c774dd3b6202940051c3a68bdbe7d9f3855dfd9b576e5d7f579eb936b29b",
+      "decoded_sha256": "2a8f5cbeee60de330fc930d4ec2dd8b24080d26cd20688c6f43825ee05a93faf",
+      "prior_identity_matched": true,
+      "property_count": 28,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "creatureSimulationLOD_MinDistanceLow",
+        "creatureSimulationLOD_MinDistanceMed",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x02ae0c7e",
+        "instance": "0x7c340397"
+      },
+      "offset": 3819892,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "7d775fc82a6f5ab72d5040f3a0adbb2369ebaa3e074243f359bec5d7c37b87e4",
+      "decoded_sha256": "7d775fc82a6f5ab72d5040f3a0adbb2369ebaa3e074243f359bec5d7c37b87e4",
+      "prior_identity_matched": true,
+      "property_count": 6,
+      "selected_properties": {
+        "parent": {
+          "id": "0x00b2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "creatureSimulationLOD_MinDistanceLow",
+        "creatureSimulationLOD_MinDistanceMed",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    },
+    {
+      "package": "PatchData.package",
+      "name": "CreatureGameTuning",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xad56080c",
+        "instance": "0x7c340397"
+      },
+      "offset": 13758115,
+      "stored_bytes": 2413,
+      "memory_bytes": 3808,
+      "compression": 65535,
+      "stored_sha256": "627f3d9b6c6a4a8f63fb5bc21603645c5a61010634ed3779b28290d3e1da3047",
+      "decoded_sha256": "731f7bd8c29f5524ce568ee22855faf96488b0090389bad3a49ec5137fef916a",
+      "prior_identity_matched": true,
+      "property_count": 249,
+      "selected_properties": {
+        "creatureSimulationLOD_MinDistanceLow": {
+          "id": "0x052583bc",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            100.0
+          ]
+        },
+        "creatureSimulationLOD_MinDistanceMed": {
+          "id": "0x052583d4",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            75.0
+          ]
+        }
+      },
+      "absent_direct_properties": [
+        "parent",
+        "creatureSpeedMediumLODMultiplier",
+        "modelLODDistances",
+        "modelLODDistanceScale",
+        "modelMeshLOD0",
+        "modelMeshLOD1",
+        "modelMeshLOD2",
+        "modelMeshLOD3",
+        "useHighModelLOD",
+        "useHighAnimLOD",
+        "TintCreaturesByAnimLOD",
+        "LODMaxHigh",
+        "LODMaxMedium",
+        "LODMaxLow",
+        "LODCutoffHigh",
+        "LODCutoffMedium",
+        "characterLODDistance",
+        "objectLODDeactivationDistance"
+      ]
+    }
+  ],
+  "limitations": [
+    "Direct absence is not an effective inherited default",
+    "Package override/load activation and native consumers not recovered",
+    "Distance units, origin, inclusivity and final multipliers unknown",
+    "No other packages or CreatureGameTuning variants searched"
+  ]
+}

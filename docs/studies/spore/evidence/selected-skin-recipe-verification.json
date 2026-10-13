@@ -1,0 +1,239 @@
+{
+  "kind": "selected-static-config-reference-tracing-and-independent-material-checks-not-game-runtime",
+  "time": {
+    "utc": "2026-10-13T01:36:39.238607+00:00",
+    "pacific": "2026-10-12T18:36:39.238607-07:00",
+    "authority": "local clock",
+    "timezone": "America/Los_Angeles"
+  },
+  "packages": [
+    {
+      "path": "E:/Steam/steamapps/common/Spore/Data/Spore_Game.package",
+      "bytes": 20210108,
+      "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+      "index": {
+        "index_count": 11529,
+        "index_offset": 19887288,
+        "index_bytes": 322820,
+        "index_flags": 4,
+        "examined_entries": 11529
+      }
+    },
+    {
+      "path": "E:/Steam/steamapps/common/Spore/Data/PatchData.package",
+      "bytes": 80428851,
+      "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+      "index": {
+        "index_count": 25535,
+        "index_offset": 79713863,
+        "index_bytes": 714988,
+        "index_flags": 4,
+        "examined_entries": 25535
+      }
+    }
+  ],
+  "coverage": {
+    "PROP_records_completely_consumed_by_selected_format_reader": 6,
+    "named_selected_recipes": 3,
+    "pairwise_equal_interpreted_properties": true,
+    "pairwise_equal_decoded_payload_bytes": false,
+    "uninterpreted_byte_differences_preserved": [
+      {
+        "instance": "0x00f3892f",
+        "interpreted_properties_equal": true,
+        "decoded_bytes_equal": false,
+        "same_decoded_length": true,
+        "differing_bytes": [
+          {
+            "decoded_offset": 88,
+            "game_byte": 228,
+            "patch_byte": 52
+          },
+          {
+            "decoded_offset": 89,
+            "game_byte": 12,
+            "patch_byte": 171
+          },
+          {
+            "decoded_offset": 90,
+            "game_byte": 160,
+            "patch_byte": 18
+          }
+        ],
+        "interpretation": "Differences are not interpreted; equal parsed fields do not mean identical bytes or proven load precedence."
+      },
+      {
+        "instance": "0x05475ea3",
+        "interpreted_properties_equal": true,
+        "decoded_bytes_equal": false,
+        "same_decoded_length": true,
+        "differing_bytes": [
+          {
+            "decoded_offset": 72,
+            "game_byte": 228,
+            "patch_byte": 52
+          },
+          {
+            "decoded_offset": 73,
+            "game_byte": 12,
+            "patch_byte": 171
+          },
+          {
+            "decoded_offset": 74,
+            "game_byte": 160,
+            "patch_byte": 18
+          }
+        ],
+        "interpretation": "Differences are not interpreted; equal parsed fields do not mean identical bytes or proven load precedence."
+      },
+      {
+        "instance": "0x085b9de0",
+        "interpreted_properties_equal": true,
+        "decoded_bytes_equal": false,
+        "same_decoded_length": true,
+        "differing_bytes": [
+          {
+            "decoded_offset": 74,
+            "game_byte": 228,
+            "patch_byte": 52
+          },
+          {
+            "decoded_offset": 75,
+            "game_byte": 12,
+            "patch_byte": 171
+          },
+          {
+            "decoded_offset": 76,
+            "game_byte": 160,
+            "patch_byte": 18
+          }
+        ],
+        "interpretation": "Differences are not interpreted; equal parsed fields do not mean identical bytes or proven load precedence."
+      }
+    ],
+    "effect_index_candidates": 18,
+    "normal_component_prefixes_examined": 12,
+    "above_research_budget_not_decompressed": 6,
+    "selected_directories_with_exact_tail": 2,
+    "selected_export_paths": 5,
+    "distribute_records_validated": 316,
+    "sequence_records_validated": 226,
+    "particle_payloads_decoded": 0,
+    "Settings_payloads_decoded": 0,
+    "brush_files_read": 0
+  },
+  "checks": [
+    {
+      "path": "checks/verify_selected_skinpaint_reader.py",
+      "tests": 16,
+      "passed": 16,
+      "exit_code": 0,
+      "scope": "Synthetic bounds, mixed-endian, variable records, reference namespaces and cycle diagnostics"
+    },
+    {
+      "path": "checks/verify_skin_material_layer_examples.py",
+      "tests": 10,
+      "passed": 10,
+      "exit_code": 0,
+      "scope": "Independent color/height/specular, optional channel and theme dependency examples"
+    }
+  ],
+  "total_checks_passed": 26,
+  "execution": "Root ran both scripts directly with bundled Python -B -X utf8. Actual local capture additionally consumed selected component/sequence/Visual boundaries and footer exactly, then traced five named exports.",
+  "initial_validation_corrections": [
+    "A synthetic suffix assertion accidentally sliced an empty fixture using offsets from another fixture; corrected to compare the same fixture suffix. Current 16-reader-test run passes.",
+    "An extra validation assertion expected byte-identical PROP despite equal parsed values; actual hashes differ at three uninterpreted bytes per pair. Assertion corrected to preserve and validate this observed difference, not normalize it."
+  ],
+  "public_sources": {
+    "pinned_format_sources": 19,
+    "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "identity_and_read_range_structure": "passed"
+  },
+  "question_status": {
+    "answered": "Three selected PROP recipe structures, theme paint/color slots, five exports through Visual/Sequence to Distribute and Particle index",
+    "partial": "Region masks and spacing raw values, co-referenced material Settings",
+    "unknown": [
+      "Package/variant loading precedence and actual Creature-stage caller",
+      "Particle brush contents/directions/variables and Settings map initialization",
+      "Spacing units, sequence time semantics, execution order and conditional block flags",
+      "Theme slot lookup/colour conversion and default/inheritance application",
+      "Edit redraw/reprojection, precise stripe/spot density and cross-part seams"
+    ]
+  },
+  "not_performed": [
+    "Game launch/attach and private saves",
+    "Graphics/Content package scan",
+    "Particle/Settings/brush content decode or proprietary asset export",
+    "Original native code recovery or stage/caller/loader verification",
+    "Pixel rendering, GPU/performance measurement",
+    "User production implementation or repository build/tests"
+  ],
+  "risks": [
+    "Pinned community layout does not establish native execution semantics",
+    "Reference graph is not execution order; raw spacing has unknown units",
+    "Finite CD-pattern fields and sentinel times cannot be normalized into meaningful parameters",
+    "Theme property slots and color conversion/defaults still require consumers",
+    "Current reader is selected-version research tooling, not a general effect decoder"
+  ],
+  "documentation_checks": {
+    "markdown_files": 39,
+    "relative_file_links": 298,
+    "evidence_JSON_files": 64,
+    "utf8_json_fences_relative_targets": "passed",
+    "internal_link_anchors": "not checked"
+  },
+  "deliverable_digests": [
+    {
+      "path": "36-selected-skinpaint-recipe-and-material-controls.md",
+      "sha256": "bb67938770c012119570376a1dfde247fd093a287c92bdc5a479b345d5bd6cdc"
+    },
+    {
+      "path": "checks/read_selected_skinpaint_sections.py",
+      "sha256": "8b646f50e7a4d8a0eb5bf9b49b951f15753e5b2e0ab6c7b1bacee6aadd801688"
+    },
+    {
+      "path": "checks/read_selected_skin_recipe_resources.py",
+      "sha256": "e26296b56e3bd2304cc742660718010b8dcb597b7d058d3d5d94f18fa6d934c5"
+    },
+    {
+      "path": "checks/verify_selected_skinpaint_reader.py",
+      "sha256": "d02bd211915bf4a2e0e252647c3f65255da06bae9a9d9c4decee277906feefba"
+    },
+    {
+      "path": "checks/verify_skin_material_layer_examples.py",
+      "sha256": "9161452641f3b81248e85570e1c18a68204d57c41b7f1509d99e08bcc15e1a20"
+    }
+  ],
+  "source_manifest_digests": [
+    {
+      "path": "evidence/local-skin-recipe-candidate-inventory.json",
+      "sha256": "9f2395b1221b25980a160eb59180b07657d149678d4d8ca3b113ae036edc802b"
+    },
+    {
+      "path": "evidence/public-selected-skin-property-labels.json",
+      "sha256": "c651fa5dbbc9b97a648bafe4b4728c7f27209fa496efb61fd7f2e70ef73b833b"
+    },
+    {
+      "path": "evidence/public-selected-skin-recipe-container-format.json",
+      "sha256": "77f3e031a730cefd97e185a460a47fe3e69faf54fa80fb6a2b56e7cee987ee7b"
+    },
+    {
+      "path": "evidence/local-selected-skin-recipe-resources.json",
+      "sha256": "cdb48956d225370d904aa884067c6a5d93061d850e4d92ea89ee0880f9cf29df"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "0af4841f017fefc064a12c61df05321eec3e800926333e5a14ef409815cc2aca",
+    "captured_file_bytes": 8714,
+    "reference_changes": [
+      {
+        "pointer": "/source_manifest_digests/3/sha256",
+        "captured": "2f8534c65b82eb3ba0292a8d104b72eada931a6f7c9d51a80ca74cf147955cde",
+        "published": "cdb48956d225370d904aa884067c6a5d93061d850e4d92ea89ee0880f9cf29df",
+        "study_file": "evidence/local-selected-skin-recipe-resources.json"
+      }
+    ]
+  }
+}

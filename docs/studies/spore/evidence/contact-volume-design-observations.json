@@ -1,0 +1,114 @@
+{
+  "kind": "historical-developer-design-and-independent-contact-specification",
+  "recorded_at_pacific": "2026-10-12T17:23:52-07:00",
+  "scope": "Landed Creature Stage and creature editor before Tribal; no other gameplay stages",
+  "target_identity": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "version": "1.3.0.29",
+    "identity_status": "reused matching study identity; not rehashed in this module",
+    "local_runtime_observed": false,
+    "local_collision_implementation_recovered": false
+  },
+  "sources": [
+    {
+      "kind": "original-developer-historical-design",
+      "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+      "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+      "bytes": 3896086,
+      "pages": 11,
+      "read_complete_pdf_pages_one_based": [2, 4, 10],
+      "read_method": "Read-only public HTTP; pypdf text extraction; complete selected pages inspected",
+      "facts": [
+        {
+          "locator": "Section 1.2, page 2",
+          "summary": "Character bodies have transforms, bounding boxes, hierarchy and local scalar deforms; boxes alone do not establish collision use."
+        },
+        {
+          "locator": "Section 3.2.2 Secondary Relative Movement, page 4",
+          "summary": "Internal body targets and game-provided external targets adapt motion; reciprocal hand targets are an example, not a surface-contact or collision guarantee."
+        },
+        {
+          "locator": "Section 5 Limitations and Future Work, page 10",
+          "summary": "Published system does not understand volume/boundaries, cannot effectively express certain contact motions, and ignores intra-character collision. Boundary-relative reasoning is future work."
+        }
+      ],
+      "limitations": [
+        "Historical description is not a trace of the selected local executable.",
+        "No inference that every shipping version or asset lacks compensating behavior.",
+        "Text inspected; figures not visually verified in this module."
+      ]
+    },
+    {
+      "kind": "pinned-community-declaration",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Anim/CreatureBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/CreatureBlock.h",
+      "sha256": "958b8dbc70774f76cc47c76654714651a9b33b0c97278bfae1e4f3ceea5c1ca2",
+      "bytes": 4035,
+      "complete_read_lines": [1, 149],
+      "selected_relevant_lines": [47, 65],
+      "facts": ["bboxCenter, bboxDirection, position, orientation and hierarchy declarations exist."],
+      "limitations": [
+        "Declaration not confirmed as selected executable ABI.",
+        "No call body establishes collision pairs, geometry constraints or surface contact."
+      ]
+    }
+  ],
+  "independent_design": {
+    "module": "../32-body-volume-contacts-and-self-collision.md",
+    "proprietary_code_or_assets_copied": false,
+    "algorithms": [
+      "Capsule proxies from edited reference geometry and current local/body pose",
+      "Closed line-segment closest points via interior and boundary candidates",
+      "Restricted join-region exclusions and exact feature/phase/revision contact permits",
+      "Surface-relative effector goals with contact-profile offsets",
+      "One shared joint state for body, limb and local contact constraints",
+      "Explicit residual diagnostics and stale-reference rejection"
+    ],
+    "example_units": "meters",
+    "examples": {
+      "arm_clearance_before_widening": 0.1,
+      "arm_gap_after_widening": -0.2,
+      "fruit_surface_x": 1.0,
+      "palm_center_goal_x": 0.95,
+      "mouth_short_gap": 0.08710678118654755,
+      "mouth_long_gap": -0.12,
+      "own_grasp_penetration_tolerance": 0.003
+    },
+    "not_implemented": [
+      "Complete articulated solver",
+      "Surface-level 3D contact and visual validation",
+      "Continuous collision detection",
+      "Production gameplay integration"
+    ]
+  },
+  "verification": {
+    "script": "../checks/verify_body_contact_examples.py",
+    "runtime": "Bundled Python, standard library only",
+    "expected_tests": 12,
+    "passed": 12,
+    "failed": 0,
+    "kind": "independent math and state checks, not original game validation",
+    "coverage": [
+      "Crossing segments",
+      "Parallel and degenerate segments",
+      "Widening updates clearance",
+      "Free point projection",
+      "Coincident witness diagnostics",
+      "Restricted permit object, phase, revision and penetration",
+      "Join-region-only exclusions",
+      "Surface-relative target and palm offset",
+      "Long mouth body collision",
+      "Stale contact reference",
+      "Residual failure classification",
+      "Invalid radii and nonfinite geometry"
+    ]
+  },
+  "remaining_risks": [
+    "Historical version alignment unresolved",
+    "Coarse proxies can miss visible surfaces or conservatively block valid motion",
+    "Discrete frames can miss fast crossings",
+    "Constraint iteration has local failures and does not guarantee arbitrary assembly feasibility"
+  ]
+}

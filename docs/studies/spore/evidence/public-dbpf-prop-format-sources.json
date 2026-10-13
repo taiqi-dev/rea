@@ -1,0 +1,474 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "files": [
+    {
+      "path": "src/sporemodder/file/dbpf/DatabasePackedFile.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/dbpf/DatabasePackedFile.java",
+      "sha256": "ce66d7e1a1d689c343f83b56f5ad9ddada55d161494b3694d418a16773fb4c0e",
+      "bytes": 5802,
+      "line_count": 193
+    },
+    {
+      "path": "src/sporemodder/file/dbpf/DBPFIndex.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/dbpf/DBPFIndex.java",
+      "sha256": "9b7d5f92f82c9f253fdb4004bc638473ce15426ffa494d3f04818d5a804bc8ec",
+      "bytes": 3667,
+      "line_count": 132
+    },
+    {
+      "path": "src/sporemodder/file/dbpf/DBPFItem.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/dbpf/DBPFItem.java",
+      "sha256": "8188ffad6880624118b4123ba1a4c21b4fd30c6e4402d1f3ca26000d26dfdbec",
+      "bytes": 3599,
+      "line_count": 114
+    },
+    {
+      "path": "src/sporemodder/file/dbpf/RefPackCompression.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/dbpf/RefPackCompression.java",
+      "sha256": "628b2645fe61f0a2fd39d082eb6a3aa0e429325ca1bd6f4dacddace5b67b6d2b",
+      "bytes": 12408,
+      "line_count": 396
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyList.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyList.java",
+      "sha256": "1ad1dc535f0469a4f0336d793e4f8e801f1bed67a14157ca20d906a2d92f386a",
+      "bytes": 13073,
+      "line_count": 405
+    },
+    {
+      "path": "src/sporemodder/file/prop/BaseProperty.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/BaseProperty.java",
+      "sha256": "9df154f6f01c774ee050f151eec217c1888f91f4715cc53d99482fd6213a0225",
+      "bytes": 1925,
+      "line_count": 54
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyFloat.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyFloat.java",
+      "sha256": "697c4903a959494eed9ea6f0bb61b3fa03960a2d5402534a9e5b8f9f3cffed0a",
+      "bytes": 4550,
+      "line_count": 155
+    },
+    {
+      "path": "Documentation/properties.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/Documentation/properties.txt",
+      "sha256": "f1f93dda12d78f3010c9186604d5b79c0e306e5ef61f82bdcb05e0a52fd233ba",
+      "bytes": 186035,
+      "line_count": 4274,
+      "selected_declarations": [
+        {
+          "line": 441,
+          "text": "verbIconHasCharge=[bool][false] Whether the verb icon has a charge meter."
+        },
+        {
+          "line": 830,
+          "text": "modelCreatureEffectOffsetFixY=[float] 0-1 scale from min to max Y coordinates of deformed bounding box."
+        },
+        {
+          "line": 831,
+          "text": "modelCreatureEffectOffsetFixZ=[float] 0-1 scale from min to max Z coordinates of deformed bounding box."
+        },
+        {
+          "line": 839,
+          "text": "creatureExtentsContributionScale=[float] Scale factor applied to block bounds before adding that blocks extents to the creature's extents.  used in determining how \"big\" a creature is."
+        },
+        {
+          "line": 887,
+          "text": "modelCapabilityAnimKeys=[keys] Array of anim keys a given capability has."
+        },
+        {
+          "line": 888,
+          "text": "modelCapabilityDefaultAnimValues=[floats] Array of default anim values for a capability."
+        },
+        {
+          "line": 889,
+          "text": "modelCapabilityDefaultAnimWeights=[floats] Array of default anim weights for a capability."
+        },
+        {
+          "line": 922,
+          "text": "modelCapabilityBite=[int32][0]"
+        },
+        {
+          "line": 923,
+          "text": "modelCapabilityCharge=[int32][0]"
+        },
+        {
+          "line": 924,
+          "text": "modelCapabilitySpit=[int32][0]"
+        },
+        {
+          "line": 925,
+          "text": "modelCapabilityStrike=[int32][0]"
+        },
+        {
+          "line": 2111,
+          "text": "creatureAvatarMinMouseRadius=[float]"
+        },
+        {
+          "line": 2112,
+          "text": "creatureAvatarMaxMouseRadius=[float]"
+        },
+        {
+          "line": 2123,
+          "text": "creatureAvatarDeathEffectScaleMultiplier=[float][1.0]"
+        },
+        {
+          "line": 2247,
+          "text": "creatureBabyScale=[float]"
+        },
+        {
+          "line": 2248,
+          "text": "creatureScale=[vector2]"
+        },
+        {
+          "line": 2268,
+          "text": "creatureAbilityDamage=[float]"
+        },
+        {
+          "line": 2269,
+          "text": "creatureAbilityRangedDamage=[float]"
+        },
+        {
+          "line": 2270,
+          "text": "creatureAbilityRazeDamage=[float]"
+        },
+        {
+          "line": 2277,
+          "text": "creatureAbilityConeRadius=[float]"
+        },
+        {
+          "line": 2279,
+          "text": "creatureAbilityEffectDamage=[float]"
+        },
+        {
+          "line": 2282,
+          "text": "creatureAbilityRecharge=[float]"
+        },
+        {
+          "line": 2283,
+          "text": "creatureAbilityRange=[float]"
+        },
+        {
+          "line": 2284,
+          "text": "creatureAbilityRangeMin=[float]"
+        },
+        {
+          "line": 2285,
+          "text": "creatureAbilityAvatarRangeMin=[float]"
+        },
+        {
+          "line": 2296,
+          "text": "creatureAbilityRequiredCAPsMaxValueRange=[vector2s]"
+        },
+        {
+          "line": 2297,
+          "text": "creatureAbilityRequiredCAPsSumValueRange=[vector2s]"
+        },
+        {
+          "line": 2298,
+          "text": "creatureAbilityAttackStatSumValueRange=[vector2]"
+        },
+        {
+          "line": 2299,
+          "text": "creatureAbilitySocialStatSumValueRange=[vector2]"
+        },
+        {
+          "line": 2304,
+          "text": "creatureAbilityConeDamageMultiplier=[float]"
+        },
+        {
+          "line": 2310,
+          "text": "creatureAbilityRushingAnimationID=[uint32]"
+        },
+        {
+          "line": 2311,
+          "text": "creatureAbilityRushingRange=[float]"
+        },
+        {
+          "line": 2313,
+          "text": "creatureAbilityRushingTargetedCharge=[bool]"
+        },
+        {
+          "line": 2314,
+          "text": "creatureAbilityRushingDoDamage=[bool]"
+        },
+        {
+          "line": 2316,
+          "text": "creatureAbilityAnimationIDs=[uint32s]"
+        },
+        {
+          "line": 2317,
+          "text": "creatureAbilityFollowerAnimationIDs=[uint32s]"
+        },
+        {
+          "line": 2318,
+          "text": "creatureAbilityBabyGameAnimationID=[uint32]"
+        },
+        {
+          "line": 2319,
+          "text": "creatureAbilityBuildingSpecificAnimationID=[uint32]"
+        },
+        {
+          "line": 2325,
+          "text": "creatureAbilityReactionAnimation=[uint32]"
+        },
+        {
+          "line": 2326,
+          "text": "creatureAbilityReactionDeathAnimation=[uint32]"
+        },
+        {
+          "line": 2327,
+          "text": "creatureAbilityReactionLiveAnimation=[uint32]"
+        },
+        {
+          "line": 2407,
+          "text": "spaceToolRechargeCursor=[string16] The name of the cursor."
+        },
+        {
+          "line": 2454,
+          "text": "spaceToolRechargeRate=[float] The time (in seconds) that it takes the tool to recharge before it can be used again."
+        },
+        {
+          "line": 2457,
+          "text": "spaceToolChargeRate=[float] The time (in seconds) for the weapon to fully charge before firing."
+        },
+        {
+          "line": 2511,
+          "text": "toolCulturalRewardCount=[int32] How many charges rewarded to the player on civ transition."
+        },
+        {
+          "line": 2512,
+          "text": "toolMilitaryRewardCount=[int32] How many charges rewarded to the player on civ transition."
+        },
+        {
+          "line": 2513,
+          "text": "toolEconomicRewardCount=[int32] How many charges rewarded to the player on civ transition."
+        },
+        {
+          "line": 2514,
+          "text": "toolMeaningOfLifeRewardCount=[int32] How many charges rewarded to player when they discover the meaning of life (enter the galactic core)."
+        },
+        {
+          "line": 2759,
+          "text": "spaceCombatEnemyUFOAttackRange=[float][150.0] Enemy UFOs will wait until they are within this range before firing on the player."
+        },
+        {
+          "line": 3045,
+          "text": "spaceEconomyFuelRechargeTime=[float]"
+        },
+        {
+          "line": 3063,
+          "text": "spaceEconomyRechargeCost=[floats]"
+        },
+        {
+          "line": 3064,
+          "text": "spaceEconomyEnergyRechargeDelay=[float][5.0]"
+        },
+        {
+          "line": 3065,
+          "text": "spaceEconomyEnergyRechargeRate=[float][0.1]"
+        },
+        {
+          "line": 3307,
+          "text": "orbitEccentricity=[vector2s][(0, 0)]"
+        },
+        {
+          "line": 3398,
+          "text": "crtAttackChargedColor=[int32][0xff00af00] Charged area of the attack dial."
+        },
+        {
+          "line": 3400,
+          "text": "crtAttackUnchargedColor=[int32][0xff3f0000] Uncharged area of the attack dial."
+        },
+        {
+          "line": 3654,
+          "text": "electric_recharge_vs_small_count=[vector2s][(0, 0)]"
+        },
+        {
+          "line": 3655,
+          "text": "electric_recharge_count=[vector2s][(0, 0)]"
+        },
+        {
+          "line": 4096,
+          "text": "creatureScaleForBrainLevel0=[float]"
+        },
+        {
+          "line": 4097,
+          "text": "creatureScaleForBrainLevel1=[float]"
+        },
+        {
+          "line": 4098,
+          "text": "creatureScaleForBrainLevel2=[float]"
+        },
+        {
+          "line": 4099,
+          "text": "creatureScaleForBrainLevel3=[float]"
+        },
+        {
+          "line": 4100,
+          "text": "creatureScaleForBrainLevel4=[float]"
+        },
+        {
+          "line": 4101,
+          "text": "creatureScaleForBrainLevel5=[float]"
+        },
+        {
+          "line": 4102,
+          "text": "alphaCreatureScale=[float]"
+        },
+        {
+          "line": 4107,
+          "text": "attacked_SpeciesHelpRadius=[float]"
+        },
+        {
+          "line": 4237,
+          "text": "MeteorStrikeRange=[floats]"
+        },
+        {
+          "line": 4238,
+          "text": "NumMeteorStrikes=[int32s]"
+        },
+        {
+          "line": 4255,
+          "text": "biteCapRange=[vector3s]"
+        },
+        {
+          "line": 4256,
+          "text": "strikeCapRange=[vector3s]"
+        },
+        {
+          "line": 4257,
+          "text": "spitCapRange=[vector3s]"
+        },
+        {
+          "line": 4258,
+          "text": "chargeCapRange=[vector3s]"
+        }
+      ]
+    }
+  ],
+  "method": "Read-only public format source inspection; no original game source.",
+  "additional_format_reads": [
+    {
+      "path": "src/sporemodder/file/dbpf/DatabasePackedFile.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/dbpf/DatabasePackedFile.java",
+      "sha256": "ce66d7e1a1d689c343f83b56f5ad9ddada55d161494b3694d418a16773fb4c0e",
+      "bytes": 5802,
+      "read_ranges": [
+        [
+          28,
+          83
+        ]
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyList.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyList.java",
+      "sha256": "1ad1dc535f0469a4f0336d793e4f8e801f1bed67a14157ca20d906a2d92f386a",
+      "bytes": 13073,
+      "read_ranges": [
+        [
+          45,
+          80
+        ],
+        [
+          240,
+          335
+        ]
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropConverter.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropConverter.java",
+      "sha256": "2c7ff7147e8b8b1a5bfc63d1db6802895991b50e1ccb0fbbf7597ae2a4712a27",
+      "bytes": 11772,
+      "read_ranges": [
+        [
+          35,
+          55
+        ]
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyKey.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyKey.java",
+      "sha256": "f126064596ee4758eaa728942f6d1a6ef11d68113ce14e354766228b74f94e7f",
+      "bytes": 5513,
+      "read_ranges": [
+        [
+          35,
+          48
+        ],
+        [
+          74,
+          108
+        ]
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyString8.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyString8.java",
+      "sha256": "ad7b7b27472358176d65630dd265803c2cb55063a876fb6cf329f3387837a877",
+      "bytes": 4923,
+      "read_ranges": [
+        [
+          35,
+          46
+        ],
+        [
+          73,
+          100
+        ]
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyString16.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyString16.java",
+      "sha256": "1e611b316c805104a80ffd30bc004498e7d223228dc661445ce48f15a2a4e450",
+      "bytes": 4935,
+      "read_ranges": [
+        [
+          35,
+          46
+        ],
+        [
+          70,
+          100
+        ]
+      ]
+    }
+  ],
+  "registry_paths": [
+    "reg_file.txt",
+    "reg_property.txt",
+    "reg_type.txt",
+    "src/sporemodder/HashManager.java"
+  ],
+  "additional_identity_reads": [
+    {
+      "path": "src/sporemodder/HashManager.java",
+      "sha256": "100685b5c0ea19332bb891abdbc2d061d448246649fb78fe8be786e7a56b0889",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/HashManager.java",
+      "scope": "whole file read; fnvHash lines 213-220 selected"
+    },
+    {
+      "path": "src/sporemodder/file/ResourceKey.java",
+      "sha256": "f4ce2c740c1cb104a942bf407b4f8efc5b6999b13a0201da2a78616db85bf859",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/ResourceKey.java",
+      "scope": "whole file read; readLE lines 82-85 selected"
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyString16.java",
+      "sha256": "1e611b316c805104a80ffd30bc004498e7d223228dc661445ce48f15a2a4e450",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyString16.java",
+      "scope": "whole file read; read lines 70-74 selected"
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyTransform.java",
+      "sha256": "2c7881c0e391d62fac8acabb0120e12eacb508e9b502b508be6b5db4f51ae7b7",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyTransform.java",
+      "scope": "whole file read; type not needed by selected local resources"
+    }
+  ]
+}

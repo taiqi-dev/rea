@@ -1,0 +1,126 @@
+{
+  "candidate_count": 15,
+  "entries": [
+    {
+      "file_offset": "0xff4990",
+      "section": ".rdata",
+      "text": "[on | off], toggles, disables (on) or re-enables (off) editor complexity limits. Creations that break the limits will not be pollinated!",
+      "classification": "direct-name-or-help-literal-not-execution"
+    },
+    {
+      "file_offset": "0xff4a88",
+      "section": ".rdata",
+      "text": "addDNA",
+      "classification": "direct-name-or-help-literal-not-execution"
+    },
+    {
+      "file_offset": "0x10102fc",
+      "section": ".rdata",
+      "text": "dumpBudget",
+      "classification": "unbound-candidate"
+    },
+    {
+      "file_offset": "0x1010414",
+      "section": ".rdata",
+      "text": "cardName",
+      "classification": "excluded-substring-false-positive-DNA"
+    },
+    {
+      "file_offset": "0x1068964",
+      "section": ".rdata",
+      "text": "mExpansionBudget",
+      "classification": "excluded-other-systems-or-unbound-UI"
+    },
+    {
+      "file_offset": "0x1068978",
+      "section": ".rdata",
+      "text": "mDomesticBudget",
+      "classification": "excluded-other-systems-or-unbound-UI"
+    },
+    {
+      "file_offset": "0x1068bdc",
+      "section": ".rdata",
+      "text": "mFirstBudget",
+      "classification": "excluded-other-systems-or-unbound-UI"
+    },
+    {
+      "file_offset": "0x1071130",
+      "section": ".rdata",
+      "text": "mDNAEvolutionThreshold",
+      "classification": "unbound-candidate"
+    },
+    {
+      "file_offset": "0x107a13c",
+      "section": ".rdata",
+      "text": "CRG_FirstDNA",
+      "classification": "direct-name-or-help-literal-not-execution"
+    },
+    {
+      "file_offset": "0x1088948",
+      "section": ".rdata",
+      "text": "RO_CastPalErrorComplexityIcon",
+      "classification": "excluded-other-systems-or-unbound-UI"
+    },
+    {
+      "file_offset": "0x1089358",
+      "section": ".rdata",
+      "text": "UI/cScenarioComplexityMeter/Terra",
+      "classification": "excluded-other-systems-or-unbound-UI"
+    },
+    {
+      "file_offset": "0x108937c",
+      "section": ".rdata",
+      "text": "UI/cScenarioComplexityMeter/World",
+      "classification": "excluded-other-systems-or-unbound-UI"
+    },
+    {
+      "file_offset": "0x108c908",
+      "section": ".rdata",
+      "text": "MaxComplexity",
+      "classification": "unbound-candidate"
+    },
+    {
+      "file_offset": "0x10e0f78",
+      "section": ".rdata",
+      "text": "associatedName",
+      "classification": "excluded-substring-false-positive-DNA"
+    },
+    {
+      "file_offset": "0x10e36e4",
+      "section": ".rdata",
+      "text": "unstructuredName",
+      "classification": "excluded-substring-false-positive-DNA"
+    }
+  ],
+  "target": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d"
+  },
+  "query": {
+    "ends_exclusive": true,
+    "pattern": "complexity|bonecomplexity|budget|maxbaked|geomscore|skinresolution|anim.*lod|creature.*lod|editor.*valid|model.*(?:price|runtimebone)|dna",
+    "sections": [
+      [
+        ".rdata",
+        "0xfcb400",
+        "0x110aa00"
+      ],
+      [
+        ".data",
+        "0x110aa00",
+        "0x11cf600"
+      ]
+    ],
+    "full_nul_ascii_length": [
+      4,
+      180
+    ]
+  },
+  "kind": "ordinary-file-static-strings-not-REA-Evidence",
+  "limits": [
+    "Names only; no executable xrefs, callers, live values or cost measurement.",
+    "Other editors, allocator budgets, cheat names and DNA effects may be unrelated to the land editor."
+  ],
+  "tool": "PowerShell 7 ordinary-file bytes, Latin1 one-byte mapping, .NET Regex, SHA256.HashData"
+}

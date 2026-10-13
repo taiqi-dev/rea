@@ -1,0 +1,887 @@
+{
+  "schemaVersion": 1,
+  "module": "31-terrain-contact-foot-locking-and-support",
+  "kind": "ordinary-file-and-public-source-observations",
+  "reaEvidenceId": null,
+  "question": "Land Creature Stage ground contact, foot locking, and body support; distinguish gait configuration from terrain queries.",
+  "observationTime": {
+    "utc": "2026-10-13 00:25:26 UTC",
+    "pacific": "2026-10-12 17:25:26 PDT",
+    "timeZone": "America/Los_Angeles",
+    "authority": "clock.curr_time"
+  },
+  "target": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "sha256Verified": true,
+    "format": "PE32",
+    "machine": "0x14C",
+    "architecture": "i386",
+    "imageBase": "0x400000",
+    "version": "1.3.0.29",
+    "versionProvenance": "Reused verified identity from prior study; current pass independently re-read digest and section table."
+  },
+  "coverage": {
+    "binarySections": [
+      {
+        "name": ".rdata",
+        "rawStart": "0xFCB400",
+        "rawEndExclusive": "0x110AA00",
+        "rva": "0xFCC000",
+        "virtualSize": "0x13F5AE",
+        "rawSize": "0x13F600"
+      },
+      {
+        "name": ".data",
+        "rawStart": "0x110AA00",
+        "rawEndExclusive": "0x11CF600",
+        "rva": "0x110C000",
+        "virtualSize": "0x212764",
+        "rawSize": "0xC4C00"
+      }
+    ],
+    "stringDefinition": "Maximal printable ASCII 0x20..0x7E runs, 4..160 bytes, immediately followed by NUL; no printable predecessor/suffix acceptance.",
+    "keywordRegex": "ground|terrain|foot|contact|lock|slope",
+    "caseInsensitive": true,
+    "keywordCandidateCount": 332,
+    "selection": "Named locomotion/animation entries plus two selected small neighborhoods; not all keyword candidates are reported.",
+    "neighborhoods": [
+      {
+        "start": "0x1046EF0",
+        "endExclusive": "0x1047140",
+        "reason": "Gait names around foottilt and dutyfactor"
+      },
+      {
+        "start": "0x1052900",
+        "endExclusive": "0x1052B40",
+        "reason": "Footstep/material-name neighborhood"
+      }
+    ],
+    "addressMeaning": "Preferred image VA is imageBase + section RVA + fileOffset - section rawOffset. These are string-data locations, not functions or observed live addresses.",
+    "freshPackageReads": 0,
+    "packageScope": "No new package decoding or extraction. Reuse gait/config evidence in module26 only.",
+    "sdkScope": "Eight selected complete headers at fixed commit; declarations/comments only, no implementation or local address mapping.",
+    "negativeExactMatches": [
+      {
+        "string": "contact",
+        "exactMatches": 0
+      },
+      {
+        "string": "lockFoot",
+        "exactMatches": 0
+      },
+      {
+        "string": "footLock",
+        "exactMatches": 0
+      },
+      {
+        "string": "footPlant",
+        "exactMatches": 0
+      },
+      {
+        "string": "plantFoot",
+        "exactMatches": 0
+      },
+      {
+        "string": "slope",
+        "exactMatches": 0
+      },
+      {
+        "string": "mGroundNormal",
+        "exactMatches": 0
+      },
+      {
+        "string": "mFootContacts",
+        "exactMatches": 0
+      },
+      {
+        "string": "onGround",
+        "exactMatches": 0
+      },
+      {
+        "string": "groundRelative",
+        "exactMatches": 0
+      }
+    ],
+    "negativeMeaning": "Case-sensitive exact full-string query in the stated two sections only; zero does not imply absent mechanism."
+  },
+  "strings": [
+    {
+      "string": "yE>foot_step",
+      "fileOffset": "0x10464A5",
+      "preferredImageVA": "0x14470A5",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "incidental-prefix-sound-candidate"
+    },
+    {
+      "string": "soundIDFoot",
+      "fileOffset": "0x1046748",
+      "preferredImageVA": "0x1447348",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "sound-name"
+    },
+    {
+      "string": "fake_foot_b%d",
+      "fileOffset": "0x1046C9C",
+      "preferredImageVA": "0x144789C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "animation-name-candidate"
+    },
+    {
+      "string": "swayAmplitude",
+      "fileOffset": "0x1046EF0",
+      "preferredImageVA": "0x1447AF0",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "stepskew",
+      "fileOffset": "0x1046F00",
+      "preferredImageVA": "0x1447B00",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "stepphasebiasv",
+      "fileOffset": "0x1046F0C",
+      "preferredImageVA": "0x1447B0C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "stepphasebiash",
+      "fileOffset": "0x1046F1C",
+      "preferredImageVA": "0x1447B1C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "steplength",
+      "fileOffset": "0x1046F2C",
+      "preferredImageVA": "0x1447B2C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "stepheight",
+      "fileOffset": "0x1046F38",
+      "preferredImageVA": "0x1447B38",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "stepgallop",
+      "fileOffset": "0x1046F44",
+      "preferredImageVA": "0x1447B44",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "speedi",
+      "fileOffset": "0x1046F54",
+      "preferredImageVA": "0x1447B54",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "sagittalphaseoffset",
+      "fileOffset": "0x1046F5C",
+      "preferredImageVA": "0x1447B5C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "rollphaseoffset",
+      "fileOffset": "0x1046F74",
+      "preferredImageVA": "0x1447B74",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "pitchphaseoffset",
+      "fileOffset": "0x1046F84",
+      "preferredImageVA": "0x1447B84",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "numfeet",
+      "fileOffset": "0x1046FD4",
+      "preferredImageVA": "0x1447BD4",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "maxyawangle",
+      "fileOffset": "0x1046FDC",
+      "preferredImageVA": "0x1447BDC",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "maxverticaloffset",
+      "fileOffset": "0x1046FE8",
+      "preferredImageVA": "0x1447BE8",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "maxsagittaloffset",
+      "fileOffset": "0x1046FFC",
+      "preferredImageVA": "0x1447BFC",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "maxrollangle",
+      "fileOffset": "0x1047010",
+      "preferredImageVA": "0x1447C10",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "maxpitchangle",
+      "fileOffset": "0x1047020",
+      "preferredImageVA": "0x1447C20",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "maxlateraloffset",
+      "fileOffset": "0x1047030",
+      "preferredImageVA": "0x1447C30",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "lateralphaseoffset",
+      "fileOffset": "0x1047044",
+      "preferredImageVA": "0x1447C44",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "herfl",
+      "fileOffset": "0x1047058",
+      "preferredImageVA": "0x1447C58",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "unknown-name"
+    },
+    {
+      "string": "foottilt",
+      "fileOffset": "0x1047060",
+      "preferredImageVA": "0x1447C60",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "dutyfactor",
+      "fileOffset": "0x104706C",
+      "preferredImageVA": "0x1447C6C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "gait-parameter-name"
+    },
+    {
+      "string": "ArgScript/FootTilt",
+      "fileOffset": "0x104776C",
+      "preferredImageVA": "0x144836C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "parser-type-name"
+    },
+    {
+      "string": "surfacetype",
+      "fileOffset": "0x1052958",
+      "preferredImageVA": "0x1453558",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "footstep-material-neighborhood"
+    },
+    {
+      "string": "epicfoottype",
+      "fileOffset": "0x1052964",
+      "preferredImageVA": "0x1453564",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "footstep-neighborhood"
+    },
+    {
+      "string": "epicfootsteps",
+      "fileOffset": "0x1052A34",
+      "preferredImageVA": "0x1453634",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "footstep-neighborhood"
+    },
+    {
+      "string": "footsteps",
+      "fileOffset": "0x1052A44",
+      "preferredImageVA": "0x1453644",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "footstep-neighborhood"
+    },
+    {
+      "string": "terrain",
+      "fileOffset": "0x105524C",
+      "preferredImageVA": "0x1455E4C",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "generic-name-unbound"
+    },
+    {
+      "string": "ground",
+      "fileOffset": "0x1057E10",
+      "preferredImageVA": "0x1458A10",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "generic-name-unbound"
+    },
+    {
+      "string": "Simulator/cGameTerrainCursor",
+      "fileOffset": "0x105D3A4",
+      "preferredImageVA": "0x145DFA4",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "cursor-type-name"
+    },
+    {
+      "string": "Simulator/cGameBundleGroundContainer",
+      "fileOffset": "0x105D4CC",
+      "preferredImageVA": "0x145E0CC",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "type-name-unbound"
+    },
+    {
+      "string": "Simulator/cGameTerrainCursorView",
+      "fileOffset": "0x105FEE8",
+      "preferredImageVA": "0x1460AE8",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "cursor-type-name"
+    },
+    {
+      "string": "Simulator/cGroundLocomotion",
+      "fileOffset": "0x1070A94",
+      "preferredImageVA": "0x1471694",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "locomotion-type-name-unbound"
+    },
+    {
+      "string": "Simulator/cDropToGroundLocomotion",
+      "fileOffset": "0x10989A8",
+      "preferredImageVA": "0x14995A8",
+      "section": ".rdata",
+      "evidenceType": "binary-string-data",
+      "interpretation": "locomotion-type-name-stage-unknown"
+    }
+  ],
+  "excludedOrUnbound": [
+    {
+      "names": [
+        "numBlocks",
+        "group blocks",
+        "blocksmode"
+      ],
+      "reason": "Incidental lock substring, not foot locking."
+    },
+    {
+      "names": [
+        "Anim/BackgroundLoading/MemoryStream"
+      ],
+      "reason": "Background substring, unrelated to terrain sampling."
+    },
+    {
+      "names": [
+        "footsteps",
+        "epicfootsteps",
+        "surfacetype",
+        "soundIDFoot"
+      ],
+      "reason": "Footstep/sound or material neighborhood cannot establish geometric contact."
+    },
+    {
+      "names": [
+        "Simulator/cGameTerrainCursor",
+        "Simulator/cGameTerrainCursorView"
+      ],
+      "reason": "Cursor names do not identify creature foot consumers."
+    },
+    {
+      "names": [
+        "contact",
+        "Contact"
+      ],
+      "reason": "Lowercase exact contact had zero matches; other contact names may belong to generic physics. No Creature-specific mapping established."
+    },
+    {
+      "names": [
+        "yE>foot_step"
+      ],
+      "reason": "Only the complete run is reported; foot_step is a suffix, not a standalone complete string at this location."
+    }
+  ],
+  "sources": [
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "lineCount": 267,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "coverage": "Full 267-line header",
+          "query": "ground|terrain|foot|contact|lock|slope|height|normal, case insensitive",
+          "matches": [
+            {
+              "line": 259,
+              "name": "blockIndex",
+              "reason": "Incidental lock substring; excluded"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "No named ground-query or foot-lock API identified by this bounded header query. Unknown fields and implementations remain unexamined."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Anim/IAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/IAnimWorld.h",
+      "bytes": 2546,
+      "sha256": "68e1b28df2cc6c5cc9052875ab756424ca902e27f1976f093200b9f0cf7bd52c",
+      "lineCount": 58,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "line": 13,
+          "declaration": "typedef float(*AnimFunction)(void* object, AnimatedCreature* creature, const Quaternion&, Vector3* dstNormal, bool, bool);",
+          "fact": "Callback has a float return and dstNormal output pointer."
+        },
+        {
+          "line": 24,
+          "declaration": "virtual void func10h(bool, AnimFunction, void* object) = 0;",
+          "fact": "Unnamed virtual API accepts the callback."
+        },
+        {
+          "line": 23,
+          "fact": "SDK author comments distinguish planet and editor callback addresses.",
+          "communityCommentAddresses": [
+            "sub_B36750",
+            "sub_572BE0"
+          ]
+        },
+        {
+          "lines": [
+            34,
+            35,
+            36
+          ],
+          "names": [
+            "Update",
+            "UpdateCreatures",
+            "PostUpdateCreatures"
+          ],
+          "fact": "Three frame-update declarations exist; one author comment questions Update cadence."
+        },
+        {
+          "line": 38,
+          "name": "LoadCreature"
+        }
+      ],
+      "limitations": [
+        "Callback meaning, return units, quaternion meaning, boolean meanings, sampling cadence, and calling consumers are unknown.",
+        "The author-comment addresses are not mapped to the selected EXE and are not accepted as local function addresses.",
+        "Interface shape is a candidate animation/world connection, not proof of terrain probing by feet."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Anim/cAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/cAnimWorld.h",
+      "bytes": 366,
+      "sha256": "05b9420a605dd7c9f06013a0fa9b5c1d310a463fc55a0e27756037cf1420a030",
+      "lineCount": 21,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "lines": [
+            7,
+            8,
+            13,
+            15,
+            17,
+            20
+          ],
+          "fact": "Class and member declarations are commented out.",
+          "commentedMemberNames": [
+            "mCreatures",
+            "mpModelWorld",
+            "mpEffectWorld"
+          ]
+        }
+      ],
+      "limitations": [
+        "Inactive commented sketch is not evidence of an implemented SDK class or actual game ownership."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Terrain/ITerrain.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Terrain/ITerrain.h",
+      "bytes": 7384,
+      "sha256": "bc47d601910a09afad5815af1640e2f8d4feccbdef3853e8e80b1eed631450de",
+      "lineCount": 149,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "line": 139,
+          "declaration": "virtual Vector3 Raycast(const Vector3& pos, const Vector3& dir) = 0;",
+          "sdkVtableOffset": "0x108"
+        },
+        {
+          "lines": [
+            134,
+            135,
+            136,
+            137,
+            138
+          ],
+          "fact": "SDK documentation describes first terrain intersection, excluding models and water, with zero vector on miss."
+        },
+        {
+          "line": 140,
+          "declaration": "virtual Quaternion GetOrientation(const Vector3& upAxis) = 0;",
+          "sdkVtableOffset": "0x10C"
+        }
+      ],
+      "limitations": [
+        "Comment-described behavior is not a recovered local function implementation.",
+        "No selected Creature foot caller established. Terrain-only raycast cannot be assumed to handle feet standing on models or water."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Simulator/SubSystem/PlanetModel.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/SubSystem/PlanetModel.h",
+      "bytes": 4458,
+      "sha256": "244e462b6be7483427a3a795b430ef2d7691087390ad303caa88e9e380b56357",
+      "lineCount": 145,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "line": 93,
+          "declaration": "float GetHeightAt(const Vector3& position);"
+        },
+        {
+          "line": 91,
+          "declaration": "Vector3 ToSurface(const Vector3& position);"
+        },
+        {
+          "lines": [
+            89,
+            90
+          ],
+          "fact": "SDK documentation describes a surface point aligned radially with planet center and supplied position."
+        },
+        {
+          "line": 85,
+          "name": "IsInWater"
+        },
+        {
+          "lines": [
+            83,
+            84
+          ],
+          "fact": "SDK documentation compares water level to GetHeightAt(position); prose uses ambiguous above/inside wording."
+        },
+        {
+          "lines": [
+            139,
+            141
+          ],
+          "names": [
+            "DeclareAddress(ToSurface)",
+            "DeclareAddress(GetHeightAt)"
+          ]
+        }
+      ],
+      "limitations": [
+        "Declarations have no recovered body here. Height units, interpolation, off-planet behavior, and Creature foot consumers remain unknown."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Terrain/cTerrainSphere.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Terrain/cTerrainSphere.h",
+      "bytes": 12103,
+      "sha256": "73581a323cc9d9bffa1c7735295714c3271ee03dfa21df9ca99e1aa76ffa7f96",
+      "lineCount": 312,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "lines": [
+            110,
+            111,
+            112
+          ],
+          "names": [
+            "GetQuadNormalMap",
+            "GetQuadHeightMap",
+            "GetQuadControlMap"
+          ],
+          "returnType": "RenderWare::Raster*"
+        },
+        {
+          "line": 167,
+          "name": "mTerrainNormalMaps",
+          "declaredArrayLength": 6,
+          "sdkMemberOffset": "0x148"
+        },
+        {
+          "line": 168,
+          "name": "mTerrainHeightMaps",
+          "declaredArrayLength": 6,
+          "sdkMemberOffset": "0x160"
+        }
+      ],
+      "limitations": [
+        "Map/raster presence is not proof of CPU foot sampling or gait usage. SDK member offsets are neither local EXE file offsets nor function addresses."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Terrain/cTerrainMapSet.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Terrain/cTerrainMapSet.h",
+      "bytes": 2933,
+      "sha256": "4396007bb0a3322006044c7d49b068dd6b302b984f19c7995541e215f7b462b7",
+      "lineCount": 112,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "lines": [
+            28,
+            30,
+            31,
+            32,
+            37
+          ],
+          "enum": "TerrainMapIndex",
+          "values": {
+            "HeightMap": 0,
+            "NormalMap": 1,
+            "ControlMap": 2,
+            "HeightAboveMap": 7
+          }
+        },
+        {
+          "lines": [
+            62,
+            63
+          ],
+          "names": [
+            "SetMap",
+            "GetMap"
+          ]
+        },
+        {
+          "line": 65,
+          "declaration": "float GetHeight(const Math::Vector3& position) const;"
+        },
+        {
+          "line": 67,
+          "name": "GetWaterHeight"
+        },
+        {
+          "line": 74,
+          "name": "mMaps",
+          "declaredArrayLength": 11
+        },
+        {
+          "line": 75,
+          "name": "mPlanetRadius",
+          "sdkMemberOffset": "0x34"
+        },
+        {
+          "line": 85,
+          "name": "mMaxCliffGradient",
+          "sdkMemberOffset": "0x4C"
+        },
+        {
+          "line": 86,
+          "name": "mHeightRange",
+          "sdkMemberOffset": "0x50"
+        },
+        {
+          "line": 92,
+          "name": "DeclareAddress(GetHeight)"
+        },
+        {
+          "lines": [
+            95,
+            96,
+            97,
+            98
+          ],
+          "fact": "Community SDK inline GetWaterHeight computes planet radius plus altitude range times water level."
+        }
+      ],
+      "limitations": [
+        "GetHeight body and normal sampling remain unknown. mMaxCliffGradient is not established as a Creature foot slope threshold. Inline SDK utility is not recovered proprietary implementation."
+      ]
+    },
+    {
+      "kind": "community-sdk-declarations",
+      "repository": "Spore-Community/Spore-ModAPI",
+      "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+      "path": "Spore ModAPI/Spore/Terrain/cTerrainMap.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Terrain/cTerrainMap.h",
+      "bytes": 1706,
+      "sha256": "2fdb7b43c859f8f38c2fcbc2bbe9b6604db808b1b35203b76f47706ed9123ca4",
+      "lineCount": 68,
+      "identityVerification": "Complete response bytes re-fetched and SHA256 verified in memory; no downloaded source file written",
+      "observations": [
+        {
+          "line": 34,
+          "declaration": "virtual void* GetData() = 0;"
+        }
+      ],
+      "limitations": [
+        "Map data accessor does not establish gait or terrain-query implementation."
+      ]
+    },
+    {
+      "kind": "original-developer-paper",
+      "title": "Real-time Motion Retargeting to Highly Varied User-Created Morphologies",
+      "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+      "pages": 11,
+      "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+      "identityVerification": "SHA256 reused from parent study record; this worker read the public PDF text, not a fresh byte hash.",
+      "observations": [
+        {
+          "section": "4.2",
+          "printedPages": [
+            6,
+            7
+          ],
+          "fact": "Legs are grouped by approximate length and coordinated through simple frequency ratios. Duty factor and step trigger control contact fraction and phase. Authored foot paths scale by leg length; hip translation/rotation and speed-interpolated gait styles adjust motion. Authored data covers one through six feet; larger groups generate parameters. Footless motion uses heuristics."
+        },
+        {
+          "section": "3.2.2",
+          "fact": "Ground-relative targets normalize a vertical coordinate between rest height and ground height; examples include graspers interacting with ground objects."
+        },
+        {
+          "section": "4.3",
+          "fact": "Pose goals are solved with a spine phase followed by limb chains against the fixed spine."
+        }
+      ],
+      "limitations": [
+        "Historical developer description is not fully aligned with local 1.3.0.29.",
+        "Ground-relative targets do not establish foot-lock state or probing algorithm.",
+        "The cited sections do not recover ground raycast calls, persistent anchors, contact hysteresis, slope thresholds, support polygons, friction, or center-of-mass balance."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "status": "observed",
+      "fact": "The selected EXE contains gait and foot-tilt parameter names, footstep names, and ground locomotion class-like names."
+    },
+    {
+      "status": "observed-community-declaration",
+      "fact": "Fixed SDK declares height, surface projection, raycast, and orientation APIs, plus an opaque animation-world callback."
+    },
+    {
+      "status": "inference-candidate",
+      "fact": "AnimFunction returning a scalar and writing dstNormal is a possible animation/world query connection; its actual semantics and callers are not established."
+    },
+    {
+      "status": "unresolved",
+      "fact": "No recovered chain links a Creature foot through this callback to a terrain query, locked support anchor, or root support solver."
+    }
+  ],
+  "inputStateOutputChain": {
+    "input": {
+      "gaitInputs": "Published gait parameters and module26 selected configuration; terrain surface inputs unknown."
+    },
+    "state": {
+      "phaseAndFootTargets": "Historical developer paper supports phase/gait synthesis; local fields not recovered.",
+      "contactAnchors": "Unknown",
+      "supportEligibility": "Unknown"
+    },
+    "branches": {
+      "terrainProbeChoice": "Unknown",
+      "stanceLockRelease": "Unknown",
+      "slopeOrStepRejection": "Unknown",
+      "bodyHeightAdjustment": "Unknown"
+    },
+    "output": {
+      "footGoal": "Published procedural foot-path and IK concepts; selected EXE implementation unresolved.",
+      "bodyPose": "Published hip translation/rotation concepts; exact local ground support algorithm unresolved."
+    }
+  },
+  "unknowns": [
+    "Animation callback consumers and ABI meaning beyond the declared signature.",
+    "Terrain query actually used by land Creature feet, its sample shape, ray direction, normal interpolation, units, and cadence.",
+    "Whether foot contacts preserve a world or surface-local anchor and how anchors are invalidated.",
+    "Contact acquisition/release hysteresis, material rules, model/water support, and step-edge tests.",
+    "Root height/tilt adjustment formula, reachable-chain checks, and interaction with actual movement.",
+    "Support polygon, center-of-mass balance, friction, contact force, and dynamic gait treatment.",
+    "Local version mapping of community callback address comments and SDK object layouts.",
+    "Any automatic linkage from recovered GAIT resource values to terrain sampling or foot locking."
+  ],
+  "notPerformed": [
+    "Game execution",
+    "Process attach or memory inspection",
+    "Private-save access",
+    "Package extraction or new resource decoding",
+    "Disassembly/decompilation",
+    "Provider installation/build/configuration changes"
+  ],
+  "risk": "The principal remaining risk is attribution: names, SDK declarations, and historical design description do not establish actual selected-version foot-contact implementation."
+}

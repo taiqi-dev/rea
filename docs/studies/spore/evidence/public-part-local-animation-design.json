@@ -1,0 +1,48 @@
+{
+  "kind": "reuse-of-previously-hashed-developer-sources-plus-new-section-read",
+  "sources": [
+    {
+      "url": "https://www.cs.cmu.edu/~ajw/s2007/0248-Rigblocks.pdf",
+      "sha256": "05f032e2874d6915c1cf9d64e7a346a46dfb5da970f9d4332f12c74a5c334476",
+      "bytes": 552436,
+      "read_pages_one_based": [
+        1
+      ],
+      "section": "3 Animation Technology",
+      "previous_identity_record": "public-mesh-related-papers.json",
+      "facts": [
+        "Translation and scale deltas accumulated individually; quaternion rotations concatenated, unlike Maya Euler summation.",
+        "Composed runtime rotations are not claimed order independent."
+      ]
+    },
+    {
+      "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+      "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+      "bytes": 3896086,
+      "read_pages_one_based": [
+        4,
+        8,
+        9
+      ],
+      "previous_read_pages_one_based": [
+        2
+      ],
+      "sections": [
+        "1.2",
+        "3.2.2",
+        "4.3",
+        "4.4"
+      ],
+      "facts": [
+        "Scalar part deforms standardized across part types; implementation opaque to motion system.",
+        "Rest-relative, absolute and limb-length-scaled position/rotation semantics are distinct.",
+        "Rest pose used as solver preconditioner and reconstruction orientation reference, not immutable final pose.",
+        "Secondary Jiggles limited to unselected subtrees with no feedback to keyed motion."
+      ],
+      "limits": [
+        "Historical design, not local function ABI.",
+        "Does not establish local geometry/animation composition or map all semantic deform slots."
+      ]
+    }
+  ]
+}

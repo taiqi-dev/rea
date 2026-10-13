@@ -1,0 +1,1206 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "kind": "community-format-source-not-runtime",
+  "files": [
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAUnit.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAUnit.java",
+      "sha256": "4a43818c48188f20d9f1d3031d26d13d9c47c575b71347b8a751f6508934b1b3",
+      "bytes": 9503,
+      "line_count": 291,
+      "selected_declarations": [
+        {
+          "line": 38,
+          "text": "\tprivate static final int MAGIC = 0x74736C61;"
+        },
+        {
+          "line": 47,
+          "text": "\tpublic void read(StreamReader stream) throws IOException {"
+        },
+        {
+          "line": 48,
+          "text": "\t\tif (stream.readInt() != MAGIC) {"
+        },
+        {
+          "line": 49,
+          "text": "\t\t\tthrow new IOException(\"Input file is not a TLSA file! Position: \" + stream.getFilePointer());"
+        },
+        {
+          "line": 50,
+          "text": "\t\t}"
+        },
+        {
+          "line": 51,
+          "text": "\t\t"
+        },
+        {
+          "line": 52,
+          "text": "\t\tversion = stream.readInt();"
+        },
+        {
+          "line": 53,
+          "text": "\t\tint count = stream.readInt();"
+        },
+        {
+          "line": 54,
+          "text": "\t\t"
+        },
+        {
+          "line": 55,
+          "text": "\t\tfor (int i = 0; i < count; ++i) {"
+        },
+        {
+          "line": 56,
+          "text": "\t\t\tTLSAAnimationGroup group = new TLSAAnimationGroup();"
+        },
+        {
+          "line": 57,
+          "text": "\t\t\tgroups.add(group);"
+        },
+        {
+          "line": 58,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 59,
+          "text": "\t\t\tgroup.read(stream, version);"
+        },
+        {
+          "line": 60,
+          "text": "\t\t}"
+        },
+        {
+          "line": 61,
+          "text": "\t}"
+        },
+        {
+          "line": 62,
+          "text": "\t"
+        },
+        {
+          "line": 63,
+          "text": "\tpublic void write(StreamWriter stream) throws IOException {"
+        },
+        {
+          "line": 64,
+          "text": "\t\tstream.writeInt(MAGIC);"
+        },
+        {
+          "line": 65,
+          "text": "\t\tstream.writeInt(version);"
+        },
+        {
+          "line": 66,
+          "text": "\t\tstream.writeInt(groups.size());"
+        },
+        {
+          "line": 67,
+          "text": "\t\tfor (TLSAAnimationGroup group : groups) group.write(stream, version);"
+        },
+        {
+          "line": 68,
+          "text": "\t}"
+        },
+        {
+          "line": 69,
+          "text": "\t"
+        },
+        {
+          "line": 70,
+          "text": "\tpublic void toArgScript(ArgScriptWriter writer) {"
+        },
+        {
+          "line": 71,
+          "text": "\t\twriter.command(\"version\").ints(version);"
+        },
+        {
+          "line": 72,
+          "text": "\t\t"
+        },
+        {
+          "line": 73,
+          "text": "\t\tfor (TLSAAnimationGroup group : groups) {"
+        },
+        {
+          "line": 74,
+          "text": "\t\t\twriter.blankLine();"
+        },
+        {
+          "line": 75,
+          "text": "\t\t\tgroup.toArgScript(writer, version);"
+        },
+        {
+          "line": 76,
+          "text": "\t\t}"
+        },
+        {
+          "line": 77,
+          "text": "\t}"
+        },
+        {
+          "line": 78,
+          "text": "\t"
+        },
+        {
+          "line": 79,
+          "text": "\tpublic String toArgScript() {"
+        },
+        {
+          "line": 80,
+          "text": "\t\tArgScriptWriter writer = new ArgScriptWriter();"
+        },
+        {
+          "line": 81,
+          "text": "\t\ttoArgScript(writer);"
+        },
+        {
+          "line": 82,
+          "text": "\t\treturn writer.toString();"
+        },
+        {
+          "line": 83,
+          "text": "\t}"
+        },
+        {
+          "line": 84,
+          "text": ""
+        },
+        {
+          "line": 85,
+          "text": "\tpublic ArgScriptStream<TLSAUnit> generateStream() {"
+        },
+        {
+          "line": 86,
+          "text": "\t\t"
+        },
+        {
+          "line": 87,
+          "text": "\t\tArgScriptStream<TLSAUnit> stream = new ArgScriptStream<TLSAUnit>();"
+        },
+        {
+          "line": 88,
+          "text": "\t\tstream.setVersionRange(7, 10);"
+        },
+        {
+          "line": 89,
+          "text": "\t\tstream.setData(this);"
+        },
+        {
+          "line": 90,
+          "text": "\t\tstream.addDefaultParsers();"
+        },
+        {
+          "line": 91,
+          "text": "\t\t"
+        },
+        {
+          "line": 92,
+          "text": "\t\t// Spore uses \"anim\" for the old version and \"anim2\" for the new"
+        },
+        {
+          "line": 93,
+          "text": "\t\t// But since here we only support the new, we use anim for it"
+        },
+        {
+          "line": 94,
+          "text": "\t\tstream.addParser(TLSAAnimationGroup.KEYWORD, new ArgScriptBlock<TLSAUnit>() {"
+        },
+        {
+          "line": 95,
+          "text": "\t\t\tprivate TLSAAnimationGroup group;"
+        },
+        {
+          "line": 96,
+          "text": ""
+        },
+        {
+          "line": 97,
+          "text": "\t\t\t@Override"
+        },
+        {
+          "line": 98,
+          "text": "\t\t\tpublic void parse(ArgScriptLine line) {"
+        },
+        {
+          "line": 99,
+          "text": "\t\t\t\tgroup = new TLSAAnimationGroup();"
+        },
+        {
+          "line": 100,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 101,
+          "text": "\t\t\t\tArgScriptArguments args = new ArgScriptArguments();"
+        },
+        {
+          "line": 102,
+          "text": "\t\t\t\tNumber value = null;"
+        },
+        {
+          "line": 103,
+          "text": "\t\t\t\tif (line.getArguments(args, 2) && (value = stream.parseFileID(args, 0)) != null) {"
+        },
+        {
+          "line": 104,
+          "text": "\t\t\t\t\tgroup.id = value.intValue();"
+        },
+        {
+          "line": 105,
+          "text": "\t\t\t\t\tgroup.name = args.get(1);"
+        },
+        {
+          "line": 106,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 107,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 108,
+          "text": "\t\t\t\tstream.startBlock(this);"
+        },
+        {
+          "line": 109,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 110,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 111,
+          "text": "\t\t\t@Override"
+        },
+        {
+          "line": 112,
+          "text": "\t\t\tpublic void onBlockEnd() {"
+        },
+        {
+          "line": 113,
+          "text": "\t\t\t\tfloat specifiedProb = 0.0f;"
+        },
+        {
+          "line": 114,
+          "text": "\t\t\t\tint specifieds = 0;"
+        },
+        {
+          "line": 115,
+          "text": "\t\t\t\tfor (TLSAAnimationChoice choice : group.choices) {"
+        },
+        {
+          "line": 116,
+          "text": "\t\t\t\t\tspecifiedProb += choice.probabilityThreshold;"
+        },
+        {
+          "line": 117,
+          "text": "\t\t\t\t\t++specifieds;"
+        },
+        {
+          "line": 118,
+          "text": "\t\t\t\t}"
+        },
+        {
+          "line": 119,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 120,
+          "text": "\t\t\t\t// Should be 1.0, but it's not exact"
+        },
+        {
+          "line": 121,
+          "text": "\t\t\t\tif (specifiedProb > 1.1f) {"
+        },
+        {
+          "line": 122,
+          "text": "\t\t\t\t\tstream.addError(new DocumentError(\"Total probability > 1.0\", 0, 3));"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAAnimationGroup.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAAnimationGroup.java",
+      "sha256": "09cc1816fccac90442f355bd1b23f1873013acdafb3b6d2f3b6a173edf9b694c",
+      "bytes": 8575,
+      "line_count": 275,
+      "selected_declarations": [
+        {
+          "line": 25,
+          "text": "import sporemodder.file.filestructures.Stream.StringEncoding;"
+        },
+        {
+          "line": 26,
+          "text": "import sporemodder.file.filestructures.StreamReader;"
+        },
+        {
+          "line": 27,
+          "text": "import sporemodder.file.filestructures.StreamWriter;"
+        },
+        {
+          "line": 28,
+          "text": "import sporemodder.HashManager;"
+        },
+        {
+          "line": 29,
+          "text": "import sporemodder.file.argscript.ArgScriptWriter;"
+        },
+        {
+          "line": 30,
+          "text": ""
+        },
+        {
+          "line": 31,
+          "text": "public class TLSAAnimationGroup {"
+        },
+        {
+          "line": 32,
+          "text": "\tpublic static final String KEYWORD = \"anim\";"
+        },
+        {
+          "line": 33,
+          "text": "\t"
+        },
+        {
+          "line": 34,
+          "text": "\tpublic final List<TLSAAnimationChoice> choices = new ArrayList<TLSAAnimationChoice>();"
+        },
+        {
+          "line": 35,
+          "text": "\t"
+        },
+        {
+          "line": 36,
+          "text": "\tpublic int id;"
+        },
+        {
+          "line": 37,
+          "text": "\tpublic String name;"
+        },
+        {
+          "line": 38,
+          "text": "\t"
+        },
+        {
+          "line": 39,
+          "text": "\tpublic float priorityOverride;"
+        },
+        {
+          "line": 40,
+          "text": "\tpublic float blendInTime = -1.0f;"
+        },
+        {
+          "line": 41,
+          "text": "\tpublic boolean idle;"
+        },
+        {
+          "line": 42,
+          "text": "\tpublic boolean allowLocomotion;"
+        },
+        {
+          "line": 43,
+          "text": "\tpublic boolean randomizeChoicePerLoop;"
+        },
+        {
+          "line": 44,
+          "text": "\tpublic int matchVariantForToolMask;"
+        },
+        {
+          "line": 45,
+          "text": "\tpublic int disableToolOverlayMask;"
+        },
+        {
+          "line": 46,
+          "text": "\tpublic int endMode = 4;"
+        },
+        {
+          "line": 47,
+          "text": "\t"
+        },
+        {
+          "line": 48,
+          "text": "\tprivate void readOld(StreamReader stream, int version) throws IOException {"
+        },
+        {
+          "line": 49,
+          "text": "\t\tid = stream.readInt();"
+        },
+        {
+          "line": 50,
+          "text": "\t\t"
+        },
+        {
+          "line": 51,
+          "text": "\t\tif (version == 8) {"
+        },
+        {
+          "line": 52,
+          "text": "\t\t\tpriorityOverride = stream.readFloat();"
+        },
+        {
+          "line": 53,
+          "text": "\t\t}"
+        },
+        {
+          "line": 54,
+          "text": "\t\t"
+        },
+        {
+          "line": 55,
+          "text": "\t\tint numAnims = stream.readInt();"
+        },
+        {
+          "line": 56,
+          "text": "\t\t"
+        },
+        {
+          "line": 57,
+          "text": "\t\tTLSAAnimationChoice choice = new TLSAAnimationChoice();"
+        },
+        {
+          "line": 58,
+          "text": "\t\tchoices.add(choice);"
+        },
+        {
+          "line": 59,
+          "text": "\t\t"
+        },
+        {
+          "line": 60,
+          "text": "\t\tfor (int i = 0; i < numAnims; i++) {"
+        },
+        {
+          "line": 61,
+          "text": "\t\t\tTLSAAnimation anim = new TLSAAnimation();"
+        },
+        {
+          "line": 62,
+          "text": "\t\t\tanim.description = stream.readString(StringEncoding.UTF16LE, stream.readInt());"
+        },
+        {
+          "line": 63,
+          "text": "\t\t\tchoice.animations.add(anim);"
+        },
+        {
+          "line": 64,
+          "text": "\t\t}"
+        },
+        {
+          "line": 65,
+          "text": "\t\tfor (int i = 0; i < numAnims; i++) {"
+        },
+        {
+          "line": 66,
+          "text": "\t\t\tchoice.animations.get(i).id = stream.readInt();"
+        },
+        {
+          "line": 67,
+          "text": "\t\t}"
+        },
+        {
+          "line": 68,
+          "text": "\t\t"
+        },
+        {
+          "line": 69,
+          "text": "\t\tfloat durationScale = stream.readFloat();"
+        },
+        {
+          "line": 70,
+          "text": "\t\tfloat duration = stream.readFloat();"
+        },
+        {
+          "line": 71,
+          "text": "\t\tfor (TLSAAnimation anim : choice.animations) {"
+        },
+        {
+          "line": 72,
+          "text": "\t\t\tanim.duration = duration;"
+        },
+        {
+          "line": 73,
+          "text": "\t\t\tanim.durationScale = durationScale;"
+        },
+        {
+          "line": 74,
+          "text": "\t\t}"
+        },
+        {
+          "line": 75,
+          "text": "\t\t"
+        },
+        {
+          "line": 76,
+          "text": "\t\tidle = stream.readBoolean();"
+        },
+        {
+          "line": 77,
+          "text": "\t\tblendInTime = stream.readFloat();"
+        },
+        {
+          "line": 78,
+          "text": "\t\tallowLocomotion = stream.readBoolean();"
+        },
+        {
+          "line": 79,
+          "text": "\t\tdisableToolOverlayMask = stream.readInt();"
+        },
+        {
+          "line": 80,
+          "text": "\t\tmatchVariantForToolMask = stream.readInt();"
+        },
+        {
+          "line": 81,
+          "text": "\t\tendMode = stream.readInt();"
+        },
+        {
+          "line": 82,
+          "text": "\t}"
+        },
+        {
+          "line": 83,
+          "text": "\t"
+        },
+        {
+          "line": 84,
+          "text": "\tprivate void writeOld(StreamWriter stream, int version) throws IOException {"
+        },
+        {
+          "line": 85,
+          "text": "\t\tstream.writeInt(id);"
+        },
+        {
+          "line": 86,
+          "text": "\t\t"
+        },
+        {
+          "line": 87,
+          "text": "\t\tif (version == 8) {"
+        },
+        {
+          "line": 88,
+          "text": "\t\t\tstream.writeFloat(priorityOverride);"
+        },
+        {
+          "line": 89,
+          "text": "\t\t}"
+        },
+        {
+          "line": 90,
+          "text": "\t\t"
+        },
+        {
+          "line": 91,
+          "text": "\t\tfloat durationScale = 1.0f;"
+        },
+        {
+          "line": 92,
+          "text": "\t\tfloat duration = -1.0f;"
+        },
+        {
+          "line": 93,
+          "text": "\t\t"
+        },
+        {
+          "line": 94,
+          "text": "\t\tif (choices.isEmpty()) {"
+        },
+        {
+          "line": 95,
+          "text": "\t\t\tstream.writeInt(0);"
+        },
+        {
+          "line": 96,
+          "text": "\t\t} else {"
+        },
+        {
+          "line": 97,
+          "text": "\t\t\tList<TLSAAnimation> anims = choices.get(0).animations;"
+        },
+        {
+          "line": 98,
+          "text": "\t\t\tstream.writeInt(anims.size());"
+        },
+        {
+          "line": 99,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 100,
+          "text": "\t\t\tfor (TLSAAnimation anim : anims) {"
+        },
+        {
+          "line": 101,
+          "text": "\t\t\t\tstream.writeInt(anim.description.length());"
+        },
+        {
+          "line": 102,
+          "text": "\t\t\t\tstream.writeString(anim.description, StringEncoding.UTF16LE);"
+        },
+        {
+          "line": 103,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 104,
+          "text": "\t\t\tfor (TLSAAnimation anim : anims) {"
+        },
+        {
+          "line": 105,
+          "text": "\t\t\t\tstream.writeInt(anim.id);"
+        },
+        {
+          "line": 106,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 107,
+          "text": "\t\t\tif (!anims.isEmpty()) {"
+        },
+        {
+          "line": 108,
+          "text": "\t\t\t\tdurationScale = anims.get(0).durationScale;"
+        },
+        {
+          "line": 109,
+          "text": "\t\t\t\tduration = anims.get(0).duration;"
+        },
+        {
+          "line": 110,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 111,
+          "text": "\t\t}"
+        },
+        {
+          "line": 112,
+          "text": "\t\t"
+        },
+        {
+          "line": 113,
+          "text": "\t\tstream.writeFloat(durationScale);"
+        },
+        {
+          "line": 114,
+          "text": "\t\tstream.writeFloat(duration);"
+        },
+        {
+          "line": 115,
+          "text": "\t\tstream.writeBoolean(idle);"
+        },
+        {
+          "line": 116,
+          "text": "\t\tstream.writeFloat(blendInTime);"
+        },
+        {
+          "line": 117,
+          "text": "\t\tstream.writeBoolean(allowLocomotion);"
+        },
+        {
+          "line": 118,
+          "text": "\t\tstream.writeInt(disableToolOverlayMask);"
+        },
+        {
+          "line": 119,
+          "text": "\t\tstream.writeInt(matchVariantForToolMask);"
+        },
+        {
+          "line": 120,
+          "text": "\t\tstream.writeInt(endMode);"
+        },
+        {
+          "line": 121,
+          "text": "\t}"
+        },
+        {
+          "line": 122,
+          "text": "\t"
+        },
+        {
+          "line": 123,
+          "text": "\tprivate void readNew(StreamReader stream, int version) throws IOException {"
+        },
+        {
+          "line": 124,
+          "text": "\t\tid = stream.readInt();"
+        },
+        {
+          "line": 125,
+          "text": "\t\t"
+        },
+        {
+          "line": 126,
+          "text": "\t\tname = stream.readString(StringEncoding.UTF16LE, stream.readInt());"
+        },
+        {
+          "line": 127,
+          "text": "\t\t"
+        },
+        {
+          "line": 128,
+          "text": "\t\tpriorityOverride = stream.readFloat();  // priorityOverride ?"
+        },
+        {
+          "line": 129,
+          "text": "\t\tblendInTime = stream.readFloat();"
+        },
+        {
+          "line": 130,
+          "text": "\t\t"
+        },
+        {
+          "line": 131,
+          "text": "\t\tidle = stream.readBoolean();"
+        },
+        {
+          "line": 132,
+          "text": "\t\tallowLocomotion = stream.readBoolean();"
+        },
+        {
+          "line": 133,
+          "text": "\t\t"
+        },
+        {
+          "line": 134,
+          "text": "\t\tif (version == 10) {"
+        },
+        {
+          "line": 135,
+          "text": "\t\t\trandomizeChoicePerLoop = stream.readBoolean();"
+        },
+        {
+          "line": 136,
+          "text": "\t\t}"
+        },
+        {
+          "line": 137,
+          "text": "\t\t"
+        },
+        {
+          "line": 138,
+          "text": "\t\tmatchVariantForToolMask = stream.readInt();"
+        },
+        {
+          "line": 139,
+          "text": "\t\tdisableToolOverlayMask = stream.readInt();"
+        },
+        {
+          "line": 140,
+          "text": "\t\tendMode = stream.readInt();"
+        },
+        {
+          "line": 141,
+          "text": "\t\t"
+        },
+        {
+          "line": 142,
+          "text": "\t\tint choiceCount = stream.readInt();"
+        },
+        {
+          "line": 143,
+          "text": "\t\t"
+        },
+        {
+          "line": 144,
+          "text": "\t\tfor (int i = 0; i < choiceCount; i++) {"
+        },
+        {
+          "line": 145,
+          "text": "\t\t\tTLSAAnimationChoice choice = new TLSAAnimationChoice();"
+        },
+        {
+          "line": 146,
+          "text": "\t\t\tchoices.add(choice);"
+        },
+        {
+          "line": 147,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 148,
+          "text": "\t\t\tchoice.probabilityThreshold = stream.readFloat();"
+        },
+        {
+          "line": 149,
+          "text": "\t\t\t"
+        },
+        {
+          "line": 150,
+          "text": "\t\t\tint count = stream.readInt();"
+        },
+        {
+          "line": 151,
+          "text": "\t\t\tfor (int j = 0; j < count; ++j) {"
+        },
+        {
+          "line": 152,
+          "text": "\t\t\t\tTLSAAnimation animation = new TLSAAnimation();"
+        },
+        {
+          "line": 153,
+          "text": "\t\t\t\tchoice.animations.add(animation);"
+        },
+        {
+          "line": 154,
+          "text": "\t\t\t\t"
+        },
+        {
+          "line": 155,
+          "text": "\t\t\t\tanimation.durationScale = stream.readFloat();"
+        },
+        {
+          "line": 156,
+          "text": "\t\t\t\tanimation.duration = stream.readFloat();"
+        },
+        {
+          "line": 157,
+          "text": "\t\t\t\tanimation.id = stream.readInt();"
+        },
+        {
+          "line": 158,
+          "text": "\t\t\t\tanimation.description = stream.readString(StringEncoding.UTF16LE, stream.readInt());"
+        },
+        {
+          "line": 159,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 160,
+          "text": "\t\t}"
+        },
+        {
+          "line": 161,
+          "text": "\t}"
+        },
+        {
+          "line": 162,
+          "text": "\t"
+        },
+        {
+          "line": 163,
+          "text": "\tprivate void writeNew(StreamWriter stream, int version) throws IOException {"
+        },
+        {
+          "line": 164,
+          "text": "\t\tstream.writeInt(id);"
+        },
+        {
+          "line": 165,
+          "text": "\t\t"
+        },
+        {
+          "line": 166,
+          "text": "\t\tstream.writeInt(name.length());"
+        },
+        {
+          "line": 167,
+          "text": "\t\tstream.writeString(name, StringEncoding.UTF16LE);"
+        },
+        {
+          "line": 168,
+          "text": "\t\t"
+        },
+        {
+          "line": 169,
+          "text": "\t\tstream.writeFloat(priorityOverride);"
+        },
+        {
+          "line": 170,
+          "text": "\t\tstream.writeFloat(blendInTime);"
+        },
+        {
+          "line": 171,
+          "text": "\t\tstream.writeBoolean(idle);"
+        },
+        {
+          "line": 172,
+          "text": "\t\tstream.writeBoolean(allowLocomotion);"
+        },
+        {
+          "line": 173,
+          "text": "\t\t"
+        },
+        {
+          "line": 174,
+          "text": "\t\tif (version == 10) {"
+        },
+        {
+          "line": 175,
+          "text": "\t\t\tstream.writeBoolean(randomizeChoicePerLoop);"
+        },
+        {
+          "line": 176,
+          "text": "\t\t}"
+        },
+        {
+          "line": 177,
+          "text": "\t\t"
+        },
+        {
+          "line": 178,
+          "text": "\t\tstream.writeInt(matchVariantForToolMask);"
+        },
+        {
+          "line": 179,
+          "text": "\t\tstream.writeInt(disableToolOverlayMask);"
+        },
+        {
+          "line": 180,
+          "text": "\t\tstream.writeInt(endMode);"
+        },
+        {
+          "line": 181,
+          "text": "\t\tstream.writeInt(choices.size());"
+        },
+        {
+          "line": 182,
+          "text": "\t\t"
+        },
+        {
+          "line": 183,
+          "text": "\t\tfor (TLSAAnimationChoice choice : choices) {"
+        },
+        {
+          "line": 184,
+          "text": "\t\t\tstream.writeFloat(choice.probabilityThreshold);"
+        },
+        {
+          "line": 185,
+          "text": "\t\t\tstream.writeInt(choice.animations.size());"
+        },
+        {
+          "line": 186,
+          "text": "\t\t\tfor (TLSAAnimation anim : choice.animations) {"
+        },
+        {
+          "line": 187,
+          "text": "\t\t\t\tstream.writeFloat(anim.durationScale);"
+        },
+        {
+          "line": 188,
+          "text": "\t\t\t\tstream.writeFloat(anim.duration);"
+        },
+        {
+          "line": 189,
+          "text": "\t\t\t\tstream.writeInt(anim.id);"
+        },
+        {
+          "line": 190,
+          "text": "\t\t\t\tstream.writeInt(anim.description.length());"
+        },
+        {
+          "line": 191,
+          "text": "\t\t\t\tstream.writeString(anim.description, StringEncoding.UTF16LE);"
+        },
+        {
+          "line": 192,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 193,
+          "text": "\t\t}"
+        },
+        {
+          "line": 194,
+          "text": "\t}"
+        },
+        {
+          "line": 195,
+          "text": "\t"
+        },
+        {
+          "line": 196,
+          "text": "\tpublic void read(StreamReader stream, int version) throws IOException {"
+        },
+        {
+          "line": 197,
+          "text": "\t\tif (version <= 8) {"
+        },
+        {
+          "line": 198,
+          "text": "\t\t\treadOld(stream, version);"
+        },
+        {
+          "line": 199,
+          "text": "\t\t} else {"
+        },
+        {
+          "line": 200,
+          "text": "\t\t\treadNew(stream, version);"
+        },
+        {
+          "line": 201,
+          "text": "\t\t}"
+        },
+        {
+          "line": 222,
+          "text": "\t\tif (blendInTime != -1.0f) writer.command(\"blendInTime\").floats(blendInTime);"
+        },
+        {
+          "line": 223,
+          "text": "\t\twriter.command(\"allowLocomotion\").arguments(Boolean.toString(allowLocomotion));"
+        },
+        {
+          "line": 238,
+          "text": "\t\tif (version >= 8) writer.command(\"priorityOverride\").floats(priorityOverride);"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAAnimationChoice.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAAnimationChoice.java",
+      "sha256": "bcce93531ad07a502dedd41c7101370c920ada610e208352affe0840486dca52",
+      "bytes": 1109,
+      "line_count": 28,
+      "selected_declarations": []
+    },
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAAnimation.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAAnimation.java",
+      "sha256": "5430087b32af1798dd2a0db47d8b80fff823cbbfb8ee6d81be216f57ac31ddcb",
+      "bytes": 1845,
+      "line_count": 58,
+      "selected_declarations": [
+        {
+          "line": 33,
+          "text": "\tpublic void read(StreamReader in, int version) throws IOException {"
+        },
+        {
+          "line": 34,
+          "text": "\t\t"
+        },
+        {
+          "line": 35,
+          "text": "\t\tif (version > 8) {"
+        },
+        {
+          "line": 36,
+          "text": "\t\t\tdurationScale = in.readFloat();"
+        },
+        {
+          "line": 37,
+          "text": "\t\t\tduration = in.readFloat();"
+        },
+        {
+          "line": 38,
+          "text": "\t\t}"
+        },
+        {
+          "line": 39,
+          "text": "\t\t"
+        },
+        {
+          "line": 40,
+          "text": "\t\tid = in.readInt();"
+        },
+        {
+          "line": 41,
+          "text": "\t\tdescription = in.readString(StringEncoding.UTF16LE, in.readInt());"
+        },
+        {
+          "line": 42,
+          "text": "\t\t"
+        },
+        {
+          "line": 43,
+          "text": "\t}"
+        },
+        {
+          "line": 44,
+          "text": "\t"
+        },
+        {
+          "line": 45,
+          "text": "\tpublic void write(StreamWriter out, int version) throws IOException {"
+        },
+        {
+          "line": 46,
+          "text": "\t\t"
+        },
+        {
+          "line": 47,
+          "text": "\t\tif (version > 8) {"
+        },
+        {
+          "line": 48,
+          "text": "\t\t\tout.writeFloat(durationScale);"
+        },
+        {
+          "line": 49,
+          "text": "\t\t\tout.writeFloat(duration);"
+        },
+        {
+          "line": 50,
+          "text": "\t\t}"
+        },
+        {
+          "line": 51,
+          "text": "\t\t"
+        },
+        {
+          "line": 52,
+          "text": "\t\tout.writeInt(id);"
+        },
+        {
+          "line": 53,
+          "text": "\t\tout.writeInt(description == null ? 0 : description.length());"
+        },
+        {
+          "line": 54,
+          "text": "\t\tif (description != null) {"
+        },
+        {
+          "line": 55,
+          "text": "\t\t\tout.writeString(description, StringEncoding.UTF16LE);"
+        },
+        {
+          "line": 56,
+          "text": "\t\t}"
+        },
+        {
+          "line": 57,
+          "text": "\t}"
+        },
+        {
+          "line": 58,
+          "text": "}"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/tlsa/TLSAConverter.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/tlsa/TLSAConverter.java",
+      "sha256": "e0a613b762b899a932be4fbc9cb67ff2f6359ad406a5e52897cc51e9a2786b0b",
+      "bytes": 5762,
+      "line_count": 183,
+      "selected_declarations": [
+        {
+          "line": 41,
+          "text": "\tpublic static final int TYPE_ID = 0x4AEB6BC6;"
+        },
+        {
+          "line": 89,
+          "text": "\t\t\tname.setTypeID(TYPE_ID);"
+        },
+        {
+          "line": 102,
+          "text": "\t\treturn key.getTypeID() == TYPE_ID;"
+        },
+        {
+          "line": 107,
+          "text": "\t\t\textension = HashManager.get().getTypeName(TYPE_ID);"
+        },
+        {
+          "line": 119,
+          "text": "\t\treturn \"Animation List File (.\" + HashManager.get().getTypeName(TYPE_ID) + \")\";"
+        },
+        {
+          "line": 129,
+          "text": "\t\treturn TYPE_ID;"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2758 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "files": [
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "bytes": 191259,
+      "line_count": 6368,
+      "selected_declarations": [
+        {
+          "line": 389,
+          "text": "creatureAbilityName\t0x01B7C544"
+        },
+        {
+          "line": 390,
+          "text": "creatureAbilityReqAnyParts\t0x01B7DD74"
+        },
+        {
+          "line": 395,
+          "text": "creatureAbilityDamage\t0x01B8346A"
+        },
+        {
+          "line": 396,
+          "text": "creatureAbilityRefresh\t0x01B8346E"
+        },
+        {
+          "line": 397,
+          "text": "creatureAbilityRange\t0x01B83470"
+        },
+        {
+          "line": 404,
+          "text": "creatureAbilityReqAllParts\t0x01B930A8"
+        },
+        {
+          "line": 415,
+          "text": "creatureAbilityType\t0x01BA8C38"
+        },
+        {
+          "line": 433,
+          "text": "creatureAbilityEnergyCost\t0x01C291D8"
+        },
+        {
+          "line": 438,
+          "text": "creatureAbilityIcon\t0x01C6A8F5"
+        },
+        {
+          "line": 439,
+          "text": "creatureAbilityDuration\t0x01C6C623"
+        },
+        {
+          "line": 464,
+          "text": "creatureAbilityCategory\t0x01EF3BE2"
+        },
+        {
+          "line": 493,
+          "text": "creatureAbilityEffectType\t0x021545DA"
+        },
+        {
+          "line": 494,
+          "text": "creatureAbilityEffectDuration\t0x02154C2A"
+        },
+        {
+          "line": 500,
+          "text": "creatureAbilityEffectKind\t0x021D798C"
+        },
+        {
+          "line": 694,
+          "text": "creatureAbilityJumping\t0x02CC9739"
+        },
+        {
+          "line": 695,
+          "text": "creatureAbilityGliding\t0x02CC974A"
+        },
+        {
+          "line": 696,
+          "text": "creatureAbilityFlapping\t0x02CCCF5C"
+        },
+        {
+          "line": 921,
+          "text": "creatureAbilityMuzzleEffectId\t0x035F26C8"
+        },
+        {
+          "line": 922,
+          "text": "creatureAbilityTrailEffectId\t0x035F26CC"
+        },
+        {
+          "line": 923,
+          "text": "creatureAbilityImpactEffectId\t0x035F26D2"
+        },
+        {
+          "line": 926,
+          "text": "creatureAbilitySpeed\t0x03601C39"
+        },
+        {
+          "line": 986,
+          "text": "creatureAbilityDNAPoints\t0x039F727C"
+        },
+        {
+          "line": 1119,
+          "text": "creatureAbilityRequiredCAPs\t0x04052A6B"
+        },
+        {
+          "line": 1120,
+          "text": "creatureAbilityRequiredCAPsMaxValueRange\t0x04052A86"
+        },
+        {
+          "line": 1121,
+          "text": "creatureAbilityRequiredCAPsSumValueRange\t0x04052B30"
+        },
+        {
+          "line": 1173,
+          "text": "creatureAbilityCombatEffectPercentages\t0x0423BC50"
+        },
+        {
+          "line": 1174,
+          "text": "creatureAbilityCombatEffectEffectIds\t0x0423BC51"
+        },
+        {
+          "line": 1175,
+          "text": "creatureAbilityCombatEffectTypes\t0x0423BC52"
+        },
+        {
+          "line": 1493,
+          "text": "creatureAbilityRangeMin\t0x04A35EE9"
+        },
+        {
+          "line": 1496,
+          "text": "creatureAbilityRushingAnimationID\t0x04A3B2F8"
+        },
+        {
+          "line": 1497,
+          "text": "creatureAbilityRushingRange\t0x04A3B36C"
+        },
+        {
+          "line": 1504,
+          "text": "creatureAbilityEffectDamage\t0x04A4CE5A"
+        },
+        {
+          "line": 1528,
+          "text": "creatureAbilityRushingSpeed\t0x04AB0DAF"
+        },
+        {
+          "line": 1541,
+          "text": "creatureAbilityAttackStatSumValueRange\t0x04AC8D53"
+        },
+        {
+          "line": 1542,
+          "text": "creatureAbilitySocialStatSumValueRange\t0x04AC8D56"
+        },
+        {
+          "line": 1833,
+          "text": "creatureAbilityConeDist\t0x051DDDD5"
+        },
+        {
+          "line": 1834,
+          "text": "creatureAbilityConeRadius\t0x051DDDDA"
+        },
+        {
+          "line": 1835,
+          "text": "creatureAbilityAnimationIDs\t0x052047F7"
+        },
+        {
+          "line": 1836,
+          "text": "creatureAbilityFollowerAnimationIDs\t0x05204800"
+        },
+        {
+          "line": 1961,
+          "text": "creatureAbilityRecharge\t0x05417D08"
+        },
+        {
+          "line": 2017,
+          "text": "creatureAbilityRangedDamage\t0x0558E32A"
+        },
+        {
+          "line": 2018,
+          "text": "creatureAbilityRazeDamage\t0x0558E337"
+        },
+        {
+          "line": 2094,
+          "text": "creatureAbilityConeDamageMultiplier\t0x0564F152"
+        },
+        {
+          "line": 2419,
+          "text": "creatureAbilityBuildingSpecificAnimationID\t0x05E7ECA0"
+        },
+        {
+          "line": 2567,
+          "text": "creatureAbilityIsSpecial\t0x06270927"
+        },
+        {
+          "line": 2577,
+          "text": "creatureAbilityUnit\t0x062D00E7"
+        },
+        {
+          "line": 2578,
+          "text": "creatureAbilityRolloverValueDescription\t0x062D00E8"
+        },
+        {
+          "line": 2629,
+          "text": "creatureAbilityRushingTargetedCharge\t0x06400F3F"
+        },
+        {
+          "line": 2631,
+          "text": "creatureAbilityRushingDoDamage\t0x0642607A"
+        },
+        {
+          "line": 2714,
+          "text": "creatureAbilityLockedDescription\t0x06669C7C"
+        },
+        {
+          "line": 2793,
+          "text": "creatureExtentsContributionScale\t0x06838638"
+        },
+        {
+          "line": 3097,
+          "text": "creatureAbilityDescription\t0x3249A320"
+        },
+        {
+          "line": 3389,
+          "text": "creatureAbilitySpeedGear\t0x73561A8F"
+        },
+        {
+          "line": 3392,
+          "text": "creatureAbilityUseForBabyGame\t0x74163BDF"
+        },
+        {
+          "line": 3393,
+          "text": "creatureAbilityBabyGameAnimationID\t0x742B4DCF"
+        },
+        {
+          "line": 3506,
+          "text": "creatureAbilityNoRequirements\t0x90F4B6B5"
+        },
+        {
+          "line": 3645,
+          "text": "creatureAbilityReqNumberOfParts\t0xB1A4592F"
+        },
+        {
+          "line": 3646,
+          "text": "creatureAbilityNumberRequired\t0xB1A4594B"
+        },
+        {
+          "line": 3651,
+          "text": "modelCapabilityBite\t0xB1C3E5B7"
+        },
+        {
+          "line": 3652,
+          "text": "modelCapabilityCharge\t0xB1C3E5B8"
+        },
+        {
+          "line": 3653,
+          "text": "modelCapabilitySpit\t0xB1C3E5B9"
+        },
+        {
+          "line": 3654,
+          "text": "modelCapabilityStrike\t0xB1C3E5C0"
+        },
+        {
+          "line": 4708,
+          "text": "creatureAbilityAvatarRangeMin\t0x07fb05d2"
+        },
+        {
+          "line": 4709,
+          "text": "creatureAbilitySocialCategory\t0x0743bdd6"
+        },
+        {
+          "line": 4710,
+          "text": "creatureAbilityExcludedCAPs\t0x07352141"
+        },
+        {
+          "line": 4711,
+          "text": "creatureAbilityLevelMultiplier\t0xf96c61b7"
+        },
+        {
+          "line": 4712,
+          "text": "creatureAbilitySprintBuff\t0x0772e3a5"
+        },
+        {
+          "line": 4713,
+          "text": "creatureAbilityAreaOfEffect\t0x07460f10"
+        },
+        {
+          "line": 4714,
+          "text": "creatureAbilityReactionAnimation\t0x075e00b7"
+        },
+        {
+          "line": 4715,
+          "text": "creatureAbilityReactionDeathAnimation\t0x07a7ffd5"
+        },
+        {
+          "line": 4716,
+          "text": "creatureAbilityReactionLiveAnimation\t0x07a7ffd9"
+        },
+        {
+          "line": 4717,
+          "text": "creatureAbilityReactionDuration\t0x075e0100"
+        },
+        {
+          "line": 4718,
+          "text": "creatureAbilityAdventurerEnergyCost\t0x073b88ef"
+        },
+        {
+          "line": 5686,
+          "text": "creatureAbilityHideInGame\t0xf23a9a42"
+        },
+        {
+          "line": 5720,
+          "text": "creatureAbilityHideInEditor\t0xb23751b2"
+        },
+        {
+          "line": 5721,
+          "text": "creatureAbilityHideInEditorType\t0x3269b6a1"
+        },
+        {
+          "line": 5722,
+          "text": "creatureAbilityInitVisible\t0xf243c227"
+        },
+        {
+          "line": 5723,
+          "text": "creatureAbilityAlwaysVisible\t0x037be084"
+        },
+        {
+          "line": 5724,
+          "text": "creatureAbilityCAPToAnimationMap\t0x040a1775"
+        },
+        {
+          "line": 5725,
+          "text": "creatureAbilityOnlyInSpace\t0x03ebebb3"
+        },
+        {
+          "line": 5726,
+          "text": "creatureAbilityAllowedInSpace\t0x044d8d26"
+        },
+        {
+          "line": 5727,
+          "text": "creatureAbilityStandStill\t0x03ec0401"
+        }
+      ]
+    },
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "bytes": 2860453,
+      "line_count": 125506,
+      "selected_declarations": [
+        {
+          "line": 19,
+          "text": "creatureabilityTemplates~\t0xD2FCB262"
+        },
+        {
+          "line": 889,
+          "text": "bite1"
+        },
+        {
+          "line": 890,
+          "text": "bite2"
+        },
+        {
+          "line": 891,
+          "text": "bite3"
+        },
+        {
+          "line": 892,
+          "text": "bite4"
+        },
+        {
+          "line": 893,
+          "text": "bite5"
+        },
+        {
+          "line": 1850,
+          "text": "charge1"
+        },
+        {
+          "line": 1851,
+          "text": "charge2"
+        },
+        {
+          "line": 1852,
+          "text": "charge3"
+        },
+        {
+          "line": 1853,
+          "text": "charge4"
+        },
+        {
+          "line": 1854,
+          "text": "charge5"
+        },
+        {
+          "line": 2701,
+          "text": "crg_alliedspecies"
+        },
+        {
+          "line": 2702,
+          "text": "crg_attack"
+        },
+        {
+          "line": 2703,
+          "text": "crg_befriendedsomething"
+        },
+        {
+          "line": 2704,
+          "text": "crg_claimnest"
+        },
+        {
+          "line": 2705,
+          "text": "crg_clg_meat"
+        },
+        {
+          "line": 2706,
+          "text": "crg_clg_mix"
+        },
+        {
+          "line": 2707,
+          "text": "crg_clg_plant"
+        },
+        {
+          "line": 2708,
+          "text": "crg_death"
+        },
+        {
+          "line": 2709,
+          "text": "crg_earnedtraitattack"
+        },
+        {
+          "line": 2710,
+          "text": "crg_earnedtraitmix"
+        },
+        {
+          "line": 2711,
+          "text": "crg_earnedtraitsocial"
+        },
+        {
+          "line": 2712,
+          "text": "crg_evolveineditor"
+        },
+        {
+          "line": 2713,
+          "text": "crg_extinctedspecies"
+        },
+        {
+          "line": 2714,
+          "text": "crg_gainedability"
+        },
+        {
+          "line": 2715,
+          "text": "crg_gamestart"
+        },
+        {
+          "line": 2716,
+          "text": "crg_grow"
+        },
+        {
+          "line": 2717,
+          "text": "crg_killedsomething"
+        },
+        {
+          "line": 2718,
+          "text": "crg_lostability"
+        },
+        {
+          "line": 2719,
+          "text": "crg_migrated"
+        },
+        {
+          "line": 2720,
+          "text": "crg_mix"
+        },
+        {
+          "line": 2721,
+          "text": "crg_music"
+        },
+        {
+          "line": 2722,
+          "text": "crg_packmemberadded"
+        },
+        {
+          "line": 2723,
+          "text": "crg_packmemberdied"
+        },
+        {
+          "line": 2724,
+          "text": "crg_rain"
+        },
+        {
+          "line": 2725,
+          "text": "crg_social"
+        },
+        {
+          "line": 2726,
+          "text": "crg_to_tribe_musica"
+        },
+        {
+          "line": 2727,
+          "text": "crg_welcome"
+        },
+        {
+          "line": 6817,
+          "text": "spit1"
+        },
+        {
+          "line": 6818,
+          "text": "spit2"
+        },
+        {
+          "line": 6819,
+          "text": "spit3"
+        },
+        {
+          "line": 6820,
+          "text": "spit4"
+        },
+        {
+          "line": 6821,
+          "text": "spit5"
+        },
+        {
+          "line": 6995,
+          "text": "strike"
+        },
+        {
+          "line": 6996,
+          "text": "strike1"
+        },
+        {
+          "line": 6997,
+          "text": "strike2"
+        },
+        {
+          "line": 6998,
+          "text": "strike3"
+        },
+        {
+          "line": 6999,
+          "text": "strike4"
+        },
+        {
+          "line": 7000,
+          "text": "strike5"
+        },
+        {
+          "line": 9353,
+          "text": "SpitTemplate"
+        },
+        {
+          "line": 9356,
+          "text": "BiteTemplate"
+        },
+        {
+          "line": 9358,
+          "text": "ChargeTemplate"
+        },
+        {
+          "line": 9359,
+          "text": "StrikeTemplate"
+        },
+        {
+          "line": 9368,
+          "text": "CreatureAbilityTemplate"
+        },
+        {
+          "line": 9431,
+          "text": "CreatureAbilities"
+        },
+        {
+          "line": 9580,
+          "text": "bite"
+        },
+        {
+          "line": 9582,
+          "text": "charge"
+        },
+        {
+          "line": 9588,
+          "text": "spit"
+        },
+        {
+          "line": 9645,
+          "text": "crg_sporeguide"
+        },
+        {
+          "line": 9959,
+          "text": "bite6"
+        },
+        {
+          "line": 9961,
+          "text": "bite7"
+        },
+        {
+          "line": 9963,
+          "text": "bite8"
+        },
+        {
+          "line": 9965,
+          "text": "charge6"
+        },
+        {
+          "line": 9967,
+          "text": "charge7"
+        },
+        {
+          "line": 9981,
+          "text": "spit6"
+        },
+        {
+          "line": 9983,
+          "text": "spit7"
+        },
+        {
+          "line": 9985,
+          "text": "spit8"
+        },
+        {
+          "line": 9987,
+          "text": "spit9"
+        },
+        {
+          "line": 9989,
+          "text": "strike6"
+        },
+        {
+          "line": 9991,
+          "text": "strike7"
+        },
+        {
+          "line": 9993,
+          "text": "strike8"
+        },
+        {
+          "line": 10255,
+          "text": "CRG_Skeleton1"
+        },
+        {
+          "line": 10256,
+          "text": "CRG_Giant_Skeleton"
+        },
+        {
+          "line": 10257,
+          "text": "CRG_Giant_Skeleton_Pillaged"
+        },
+        {
+          "line": 10258,
+          "text": "CRG_Skeleton_Ribs"
+        },
+        {
+          "line": 10259,
+          "text": "CRG_Skeleton_Ribs_Pillaged"
+        },
+        {
+          "line": 10260,
+          "text": "CRG_Part_Unlock_Skeleton2"
+        },
+        {
+          "line": 10261,
+          "text": "CRG_Part_Unlock_Skeleton3"
+        },
+        {
+          "line": 10262,
+          "text": "CRG_Part_Unlock_Skeleton4"
+        },
+        {
+          "line": 10263,
+          "text": "CRG_Skeleton_Destructed_01"
+        },
+        {
+          "line": 10264,
+          "text": "CRG_Skeleton_Destructed_02"
+        },
+        {
+          "line": 10265,
+          "text": "CRG_Skeleton_Destructed_03"
+        },
+        {
+          "line": 10266,
+          "text": "CRG_Skeleton_Destructed_04"
+        },
+        {
+          "line": 10267,
+          "text": "CRG_SkeletonSkull1"
+        },
+        {
+          "line": 10270,
+          "text": "CRG_fruit"
+        },
+        {
+          "line": 10271,
+          "text": "CRG_partunlock"
+        },
+        {
+          "line": 11577,
+          "text": "CRG_eggBrokenPosed"
+        },
+        {
+          "line": 11580,
+          "text": "CRG_Part_Unlock_Skeleton"
+        },
+        {
+          "line": 11587,
+          "text": "CRG_Meteorite"
+        },
+        {
+          "line": 11590,
+          "text": "CRG_Fruit_Super"
+        },
+        {
+          "line": 11604,
+          "text": "CRG_Fruit_Blind"
+        },
+        {
+          "line": 11605,
+          "text": "CRG_Skull1"
+        },
+        {
+          "line": 11612,
+          "text": "CRG_Fruit_Poison"
+        },
+        {
+          "line": 12266,
+          "text": "CRG_BrainUpgrade2h"
+        },
+        {
+          "line": 13672,
+          "text": "crg_Template"
+        },
+        {
+          "line": 19658,
+          "text": "crg_to_tribe_musicb"
+        },
+        {
+          "line": 25171,
+          "text": "crg_carnivore_growler"
+        },
+        {
+          "line": 25172,
+          "text": "crg_carnivore_growler1"
+        },
+        {
+          "line": 25173,
+          "text": "crg_herbivore_birda"
+        },
+        {
+          "line": 25174,
+          "text": "crg_herbivore_birda1"
+        },
+        {
+          "line": 25175,
+          "text": "crg_herbivore_birdd"
+        },
+        {
+          "line": 25176,
+          "text": "crg_herbivore_birdd1"
+        },
+        {
+          "line": 25177,
+          "text": "crg_herbivore_birde"
+        },
+        {
+          "line": 25178,
+          "text": "crg_herbivore_birde1"
+        },
+        {
+          "line": 25179,
+          "text": "crg_moaner_carnivore"
+        },
+        {
+          "line": 25180,
+          "text": "crg_stomper_carnivore"
+        },
+        {
+          "line": 40391,
+          "text": "crg_localrock01"
+        },
+        {
+          "line": 40392,
+          "text": "crg_localrock01-hull"
+        },
+        {
+          "line": 40393,
+          "text": "crg_localrock02-hull"
+        },
+        {
+          "line": 40394,
+          "text": "crg_localrock02"
+        },
+        {
+          "line": 40444,
+          "text": "crg_flower1"
+        },
+        {
+          "line": 40650,
+          "text": "crg_Stick1"
+        },
+        {
+          "line": 40671,
+          "text": "crg_pineapple_mediumrock2"
+        },
+        {
+          "line": 42068,
+          "text": "crg_localrock01_LOD1"
+        },
+        {
+          "line": 42069,
+          "text": "crg_localrock02_LOD1"
+        },
+        {
+          "line": 42089,
+          "text": "crg_coral_smallrock1"
+        },
+        {
+          "line": 42090,
+          "text": "crg_claymation_smallrock1"
+        },
+        {
+          "line": 42091,
+          "text": "crg_fossil_smallrock1"
+        },
+        {
+          "line": 42092,
+          "text": "crg_granite_mediumRock1"
+        },
+        {
+          "line": 42093,
+          "text": "crg_swiss_mediumRock1"
+        },
+        {
+          "line": 42094,
+          "text": "crg_marshmellow_mediumrock1"
+        },
+        {
+          "line": 42095,
+          "text": "crg_french_smallrock1"
+        },
+        {
+          "line": 42096,
+          "text": "crg_crystal_mediumRock1"
+        },
+        {
+          "line": 42097,
+          "text": "crg_gear_smallrock1"
+        },
+        {
+          "line": 42098,
+          "text": "crg_crableg_SmallRock1"
+        },
+        {
+          "line": 42099,
+          "text": "crg_crableg_mediumrock2"
+        },
+        {
+          "line": 42100,
+          "text": "crg_conglomerate_smallrock1"
+        },
+        {
+          "line": 42101,
+          "text": "crg_Shitaake_LargeRock2"
+        },
+        {
+          "line": 42102,
+          "text": "crg_spikes_smallrock1"
+        },
+        {
+          "line": 42103,
+          "text": "crg_pickle_smallrock1"
+        },
+        {
+          "line": 42104,
+          "text": "crg_stackrocks_smallrock2"
+        },
+        {
+          "line": 42105,
+          "text": "crg_potatoeye_smallrock1"
+        },
+        {
+          "line": 42106,
+          "text": "crg_rattlesnake_smallrock1"
+        },
+        {
+          "line": 42107,
+          "text": "crg_coral_MediumRock2"
+        },
+        {
+          "line": 42108,
+          "text": "crg_tribal_mediumRock2"
+        },
+        {
+          "line": 42109,
+          "text": "crg_ashtray_largeRock1"
+        },
+        {
+          "line": 42110,
+          "text": "crg_stackrocks_mediumRock1"
+        },
+        {
+          "line": 42111,
+          "text": "crg_tentacle_largeRock1"
+        },
+        {
+          "line": 42112,
+          "text": "crg_pickle_mediumRock1"
+        },
+        {
+          "line": 42113,
+          "text": "crg_tribal_smallrock1"
+        },
+        {
+          "line": 42114,
+          "text": "crg_arizona_mediumRock1"
+        },
+        {
+          "line": 42115,
+          "text": "crg_crystal_smallrock1"
+        },
+        {
+          "line": 42116,
+          "text": "crg_organic_mediumRock1"
+        },
+        {
+          "line": 42117,
+          "text": "crg_sandstone_mediumRock1"
+        },
+        {
+          "line": 42118,
+          "text": "crg_Shitaake_LargeRock1"
+        },
+        {
+          "line": 42119,
+          "text": "crg_organic_smallrock1"
+        },
+        {
+          "line": 42120,
+          "text": "crg_tentacle_smallrock1"
+        },
+        {
+          "line": 42121,
+          "text": "crg_swiss_smallrock1"
+        },
+        {
+          "line": 42122,
+          "text": "crg_pineapple_smallrock1"
+        },
+        {
+          "line": 42123,
+          "text": "crg_granite_smallrock1"
+        },
+        {
+          "line": 42124,
+          "text": "crg_gear_mediumRock1"
+        },
+        {
+          "line": 42125,
+          "text": "crg_french_largeRock1"
+        },
+        {
+          "line": 42126,
+          "text": "crg_claymation_mediumRock2"
+        },
+        {
+          "line": 42127,
+          "text": "crg_rattlesnake_mediumRock2"
+        },
+        {
+          "line": 43779,
+          "text": "CRG_fruit_apple_rotten"
+        },
+        {
+          "line": 43780,
+          "text": "CRG_fruit_rotten_stink"
+        },
+        {
+          "line": 43783,
+          "text": "CRG_fruit_apple_hanging"
+        },
+        {
+          "line": 43784,
+          "text": "CRG_fruit_apple_hanging_small"
+        },
+        {
+          "line": 43785,
+          "text": "CRG_egg_ready_glow"
+        },
+        {
+          "line": 43788,
+          "text": "CRG_egg_attractor"
+        },
+        {
+          "line": 44102,
+          "text": "CRG_icon_loyaltyIncrease"
+        },
+        {
+          "line": 44103,
+          "text": "CRG_icon_loyaltyDecrease"
+        },
+        {
+          "line": 45571,
+          "text": "ChargeWeaponTemp"
+        },
+        {
+          "line": 45577,
+          "text": "SpitWeaponTemp"
+        },
+        {
+          "line": 45578,
+          "text": "StrikeWeaponTemp"
+        },
+        {
+          "line": 45853,
+          "text": "bite120"
+        },
+        {
+          "line": 45855,
+          "text": "charge120"
+        },
+        {
+          "line": 45857,
+          "text": "charge121"
+        },
+        {
+          "line": 45859,
+          "text": "charge122"
+        },
+        {
+          "line": 45869,
+          "text": "spit1000"
+        },
+        {
+          "line": 45871,
+          "text": "spit130"
+        },
+        {
+          "line": 45873,
+          "text": "spit131"
+        },
+        {
+          "line": 45875,
+          "text": "spit132"
+        },
+        {
+          "line": 45877,
+          "text": "spit133"
+        },
+        {
+          "line": 45878,
+          "text": "spit1332"
+        },
+        {
+          "line": 45880,
+          "text": "spit150"
+        },
+        {
+          "line": 45882,
+          "text": "spit151"
+        },
+        {
+          "line": 45884,
+          "text": "spit153"
+        },
+        {
+          "line": 45886,
+          "text": "spit52"
+        },
+        {
+          "line": 47961,
+          "text": "CRG_StarterCreature"
+        },
+        {
+          "line": 48670,
+          "text": "crg_seamonster_attack"
+        },
+        {
+          "line": 53262,
+          "text": "crg_starterCreatures"
+        },
+        {
+          "line": 57591,
+          "text": "CRG_partUnlock_sense"
+        },
+        {
+          "line": 57595,
+          "text": "CRG_partUnlock_mouth"
+        },
+        {
+          "line": 57596,
+          "text": "CRG_partUnlock_limb"
+        },
+        {
+          "line": 58020,
+          "text": "spit17"
+        },
+        {
+          "line": 58042,
+          "text": "CRG_partUnlock_detail"
+        },
+        {
+          "line": 58043,
+          "text": "CRG_partUnlock_grasper"
+        },
+        {
+          "line": 58044,
+          "text": "CRG_partUnlock_foot"
+        },
+        {
+          "line": 58045,
+          "text": "CRG_partUnlock_weapon"
+        },
+        {
+          "line": 58345,
+          "text": "crg_food_vomit_short"
+        },
+        {
+          "line": 70560,
+          "text": "CRG_birth~\t0x03F1BF57"
+        },
+        {
+          "line": 76629,
+          "text": "creatureabilitiesz"
+        },
+        {
+          "line": 76630,
+          "text": "bite90"
+        },
+        {
+          "line": 76632,
+          "text": "charge90"
+        },
+        {
+          "line": 76635,
+          "text": "spit90"
+        },
+        {
+          "line": 76637,
+          "text": "strike90"
+        },
+        {
+          "line": 76641,
+          "text": "creatureabilityTemplatesz"
+        },
+        {
+          "line": 76665,
+          "text": "Striker"
+        },
+        {
+          "line": 76666,
+          "text": "StrikeRifle"
+        },
+        {
+          "line": 76858,
+          "text": "StrikerDiffuse"
+        },
+        {
+          "line": 76860,
+          "text": "StrikeRifleDiffuse"
+        },
+        {
+          "line": 77092,
+          "text": "CRG_fight_bite_jawExtraSmall"
+        },
+        {
+          "line": 77093,
+          "text": "CRG_fight_bite_hitExtraSmall"
+        },
+        {
+          "line": 77094,
+          "text": "CRG_fight_bite_groundRingExtraSmall"
+        },
+        {
+          "line": 77569,
+          "text": "strikers"
+        },
+        {
+          "line": 77641,
+          "text": "ChargeUp"
+        },
+        {
+          "line": 77642,
+          "text": "ChargeHold"
+        },
+        {
+          "line": 77643,
+          "text": "ChargeRelease"
+        },
+        {
+          "line": 78024,
+          "text": "Strike_disabled"
+        },
+        {
+          "line": 78911,
+          "text": "CRG_charm_sparkle"
+        },
+        {
+          "line": 78912,
+          "text": "CRG_charm_sparkle_left"
+        },
+        {
+          "line": 78913,
+          "text": "CRG_charm_sparkle_right"
+        },
+        {
+          "line": 78914,
+          "text": "CRG_cocoon_create"
+        },
+        {
+          "line": 78915,
+          "text": "CRG_cocoon_hatch"
+        },
+        {
+          "line": 78916,
+          "text": "CRG_cocoon_hold"
+        },
+        {
+          "line": 78917,
+          "text": "CRG_confetti_petals_L"
+        },
+        {
+          "line": 78918,
+          "text": "CRG_confetti_petals_M"
+        },
+        {
+          "line": 78919,
+          "text": "CRG_confetti_petals_S"
+        },
+        {
+          "line": 78920,
+          "text": "CRG_dance_big_stomp"
+        },
+        {
+          "line": 78921,
+          "text": "CRG_dance_quick_stomp"
+        },
+        {
+          "line": 78922,
+          "text": "CRG_dance_shake"
+        },
+        {
+          "line": 78923,
+          "text": "CRG_dance_shake_left"
+        },
+        {
+          "line": 78924,
+          "text": "CRG_dance_shake_right"
+        },
+        {
+          "line": 78925,
+          "text": "CRG_dance_stomp"
+        },
+        {
+          "line": 78926,
+          "text": "CRG_eat_biteFruit"
+        },
+        {
+          "line": 78927,
+          "text": "CRG_eat_biteMeat"
+        },
+        {
+          "line": 78928,
+          "text": "CRG_eat_chewFruit_L"
+        },
+        {
+          "line": 78929,
+          "text": "CRG_eat_chewFruit_S"
+        },
+        {
+          "line": 78930,
+          "text": "CRG_eat_chewMeat_L"
+        },
+        {
+          "line": 78931,
+          "text": "CRG_eat_chewMeat_S"
+        },
+        {
+          "line": 78932,
+          "text": "CRG_eat_meatChunk"
+        },
+        {
+          "line": 78933,
+          "text": "CRG_eat_tearFruit"
+        },
+        {
+          "line": 78934,
+          "text": "CRG_eat_tearMeat"
+        },
+        {
+          "line": 78935,
+          "text": "CRG_fight_bite_L1-2_trail"
+        },
+        {
+          "line": 78936,
+          "text": "CRG_fight_bite_L3-4_trail"
+        },
+        {
+          "line": 78937,
+          "text": "CRG_fight_bite_footdust"
+        },
+        {
+          "line": 78938,
+          "text": "CRG_fight_bite_groundRingExtraLarge"
+        },
+        {
+          "line": 78939,
+          "text": "CRG_fight_bite_groundRingLarge"
+        },
+        {
+          "line": 78940,
+          "text": "CRG_fight_bite_groundRingMedium"
+        },
+        {
+          "line": 78941,
+          "text": "CRG_fight_bite_groundRingSmall"
+        },
+        {
+          "line": 78942,
+          "text": "CRG_fight_bite_hitExtraLarge"
+        },
+        {
+          "line": 78943,
+          "text": "CRG_fight_bite_hitLarge"
+        },
+        {
+          "line": 78944,
+          "text": "CRG_fight_bite_hitMedium"
+        },
+        {
+          "line": 78945,
+          "text": "CRG_fight_bite_hitSmall"
+        },
+        {
+          "line": 78946,
+          "text": "CRG_fight_bite_jawExtraLarge"
+        },
+        {
+          "line": 78947,
+          "text": "CRG_fight_bite_jawLarge"
+        },
+        {
+          "line": 78948,
+          "text": "CRG_fight_bite_jawMedium"
+        },
+        {
+          "line": 78949,
+          "text": "CRG_fight_bite_jawSmall"
+        },
+        {
+          "line": 78950,
+          "text": "CRG_fight_charge_L3-4_trail"
+        },
+        {
+          "line": 78951,
+          "text": "CRG_fight_charge_L5-6_trail"
+        },
+        {
+          "line": 78952,
+          "text": "CRG_fight_charge_L5_comet"
+        },
+        {
+          "line": 78953,
+          "text": "CRG_fight_charge_L7-8_trail"
+        },
+        {
+          "line": 78954,
+          "text": "CRG_fight_charge_L7_swoosh"
+        },
+        {
+          "line": 78955,
+          "text": "CRG_fight_charge_L9-10_trail"
+        },
+        {
+          "line": 78956,
+          "text": "CRG_fight_charge_L9_comet"
+        },
+        {
+          "line": 78957,
+          "text": "CRG_fight_charge_hitExtraSmall"
+        },
+        {
+          "line": 78958,
+          "text": "CRG_fight_charge_hitLarge"
+        },
+        {
+          "line": 78959,
+          "text": "CRG_fight_charge_hitMedium"
+        },
+        {
+          "line": 78960,
+          "text": "CRG_fight_charge_hitSmall"
+        },
+        {
+          "line": 78961,
+          "text": "CRG_fight_charge_launch"
+        },
+        {
+          "line": 78962,
+          "text": "CRG_fight_flashBig"
+        },
+        {
+          "line": 78963,
+          "text": "CRG_fight_flashYellow"
+        },
+        {
+          "line": 78964,
+          "text": "CRG_fight_shared_dustGeyser"
+        },
+        {
+          "line": 78965,
+          "text": "CRG_fight_shared_footdrag"
+        },
+        {
+          "line": 78966,
+          "text": "CRG_fight_shared_footdust"
+        },
+        {
+          "line": 78967,
+          "text": "CRG_fight_slashTest_groundRing"
+        },
+        {
+          "line": 78968,
+          "text": "CRG_fight_slashTest_hitSmall"
+        },
+        {
+          "line": 78969,
+          "text": "CRG_fight_slashTest_rakeIcon"
+        },
+        {
+          "line": 78970,
+          "text": "CRG_fight_slashTest_rakeTrail"
+        },
+        {
+          "line": 78971,
+          "text": "CRG_fight_strike_L1-2_trail"
+        },
+        {
+          "line": 78972,
+          "text": "CRG_fight_strike_L3-4_followThrough"
+        },
+        {
+          "line": 78973,
+          "text": "CRG_fight_strike_L3-4_trail"
+        },
+        {
+          "line": 78974,
+          "text": "CRG_fight_strike_L5-6_followThrough"
+        },
+        {
+          "line": 78975,
+          "text": "CRG_fight_strike_L5-6_trail"
+        },
+        {
+          "line": 78976,
+          "text": "CRG_fight_strike_L5-6_windup"
+        },
+        {
+          "line": 78977,
+          "text": "CRG_fight_strike_L7-8_followThrough"
+        },
+        {
+          "line": 78978,
+          "text": "CRG_fight_strike_L7-8_trail"
+        },
+        {
+          "line": 78979,
+          "text": "CRG_fight_strike_L9-10_fistGlow"
+        },
+        {
+          "line": 78980,
+          "text": "CRG_fight_strike_L9-10_followThrough"
+        },
+        {
+          "line": 78981,
+          "text": "CRG_fight_strike_L9-10_streaks"
+        },
+        {
+          "line": 78982,
+          "text": "CRG_fight_strike_L9-10_trail"
+        },
+        {
+          "line": 78983,
+          "text": "CRG_fight_strike_hitLarge"
+        },
+        {
+          "line": 78984,
+          "text": "CRG_fight_strike_hitMedium"
+        },
+        {
+          "line": 78985,
+          "text": "CRG_fight_strike_hitSmall"
+        },
+        {
+          "line": 78986,
+          "text": "CRG_fight_strike_launch"
+        },
+        {
+          "line": 78987,
+          "text": "CRG_fight_stun"
+        },
+        {
+          "line": 78988,
+          "text": "CRG_growUp_brainUp"
+        },
+        {
+          "line": 78989,
+          "text": "CRG_harvestEgg"
+        },
+        {
+          "line": 78990,
+          "text": "CRG_projectileTrail_thrownCreature"
+        },
+        {
+          "line": 78991,
+          "text": "CRG_seaMonster_splashUp"
+        },
+        {
+          "line": 78992,
+          "text": "CRG_state_mate"
+        },
+        {
+          "line": 78993,
+          "text": "CRG_waterSpray"
+        },
+        {
+          "line": 78994,
+          "text": "CRG_wtf"
+        },
+        {
+          "line": 79141,
+          "text": "bite_applied"
+        },
+        {
+          "line": 79213,
+          "text": "crg_charm_part_glow"
+        },
+        {
+          "line": 79214,
+          "text": "crg_food_vomit_long"
+        },
+        {
+          "line": 79215,
+          "text": "crg_food_vomit_spurt"
+        },
+        {
+          "line": 79216,
+          "text": "crg_nest_construction_dust"
+        },
+        {
+          "line": 81890,
+          "text": "CRG_CollectAPack"
+        },
+        {
+          "line": 81891,
+          "text": "CRG_Options"
+        },
+        {
+          "line": 81892,
+          "text": "CRG_BasicControls"
+        },
+        {
+          "line": 81893,
+          "text": "CRG_InteractingwithOtherSpecies"
+        },
+        {
+          "line": 81894,
+          "text": "CRG_DNAPoints"
+        },
+        {
+          "line": 81895,
+          "text": "CRG_FightingandHunting"
+        },
+        {
+          "line": 81896,
+          "text": "CRG_ReadytoEvolve-FindingaMate"
+        },
+        {
+          "line": 81897,
+          "text": "CRG_EvolvingYourCreature"
+        },
+        {
+          "line": 81898,
+          "text": "CRG_YourGoal"
+        },
+        {
+          "line": 81899,
+          "text": "CRG_GainingIntelligence"
+        },
+        {
+          "line": 81900,
+          "text": "CRG_TrackingYourProgress"
+        },
+        {
+          "line": 81901,
+          "text": "CRG_TheWorldAroundYou"
+        },
+        {
+          "line": 81902,
+          "text": "CRG_YourNestandMigration"
+        },
+        {
+          "line": 81903,
+          "text": "CRG_CollectingParts"
+        },
+        {
+          "line": 81904,
+          "text": "CRG_Socializing"
+        },
+        {
+          "line": 81905,
+          "text": "CRG_CareandFeedingofYourCreature"
+        },
+        {
+          "line": 81906,
+          "text": "CRG_SettingaCombatorSocialStance"
+        },
+        {
+          "line": 81907,
+          "text": "CRG_ControllingYourCreature"
+        },
+        {
+          "line": 82803,
+          "text": "CRG_GoalCards"
+        },
+        {
+          "line": 86208,
+          "text": "crg_atk_bite"
+        },
+        {
+          "line": 86209,
+          "text": "crg_atk_slash"
+        },
+        {
+          "line": 86210,
+          "text": "crg_atk_horn"
+        },
+        {
+          "line": 86218,
+          "text": "CRG_Giant_Skull"
+        },
+        {
+          "line": 86259,
+          "text": "crg_vo_group"
+        },
+        {
+          "line": 86410,
+          "text": "crg_music_group"
+        },
+        {
+          "line": 88324,
+          "text": "crg_icon_daisy"
+        },
+        {
+          "line": 91560,
+          "text": "CRG_partUnlock_detail02"
+        },
+        {
+          "line": 91561,
+          "text": "CRG_partUnlock_detail03"
+        },
+        {
+          "line": 91562,
+          "text": "CRG_partUnlock_detail04"
+        },
+        {
+          "line": 91563,
+          "text": "CRG_partUnlock_grasper02"
+        },
+        {
+          "line": 91564,
+          "text": "CRG_partUnlock_grasper03"
+        },
+        {
+          "line": 91565,
+          "text": "CRG_partUnlock_grasper04"
+        },
+        {
+          "line": 91566,
+          "text": "CRG_partUnlock_mouth02"
+        },
+        {
+          "line": 91567,
+          "text": "CRG_partUnlock_mouth03"
+        },
+        {
+          "line": 91568,
+          "text": "CRG_partUnlock_mouth04"
+        },
+        {
+          "line": 91569,
+          "text": "CRG_partUnlock_foot02"
+        },
+        {
+          "line": 91570,
+          "text": "CRG_partUnlock_foot03"
+        },
+        {
+          "line": 91571,
+          "text": "CRG_partUnlock_foot04"
+        },
+        {
+          "line": 91572,
+          "text": "CRG_partUnlock_weapon02"
+        },
+        {
+          "line": 91573,
+          "text": "CRG_partUnlock_weapon03"
+        },
+        {
+          "line": 91574,
+          "text": "CRG_partUnlock_weapon04"
+        },
+        {
+          "line": 92716,
+          "text": "crg_impactRing"
+        },
+        {
+          "line": 92717,
+          "text": "crg_migration_point_streaks"
+        },
+        {
+          "line": 93487,
+          "text": "crg_pout"
+        },
+        {
+          "line": 93536,
+          "text": "CRG_partUnlock_detail_specBump"
+        },
+        {
+          "line": 93537,
+          "text": "CRG_partUnlock_detail_specBump02"
+        },
+        {
+          "line": 93538,
+          "text": "CRG_partUnlock_detail_specBump03"
+        },
+        {
+          "line": 93539,
+          "text": "CRG_partUnlock_detail_specBump04"
+        },
+        {
+          "line": 93540,
+          "text": "CRG_partUnlock_foot_specBump"
+        },
+        {
+          "line": 93541,
+          "text": "CRG_partUnlock_foot_specBump02"
+        },
+        {
+          "line": 93542,
+          "text": "CRG_partUnlock_foot_specBump03"
+        },
+        {
+          "line": 93543,
+          "text": "CRG_partUnlock_foot_specBump04"
+        },
+        {
+          "line": 93544,
+          "text": "CRG_partUnlock_grasper_specBump"
+        },
+        {
+          "line": 93545,
+          "text": "CRG_partUnlock_grasper_specBump02"
+        },
+        {
+          "line": 93546,
+          "text": "CRG_partUnlock_grasper_specBump03"
+        },
+        {
+          "line": 93547,
+          "text": "CRG_partUnlock_grasper_specBump04"
+        },
+        {
+          "line": 93548,
+          "text": "CRG_partUnlock_limb_specBump"
+        },
+        {
+          "line": 93549,
+          "text": "CRG_partUnlock_mouth_specBump"
+        },
+        {
+          "line": 93550,
+          "text": "CRG_partUnlock_mouth_specBump02"
+        },
+        {
+          "line": 93551,
+          "text": "CRG_partUnlock_mouth_specBump03"
+        },
+        {
+          "line": 93552,
+          "text": "CRG_partUnlock_mouth_specBump04"
+        },
+        {
+          "line": 93553,
+          "text": "CRG_partUnlock_weapon_specBump"
+        },
+        {
+          "line": 93554,
+          "text": "CRG_partUnlock_weapon_specBump02"
+        },
+        {
+          "line": 93555,
+          "text": "CRG_partUnlock_weapon_specBump03"
+        },
+        {
+          "line": 93556,
+          "text": "CRG_partUnlock_weapon_specBump04"
+        },
+        {
+          "line": 93663,
+          "text": "crg_discoverpart"
+        },
+        {
+          "line": 93758,
+          "text": "crg_nest_claim"
+        },
+        {
+          "line": 93759,
+          "text": "crg_nest_upgrade"
+        },
+        {
+          "line": 94029,
+          "text": "CRG_fight_bite_jawTop"
+        },
+        {
+          "line": 94030,
+          "text": "CRG_fight_bite_jawBottom"
+        },
+        {
+          "line": 94902,
+          "text": "crg_decal_nest_00"
+        },
+        {
+          "line": 94903,
+          "text": "crg_decal_nest_01"
+        },
+        {
+          "line": 94904,
+          "text": "crg_decal_nest_02"
+        },
+        {
+          "line": 94905,
+          "text": "crg_decal_nest_03"
+        },
+        {
+          "line": 98105,
+          "text": "ChargedFist"
+        },
+        {
+          "line": 98181,
+          "text": "crg_growls"
+        },
+        {
+          "line": 98220,
+          "text": "CRG_CreaturePhase"
+        },
+        {
+          "line": 99045,
+          "text": "CRG_partUnlock_sense_specBump"
+        },
+        {
+          "line": 99048,
+          "text": "crg_stealth_eye"
+        },
+        {
+          "line": 99050,
+          "text": "crg_motive_food"
+        },
+        {
+          "line": 99051,
+          "text": "crg_motive_health"
+        },
+        {
+          "line": 99052,
+          "text": "crg_motive_energy"
+        },
+        {
+          "line": 99053,
+          "text": "crg_motive_food_outline"
+        },
+        {
+          "line": 99054,
+          "text": "crg_motive_health_outline"
+        },
+        {
+          "line": 99055,
+          "text": "crg_motive_energy_outline"
+        },
+        {
+          "line": 99549,
+          "text": "CRG_StarterCreaturesOmnivores"
+        },
+        {
+          "line": 99550,
+          "text": "CRG_StarterCreaturesHerbivores"
+        },
+        {
+          "line": 99551,
+          "text": "CRG_StarterCreaturesCarnivores"
+        },
+        {
+          "line": 99552,
+          "text": "CRG_StarterCreaturesCarnivoresEvoAdvantageCheat"
+        },
+        {
+          "line": 99554,
+          "text": "CRG_StarterCreaturesOmnivoresEvoAdvantageCheat"
+        },
+        {
+          "line": 99556,
+          "text": "CRG_StarterCreaturesHerbivoresEvoAdvantageCheat"
+        },
+        {
+          "line": 99996,
+          "text": "crg_icon_loyalty"
+        },
+        {
+          "line": 99997,
+          "text": "crg_icon_mate"
+        },
+        {
+          "line": 100002,
+          "text": "crg_alltraits"
+        },
+        {
+          "line": 100058,
+          "text": "CRG_AttackButton"
+        },
+        {
+          "line": 100059,
+          "text": "CRG_SocialButton"
+        },
+        {
+          "line": 100060,
+          "text": "CRG_AbilitiesButton"
+        },
+        {
+          "line": 100122,
+          "text": "crg_icon_scale_heals"
+        },
+        {
+          "line": 100427,
+          "text": "charger"
+        },
+        {
+          "line": 105169,
+          "text": "crg_talkbubble_pout"
+        },
+        {
+          "line": 105220,
+          "text": "crg_atk_shootliquid"
+        },
+        {
+          "line": 105352,
+          "text": "strikedown"
+        },
+        {
+          "line": 107241,
+          "text": "crg_ring_romance"
+        },
+        {
+          "line": 107242,
+          "text": "crg_ring_roar"
+        },
+        {
+          "line": 107243,
+          "text": "crg_ring_anger"
+        },
+        {
+          "line": 107244,
+          "text": "crg_ring_anger_4pack"
+        },
+        {
+          "line": 107458,
+          "text": "crg_ring_cuteness"
+        },
+        {
+          "line": 107664,
+          "text": "CRG_VerbTrayCollection"
+        },
+        {
+          "line": 108008,
+          "text": "crg_decal_crgnest_00"
+        },
+        {
+          "line": 108009,
+          "text": "crg_decal_crgnest_01"
+        },
+        {
+          "line": 108010,
+          "text": "crg_decal_crgnest_02"
+        },
+        {
+          "line": 108011,
+          "text": "crg_decal_nest_npc"
+        },
+        {
+          "line": 108012,
+          "text": "crg_decal_crgnest_npc"
+        },
+        {
+          "line": 108013,
+          "text": "crg_decal_crgnest_npc_abandoned"
+        },
+        {
+          "line": 112595,
+          "text": "crg_overrides"
+        },
+        {
+          "line": 112843,
+          "text": "crg_fight_spit_spike"
+        },
+        {
+          "line": 113044,
+          "text": "crg_combat_spark_cloud"
+        },
+        {
+          "line": 113140,
+          "text": "crg_fight_charge_comet"
+        },
+        {
+          "line": 113141,
+          "text": "crg_fight_strike_swoosh"
+        },
+        {
+          "line": 113142,
+          "text": "crg_fight_charge_trail"
+        },
+        {
+          "line": 113143,
+          "text": "crg_fight_charge_swoosh"
+        },
+        {
+          "line": 113144,
+          "text": "crg_fight_spit_goofront"
+        },
+        {
+          "line": 113145,
+          "text": "crg_fight_spit_swoosh"
+        },
+        {
+          "line": 113146,
+          "text": "crg_fight_spit_fireside"
+        },
+        {
+          "line": 113147,
+          "text": "crg_fight_strike_clawribbon"
+        },
+        {
+          "line": 113148,
+          "text": "crg_fight_pounce_swoosh"
+        },
+        {
+          "line": 113149,
+          "text": "crg_fight_bite_trail"
+        },
+        {
+          "line": 113150,
+          "text": "crg_fight_pounce_trail"
+        },
+        {
+          "line": 113152,
+          "text": "crg_fight_bitetest01_trail"
+        },
+        {
+          "line": 113154,
+          "text": "crg_fight_strike_trail"
+        },
+        {
+          "line": 113155,
+          "text": "crg_fight_dustgeyser"
+        },
+        {
+          "line": 113158,
+          "text": "crg_fight_spit_trail"
+        },
+        {
+          "line": 113160,
+          "text": "crg_fight_spit_firefront"
+        },
+        {
+          "line": 113161,
+          "text": "crg_fight_spit_fire"
+        },
+        {
+          "line": 113162,
+          "text": "crg_fight_spit_gooside"
+        },
+        {
+          "line": 113163,
+          "text": "crg_fight_bite_swoosh"
+        },
+        {
+          "line": 113164,
+          "text": "crg_fight_strike_clawmarks"
+        },
+        {
+          "line": 113173,
+          "text": "crg_footfall_dust"
+        },
+        {
+          "line": 113187,
+          "text": "crg_combat_h2h_hit_softring"
+        },
+        {
+          "line": 113205,
+          "text": "crg_combat_spark"
+        },
+        {
+          "line": 113541,
+          "text": "crg_food_vomitsplats_2x2"
+        },
+        {
+          "line": 113542,
+          "text": "spitdrip_solid"
+        },
+        {
+          "line": 113543,
+          "text": "crg_ribbon_slime_trail2"
+        },
+        {
+          "line": 113544,
+          "text": "crg_ui_brainframe"
+        },
+        {
+          "line": 113545,
+          "text": "spitring"
+        },
+        {
+          "line": 113547,
+          "text": "crg_combat_spikes"
+        },
+        {
+          "line": 113549,
+          "text": "crg_meteor_shadow"
+        },
+        {
+          "line": 113550,
+          "text": "crg_ui_brainpointer"
+        },
+        {
+          "line": 113551,
+          "text": "crg_ui_brainframe_broken"
+        },
+        {
+          "line": 113552,
+          "text": "spitdrip_outline"
+        },
+        {
+          "line": 113553,
+          "text": "crg_food_vomitflight"
+        },
+        {
+          "line": 113555,
+          "text": "crg_ghost_ribbon"
+        },
+        {
+          "line": 113556,
+          "text": "crg_spit_head"
+        },
+        {
+          "line": 113559,
+          "text": "crg_ghost_ribbon_trails"
+        },
+        {
+          "line": 113561,
+          "text": "crg_yolk_2x2"
+        },
+        {
+          "line": 113568,
+          "text": "crg_albumen_2x2"
+        },
+        {
+          "line": 113570,
+          "text": "crg_spit_trail1"
+        },
+        {
+          "line": 113939,
+          "text": "crg_ingame_posse_plus"
+        },
+        {
+          "line": 113940,
+          "text": "crg_ingame_relationship_good"
+        },
+        {
+          "line": 113941,
+          "text": "crg_evopoints_dna"
+        },
+        {
+          "line": 113942,
+          "text": "crg_alerted_symbol"
+        },
+        {
+          "line": 113943,
+          "text": "crg_egg_icon_fourpack"
+        },
+        {
+          "line": 113944,
+          "text": "crg_confused_symbol"
+        },
+        {
+          "line": 113945,
+          "text": "crg_posse_marker"
+        },
+        {
+          "line": 113946,
+          "text": "crg_icon_hover_hurt"
+        },
+        {
+          "line": 113947,
+          "text": "crg_icon_hover_hungry"
+        },
+        {
+          "line": 113948,
+          "text": "crg_icon_hunger-omni"
+        },
+        {
+          "line": 113950,
+          "text": "crg_ring_roar_detail"
+        },
+        {
+          "line": 113951,
+          "text": "crg_ingame_hp_effect"
+        },
+        {
+          "line": 113952,
+          "text": "crg_receiving"
+        },
+        {
+          "line": 113953,
+          "text": "crg_icon_hunger-herbi"
+        },
+        {
+          "line": 113954,
+          "text": "crg_icon_hunger-carni"
+        },
+        {
+          "line": 113956,
+          "text": "crg_detail_romance"
+        },
+        {
+          "line": 113957,
+          "text": "crg_ingame_relationship_bad"
+        },
+        {
+          "line": 113958,
+          "text": "crg_ring_cute_detail"
+        },
+        {
+          "line": 113959,
+          "text": "crg_animswoosh"
+        },
+        {
+          "line": 113960,
+          "text": "crg_icon_fork"
+        },
+        {
+          "line": 113961,
+          "text": "crg_icon_fork_no_outline"
+        },
+        {
+          "line": 116441,
+          "text": "CRG_CombatTest_Spit"
+        },
+        {
+          "line": 116444,
+          "text": "CRG_CombatTest_Charge"
+        },
+        {
+          "line": 116446,
+          "text": "CRG_CombatTest_Strike"
+        },
+        {
+          "line": 116448,
+          "text": "CRG_CombatTest_Bite"
+        },
+        {
+          "line": 116953,
+          "text": "CRG_MovementVerbTray"
+        },
+        {
+          "line": 117231,
+          "text": "crg_nest_heightmap"
+        },
+        {
+          "line": 117244,
+          "text": "crg_nest_eggmap"
+        },
+        {
+          "line": 117281,
+          "text": "CRG_Log1"
+        },
+        {
+          "line": 117658,
+          "text": "CRG_TransitionToTribe"
+        },
+        {
+          "line": 119956,
+          "text": "crg_progress-dna-full"
+        },
+        {
+          "line": 120023,
+          "text": "crg_progress-dna-empty"
+        },
+        {
+          "line": 120114,
+          "text": "crg_gui_levelicon"
+        },
+        {
+          "line": 120133,
+          "text": "crg_con_bg"
+        },
+        {
+          "line": 120137,
+          "text": "crg_ingame_hp"
+        },
+        {
+          "line": 120159,
+          "text": "crg_goalCountAttack"
+        },
+        {
+          "line": 120182,
+          "text": "crg_goalCountStone"
+        },
+        {
+          "line": 120184,
+          "text": "crg_goalCountShell"
+        },
+        {
+          "line": 120190,
+          "text": "crg_goalCountSocial"
+        },
+        {
+          "line": 120197,
+          "text": "crg_goalCountStick"
+        },
+        {
+          "line": 120200,
+          "text": "crg_gui_dna_symbol"
+        },
+        {
+          "line": 120207,
+          "text": "crg_verb_icon-glow"
+        },
+        {
+          "line": 120252,
+          "text": "crg_verbtray-star"
+        },
+        {
+          "line": 120268,
+          "text": "crg_ingame_hp_selected"
+        },
+        {
+          "line": 120276,
+          "text": "crg_social_meter"
+        },
+        {
+          "line": 121066,
+          "text": "crg_rollover_partStrength-anim"
+        },
+        {
+          "line": 122895,
+          "text": "CRG_AbilityUI"
+        },
+        {
+          "line": 123591,
+          "text": "crg_ui_brainframe_fragment"
+        },
+        {
+          "line": 123618,
+          "text": "CRG_egg_hatching_dust_v2"
+        },
+        {
+          "line": 123629,
+          "text": "crg_nestElement_pickup_seashell"
+        },
+        {
+          "line": 123630,
+          "text": "crg_nestElement_pickup_rock"
+        },
+        {
+          "line": 123631,
+          "text": "crg_nestElement_pickup_stick"
+        },
+        {
+          "line": 123632,
+          "text": "CRG_pickupCover_fruit"
+        },
+        {
+          "line": 123633,
+          "text": "CRG_pickupCover_flower"
+        },
+        {
+          "line": 123949,
+          "text": "abilities~\t0x01B68DB4"
+        },
+        {
+          "line": 125108,
+          "text": "CRG_partUnlock_sense_02"
+        },
+        {
+          "line": 125109,
+          "text": "CRG_partUnlock_sense_03"
+        },
+        {
+          "line": 125110,
+          "text": "CRG_partUnlock_sense_04"
+        },
+        {
+          "line": 125506,
+          "text": "CRG_SummonFlock~\t0x6B4BCD8A"
+        }
+      ]
+    },
+    {
+      "path": "reg_type.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_type.txt",
+      "sha256": "3e0ff520a9e0793f29e82a00aee5de56dc5a83a1fbef0d8e8b5fe2754147caa9",
+      "bytes": 13944,
+      "line_count": 607,
+      "selected_declarations": [
+        {
+          "line": 1,
+          "text": "prop\t0xb1b104"
+        },
+        {
+          "line": 35,
+          "text": "tlsa\t0x4aeb6bc6"
+        },
+        {
+          "line": 67,
+          "text": "cnv\t0x55ada24"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyUnknown.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyUnknown.java",
+      "sha256": "579aa2864ae9c8c127679930267f15575d36a360a0bee15788e241ebed36c434",
+      "selected_declarations": [
+        {
+          "line": 32,
+          "text": "public static final int TYPE_CODE = 0x0000;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyBool.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyBool.java",
+      "sha256": "3c705b1d3dd840bc4c868a6b69b3f4998a6657f4bf3be8210ef2464ce225fafb",
+      "selected_declarations": [
+        {
+          "line": 40,
+          "text": "public static final int TYPE_CODE = 0x0001;"
+        },
+        {
+          "line": 42,
+          "text": "public static final int ARRAY_SIZE = 1;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyChar.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyChar.java",
+      "sha256": "a1e1644443ea3b3e290a6e3e51d99e0309c935ae37d942e59a113e33a7379b5e",
+      "selected_declarations": [
+        {
+          "line": 38,
+          "text": "public static final int TYPE_CODE = 0x0002;"
+        },
+        {
+          "line": 40,
+          "text": "public static final int ARRAY_SIZE = 1;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyWChar.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyWChar.java",
+      "sha256": "cc76d138279675f360d0069504dfca21ed7a7ad025c2032c376b3ac0dde39d3c",
+      "selected_declarations": [
+        {
+          "line": 38,
+          "text": "public static final int TYPE_CODE = 0x0003;"
+        },
+        {
+          "line": 40,
+          "text": "public static final int ARRAY_SIZE = 2;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyInt8.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyInt8.java",
+      "sha256": "ef083c217a556e68b648764ad16a13b1bb3d4fc138e3dd0d20c5a545985e5d3e",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0005;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 1;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyUInt8.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyUInt8.java",
+      "sha256": "232a2fce85139aaa04a4fc29c4ed09c2b60fb1b9f360e5eb565838ded3c889ee",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0006;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 1;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyInt16.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyInt16.java",
+      "sha256": "ad73c9a233ba2444afe911414e1a497e46a91aacef676278cb3b1fa206090e17",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0007;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 2;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyUInt16.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyUInt16.java",
+      "sha256": "0ad95d846ede1fb1c69c904dd917a78a1e2362c0703d96adbc9348780c5b8ca9",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0008;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 2;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyInt32.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyInt32.java",
+      "sha256": "59f10849c21c4db1fbadc7e8a6daf50fe9630d55cad4824802ebecfd7719173e",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0009;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 4;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyUInt32.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyUInt32.java",
+      "sha256": "8e3a8b4635b710301d8f9eaf3b6a02f88e8f60d36607dbd35585e0d8a59c65ee",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x000A;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 4;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyInt64.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyInt64.java",
+      "sha256": "5946716f90cd4f17ecf833b9b5368aec9946ad9eded5046acefefff893ab0852",
+      "selected_declarations": [
+        {
+          "line": 41,
+          "text": "public static final int TYPE_CODE = 0x000B;"
+        },
+        {
+          "line": 43,
+          "text": "public static final int ARRAY_SIZE = 8;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyUInt64.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyUInt64.java",
+      "sha256": "b4faf7643c80b1ff4dff4e1ebb870c4801d4ce97b6ee36b39611e314a0f194ca",
+      "selected_declarations": [
+        {
+          "line": 41,
+          "text": "public static final int TYPE_CODE = 0x000C;"
+        },
+        {
+          "line": 43,
+          "text": "public static final int ARRAY_SIZE = 8;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyFloat.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyFloat.java",
+      "sha256": "697c4903a959494eed9ea6f0bb61b3fa03960a2d5402534a9e5b8f9f3cffed0a",
+      "selected_declarations": [
+        {
+          "line": 41,
+          "text": "public static final int TYPE_CODE = 0x000D;"
+        },
+        {
+          "line": 43,
+          "text": "public static final int ARRAY_SIZE = 4;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyDouble.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyDouble.java",
+      "sha256": "b1da5c960e12a699c5fa5c1601758f9f80b6196ea61144bf6a5f11ced8fdc01d",
+      "selected_declarations": [
+        {
+          "line": 41,
+          "text": "public static final int TYPE_CODE = 0x000E;"
+        },
+        {
+          "line": 43,
+          "text": "public static final int ARRAY_SIZE = 8;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyVector2.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyVector2.java",
+      "sha256": "5d84b5a4bba5952ba1d40e6b4195294097208a930697f3bf0b1b3dfc8d6de885",
+      "selected_declarations": [
+        {
+          "line": 37,
+          "text": "public static final int TYPE_CODE = 0x0030;"
+        },
+        {
+          "line": 39,
+          "text": "public static final int ARRAY_SIZE = 8;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyVector3.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyVector3.java",
+      "sha256": "e324c6cb4bf15d6a6b88234bfbeb04daceb4d7416415ffafe9081a7a16f9aff2",
+      "selected_declarations": [
+        {
+          "line": 37,
+          "text": "public static final int TYPE_CODE = 0x0031;"
+        },
+        {
+          "line": 39,
+          "text": "public static final int ARRAY_SIZE = 12;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyVector4.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyVector4.java",
+      "sha256": "8bfa56fd20042e5e17def79924f060d39a35823fd98e3eb4333cb6f0e8a611a5",
+      "selected_declarations": [
+        {
+          "line": 37,
+          "text": "public static final int TYPE_CODE = 0x0033;"
+        },
+        {
+          "line": 39,
+          "text": "public static final int ARRAY_SIZE = 16;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyColorRGB.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyColorRGB.java",
+      "sha256": "e901d2c75893a7f2795f4a8e51f8a76683ca7680c4b61f4d2fa7cf7da725899e",
+      "selected_declarations": [
+        {
+          "line": 37,
+          "text": "public static final int TYPE_CODE = 0x0032;"
+        },
+        {
+          "line": 39,
+          "text": "public static final int ARRAY_SIZE = 12;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyColorRGBA.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyColorRGBA.java",
+      "sha256": "b2778f367f277fb3a2e70f33baf56361fd2f515f99b12673d55ad98e7ddb792d",
+      "selected_declarations": [
+        {
+          "line": 37,
+          "text": "public static final int TYPE_CODE = 0x0034;"
+        },
+        {
+          "line": 39,
+          "text": "public static final int ARRAY_SIZE = 16;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyTransform.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyTransform.java",
+      "sha256": "2c7881c0e391d62fac8acabb0120e12eacb508e9b502b508be6b5db4f51ae7b7",
+      "selected_declarations": [
+        {
+          "line": 42,
+          "text": "public static final int TYPE_CODE = 0x0038;"
+        },
+        {
+          "line": 44,
+          "text": "public static final int ARRAY_SIZE = 56;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyBBox.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyBBox.java",
+      "sha256": "d809af07c5c602f1fb322847f08c6f9e4e766c797045c61bf214f18b8d1add2d",
+      "selected_declarations": [
+        {
+          "line": 38,
+          "text": "public static final int TYPE_CODE = 0x0039;"
+        },
+        {
+          "line": 40,
+          "text": "public static final int ARRAY_SIZE = 24;"
+        }
+      ]
+    },
+    {
+      "path": "src/sporemodder/file/prop/PropertyText.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/prop/PropertyText.java",
+      "sha256": "affb9d2de6c52c405a5f705cbdc601a5739a74c20121004aac15a4bc9745f6b4",
+      "selected_declarations": [
+        {
+          "line": 45,
+          "text": "public static final int TYPE_CODE = 0x0022;"
+        },
+        {
+          "line": 47,
+          "text": "public static final int ARRAY_SIZE = 520;"
+        }
+      ]
+    }
+  ]
+}

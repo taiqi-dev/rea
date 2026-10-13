@@ -1,0 +1,65 @@
+{
+  "kind": "public-source-observations-not-local-ABI-verification",
+  "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "files": [
+    {
+      "path": "Simulator/cCreatureBase.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCreatureBase.h",
+      "bytes": 18135,
+      "sha256": "4b813c02ac09a260d34048b8002e2cc694ccad67de4df4409fd45073ea5bec37",
+      "scope": "whole header read and raw digest rechecked this turn",
+      "selected_lines": [
+        "98-100",
+        "119",
+        "216",
+        "389"
+      ]
+    },
+    {
+      "path": "Simulator/cLocomotiveObject.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cLocomotiveObject.h",
+      "bytes": 4720,
+      "sha256": "850cd29803ab81caeab2cc715bb1ba7af7f5d0c998031c3342864d769ea8a0df",
+      "scope": "whole header read and raw digest rechecked this turn",
+      "selected_lines": [
+        "28-37",
+        "64-66",
+        "75-84",
+        "99-104",
+        "124-127"
+      ]
+    },
+    {
+      "path": "Simulator/cSpatialObject.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpatialObject.h",
+      "bytes": 7548,
+      "sha256": "9c3f44b21370988c3b47a3286a666076ceaa9b0c4c91c0924839b70dbbca4de3",
+      "scope": "whole header read and raw digest rechecked this turn",
+      "selected_lines": [
+        "67-72",
+        "89-93",
+        "116-117",
+        "124-133"
+      ]
+    }
+  ],
+  "official_pdf": {
+    "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+    "bytes": 3896086,
+    "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+    "read_scope": "whole PDF fetched; sections 4.1 and 4.2 inspected via available PDF reader",
+    "selected_physical_pages_one_based": [
+      5,
+      6,
+      7
+    ],
+    "fact": "movement speed interpolates between parameter sets authored for different velocities; no actual-vs-desired speed identification"
+  },
+  "unknown": [
+    "local ABI",
+    "stop-radius formula",
+    "neighbor avoidance algorithm",
+    "speed-to-gait conversion caller"
+  ],
+  "writer": "root summary of spore_body_evidence read-only report"
+}

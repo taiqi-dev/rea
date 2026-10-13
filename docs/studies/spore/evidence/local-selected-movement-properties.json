@@ -1,0 +1,1899 @@
+{
+  "kind": "local-config-observations-not-REA-Evidence",
+  "scope": "CreatureGameTuning PROP entries only; no runtime interpretation",
+  "package_order": "unknown; variants separate",
+  "records": [
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x02ae0c7e",
+        "instance": "0x7c340397"
+      },
+      "offset": 12867744,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "eea2fb3fc798a9b5c7408f68e4f386677515966df0bc3f4335a670d55d70f624",
+      "decoded_sha256": "eea2fb3fc798a9b5c7408f68e4f386677515966df0bc3f4335a670d55d70f624",
+      "property_count": 6,
+      "property_ids": [
+        "0xb2cccb",
+        "0x3d3e2988",
+        "0x679d56bb",
+        "0xbaf251a1",
+        "0xbd82fae8",
+        "0xe6f2fce8"
+      ],
+      "selected_properties": {
+        "parent": {
+          "id": "0xb2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            45.0
+          ]
+        },
+        "creatureScaleMultiplier": {
+          "id": "0xbaf251a1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.5
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xf71fa311",
+        "instance": "0x7c340397"
+      },
+      "offset": 13243116,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535,
+      "stored_sha256": "00ccd62be22e69ed8592e37cb0225bed3c67e09ca1918919e6039ee43c45ef8a",
+      "decoded_sha256": "448f108ae640b7ceae02acc80b94fdb7d35fbe31dd0db1cc6cb9a5df120a5545",
+      "property_count": 28,
+      "property_ids": [
+        "0xb2cccb",
+        "0xa6a4f0b",
+        "0x196c4280",
+        "0x283d6bf9",
+        "0x3194b523",
+        "0x3d3e2988",
+        "0x4ee78a9b",
+        "0x600e59cd",
+        "0x72a18f36",
+        "0x861d7203",
+        "0x89e27397",
+        "0x8b1fd1f1",
+        "0x94a76e85",
+        "0xa2433d86",
+        "0xa5164107",
+        "0xad0d6a72",
+        "0xad530307",
+        "0xb49d89aa",
+        "0xb5531079",
+        "0xbcfd2a40",
+        "0xbcfd2a41",
+        "0xbcfd2a42",
+        "0xbcfd2a46",
+        "0xbcfd2a47",
+        "0xbd82fae8",
+        "0xc3f32fe6",
+        "0xceb65676",
+        "0xdcbc7c1e"
+      ],
+      "selected_properties": {
+        "parent": {
+          "id": "0xb2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureAlertHearingMultiplier": {
+          "id": "0x283d6bf9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            30.0
+          ]
+        },
+        "creatureMaxJumpHeight": {
+          "id": "0x94a76e85",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureAlertSightMultiplier_LookAt": {
+          "id": "0xa5164107",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureDamagePercentageMin": {
+          "id": "0xad530307",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureAlertSightMultiplier": {
+          "id": "0xb49d89aa",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureAlertHearingMultiplier_LookAt": {
+          "id": "0xc3f32fe6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureGlideSpeed": {
+          "id": "0xdcbc7c1e",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xad56080c",
+        "instance": "0x7c340397"
+      },
+      "offset": 12641977,
+      "stored_bytes": 2412,
+      "memory_bytes": 3808,
+      "compression": 65535,
+      "stored_sha256": "4121c12f833cb157237865120845193a9cfcb7722ad464ce9ca26ffd3c41d796",
+      "decoded_sha256": "d270d441e1c6d7ce3fb6d7076dfad5d9c77fa90ea6d8377fe82807b7dac3fda7",
+      "property_count": 249,
+      "property_ids": [
+        "0x175ae53",
+        "0x175ae5d",
+        "0x1a28c84",
+        "0x1ad0639",
+        "0x1c2301b",
+        "0x24ca4c9",
+        "0x25476fc",
+        "0x25f0761",
+        "0x2648458",
+        "0x26b7d69",
+        "0x275b79a",
+        "0x275b79f",
+        "0x27b6c6e",
+        "0x27b6d2a",
+        "0x27b6d44",
+        "0x284e6c1",
+        "0x2acbad8",
+        "0x2c73027",
+        "0x2c73028",
+        "0x2c73029",
+        "0x302aa89",
+        "0x302aa8f",
+        "0x302aa93",
+        "0x302aa97",
+        "0x302aa9b",
+        "0x32a54b9",
+        "0x3337809",
+        "0x33385cd",
+        "0x339ddf2",
+        "0x35ebc26",
+        "0x37ae622",
+        "0x3d03d69",
+        "0x3dad600",
+        "0x4098097",
+        "0x48a66ea",
+        "0x48a66ee",
+        "0x49b48ee",
+        "0x4d04a47",
+        "0x4f7cf2c",
+        "0x509beb7",
+        "0x52583bc",
+        "0x52583d4",
+        "0x54ba6b0",
+        "0x55c1350",
+        "0x55c1357",
+        "0x56bf073",
+        "0x5c8390d",
+        "0x6284c0c",
+        "0x62978be",
+        "0x68dc104",
+        "0x7af7926",
+        "0x816e292",
+        "0x8a6f491",
+        "0xa6a4f0b",
+        "0xe98ea09",
+        "0xffca7ff",
+        "0x11074694",
+        "0x11b148cd",
+        "0x12292735",
+        "0x12292738",
+        "0x1269b5b5",
+        "0x13138bd2",
+        "0x1810c6e0",
+        "0x18ce7bc3",
+        "0x196c4280",
+        "0x1d7441c9",
+        "0x1eb2ca6d",
+        "0x2140064f",
+        "0x22e5d268",
+        "0x22e5d269",
+        "0x22e5d26b",
+        "0x2307fc8b",
+        "0x25e6ad1c",
+        "0x261fa6b9",
+        "0x2713641e",
+        "0x274fc6e0",
+        "0x2a829109",
+        "0x2babcdfc",
+        "0x2beb6558",
+        "0x2eba30a8",
+        "0x2f343a3c",
+        "0x3194b523",
+        "0x31b148cc",
+        "0x31d515ae",
+        "0x31d51f1d",
+        "0x3215f0af",
+        "0x32292736",
+        "0x322d5dd6",
+        "0x34877c4f",
+        "0x35cd8f0c",
+        "0x3757372c",
+        "0x3819a4d3",
+        "0x38623218",
+        "0x3964a33d",
+        "0x39697de6",
+        "0x397b295a",
+        "0x39b674a2",
+        "0x3ac3fddb",
+        "0x3d3e2988",
+        "0x3d73d3b0",
+        "0x3da2a2d2",
+        "0x3da92194",
+        "0x3fbd28e4",
+        "0x41752dd5",
+        "0x4247bf2b",
+        "0x42b6c4b6",
+        "0x4453df5d",
+        "0x45ee098c",
+        "0x46dee850",
+        "0x4bae2a99",
+        "0x4bc7f666",
+        "0x4d5f54b6",
+        "0x4e229d3e",
+        "0x4ee78a9b",
+        "0x511b50d8",
+        "0x516e7b63",
+        "0x51cbead0",
+        "0x523a480e",
+        "0x553c6e30",
+        "0x57ae947d",
+        "0x58cc10b4",
+        "0x5933f8f4",
+        "0x5be9d5f9",
+        "0x5c40bbb4",
+        "0x5c68a779",
+        "0x5e352b93",
+        "0x6459830b",
+        "0x65525b4e",
+        "0x679d56bb",
+        "0x6848e35e",
+        "0x687fbcec",
+        "0x6a3e31f9",
+        "0x6a86c027",
+        "0x6e212ea9",
+        "0x703b9a9d",
+        "0x7163782e",
+        "0x7195edf1",
+        "0x723bbffc",
+        "0x724289fe",
+        "0x75bb1b3c",
+        "0x770f1ac5",
+        "0x7a7e1c91",
+        "0x7d10c1b8",
+        "0x7dc0a48a",
+        "0x80b1e465",
+        "0x82e52579",
+        "0x82fb1acc",
+        "0x832f6d3d",
+        "0x861d7203",
+        "0x8836316c",
+        "0x89e27397",
+        "0x8b034ce0",
+        "0x8b1fd1f1",
+        "0x8c248961",
+        "0x8fc666ce",
+        "0x9040f372",
+        "0x90bd714c",
+        "0x90c1b65c",
+        "0x9224aa67",
+        "0x9226de4c",
+        "0x92292737",
+        "0x9243c96e",
+        "0x93110e94",
+        "0x94a76e85",
+        "0x954f8dcc",
+        "0x95e575c6",
+        "0x95f7ee0c",
+        "0x967f9546",
+        "0x98c83c48",
+        "0x99646e30",
+        "0x996644a3",
+        "0x99b154ef",
+        "0x9a4955dd",
+        "0x9c2ad71b",
+        "0x9efa4612",
+        "0xa117ef5b",
+        "0xa1247843",
+        "0xa3e580f3",
+        "0xa5b8d733",
+        "0xa5e247f0",
+        "0xac640ba9",
+        "0xad0d6a72",
+        "0xad530307",
+        "0xad752a1a",
+        "0xb070eba6",
+        "0xb2ca5e63",
+        "0xb5531079",
+        "0xb561b9eb",
+        "0xb67c4f9a",
+        "0xb895359e",
+        "0xbaf251a1",
+        "0xbc99c4c1",
+        "0xbcf97143",
+        "0xbcfd2a40",
+        "0xbcfd2a41",
+        "0xbcfd2a42",
+        "0xbcfd2a46",
+        "0xbcfd2a47",
+        "0xbd82fae8",
+        "0xbf5e5d72",
+        "0xc1fe457d",
+        "0xc3fff105",
+        "0xc4f054b6",
+        "0xc661855e",
+        "0xc77a6c53",
+        "0xca16adda",
+        "0xcd1e526d",
+        "0xce6bd0a6",
+        "0xce78e0d8",
+        "0xce9f3f71",
+        "0xceb65676",
+        "0xcff3e974",
+        "0xd02942aa",
+        "0xd0780e75",
+        "0xd0fc1cac",
+        "0xd1a03cb4",
+        "0xd3d10a58",
+        "0xd5f935bc",
+        "0xd6379aa9",
+        "0xd6e7812f",
+        "0xd7e2f8aa",
+        "0xda14d908",
+        "0xda7e582a",
+        "0xdb370fb5",
+        "0xdb821bab",
+        "0xdcbc7c1e",
+        "0xdcc9694f",
+        "0xdcd5e42e",
+        "0xdda63aed",
+        "0xde67264f",
+        "0xdec48a8f",
+        "0xdf6747c9",
+        "0xe11cb6cc",
+        "0xe1532d2d",
+        "0xe39b27bf",
+        "0xe6f2fce8",
+        "0xe8ad4f2d",
+        "0xeeaa8367",
+        "0xeeb7a2db",
+        "0xf15cd7e4",
+        "0xf290181f",
+        "0xf5c2bf12",
+        "0xf7dc67f7",
+        "0xf7e9bdee",
+        "0xfb2020b9",
+        "0xfc530d11",
+        "0xfd87b588",
+        "0xff259ba2",
+        "0xff7d4a77"
+      ],
+      "selected_properties": {
+        "creatureAvatarMinMouseRadius": {
+          "id": "0x175ae53",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.20000000298023224
+          ]
+        },
+        "creatureAvatarMaxMouseRadius": {
+          "id": "0x175ae5d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureAvatarWASDTurningSpeed": {
+          "id": "0x2648458",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureAvatarGoalStopDistance": {
+          "id": "0x275b79a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.4000000059604645
+          ]
+        },
+        "creatureDecelerationSpeedMultiplier": {
+          "id": "0x284e6c1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureAvatarWASDSlowTurningSpeed": {
+          "id": "0x3d03d69",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4.0
+          ]
+        },
+        "creatureAccelerationSpeedMultiplier": {
+          "id": "0x7af7926",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureMouseDoubleClickThreshold": {
+          "id": "0x8a6f491",
+          "type": "0x000a",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            400
+          ]
+        },
+        "creatureChaseDistance": {
+          "id": "0xe98ea09",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureBaseAcceleration": {
+          "id": "0x1269b5b5",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.0
+          ]
+        },
+        "creatureHelpAllyInRadius": {
+          "id": "0x13138bd2",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureLoudnessSprintingSpeedMultiplier": {
+          "id": "0x34877c4f",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureMouseMoveGoalDistance": {
+          "id": "0x38623218",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "avatarNestSafeZone": {
+          "id": "0x3964a33d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            15.0
+          ]
+        },
+        "creatureHealingRadius": {
+          "id": "0x397b295a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "npcAttackMissPercentage": {
+          "id": "0x4bc7f666",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.0
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureMigrationRadius": {
+          "id": "0x5933f8f4",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            25.0
+          ]
+        },
+        "maxCreatureDistForSizeInc": {
+          "id": "0x5c40bbb4",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            50.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            25.0
+          ]
+        },
+        "creatureFleeTime": {
+          "id": "0x6a3e31f9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureBaseDeceleration": {
+          "id": "0x75bb1b3c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.0
+          ]
+        },
+        "maxCreatureHitBoxSizeMult": {
+          "id": "0x7a7e1c91",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureCallStartRadius": {
+          "id": "0x7d10c1b8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            50.0
+          ]
+        },
+        "creatureMaxEvoPoints": {
+          "id": "0x8c248961",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            9999.0
+          ]
+        },
+        "maxCreatureHitboxWidth": {
+          "id": "0x90bd714c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4.0
+          ]
+        },
+        "creatureMaxJumpHeight": {
+          "id": "0x94a76e85",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.5
+          ]
+        },
+        "creatureAvatarHitPointsMultiplier": {
+          "id": "0x95f7ee0c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureHitPointsTurnAndFightPercentage": {
+          "id": "0x967f9546",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.75
+          ]
+        },
+        "minCreatureVelocityForSizeInc": {
+          "id": "0xa117ef5b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureDamagePercentageMin": {
+          "id": "0xad530307",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureCallDuration": {
+          "id": "0xad752a1a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "checkForMateTimer": {
+          "id": "0xb67c4f9a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            60.0
+          ]
+        },
+        "creatureMouseHeldMovementThreshold": {
+          "id": "0xb895359e",
+          "type": "0x000a",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            700
+          ]
+        },
+        "creatureScaleMultiplier": {
+          "id": "0xbaf251a1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureVerbtrayCollection": {
+          "id": "0xbc99c4c1",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0xaf028f41",
+              "instance": "0x758205a3"
+            }
+          ]
+        },
+        "minCreatureDistForSizeInc": {
+          "id": "0xc661855e",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureMouseMoveMinRadius": {
+          "id": "0xca16adda",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.5
+          ]
+        },
+        "creatureHitBoxDisableAngle": {
+          "id": "0xcd1e526d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.7071067690849304
+          ]
+        },
+        "creatureLoudnessNormalSpeedMultiplier": {
+          "id": "0xce6bd0a6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.5
+          ]
+        },
+        "maxCreatureVelocityForSizeInc": {
+          "id": "0xce9f3f71",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creaturePercentEvoForAlphas": {
+          "id": "0xd6e7812f",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureGlideSpeed": {
+          "id": "0xdcbc7c1e",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureEvoPointsForMateCall": {
+          "id": "0xe39b27bf",
+          "type": "0x000d",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            50.0,
+            150.0,
+            300.0,
+            450.0,
+            600.0,
+            750.0,
+            900.0,
+            1000.0
+          ]
+        },
+        "mateNestTetherRadius": {
+          "id": "0xf5c2bf12",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            15.0
+          ]
+        }
+      }
+    },
+    {
+      "package": "Spore_Game.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7c340397"
+      },
+      "offset": 12597699,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "e6aa5b8d599d5a3a44ce629cd98543cd358b148b973209141c86d1ec480d5ccb",
+      "decoded_sha256": "e6aa5b8d599d5a3a44ce629cd98543cd358b148b973209141c86d1ec480d5ccb",
+      "property_count": 6,
+      "property_ids": [
+        "0xb2cccb",
+        "0x3d3e2988",
+        "0x679d56bb",
+        "0xbaf251a1",
+        "0xbd82fae8",
+        "0xe6f2fce8"
+      ],
+      "selected_properties": {
+        "parent": {
+          "id": "0xb2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            35.0
+          ]
+        },
+        "creatureScaleMultiplier": {
+          "id": "0xbaf251a1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7c340397"
+      },
+      "offset": 18774990,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "b234434ff7bbfe6c71f4af8c471101056b4cbcd67aa23c1a08e1cd0a951c6309",
+      "decoded_sha256": "b234434ff7bbfe6c71f4af8c471101056b4cbcd67aa23c1a08e1cd0a951c6309",
+      "property_count": 6,
+      "property_ids": [
+        "0xb2cccb",
+        "0x3d3e2988",
+        "0x679d56bb",
+        "0xbaf251a1",
+        "0xbd82fae8",
+        "0xe6f2fce8"
+      ],
+      "selected_properties": {
+        "parent": {
+          "id": "0xb2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            35.0
+          ]
+        },
+        "creatureScaleMultiplier": {
+          "id": "0xbaf251a1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xf71fa311",
+        "instance": "0x7c340397"
+      },
+      "offset": 13325243,
+      "stored_bytes": 266,
+      "memory_bytes": 352,
+      "compression": 65535,
+      "stored_sha256": "cc50c774dd3b6202940051c3a68bdbe7d9f3855dfd9b576e5d7f579eb936b29b",
+      "decoded_sha256": "2a8f5cbeee60de330fc930d4ec2dd8b24080d26cd20688c6f43825ee05a93faf",
+      "property_count": 28,
+      "property_ids": [
+        "0xb2cccb",
+        "0xa6a4f0b",
+        "0x196c4280",
+        "0x283d6bf9",
+        "0x3194b523",
+        "0x3d3e2988",
+        "0x4ee78a9b",
+        "0x600e59cd",
+        "0x72a18f36",
+        "0x861d7203",
+        "0x89e27397",
+        "0x8b1fd1f1",
+        "0x94a76e85",
+        "0xa2433d86",
+        "0xa5164107",
+        "0xad0d6a72",
+        "0xad530307",
+        "0xb49d89aa",
+        "0xb5531079",
+        "0xbcfd2a40",
+        "0xbcfd2a41",
+        "0xbcfd2a42",
+        "0xbcfd2a46",
+        "0xbcfd2a47",
+        "0xbd82fae8",
+        "0xc3f32fe6",
+        "0xceb65676",
+        "0xdcbc7c1e"
+      ],
+      "selected_properties": {
+        "parent": {
+          "id": "0xb2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureAlertHearingMultiplier": {
+          "id": "0x283d6bf9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            30.0
+          ]
+        },
+        "creatureMaxJumpHeight": {
+          "id": "0x94a76e85",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureAlertSightMultiplier_LookAt": {
+          "id": "0xa5164107",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureDamagePercentageMin": {
+          "id": "0xad530307",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureAlertSightMultiplier": {
+          "id": "0xb49d89aa",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureAlertHearingMultiplier_LookAt": {
+          "id": "0xc3f32fe6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureGlideSpeed": {
+          "id": "0xdcbc7c1e",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0x02ae0c7e",
+        "instance": "0x7c340397"
+      },
+      "offset": 3819892,
+      "stored_bytes": 88,
+      "memory_bytes": 88,
+      "compression": 0,
+      "stored_sha256": "7d775fc82a6f5ab72d5040f3a0adbb2369ebaa3e074243f359bec5d7c37b87e4",
+      "decoded_sha256": "7d775fc82a6f5ab72d5040f3a0adbb2369ebaa3e074243f359bec5d7c37b87e4",
+      "property_count": 6,
+      "property_ids": [
+        "0xb2cccb",
+        "0x3d3e2988",
+        "0x679d56bb",
+        "0xbaf251a1",
+        "0xbd82fae8",
+        "0xe6f2fce8"
+      ],
+      "selected_properties": {
+        "parent": {
+          "id": "0xb2cccb",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00b1b104",
+              "group": "0xad56080c",
+              "instance": "0x7c340397"
+            }
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            45.0
+          ]
+        },
+        "creatureScaleMultiplier": {
+          "id": "0xbaf251a1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.5
+          ]
+        }
+      }
+    },
+    {
+      "package": "PatchData.package",
+      "key": {
+        "type": "0x00b1b104",
+        "group": "0xad56080c",
+        "instance": "0x7c340397"
+      },
+      "offset": 13758115,
+      "stored_bytes": 2413,
+      "memory_bytes": 3808,
+      "compression": 65535,
+      "stored_sha256": "627f3d9b6c6a4a8f63fb5bc21603645c5a61010634ed3779b28290d3e1da3047",
+      "decoded_sha256": "731f7bd8c29f5524ce568ee22855faf96488b0090389bad3a49ec5137fef916a",
+      "property_count": 249,
+      "property_ids": [
+        "0x175ae53",
+        "0x175ae5d",
+        "0x1a28c84",
+        "0x1ad0639",
+        "0x1c2301b",
+        "0x24ca4c9",
+        "0x25476fc",
+        "0x25f0761",
+        "0x2648458",
+        "0x26b7d69",
+        "0x275b79a",
+        "0x275b79f",
+        "0x27b6c6e",
+        "0x27b6d2a",
+        "0x27b6d44",
+        "0x284e6c1",
+        "0x2acbad8",
+        "0x2c73027",
+        "0x2c73028",
+        "0x2c73029",
+        "0x302aa89",
+        "0x302aa8f",
+        "0x302aa93",
+        "0x302aa97",
+        "0x302aa9b",
+        "0x32a54b9",
+        "0x3337809",
+        "0x33385cd",
+        "0x339ddf2",
+        "0x35ebc26",
+        "0x37ae622",
+        "0x3d03d69",
+        "0x3dad600",
+        "0x4098097",
+        "0x48a66ea",
+        "0x48a66ee",
+        "0x49b48ee",
+        "0x4d04a47",
+        "0x4f7cf2c",
+        "0x509beb7",
+        "0x52583bc",
+        "0x52583d4",
+        "0x54ba6b0",
+        "0x55c1350",
+        "0x55c1357",
+        "0x56bf073",
+        "0x5c8390d",
+        "0x6284c0c",
+        "0x62978be",
+        "0x68dc104",
+        "0x7af7926",
+        "0x816e292",
+        "0x8a6f491",
+        "0xa6a4f0b",
+        "0xe98ea09",
+        "0xffca7ff",
+        "0x11074694",
+        "0x11b148cd",
+        "0x12292735",
+        "0x12292738",
+        "0x1269b5b5",
+        "0x13138bd2",
+        "0x1810c6e0",
+        "0x18ce7bc3",
+        "0x196c4280",
+        "0x1d7441c9",
+        "0x1eb2ca6d",
+        "0x2140064f",
+        "0x22e5d268",
+        "0x22e5d269",
+        "0x22e5d26b",
+        "0x2307fc8b",
+        "0x25e6ad1c",
+        "0x261fa6b9",
+        "0x2713641e",
+        "0x274fc6e0",
+        "0x2a829109",
+        "0x2babcdfc",
+        "0x2beb6558",
+        "0x2eba30a8",
+        "0x2f343a3c",
+        "0x3194b523",
+        "0x31b148cc",
+        "0x31d515ae",
+        "0x31d51f1d",
+        "0x3215f0af",
+        "0x32292736",
+        "0x322d5dd6",
+        "0x34877c4f",
+        "0x35cd8f0c",
+        "0x3757372c",
+        "0x3819a4d3",
+        "0x38623218",
+        "0x3964a33d",
+        "0x39697de6",
+        "0x397b295a",
+        "0x39b674a2",
+        "0x3ac3fddb",
+        "0x3d3e2988",
+        "0x3d73d3b0",
+        "0x3da2a2d2",
+        "0x3da92194",
+        "0x3fbd28e4",
+        "0x41752dd5",
+        "0x4247bf2b",
+        "0x42b6c4b6",
+        "0x4453df5d",
+        "0x45ee098c",
+        "0x46dee850",
+        "0x4bae2a99",
+        "0x4bc7f666",
+        "0x4d5f54b6",
+        "0x4e229d3e",
+        "0x4ee78a9b",
+        "0x511b50d8",
+        "0x516e7b63",
+        "0x51cbead0",
+        "0x523a480e",
+        "0x553c6e30",
+        "0x57ae947d",
+        "0x58cc10b4",
+        "0x5933f8f4",
+        "0x5be9d5f9",
+        "0x5c40bbb4",
+        "0x5c68a779",
+        "0x5e352b93",
+        "0x6459830b",
+        "0x65525b4e",
+        "0x679d56bb",
+        "0x6848e35e",
+        "0x687fbcec",
+        "0x6a3e31f9",
+        "0x6a86c027",
+        "0x6e212ea9",
+        "0x703b9a9d",
+        "0x7163782e",
+        "0x7195edf1",
+        "0x723bbffc",
+        "0x724289fe",
+        "0x75bb1b3c",
+        "0x770f1ac5",
+        "0x7a7e1c91",
+        "0x7d10c1b8",
+        "0x7dc0a48a",
+        "0x80b1e465",
+        "0x82e52579",
+        "0x82fb1acc",
+        "0x832f6d3d",
+        "0x861d7203",
+        "0x8836316c",
+        "0x89e27397",
+        "0x8b034ce0",
+        "0x8b1fd1f1",
+        "0x8c248961",
+        "0x8fc666ce",
+        "0x9040f372",
+        "0x90bd714c",
+        "0x90c1b65c",
+        "0x9224aa67",
+        "0x9226de4c",
+        "0x92292737",
+        "0x9243c96e",
+        "0x93110e94",
+        "0x94a76e85",
+        "0x954f8dcc",
+        "0x95e575c6",
+        "0x95f7ee0c",
+        "0x967f9546",
+        "0x98c83c48",
+        "0x99646e30",
+        "0x996644a3",
+        "0x99b154ef",
+        "0x9a4955dd",
+        "0x9c2ad71b",
+        "0x9efa4612",
+        "0xa117ef5b",
+        "0xa1247843",
+        "0xa3e580f3",
+        "0xa5b8d733",
+        "0xa5e247f0",
+        "0xac640ba9",
+        "0xad0d6a72",
+        "0xad530307",
+        "0xad752a1a",
+        "0xb070eba6",
+        "0xb2ca5e63",
+        "0xb5531079",
+        "0xb561b9eb",
+        "0xb67c4f9a",
+        "0xb895359e",
+        "0xbaf251a1",
+        "0xbc99c4c1",
+        "0xbcf97143",
+        "0xbcfd2a40",
+        "0xbcfd2a41",
+        "0xbcfd2a42",
+        "0xbcfd2a46",
+        "0xbcfd2a47",
+        "0xbd82fae8",
+        "0xbf5e5d72",
+        "0xc1fe457d",
+        "0xc3fff105",
+        "0xc4f054b6",
+        "0xc661855e",
+        "0xc77a6c53",
+        "0xca16adda",
+        "0xcd1e526d",
+        "0xce6bd0a6",
+        "0xce78e0d8",
+        "0xce9f3f71",
+        "0xceb65676",
+        "0xcff3e974",
+        "0xd02942aa",
+        "0xd0780e75",
+        "0xd0fc1cac",
+        "0xd1a03cb4",
+        "0xd3d10a58",
+        "0xd5f935bc",
+        "0xd6379aa9",
+        "0xd6e7812f",
+        "0xd7e2f8aa",
+        "0xda14d908",
+        "0xda7e582a",
+        "0xdb370fb5",
+        "0xdb821bab",
+        "0xdcbc7c1e",
+        "0xdcc9694f",
+        "0xdcd5e42e",
+        "0xdda63aed",
+        "0xde67264f",
+        "0xdec48a8f",
+        "0xdf6747c9",
+        "0xe11cb6cc",
+        "0xe1532d2d",
+        "0xe39b27bf",
+        "0xe6f2fce8",
+        "0xe8ad4f2d",
+        "0xeeaa8367",
+        "0xeeb7a2db",
+        "0xf15cd7e4",
+        "0xf290181f",
+        "0xf5c2bf12",
+        "0xf7dc67f7",
+        "0xf7e9bdee",
+        "0xfb2020b9",
+        "0xfc530d11",
+        "0xfd87b588",
+        "0xff259ba2",
+        "0xff7d4a77"
+      ],
+      "selected_properties": {
+        "creatureAvatarMinMouseRadius": {
+          "id": "0x175ae53",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.20000000298023224
+          ]
+        },
+        "creatureAvatarMaxMouseRadius": {
+          "id": "0x175ae5d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureAvatarWASDTurningSpeed": {
+          "id": "0x2648458",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureAvatarGoalStopDistance": {
+          "id": "0x275b79a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.4000000059604645
+          ]
+        },
+        "creatureDecelerationSpeedMultiplier": {
+          "id": "0x284e6c1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureAvatarWASDSlowTurningSpeed": {
+          "id": "0x3d03d69",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4.0
+          ]
+        },
+        "creatureAccelerationSpeedMultiplier": {
+          "id": "0x7af7926",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureMouseDoubleClickThreshold": {
+          "id": "0x8a6f491",
+          "type": "0x000a",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            400
+          ]
+        },
+        "creatureChaseDistance": {
+          "id": "0xe98ea09",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureBaseAcceleration": {
+          "id": "0x1269b5b5",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.0
+          ]
+        },
+        "creatureHelpAllyInRadius": {
+          "id": "0x13138bd2",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureLoudnessSprintingSpeedMultiplier": {
+          "id": "0x34877c4f",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureMouseMoveGoalDistance": {
+          "id": "0x38623218",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "avatarNestSafeZone": {
+          "id": "0x3964a33d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            15.0
+          ]
+        },
+        "creatureHealingRadius": {
+          "id": "0x397b295a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "npcAttackMissPercentage": {
+          "id": "0x4bc7f666",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.0
+          ]
+        },
+        "creatureLoudnessInCombatMultiplier": {
+          "id": "0x4ee78a9b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "creatureMigrationRadius": {
+          "id": "0x5933f8f4",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            25.0
+          ]
+        },
+        "maxCreatureDistForSizeInc": {
+          "id": "0x5c40bbb4",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            50.0
+          ]
+        },
+        "creatureFleeDistance": {
+          "id": "0x679d56bb",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            25.0
+          ]
+        },
+        "creatureFleeTime": {
+          "id": "0x6a3e31f9",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creatureBaseDeceleration": {
+          "id": "0x75bb1b3c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.0
+          ]
+        },
+        "maxCreatureHitBoxSizeMult": {
+          "id": "0x7a7e1c91",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            2.0
+          ]
+        },
+        "creatureCallStartRadius": {
+          "id": "0x7d10c1b8",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureMaxPerceptionRadius": {
+          "id": "0x861d7203",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            50.0
+          ]
+        },
+        "creatureMaxEvoPoints": {
+          "id": "0x8c248961",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            9999.0
+          ]
+        },
+        "maxCreatureHitboxWidth": {
+          "id": "0x90bd714c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            4.0
+          ]
+        },
+        "creatureMaxJumpHeight": {
+          "id": "0x94a76e85",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.5
+          ]
+        },
+        "creatureAvatarHitPointsMultiplier": {
+          "id": "0x95f7ee0c",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureHitPointsTurnAndFightPercentage": {
+          "id": "0x967f9546",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.75
+          ]
+        },
+        "minCreatureVelocityForSizeInc": {
+          "id": "0xa117ef5b",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureDamagePercentageMin": {
+          "id": "0xad530307",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureCallDuration": {
+          "id": "0xad752a1a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            3.0
+          ]
+        },
+        "checkForMateTimer": {
+          "id": "0xb67c4f9a",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            60.0
+          ]
+        },
+        "creatureMouseHeldMovementThreshold": {
+          "id": "0xb895359e",
+          "type": "0x000a",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            700
+          ]
+        },
+        "creatureScaleMultiplier": {
+          "id": "0xbaf251a1",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.0
+          ]
+        },
+        "creatureVerbtrayCollection": {
+          "id": "0xbc99c4c1",
+          "type": "0x0020",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            {
+              "type": "0x00000000",
+              "group": "0xaf028f41",
+              "instance": "0x758205a3"
+            }
+          ]
+        },
+        "minCreatureDistForSizeInc": {
+          "id": "0xc661855e",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureMouseMoveMinRadius": {
+          "id": "0xca16adda",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.5
+          ]
+        },
+        "creatureHitBoxDisableAngle": {
+          "id": "0xcd1e526d",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            0.7071067690849304
+          ]
+        },
+        "creatureLoudnessNormalSpeedMultiplier": {
+          "id": "0xce6bd0a6",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.5
+          ]
+        },
+        "maxCreatureVelocityForSizeInc": {
+          "id": "0xce9f3f71",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            5.0
+          ]
+        },
+        "creaturePercentEvoForAlphas": {
+          "id": "0xd6e7812f",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            1.25
+          ]
+        },
+        "creatureGlideSpeed": {
+          "id": "0xdcbc7c1e",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            10.0
+          ]
+        },
+        "creatureEvoPointsForMateCall": {
+          "id": "0xe39b27bf",
+          "type": "0x000d",
+          "flags": "0x009c",
+          "array": true,
+          "values": [
+            50.0,
+            150.0,
+            300.0,
+            450.0,
+            600.0,
+            750.0,
+            900.0,
+            1000.0
+          ]
+        },
+        "mateNestTetherRadius": {
+          "id": "0xf5c2bf12",
+          "type": "0x000d",
+          "flags": "0x0000",
+          "array": false,
+          "values": [
+            15.0
+          ]
+        }
+      }
+    }
+  ]
+}

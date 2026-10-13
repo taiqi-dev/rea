@@ -1,0 +1,264 @@
+{
+  "kind": "ordinary-file-static-strings-not-REA-Evidence",
+  "target": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d"
+  },
+  "query": {
+    "sections": [
+      [
+        ".rdata",
+        "0xFCB400",
+        "0x110AA00"
+      ],
+      [
+        ".data",
+        "0x110AA00",
+        "0x11CF600"
+      ]
+    ],
+    "all_ends_exclusive": true,
+    "full_nul_ascii_length": [
+      4,
+      160
+    ],
+    "pattern": "mesh|skinning|bone|weights?|rigblock|bake|join",
+    "candidate_count": 113,
+    "selected_entry_count": 34
+  },
+  "entries": [
+    {
+      "text": "weights",
+      "file_offset": "0xfec5cc",
+      "preferred_data_va": "0x13ed1cc"
+    },
+    {
+      "text": "invbindpose",
+      "file_offset": "0xfec5d4",
+      "preferred_data_va": "0x13ed1d4"
+    },
+    {
+      "text": "jointnames",
+      "file_offset": "0xfec5e0",
+      "preferred_data_va": "0x13ed1e0"
+    },
+    {
+      "text": "Baker system management.",
+      "file_offset": "0xfea838",
+      "preferred_data_va": "0x13eb438"
+    },
+    {
+      "text": "-bake^ [<keyFilter:cstring>]",
+      "file_offset": "0xfea854",
+      "preferred_data_va": "0x13eb454"
+    },
+    {
+      "text": "bake given buildings/vehicles/creatures/etc., switch to model viewer unless noSwitch is specified",
+      "file_offset": "0xfea878",
+      "preferred_data_va": "0x13eb478"
+    },
+    {
+      "text": "after baking, promote baked resources to Data, ready for checking in as shipped content",
+      "file_offset": "0xfea8e8",
+      "preferred_data_va": "0x13eb4e8"
+    },
+    {
+      "text": "force the baker to perform a full bake, ignoring existing resources on disk",
+      "file_offset": "0xfea980",
+      "preferred_data_va": "0x13eb580"
+    },
+    {
+      "text": "joint_rootnode_%d",
+      "file_offset": "0xfee1d4",
+      "preferred_data_va": "0x13eedd4"
+    },
+    {
+      "text": "joint_fakenode_%d",
+      "file_offset": "0xfee1e8",
+      "preferred_data_va": "0x13eede8"
+    },
+    {
+      "text": "joint_eenode_%d",
+      "file_offset": "0xfee1fc",
+      "preferred_data_va": "0x13eedfc"
+    },
+    {
+      "text": "joint_bone_%d",
+      "file_offset": "0xfee20c",
+      "preferred_data_va": "0x13eee0c"
+    },
+    {
+      "text": "joint_b%d_n%d",
+      "file_offset": "0xfee21c",
+      "preferred_data_va": "0x13eee1c"
+    },
+    {
+      "text": "joint_rigblock_%d",
+      "file_offset": "0xff098c",
+      "preferred_data_va": "0x13f158c"
+    },
+    {
+      "text": "Skinner/MeshAORender",
+      "file_offset": "0xff1084",
+      "preferred_data_va": "0x13f1c84"
+    },
+    {
+      "text": "contains an invalid mesh",
+      "file_offset": "0xff1194",
+      "preferred_data_va": "0x13f1d94"
+    },
+    {
+      "text": "meshInfo",
+      "file_offset": "0x100c784",
+      "preferred_data_va": "0x140d384"
+    },
+    {
+      "text": "adjacencyInfo",
+      "file_offset": "0x100c790",
+      "preferred_data_va": "0x140d390"
+    },
+    {
+      "text": "boneMatrix",
+      "file_offset": "0x100c7b8",
+      "preferred_data_va": "0x140d3b8"
+    },
+    {
+      "text": "blendWeight",
+      "file_offset": "0x100c824",
+      "preferred_data_va": "0x140d424"
+    },
+    {
+      "text": "blendIndex",
+      "file_offset": "0x100c830",
+      "preferred_data_va": "0x140d430"
+    },
+    {
+      "text": "texCoord",
+      "file_offset": "0x100c83c",
+      "preferred_data_va": "0x140d43c"
+    },
+    {
+      "text": "positionDelta",
+      "file_offset": "0x100c80c",
+      "preferred_data_va": "0x140d40c"
+    },
+    {
+      "text": "BakeInfoRTT",
+      "file_offset": "0x100eb2c",
+      "preferred_data_va": "0x140f72c"
+    },
+    {
+      "text": "FinalBakedRTT",
+      "file_offset": "0x100eb44",
+      "preferred_data_va": "0x140f744"
+    },
+    {
+      "text": "SmallFinalBakedRTT",
+      "file_offset": "0x100eb54",
+      "preferred_data_va": "0x140f754"
+    },
+    {
+      "text": "BakeBuffers",
+      "file_offset": "0x100eba0",
+      "preferred_data_va": "0x140f7a0"
+    },
+    {
+      "text": "submeshIndex",
+      "file_offset": "0x1046718",
+      "preferred_data_va": "0x1447318"
+    },
+    {
+      "text": "parentIndex",
+      "file_offset": "0x1046764",
+      "preferred_data_va": "0x1447364"
+    },
+    {
+      "text": "jointPosition",
+      "file_offset": "0x10467a4",
+      "preferred_data_va": "0x14473a4"
+    },
+    {
+      "text": "deformChannel",
+      "file_offset": "0x10467b4",
+      "preferred_data_va": "0x14473b4"
+    },
+    {
+      "text": "cal3DOrigin",
+      "file_offset": "0x10467c4",
+      "preferred_data_va": "0x14473c4"
+    },
+    {
+      "text": "cal3DBoneName",
+      "file_offset": "0x10467d0",
+      "preferred_data_va": "0x14473d0"
+    },
+    {
+      "text": "cal3DRootBlockIndex",
+      "file_offset": "0x10467e0",
+      "preferred_data_va": "0x14473e0"
+    }
+  ],
+  "context_windows": [
+    [
+      "0xFEC560",
+      "0xFEC6C0",
+      "weights / invbindpose / jointnames"
+    ],
+    [
+      "0xFEA7B0",
+      "0xFEAB50",
+      "shared multi-asset baker help, not executed"
+    ],
+    [
+      "0xFEE100",
+      "0xFEE260",
+      "joint naming and baking export format candidates"
+    ],
+    [
+      "0xFF0880",
+      "0xFF0B70",
+      "Rigblock joint and FACE VERTEXID formats"
+    ],
+    [
+      "0xFF1010",
+      "0xFF1240",
+      "UV, tangents and invalid mesh diagnostics"
+    ],
+    [
+      "0x100C740",
+      "0x100C890",
+      "generic mesh vertex semantics"
+    ],
+    [
+      "0x100EAD0",
+      "0x100EC10",
+      "shared render target names"
+    ],
+    [
+      "0x10466E0",
+      "0x1046810",
+      "block hierarchy and Cal3D candidates"
+    ]
+  ],
+  "excluded": [
+    "font-weight and /WeightVector: font data",
+    "BuildingInstanceWeight and loot weight: budget/selection candidates",
+    "Havok boneWeightOffset and numBonesPerVertex: format not selected Creature implementation",
+    "ScenarioGameplaySkinning: Scenario scope",
+    "Graphics/BakeSprites: sprite bake"
+  ],
+  "limits": [
+    "No function xrefs, decompilation or runtime observations.",
+    "Data VAs are preferred addresses, not function addresses or ABI member offsets.",
+    "No Creature weight buffers or mesh resources decoded.",
+    "No generation, smoothing, influence cap, LBS/DQS selection or join algorithm established by strings."
+  ],
+  "not_performed": [
+    "game launch/attach",
+    "private save reads",
+    "package extraction",
+    "target changes",
+    "tool installation"
+  ]
+}

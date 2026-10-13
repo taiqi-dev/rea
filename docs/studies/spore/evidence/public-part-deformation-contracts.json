@@ -1,0 +1,233 @@
+{
+  "kind": "pinned-community-parser-and-declarations-not-local-runtime",
+  "commits": {
+    "Spore-ModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "SporeModder-FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "files": [
+    {
+      "path": "Editors/EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "selected_line_ranges_inclusive": [
+        [
+          359,
+          367
+        ],
+        [
+          389,
+          409
+        ],
+        [
+          461,
+          486
+        ]
+      ],
+      "observation": "Edit handles/weights/channels and rotations; declarations only."
+    },
+    {
+      "path": "Anim/CreatureBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/CreatureBlock.h",
+      "bytes": 4035,
+      "sha256": "958b8dbc70774f76cc47c76654714651a9b33b0c97278bfae1e4f3ceea5c1ca2",
+      "selected_line_ranges_inclusive": [
+        [
+          31,
+          42
+        ],
+        [
+          44,
+          77
+        ]
+      ],
+      "observation": "Eight declared deform slots with unknown fields; not a proven runtime maximum."
+    },
+    {
+      "path": "rw4/RWMorphHandle.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWMorphHandle.java",
+      "bytes": 2244,
+      "sha256": "4264122df72932d20eb27f8a6347c353a8dd6149d6068706dccc51353e1c3005",
+      "selected_line_ranges_inclusive": [
+        [
+          31,
+          37
+        ],
+        [
+          44,
+          60
+        ]
+      ],
+      "observation": "Handle ID, start/end position, default time and animation reference."
+    },
+    {
+      "path": "rw4/RWKeyframeAnim.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWKeyframeAnim.java",
+      "bytes": 7401,
+      "sha256": "0745328bba8643c6f0387bc37459d2a6afd76108b962945ed5cd310a88a2c580",
+      "selected_line_ranges_inclusive": [
+        [
+          36,
+          69
+        ],
+        [
+          77,
+          149
+        ],
+        [
+          151,
+          161
+        ],
+        [
+          165,
+          231
+        ]
+      ],
+      "observation": "LocRot, LocRotScale and BlendFactor keyframe representations."
+    },
+    {
+      "path": "anim/RigblockComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/RigblockComponent.java",
+      "bytes": 8010,
+      "sha256": "259ce6cea41bd5a871840222069b0caf866b1345812cb5c29135b0942c002705",
+      "selected_line_ranges_inclusive": [
+        [
+          43,
+          66
+        ],
+        [
+          85,
+          110
+        ],
+        [
+          149,
+          168
+        ]
+      ],
+      "observation": "Scalar value/weight with two interpolators; capability to deform IDs and tool slot mapping."
+    },
+    {
+      "path": "anim/AnimationComponentData.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationComponentData.java",
+      "bytes": 3517,
+      "sha256": "c222390d2338e33c19325398fd6f5ddd0e89d7301c86c5f284163acd9fc0ce9d",
+      "selected_line_ranges_inclusive": [
+        [
+          34,
+          54
+        ],
+        [
+          60,
+          87
+        ],
+        [
+          90,
+          98
+        ]
+      ],
+      "observation": "Flags/id/key offset/stride/index; no sampler execution."
+    },
+    {
+      "path": "anim/AnimationChannel.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationChannel.java",
+      "bytes": 19403,
+      "sha256": "73c1a794a6199391cc1a622cd4bafd00c0a2ebf8b9846d70a1cdff4d9a950a3c",
+      "selected_line_ranges_inclusive": [
+        [
+          193,
+          199
+        ],
+        [
+          206,
+          255
+        ],
+        [
+          259,
+          328
+        ],
+        [
+          374,
+          391
+        ],
+        [
+          487,
+          537
+        ]
+      ],
+      "observation": "Interleaved keys, contexts and legacy deform slot fixup; no local runtime proof."
+    },
+    {
+      "path": "anim/Interpolator.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/Interpolator.java",
+      "bytes": 3321,
+      "sha256": "7429da6df03c22bc635a1565b2d3de829b8d7889052a2ef667a203e9abab8efe",
+      "selected_line_ranges_inclusive": [
+        [
+          29,
+          59
+        ],
+        [
+          61,
+          103
+        ]
+      ],
+      "observation": "16 bytes: two float factors, two mode bytes and six padding bytes; not a curve evaluation algorithm."
+    },
+    {
+      "path": "rw4/RWBlendShape.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWBlendShape.java",
+      "bytes": 1755,
+      "sha256": "ec1c6eefd2b666fa1bf6541eb4c201558c912c964de83fb858661583c4a7534f",
+      "selected_line_ranges_inclusive": [
+        [
+          15,
+          16
+        ],
+        [
+          23,
+          53
+        ]
+      ],
+      "observation": "Shape ID list and counts; runtime shape-time payload skipped."
+    },
+    {
+      "path": "rw4/RWBlendShapeBuffer.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/rw4/RWBlendShapeBuffer.java",
+      "bytes": 2970,
+      "sha256": "52c0f3a63383bc3ccc9fbede73ed5c0f7864b605e74fa02cdc457306c8987e0f",
+      "selected_line_ranges_inclusive": [
+        [
+          16,
+          28
+        ],
+        [
+          35,
+          67
+        ],
+        [
+          71,
+          96
+        ]
+      ],
+      "observation": "Eleven raw buffer blocks; absolute vs delta interpretation unknown."
+    },
+    {
+      "path": "anim/InfoComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/InfoComponent.java",
+      "bytes": 5286,
+      "sha256": "876c1b3b13783f271910cdf8f7cfaf609bc4b1d155a9f312bddeda6ab2895aed",
+      "selected_line_ranges_inclusive": [
+        [
+          28,
+          75
+        ]
+      ],
+      "observation": "Info key time representation for selected ANIM scalar key read."
+    }
+  ],
+  "limits": [
+    "Editor handle ID, ANIM deform ID and RW shape ID spaces not proven identical.",
+    "No runtime composition, value units/endpoints or blend normalization established.",
+    "No aliasing of unknown SDK floats to edit and dynamic values."
+  ]
+}

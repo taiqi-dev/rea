@@ -1,0 +1,342 @@
+{
+  "kind": "five-land-creature-topics-static-study-and-independent-examples-not-game-runtime",
+  "status": "passed",
+  "test_suites": [
+    {
+      "path": "checks/verify_action_event_reader.py",
+      "passed": 20,
+      "failed": 0,
+      "exit_code": 0,
+      "output": "test_bad_magic (__main__.EventReaderTests.test_bad_magic) ... ok\r\ntest_event_table_bounds (__main__.EventReaderTests.test_event_table_bounds) ... ok\r\ntest_fourth_source_and_unknown_tail_preserved (__main__.EventReaderTests.test_fourth_source_and_unknown_tail_preserved) ... ok\r\ntest_little_endian_layout_and_links (__main__.EventReaderTests.test_little_endian_layout_and_links) ... ok\r\ntest_name_pointer_bounds (__main__.EventReaderTests.test_name_pointer_bounds) ... ok\r\ntest_nonascii_name (__main__.EventReaderTests.test_nonascii_name) ... ok\r\ntest_nonzero_event_range_overflow (__main__.EventReaderTests.test_nonzero_event_range_overflow) ... ok\r\ntest_repeated_references_are_preserved (__main__.EventReaderTests.test_repeated_references_are_preserved) ... ok\r\ntest_research_budget_rejection (__main__.EventReaderTests.test_research_budget_rejection) ... ok\r\ntest_reused_id_does_not_merge_table_entries (__main__.EventReaderTests.test_reused_id_does_not_merge_table_entries) ... ok\r\ntest_selector_filter_is_event_specific (__main__.EventReaderTests.test_selector_filter_is_event_specific) ... ok\r\ntest_short_INFO_stride (__main__.EventReaderTests.test_short_INFO_stride) ... ok\r\ntest_signed_and_float_parameters (__main__.EventReaderTests.test_signed_and_float_parameters) ... ok\r\ntest_size_mismatch (__main__.EventReaderTests.test_size_mismatch) ... ok\r\ntest_truncated_INFO_span (__main__.EventReaderTests.test_truncated_INFO_span) ... ok\r\ntest_unexpected_INFO_identifier (__main__.EventReaderTests.test_unexpected_INFO_identifier) ... ok\r\ntest_unsupported_version (__main__.EventReaderTests.test_unsupported_version) ... ok\r\ntest_unterminated_name (__main__.EventReaderTests.test_unterminated_name) ... ok\r\ntest_unused_nonfinite_float_keeps_diagnostic_class (__main__.EventReaderTests.test_unused_nonfinite_float_keeps_diagnostic_class) ... ok\r\ntest_zero_count_does_not_dereference_start_sentinel (__main__.EventReaderTests.test_zero_count_does_not_dereference_start_sentinel) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 20 tests in 0.271s\r\n\r\nOK\r\n",
+      "script_sha256": "a0e0462551faea2ebe12ec20d0125eb12ee1b4722a7241fc5a3128ed42d8afcd"
+    },
+    {
+      "path": "checks/verify_action_effect_lifecycle_examples.py",
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "output": "test_bad_geometry_and_ordinals_are_diagnostic (__main__.ActionEffectExamples.test_bad_geometry_and_ordinals_are_diagnostic) ... ok\r\ntest_bad_numeric_inputs_are_diagnostic (__main__.ActionEffectExamples.test_bad_numeric_inputs_are_diagnostic) ... ok\r\ntest_cancel_before_marker_releases_unpaid_reservation (__main__.ActionEffectExamples.test_cancel_before_marker_releases_unpaid_reservation) ... ok\r\ntest_cancel_half_volley_keeps_committed_cost_and_effect (__main__.ActionEffectExamples.test_cancel_half_volley_keeps_committed_cost_and_effect) ... ok\r\ntest_dependency_state_checked_before_spawn (__main__.ActionEffectExamples.test_dependency_state_checked_before_spawn) ... ok\r\ntest_detach_after_fire_does_not_revoke_projectile (__main__.ActionEffectExamples.test_detach_after_fire_does_not_revoke_projectile) ... ok\r\ntest_detach_before_fire_invalidates_old_callback (__main__.ActionEffectExamples.test_detach_before_fire_invalidates_old_callback) ... ok\r\ntest_duplicate_ordinals_and_action_reuse_rejected (__main__.ActionEffectExamples.test_duplicate_ordinals_and_action_reuse_rejected) ... ok\r\ntest_duplicate_projectile_impact_not_extra_damage (__main__.ActionEffectExamples.test_duplicate_projectile_impact_not_extra_damage) ... ok\r\ntest_duplicate_same_slot_across_channels (__main__.ActionEffectExamples.test_duplicate_same_slot_across_channels) ... ok\r\ntest_event_at_start_only_once (__main__.ActionEffectExamples.test_event_at_start_only_once) ... ok\r\ntest_explicit_second_swing_and_new_target_life (__main__.ActionEffectExamples.test_explicit_second_swing_and_new_target_life) ... ok\r\ntest_explicit_two_mouth_volley_has_two_ordinals (__main__.ActionEffectExamples.test_explicit_two_mouth_volley_has_two_ordinals) ... ok\r\ntest_frame_skips_marker_but_fires_once (__main__.ActionEffectExamples.test_frame_skips_marker_but_fires_once) ... ok\r\ntest_hit_ledger_excludes_channel_part_ids (__main__.ActionEffectExamples.test_hit_ledger_excludes_channel_part_ids) ... ok\r\ntest_marker_time_must_match_owned_slot (__main__.ActionEffectExamples.test_marker_time_must_match_owned_slot) ... ok\r\ntest_no_overlap_means_no_attack_segment (__main__.ActionEffectExamples.test_no_overlap_means_no_attack_segment) ... ok\r\ntest_non_authoritative_animation_event_cannot_fire (__main__.ActionEffectExamples.test_non_authoritative_animation_event_cannot_fire) ... ok\r\ntest_old_binding_epoch_after_rebind_is_rejected (__main__.ActionEffectExamples.test_old_binding_epoch_after_rebind_is_rejected) ... ok\r\ntest_other_mouth_cannot_create_same_effect (__main__.ActionEffectExamples.test_other_mouth_cannot_create_same_effect) ... ok\r\ntest_rebuild_revision_rejects_old_bound_socket (__main__.ActionEffectExamples.test_rebuild_revision_rejects_old_bound_socket) ... ok\r\ntest_reservations_are_counted_across_actions (__main__.ActionEffectExamples.test_reservations_are_counted_across_actions) ... ok\r\ntest_socket_position_uses_selected_edited_part (__main__.ActionEffectExamples.test_socket_position_uses_selected_edited_part) ... ok\r\ntest_soul_change_rejects_old_control (__main__.ActionEffectExamples.test_soul_change_rejects_old_control) ... ok\r\ntest_target_reached_only_outside_window_is_miss (__main__.ActionEffectExamples.test_target_reached_only_outside_window_is_miss) ... ok\r\ntest_unknown_action_and_slot_have_reasons (__main__.ActionEffectExamples.test_unknown_action_and_slot_have_reasons) ... ok\r\ntest_window_clips_pose_step_before_sweep (__main__.ActionEffectExamples.test_window_clips_pose_step_before_sweep) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 27 tests in 0.099s\r\n\r\nOK\r\n",
+      "script_sha256": "d911b08d7ff3977be97e9841f2f37702c9b09413754483bd6a6145390011249a"
+    },
+    {
+      "path": "checks/verify_mirror_branch_examples.py",
+      "passed": 32,
+      "failed": 0,
+      "exit_code": 0,
+      "output": "................................\r\n----------------------------------------------------------------------\r\nRan 32 tests in 0.430s\r\n\r\nOK\r\n{\"kind\": \"independent-examples-and-reused-json-checks\", \"tests_run\": 32, \"failures\": 0, \"errors\": 0, \"success\": true, \"module_counts\": {\"41\": 16, \"42\": 14, \"reused_evidence\": 2}, \"game_runtime_verified\": false}\r\n",
+      "script_sha256": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2"
+    },
+    {
+      "path": "checks/verify_locomotion_rebuild_examples.py",
+      "passed": 24,
+      "failed": 0,
+      "exit_code": 0,
+      "output": "test_01_long_short_groups (__main__.LocomotionExamples.test_01_long_short_groups) ... ok\r\ntest_02_group_ratio_boundary (__main__.LocomotionExamples.test_02_group_ratio_boundary) ... ok\r\ntest_03_short_legs_limit_body_height (__main__.LocomotionExamples.test_03_short_legs_limit_body_height) ... ok\r\ntest_04_sideways_foot_not_automatically_support (__main__.LocomotionExamples.test_04_sideways_foot_not_automatically_support) ... ok\r\ntest_05_no_feet_requires_explicit_mode (__main__.LocomotionExamples.test_05_no_feet_requires_explicit_mode) ... ok\r\ntest_06_stop_does_not_freeze_airborne_foot (__main__.LocomotionExamples.test_06_stop_does_not_freeze_airborne_foot) ... ok\r\ntest_07_failed_landing_not_fake_stance (__main__.LocomotionExamples.test_07_failed_landing_not_fake_stance) ... ok\r\ntest_08_turning_has_nonzero_hip_speed (__main__.LocomotionExamples.test_08_turning_has_nonzero_hip_speed) ... ok\r\ntest_09_transition_preserves_root_and_retained_anchor (__main__.LocomotionExamples.test_09_transition_preserves_root_and_retained_anchor) ... ok\r\ntest_10_continuous_edits_coalesce_pending (__main__.RebuildExamples.test_10_continuous_edits_coalesce_pending) ... ok\r\ntest_11_late_job_after_edit_rejected (__main__.RebuildExamples.test_11_late_job_after_edit_rejected) ... ok\r\ntest_12_undo_uses_new_generation (__main__.RebuildExamples.test_12_undo_uses_new_generation) ... ok\r\ntest_13_redo_does_not_accept_old_matching_digest_job (__main__.RebuildExamples.test_13_redo_does_not_accept_old_matching_digest_job) ... ok\r\ntest_14_mixed_mesh_bind_capability_bundle_refused (__main__.RebuildExamples.test_14_mixed_mesh_bind_capability_bundle_refused) ... ok\r\ntest_15_cancel_is_request_not_completion_guarantee (__main__.RebuildExamples.test_15_cancel_is_request_not_completion_guarantee) ... ok\r\ntest_16_duplicate_completion_no_second_release (__main__.RebuildExamples.test_16_duplicate_completion_no_second_release) ... ok\r\ntest_17_cleanup_failure_retains_ownership (__main__.RebuildExamples.test_17_cleanup_failure_retains_ownership) ... ok\r\ntest_18_remapping_uses_stable_identity (__main__.RebuildExamples.test_18_remapping_uses_stable_identity) ... ok\r\ntest_19_removed_executor_not_substituted (__main__.RebuildExamples.test_19_removed_executor_not_substituted) ... ok\r\ntest_20_new_edit_after_undo_discards_redo_branch (__main__.RebuildExamples.test_20_new_edit_after_undo_discards_redo_branch) ... ok\r\ntest_21_valid_current_bundle_installs_all_contracts (__main__.RebuildExamples.test_21_valid_current_bundle_installs_all_contracts) ... ok\r\ntest_22_empty_or_partial_bundle_refused (__main__.RebuildExamples.test_22_empty_or_partial_bundle_refused) ... ok\r\ntest_23_installed_cleanup_failure_cannot_publish_again (__main__.RebuildExamples.test_23_installed_cleanup_failure_cannot_publish_again) ... ok\r\ntest_24_superseded_cleanup_retry_cannot_reprocess_result (__main__.RebuildExamples.test_24_superseded_cleanup_retry_cannot_reprocess_result) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 24 tests in 0.066s\r\n\r\nOK\r\n",
+      "script_sha256": "7b520a76e5852bf52f0838475b0fb6ba737c70469f356269966329c2b52033a5"
+    },
+    {
+      "path": "checks/verify_five_topic_event_evidence.py",
+      "passed": 8,
+      "failed": 0,
+      "exit_code": 0,
+      "output": "test_INFO_raw_words_and_indexes (__main__.EventEvidenceConsistency.test_INFO_raw_words_and_indexes) ... ok\r\ntest_actual_first_only_is_event_specific (__main__.EventEvidenceConsistency.test_actual_first_only_is_event_specific) ... ok\r\ntest_aggregate_counts_and_nonzero_ranges (__main__.EventEvidenceConsistency.test_aggregate_counts_and_nonzero_ranges) ... ok\r\ntest_event_raw_layout_and_selector_words (__main__.EventEvidenceConsistency.test_event_raw_layout_and_selector_words) ... ok\r\ntest_exact_eight_records_are_existing_selected_resources (__main__.EventEvidenceConsistency.test_exact_eight_records_are_existing_selected_resources) ... ok\r\ntest_public_source_locators_and_no_REA_claim (__main__.EventEvidenceConsistency.test_public_source_locators_and_no_REA_claim) ... ok\r\ntest_reader_and_prior_identity (__main__.EventEvidenceConsistency.test_reader_and_prior_identity) ... ok\r\ntest_spit_same_ID_is_different_event_index (__main__.EventEvidenceConsistency.test_spit_same_ID_is_different_event_index) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 8 tests in 0.867s\r\n\r\nOK\r\n",
+      "script_sha256": "2f8069da7976a4175d85f142dc0a39150b6c6634e973ddc9633a101a883c68bf"
+    }
+  ],
+  "passed": 111,
+  "game_runtime_tests_run": false,
+  "native_functions_recovered": false,
+  "actual_new_local_reads": {
+    "packages": 2,
+    "selected_existing_ANIM_records": 8,
+    "event_records": 60,
+    "INFO_rows": 770,
+    "nonzero_INFO_ranges": 48,
+    "zero_count_INFO_rows": 722,
+    "event_index_reference_occurrences": 60,
+    "repeated_same_index_in_sample": 0,
+    "EXE_full_file_hash_rechecked": true,
+    "EXE_PE_and_version_metadata_reused": true
+  },
+  "independent_scope": {
+    "action_events_lifecycle": 27,
+    "mirroring": 16,
+    "branched_limbs": 14,
+    "reused_local_evidence_in_mirror_branch_suite": 2,
+    "unusual_locomotion": 9,
+    "editor_rebuild": 15,
+    "event_format_reader": 20,
+    "event_record_consistency": 8
+  },
+  "not_performed": [
+    "Game startup, attach or native provider trace",
+    "Private saves or proprietary full asset export",
+    "User product implementation",
+    "Repository production build/tests: study documents and research checks only",
+    "Install, configuration change, target modification or Git writes"
+  ],
+  "remaining_unknowns": [
+    "Original damage/event consumers and runtime deduplication/cancellation",
+    "Original selected-part source to final hit/spawn body mapping",
+    "Original mirror/installation transform consumers and branched goal arbitration",
+    "Original hover/crawl thresholds and locomotion transition controller",
+    "Original Undo/cache/bake completion publication and cancel guarantees"
+  ],
+  "workflow_diagnostics": [
+    "One read-only PowerShell foreach pipeline caused ParserError; corrected by collecting rows before formatting",
+    "Final parallel shells yielded sessions; resumed the same sessions and observed all five completed with exit0"
+  ],
+  "verified_at": "2026-10-12T22:47:06.962025-07:00",
+  "timezone": "America/Los_Angeles",
+  "structure": {
+    "markdown_files": 47,
+    "relative_file_links": 411,
+    "json_files_including_this_record": 83,
+    "fence_blocks_both_styles": 190,
+    "utf8_fences_and_relative_file_links": true,
+    "internal_anchors_checked": false
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 22251,
+      "sha256": "eb10cd347d9957c572e42dfdba4686fdc0cfe5b001852245de0b09f4b56b8bd1"
+    },
+    {
+      "path": "00-evidence-and-scope.md",
+      "bytes": 11803,
+      "sha256": "81e601c04806d599552bb8e1ea48ab164d8c3cf79d644f389655feda409639c3"
+    },
+    {
+      "path": "09-related-systems-and-verification.md",
+      "bytes": 5918,
+      "sha256": "2ebb41bba0487ee0500c62dcc2f6ba0ef00afa8ca5ee89d53aaf09b69da03324"
+    },
+    {
+      "path": "39-same-role-effectors-variant-binding-and-default-mixing.md",
+      "bytes": 21666,
+      "sha256": "abf2d425f562e3e835ed9f9acddee7c76c73fa5359908f8a8a59a0abc269aa62"
+    },
+    {
+      "path": "40-action-events-emitters-hit-windows-and-stale-callbacks.md",
+      "bytes": 19010,
+      "sha256": "f57e4b7393b32993f27c5943349be8d94d120cdf598cee99394d4dfc6b8dce7b"
+    },
+    {
+      "path": "41-mirroring-mount-frames-and-action-coordinates.md",
+      "bytes": 12194,
+      "sha256": "f92a77bc913dd939cf8973261ca3b610055ce3a7631a3d43273dc8441a50db37"
+    },
+    {
+      "path": "42-branched-limbs-shared-joints-and-goal-conflicts.md",
+      "bytes": 15695,
+      "sha256": "28f34cbe2327b9f63b4eadde3424b0d5975cf0da356952289500c867740527e8"
+    },
+    {
+      "path": "43-unusual-bodies-locomotion-modes-and-transitions.md",
+      "bytes": 13277,
+      "sha256": "d40812c5c895e47c04295fcc96d0011a6ca96a04c59933d1abf830b700afa429"
+    },
+    {
+      "path": "44-editor-rebuild-undo-and-animation-cache-consistency.md",
+      "bytes": 15185,
+      "sha256": "302840013203f26342ee3afeb5c0b038d0bde4c23f0e1664f9f26f9b26ec3dab"
+    },
+    {
+      "path": "checks/read_selected_action_events.py",
+      "bytes": 18965,
+      "sha256": "a7207f1166f77a8a31f6b7a00fbb2d74c5096d7922d18b61ef6ad3488c2f4dc9"
+    },
+    {
+      "path": "checks/verify_action_event_reader.py",
+      "bytes": 6936,
+      "sha256": "a0e0462551faea2ebe12ec20d0125eb12ee1b4722a7241fc5a3128ed42d8afcd"
+    },
+    {
+      "path": "checks/verify_action_effect_lifecycle_examples.py",
+      "bytes": 15008,
+      "sha256": "d911b08d7ff3977be97e9841f2f37702c9b09413754483bd6a6145390011249a"
+    },
+    {
+      "path": "checks/verify_five_topic_event_evidence.py",
+      "bytes": 6634,
+      "sha256": "2f8069da7976a4175d85f142dc0a39150b6c6634e973ddc9633a101a883c68bf"
+    },
+    {
+      "path": "checks/verify_mirror_branch_examples.py",
+      "bytes": 15965,
+      "sha256": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2"
+    },
+    {
+      "path": "checks/verify_locomotion_rebuild_examples.py",
+      "bytes": 12510,
+      "sha256": "7b520a76e5852bf52f0838475b0fb6ba737c70469f356269966329c2b52033a5"
+    },
+    {
+      "path": "evidence/local-selected-action-events.json",
+      "bytes": 381153,
+      "sha256": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c"
+    },
+    {
+      "path": "evidence/public-action-event-format-contracts.json",
+      "bytes": 12265,
+      "sha256": "b06217c366936d67cc81174d90d4b3536a288e6ae9ac05a311bffb76de2d6c32"
+    },
+    {
+      "path": "evidence/public-mirror-branch-contracts.json",
+      "bytes": 19126,
+      "sha256": "e03d42ae795f98de3c635cdba5abb91bf941bbc7eca0679b3eba59a27fbb91e1"
+    },
+    {
+      "path": "evidence/mirror-branch-verification.json",
+      "bytes": 6286,
+      "sha256": "cbbb291f244bb4a0fc036ea9abe709869170482e2130d2e1e68c5df9c5cce22e"
+    },
+    {
+      "path": "evidence/public-locomotion-rebuild-contracts.json",
+      "bytes": 8552,
+      "sha256": "388b2cc770bdcbeca296ee3e1c3ac2c77df79255cd14e6100dc9bf2005a02249"
+    },
+    {
+      "path": "evidence/locomotion-rebuild-verification.json",
+      "bytes": 2736,
+      "sha256": "8d698792f63d24a763195ca140f01022d6e6adb761dd37bd60dbfa35bea95316"
+    }
+  ],
+  "target_executable_identity_rechecked": {
+    "path": "E:\\Steam\\steamapps\\common\\Spore\\SporeBin\\SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "execution": false
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "98b3bf5916c3f94b139ae5edda1b6c7acffb2e47c39e3b42b09f57145d12ce68",
+    "captured_file_bytes": 18165,
+    "reference_changes": [
+      {
+        "pointer": "/files/15/sha256",
+        "captured": "d25e6f854fc11adae64b0d5ca4bd8a96e64a89c9f26f0a4c3911d0ed09c1f5d9",
+        "published": "972cc5e0a8729d986844389083054e94417100c621407185d6d1004dac083d0c",
+        "study_file": "evidence/local-selected-action-events.json"
+      },
+      {
+        "pointer": "/files/15/bytes",
+        "captured": 380443,
+        "published": 381153,
+        "study_file": "evidence/local-selected-action-events.json"
+      },
+      {
+        "pointer": "/files/17/sha256",
+        "captured": "f4faf32287958281acf022073bbdf665d193f6dc6c852a0901ebc5662499c405",
+        "published": "e03d42ae795f98de3c635cdba5abb91bf941bbc7eca0679b3eba59a27fbb91e1",
+        "study_file": "evidence/public-mirror-branch-contracts.json"
+      },
+      {
+        "pointer": "/files/17/bytes",
+        "captured": 18289,
+        "published": 19126,
+        "study_file": "evidence/public-mirror-branch-contracts.json"
+      },
+      {
+        "pointer": "/files/18/sha256",
+        "captured": "b5db101192159b6743a3f71218d705ba4d52a2c0d6f4925d59d94db014b3f560",
+        "published": "bd49c00c7248bda6dbc534199b53d2254be1451fd64ced3068d19db748fffbaa",
+        "study_file": "evidence/mirror-branch-verification.json"
+      },
+      {
+        "pointer": "/files/18/bytes",
+        "captured": 3620,
+        "published": 4386,
+        "study_file": "evidence/mirror-branch-verification.json"
+      },
+      {
+        "pointer": "/files/19/sha256",
+        "captured": "e9a42ff726c8175ab234fc2de23f3ff078fd54b94454a9faecc1b1ada06bc24e",
+        "published": "388b2cc770bdcbeca296ee3e1c3ac2c77df79255cd14e6100dc9bf2005a02249",
+        "study_file": "evidence/public-locomotion-rebuild-contracts.json"
+      },
+      {
+        "pointer": "/files/19/bytes",
+        "captured": 8849,
+        "published": 8552,
+        "study_file": "evidence/public-locomotion-rebuild-contracts.json"
+      },
+      {
+        "pointer": "/files/20/sha256",
+        "captured": "f9b2c9249dfcb78c070824d2071cac8caa4798f67463d061d2d5d5693d83a413",
+        "published": "8d698792f63d24a763195ca140f01022d6e6adb761dd37bd60dbfa35bea95316",
+        "study_file": "evidence/locomotion-rebuild-verification.json"
+      },
+      {
+        "pointer": "/files/20/bytes",
+        "captured": 2060,
+        "published": 2736,
+        "study_file": "evidence/locomotion-rebuild-verification.json"
+      }
+    ],
+    "followup_reference_refresh": [
+      {
+        "recorded_at_pacific": "2026-10-13T03:07:56.620444-07:00",
+        "reason": "Remove six trailing blank lines reported by Git whitespace check; preserve source logic and historical values",
+        "reference_changes": [
+          {
+            "pointer": "/test_suites/2/script_sha256",
+            "captured": "2507b559b62f7f9deb1abca99ad3581d7a38adeb5a1ea1edb8097e79da530b54",
+            "published": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2",
+            "study_file": "checks/verify_mirror_branch_examples.py"
+          },
+          {
+            "pointer": "/files/5/sha256",
+            "captured": "4921aaba62db47bc3378e8233ac3d14bcb60b2f9c3ad62cca8df019c035b5735",
+            "published": "f92a77bc913dd939cf8973261ca3b610055ce3a7631a3d43273dc8441a50db37",
+            "study_file": "41-mirroring-mount-frames-and-action-coordinates.md"
+          },
+          {
+            "pointer": "/files/5/bytes",
+            "captured": 12195,
+            "published": 12194,
+            "study_file": "41-mirroring-mount-frames-and-action-coordinates.md"
+          },
+          {
+            "pointer": "/files/6/sha256",
+            "captured": "0f7f68ec354eba96b01157a4f186cd78df1f4174f7de16b66e4a96a118fc45ba",
+            "published": "28f34cbe2327b9f63b4eadde3424b0d5975cf0da356952289500c867740527e8",
+            "study_file": "42-branched-limbs-shared-joints-and-goal-conflicts.md"
+          },
+          {
+            "pointer": "/files/6/bytes",
+            "captured": 15696,
+            "published": 15695,
+            "study_file": "42-branched-limbs-shared-joints-and-goal-conflicts.md"
+          },
+          {
+            "pointer": "/files/13/sha256",
+            "captured": "2507b559b62f7f9deb1abca99ad3581d7a38adeb5a1ea1edb8097e79da530b54",
+            "published": "737445a9f0b07813f994ea5bf045a2fe0714af80406cccb99ef0893427a382f2",
+            "study_file": "checks/verify_mirror_branch_examples.py"
+          },
+          {
+            "pointer": "/files/13/bytes",
+            "captured": 15966,
+            "published": 15965,
+            "study_file": "checks/verify_mirror_branch_examples.py"
+          },
+          {
+            "pointer": "/files/18/sha256",
+            "captured": "bd49c00c7248bda6dbc534199b53d2254be1451fd64ced3068d19db748fffbaa",
+            "published": "cbbb291f244bb4a0fc036ea9abe709869170482e2130d2e1e68c5df9c5cce22e",
+            "study_file": "evidence/mirror-branch-verification.json"
+          },
+          {
+            "pointer": "/files/18/bytes",
+            "captured": 4386,
+            "published": 6286,
+            "study_file": "evidence/mirror-branch-verification.json"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "kind": "research-document-and-independent-example-verification-not-game-runtime",
+  "time": {
+    "utc": "2026-10-13T00:29:24.364682+00:00",
+    "pacific": "2026-10-12T17:29:24.364682-07:00",
+    "authority": "local-clock",
+    "timezone": "America/Los_Angeles"
+  },
+  "scope": "31-34 Creature Stage terrain, volume, geometry/hit sync, editor budgets and runtime cost",
+  "target": {
+    "path": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+    "bytes": 20626168,
+    "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+    "rehashed": true
+  },
+  "selected_literals": {
+    "terrain": 37,
+    "editor": 15,
+    "full_bytes_nul_boundary_and_negative_printable_predecessor_verified": true,
+    "preferred_data_addresses_verified": 37
+  },
+  "independent_checks": [
+    {
+      "path": "checks/verify_terrain_contact_examples.py",
+      "tests": 10,
+      "passed": 10
+    },
+    {
+      "path": "checks/verify_body_contact_examples.py",
+      "tests": 12,
+      "passed": 12
+    },
+    {
+      "path": "checks/verify_shape_hit_sync_examples.py",
+      "tests": 12,
+      "passed": 12
+    },
+    {
+      "path": "checks/verify_editor_budget_examples.py",
+      "tests": 12,
+      "passed": 12
+    }
+  ],
+  "total_tests_passed": 46,
+  "execution": "Root executed all four scripts directly with bundled Python; these are independent mathematical/state examples, not original-game or production integration tests.",
+  "original_questions": {
+    "answered": "Historical gait/volume limits and pinned community terrain/model/budget declaration entrances.",
+    "partial": "Original terrain access, editor costs, baking management, LOD-related names and literal presence.",
+    "unknown": [
+      "Actual foot locking/terrain call chain",
+      "Version-specific self-collision compensation",
+      "Original shape-to-navigation/hit/AI update order",
+      "Creature editor limits and cost aggregation",
+      "Real performance, simulation/render LOD policies"
+    ]
+  },
+  "not_performed": [
+    "Game launch or process attach",
+    "Private saved-creature read",
+    "New package resource decoding",
+    "Provider installation, REA build, or configuration change",
+    "Production game implementation or repository software tests",
+    "Physics integration, mesh rendering, continuous 3D sweep, performance benchmarking"
+  ],
+  "documentation_checks": {
+    "markdown_files": 37,
+    "relative_file_links": 268,
+    "evidence_json_files": 55,
+    "utf8_replacement_fences_and_relative_targets": "passed",
+    "internal_anchors": "not checked"
+  },
+  "new_source_manifests": [
+    {
+      "path": "evidence/local-terrain-contact-entry-observations.json",
+      "sha256": "427572a673da142a0843d47ef6839f5d03e391db074bc2c33dcbb0c317f68272"
+    },
+    {
+      "path": "evidence/contact-volume-design-observations.json",
+      "sha256": "c434205765da317efa0c7106b2c0e5dc2e2408eb6db6de72cb71416899809907"
+    },
+    {
+      "path": "evidence/public-shape-hit-sync-entries.json",
+      "sha256": "a784840cbf3d2a6491a3a870017df6693094b49958740c2f9226a1c964ccd5e5"
+    },
+    {
+      "path": "evidence/public-editor-budget-entries.json",
+      "sha256": "910d6e0c61799e1ca6ed114537c6191d663f46445bac190b8b74be565a907798"
+    },
+    {
+      "path": "evidence/local-editor-budget-entry-observations.json",
+      "sha256": "918b30b8eaa96687ac60c30db6065bf1400419565c890fd9ed65c2300be3e55a"
+    }
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "97f34d7a15c7d66bd50c260d72654af3e610334e8bd1c60e3f1e55ad79fa73c5",
+    "captured_file_bytes": 3522,
+    "reference_changes": [
+      {
+        "pointer": "/new_source_manifests/2/sha256",
+        "captured": "cd1eecff1ae00c98168023770722ac4298a9a0a6d9dc616b08f05ca74f854fec",
+        "published": "a784840cbf3d2a6491a3a870017df6693094b49958740c2f9226a1c964ccd5e5",
+        "study_file": "evidence/public-shape-hit-sync-entries.json"
+      }
+    ]
+  }
+}

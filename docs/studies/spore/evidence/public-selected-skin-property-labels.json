@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "module": "36-selected-skin-property-and-effect-labels",
+  "kind": "public-registry-exact-ID-observations",
+  "reaEvidenceId": null,
+  "repository": "Spore-Community/SporeModder-FX",
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "question": "Map four parent-selected PROP field IDs and six effect/parent reference IDs; this record does not read the payloads.",
+  "sources": [
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "lineCount": 6369,
+      "recordCount": 6364,
+      "coverage": "All nonempty non-comment registry records checked for the exact requested IDs; no substring heuristic.",
+      "mappings": [
+        {
+          "requestedDecimal": 11717834,
+          "requestedID": "0x00b2ccca",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 5,
+              "text": "description\t0x00B2CCCA",
+              "name": "description",
+              "registeredID": "0x00b2ccca",
+              "mappingSource": "explicit registry mapping",
+              "calculatedFNV1": "0x6b7119c1",
+              "calculatedMatchesRegistered": false
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 11717835,
+          "requestedID": "0x00b2cccb",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 6,
+              "text": "parent\t0x00B2CCCB",
+              "name": "parent",
+              "registeredID": "0x00b2cccb",
+              "mappingSource": "explicit registry mapping",
+              "calculatedFNV1": "0x5f6317d5",
+              "calculatedMatchesRegistered": false
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 2967496359,
+          "requestedID": "0xb0e066a7",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 3636,
+              "text": "paintThemePaints\t0xB0E066A7",
+              "name": "paintThemePaints",
+              "registeredID": "0xb0e066a7",
+              "mappingSource": "explicit registry mapping",
+              "calculatedFNV1": "0x9a9262d5",
+              "calculatedMatchesRegistered": false
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 2967496360,
+          "requestedID": "0xb0e066a8",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 3637,
+              "text": "paintThemeColor1s\t0xB0E066A8",
+              "name": "paintThemeColor1s",
+              "registeredID": "0xb0e066a8",
+              "mappingSource": "explicit registry mapping",
+              "calculatedFNV1": "0x05289557",
+              "calculatedMatchesRegistered": false
+            }
+          ]
+        }
+      ],
+      "lineCountDefinition": "Number of LF-delimited fragments from complete UTF-8 text, including the trailing empty fragment when present.",
+      "summary": "Four requested property IDs have unique explicit mappings. Their names do not hash to the declared IDs with lowercase FNV-1; explicit registry assignments are retained."
+    },
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "bytes": 2860453,
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "lineCount": 125507,
+      "recordCount": 125272,
+      "coverage": "All nonempty non-comment registry records checked for the exact requested IDs; no substring heuristic.",
+      "mappings": [
+        {
+          "requestedDecimal": 855524854,
+          "requestedID": "0x32fe45f6",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 10936,
+              "text": "skinpaint_base_zebroid",
+              "name": "skinpaint_base_zebroid",
+              "registeredID": "0x32fe45f6",
+              "mappingSource": "computed lowercase FNV-1",
+              "calculatedFNV1": "0x32fe45f6",
+              "calculatedMatchesRegistered": true
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 2327845497,
+          "requestedID": "0x8ac01a79",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 10958,
+              "text": "skinpaint_coat_giraffe",
+              "name": "skinpaint_coat_giraffe",
+              "registeredID": "0x8ac01a79",
+              "mappingSource": "computed lowercase FNV-1",
+              "calculatedFNV1": "0x8ac01a79",
+              "calculatedMatchesRegistered": true
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 540154358,
+          "requestedID": "0x203219f6",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 10905,
+              "text": "skinpaint_detail_giraffeLimbs",
+              "name": "skinpaint_detail_giraffeLimbs",
+              "registeredID": "0x203219f6",
+              "mappingSource": "computed lowercase FNV-1",
+              "calculatedFNV1": "0x203219f6",
+              "calculatedMatchesRegistered": true
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 272011726,
+          "requestedID": "0x103691ce",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 12508,
+              "text": "skinpaint_detail_stripesML",
+              "name": "skinpaint_detail_stripesML",
+              "registeredID": "0x103691ce",
+              "mappingSource": "computed lowercase FNV-1",
+              "calculatedFNV1": "0x103691ce",
+              "calculatedMatchesRegistered": true
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 2356848835,
+          "requestedID": "0x8c7aa8c3",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 10972,
+              "text": "skinpaint_base_melt",
+              "name": "skinpaint_base_melt",
+              "registeredID": "0x8c7aa8c3",
+              "mappingSource": "computed lowercase FNV-1",
+              "calculatedFNV1": "0x8c7aa8c3",
+              "calculatedMatchesRegistered": true
+            }
+          ]
+        },
+        {
+          "requestedDecimal": 2444047411,
+          "requestedID": "0x91ad3433",
+          "matchCount": 1,
+          "matches": [
+            {
+              "line": 10514,
+              "text": "TemplateSkinPaintTheme",
+              "name": "TemplateSkinPaintTheme",
+              "registeredID": "0x91ad3433",
+              "mappingSource": "computed lowercase FNV-1",
+              "calculatedFNV1": "0x91ad3433",
+              "calculatedMatchesRegistered": true
+            }
+          ]
+        }
+      ],
+      "lineCountDefinition": "Number of LF-delimited fragments from complete UTF-8 text, including the trailing empty fragment when present.",
+      "summary": "Six requested file/reference IDs have unique registry-name candidates and equal recalculated lowercase FNV-1 values."
+    }
+  ],
+  "verification": {
+    "sourceDigestMatch": "All full fetched byte digests match the prior fixed source identities.",
+    "exactQuery": "Compared all nonempty non-comment records against exact requested IDs; no substring search.",
+    "propertyIDs": "All four uniquely match explicit assignments; computed name hash differs, which does not invalidate the explicit mapping.",
+    "fileIDs": "All six uniquely match recomputed name hashes.",
+    "fnvAlgorithm": "Lowercase name; 32-bit multiply by 0x01000193 then XOR each character, starting from 0x811C9DC5.",
+    "collisionScope": "Unique within these inspected registry records; this is not proof of global collision freedom or a resource in a package."
+  },
+  "parentProvidedReferenceRoles": [
+    {
+      "role": "Theme paint reference 1",
+      "id": "0x32fe45f6",
+      "registryCandidate": "skinpaint_base_zebroid"
+    },
+    {
+      "role": "Theme paint reference 2",
+      "id": "0x8ac01a79",
+      "registryCandidate": "skinpaint_coat_giraffe"
+    },
+    {
+      "role": "Theme paint reference 3",
+      "id": "0x203219f6",
+      "registryCandidate": "skinpaint_detail_giraffeLimbs"
+    },
+    {
+      "role": "StripeML paint reference",
+      "id": "0x103691ce",
+      "registryCandidate": "skinpaint_detail_stripesML"
+    },
+    {
+      "role": "Base melt paint reference",
+      "id": "0x8c7aa8c3",
+      "registryCandidate": "skinpaint_base_melt"
+    },
+    {
+      "role": "PROP parent reference",
+      "id": "0x91ad3433",
+      "registryCandidate": "TemplateSkinPaintTheme"
+    }
+  ],
+  "roleProvenance": "Roles and requested numeric values were supplied by the parent worker from its separate selected-PROP investigation. This worker independently verifies only registry labels/IDs.",
+  "unknowns": [
+    "Exact resource key/group/type of each bare file identifier without the parent resource context.",
+    "Presence and active use of named references in a selected effect directory.",
+    "Runtime ordering, blending, texture-channel packing and layer execution.",
+    "Whether the parent template supplies additional inherited properties.",
+    "Creature Stage attribution, edit repaint timing and skin seam handling."
+  ],
+  "notPerformed": [
+    "Any local resource payload read or decompression",
+    "Reading other task files",
+    "Game execution/attachment",
+    "Private-save access",
+    "Provider/install/build/configuration changes"
+  ],
+  "risk": "These are exact public label mappings, not original runtime semantics. In particular property names use explicit legacy assignments; calculating a different FNV value must not silently replace their IDs."
+}

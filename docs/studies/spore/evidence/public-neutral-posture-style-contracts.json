@@ -1,0 +1,506 @@
+{
+  "schema_version": 1,
+  "module": 56,
+  "kind": "public-neutral-posture-style-contracts-with-separated-local-evidence-not-REA-Evidence",
+  "rea_evidence_id": null,
+  "target_runtime_verified": false,
+  "scope": "Land Creature editor/rest/idle/context; static research only",
+  "commits": {
+    "SDK": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+    "FX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5"
+  },
+  "files": [
+    {
+      "path": "Spore ModAPI/Spore/Simulator/cSpeciesProfile.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpeciesProfile.h",
+      "bytes": 6236,
+      "sha256": "2003ab3cfcb87549462ba5ffb82ec8b153ce030e463564f2b504591f65b349e3",
+      "lines": 188,
+      "read_ranges": [
+        [
+          1,
+          188
+        ]
+      ],
+      "id": "P01",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "lines": 101,
+      "read_ranges": [
+        [
+          1,
+          101
+        ]
+      ],
+      "id": "P02",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/cEditorAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorAnimWorld.h",
+      "bytes": 1581,
+      "sha256": "fb21faed5ee933bc722992f8c08b06fdfc7af7678d37703be60eb5b7ad302470",
+      "lines": 49,
+      "read_ranges": [
+        [
+          1,
+          49
+        ]
+      ],
+      "id": "P03",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/cAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/cAnimWorld.h",
+      "bytes": 366,
+      "sha256": "05b9420a605dd7c9f06013a0fa9b5c1d310a463fc55a0e27756037cf1420a030",
+      "lines": 21,
+      "read_ranges": [
+        [
+          1,
+          21
+        ]
+      ],
+      "id": "P04",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/SourceCode/Anim/Animations.cpp",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Anim/Animations.cpp",
+      "bytes": 1766,
+      "sha256": "5e816fc1fdb35c518a923a62cc78c6757fb61e93c002509ae5c63bc0760c06b0",
+      "lines": 89,
+      "read_ranges": [
+        [
+          1,
+          89
+        ]
+      ],
+      "id": "P05",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/EditorCreatureController.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorCreatureController.h",
+      "bytes": 2082,
+      "sha256": "ce5d9e601c07815aba4f66ff15b41d03562338e6737bdfb0f6bb24554ab2401b",
+      "lines": 73,
+      "read_ranges": [
+        [
+          1,
+          73
+        ]
+      ],
+      "id": "P06",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/EditorAnimations.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorAnimations.h",
+      "bytes": 382,
+      "sha256": "16bdaef08570cad6d5e76570fd15191efe769a55f07774528b0e657693c5cbb2",
+      "lines": 20,
+      "read_ranges": [
+        [
+          1,
+          20
+        ]
+      ],
+      "id": "P07",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Editors/cEditorResourceProperties.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorResourceProperties.h",
+      "bytes": 617,
+      "sha256": "44ac7de2615be959f4cdbc230370e5e5fe17774ca021a58eebe3f478c7e75388",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "id": "P08",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "lines": 6368,
+      "scan_pattern": "modelCapability(?:Posture|Mean)|upright|neutral|stance|idle_walk_lookat_(?:start|loop|stop)|editorCreature.*(?:Idle|Pose)|creature.*(?:Idle|Posture|Pose)|editor.*posture",
+      "id": "P09",
+      "evidence_kind": "community registry labels, cross-editor names"
+    },
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "bytes": 2860453,
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "lines": 125506,
+      "scan_pattern": "modelCapability(?:Posture|Mean)|upright|neutral|stance|idle_walk_lookat_(?:start|loop|stop)|editorCreature.*(?:Idle|Pose)|creature.*(?:Idle|Posture|Pose)|editor.*posture",
+      "id": "P10",
+      "evidence_kind": "community registry labels, cross-editor names"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "lines": 267,
+      "read_ranges": [
+        [
+          30,
+          75
+        ],
+        [
+          122,
+          158
+        ],
+        [
+          209,
+          247
+        ]
+      ],
+      "id": "P11",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    },
+    {
+      "path": "Spore ModAPI/Spore/Anim/anim_cid.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/anim_cid.h",
+      "bytes": 1896,
+      "sha256": "05c17775a188df717ddacaf4196faad1381d045c2fa301ce84b3c81d7f57499a",
+      "lines": 76,
+      "read_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "id": "P12",
+      "evidence_kind": "community SDK declarations or explicit helper code, not Maxis source"
+    }
+  ],
+  "contracts": [
+    {
+      "source": "P01",
+      "locator": "cSpeciesProfile.h52–70,93–118,130–131",
+      "fact": "Species profile represents hunting/strafe modes, body-role count-like floats, mMeanness, and mPoseLevel plus other separate skill levels/preferences.",
+      "limit": "No neutral posture, upright heuristic or Posture-to-standing-height function. These declarations do not establish personality or aggregation. Later GA/tribe fields excluded from land conclusions."
+    },
+    {
+      "source": "P02",
+      "locator": "cCreatureDataResource.h54–78,84–90",
+      "fact": "Rigblock data links parent/symmetric indices, scale/orientation/position, and separate capability/morph indexing. Whole resource has capability IDs/levels and animation IDs/values/weights.",
+      "limit": "Morphological/rest/animation representation present, but no constructor/evaluator from rest to default neutral standing pose; arrays cannot be assumed to encode personality."
+    },
+    {
+      "source": "P03",
+      "locator": "cEditorAnimWorld.h20–35",
+      "fact": "Editor world exposes target position/angle and links creature controllers, animation/model worlds, and EditorAnimations. Comment names editorAnims~ PROP group0x40606300.",
+      "limit": "Group is only a source declaration entry. No corresponding new PROP was read; no automatic upright/idle selection implementation."
+    },
+    {
+      "source": "P04",
+      "locator": "cAnimWorld.h1–21",
+      "fact": "Selected class body is commented-out stub.",
+      "limit": "Not a consumer or algorithm for posture."
+    },
+    {
+      "source": "P05",
+      "locator": "Animations.cpp26–88",
+      "fact": "Community helper explicitly recognizes ordinary idle_walk_lookat_start04866d8e, loop04866dab, stop04866db9, along with other labelled IDs.",
+      "limit": "This is community classification code, not a original game dispatch trace. CSA/epic IDs not selected. Ordinary group names were followed to actual ANIM instances in separate local evidence."
+    },
+    {
+      "source": "P06",
+      "locator": "EditorCreatureController.h26–59",
+      "fact": "Update(int dt), current animation ID, current/target position, angle and look-at plus smooth flag are declared.",
+      "limit": "No neutral posture or parameter-to-bone-pose update body; seconds unit of dt and comment guesses not promoted to facts."
+    },
+    {
+      "source": "P07",
+      "locator": "EditorAnimations.h9–19",
+      "fact": "EditorAnimations holds property lists.",
+      "limit": "No list contents or editor default policy recovered."
+    },
+    {
+      "source": "P08",
+      "locator": "cEditorResourceProperties.h7–20",
+      "fact": "Selected visible fields are model/score/skin effect/seed/color and padding.",
+      "limit": "No named neutral posture field in this bounded declaration; padding does not establish absence in native runtime."
+    },
+    {
+      "source": "P09",
+      "locator": "reg_property.txt478,1695,1854,2249–2250,2806,3650,3658",
+      "fact": "Explicit registry IDs exist for modelRemainUpright0201636b, modelRemainUprightOnTop04ed8506, editorCreatureIdleActivationTime0525ea2e, modelCreatureStaticPoseAnim059348b4, modelCreatureStaticPoseTime059348b5, modelCreatureStaticPoseWeight06861c1e, modelCapabilityMeanb1c3e5b6, modelCapabilityPostureb1c3e5c4.",
+      "limit": "Names/IDs alone; no values/native consumers. modelRemainUpright generic placement label is not ANIM uprightSpine. stance substring also matched distance: those false positives and non-land/UI names excluded."
+    },
+    {
+      "source": "P10",
+      "locator": "reg_file.txt4316–4317,4419–4421,4442–4443,4452–4454,112509–112512,112520",
+      "fact": "Registry labels include idle attack/social stance, idle_neutral1..3, ordinary lookat start/loop/stop, creature_idle_lookaround01..04 and creature_rest_pose.",
+      "limit": "Only the three ordinary lookat groups were resolved/read. Other names remain entries, not confirmed body reference/default/alert/charge consumers. Deriving FNV does not replace explicit TLSA groupID."
+    },
+    {
+      "source": "P11",
+      "locator": "AnimatedCreature.h51–74,128–151",
+      "fact": "Play/LoadAnimation documented inputs are TLSA group IDs; SetAnimationIdle and SetAnimationBlendInTime declared. Creature instance has position/orientation, p_cid, model and anim-world pointers.",
+      "limit": "No standing-height, static-pose evaluation, alert-style or soul personality implementation."
+    },
+    {
+      "source": "P12",
+      "locator": "anim_cid.h31–57,59–74",
+      "fact": "anim_block links compiled CreatureBlock, instance container and parent, with bboxCenter/orientation and unknown fields. cid links csd, creature and block vector.",
+      "limit": "Do not rename unknown fields as neutral rest/pose parameters. Exact ownership/evaluation and engine ABI not validated."
+    }
+  ],
+  "developer_paper": {
+    "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+    "bytes": 3896086,
+    "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+    "pages": 11,
+    "actual_read_pages_one_based": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "locators": [
+      "PDF2§1.2 character terminology/rest",
+      "PDF3§3.1–3.2 posing/generalization",
+      "PDF4§3.2.2 movement modes",
+      "PDF6§4.1.1 branching"
+    ],
+    "summary": "Historical rest pose is the player-created body configuration, not a predefined universal pose; reasonable rest is assumed. Motion can use rest-relative, size/limb-scaled, ground-relative or target-relative coordinate modes. All modes preserve rest as origin. UprightSpine evaluates a predominantly prone/upright heuristic to branch binding; threshold code absent. This concerns morphology and animation semantics, not personality inference.",
+    "limits": [
+      "Historical developer design, not current local native trace.",
+      "Does not specify editor default neutral pose, capability Posture consumer or player soul-style system."
+    ]
+  },
+  "local_evidence": [
+    {
+      "path": "evidence/local-selected-idle-posture-metadata.json",
+      "bytes": 150396,
+      "sha256": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+      "read_kind": "fresh exact selected TLSA/ANIM bounded read",
+      "read_scope": "two known TLSA keys fully consumed;3 selected groups each;6 referenced ANIM header/channel/component metadata and0x154 whole predicate; no curve/event values"
+    },
+    {
+      "path": "evidence/local-selected-capability-contributions.json",
+      "bytes": 34429,
+      "sha256": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+      "read_kind": "existing evidence reused",
+      "read_scope": "four selected part direct capability fields, particularly Posture1/2"
+    },
+    {
+      "path": "evidence/local-selected-animation-predicates.json",
+      "bytes": 1534277,
+      "sha256": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94",
+      "read_kind": "existing evidence reused",
+      "read_scope": "summary46 resource versions zero whole predicate masks"
+    },
+    {
+      "path": "evidence/public-animation-clock-contracts.json",
+      "bytes": 22526,
+      "sha256": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9",
+      "read_kind": "existing evidence reused",
+      "read_scope": "source/clock boundaries; not used as neutral posture consumer"
+    }
+  ],
+  "new_local_read": {
+    "files": "local-selected-idle-posture-metadata.json",
+    "resources": {
+      "TLSA": 2,
+      "selected_groups": 6,
+      "ANIM": 6,
+      "channels": 51
+    },
+    "ANIM_keys": [
+      "ee17c6ad:00000000:0921d851",
+      "ee17c6ad:00000000:cb38a593",
+      "ee17c6ad:00000000:cee6aab3"
+    ],
+    "packages": [
+      "Spore_Game.package",
+      "PatchData.package"
+    ],
+    "group_to_instance": {
+      "04866d8e": "cb38a593",
+      "04866dab": "cee6aab3",
+      "04866db9": "0921d851"
+    },
+    "idle_flags": [
+      false,
+      true,
+      false
+    ],
+    "endMode_raw": [
+      0,
+      1,
+      0
+    ],
+    "allowLocomotion": true,
+    "length_raw_by_name": {
+      "start": 21,
+      "loop": 30,
+      "stop": 14
+    },
+    "all_whole_predicates_zero": true,
+    "Game_channels_each": 11,
+    "Patch_channels_each": 6,
+    "scope_limit": "metadata; header predicate only; neither curve samples nor native body evaluation"
+  },
+  "bounded_negative": {
+    "four_part_Posture": "Direct values1/2 on selected bird hands, not standing-height or character-style mapping. Other two selected mouths have no directly selected Posture field; missing not zero/default.",
+    "old_predicate_scope": "45:46 selected combat ANIM whole masks zero;56:6 selected idle whole masks zero. Zero selected mask is not upright=false for any body.",
+    "neutral_consumer": "No neutral/stance algorithm body in inspected declarations; unknown SDK padding preserved.",
+    "default_deform": "39 PCTP values/weights presence does not establish consumer mapping to posture."
+  },
+  "reader_format_reuse": [
+    "public-action-channel-format-sources.json",
+    "public-tlsa-action-format-sources.json",
+    "public-animation-predicate-contracts.json"
+  ],
+  "native_provider_blocker": "Previously unavailable REA/native provider; no setup/dynamic attempt, no fake Evidence ID.",
+  "unknowns": [
+    "Posture capability to social Pose binding/aggregation",
+    "modelCreatureStaticPose values/default/consumer",
+    "editor default standing/root height and ground-fit procedure",
+    "UprightSpine native threshold/reference/current-pose input",
+    "idle/alert/charge task transition policy",
+    "native personality/meanness to animation selection/style",
+    "ANIM idle pose curve output/runtime mix and package winner",
+    "how authored rest is retained/recomputed by native compiler"
+  ],
+  "not_performed": [
+    "private saves",
+    "game launch/attach",
+    "full animation/mesh/texture exports",
+    "nonselected package payload scanning",
+    "new editor PROP payload read",
+    "install/config/provider setup",
+    "Git write"
+  ],
+  "independent_design": {
+    "layers": [
+      "immutable shape reference",
+      "body-feasible neutral stance",
+      "dynamic task pose",
+      "soul style proposal"
+    ],
+    "units": "own metres/degrees/seconds",
+    "leg_segments_metres": [
+      0.6,
+      0.6
+    ],
+    "hip_foot_horizontal_metres": 0.4,
+    "knee_flexion_limits_degrees": [
+      20,
+      100
+    ],
+    "height_interval_metres": [
+      0.6595250655432363,
+      1.1120155965479324
+    ],
+    "neutral": {
+      "height": 0.9,
+      "chestPitch": 8,
+      "gazeYaw": 0,
+      "handA": 0.1
+    },
+    "cautious": {
+      "height": 0.82,
+      "chestPitch": 4,
+      "gazeYaw": 20,
+      "handA": 0.1,
+      "stride": 0.45,
+      "windup": 0.5
+    },
+    "fierce": {
+      "height": 1,
+      "chestPitch": 12,
+      "gazeYaw": 0,
+      "handA": 0.3,
+      "stride": 0.7,
+      "windup": 0.25
+    },
+    "handoff_seconds": 0.4,
+    "current_velocity_hand": 0.2,
+    "midpoint": {
+      "height": 0.91,
+      "chestPitch": 8,
+      "gazeYaw": 10,
+      "handA": 0.21,
+      "heightVelocity": 0.675,
+      "handVelocity": 0.7
+    },
+    "new_generation": 8,
+    "gait_phase_preserved": 0.37,
+    "limitations": "Pure planar equal-length-leg geometry, known rectangular support hull and independent scalar goals; not a full FK/IK/terrain solver or production soul runtime."
+  },
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "7cf8dcd72c2b79a706b541db99b7838dd2c3c94c646d9de551d3de41718878d7",
+    "captured_file_bytes": 18806,
+    "reference_changes": [
+      {
+        "pointer": "/local_evidence/0/sha256",
+        "captured": "e526dec7880fd6626883484b55f3e31b052584bb1a8a4ca0aea0fc032c1fe05d",
+        "published": "e5828dcb96990c655128650ab7e7ff761fd2a256f1ea9441db7286615ba3d10f",
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      },
+      {
+        "pointer": "/local_evidence/0/bytes",
+        "captured": 154462,
+        "published": 150396,
+        "study_file": "evidence/local-selected-idle-posture-metadata.json"
+      },
+      {
+        "pointer": "/local_evidence/1/sha256",
+        "captured": "24f41a841ea7f6f6d09700ee1be6d3ef8157b32c5e72ec003b465837661591f4",
+        "published": "ca9c5ea3ff3522bb452351ae705fdd5591f48b59edf64287da8603cc11ff1989",
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/local_evidence/1/bytes",
+        "captured": 35160,
+        "published": 34429,
+        "study_file": "evidence/local-selected-capability-contributions.json"
+      },
+      {
+        "pointer": "/local_evidence/2/sha256",
+        "captured": "120e9964177ea916751eda169d7e1f241c137ea43a869380f629ba701dbb243e",
+        "published": "79f5f1bb9a6611bbf96ba16ad60428a21959b0fb266b0d10e2486f413bfaee94",
+        "study_file": "evidence/local-selected-animation-predicates.json"
+      },
+      {
+        "pointer": "/local_evidence/2/bytes",
+        "captured": 1573013,
+        "published": 1534277,
+        "study_file": "evidence/local-selected-animation-predicates.json"
+      },
+      {
+        "pointer": "/local_evidence/3/sha256",
+        "captured": "eb8ec4e34d105dd185f8f11ce5c20eb8e0ca561f4c4ea2cad60be6d03386b5ec",
+        "published": "d4c33c076856fed11649e4867177162392c7269ef63df11c6e0be06bab84cab9",
+        "study_file": "evidence/public-animation-clock-contracts.json"
+      },
+      {
+        "pointer": "/local_evidence/3/bytes",
+        "captured": 19574,
+        "published": 22526,
+        "study_file": "evidence/public-animation-clock-contracts.json"
+      }
+    ]
+  }
+}

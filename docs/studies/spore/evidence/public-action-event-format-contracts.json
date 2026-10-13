@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "module": "40-action-events-and-emitter-binding",
+  "kind": "pinned-public-format-contracts-not-runtime",
+  "commits": {
+    "SporeModderFX": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+    "SporeModAPI": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19"
+  },
+  "sources": [
+    {
+      "path": "src/sporemodder/file/anim/SPAnimation.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/SPAnimation.java",
+      "bytes": 8639,
+      "sha256": "1497f34e425a7199d590005f023dc3253fcb8184d36fd8161e822c57aa5c7cc3",
+      "line_count": 284,
+      "evidence_kind": "community-format-source",
+      "identity": "Complete public source bytes fetched and hashed; selected relevant lines inspected.",
+      "observations": [
+        {
+          "lines": [
+            79,
+            80,
+            81,
+            82,
+            100,
+            101,
+            103,
+            104,
+            105
+          ],
+          "fact": "Animation header provides event count/pointer and channel table; event records have0x60stride."
+        },
+        {
+          "lines": [
+            108,
+            111,
+            112,
+            113
+          ],
+          "fact": "Community reader applies version fixups to channels after loading; our raw event reader does not apply these."
+        },
+        {
+          "lines": [
+            69,
+            70,
+            143
+          ],
+          "fact": "FX reader leaves0x11c unread; writer serializes an LEInt constant0x3d088889. SDK declares this word as float frameLength. Preserve raw word plus explicitly labelled float candidate, without asserting scheduler units."
+        }
+      ],
+      "summary": "Header addresses and table stride link selected ANIM resources to event records; this does not identify gameplay consumers."
+    },
+    {
+      "path": "src/sporemodder/file/anim/InfoComponent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/InfoComponent.java",
+      "bytes": 5286,
+      "sha256": "876c1b3b13783f271910cdf8f7cfaf609bc4b1d155a9f312bddeda6ab2895aed",
+      "line_count": 160,
+      "evidence_kind": "community-format-source",
+      "identity": "Complete public source bytes fetched and hashed; selected relevant lines inspected.",
+      "observations": [
+        {
+          "lines": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "fact": "INFO stores raw time, unknown word, unsigned16 start index, unsigned8 event count, padding, flags and final padding."
+        },
+        {
+          "lines": [
+            71,
+            72,
+            73,
+            74,
+            139,
+            140,
+            141,
+            143,
+            144,
+            145,
+            146,
+            148,
+            149
+          ],
+          "fact": "Writer addresses eventStartIndex+i; parser appends referenced events contiguously and diagnoses undefined event names."
+        }
+      ],
+      "summary": "INFO is a keyframe-to-event-table linkage. Its raw time is retained without asserting scheduler frequency, time units or damage timing."
+    },
+    {
+      "path": "Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "line_count": 267,
+      "evidence_kind": "community-SDK-declaration",
+      "identity": "Complete public source bytes fetched and hashed; selected relevant lines inspected.",
+      "observations": [
+        {
+          "lines": [
+            253,
+            254,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261
+          ],
+          "fact": "AnimationMessage contains messageID/name/creature/blockIndex and two parameters; SDK describes animation-originated messages."
+        }
+      ],
+      "summary": "SDK message data exposes a possible block-associated handoff to consumers. No consumer, selected-version ABI or damage-handler call chain was recovered."
+    },
+    {
+      "path": "src/sporemodder/file/anim/AnimationEvent.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/anim/AnimationEvent.java",
+      "bytes": 28346,
+      "sha256": "84d425744402b2a4f76fe3ef77d1716888d5d384db95a070a8c4abd6a0bc7333",
+      "line_count": 742,
+      "evidence_kind": "community-format-source",
+      "identity": "Complete public source bytes fetched and hashed; selected relevant lines inspected.",
+      "observations": [
+        {
+          "lines": [
+            37,
+            39,
+            40,
+            41,
+            42,
+            54,
+            55,
+            56,
+            57,
+            66,
+            67,
+            68,
+            69,
+            86,
+            87,
+            88,
+            89,
+            91,
+            93,
+            94,
+            95,
+            97,
+            98
+          ],
+          "fact": "Format declares event type masks, disabled/predicate/chance flags and typed parameter masks; several type meanings remain explicitly unknown."
+        },
+        {
+          "lines": [
+            116,
+            118,
+            120,
+            121,
+            122,
+            126,
+            156,
+            158,
+            159,
+            160,
+            161,
+            169,
+            170
+          ],
+          "fact": "Event selectors expose default, standardBodies and other-creature modes, firstOnly and allExceptFirst filters. Default-channel-bodies and match-count meanings are community comments."
+        },
+        {
+          "lines": [
+            263,
+            264,
+            265,
+            266,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            282,
+            292,
+            293,
+            295,
+            296,
+            297,
+            298,
+            301,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            316,
+            317,
+            318,
+            353,
+            354
+          ],
+          "fact": "Event contains four12byte selectors, archetype/group/ID/name pointer/parameters/maxSqrDist/predicate and unknown tail."
+        },
+        {
+          "lines": [
+            507,
+            508,
+            509,
+            510,
+            735,
+            736,
+            737,
+            738
+          ],
+          "fact": "Named roles are positionSource, rotationSource, scaleSource and source4; source4 is not renamed target."
+        }
+      ],
+      "summary": "Event-specific selectors can represent where effects are spawned, including first-only filtering. This does not recover channel binding cardinality, projectile ownership, collision damage or event consumers."
+    },
+    {
+      "path": "Anim/SPAnimation.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/SPAnimation.h",
+      "bytes": 1069,
+      "sha256": "b38771106d6efae667e04a71d671f7b77f08b5c357cd66ead2a0395809b73903",
+      "line_count": 55,
+      "evidence_kind": "community-SDK-declaration",
+      "identity": "Complete public source bytes fetched and hashed; selected relevant lines inspected.",
+      "observations": [
+        {
+          "lines": [
+            33,
+            34,
+            36,
+            37,
+            38,
+            39
+          ],
+          "fact": "SDK labels frameLength/length and vfx count/pointer/channel table at the same structural offsets; channel declaration is incomplete."
+        }
+      ],
+      "summary": "SDK header provides independent declaration-level layout support; vfx naming is broader/less precise than the selected format reader event list."
+    }
+  ],
+  "layout": {
+    "endianness": "little",
+    "header": {
+      "eventCount": "0x13c",
+      "eventPtr": "0x140",
+      "channelCount": "0x144",
+      "channelPtr": "0x148",
+      "length": "0x120",
+      "frameLengthWord": "0x11c",
+      "frameLengthWireRepresentation": "FX writer LEInt raw0x3d088889; SDK float declaration is a separate interpretation."
+    },
+    "event": {
+      "stride": "0x60",
+      "flags": "0x00",
+      "selectors": [
+        {
+          "role": "positionSource",
+          "offset": "0x04"
+        },
+        {
+          "role": "rotationSource",
+          "offset": "0x10"
+        },
+        {
+          "role": "scaleSource",
+          "offset": "0x1c"
+        },
+        {
+          "role": "source4",
+          "offset": "0x28"
+        }
+      ],
+      "selector_size": 12,
+      "selector_fields": {
+        "flags": "0x00",
+        "selectFlags": "0x04",
+        "selectCapability": "0x08"
+      },
+      "archetype": "0x34",
+      "eventGroup": "0x38",
+      "id": "0x3c",
+      "namePtr": "0x40",
+      "parameter0": "0x44",
+      "maxSqrDist": "0x48",
+      "parameter1": "0x4c",
+      "predicate_raw": "0x50..0x58",
+      "unknown_tail": "0x58..0x60"
+    },
+    "INFO": {
+      "component_type": 0,
+      "component_id": "0x4f464e49",
+      "serialized_key_bytes": 20,
+      "time": "0x00",
+      "unknown_word": "0x04",
+      "eventStartIndex_u16": "0x08",
+      "eventCount_u8": "0x0a",
+      "unknown_padding_byte": "0x0b",
+      "flags": "0x0c",
+      "unknown_tail_word": "0x10",
+      "event_indices": "eventStartIndex + i for i=0..eventCount-1"
+    }
+  },
+  "event_masks": {
+    "type": "0x00020007",
+    "disabled": "0x00000008",
+    "predicate": "0x01000000",
+    "chance": "0x02000000",
+    "parameter0": "0x00000300",
+    "parameter1": "0x000c0000"
+  },
+  "event_types": {
+    "0x00000000": "sound",
+    "0x00000001": "effect",
+    "0x00000002": "eventControl",
+    "0x00000003": "unk3",
+    "0x00000004": "stop",
+    "0x00000005": "unk5",
+    "0x00000006": "sound2",
+    "0x00000007": "footstep",
+    "0x00020000": "unk20000",
+    "0x00020001": "message"
+  },
+  "selector_masks": {
+    "type": "0x0000000f",
+    "filter": "0x00000070",
+    "scale": "0x00008180",
+    "addPosition": "0x00022000",
+    "position": "0x00011000",
+    "rotation": "0x00000e00",
+    "handedness": "0x70000000",
+    "prefilter2D4": "0x0c000000",
+    "prefilter2D5": "0x03000000",
+    "prefilter2D6": "0x00c00000"
+  },
+  "selector_types": {
+    "0": "none",
+    "1": "unk1",
+    "2": "default",
+    "3": "unk3",
+    "4": "standardBodies",
+    "5": "otherCreature",
+    "6": "otherStandardBodies",
+    "7": "unk7",
+    "8": "unk8",
+    "9": "unk9"
+  },
+  "selector_filters": {
+    "0x00": "any",
+    "0x10": "firstOnly",
+    "0x20": "allExceptFirst",
+    "0x30": "unk1",
+    "0x40": "unk2",
+    "0x50": "unk3",
+    "0x60": "unk4"
+  },
+  "meaning_limits": [
+    "Event selector filter cardinality is separate from ANIM channel context role selection.",
+    "firstOnly/allExceptFirst are community labels/comments; ordering and actual selected body remain unknown.",
+    "Other-creature position sources do not establish a gameplay attack target or damage victim.",
+    "EventControl/message names or IDs alone do not establish hit detection or damage.",
+    "All retained offsets are source/object or decompressed resource coordinates, not local EXE function addresses.",
+    "Predicate8bytes and unknown tail are retained raw; conditions are not executed.",
+    "No selected sample has type message0x20001; selected hit events are type eventControl2. SDK AnimationMessage is a declaration-level interface only, with no established consumer bridge to these records."
+  ]
+}

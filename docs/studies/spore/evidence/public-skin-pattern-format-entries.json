@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 1,
+  "module": "35-creature-skin-patterns-and-edit-rebuild",
+  "kind": "public-source-format-observations",
+  "reaEvidenceId": null,
+  "repository": "Spore-Community/SporeModder-FX",
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "treeInventory": {
+    "url": "https://api.github.com/repos/Spore-Community/SporeModder-FX/git/trees/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5?recursive=1",
+    "bytes": 235274,
+    "sha256": "2cfabe7c206d8791f430a470c153069a9d6f399c7701dabeca1f0f761e17bed9",
+    "truncated": false,
+    "matchedPaths": 4
+  },
+  "scope": "Four explicitly selected skinpaint effect-format classes. Community tool source is not original Spore implementation. No concrete skinpaint game resource decoded.",
+  "sources": [
+    {
+      "kind": "community-format-reader-writer",
+      "path": "src/sporemodder/file/effects/SkinpaintDistributeEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SkinpaintDistributeEffect.java",
+      "bytes": 14674,
+      "sha256": "81fc7fe8092dc7575bda1bffd98f97c27dff0d73b219c944b78c281eb6d8347b",
+      "lineCount": 447,
+      "readCoverage": "Complete source fetched in memory for digest; selected declarations, reference serialization, parser, and writer passages examined. Not executed.",
+      "summary": "Distribute contains region flags, spacing and limit controls, body-range and inversion controls, and references to Particle components. Its reader resolves references through EffectDirectory. Back/belly script arguments are converted into cosine values. This proves representable data and reader behavior, not runtime surface sampling.",
+      "observations": [
+        {
+          "lines": [
+            41,
+            59,
+            60
+          ],
+          "structureEndian": "BIG_ENDIAN",
+          "typeCode": "0x0023",
+          "keyword": "SPSkinPaintDistribute"
+        },
+        {
+          "lines": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70
+          ],
+          "regionFlags": {
+            "torso": "0x01",
+            "limbs": "0x02",
+            "parts": "0x04",
+            "back": "0x08",
+            "belly": "0x10",
+            "joints": "0x20"
+          }
+        },
+        {
+          "lines": [
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
+          ],
+          "fields": [
+            "field_8",
+            "particle",
+            "spacing",
+            "distributeLimit",
+            "region",
+            "regionBack",
+            "regionBelly",
+            "regionBodyRange",
+            "regionInverse",
+            "regionCenterOnly",
+            "cover",
+            "ordered",
+            "particleSelect",
+            "selectAll"
+          ],
+          "constructorDefaults": {
+            "spacing": 0.2,
+            "distributeLimit": -1,
+            "region": -1,
+            "regionBodyRange": [
+              0,
+              1
+            ]
+          },
+          "fieldEndianOverride": {
+            "regionBodyRange": "LITTLE_ENDIAN"
+          },
+          "defaultMeaning": "Community class defaults; not measured active game values or units."
+        },
+        {
+          "lines": [
+            116,
+            117,
+            119,
+            120,
+            122,
+            126,
+            128,
+            130
+          ],
+          "connection": "particle is serialized as signed component index; -1 means null; other indices resolve Particle TYPE_CODE in EffectDirectory."
+        },
+        {
+          "lines": [
+            134,
+            135,
+            137,
+            140,
+            143,
+            146,
+            150,
+            151,
+            155,
+            157
+          ],
+          "connection": "particleSelect stores component-index and float pairs; references use Particle TYPE_CODE."
+        },
+        {
+          "lines": [
+            296,
+            299,
+            300,
+            301,
+            302,
+            306,
+            308,
+            311,
+            313,
+            316,
+            318,
+            321,
+            325,
+            326,
+            329,
+            330
+          ],
+          "parser": "Region flags and bodyRange are parsed. Back/belly accept script argument t in [0,2], storing cos(t*pi/2) and -cos(t*pi/2), respectively."
+        },
+        {
+          "lines": [
+            407,
+            413,
+            418,
+            419,
+            420,
+            421,
+            423,
+            426,
+            429,
+            432
+          ],
+          "writer": "Writer emits region flags, inverse/centerOnly, spacing cover/ordered; converts stored back/belly values with acos. Selection floats have writer delta conversion."
+        },
+        {
+          "lines": [
+            384,
+            385,
+            389,
+            390
+          ],
+          "serialization": "read/write delegate to STRUCTURE_METADATA."
+        }
+      ],
+      "unknowns": [
+        "Runtime region classification and particle sampling formula.",
+        "Spacing units and effect of shape changes.",
+        "Meaning of field_8.",
+        "Runtime selection probabilities or active component choices; reader/writer is not the game executor."
+      ]
+    },
+    {
+      "kind": "community-format-reader-writer",
+      "path": "src/sporemodder/file/effects/SkinpaintParticleEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SkinpaintParticleEffect.java",
+      "bytes": 40350,
+      "sha256": "28288ed7d6de621bdf0d65ac16e81b1757ac4629236a3bc6b80550ae14c5f4e7",
+      "lineCount": 1198,
+      "readCoverage": "Complete source fetched in memory for digest; selected declarations, reference serialization, parser, and writer passages examined. Not executed.",
+      "summary": "Particle exposes brush IDs, chaining to another Particle, directional modes based on bones/spine, modifiers driven by morphology/world inputs, and material-channel controls. Separate diffuse, specular and bump blend enums are encoded. The community serializer provides references and names, not movement across surface triangles or bitmap rasterization.",
+      "observations": [
+        {
+          "lines": [
+            45,
+            51,
+            52
+          ],
+          "structureEndian": "BIG_ENDIAN",
+          "typeCode": "0x0026",
+          "keyword": "SPSkinPaintParticle"
+        },
+        {
+          "lines": [
+            57,
+            58
+          ],
+          "modifierTypes": [
+            "age",
+            "random",
+            "worldAngle",
+            "worldPos",
+            "worldDist",
+            "boneAngle",
+            "bonePos",
+            "boneOffset",
+            "torsoPos",
+            "limbPos",
+            "limbType",
+            "region",
+            "paintMask"
+          ]
+        },
+        {
+          "lines": [
+            60,
+            61,
+            62
+          ],
+          "modifierChannels": [
+            "size",
+            "aspect",
+            "rotation",
+            "spacing",
+            "killswitch",
+            "hairRadius",
+            "alpha",
+            "diffuseHue",
+            "diffuseSat",
+            "diffuseVal",
+            "diffuseAlpha",
+            "bumpScale",
+            "bumpAlpha",
+            "specularScale",
+            "specularAlpha",
+            "userVar1",
+            "userVar2",
+            "userVar3",
+            "userVar4"
+          ]
+        },
+        {
+          "lines": [
+            64,
+            65
+          ],
+          "operationTypes": [
+            "set",
+            "add",
+            "mult",
+            "div"
+          ],
+          "modifierFlags": [
+            null,
+            "open",
+            "clamp",
+            "wrap",
+            "mirror",
+            "clamp2",
+            "wrap2",
+            "mirror2"
+          ]
+        },
+        {
+          "lines": [
+            70,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78
+          ],
+          "blendEnum": {
+            "inherit": 0,
+            "alpha": 1,
+            "default": 1,
+            "add": 2,
+            "subtract": 3,
+            "multiply": 4,
+            "screen": 5
+          },
+          "limitation": "Enum names do not recover blending formula, color space, packed texture layout or bitmap writes."
+        },
+        {
+          "lines": [
+            81,
+            82,
+            83,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            93,
+            94,
+            96,
+            97,
+            98
+          ],
+          "brushAndDirectionEnums": {
+            "BRUSH_RANDOM": 1,
+            "BRUSH_RANDOMSTART": 2,
+            "CURVE_RANDOM": 4,
+            "ALIGN_INHERIT": 0,
+            "ALIGN_DIR": 1,
+            "ALIGN_ATTRACT": 2,
+            "ALIGN_NOBONE": 3,
+            "ALIGN_BONE": 4,
+            "ALIGN_ALONGBONE": 4,
+            "ALIGN_AROUNDBONE": 5,
+            "ALIGN_ALONGSPINE": 6,
+            "ALIGN_AROUNDSPINE": 7,
+            "FLAG_ATTRACT_REVERSE": "0x10",
+            "FLAG_INITDIR_REVERSE": "0x20",
+            "FLAG_ALIGN_REVERSE": "0x40"
+          }
+        },
+        {
+          "lines": [
+            166,
+            167,
+            168,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190
+          ],
+          "fields": [
+            "brushes",
+            "chainParticles",
+            "diffuseColor",
+            "diffuseColorIndex",
+            "alignFlag",
+            "initDirFlag",
+            "attractFlag",
+            "align",
+            "initDir",
+            "attract",
+            "attractForce",
+            "delay_0",
+            "delay_1",
+            "life_0",
+            "life_1",
+            "varModifiers",
+            "variables",
+            "variableValues",
+            "diffuseBlend",
+            "specularBlend",
+            "bumpBlend"
+          ],
+          "littleEndianArrays": [
+            "diffuseColor",
+            "align",
+            "initDir",
+            "attract"
+          ],
+          "fieldCommentOffsetMeaning": "Community layout comments are not selected EXE addresses or guaranteed ABI."
+        },
+        {
+          "lines": [
+            239,
+            240,
+            242,
+            243,
+            245,
+            249,
+            251,
+            253
+          ],
+          "connection": "chainParticles is component index to another Particle; -1 means null."
+        },
+        {
+          "lines": [
+            281,
+            283,
+            284,
+            290,
+            291,
+            925,
+            926,
+            927,
+            929,
+            930
+          ],
+          "connection": "Brush parser reads file IDs, writer resolves IDs to names; flags select random/randomStart representation. No brush asset read here."
+        },
+        {
+          "lines": [
+            387,
+            938,
+            943,
+            948,
+            951,
+            952,
+            957,
+            962,
+            967,
+            970,
+            971,
+            976,
+            980,
+            985,
+            988,
+            989
+          ],
+          "direction": "Parser/writer expose restrict, align, initDir, attract and bone/spine-oriented choices."
+        },
+        {
+          "lines": [
+            504,
+            506,
+            510,
+            512,
+            516,
+            518,
+            1177,
+            1178,
+            1179,
+            1180,
+            1181,
+            1182
+          ],
+          "connection": "Blend parsers and channel writer connect variable channel IDs to modifier channel names, operations and ranges."
+        }
+      ],
+      "unknowns": [
+        "Actual particle attachment, surface integration, boundary crossing and lifetime units.",
+        "Brush-resource format/content and rasterizer.",
+        "Morphology coordinates and normal/direction calculation.",
+        "Map channel allocation, texture dimensions and seam padding."
+      ]
+    },
+    {
+      "kind": "community-format-reader-writer",
+      "path": "src/sporemodder/file/effects/SkinpaintFloodEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SkinpaintFloodEffect.java",
+      "bytes": 24841,
+      "sha256": "77af235511ac73c78c3041a21db79531289b0459338b09dd76cd0e40e68c1426",
+      "lineCount": 751,
+      "readCoverage": "Complete source fetched in memory for digest; selected declarations, reference serialization, parser, and writer passages examined. Not executed.",
+      "summary": "Flood shares morphology modifier inputs and material channels with Particle, and stores variable/modifier lists plus diffuse/specular/bump blending. It is a separate effect type. Names such as region and paintMask indicate format inputs; their evaluation and active skin layer remain unknown.",
+      "observations": [
+        {
+          "lines": [
+            42,
+            48,
+            49
+          ],
+          "structureEndian": "BIG_ENDIAN",
+          "typeCode": "0x0027",
+          "keyword": "SPSkinPaintFlood"
+        },
+        {
+          "lines": [
+            54,
+            55
+          ],
+          "modifierTypes": [
+            "age",
+            "random",
+            "worldAngle",
+            "worldPos",
+            "worldDist",
+            "boneAngle",
+            "bonePos",
+            "boneOffset",
+            "torsoPos",
+            "limbPos",
+            "limbType",
+            "region",
+            "paintMask"
+          ]
+        },
+        {
+          "lines": [
+            57,
+            58,
+            59
+          ],
+          "modifierChannels": [
+            "size",
+            "aspect",
+            "rotation",
+            "spacing",
+            "killswitch",
+            "hairRadius",
+            "alpha",
+            "diffuseHue",
+            "diffuseSat",
+            "diffuseVal",
+            "diffuseAlpha",
+            "bumpScale",
+            "bumpAlpha",
+            "specularScale",
+            "specularAlpha",
+            "userVar1",
+            "userVar2",
+            "userVar3",
+            "userVar4"
+          ]
+        },
+        {
+          "lines": [
+            64,
+            65
+          ],
+          "compareModifiers": {
+            "COMPARE_NORMAL_MODIFIER": -3,
+            "COMPARE_POSITION_MODIFIER": -2
+          }
+        },
+        {
+          "lines": [
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75
+          ],
+          "blendEnum": {
+            "inherit": 0,
+            "alpha": 1,
+            "default": 1,
+            "add": 2,
+            "subtract": 3,
+            "multiply": 4,
+            "screen": 5
+          }
+        },
+        {
+          "lines": [
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135
+          ],
+          "fields": [
+            "varModifiers",
+            "variables",
+            "variableValues",
+            "hairFaceCamera",
+            "diffuseColor",
+            "diffuseColorIndex",
+            "diffuseBlend",
+            "specularBlend",
+            "bumpBlend"
+          ]
+        },
+        {
+          "lines": [
+            686,
+            687,
+            689,
+            690,
+            691
+          ],
+          "connection": "Variable writer selects modifier channel name by stored channel index."
+        }
+      ],
+      "unknowns": [
+        "Active Creature use, pass order and region/mask evaluation.",
+        "Per-pixel operations, sampling and seam behavior.",
+        "A serializer naming similarity does not establish identical game runtime algorithms."
+      ]
+    },
+    {
+      "kind": "community-format-reader-writer",
+      "path": "src/sporemodder/file/effects/SkinpaintSettingsEffect.java",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/src/sporemodder/file/effects/SkinpaintSettingsEffect.java",
+      "bytes": 12998,
+      "sha256": "38e7de81eddd3f3969be43844d76f1603679b6b12220a6fc3bf26c615c9ae2b8",
+      "lineCount": 359,
+      "readCoverage": "Complete source fetched in memory for digest; selected declarations, reference serialization, parser, and writer passages examined. Not executed.",
+      "summary": "Settings/Clear represents material initialization or settings controls, including diffuse, specular, bump, part scales and hair resources. Gloss/phong fields are version-gated. The parser is inline-only. This provides representation boundaries, not proof of material-map creation, edit-triggered clearing or bake lifecycle.",
+      "observations": [
+        {
+          "lines": [
+            39,
+            47,
+            48,
+            49
+          ],
+          "structureEndian": "BIG_ENDIAN",
+          "typeCode": "0x0022",
+          "keywords": [
+            "SPSkinPaintSettings",
+            "SPSkinPaintClear"
+          ]
+        },
+        {
+          "lines": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+          ],
+          "flags": {
+            "DIFFUSE": 1,
+            "SPEC": 2,
+            "BUMP": 4,
+            "SPECEXP": 8,
+            "SPECBUMP": "0xE",
+            "PARTBUMPSCALE": "0x10",
+            "PARTSPECSCALE": "0x20",
+            "HAIR": "0x40",
+            "HAIRTEXTURE": "0x80",
+            "HAIRPRINTGEOM": "0x100",
+            "GLOSS": "0x200",
+            "PHONG": "0x400"
+          }
+        },
+        {
+          "lines": [
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+          ],
+          "fields": [
+            "diffuseColorIndex",
+            "diffuseColor",
+            "specBump",
+            "gloss",
+            "phong",
+            "partBumpScale",
+            "partSpecScale",
+            "field_34",
+            "field_38",
+            "field_3C",
+            "field_40",
+            "field_44",
+            "field_48",
+            "field_4C",
+            "field_50",
+            "field_54",
+            "hairTexture",
+            "hairPrintGeom",
+            "flags"
+          ],
+          "littleEndianArrays": [
+            "specBump"
+          ],
+          "specBumpCommentOrder": [
+            "spec",
+            "specExp",
+            "bump"
+          ],
+          "unknownHairFields": "Author TODO remains; do not assign semantics."
+        },
+        {
+          "lines": [
+            70,
+            71,
+            119,
+            123
+          ],
+          "conditionalVersions": {
+            "gloss": "version >= 2",
+            "phong": "version >= 3"
+          }
+        },
+        {
+          "lines": [
+            300,
+            301,
+            302,
+            311,
+            312
+          ],
+          "parser": "Settings and Clear use group parser; onlySupportsInline returns true."
+        },
+        {
+          "lines": [
+            322,
+            323,
+            327,
+            328
+          ],
+          "serialization": "read/write delegate to STRUCTURE_METADATA."
+        },
+        {
+          "lines": [
+            341,
+            343,
+            344,
+            345,
+            347,
+            348,
+            349,
+            350,
+            355,
+            356
+          ],
+          "writer": "Writer emits spec/bump/exponent, gloss/phong, part scales and hair resource IDs. Specular exponent script value is stored value times 60 in the writer."
+        }
+      ],
+      "unknowns": [
+        "Execution ordering, when Clear is called and ownership of allocated maps.",
+        "Part settings do not establish how rigblock roots or texture seams are joined."
+      ]
+    }
+  ],
+  "representationConnections": [
+    {
+      "from": "Distribute region flags and spacing",
+      "to": "Particle component reference",
+      "evidence": "Distribute:65-88,116-159"
+    },
+    {
+      "from": "Particle",
+      "to": "another Particle component",
+      "evidence": "Particle:239-253"
+    },
+    {
+      "from": "Particle brush IDs",
+      "to": "named file identifiers",
+      "evidence": "Particle:281-291,925-930",
+      "unresolved": "Brush resource content and sampling."
+    },
+    {
+      "from": "Morphology/world modifier types",
+      "to": "named material controls through variable records",
+      "evidence": "Particle:57-65,1177-1182; Flood:54-62,686-691"
+    },
+    {
+      "from": "Settings/Clear",
+      "to": "diffuse/specular/bump and part/hair controls",
+      "evidence": "Settings:54-86,341-356",
+      "unresolved": "Actual map channels, textures and execution."
+    }
+  ],
+  "notEstablished": [
+    "Concrete stripe/spot scripts, active game resource keys, seeds or density policies.",
+    "Surface particle positions, triangle adjacency, barycentric binding or crossing algorithm.",
+    "UV charting, rasterization, mip padding or seam repair implementation.",
+    "Stretch/add-part/width-edit triggers, incremental vs full repaint, cache invalidation or bake timing.",
+    "Fixed number vs physical density of stripes/spots after limb elongation.",
+    "Scope of these format types across game stages; Creature attribution needs caller/resource evidence."
+  ],
+  "notPerformed": [
+    "Game launch/attach",
+    "Private saves",
+    "Package decode/extraction",
+    "Whole repository download",
+    "Source compilation or parser execution",
+    "Provider or configuration changes"
+  ],
+  "risk": "Format compatibility and field representation are known at this community commit; original runtime algorithm and selected-version use are unknown."
+}

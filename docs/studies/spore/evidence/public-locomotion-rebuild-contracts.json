@@ -1,0 +1,297 @@
+{
+  "sources": [
+    {
+      "path": "Editors/Editor.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/Editor.h",
+      "bytes": 27192,
+      "sha256": "5cb5d4d9fb17194e329effd08597bb33656bf5a6d7521a20b3a4ba3c6661aaa1",
+      "encoding": "utf-8",
+      "lines": 700,
+      "coverage": "complete file keyword inventory, only numbered relevant excerpts semantically inspected",
+      "excerpt_lines": [
+        103,
+        104,
+        105,
+        106,
+        107,
+        112,
+        113,
+        114,
+        115,
+        116,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        226,
+        227,
+        228,
+        229,
+        230,
+        341,
+        342,
+        343,
+        344,
+        345,
+        642,
+        643,
+        644,
+        645,
+        646,
+        647,
+        656,
+        657,
+        658,
+        659,
+        660
+      ],
+      "kind": "pinned-community-declarations-not-local-runtime",
+      "additional_semantically_read_ranges_inclusive": [
+        [
+          105,
+          118
+        ],
+        [
+          160,
+          167
+        ],
+        [
+          183,
+          190
+        ]
+      ]
+    },
+    {
+      "path": "Editors/EditorModel.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorModel.h",
+      "bytes": 4575,
+      "sha256": "e592a7d0bc6a6941f2c0baa8f3e8cd6bd8e2418c6d5b623f7d6260479218fe3c",
+      "encoding": "cp1252 after strict UTF8 failure; byte hash retained",
+      "lines": 138,
+      "coverage": "complete file keyword inventory, only numbered relevant excerpts semantically inspected",
+      "excerpt_lines": [],
+      "kind": "pinned-community-declarations-not-local-runtime",
+      "additional_semantically_read_ranges_inclusive": [
+        [
+          36,
+          96
+        ],
+        [
+          119,
+          136
+        ]
+      ]
+    },
+    {
+      "path": "Editors/BakeManager.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/BakeManager.h",
+      "bytes": 37294,
+      "sha256": "461f65242d2e19c6daaa5d9a1c8c4a61910cdfdc9e7d0914c043483565377209",
+      "encoding": "utf-8",
+      "lines": 1282,
+      "coverage": "complete file keyword inventory, only numbered relevant excerpts semantically inspected",
+      "excerpt_lines": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "kind": "pinned-community-declarations-not-local-runtime",
+      "additional_semantically_read_ranges_inclusive": [
+        [
+          20,
+          45
+        ],
+        [
+          62,
+          92
+        ]
+      ]
+    },
+    {
+      "path": "Anim/AnimatedCreature.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "encoding": "utf-8",
+      "lines": 267,
+      "coverage": "complete file keyword inventory, only numbered relevant excerpts semantically inspected",
+      "excerpt_lines": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        68,
+        69,
+        70,
+        71,
+        72,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "kind": "pinned-community-declarations-not-local-runtime",
+      "additional_semantically_read_ranges_inclusive": [
+        [
+          45,
+          68
+        ],
+        [
+          113,
+          168
+        ]
+      ]
+    },
+    {
+      "path": "Anim/IAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/IAnimWorld.h",
+      "bytes": 2546,
+      "sha256": "68e1b28df2cc6c5cc9052875ab756424ca902e27f1976f093200b9f0cf7bd52c",
+      "encoding": "utf-8",
+      "lines": 58,
+      "coverage": "complete file keyword inventory, only numbered relevant excerpts semantically inspected",
+      "excerpt_lines": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "kind": "pinned-community-declarations-not-local-runtime"
+    },
+    {
+      "path": "Editors/cCreatureDataResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cCreatureDataResource.h",
+      "bytes": 2704,
+      "sha256": "dfc56bc10c39536432527e5abf8763e5045e073caf10b95f843367c19a7f7152",
+      "encoding": "utf-8",
+      "lines": 101,
+      "coverage": "complete file keyword inventory, only numbered relevant excerpts semantically inspected",
+      "excerpt_lines": [
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
+      ],
+      "kind": "pinned-community-declarations-not-local-runtime"
+    },
+    {
+      "url": "https://www.chrishecker.com/images/c/cb/Sporeanim-siggraph08.pdf",
+      "bytes": 3896086,
+      "sha256": "f64be1b504845f715e2ab440e1653d1c487bf16d51b478eab1c913162fbc3d82",
+      "pages": 11,
+      "read_complete_pdf_pages_one_based": [
+        6,
+        7
+      ],
+      "kind": "original-developer-historical-design-not-local-runtime"
+    },
+    {
+      "path": "Editors/cEditorAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorAnimWorld.h",
+      "bytes": 1581,
+      "sha256": "fb21faed5ee933bc722992f8c08b06fdfc7af7678d37703be60eb5b7ad302470",
+      "encoding": "utf-8",
+      "lines": 49,
+      "read_complete_lines": [
+        1,
+        49
+      ],
+      "kind": "pinned-community-declarations-not-local-runtime"
+    }
+  ],
+  "sdk_commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "fx_commit_reused": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "facts": [
+    {
+      "source": "developer-paper",
+      "locator": "4.1.1, PDF page6",
+      "summary": "HasFeet/HasGraspers/UprightSpine are binding branch predicates; branch algorithm and values not recovered."
+    },
+    {
+      "source": "developer-paper",
+      "locator": "4.2, PDF pages6-7",
+      "summary": "Leg paths run from spine hip to foot leaf; similar-length groups use small rational frequency ratios; no-foot heuristic chooses floating or crawling with pseudo-feet on spine."
+    },
+    {
+      "source": "SDK",
+      "locator": "Editor.h 105-118,160-166",
+      "summary": "Undo/redo history state and CommitEditHistory/Undo/Redo declarations; no transaction or callback implementation."
+    },
+    {
+      "source": "SDK",
+      "locator": "EditorModel.h 81-96",
+      "summary": "Loaded/changed/skin-needs-update and minimum legless height declarations; no editor validity or locomotion heuristic implementation."
+    },
+    {
+      "source": "SDK",
+      "locator": "BakeManager.h 68-91",
+      "summary": "Queue, tag-based cancellation, baking and runtime model-key declarations; no job version or cancellation guarantee."
+    },
+    {
+      "source": "SDK",
+      "locator": "cCreatureDataResource.h 86-90",
+      "summary": "Capabilities/levels and animation ID/value/weight vectors; list relation and regeneration rules remain unknown."
+    }
+  ],
+  "reused_evidence": [
+    "public-gait-format-sources.json",
+    "local-selected-movement-resources.json",
+    "public-same-role-binding-contracts.json",
+    "public-part-definition-contracts.json",
+    "public-editor-budget-entries.json"
+  ],
+  "unread_or_unknown": [
+    "No new DBPF resources or local native instructions read",
+    "No runtime locomotion or editor undo/redo observed",
+    "No original queue callback/cache invalidation algorithm recovered",
+    "Minimum legless height declaration does not recover floating/crawling heuristic",
+    "Partial paper coverage only specified pages; old page5 first-bind claim reused via module39"
+  ]
+}

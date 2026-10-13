@@ -1,0 +1,869 @@
+{
+  "schema_version": 1,
+  "module": "38-axis-control-and-placement-template-definitions",
+  "kind": "bounded-PROP-read-and-index-observations",
+  "rea_evidence_id": null,
+  "prior_source": {
+    "path": "docs\\studies\\spore\\evidence\\local-part-definition-observations.json",
+    "bytes": 102844,
+    "sha256": "75f1ea6173d468f87ed18c948ca3e20e4161605057413fdb6574b4ec18fdf355"
+  },
+  "format_source_commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "sources": [
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "bytes": 2860453,
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "line_count": 125506
+    },
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "line_count": 6368
+    }
+  ],
+  "reader": {
+    "path": "docs\\studies\\spore\\checks\\read_selected_ability_properties.py",
+    "sha256": "e42d6ac444ddd66fe575ef9286d71b7315849c24115de19eb8611d126bf15105",
+    "functions": [
+      "read_index",
+      "refpack",
+      "read_prop",
+      "fnv"
+    ],
+    "execution": "Existing unchanged helper imported with bytecode disabled; mmap indexes then exact selected ranges."
+  },
+  "package_indexes": [
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+      "bytes": 80428851,
+      "index_count": 25535,
+      "index_offset": 79713863,
+      "index_bytes": 714988,
+      "index_flags": 4,
+      "examined_entries": 25535,
+      "header_sha256": "2b38fd555205b08c58a7873cf54194b75082971163696de576eee72e3f628cd9",
+      "index_sha256": "075698b95018ce0115d1178e2070ad3b1a2155232be815cf9200a71b7e961ee9",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Audio1.package",
+      "bytes": 1019011830,
+      "index_count": 17651,
+      "index_offset": 1018588194,
+      "index_bytes": 423636,
+      "index_flags": 6,
+      "examined_entries": 17651,
+      "header_sha256": "b4db95a03badc5e7967b7315f5438b682a63ce0f98086d43f3167c84066c6272",
+      "index_sha256": "842a91473974e736a0991cc65655a2989bd82ce0d05563cb211a64e303bf298d",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Audio2.package",
+      "bytes": 1021382650,
+      "index_count": 12111,
+      "index_offset": 1021043534,
+      "index_bytes": 339116,
+      "index_flags": 4,
+      "examined_entries": 12111,
+      "header_sha256": "7623a51224dfca5c0f966aae85616f7dfe3693e864ff157257c79436908e45f9",
+      "index_sha256": "070acd28e4a3f6acf9a13fb03205eec8447a1767524eb160f8ffbdde71dc298e",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Content.package",
+      "bytes": 995268083,
+      "index_count": 17119,
+      "index_offset": 994788743,
+      "index_bytes": 479340,
+      "index_flags": 4,
+      "examined_entries": 17119,
+      "header_sha256": "471e3dd2dabbb8452d074334bc51034b063a50d58aac45e0dcf6fb2d1663d03c",
+      "index_sha256": "6d40e0b8a9e156aac8a56d58b5f880d5de055f359464ce195ee40dd050819341",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+      "bytes": 20210108,
+      "index_count": 11529,
+      "index_offset": 19887288,
+      "index_bytes": 322820,
+      "index_flags": 4,
+      "examined_entries": 11529,
+      "header_sha256": "e20c5ca45957a66027aad302c1998855df733d23d2f0df4a42af8370fa169595",
+      "index_sha256": "abd86cb2718f3e7ff4a2e1550e25f4c88ea06191c3c945ac8898cfb9c99188db",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Graphics.package",
+      "bytes": 942881325,
+      "index_count": 24707,
+      "index_offset": 942189521,
+      "index_bytes": 691804,
+      "index_flags": 4,
+      "examined_entries": 24707,
+      "header_sha256": "0ab1f43303b6d32436d919419b57db9656df67f077790d58a3f190448d8fbd97",
+      "index_sha256": "bfc7feb82d2d3a17a828f20e0d1ad924fea94426808490e586ee3225c1240595",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    },
+    {
+      "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Pack_03.package",
+      "bytes": 9580183,
+      "index_count": 266,
+      "index_offset": 9572727,
+      "index_bytes": 7456,
+      "index_flags": 4,
+      "examined_entries": 266,
+      "header_sha256": "2cbb82309f9fc2a58896e0d12f90e58de8ccc44ab3bb2aeb088708a18aa34a2c",
+      "index_sha256": "017e552e3e862d291de7c31558e4c5add1d0924f11159d936774564b85bfb31b",
+      "whole_package_sha256": null,
+      "identity_scope": "Header/index full-byte digests only. Prior Game/Patch whole-byte identities linked separately.",
+      "matches_prior_index_identity": true
+    }
+  ],
+  "original_references": [
+    {
+      "owner": {
+        "type": "0x00b1b104",
+        "group": "0xb94bbb7e",
+        "instance": "0x71ff1a08"
+      },
+      "owner_name": [
+        "CreatureGrasperTemplate"
+      ],
+      "property_id": "0x3b58c554",
+      "property_names": [
+        "modelHandlePlacementTypesTemplate"
+      ],
+      "raw": {
+        "type": "0x00000000",
+        "group": "0x7cc96c02",
+        "instance": "0x95f07f3d"
+      },
+      "instance_labels": [
+        {
+          "name": "PreserveOrientation",
+          "line": 10460,
+          "id": "0x95f07f3d",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x95f07f3d"
+        }
+      ],
+      "group_labels": [
+        {
+          "name": "DeformAxisLeft",
+          "line": 10458,
+          "id": "0x7cc96c02",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x7cc96c02"
+        }
+      ]
+    },
+    {
+      "owner": {
+        "type": "0x00b1b104",
+        "group": "0xb94bbb7e",
+        "instance": "0x71ff1a08"
+      },
+      "owner_name": [
+        "CreatureGrasperTemplate"
+      ],
+      "property_id": "0x3b58c554",
+      "property_names": [
+        "modelHandlePlacementTypesTemplate"
+      ],
+      "raw": {
+        "type": "0x00000000",
+        "group": "0x2e6521f4",
+        "instance": "0x95f07f3d"
+      },
+      "instance_labels": [
+        {
+          "name": "PreserveOrientation",
+          "line": 10460,
+          "id": "0x95f07f3d",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x95f07f3d"
+        }
+      ],
+      "group_labels": [
+        {
+          "name": "DeformAxisForward",
+          "line": 48,
+          "id": "0x2e6521f4",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x2e6521f4"
+        }
+      ]
+    },
+    {
+      "owner": {
+        "type": "0x00b1b104",
+        "group": "0xb94bbb7e",
+        "instance": "0x71ff1a08"
+      },
+      "owner_name": [
+        "CreatureGrasperTemplate"
+      ],
+      "property_id": "0x3b58c554",
+      "property_names": [
+        "modelHandlePlacementTypesTemplate"
+      ],
+      "raw": {
+        "type": "0x00000000",
+        "group": "0xd02751de",
+        "instance": "0x95f07f3d"
+      },
+      "instance_labels": [
+        {
+          "name": "PreserveOrientation",
+          "line": 10460,
+          "id": "0x95f07f3d",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x95f07f3d"
+        }
+      ],
+      "group_labels": [
+        {
+          "name": "DeformAxisUp",
+          "line": 10459,
+          "id": "0xd02751de",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0xd02751de"
+        }
+      ]
+    },
+    {
+      "owner": {
+        "type": "0x00b1b104",
+        "group": "0xb94bbb7e",
+        "instance": "0x71ff1a08"
+      },
+      "owner_name": [
+        "CreatureGrasperTemplate"
+      ],
+      "property_id": "0x8ecb344a",
+      "property_names": [
+        "modelHandleKeys"
+      ],
+      "raw": {
+        "type": "0x00000000",
+        "group": "0x00000000",
+        "instance": "0x7cc96c02"
+      },
+      "instance_labels": [
+        {
+          "name": "DeformAxisLeft",
+          "line": 10458,
+          "id": "0x7cc96c02",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x7cc96c02"
+        }
+      ],
+      "group_labels": [
+        {
+          "name": "animations~",
+          "line": 23,
+          "id": "0x00000000",
+          "mapping": "explicit",
+          "calculated_fnv": "0x04c89ed2"
+        }
+      ]
+    },
+    {
+      "owner": {
+        "type": "0x00b1b104",
+        "group": "0xb94bbb7e",
+        "instance": "0x71ff1a08"
+      },
+      "owner_name": [
+        "CreatureGrasperTemplate"
+      ],
+      "property_id": "0x8ecb344a",
+      "property_names": [
+        "modelHandleKeys"
+      ],
+      "raw": {
+        "type": "0x00000000",
+        "group": "0x00000000",
+        "instance": "0x2e6521f4"
+      },
+      "instance_labels": [
+        {
+          "name": "DeformAxisForward",
+          "line": 48,
+          "id": "0x2e6521f4",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0x2e6521f4"
+        }
+      ],
+      "group_labels": [
+        {
+          "name": "animations~",
+          "line": 23,
+          "id": "0x00000000",
+          "mapping": "explicit",
+          "calculated_fnv": "0x04c89ed2"
+        }
+      ]
+    },
+    {
+      "owner": {
+        "type": "0x00b1b104",
+        "group": "0xb94bbb7e",
+        "instance": "0x71ff1a08"
+      },
+      "owner_name": [
+        "CreatureGrasperTemplate"
+      ],
+      "property_id": "0x8ecb344a",
+      "property_names": [
+        "modelHandleKeys"
+      ],
+      "raw": {
+        "type": "0x00000000",
+        "group": "0x00000000",
+        "instance": "0xd02751de"
+      },
+      "instance_labels": [
+        {
+          "name": "DeformAxisUp",
+          "line": 10459,
+          "id": "0xd02751de",
+          "mapping": "lowercase FNV-1",
+          "calculated_fnv": "0xd02751de"
+        }
+      ],
+      "group_labels": [
+        {
+          "name": "animations~",
+          "line": 23,
+          "id": "0x00000000",
+          "mapping": "explicit",
+          "calculated_fnv": "0x04c89ed2"
+        }
+      ]
+    }
+  ],
+  "lookups": [
+    {
+      "reference": {
+        "owner": {
+          "type": "0x00b1b104",
+          "group": "0xb94bbb7e",
+          "instance": "0x71ff1a08"
+        },
+        "owner_name": [
+          "CreatureGrasperTemplate"
+        ],
+        "property_id": "0x3b58c554",
+        "property_names": [
+          "modelHandlePlacementTypesTemplate"
+        ],
+        "raw": {
+          "type": "0x00000000",
+          "group": "0x7cc96c02",
+          "instance": "0x95f07f3d"
+        },
+        "instance_labels": [
+          {
+            "name": "PreserveOrientation",
+            "line": 10460,
+            "id": "0x95f07f3d",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x95f07f3d"
+          }
+        ],
+        "group_labels": [
+          {
+            "name": "DeformAxisLeft",
+            "line": 10458,
+            "id": "0x7cc96c02",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x7cc96c02"
+          }
+        ]
+      },
+      "raw_exact_matches": [],
+      "prop_candidate": {
+        "type": "0x00b1b104",
+        "group": "0x7cc96c02",
+        "instance": "0x95f07f3d"
+      },
+      "prop_candidate_reason": "Replace zero type with PROP only as a research lookup; no proven engine resolution or load order.",
+      "prop_exact_candidate_matches": [],
+      "alternative_prop_same_instance_matches": [],
+      "alternative_total": 0,
+      "alternative_reason": "If literal-group PROP absent, search all seven PROP indexes for same instance ID; alternative group is explicitly unverified."
+    },
+    {
+      "reference": {
+        "owner": {
+          "type": "0x00b1b104",
+          "group": "0xb94bbb7e",
+          "instance": "0x71ff1a08"
+        },
+        "owner_name": [
+          "CreatureGrasperTemplate"
+        ],
+        "property_id": "0x3b58c554",
+        "property_names": [
+          "modelHandlePlacementTypesTemplate"
+        ],
+        "raw": {
+          "type": "0x00000000",
+          "group": "0x2e6521f4",
+          "instance": "0x95f07f3d"
+        },
+        "instance_labels": [
+          {
+            "name": "PreserveOrientation",
+            "line": 10460,
+            "id": "0x95f07f3d",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x95f07f3d"
+          }
+        ],
+        "group_labels": [
+          {
+            "name": "DeformAxisForward",
+            "line": 48,
+            "id": "0x2e6521f4",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x2e6521f4"
+          }
+        ]
+      },
+      "raw_exact_matches": [],
+      "prop_candidate": {
+        "type": "0x00b1b104",
+        "group": "0x2e6521f4",
+        "instance": "0x95f07f3d"
+      },
+      "prop_candidate_reason": "Replace zero type with PROP only as a research lookup; no proven engine resolution or load order.",
+      "prop_exact_candidate_matches": [],
+      "alternative_prop_same_instance_matches": [],
+      "alternative_total": 0,
+      "alternative_reason": "If literal-group PROP absent, search all seven PROP indexes for same instance ID; alternative group is explicitly unverified."
+    },
+    {
+      "reference": {
+        "owner": {
+          "type": "0x00b1b104",
+          "group": "0xb94bbb7e",
+          "instance": "0x71ff1a08"
+        },
+        "owner_name": [
+          "CreatureGrasperTemplate"
+        ],
+        "property_id": "0x3b58c554",
+        "property_names": [
+          "modelHandlePlacementTypesTemplate"
+        ],
+        "raw": {
+          "type": "0x00000000",
+          "group": "0xd02751de",
+          "instance": "0x95f07f3d"
+        },
+        "instance_labels": [
+          {
+            "name": "PreserveOrientation",
+            "line": 10460,
+            "id": "0x95f07f3d",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x95f07f3d"
+          }
+        ],
+        "group_labels": [
+          {
+            "name": "DeformAxisUp",
+            "line": 10459,
+            "id": "0xd02751de",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0xd02751de"
+          }
+        ]
+      },
+      "raw_exact_matches": [],
+      "prop_candidate": {
+        "type": "0x00b1b104",
+        "group": "0xd02751de",
+        "instance": "0x95f07f3d"
+      },
+      "prop_candidate_reason": "Replace zero type with PROP only as a research lookup; no proven engine resolution or load order.",
+      "prop_exact_candidate_matches": [],
+      "alternative_prop_same_instance_matches": [],
+      "alternative_total": 0,
+      "alternative_reason": "If literal-group PROP absent, search all seven PROP indexes for same instance ID; alternative group is explicitly unverified."
+    },
+    {
+      "reference": {
+        "owner": {
+          "type": "0x00b1b104",
+          "group": "0xb94bbb7e",
+          "instance": "0x71ff1a08"
+        },
+        "owner_name": [
+          "CreatureGrasperTemplate"
+        ],
+        "property_id": "0x8ecb344a",
+        "property_names": [
+          "modelHandleKeys"
+        ],
+        "raw": {
+          "type": "0x00000000",
+          "group": "0x00000000",
+          "instance": "0x7cc96c02"
+        },
+        "instance_labels": [
+          {
+            "name": "DeformAxisLeft",
+            "line": 10458,
+            "id": "0x7cc96c02",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x7cc96c02"
+          }
+        ],
+        "group_labels": [
+          {
+            "name": "animations~",
+            "line": 23,
+            "id": "0x00000000",
+            "mapping": "explicit",
+            "calculated_fnv": "0x04c89ed2"
+          }
+        ]
+      },
+      "raw_exact_matches": [],
+      "prop_candidate": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x7cc96c02"
+      },
+      "prop_candidate_reason": "Replace zero type with PROP only as a research lookup; no proven engine resolution or load order.",
+      "prop_exact_candidate_matches": [],
+      "alternative_prop_same_instance_matches": [],
+      "alternative_total": 0,
+      "alternative_reason": "If literal-group PROP absent, search all seven PROP indexes for same instance ID; alternative group is explicitly unverified."
+    },
+    {
+      "reference": {
+        "owner": {
+          "type": "0x00b1b104",
+          "group": "0xb94bbb7e",
+          "instance": "0x71ff1a08"
+        },
+        "owner_name": [
+          "CreatureGrasperTemplate"
+        ],
+        "property_id": "0x8ecb344a",
+        "property_names": [
+          "modelHandleKeys"
+        ],
+        "raw": {
+          "type": "0x00000000",
+          "group": "0x00000000",
+          "instance": "0x2e6521f4"
+        },
+        "instance_labels": [
+          {
+            "name": "DeformAxisForward",
+            "line": 48,
+            "id": "0x2e6521f4",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0x2e6521f4"
+          }
+        ],
+        "group_labels": [
+          {
+            "name": "animations~",
+            "line": 23,
+            "id": "0x00000000",
+            "mapping": "explicit",
+            "calculated_fnv": "0x04c89ed2"
+          }
+        ]
+      },
+      "raw_exact_matches": [],
+      "prop_candidate": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0x2e6521f4"
+      },
+      "prop_candidate_reason": "Replace zero type with PROP only as a research lookup; no proven engine resolution or load order.",
+      "prop_exact_candidate_matches": [],
+      "alternative_prop_same_instance_matches": [],
+      "alternative_total": 0,
+      "alternative_reason": "If literal-group PROP absent, search all seven PROP indexes for same instance ID; alternative group is explicitly unverified."
+    },
+    {
+      "reference": {
+        "owner": {
+          "type": "0x00b1b104",
+          "group": "0xb94bbb7e",
+          "instance": "0x71ff1a08"
+        },
+        "owner_name": [
+          "CreatureGrasperTemplate"
+        ],
+        "property_id": "0x8ecb344a",
+        "property_names": [
+          "modelHandleKeys"
+        ],
+        "raw": {
+          "type": "0x00000000",
+          "group": "0x00000000",
+          "instance": "0xd02751de"
+        },
+        "instance_labels": [
+          {
+            "name": "DeformAxisUp",
+            "line": 10459,
+            "id": "0xd02751de",
+            "mapping": "lowercase FNV-1",
+            "calculated_fnv": "0xd02751de"
+          }
+        ],
+        "group_labels": [
+          {
+            "name": "animations~",
+            "line": 23,
+            "id": "0x00000000",
+            "mapping": "explicit",
+            "calculated_fnv": "0x04c89ed2"
+          }
+        ]
+      },
+      "raw_exact_matches": [],
+      "prop_candidate": {
+        "type": "0x00b1b104",
+        "group": "0x00000000",
+        "instance": "0xd02751de"
+      },
+      "prop_candidate_reason": "Replace zero type with PROP only as a research lookup; no proven engine resolution or load order.",
+      "prop_exact_candidate_matches": [],
+      "alternative_prop_same_instance_matches": [],
+      "alternative_total": 0,
+      "alternative_reason": "If literal-group PROP absent, search all seven PROP indexes for same instance ID; alternative group is explicitly unverified."
+    }
+  ],
+  "selected_prop_keys": [],
+  "records": [],
+  "missing_keys": [],
+  "diagnostics": [],
+  "pctp_index_metadata": [
+    {
+      "package": "PatchData.package",
+      "total": 1,
+      "entries": [
+        {
+          "key": {
+            "type": "0x7c19aa7a",
+            "group": "0x000082d0",
+            "instance": "0x142d3338"
+          },
+          "offset": 18144889,
+          "stored_bytes": 2856,
+          "memory_bytes": 4961,
+          "compression": 65535,
+          "instance_labels": [],
+          "group_labels": [],
+          "payload_read": false
+        }
+      ],
+      "selected_limit": 8,
+      "type_provenance": "Type ID supplied by parent worker public PCTP format investigation; this worker only observes index entries."
+    },
+    {
+      "package": "Spore_Game.package",
+      "total": 1,
+      "entries": [
+        {
+          "key": {
+            "type": "0x7c19aa7a",
+            "group": "0x00006f14",
+            "instance": "0xf8ccfe08"
+          },
+          "offset": 957497,
+          "stored_bytes": 1946,
+          "memory_bytes": 3475,
+          "compression": 65535,
+          "instance_labels": [],
+          "group_labels": [],
+          "payload_read": false
+        }
+      ],
+      "selected_limit": 8,
+      "type_provenance": "Type ID supplied by parent worker public PCTP format investigation; this worker only observes index entries."
+    }
+  ],
+  "parent_requested_pctp_label_lookup": [
+    {
+      "id": "0xf8ccfe08",
+      "matches": [],
+      "match_count": 0
+    },
+    {
+      "id": "0x142d3338",
+      "matches": [],
+      "match_count": 0
+    },
+    {
+      "id": "0x00006f14",
+      "matches": [],
+      "match_count": 0
+    },
+    {
+      "id": "0x000082d0",
+      "matches": [],
+      "match_count": 0
+    }
+  ],
+  "coverage": {
+    "package_count": 7,
+    "examined_index_entries": 108918,
+    "root_prop_keys": 0,
+    "distinct_prop_keys": 0,
+    "decoded_prop_records": 0,
+    "selected_parent_budget": 12,
+    "memory_budget_per_prop": 65536,
+    "other_payload_reads": 0,
+    "index_consistency_with37": true
+  },
+  "unknowns": [
+    "Original zero-type resolver and effective package load order.",
+    "Meaning and units of transform/placement/constraint fields unless explicit source context exists.",
+    "Connection from named axis control to animation/handle internals; index match alone is not binding evidence.",
+    "References to ANIM/RW4/PCTP remain metadata unless separately decoded by the owning worker.",
+    "No entity within exact/group-alternative query does not prove absent editor function."
+  ],
+  "not_performed": [
+    "Other-resource decompression",
+    "Model/texture asset export",
+    "PCTP payload reads",
+    "Game execution/attachment",
+    "Private saves",
+    "Install/build/configuration changes"
+  ],
+  "risk": "Exact selected field values are evidence; interpreting symbolic zero-type references as concrete loader rules or axis algorithms would overstate it.",
+  "cross_type_index_query": {
+    "ids": [
+      "0x2e6521f4",
+      "0x7cc96c02",
+      "0x95f07f3d",
+      "0xd02751de"
+    ],
+    "packages": [
+      {
+        "package": "PatchData.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      },
+      {
+        "package": "Spore_Audio1.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      },
+      {
+        "package": "Spore_Audio2.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      },
+      {
+        "package": "Spore_Content.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      },
+      {
+        "package": "Spore_Game.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      },
+      {
+        "package": "Spore_Graphics.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      },
+      {
+        "package": "Spore_Pack_03.package",
+        "total": 0,
+        "entries": [],
+        "selected_limit": 12,
+        "scope": "Exact group/instance equality against four selected IDs across all resource types; no payload read."
+      }
+    ],
+    "limitation": "Index identity and numeric equality only. Absence does not exclude symbols embedded inside another resource."
+  },
+  "outcome": {
+    "status": "bounded-negative-PROP-lookup",
+    "original_references": 6,
+    "successful_prop_records": 0,
+    "fact": "No exact raw key, zero-type-to-PROP candidate, or same-instance PROP at an alternative group was found in the seven indexed Data packages.",
+    "meaning": "The current query did not identify standalone PROP entities; no editor functionality absence claim.",
+    "next_minimum_entry": {
+      "key": {
+        "type": "0x2f4e681b",
+        "group": "0x40606000",
+        "instance": "0x0df11468"
+      },
+      "matches": [
+        {
+          "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Graphics.package",
+          "bytes": 942881325,
+          "header_sha256": "0ab1f43303b6d32436d919419b57db9656df67f077790d58a3f190448d8fbd97",
+          "index_sha256": "bfc7feb82d2d3a17a828f20e0d1ad924fea94426808490e586ee3225c1240595",
+          "entry": {
+            "key": {
+              "type": "0x2f4e681b",
+              "group": "0x40606000",
+              "instance": "0x0df11468"
+            },
+            "offset": 152564158,
+            "stored_bytes": 33479,
+            "memory_bytes": 55388,
+            "compression": 65535,
+            "end_exclusive": 152597637
+          }
+        }
+      ],
+      "provenance": "Reused exact model reference/index metadata from module37; no RW4 payload read by this worker.",
+      "question": "Compare modelHandleKeys axis IDs and placement namespace IDs against explicitly parsed RW4 handle/animation identifiers. Runtime resolver, transform constraints and symbol-to-handle binding remain unknown."
+    }
+  },
+  "verification": {
+    "json": "passed",
+    "all_seven_indexes_match37": true,
+    "prop_lookup_reference_count": 6,
+    "decoded_prop_records": 0,
+    "selected_payload_reads": 0,
+    "pctp_payload_reads": 0,
+    "absence_scope": "Only the seven explicitly listed Data package index snapshots and fixed public registries."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "developer-historical-design-not-local-runtime",
+  "retrieved_at_pacific": "2026-10-12T15:19:28.274471-07:00",
+  "url": "https://www.cs.cmu.edu/~ajw/s2007/0248-Rigblocks-slides.pdf",
+  "bytes": 2645147,
+  "sha256": "c5e26f917589ff9e4af36753f79fdc9550f1036407791c353ec1aa7677529634",
+  "pages": 26,
+  "text_pages_selected_by_keywords": [
+    2,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "all_pages_text_examined": true,
+  "visual_inspection": false,
+  "facts": [
+    {
+      "pages": [
+        17,
+        18
+      ],
+      "summary": "Authoring tracks driven by player handles; cumulative deformation relative to rest, separately accumulate translation/rotation/scale and form matrix at end. Multiblender handles runtime animations and applies deforms on top."
+    },
+    {
+      "pages": [
+        19,
+        20
+      ],
+      "summary": "Baking removes edit deform tracks into a new base mesh; runtime animation such as mouth animation can be retained with lower bone count and retargeting to the changed base pose."
+    },
+    {
+      "pages": [
+        22,
+        23,
+        24
+      ],
+      "summary": "Slides distinguish authored and reduced runtime skeleton and mention skeletal and blendshape animation; mesh and runtime animations retargeted to runtime skeleton."
+    }
+  ],
+  "limits": [
+    "Historical shared Rigblock pipeline; not local Creature call trace.",
+    "Text read for all 26 pages; example images not visually inspected.",
+    "No exact retargeting formula, bone reduction algorithm or semantic value endpoints established.",
+    "PDF reader warned about an invalid object pointer; selected page text was readable."
+  ]
+}

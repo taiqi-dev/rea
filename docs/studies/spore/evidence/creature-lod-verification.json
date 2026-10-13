@@ -1,0 +1,99 @@
+{
+  "kind": "bounded local property and independent population scheduler verification; not original runtime",
+  "recorded_at_pacific": "2026-10-13T00:18:12-07:00",
+  "tests": {
+    "script": "../checks/verify_creature_lod_examples.py",
+    "passed": 24,
+    "failed": 0,
+    "independent_examples": 20,
+    "registry_prop_examples": 4,
+    "script_sha256": "4407295494ee753a05740707b61bd0bbd0092ce99faa3adb044c6e5fe539c2ec",
+    "runtime": "Bundled Python -B -X utf8, standard library only"
+  },
+  "reader": {
+    "script": "../checks/read_selected_creature_lod_properties.py",
+    "sha256": "398e1b9893e8e3086f530ea3287610cb3288611593f0473a7823c2c97b60a02a",
+    "selected_records": 8,
+    "properties_queried": 20,
+    "all_prior_resource_digests_matched": true,
+    "package_identities": [
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\Spore_Game.package",
+        "bytes": 20210108,
+        "sha256": "9d085118c649d211a86723d363592fd66ad655fd24497289b3eab96bb07db329",
+        "index_count": 11529,
+        "index_offset": 19887288,
+        "index_bytes": 322820,
+        "index_flags": 4,
+        "examined_entries": 11529
+      },
+      {
+        "path": "E:\\Steam\\steamapps\\common\\Spore\\Data\\PatchData.package",
+        "bytes": 80428851,
+        "sha256": "cadbff237076b441e6981503f80538705aefa5863bb4c8d1b869f9db98d1adff",
+        "index_count": 25535,
+        "index_offset": 79713863,
+        "index_bytes": 714988,
+        "index_flags": 4,
+        "examined_entries": 25535
+      }
+    ],
+    "new_original_resource_values": {
+      "creatureSimulationLOD_MinDistanceLow": 100,
+      "creatureSimulationLOD_MinDistanceMed": 75
+    },
+    "units_and_activation": "unknown"
+  },
+  "sources": {
+    "headers_and_registry": 11,
+    "repository_path_inventory_only": true,
+    "manifest_sha256": "803bb94f2ce9485a069891d76a79eb6a2300a1e02c1d7aa982ea6b490ef329a5",
+    "line_ranges_within_bounds": true
+  },
+  "document": {
+    "sha256": "4ab19699e3110733325362e67b0e5b23d04bcc22ebb2e49a3402d2d7e3795c45",
+    "utf8_valid": true,
+    "fences_even": true,
+    "links_checked": 13,
+    "missing_links": []
+  },
+  "own_population_example": {
+    "actors": 100,
+    "pose_jobs_per_second": 2050,
+    "ai_jobs_per_second": 370,
+    "estimated_discretionary_units_per_second": 10730,
+    "staggered_peak_units_per_frame": 182,
+    "example_budget_per_frame": 190,
+    "maximum_pose_jobs_per_frame": 35,
+    "costs_are_not_milliseconds": true,
+    "authority_cost_not_in_discretionary_total": true
+  },
+  "not_run": [
+    "Original game execution or attach",
+    "Native function tracing",
+    "Private saves",
+    "Original LOD scheduling/cost measurement",
+    "Complete 100 NPC 3D physics or production concurrency"
+  ],
+  "limitations": [
+    "Actual original distance units/origin/loading variant unknown",
+    "Metadata and declarations cannot establish original scheduling or fairness",
+    "Independent timing checks do not implement real collision or storage transactions",
+    "Mandatory overload may exceed frame budget; diagnostics do not guarantee realtime performance",
+    "Optional job aging and population admission not fully implemented in sample"
+  ],
+  "repository_publication": {
+    "recorded_at_pacific": "2026-10-13T03:02:07.535978-07:00",
+    "policy": "Repository LF normalization and explicit local study-file identity refresh; original target/public-source digests unchanged",
+    "captured_file_sha256": "e0da967350d35327e351948be642cbd170e6f784cb5c4f034f72f724f1e83dd7",
+    "captured_file_bytes": 3285,
+    "reference_changes": [
+      {
+        "pointer": "/sources/manifest_sha256",
+        "captured": "8b3bdc9ef34d7b6e7b54ea24fcdb3aa610ae2fa7706a35c5578a62954cc0625e",
+        "published": "803bb94f2ce9485a069891d76a79eb6a2300a1e02c1d7aa982ea6b490ef329a5",
+        "study_file": "evidence/public-creature-lod-contracts.json"
+      }
+    ]
+  }
+}

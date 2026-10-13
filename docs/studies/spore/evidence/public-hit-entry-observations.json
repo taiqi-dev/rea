@@ -1,0 +1,34 @@
+{
+  "kind": "community-source-observations-not-local-ABI-verification",
+  "commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "files": [
+    {
+      "path": "Simulator/cCombatant.h",
+      "bytes": 6322,
+      "sha256": "a52296c6f9afccd3f59f9903a0e4c6dba11fa18d1c84c450fb5d7cc95816cef7",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cCombatant.h",
+      "scope": "entire header read in memory; selected declarations and original comments inspected"
+    },
+    {
+      "path": "Simulator/cSpatialObject.h",
+      "bytes": 7548,
+      "sha256": "9c3f44b21370988c3b47a3286a666076ceaa9b0c4c91c0924839b70dbbca4de3",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Simulator/cSpatialObject.h",
+      "scope": "entire header read in memory; selected declarations and original comments inspected"
+    },
+    {
+      "path": "Anim/AnimatedCreature.h",
+      "bytes": 9805,
+      "sha256": "e547b19a1e8b82193aae642cc66f85331db326bd724826d9a056476e773fe3a2",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Anim/AnimatedCreature.h",
+      "scope": "entire header read in memory; selected declarations and original comments inspected"
+    }
+  ],
+  "findings": {
+    "cCombatant": "weapon-range declarations explicitly concern weapon tools/vehicle getter; TakeDamage vector purpose not recovered",
+    "cSpatialObject": "position, scale, bounding box/radius and footprint accessors exist; land hit use unknown",
+    "AnimatedCreature": "AnimationMessage carries message metadata, block index and parameters; land damage receiver unknown"
+  },
+  "other_fixed_headers": "reuse public-combat-movement-research-entries.json for cCreatureAbility/cCreatureBase/cLocomotiveObject",
+  "writer": "root summary of read-only spore_body_evidence agent findings"
+}

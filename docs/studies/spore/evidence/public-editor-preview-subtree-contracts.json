@@ -1,0 +1,5384 @@
+{
+  "kind": "fixed-public-editor-preview-subtree-contracts",
+  "sdk_commit": "2d71289adc71aa5c58f4516c6c835c99f5f9ca19",
+  "fx_commit_reused": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "sources": [
+    {
+      "path": "Editors/cEditorAnimWorld.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorAnimWorld.h",
+      "bytes": 1581,
+      "sha256": "fb21faed5ee933bc722992f8c08b06fdfc7af7678d37703be60eb5b7ad302470",
+      "encoding": "utf-8",
+      "lines": 49,
+      "keyword_inventory": null,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "kind": "pinned-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/EditorCreatureController.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorCreatureController.h",
+      "bytes": 2082,
+      "sha256": "ce5d9e601c07815aba4f66ff15b41d03562338e6737bdfb0f6bb24554ab2401b",
+      "encoding": "utf-8",
+      "lines": 73,
+      "keyword_inventory": null,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73
+      ],
+      "kind": "pinned-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/EditorPlayMode.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorPlayMode.h",
+      "bytes": 4464,
+      "sha256": "c13dcbe7f6608291f47d983ddc125bb2d6de683eafd7f866f67a11e4308b4df6",
+      "encoding": "utf-8",
+      "lines": 117,
+      "keyword_inventory": null,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117
+      ],
+      "kind": "pinned-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/EditorAnimations.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorAnimations.h",
+      "bytes": 382,
+      "sha256": "16bdaef08570cad6d5e76570fd15191efe769a55f07774528b0e657693c5cbb2",
+      "encoding": "utf-8",
+      "lines": 20,
+      "keyword_inventory": null,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "kind": "pinned-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/Editor.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/Editor.h",
+      "bytes": 27192,
+      "sha256": "5cb5d4d9fb17194e329effd08597bb33656bf5a6d7521a20b3a4ba3c6661aaa1",
+      "encoding": "utf-8",
+      "lines": 700,
+      "keyword_inventory": "PlayMode|Animation|NeutralPose|Copy|Clone|Duplicate|Replace|Reparent|Parent|Remove|Attach|MovePart|Undo|enum Mode|kMode|EditMode",
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        35,
+        36,
+        37,
+        82,
+        83,
+        84,
+        164,
+        165,
+        166,
+        200,
+        201,
+        202,
+        204,
+        205,
+        206,
+        267,
+        268,
+        269,
+        342,
+        343,
+        344,
+        352,
+        353,
+        354,
+        373,
+        374,
+        375,
+        398,
+        399,
+        400,
+        401,
+        558,
+        559,
+        560,
+        577,
+        578,
+        579,
+        643,
+        644,
+        645,
+        646,
+        647,
+        648
+      ],
+      "kind": "pinned-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/EditorRigblock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/EditorRigblock.h",
+      "bytes": 20393,
+      "sha256": "0213471da8136a960714fd6f180538156a8dd8c8fd3fab7eb1e1d700fde70b9d",
+      "encoding": "utf-8",
+      "lines": 514,
+      "keyword_inventory": "PlayMode|Animation|NeutralPose|Copy|Clone|Duplicate|Replace|Reparent|Parent|Remove|Attach|MovePart|Undo|enum Mode|kMode|EditMode",
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        327,
+        328,
+        329,
+        368,
+        369,
+        370,
+        407,
+        408,
+        409,
+        422,
+        423,
+        424,
+        475,
+        476,
+        477,
+        487,
+        488,
+        489,
+        493,
+        494,
+        495
+      ],
+      "kind": "pinned-community-declaration-not-local-execution"
+    },
+    {
+      "path": "Editors/cEditorResourceBlock.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorResourceBlock.h",
+      "error": 404
+    },
+    {
+      "path": "Editors/IPlayModeModule.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/IPlayModeModule.h",
+      "bytes": 856,
+      "sha256": "b2d2c0983485961d4bc329a9a17ed57122397809ccab3f12e758c3ef81d1e8d7",
+      "lines": 23,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "kind": "pinned-community-declaration-not-native-method"
+    },
+    {
+      "path": "Editors/PlayModeAnimations.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/PlayModeAnimations.h",
+      "bytes": 3250,
+      "sha256": "de300047a6b4813dacc093e89278a0309fafd4addd19c839ac5752e5ea98d9be",
+      "lines": 102,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "kind": "pinned-community-declaration-not-native-method"
+    },
+    {
+      "path": "Editors/PlayModeActor.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/PlayModeActor.h",
+      "bytes": 1723,
+      "sha256": "e1c0289980d500e258e4e480bd5b43d30771cd396cb75e5716d3e4dc527b291a",
+      "lines": 53,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "kind": "pinned-community-declaration-not-native-method"
+    },
+    {
+      "path": "Editors/cEditorResource.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorResource.h",
+      "bytes": 2617,
+      "sha256": "3c5a9abeff825e90aa1d3f2e8f554bf86960282b70eebfbd5f889af63f20d747",
+      "lines": 80,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "kind": "pinned-community-declaration-not-native-method"
+    },
+    {
+      "path": "reg_file.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_file.txt",
+      "bytes": 2860453,
+      "sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+      "lines": 125506,
+      "keyword_inventory": "editorAnims|editorPlay|playMode|editorWalk|CreatureEditor",
+      "selected_declarations": [
+        {
+          "line": 35,
+          "text": "CreatureEditorTemplates"
+        },
+        {
+          "line": 90,
+          "text": "CreatureEditorVerbIcons"
+        },
+        {
+          "line": 1844,
+          "text": "CellToCreatureEditor"
+        },
+        {
+          "line": 2635,
+          "text": "CreatureEditorCSA"
+        },
+        {
+          "line": 2636,
+          "text": "CreatureEditorExtraLarge"
+        },
+        {
+          "line": 2637,
+          "text": "CreatureEditorLarge"
+        },
+        {
+          "line": 2638,
+          "text": "CreatureEditorMedium"
+        },
+        {
+          "line": 2639,
+          "text": "CreatureEditorSetup"
+        },
+        {
+          "line": 2640,
+          "text": "CreatureEditorSmall"
+        },
+        {
+          "line": 10453,
+          "text": "CellToCreatureEditor2"
+        },
+        {
+          "line": 10468,
+          "text": "CreatureEditor"
+        },
+        {
+          "line": 40635,
+          "text": "CreatureEditor_EL"
+        },
+        {
+          "line": 41812,
+          "text": "CreatureEditorInSpaceGame"
+        },
+        {
+          "line": 41818,
+          "text": "CellToCreatureEditorInGame"
+        },
+        {
+          "line": 42919,
+          "text": "editorAnims~\t0x40606300"
+        },
+        {
+          "line": 47175,
+          "text": "Spore2_acuaticCreatureEditorSetup"
+        },
+        {
+          "line": 47177,
+          "text": "Spore2_aquaticCreatureEditorSetup"
+        },
+        {
+          "line": 47261,
+          "text": "ShadowLightCreatureEditor"
+        },
+        {
+          "line": 48813,
+          "text": "CreatureEditor_ElementalUser"
+        },
+        {
+          "line": 48814,
+          "text": "CreatureEditor_LifeUser"
+        },
+        {
+          "line": 48815,
+          "text": "CreatureEditor_SpacetimeUser"
+        },
+        {
+          "line": 48816,
+          "text": "CreatureEditor_SupernaturalUser"
+        },
+        {
+          "line": 48817,
+          "text": "CreatureEditor_TechnologyUser"
+        },
+        {
+          "line": 49611,
+          "text": "CreatureEditor_TemplateUser"
+        },
+        {
+          "line": 49612,
+          "text": "path4249_CreatureEditor"
+        },
+        {
+          "line": 49613,
+          "text": "path4230_CreatureEditor"
+        },
+        {
+          "line": 49614,
+          "text": "path4245_CreatureEditor"
+        },
+        {
+          "line": 49615,
+          "text": "path4226_CreatureEditor"
+        },
+        {
+          "line": 57525,
+          "text": "CreatureEditorPaintMode_UFO"
+        },
+        {
+          "line": 57526,
+          "text": "CreatureEditor_in_UFO"
+        },
+        {
+          "line": 57528,
+          "text": "CreatureEditorStats"
+        },
+        {
+          "line": 76615,
+          "text": "2005GDCCreatureEditorBG"
+        },
+        {
+          "line": 81446,
+          "text": "playModeMovieMade"
+        },
+        {
+          "line": 81447,
+          "text": "playModePictureMailed"
+        },
+        {
+          "line": 81448,
+          "text": "playModePictureViewed"
+        },
+        {
+          "line": 81449,
+          "text": "playModePictureTaken"
+        },
+        {
+          "line": 81450,
+          "text": "playModeCameraZoomed"
+        },
+        {
+          "line": 81451,
+          "text": "playModeCameraMoved"
+        },
+        {
+          "line": 81452,
+          "text": "playModeAnimationPerformed"
+        },
+        {
+          "line": 81453,
+          "text": "playModeTrayOpened"
+        },
+        {
+          "line": 81454,
+          "text": "playModeCreatureWalked"
+        },
+        {
+          "line": 81472,
+          "text": "playModePictureViewMode"
+        },
+        {
+          "line": 81473,
+          "text": "playModeTrayClosedMode"
+        },
+        {
+          "line": 81474,
+          "text": "playModeTrayOpenMode"
+        },
+        {
+          "line": 85045,
+          "text": "path4230_CreatureEditor_EL"
+        },
+        {
+          "line": 85046,
+          "text": "path4249_CreatureEditor_EL"
+        },
+        {
+          "line": 85047,
+          "text": "path4245_CreatureEditor_EL"
+        },
+        {
+          "line": 85048,
+          "text": "path4228_CreatureEditor_EL"
+        },
+        {
+          "line": 85049,
+          "text": "path4253_CreatureEditor_EL"
+        },
+        {
+          "line": 85050,
+          "text": "path4226_CreatureEditor_EL"
+        },
+        {
+          "line": 95135,
+          "text": "CreatureEditorDefaultBackground"
+        },
+        {
+          "line": 95136,
+          "text": "CreatureEditorLavaBackground"
+        },
+        {
+          "line": 95137,
+          "text": "CreatureEditorSpaceBackground"
+        },
+        {
+          "line": 95138,
+          "text": "CreatureEditorCuteBackground"
+        },
+        {
+          "line": 95139,
+          "text": "CreatureEditorCreepyBackground"
+        },
+        {
+          "line": 98267,
+          "text": "CreatureEditor_EL_default"
+        },
+        {
+          "line": 98268,
+          "text": "CreatureEditor_EL_levelshop"
+        },
+        {
+          "line": 98269,
+          "text": "CreatureEditor_EL_environment"
+        },
+        {
+          "line": 98270,
+          "text": "CreatureEditor_EL_lights"
+        },
+        {
+          "line": 98271,
+          "text": "CreatureEditor_EL_VFX"
+        },
+        {
+          "line": 116845,
+          "text": "CreatureEditorPlayModeAnimButtons"
+        },
+        {
+          "line": 116846,
+          "text": "CreatureEditorTestModeAnimButtons"
+        }
+      ],
+      "semantically_read_lines": [
+        35,
+        90,
+        1844,
+        2635,
+        2636,
+        2637,
+        2638,
+        2639,
+        2640,
+        10453,
+        10468,
+        40635,
+        41812,
+        41818,
+        42919,
+        47175,
+        47177,
+        47261,
+        48813,
+        48814,
+        48815,
+        48816,
+        48817,
+        49611,
+        49612,
+        49613,
+        49614,
+        49615,
+        57525,
+        57526,
+        57528,
+        76615,
+        81446,
+        81447,
+        81448,
+        81449,
+        81450,
+        81451,
+        81452,
+        81453,
+        81454,
+        81472,
+        81473,
+        81474,
+        85045,
+        85046,
+        85047,
+        85048,
+        85049,
+        85050,
+        95135,
+        95136,
+        95137,
+        95138,
+        95139,
+        98267,
+        98268,
+        98269,
+        98270,
+        98271,
+        116845,
+        116846
+      ],
+      "kind": "fixed-community-name-registry"
+    },
+    {
+      "path": "reg_property.txt",
+      "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_property.txt",
+      "bytes": 191259,
+      "sha256": "456ce6c6a8171bc7fae4c04afc8a1440f9834388909dfe7d280ea87334032abd",
+      "lines": 6368,
+      "keyword_inventory": "editorPlay|editorAnim|playMode|copy|Copy|replace|Replace|parent|Parent",
+      "selected_declarations": [
+        {
+          "line": 6,
+          "text": "parent\t0x00B2CCCB"
+        },
+        {
+          "line": 492,
+          "text": "modelSnapToParentCenter\t0x0213A120"
+        },
+        {
+          "line": 934,
+          "text": "badgeReplacesBadge\t0x036C4148"
+        },
+        {
+          "line": 1077,
+          "text": "editorPlayModeLight\t0x03E2FEE2"
+        },
+        {
+          "line": 1078,
+          "text": "editorPlayModeCollisionBG\t0x03E96904"
+        },
+        {
+          "line": 1361,
+          "text": "editorPlayAnimName\t0x0486039F"
+        },
+        {
+          "line": 1416,
+          "text": "editorAnimInfo\t0x048676C2"
+        },
+        {
+          "line": 1421,
+          "text": "editorPlayAnimBabyName\t0x04879CA4"
+        },
+        {
+          "line": 1422,
+          "text": "editorPlayAnimBabySpeed\t0x04879CA5"
+        },
+        {
+          "line": 1423,
+          "text": "editorPlayAnimBabyDelay\t0x04879CA6"
+        },
+        {
+          "line": 1437,
+          "text": "modelTypesToSnapReplace\t0x048E2A2E"
+        },
+        {
+          "line": 1441,
+          "text": "modelReplaceSnapDelta\t0x049218C6"
+        },
+        {
+          "line": 1788,
+          "text": "editorAnimationInterruptDistance\t0x05107F8A"
+        },
+        {
+          "line": 2339,
+          "text": "editorAnimPanelOrder\t0x05C43A40"
+        },
+        {
+          "line": 2340,
+          "text": "editorAnimPanelIcon\t0x05C54E7E"
+        },
+        {
+          "line": 2341,
+          "text": "editorAnimPanelIconShadow\t0x05C54E7F"
+        },
+        {
+          "line": 2647,
+          "text": "dialogCalloutUiParent\t0x064BD8E9"
+        },
+        {
+          "line": 2752,
+          "text": "editorPlayModeBackgroundSet\t0x0673A6E1"
+        },
+        {
+          "line": 2838,
+          "text": "modelShouldCheckParentlessForValidation\t0x06A96F17"
+        },
+        {
+          "line": 3004,
+          "text": "palettePagePartParentPage\t0x1F7D3CF3"
+        },
+        {
+          "line": 3480,
+          "text": "modelCanBeParentless\t0x8E31D974"
+        },
+        {
+          "line": 3519,
+          "text": "editorPlayModeEntryEffectID\t0x92DDFC3E"
+        },
+        {
+          "line": 3520,
+          "text": "editorPlayModeExitEffectID\t0x92DDFC3F"
+        },
+        {
+          "line": 3672,
+          "text": "paletteCategoryParentCategory\t0xB35D7835"
+        },
+        {
+          "line": 3678,
+          "text": "editorPlayModeEnabled\t0xB42C985B"
+        },
+        {
+          "line": 3745,
+          "text": "palettePageParentCategory\t0xC84067F7"
+        },
+        {
+          "line": 3874,
+          "text": "modelSnapToParentTypes\t0xE3803D2A"
+        },
+        {
+          "line": 3971,
+          "text": "modelSnapToParentSnapVectors\t0xF87ABEA3"
+        },
+        {
+          "line": 4193,
+          "text": "copyGamePlanetScripts\t0x0636d04d"
+        },
+        {
+          "line": 4194,
+          "text": "copyAllPlanetScripts\t0x0636d04e"
+        },
+        {
+          "line": 4477,
+          "text": "editorPlayAnimButtonIcon\t0x070204D2"
+        },
+        {
+          "line": 4594,
+          "text": "editorModelCopyConsequence\t0xAE773A29"
+        },
+        {
+          "line": 5557,
+          "text": "replacementList"
+        },
+        {
+          "line": 5868,
+          "text": "parentAudio\t0x5F6317D5"
+        },
+        {
+          "line": 632,
+          "text": "animID\t0x029EB123"
+        },
+        {
+          "line": 3896,
+          "text": "animTriggerOnBlock\t0xE99ED6FF"
+        },
+        {
+          "line": 3940,
+          "text": "animRespondsToEvent\t0xF150FFB0"
+        },
+        {
+          "line": 3941,
+          "text": "animName\t0xF150FFB1"
+        },
+        {
+          "line": 4012,
+          "text": "animRequiredBlocks\t0xFF50F753"
+        }
+      ],
+      "semantically_read_lines": [
+        6,
+        492,
+        632,
+        934,
+        1077,
+        1078,
+        1361,
+        1416,
+        1421,
+        1422,
+        1423,
+        1437,
+        1441,
+        1788,
+        2339,
+        2340,
+        2341,
+        2647,
+        2752,
+        2838,
+        3004,
+        3480,
+        3519,
+        3520,
+        3672,
+        3678,
+        3745,
+        3874,
+        3896,
+        3940,
+        3941,
+        3971,
+        4012,
+        4193,
+        4194,
+        4477,
+        4594,
+        5557,
+        5868
+      ],
+      "kind": "fixed-community-name-registry",
+      "additional_exact_property_ids_queried": [
+        "0x029eb123",
+        "0xf150ffb0",
+        "0xf150ffb1",
+        "0xe99ed6ff",
+        "0xff50f753"
+      ]
+    },
+    {
+      "path": "SourceCode/Editors/Editor.cpp",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/SourceCode/Editors/Editor.cpp",
+      "bytes": 6742,
+      "sha256": "cd9ee21c488cc5fccd243284bf2b9ea60c8acc27fa784f724791b776ceff4f16",
+      "lines": 214,
+      "semantically_read_lines": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "kind": "community-helper-or-declaration-not-original-native-implementation"
+    },
+    {
+      "path": "Editors/cEditorAnimEvent.h",
+      "url": "https://raw.githubusercontent.com/Spore-Community/Spore-ModAPI/2d71289adc71aa5c58f4516c6c835c99f5f9ca19/Spore%20ModAPI/Spore/Editors/cEditorAnimEvent.h",
+      "bytes": 1254,
+      "sha256": "25923b4d93bc82c8b8dc9c683b1f7468f945deb61bcdf86a8d40d30340b00619",
+      "lines": 45,
+      "semantically_read_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "kind": "community-helper-or-declaration-not-original-native-implementation"
+    }
+  ],
+  "additional_read_ranges": {
+    "Editors/Editor.h": [
+      [
+        74,
+        86
+      ],
+      [
+        195,
+        206
+      ]
+    ],
+    "Editors/EditorRigblock.h": [
+      [
+        417,
+        449
+      ],
+      [
+        487,
+        505
+      ]
+    ]
+  },
+  "scope": "Creature editor and landed Creature before Tribal; unrelated shared flags/registry entries not used for conclusions",
+  "unread_or_unknown": [
+    "No native preview or copy/replacement/reparent implementation recovered",
+    "Exact selected current-body bake publication and preview binding lifecycle",
+    "EditorPlayMode module index meanings and real movement/attack/social test coverage",
+    "Original subtree copy support, persistent identity and retained child/socket migration",
+    "Old modelHandle/parent templates consumers remain unknown"
+  ],
+  "preview_resource_inventory": {
+    "groups": [
+      "0x40606300",
+      "0x4060e000",
+      "0x4060e100"
+    ],
+    "type": "0x00b1b104",
+    "records": [
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x01d23d20"
+        },
+        "offset": 11267615,
+        "stored_bytes": 108,
+        "memory_bytes": 121,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112480,
+            "name": "csa_reac_nose_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x01d23d23"
+        },
+        "offset": 11268197,
+        "stored_bytes": 108,
+        "memory_bytes": 121,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112481,
+            "name": "csa_reac_nose_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x04693a56"
+        },
+        "offset": 11273922,
+        "stored_bytes": 102,
+        "memory_bytes": 124,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94020,
+            "name": "cell_add_movement_cil"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279040"
+        },
+        "offset": 11270950,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116847,
+            "name": "creature_button_dance_4"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279041"
+        },
+        "offset": 11271152,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116848,
+            "name": "creature_button_dance_5"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279042"
+        },
+        "offset": 11271256,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116849,
+            "name": "creature_button_dance_6"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279045"
+        },
+        "offset": 11271662,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116850,
+            "name": "creature_button_dance_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279046"
+        },
+        "offset": 11271872,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116851,
+            "name": "creature_button_dance_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279047"
+        },
+        "offset": 11271976,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116852,
+            "name": "creature_button_dance_3"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e120"
+        },
+        "offset": 11272609,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116853,
+            "name": "creature_button_emotion_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e121"
+        },
+        "offset": 11272810,
+        "stored_bytes": 100,
+        "memory_bytes": 100,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116854,
+            "name": "creature_button_emotion_3"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e123"
+        },
+        "offset": 11272910,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116855,
+            "name": "creature_button_emotion_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e124"
+        },
+        "offset": 11273014,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116856,
+            "name": "creature_button_emotion_6"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e126"
+        },
+        "offset": 11273118,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116857,
+            "name": "creature_button_emotion_4"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e127"
+        },
+        "offset": 11273222,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116858,
+            "name": "creature_button_emotion_5"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x162285b4"
+        },
+        "offset": 11268717,
+        "stored_bytes": 109,
+        "memory_bytes": 116,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116859,
+            "name": "creature_button_roar_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x162285b7"
+        },
+        "offset": 11268996,
+        "stored_bytes": 118,
+        "memory_bytes": 130,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116860,
+            "name": "creature_button_roar_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1a519f10"
+        },
+        "offset": 11273835,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112494,
+            "name": "csa_reac_addfoot_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1a519f11"
+        },
+        "offset": 11274098,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112493,
+            "name": "csa_reac_addfoot_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1a519f12"
+        },
+        "offset": 11274259,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112492,
+            "name": "csa_reac_addfoot_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x288ae054"
+        },
+        "offset": 11272080,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116861,
+            "name": "creature_button_attack_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x288ae057"
+        },
+        "offset": 11272394,
+        "stored_bytes": 112,
+        "memory_bytes": 112,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116862,
+            "name": "creature_button_attack_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c0"
+        },
+        "offset": 11265984,
+        "stored_bytes": 112,
+        "memory_bytes": 112,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116863,
+            "name": "creature_button_pose_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c1"
+        },
+        "offset": 11266183,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116864,
+            "name": "creature_button_pose_3"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c3"
+        },
+        "offset": 11266529,
+        "stored_bytes": 104,
+        "memory_bytes": 110,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116865,
+            "name": "creature_button_pose_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c4"
+        },
+        "offset": 11266633,
+        "stored_bytes": 101,
+        "memory_bytes": 108,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116866,
+            "name": "creature_button_pose_6"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c6"
+        },
+        "offset": 11266911,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116867,
+            "name": "creature_button_pose_4"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c7"
+        },
+        "offset": 11267017,
+        "stored_bytes": 111,
+        "memory_bytes": 118,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116868,
+            "name": "creature_button_pose_5"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x31e64da0"
+        },
+        "offset": 11270251,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94021,
+            "name": "cell_add_movement_flag"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3b2cf4e9"
+        },
+        "offset": 11266734,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116869,
+            "name": "csa_reac_envir_05"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3b2cf4ea"
+        },
+        "offset": 11266817,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116870,
+            "name": "csa_reac_envir_06"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3c212f79"
+        },
+        "offset": 11266096,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112483,
+            "name": "csa_reac_ear_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3c212f7a"
+        },
+        "offset": 11266289,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112484,
+            "name": "csa_reac_ear_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3fe76104"
+        },
+        "offset": 11265672,
+        "stored_bytes": 135,
+        "memory_bytes": 169,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112508,
+            "name": "csa_reac_remove_head"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x43494724"
+        },
+        "offset": 11272506,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94022,
+            "name": "cell_add_weapon_pois"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef18"
+        },
+        "offset": 11274494,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116871,
+            "name": "creature_switch_to_parts_mode_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef1a"
+        },
+        "offset": 11264188,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116872,
+            "name": "creature_switch_to_parts_mode_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef1b"
+        },
+        "offset": 11264262,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116873,
+            "name": "creature_switch_to_parts_mode_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef1d"
+        },
+        "offset": 11264336,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116874,
+            "name": "creature_switch_to_parts_mode_04"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1a"
+        },
+        "offset": 11269746,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112498,
+            "name": "csa_reac_addhand_04"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1c"
+        },
+        "offset": 11270157,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112496,
+            "name": "csa_reac_addhand_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1d"
+        },
+        "offset": 11270354,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112497,
+            "name": "csa_reac_addhand_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1f"
+        },
+        "offset": 11270551,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112495,
+            "name": "csa_reac_addhand_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff0"
+        },
+        "offset": 11269318,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116875,
+            "name": "creature_button_chgbkg_5"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff1"
+        },
+        "offset": 11269425,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116876,
+            "name": "creature_button_chgbkg_4"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff3"
+        },
+        "offset": 11269532,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116877,
+            "name": "creature_button_chgbkg_6"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff4"
+        },
+        "offset": 11269639,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116878,
+            "name": "creature_button_chgbkg_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff6"
+        },
+        "offset": 11269840,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116879,
+            "name": "creature_button_chgbkg_3"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff7"
+        },
+        "offset": 11270050,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116880,
+            "name": "creature_button_chgbkg_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc0"
+        },
+        "offset": 11267128,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112515,
+            "name": "csa_reac_paintlook_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc1"
+        },
+        "offset": 11267211,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112514,
+            "name": "csa_reac_paintlook_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc2"
+        },
+        "offset": 11267294,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112513,
+            "name": "csa_reac_paintlook_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc4"
+        },
+        "offset": 11267449,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112519,
+            "name": "csa_reac_paintlook_07"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc6"
+        },
+        "offset": 11267532,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112517,
+            "name": "csa_reac_paintlook_05"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc7"
+        },
+        "offset": 11267797,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112516,
+            "name": "csa_reac_paintlook_04"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x639f6143"
+        },
+        "offset": 11273328,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94028,
+            "name": "creature_idle"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x680f18d0"
+        },
+        "offset": 11266442,
+        "stored_bytes": 87,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112482,
+            "name": "csa_reac_wing_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3b"
+        },
+        "offset": 11274024,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116881,
+            "name": "creature_switch_to_paint_mode_04"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3c"
+        },
+        "offset": 11274185,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116882,
+            "name": "creature_switch_to_paint_mode_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3d"
+        },
+        "offset": 11274346,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116883,
+            "name": "creature_switch_to_paint_mode_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3e"
+        },
+        "offset": 11274420,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116884,
+            "name": "creature_switch_to_paint_mode_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x714cfbc7"
+        },
+        "offset": 11265807,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94023,
+            "name": "cell_add_mouth_filt"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x72a8a88c"
+        },
+        "offset": 11264996,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116885,
+            "name": "ed_creature_spacebar_showoff_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x72a8a88f"
+        },
+        "offset": 11265062,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116886,
+            "name": "ed_creature_spacebar_showoff_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x77c1bfbb"
+        },
+        "offset": 11269114,
+        "stored_bytes": 117,
+        "memory_bytes": 136,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116887,
+            "name": "ed_creature_spacebar_jump"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x7caa0656"
+        },
+        "offset": 11268379,
+        "stored_bytes": 102,
+        "memory_bytes": 124,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94024,
+            "name": "cell_add_mouth_jaw"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x84c4b9be"
+        },
+        "offset": 11265491,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112488,
+            "name": "csa_reac_addmask_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9502c750"
+        },
+        "offset": 11264410,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112485,
+            "name": "csa_reac_eye_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9502c752"
+        },
+        "offset": 11264633,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112487,
+            "name": "csa_reac_eye_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9502c753"
+        },
+        "offset": 11264754,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112486,
+            "name": "csa_reac_eye_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9dc4586d"
+        },
+        "offset": 11270749,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94025,
+            "name": "cell_add_mouth_prob"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9f86b2cc"
+        },
+        "offset": 11273394,
+        "stored_bytes": 136,
+        "memory_bytes": 169,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112491,
+            "name": "csa_reac_adddetail_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9f86b2cf"
+        },
+        "offset": 11273530,
+        "stored_bytes": 136,
+        "memory_bytes": 169,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112490,
+            "name": "csa_reac_adddetail_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xaf5db6bc"
+        },
+        "offset": 11270448,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94026,
+            "name": "cell_add_weapon_elec"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xaff9d4fd"
+        },
+        "offset": 11267377,
+        "stored_bytes": 72,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 47973,
+            "name": "cell_idle_blink"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xb07bb814"
+        },
+        "offset": 11274568,
+        "stored_bytes": 170,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112505,
+            "name": "csa_reac_remov_sigh"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xb4099c13"
+        },
+        "offset": 11265910,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 1736,
+            "name": "cell_ed_idle_blink"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xbdc15491"
+        },
+        "offset": 11268481,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112520,
+            "name": "creature_rest_pose"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xbe47a468"
+        },
+        "offset": 11266376,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 1735,
+            "name": "cell_ed_idle"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcbf2060a"
+        },
+        "offset": 11269947,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94027,
+            "name": "cell_add_weapon_spik"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xccb61f76"
+        },
+        "offset": 11269231,
+        "stored_bytes": 87,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116888,
+            "name": "bllink_on_add_cell_eye"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d0"
+        },
+        "offset": 11270645,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116889,
+            "name": "creature_button_action_3"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d1"
+        },
+        "offset": 11270852,
+        "stored_bytes": 98,
+        "memory_bytes": 104,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116890,
+            "name": "creature_button_action_2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d2"
+        },
+        "offset": 11271054,
+        "stored_bytes": 98,
+        "memory_bytes": 104,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116891,
+            "name": "creature_button_action_1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d4"
+        },
+        "offset": 11271360,
+        "stored_bytes": 98,
+        "memory_bytes": 104,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116892,
+            "name": "creature_button_action_7"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d5"
+        },
+        "offset": 11271458,
+        "stored_bytes": 100,
+        "memory_bytes": 106,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116893,
+            "name": "creature_button_action_6"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d6"
+        },
+        "offset": 11271558,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116894,
+            "name": "creature_button_action_5"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d7"
+        },
+        "offset": 11271766,
+        "stored_bytes": 106,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116895,
+            "name": "creature_button_action_4"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07da"
+        },
+        "offset": 11272184,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": []
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07db"
+        },
+        "offset": 11272288,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": []
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536de8"
+        },
+        "offset": 11264875,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112502,
+            "name": "csa_reac_addmouth_04"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536ded"
+        },
+        "offset": 11265128,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112499,
+            "name": "csa_reac_addmouth_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536dee"
+        },
+        "offset": 11265249,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112500,
+            "name": "csa_reac_addmouth_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536def"
+        },
+        "offset": 11265370,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112501,
+            "name": "csa_reac_addmouth_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd8956f5c"
+        },
+        "offset": 11273666,
+        "stored_bytes": 169,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112503,
+            "name": "csa_reac_remov_antic"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fab"
+        },
+        "offset": 11267723,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112512,
+            "name": "creature_idle_lookaround_04"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fac"
+        },
+        "offset": 11267880,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112511,
+            "name": "creature_idle_lookaround_03"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fad"
+        },
+        "offset": 11268123,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112510,
+            "name": "creature_idle_lookaround_02"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fae"
+        },
+        "offset": 11268305,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 47974,
+            "name": "cell_jar_chemical"
+          },
+          {
+            "line": 112509,
+            "name": "creature_idle_lookaround_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xe45341ff"
+        },
+        "offset": 11264531,
+        "stored_bytes": 102,
+        "memory_bytes": 124,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94019,
+            "name": "cell_add_movement_jet"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xeb45f44c"
+        },
+        "offset": 11267954,
+        "stored_bytes": 169,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112504,
+            "name": "csa_reac_remov_huh"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xef0c868e"
+        },
+        "offset": 11272713,
+        "stored_bytes": 97,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112489,
+            "name": "csa_reac_addshoulder_01"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xf54a8121"
+        },
+        "offset": 11268547,
+        "stored_bytes": 170,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112506,
+            "name": "csa_reac_remov_no1"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xf54a8122"
+        },
+        "offset": 11268826,
+        "stored_bytes": 170,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112507,
+            "name": "csa_reac_remov_no2"
+          }
+        ]
+      },
+      {
+        "package": "Spore_Game.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xfe7b5f87"
+        },
+        "offset": 11265585,
+        "stored_bytes": 87,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 47972,
+            "name": "cell_add_eye"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x01d23d20"
+        },
+        "offset": 14739285,
+        "stored_bytes": 108,
+        "memory_bytes": 121,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112480,
+            "name": "csa_reac_nose_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x01d23d23"
+        },
+        "offset": 14761664,
+        "stored_bytes": 108,
+        "memory_bytes": 121,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112481,
+            "name": "csa_reac_nose_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x04693a56"
+        },
+        "offset": 17622895,
+        "stored_bytes": 102,
+        "memory_bytes": 124,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94020,
+            "name": "cell_add_movement_cil"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279040"
+        },
+        "offset": 3961509,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116847,
+            "name": "creature_button_dance_4"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279041"
+        },
+        "offset": 3961613,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116848,
+            "name": "creature_button_dance_5"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279042"
+        },
+        "offset": 3961904,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116849,
+            "name": "creature_button_dance_6"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279045"
+        },
+        "offset": 3964095,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116850,
+            "name": "creature_button_dance_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279046"
+        },
+        "offset": 3965373,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116851,
+            "name": "creature_button_dance_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x08279047"
+        },
+        "offset": 3965477,
+        "stored_bytes": 104,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116852,
+            "name": "creature_button_dance_3"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e120"
+        },
+        "offset": 8382827,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116853,
+            "name": "creature_button_emotion_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e121"
+        },
+        "offset": 8384117,
+        "stored_bytes": 100,
+        "memory_bytes": 100,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116854,
+            "name": "creature_button_emotion_3"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e123"
+        },
+        "offset": 8384421,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116855,
+            "name": "creature_button_emotion_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e124"
+        },
+        "offset": 8384525,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116856,
+            "name": "creature_button_emotion_6"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e126"
+        },
+        "offset": 8391405,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116857,
+            "name": "creature_button_emotion_4"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1167e127"
+        },
+        "offset": 8398224,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116858,
+            "name": "creature_button_emotion_5"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x162285b4"
+        },
+        "offset": 11963613,
+        "stored_bytes": 109,
+        "memory_bytes": 116,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116859,
+            "name": "creature_button_roar_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x162285b7"
+        },
+        "offset": 11970227,
+        "stored_bytes": 118,
+        "memory_bytes": 130,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116860,
+            "name": "creature_button_roar_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1a519f10"
+        },
+        "offset": 8737430,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112494,
+            "name": "csa_reac_addfoot_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1a519f11"
+        },
+        "offset": 8737874,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112493,
+            "name": "csa_reac_addfoot_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x1a519f12"
+        },
+        "offset": 8737961,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112492,
+            "name": "csa_reac_addfoot_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x288ae054"
+        },
+        "offset": 13240648,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116861,
+            "name": "creature_button_attack_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x288ae057"
+        },
+        "offset": 13241103,
+        "stored_bytes": 112,
+        "memory_bytes": 112,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116862,
+            "name": "creature_button_attack_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c0"
+        },
+        "offset": 14605290,
+        "stored_bytes": 112,
+        "memory_bytes": 112,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116863,
+            "name": "creature_button_pose_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c1"
+        },
+        "offset": 14605866,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116864,
+            "name": "creature_button_pose_3"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c3"
+        },
+        "offset": 14606068,
+        "stored_bytes": 104,
+        "memory_bytes": 110,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116865,
+            "name": "creature_button_pose_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c4"
+        },
+        "offset": 14606172,
+        "stored_bytes": 101,
+        "memory_bytes": 108,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116866,
+            "name": "creature_button_pose_6"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c6"
+        },
+        "offset": 14630828,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116867,
+            "name": "creature_button_pose_4"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x2b8a65c7"
+        },
+        "offset": 14630934,
+        "stored_bytes": 111,
+        "memory_bytes": 118,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116868,
+            "name": "creature_button_pose_5"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x31e64da0"
+        },
+        "offset": 17025036,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94021,
+            "name": "cell_add_movement_flag"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3b2cf4e9"
+        },
+        "offset": 8218146,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116869,
+            "name": "csa_reac_envir_05"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3b2cf4ea"
+        },
+        "offset": 8218229,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116870,
+            "name": "csa_reac_envir_06"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3c212f79"
+        },
+        "offset": 6960507,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112483,
+            "name": "csa_reac_ear_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3c212f7a"
+        },
+        "offset": 6963062,
+        "stored_bytes": 87,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112484,
+            "name": "csa_reac_ear_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x3fe76104"
+        },
+        "offset": 12514037,
+        "stored_bytes": 135,
+        "memory_bytes": 169,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112508,
+            "name": "csa_reac_remove_head"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x43494724"
+        },
+        "offset": 17386187,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94022,
+            "name": "cell_add_weapon_pois"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef18"
+        },
+        "offset": 13743129,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116871,
+            "name": "creature_switch_to_parts_mode_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef1a"
+        },
+        "offset": 13743626,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116872,
+            "name": "creature_switch_to_parts_mode_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef1b"
+        },
+        "offset": 13743700,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116873,
+            "name": "creature_switch_to_parts_mode_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x4ee4ef1d"
+        },
+        "offset": 13743774,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116874,
+            "name": "creature_switch_to_parts_mode_04"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1a"
+        },
+        "offset": 2156835,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112498,
+            "name": "csa_reac_addhand_04"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1c"
+        },
+        "offset": 2156929,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112496,
+            "name": "csa_reac_addhand_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1d"
+        },
+        "offset": 2157112,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112497,
+            "name": "csa_reac_addhand_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x54e3be1f"
+        },
+        "offset": 2157206,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112495,
+            "name": "csa_reac_addhand_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff0"
+        },
+        "offset": 172222,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116875,
+            "name": "creature_button_chgbkg_5"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff1"
+        },
+        "offset": 172377,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116876,
+            "name": "creature_button_chgbkg_4"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff3"
+        },
+        "offset": 172580,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116877,
+            "name": "creature_button_chgbkg_6"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff4"
+        },
+        "offset": 172687,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116878,
+            "name": "creature_button_chgbkg_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff6"
+        },
+        "offset": 173171,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116879,
+            "name": "creature_button_chgbkg_3"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x5ccb5ff7"
+        },
+        "offset": 173278,
+        "stored_bytes": 107,
+        "memory_bytes": 114,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116880,
+            "name": "creature_button_chgbkg_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc0"
+        },
+        "offset": 3959349,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112515,
+            "name": "csa_reac_paintlook_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc1"
+        },
+        "offset": 3959432,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112514,
+            "name": "csa_reac_paintlook_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc2"
+        },
+        "offset": 3961426,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112513,
+            "name": "csa_reac_paintlook_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc4"
+        },
+        "offset": 3961717,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112519,
+            "name": "csa_reac_paintlook_07"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc6"
+        },
+        "offset": 3963666,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112517,
+            "name": "csa_reac_paintlook_05"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x61825fc7"
+        },
+        "offset": 3963916,
+        "stored_bytes": 83,
+        "memory_bytes": 97,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112516,
+            "name": "csa_reac_paintlook_04"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x639f6143"
+        },
+        "offset": 18168599,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94028,
+            "name": "creature_idle"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x680f18d0"
+        },
+        "offset": 13002133,
+        "stored_bytes": 87,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112482,
+            "name": "csa_reac_wing_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3b"
+        },
+        "offset": 12965262,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116881,
+            "name": "creature_switch_to_paint_mode_04"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3c"
+        },
+        "offset": 12965336,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116882,
+            "name": "creature_switch_to_paint_mode_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3d"
+        },
+        "offset": 12965410,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116883,
+            "name": "creature_switch_to_paint_mode_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x6a1b4c3e"
+        },
+        "offset": 12965484,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116884,
+            "name": "creature_switch_to_paint_mode_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x714cfbc7"
+        },
+        "offset": 5870537,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94023,
+            "name": "cell_add_mouth_filt"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x72a8a88c"
+        },
+        "offset": 13738749,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116885,
+            "name": "ed_creature_spacebar_showoff_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x72a8a88f"
+        },
+        "offset": 13742451,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116886,
+            "name": "ed_creature_spacebar_showoff_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x77c1bfbb"
+        },
+        "offset": 3404658,
+        "stored_bytes": 117,
+        "memory_bytes": 136,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116887,
+            "name": "ed_creature_spacebar_jump"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x7caa0656"
+        },
+        "offset": 17529198,
+        "stored_bytes": 102,
+        "memory_bytes": 124,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94024,
+            "name": "cell_add_mouth_jaw"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x84c4b9be"
+        },
+        "offset": 15709185,
+        "stored_bytes": 94,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112488,
+            "name": "csa_reac_addmask_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9502c750"
+        },
+        "offset": 3668598,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112485,
+            "name": "csa_reac_eye_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9502c752"
+        },
+        "offset": 3668719,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112487,
+            "name": "csa_reac_eye_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9502c753"
+        },
+        "offset": 3668840,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112486,
+            "name": "csa_reac_eye_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9dc4586d"
+        },
+        "offset": 6255476,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94025,
+            "name": "cell_add_mouth_prob"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9f86b2cc"
+        },
+        "offset": 7770659,
+        "stored_bytes": 136,
+        "memory_bytes": 169,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112491,
+            "name": "csa_reac_adddetail_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0x9f86b2cf"
+        },
+        "offset": 7771043,
+        "stored_bytes": 136,
+        "memory_bytes": 169,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112490,
+            "name": "csa_reac_adddetail_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xaf5db6bc"
+        },
+        "offset": 2858366,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94026,
+            "name": "cell_add_weapon_elec"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xaff9d4fd"
+        },
+        "offset": 254986,
+        "stored_bytes": 72,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 47973,
+            "name": "cell_idle_blink"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xb07bb814"
+        },
+        "offset": 1989953,
+        "stored_bytes": 170,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112505,
+            "name": "csa_reac_remov_sigh"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xb4099c13"
+        },
+        "offset": 10801047,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 1736,
+            "name": "cell_ed_idle_blink"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xbdc15491"
+        },
+        "offset": 12107702,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112520,
+            "name": "creature_rest_pose"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xbe47a468"
+        },
+        "offset": 15841508,
+        "stored_bytes": 66,
+        "memory_bytes": 76,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 1735,
+            "name": "cell_ed_idle"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcbf2060a"
+        },
+        "offset": 11121795,
+        "stored_bytes": 103,
+        "memory_bytes": 125,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94027,
+            "name": "cell_add_weapon_spik"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xccb61f76"
+        },
+        "offset": 7778089,
+        "stored_bytes": 87,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116888,
+            "name": "bllink_on_add_cell_eye"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d0"
+        },
+        "offset": 14989906,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116889,
+            "name": "creature_button_action_3"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d1"
+        },
+        "offset": 14990851,
+        "stored_bytes": 98,
+        "memory_bytes": 104,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116890,
+            "name": "creature_button_action_2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d2"
+        },
+        "offset": 14990949,
+        "stored_bytes": 98,
+        "memory_bytes": 104,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116891,
+            "name": "creature_button_action_1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d4"
+        },
+        "offset": 14994321,
+        "stored_bytes": 98,
+        "memory_bytes": 104,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116892,
+            "name": "creature_button_action_7"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d5"
+        },
+        "offset": 14994419,
+        "stored_bytes": 100,
+        "memory_bytes": 106,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116893,
+            "name": "creature_button_action_6"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d6"
+        },
+        "offset": 15021875,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": [
+          {
+            "line": 116894,
+            "name": "creature_button_action_5"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07d7"
+        },
+        "offset": 15021979,
+        "stored_bytes": 106,
+        "memory_bytes": 112,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 116895,
+            "name": "creature_button_action_4"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07da"
+        },
+        "offset": 15022221,
+        "stored_bytes": 104,
+        "memory_bytes": 104,
+        "compression": 0,
+        "instance_names": []
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xcfbb07db"
+        },
+        "offset": 15022325,
+        "stored_bytes": 106,
+        "memory_bytes": 106,
+        "compression": 0,
+        "instance_names": []
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536de8"
+        },
+        "offset": 17051800,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112502,
+            "name": "csa_reac_addmouth_04"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536ded"
+        },
+        "offset": 17052137,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112499,
+            "name": "csa_reac_addmouth_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536dee"
+        },
+        "offset": 17052258,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112500,
+            "name": "csa_reac_addmouth_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd2536def"
+        },
+        "offset": 17052379,
+        "stored_bytes": 121,
+        "memory_bytes": 145,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112501,
+            "name": "csa_reac_addmouth_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xd8956f5c"
+        },
+        "offset": 2406194,
+        "stored_bytes": 169,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112503,
+            "name": "csa_reac_remov_antic"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fab"
+        },
+        "offset": 18690410,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112512,
+            "name": "creature_idle_lookaround_04"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fac"
+        },
+        "offset": 18690484,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112511,
+            "name": "creature_idle_lookaround_03"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fad"
+        },
+        "offset": 18690558,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112510,
+            "name": "creature_idle_lookaround_02"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xdfb47fae"
+        },
+        "offset": 18690632,
+        "stored_bytes": 74,
+        "memory_bytes": 88,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 47974,
+            "name": "cell_jar_chemical"
+          },
+          {
+            "line": 112509,
+            "name": "creature_idle_lookaround_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xe45341ff"
+        },
+        "offset": 6219431,
+        "stored_bytes": 102,
+        "memory_bytes": 124,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 94019,
+            "name": "cell_add_movement_jet"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xeb45f44c"
+        },
+        "offset": 17675269,
+        "stored_bytes": 169,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112504,
+            "name": "csa_reac_remov_huh"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xef0c868e"
+        },
+        "offset": 15820081,
+        "stored_bytes": 97,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112489,
+            "name": "csa_reac_addshoulder_01"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xf54a8121"
+        },
+        "offset": 638582,
+        "stored_bytes": 170,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112506,
+            "name": "csa_reac_remov_no1"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xf54a8122"
+        },
+        "offset": 638752,
+        "stored_bytes": 170,
+        "memory_bytes": 229,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 112507,
+            "name": "csa_reac_remov_no2"
+          }
+        ]
+      },
+      {
+        "package": "PatchData.package",
+        "key": {
+          "type": "0x00b1b104",
+          "group": "0x40606300",
+          "instance": "0xfe7b5f87"
+        },
+        "offset": 302895,
+        "stored_bytes": 87,
+        "memory_bytes": 109,
+        "compression": 65535,
+        "instance_names": [
+          {
+            "line": 47972,
+            "name": "cell_add_eye"
+          }
+        ]
+      }
+    ],
+    "inventory_only_resource_bodies_unread": true,
+    "registry_sha256": "88f84bcf776ddc8bd3d779dae310020a11c09afbf37fe48d291296af0b2a4715",
+    "selected_bodies_subsequently_read_separately": "10 PROP bodies in local-selected-editor-preview-properties.json; inventory phase itself did not read bodies"
+  },
+  "official_manual": {
+    "url": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/17390/manuals/manual.pdf?t=1642702281",
+    "sha256": "9a1cd765673454b3fbdf0edf2026b853b3354a4fa6ef144076b10eb508bdae1d",
+    "bytes": 13354693,
+    "pages": 31,
+    "keyword_page_inventory_pattern": "copy a part|duplicate|ALT|copy parts|Creator Controls|Test Drive",
+    "coverage": "Whole document keyword page locator; first oversized text preview truncated, selected pages10/11/14 fully reread; only Creator editing/Test Drive sections used",
+    "images_not_visually_verified": true,
+    "matched_page_inventory_only": [
+      8,
+      9,
+      13,
+      14,
+      15,
+      16,
+      30
+    ],
+    "read_complete_selected_pages_one_based": [
+      10,
+      11,
+      14
+    ]
+  },
+  "facts": [
+    {
+      "source": "Official manual PDF page14 printed22-23",
+      "summary": "Creature Test Drive supports single-click walking, double-click running, animation panels and babies imitating; does not establish gameplay combat/social validation reports."
+    },
+    {
+      "source": "Editor.h79-83,203-205",
+      "summary": "Build/Paint/Play enum; neutral-pose event ID6581B78E described by community comment."
+    },
+    {
+      "source": "PlayModeActor.h13-44",
+      "summary": "CreateWalkAction/AddWalkAction, walk controller and queue declared; native behavior unknown."
+    },
+    {
+      "source": "PlayModeAnimations.h40-54",
+      "summary": "Playback and panel/button reading declarations, groups4060E000/E100; only index-negative in selected two packages."
+    },
+    {
+      "source": "cEditorResource.h31-56",
+      "summary": "Parent/symmetry indices, reference pose, shape and paint fields; not stable UUID or subtree-copy semantics."
+    },
+    {
+      "source": "SourceCode/Editors/Editor.cpp15-18",
+      "summary": "Neutral method is native-wrapper macro, not recovered original event sending body."
+    },
+    {
+      "source": "Local selected rest PROP",
+      "summary": "animRespondsToEvent6581B78E matches neutral method comment; animID04372FC9. Consumer/execution unresolved."
+    }
+  ],
+  "bounded_negative_copy_method_query": {
+    "files": [
+      "Editors/Editor.h",
+      "Editors/EditorRigblock.h",
+      "SourceCode/Editors/Editor.cpp"
+    ],
+    "claim": "No explicit whole-subtree clone/copy/reparent method body confirmed within recorded query/ranges; not absence of feature",
+    "excluded_false_positive": "mbModelCopyConsequence and kModel enum matches not taken as CopySubtree"
+  },
+  "reused_records": [
+    "public-editor-budget-entries.json",
+    "public-editor-snap-connection-contracts.json",
+    "public-locomotion-rebuild-contracts.json",
+    "public-part-definition-contracts.json"
+  ]
+}

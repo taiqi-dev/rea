@@ -1,0 +1,39 @@
+{
+  "commit": "a482c51d8d37fc8cf416acecc3c00a5b0723f2e5",
+  "url": "https://raw.githubusercontent.com/Spore-Community/SporeModder-FX/a482c51d8d37fc8cf416acecc3c00a5b0723f2e5/reg_type.txt",
+  "sha256": "3e0ff520a9e0793f29e82a00aee5de56dc5a83a1fbef0d8e8b5fe2754147caa9",
+  "selected_declarations": [
+    {
+      "line": 48,
+      "text": "gait\t0x25df0112"
+    },
+    {
+      "line": 350,
+      "text": "cSimulatorWalkAround\t0x2F404EA"
+    },
+    {
+      "line": 399,
+      "text": "cCitySimulator\t0x21F1187"
+    },
+    {
+      "line": 400,
+      "text": "cCombatSimulator\t0x23BA44D"
+    },
+    {
+      "line": 401,
+      "text": "cPosseSimulator\t0x21F11AE"
+    },
+    {
+      "line": 402,
+      "text": "cSimulatorSpaceGame\t0x21F15DD"
+    },
+    {
+      "line": 410,
+      "text": "cSimulatorUniverse\t0x2A8BFBE"
+    },
+    {
+      "line": 411,
+      "text": "cSimulatorPlayerUFO\t0x2F011ED"
+    }
+  ]
+}

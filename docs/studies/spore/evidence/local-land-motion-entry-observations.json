@@ -1,0 +1,168 @@
+{
+  "kind": "local-read-only-PE-string-observation-not-REA-Evidence",
+  "target": "E:/Steam/steamapps/common/Spore/SporeBin/SporeApp.exe",
+  "bytes": 20626168,
+  "sha256": "f9716458cdc232a507686dcb490e75680c514e31a5b1f33601b0dfcd05baf75d",
+  "preferred_image_base": "0x400000",
+  "scope": {
+    "sections": {
+      ".rdata": [
+        "0x00fcb400",
+        "0x0110aa00"
+      ],
+      ".data": [
+        "0x0110aa00",
+        "0x011cf600"
+      ]
+    },
+    "interval": "right-open file offsets",
+    "encoding": "ASCII complete printable NUL strings, length 4-140; reject suffixes with printable prefix",
+    "query": "stopdistance|locomotiv|locomotion|footprint|obstacle|neighbor|gait|avoid, case-insensitive; plus exact selected basic words"
+  },
+  "strings": [
+    {
+      "text": "gait",
+      "file_offset": "0x1046648",
+      "preferred_data_va": "0x1447248"
+    },
+    {
+      "text": "gait_epic",
+      "file_offset": "0x1046650",
+      "preferred_data_va": "0x1447250"
+    },
+    {
+      "text": "Anim/gait/untagged",
+      "file_offset": "0x1046df4",
+      "preferred_data_va": "0x14479f4"
+    },
+    {
+      "text": "steplength",
+      "file_offset": "0x1046f2c",
+      "preferred_data_va": "0x1447b2c"
+    },
+    {
+      "text": "stepheight",
+      "file_offset": "0x1046f38",
+      "preferred_data_va": "0x1447b38"
+    },
+    {
+      "text": "speedi",
+      "file_offset": "0x1046f54",
+      "preferred_data_va": "0x1447b54"
+    },
+    {
+      "text": "gaitgroupkey",
+      "file_offset": "0x104796c",
+      "preferred_data_va": "0x144856c"
+    },
+    {
+      "text": "allowLocomotion",
+      "file_offset": "0x1047da0",
+      "preferred_data_va": "0x14489a0"
+    },
+    {
+      "text": "landAvoidCitiesForCreatures",
+      "file_offset": "0x10591c4",
+      "preferred_data_va": "0x1459dc4"
+    },
+    {
+      "text": "Simulator/AStar",
+      "file_offset": "0x1059240",
+      "preferred_data_va": "0x1459e40"
+    },
+    {
+      "text": "<position:vector3> [stopDistance:float]",
+      "file_offset": "0x1059cc8",
+      "preferred_data_va": "0x145a8c8"
+    },
+    {
+      "text": "-useFootprintRadius^",
+      "file_offset": "0x1059e78",
+      "preferred_data_va": "0x145aa78"
+    },
+    {
+      "text": "Simulator/cObstacle",
+      "file_offset": "0x105d5f8",
+      "preferred_data_va": "0x145e1f8"
+    },
+    {
+      "text": "Simulator/SubSystem/ObstacleManager",
+      "file_offset": "0x10631f8",
+      "preferred_data_va": "0x1463df8"
+    },
+    {
+      "text": "mNeighborCheckRadius",
+      "file_offset": "0x106c4b4",
+      "preferred_data_va": "0x146d0b4"
+    },
+    {
+      "text": "mStandardSpeed",
+      "file_offset": "0x106c4f8",
+      "preferred_data_va": "0x146d0f8"
+    },
+    {
+      "text": "mDesiredSpeed",
+      "file_offset": "0x106c508",
+      "preferred_data_va": "0x146d108"
+    },
+    {
+      "text": "Simulator/cGroundLocomotion",
+      "file_offset": "0x1070a94",
+      "preferred_data_va": "0x1471694"
+    },
+    {
+      "text": "mFootprintRadius",
+      "file_offset": "0x1072cec",
+      "preferred_data_va": "0x14738ec"
+    },
+    {
+      "text": "mBoundingRadius",
+      "file_offset": "0x1072d00",
+      "preferred_data_va": "0x1473900"
+    }
+  ],
+  "neighborhoods": [
+    [
+      "0x1059ba0",
+      "0x1059f60"
+    ],
+    [
+      "0x106c3c0",
+      "0x106c590"
+    ],
+    [
+      "0x1072b00",
+      "0x1072ef0"
+    ],
+    [
+      "0x1046d70",
+      "0x1046fa0"
+    ],
+    [
+      "0x10478c0",
+      "0x1047bb0"
+    ]
+  ],
+  "not_found_full_literals": [
+    "Simulator/cLocomotiveObject",
+    "cLocomotiveObject",
+    "goalStopDistance",
+    "acceptableStopDistance",
+    "mGoalStopDistance",
+    "mAcceptableStopDistance"
+  ],
+  "downgraded_suffix": {
+    "suffix": "mNeighbors",
+    "suffix_offset": "0x106c464",
+    "complete_literal": "aDmNeighbors",
+    "complete_start": "0x106c462"
+  },
+  "excluded_attributions": [
+    "AStar name does not prove land path algorithm",
+    "actor command width/radius option does not prove natural land creature behavior",
+    "vehicle/city AcceptableMinDist neighborhood excluded",
+    "tribe neighbor distance excluded"
+  ],
+  "runtime_observed": false,
+  "writer": "root summary of spore_local_evidence read-only report"
+}
