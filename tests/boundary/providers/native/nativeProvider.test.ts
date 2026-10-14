@@ -6,7 +6,7 @@ import { chmod, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { PassThrough } from "node:stream";
 
-import { afterEach, beforeAll, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 
 import { createTestTempDirectory } from "../../../fixtures/temporaryDirectory.js";
 
@@ -372,6 +372,8 @@ describe("native command failure capture and limits", () => {
   });
 
   it("retains output written before cancellation and reaps the stalled command", async () => {
+    const root = await createTestTempDirectory("rea-native-cancellation-");
+    const ready = join(root, "output-written");
     const runner = new XcrunCommandRunner(testProcessEnvironment(), () =>
       Promise.resolve(ok({ path: process.execPath, sha256: "a".repeat(64) })),
     );
@@ -380,13 +382,28 @@ describe("native command failure capture and limits", () => {
       "file",
       [
         "-e",
-        'process.stdout.write("started"); process.stderr.write("warning"); setInterval(() => {}, 1000)',
+        'process.stdout.write("started", () => process.stderr.write("warning", () => require("node:fs").writeFileSync(process.argv[1], "ready"))); setInterval(() => {}, 1000)',
+        ready,
       ],
       { signal: controller.signal },
     );
-    setTimeout(() => controller.abort(), 100);
-
-    const result = await pending;
+    // Cancellation must follow observed writes, including on a slower Windows
+    // runner. A wall-clock delay can cancel before Node has even started.
+    const result = await (async () => {
+      try {
+        await vi.waitFor(
+          async () => {
+            expect(await readFile(ready, "utf8")).toBe("ready");
+          },
+          { timeout: 10_000 },
+        );
+        controller.abort();
+        return await pending;
+      } finally {
+        controller.abort();
+        await pending;
+      }
+    })();
 
     expect(result.ok).toBe(false);
     if (result.ok) return;
