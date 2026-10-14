@@ -102,3 +102,7 @@ gpu_flush再在`1A76DD3 / 1A76E69`实际调用typed `gpu_write_ranges_nonoverlap
 未做：未运行带窗建筑移动场景，未完整恢复窗口通知、各函数stage归属、run条件、deferred屏障、上传callback和GPU完成，未测编辑延迟/性能。未启动、附加或读私存档。
 
 风险：静态阶段图不是实际帧时间线；消息写入、语义状态替换、allocation清旧、范围上传与最终显示不能合并成一个“立即完成”动作。共享泛型别名和物理slot必须保持类型/身份边界。
+
+## 第十四轮续查
+
+第十四轮补查[62历史与恢复重建](62-tiny-glade-history-snapshots-and-regeneration.md)：阶段表中的历史/保存名称现有操作聚合、选定墙回放写端、快照请求与逻辑ID恢复证据；没有将阶段配置、请求入队、磁盘完成或GPU完成混为实机时间线。

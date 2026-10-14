@@ -134,3 +134,5 @@ raw_tag_258!=0 时：subtype1 不减；subtype2 减 `0.05`；subtype3 减 `0.1`�
 未确认：所有 dirty 传播条件、缓存刷新 producer、raw wall tag 的枚举语义、float264 语义、主窗台主体网格、gothic 特殊 shader 的每顶点消费、所有 optional k/ceiling 分支在实际玩法条件下的触发、非法/退化宽度和 wrap seam 的最后视觉效果。不要用“取了旧缓存”直接推断存在动画、惯性或延迟更新。
 
 风险：静态恢复覆盖了选定范围与一组确实相连的调用，仍缺最终渲染/运行时验证。上述动态墙厚与三维倾角算法未在本段发现；这不等于整个游戏没有这些机制。原游戏和存档未修改；本篇仅补充正式研究文档。
+
+第十五轮补充：[64](64-tiny-glade-building-kit-and-asset-assembly.md)直接解析选定窗资源并显示原坐标叠合图，[65](65-tiny-glade-window-holes-and-lantern-components.md)核对主窗体、glass、楣梁及gothic帽的实际请求配对。普通窗台资源存在，但其当前主体生成路径仍未完整确认；不把资源存在当成每窗必生成。

@@ -1,0 +1,191 @@
+{
+  "specVersion": 1,
+  "kind": "independent-design-fixture-not-a-runtime-save",
+  "units": {
+    "length": "meter",
+    "simulationStepSeconds": 0.1
+  },
+  "building": {
+    "id": "building-demo-01",
+    "width": 6.0,
+    "depth": 4.0,
+    "height": 3.0,
+    "thickness": 0.2,
+    "floorThickness": 0.15,
+    "roofRise": 1.2,
+    "eave": 0.15,
+    "roofPanelThickness": 0.08,
+    "roofRidgeAxis": "X",
+    "wallMaterials": {
+      "north": "wood",
+      "south": "stone",
+      "east": "stone",
+      "west": "stone"
+    }
+  },
+  "initialOpenings": [
+    {
+      "id": "door-01",
+      "wallId": "wall-south",
+      "kind": "Door",
+      "u": 4.5,
+      "v": 1.0,
+      "width": 0.9,
+      "height": 2.0
+    }
+  ],
+  "initialPieces": [
+    {
+      "id": "beam-01",
+      "wallId": "wall-north",
+      "kind": "FloorAnchoredBeam",
+      "u": 5.1,
+      "vMin": 0.0,
+      "vMax": 3.0,
+      "crossSection": 0.12,
+      "material": "wood"
+    }
+  ],
+  "attachmentsToPlace": [
+    {
+      "id": "window-01",
+      "wallId": "wall-north",
+      "kind": "Window",
+      "assetKey": "window.frame.small",
+      "u": 2.0,
+      "v": 1.6,
+      "width": 1.2,
+      "height": 1.2
+    },
+    {
+      "id": "lamp-01",
+      "wallId": "wall-north",
+      "kind": "Lamp",
+      "assetKey": "lamp.shell.wall",
+      "u": 4.25,
+      "v": 1.75,
+      "supportWidth": 0.12,
+      "supportHeight": 0.12,
+      "normalOffset": 0.01,
+      "enabled": true
+    }
+  ],
+  "damageGrid": {
+    "cellSize": 0.5,
+    "origin": "wall-u0-v0",
+    "fireCell": {
+      "wallId": "wall-north",
+      "iu": 8,
+      "iv": 3
+    },
+    "breakCell": {
+      "wallId": "wall-north",
+      "iu": 0,
+      "iv": 4
+    }
+  },
+  "elementRules": {
+    "ambientTemperature": 20.0,
+    "igniteTemperature": 90.0,
+    "burnThreshold": 60.0,
+    "wetBlockThreshold": 0.6,
+    "initialIntegrity": 1000,
+    "initialFuel": 1000,
+    "integrityLossPerStep": 20,
+    "fuelLossPerStep": 10,
+    "burnHeatPerStep": 1.0,
+    "coolingPerStep": 0.4,
+    "dryingPerStep": 0.005,
+    "waterAmount": 1.0,
+    "waterCoolingPerAmount": 60.0
+  },
+  "expected": {
+    "innerWidth": 5.6,
+    "innerDepth": 3.6,
+    "sideWallLength": 3.6,
+    "roofRidgeY": 4.2,
+    "roofEaveY": 2.91,
+    "windowInitialCut": {
+      "uMin": 1.4,
+      "uMax": 2.6,
+      "vMin": 1.0,
+      "vMax": 2.2
+    },
+    "windowMovedCut": {
+      "uMin": 2.4,
+      "uMax": 3.6,
+      "vMin": 1.0,
+      "vMax": 2.2
+    },
+    "windowMoveU": 3.0,
+    "oldHoleExclusiveProbe": {
+      "u": 1.8,
+      "v": 1.6
+    },
+    "fireCellCut": {
+      "uMin": 4.0,
+      "uMax": 4.5,
+      "vMin": 1.5,
+      "vMax": 2.0
+    },
+    "lampSupport": {
+      "uMin": 4.19,
+      "uMax": 4.31,
+      "vMin": 1.69,
+      "vMax": 1.81
+    },
+    "northWallWithInitialWindow": {
+      "solidArea": 16.56,
+      "solidVolume": 3.312,
+      "uIntervals": 14,
+      "vIntervals": 7,
+      "solidCells": 86,
+      "surfaceQuads": 228,
+      "verticesWithoutFaceMerging": 912,
+      "trianglesWithoutFaceMerging": 456
+    },
+    "northWallWithWindowAndDestroyedFireCell": {
+      "solidArea": 16.31,
+      "solidVolume": 3.262
+    },
+    "after10BurnSteps": {
+      "integrity": 800,
+      "fuel": 900,
+      "temperature": 96.0,
+      "wetness": 0.0,
+      "burning": true,
+      "destroyed": false
+    },
+    "afterWaterAndOneStep": {
+      "integrity": 800,
+      "fuel": 900,
+      "temperature": 35.6,
+      "wetness": 0.995,
+      "burning": false,
+      "destroyed": false
+    },
+    "after50FreshBurnSteps": {
+      "integrity": 0,
+      "fuel": 500,
+      "temperature": 120.0,
+      "wetness": 0.0,
+      "burning": false,
+      "destroyed": true
+    }
+  },
+  "acceptanceIds": [
+    "A0",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10",
+    "A11",
+    "A12"
+  ]
+}

@@ -96,3 +96,7 @@ facing门槛g=0.3进入提前退出，g=0.2不从这一门槛退出；后续反�
 未做：未恢复extract_canopy/trunk、prim_normals生产、ECS→GPU发布、玩家树全部规则、资源离线制作方式、完整冠片facing/see-through及最终pass。未运行游戏/GPU、未附加或读私存档。
 
 风险：资产属性加工、实例展开与拓扑生成不同；NaN输出和反向门槛未有设备验证。所选模块未生成枝拓扑的有界结果不能外推成全产品绝无程序树。
+
+## 第十四轮续查
+
+第十四轮补齐本篇资源加工缺口，见[61树木网格加工与实例发布](61-tiny-glade-tree-mesh-processing-and-publication.md)：CPU按颜色筛选干冠、压缩/重映射、冠片分组法线/中心、属性默认及实例staging已有证据；原树离线作者算法与最终GPU transfer仍未知。

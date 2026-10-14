@@ -111,3 +111,7 @@ UI选定一扇普通窗，hit tag0、WallID=7、position=(3,4,0.2)。墙折线A=
 未做：未运行拖动/放置场景，未恢复UI hit producer、所有磁性吸附/尺寸限制、相机完整约定、Rapier过滤和存档/history。未启动、附加或读取私存档。
 
 风险：40B/64B hit、raw tag、墙坐标和高度偏移混用会造成错误解释；已分别保存归属。L<=0及非有限输入的上游保护仍未知，构造例不建立设备或游戏运行等价性。
+
+## 第十四轮续查
+
+第十四轮将本篇24CC460、14F7500等候选追成[59窗户邻居协调与等级合并](59-tiny-glade-decoration-snapping-and-merging.md)：候选资格、rank求和/新collision尺寸、中心修正、第三者排除与change写端已有实际证据。自由resize、一般磁吸和完整UI开关仍未知。
