@@ -87,6 +87,7 @@ run([
 ]);
 run(["scripts/verify-windows-native-inspection.mjs"]);
 for (const name of [
+  "verify:inspector",
   "verify:package:windows",
   "test:python",
   "docs:check",

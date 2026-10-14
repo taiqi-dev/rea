@@ -10,7 +10,7 @@ const state = vi.hoisted(() => ({
   rejectRemove: false,
   removeCopiedRecovery: false,
   initialCleanupFailure: undefined as unknown,
-  readbackCleanupFailure: undefined as unknown,
+  readbackCleanupFailure: undefined as (() => Promise<unknown>) | undefined,
 }));
 
 afterEach(() => {
@@ -84,7 +84,9 @@ vi.mock("../../src/application/RegularFileRead.js", async (importOriginal) => {
       state.initialCleanupFailure !== undefined
         ? Promise.reject(state.initialCleanupFailure)
         : state.readbackFailed && state.readbackCleanupFailure !== undefined
-          ? Promise.reject(state.readbackCleanupFailure)
+          ? state
+              .readbackCleanupFailure()
+              .then((cause) => Promise.reject(cause))
           : state.readbackFailed
             ? Promise.reject(new Error("injected readback failure"))
             : original.readRegularFileText(...arguments_),
@@ -282,23 +284,28 @@ it("retains readback cleanup ownership when rollback also fails", async () => {
   await import("node:fs/promises").then(({ writeFile }) =>
     writeFile(path, original),
   );
-  const owner = await ownReadHandle(path);
-  const cleanupFailure = new RegularFileCleanupFailure(
-    path,
-    owner,
-    { kind: "completed", value: "" },
-    new Error("injected readback close failure"),
-  );
-  state.readbackCleanupFailure = cleanupFailure;
+  let owner: OwnedFileHandle | undefined;
+  // Acquire the readback handle after atomic replacement. Holding the old
+  // config open beforehand prevents Windows from reaching the readback stage.
+  state.readbackCleanupFailure = async () => {
+    owner = await ownReadHandle(path);
+    return new RegularFileCleanupFailure(
+      path,
+      owner,
+      { kind: "completed", value: "" },
+      new Error("injected readback close failure"),
+    );
+  };
   state.rejectRestore = true;
 
   const host = systemSetupHost(
-    { platform: "linux", homeDirectory: root } as DoctorHost,
+    { platform: process.platform, homeDirectory: root } as DoctorHost,
     { HOME: root },
   );
   let caught: unknown;
+  let configured: unknown;
   try {
-    await host.configureClient(
+    configured = await host.configureClient(
       { name: "cursor", configPath: path, format: "json" },
       {},
       ["rea", "mcp"],
@@ -309,7 +316,11 @@ it("retains readback cleanup ownership when rollback also fails", async () => {
     await host.close?.();
   }
 
-  if (!(caught instanceof ConfigurationError)) throw caught;
+  if (!(caught instanceof ConfigurationError))
+    throw new Error(
+      `Expected configuration failure, received ${JSON.stringify(configured)}`,
+      { cause: caught },
+    );
   expect(caught.message).toContain("injected restore write failure");
   expect(caught.message).toContain(`${path}.rea.backup`);
   const cleanupOwnerError = caught.cause;
@@ -321,5 +332,6 @@ it("retains readback cleanup ownership when rollback also fails", async () => {
     cleanupCause: expect.any(AggregateError),
   });
   expect(cleanupOwnerError.owner).toBe(owner);
+  expect(owner).toBeDefined();
   expect(await readFile(`${path}.rea.backup`, "utf8")).toBe(original);
 });

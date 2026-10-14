@@ -390,6 +390,27 @@ const contextualCandidate = (
     );
   }
   const candidate = relativeCandidate(input.sourcePath, declared);
+  if (
+    context === "module-specifier" &&
+    input.moduleKind === "import" &&
+    urlPathIsDirectory(declared)
+  ) {
+    const confined = confineCandidate(candidate);
+    if (typeof confined !== "string") return confined;
+    const fileCandidate = confined.endsWith("/")
+      ? confined.slice(0, -1)
+      : confined;
+    // Node's Windows file-URL conversion can drop the trailing separator,
+    // whereas POSIX rejects the same declaration as a directory import.
+    // Artifact paths establish neither a runtime OS nor that loader outcome.
+    if (resolveFileCandidates(input, [fileCandidate])?.status === "resolved")
+      return {
+        ...unresolvedCandidate("unavailable", [
+          "This directory-form ESM reference has a matching file candidate. Node on Windows can load that file after removing the trailing separator; POSIX rejects directory imports. The artifact does not establish the runtime platform.",
+        ]),
+        candidatePath: fileCandidate,
+      };
+  }
   return context === "module-specifier" && input.moduleKind === "import"
     ? exactUrlPathCandidate(declared, candidate, "module URL")
     : candidate;

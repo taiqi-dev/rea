@@ -113,6 +113,14 @@ not verified emitted code or execution. A declaration file found only through
 an emitted-extension fallback is retained as a candidate, not a runtime target;
 an explicitly selected path keeps its original identity.
 
+Directory-form ESM references such as `./exact.js/.` or
+`./exact.js/child/..` are platform-dependent: Node on Windows can load the
+matching file, while POSIX rejects a directory import. When that exact file
+exists in the same selected artifact container, REA retains `candidate_path`
+and reports `resolution_status: unavailable` with this limitation. The
+analyzer's host OS does not establish the application's runtime OS, so this
+static result neither claims a missing file nor proves the module was loaded.
+
 ## Evidence and authority
 
 Every observation and edge carries all of the following:

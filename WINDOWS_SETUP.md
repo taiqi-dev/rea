@@ -44,6 +44,17 @@ if ($LASTEXITCODE -ne 0) { throw 'Windows acceptance failed; retain the failing 
 
 `check` 会检查源码、类型、lint、依赖及元数据，运行核心/服务测试和 Windows 能力测试，实际验证原生文件系统/进程边界、子模块同步回归、打包后的 CLI/MCP、Python 辅助测试和文档等。不要用一次构建成功替代这一步。
 
+Windows 能力测试包含 JavaScript 模块解析的真实 Node 对照及 CLI/MCP、运行时脚本位置、SQLite 实际数据库查询与取消清理、配置读回和恢复失败时的备份及句柄归属。`check` 还会启动仓库自有 Node 样例，通过真实 Inspector 完成 CLI/MCP 发现与观测，覆盖空格、下划线、`#`、`%` 等文件名。它不需要另外安装浏览器或分析引擎。
+
+判断这些结果时注意：Node 在 Windows 的目标发现地址可能丢失反斜杠等信息，`target.location` 为 `unresolved` 是明确保留未知；脚本的实际位置应核对 `scripts.items[].location`，不能猜测恢复路径。`./exact.js/.` 等目录形式的 ESM 引用在 Windows 与 POSIX 的行为不同，静态图保留候选文件并报告平台歧义，不把它当成已证实的运行时依赖。详细语义见 [JavaScript 应用图](docs/javascript-application-graph.md)。
+
+排查上述范围时，可在构建后单独运行以下测试；完整安装验收仍执行 `check`，不要把这组测试单独通过当成全项目通过：
+
+```powershell
+powershell.exe -NoProfile -File scripts/windows.ps1 node node_modules/vitest/vitest.mjs run --coverage.enabled=false tests/acceptance/applications/JavaScriptModuleLookupCli.test.ts tests/boundary/inspector/javascriptRuntimeObservation.test.ts tests/boundary/sqlite/sqliteDatabaseProvider.test.ts tests/process-global/setupConfigurationRollback.test.ts
+if ($LASTEXITCODE -ne 0) { throw 'Windows compatibility regression failed.' }
+```
+
 ### 2.1 配好 Ghidra、Java 和当前 Codex
 
 用户要求完整分析环境时，开发依赖安装后还必须完成本节。源码开发环境检查通过，不代表分析引擎或当前 AI 接入已就绪。

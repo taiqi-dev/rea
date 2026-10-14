@@ -311,8 +311,15 @@ test("includes targets outside the old caller root filter", async () => {
     if (!result.ok) throw result.error;
     expect(result.value.targets).toHaveLength(2);
     expect(result.value.targets.map(({ location }) => location)).toContainEqual(
-      expect.objectContaining({ file_path: outside }),
+      process.platform === "win32"
+        ? {
+            kind: "unresolved",
+            reported_url: pathToFileURL(outside).href,
+            reason: "unverifiable-file-location",
+          }
+        : expect.objectContaining({ file_path: outside }),
     );
+    expect(result.value.excluded.unsupported_location).toBe(0);
   } finally {
     await fake.close();
   }
@@ -347,7 +354,12 @@ test("captures complete metadata with two enable commands", async () => {
     expect(new Set(fake.commands.map(({ method }) => method))).toEqual(
       new Set(["Runtime.enable", "Debugger.enable"]),
     );
-    expect(JSON.stringify(result.value)).toContain(outside);
+    expect(
+      result.value.scripts.items.map(({ location }) => location),
+    ).toContainEqual({
+      kind: "file",
+      file_path: outside,
+    });
     expect(result.value.unavailable_without_instrumentation).toContain(
       "Electron IPC messages and handlers",
     );

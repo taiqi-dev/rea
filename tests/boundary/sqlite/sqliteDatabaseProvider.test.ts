@@ -10,6 +10,7 @@ import { SqliteDatabaseProvider } from "../../../src/sqlite/SqliteDatabaseProvid
 import { spawnOwnedProviderProcess } from "../../../src/process/ProviderProcess.js";
 import { PrivateRuntimeRoot } from "../../../src/process/PrivateRuntimeRoot.js";
 import { waitForProviderProcessReady } from "../../fixtures/providerProcess.js";
+import { testProcessEnvironment } from "../../fixtures/hostEnvironment.js";
 import {
   createSqliteDatabaseFixture,
   SQLITE_NATIVE_LIMITS_AVAILABLE,
@@ -626,31 +627,36 @@ nativeTest(
     const controller = new AbortController();
     let ownedRoot = "";
     let pid: number | undefined;
-    const provider = new SqliteDatabaseProvider({}, async (spawn) => {
-      ownedRoot = spawn.cwd ?? "";
-      const requestPath = spawn.arguments[2];
-      if (requestPath === undefined)
-        throw new Error("SQLite worker arguments missing");
-      const launched = await spawnOwnedProviderProcess({
-        ...spawn,
-        arguments: [
-          "--input-type=module",
-          "-e",
-          `await import(${JSON.stringify(workerUrl.href)}); process.stdout.write('ready\\n'); setInterval(() => {}, 1000);`,
-          "sqlite-worker-test",
-          requestPath,
-        ],
-      });
-      pid = launched.process.pid;
-      await waitForProviderProcessReady(launched.process);
-      await access(`${ownedRoot}/reply.json`);
-      setImmediate(() => controller.abort());
-      return launched;
-    });
+    const provider = new SqliteDatabaseProvider(
+      testProcessEnvironment(),
+      async (spawn) => {
+        ownedRoot = spawn.cwd ?? "";
+        const requestPath = spawn.arguments[2];
+        if (requestPath === undefined)
+          throw new Error("SQLite worker arguments missing");
+        const launched = await spawnOwnedProviderProcess({
+          ...spawn,
+          arguments: [
+            "--input-type=module",
+            "-e",
+            `await import(${JSON.stringify(workerUrl.href)}); process.stdout.write('ready\\n'); setInterval(() => {}, 1000);`,
+            "sqlite-worker-test",
+            requestPath,
+          ],
+        });
+        pid = launched.process.pid;
+        await waitForProviderProcessReady(launched.process);
+        await access(`${ownedRoot}/reply.json`);
+        setImmediate(() => controller.abort());
+        return launched;
+      },
+    );
     const result = await provider.inspect(
       { path: database.path, table: "records" },
       { signal: controller.signal },
     );
+    if (!result.ok && result.error._tag !== "AnalysisCancelledError")
+      throw result.error;
     expect(result).toMatchObject({
       ok: false,
       error: { _tag: "AnalysisCancelledError" },

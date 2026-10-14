@@ -2037,6 +2037,36 @@ describe("TypeScript declaration fallback ownership", () => {
 });
 
 describe("url-reference directory and empty-segment semantics", () => {
+  it.each(["./worker.js/.", "./worker.js/child/..", "./worker.js/"])(
+    "retains platform-dependent ESM candidates only in the selected container: %s",
+    (declaredPath) => {
+      for (const targetContainer of ["root", "foreign"]) {
+        const result = resolve({
+          declaredPath,
+          sourcePath: "src/main.mjs",
+          context: "module-specifier",
+          moduleKind: "import",
+          files: fileMap([
+            file("src/main.mjs", "root"),
+            file("src/worker.js", targetContainer),
+          ]),
+        });
+        expect(result).toMatchObject({
+          declared_path: declaredPath,
+          resolved_path: null,
+          resolution_status:
+            targetContainer === "root" ? "unavailable" : "not-found",
+        });
+        if (targetContainer === "root")
+          expect(result).toMatchObject({
+            candidate_path: "src/worker.js",
+            limitations: [expect.stringContaining("runtime platform")],
+          });
+        else expect(result).not.toHaveProperty("candidate_path");
+      }
+    },
+  );
+
   it.each([
     "./worker.js/.",
     "./worker.js/child/..",

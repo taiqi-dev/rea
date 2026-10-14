@@ -177,13 +177,15 @@ const expectNodeRuntimeControls = (
     { specifier: "./..pkg.js", ok: true, value: "local dot package" },
     {
       specifier: "./exact.js/.",
-      ok: false,
-      code: "ERR_UNSUPPORTED_DIR_IMPORT",
+      ...(process.platform === "win32"
+        ? { ok: true, value: 4 }
+        : { ok: false, code: "ERR_UNSUPPORTED_DIR_IMPORT" }),
     },
     {
       specifier: "./exact.js/child/..",
-      ok: false,
-      code: "ERR_UNSUPPORTED_DIR_IMPORT",
+      ...(process.platform === "win32"
+        ? { ok: true, value: 4 }
+        : { ok: false, code: "ERR_UNSUPPORTED_DIR_IMPORT" }),
     },
     {
       specifier: ".hidden.js",
@@ -268,8 +270,8 @@ cliTest.for(["CLI", "stdio MCP"] as const)(
       ["import", "..pkg.js", null, "rejected"],
       ["import", ".", null, "not-found"],
       ["import", "..", null, "not-found"],
-      ["import", "./exact.js/.", null, "not-found"],
-      ["import", "./exact.js/child/..", null, "not-found"],
+      ["import", "./exact.js/.", null, "unavailable"],
+      ["import", "./exact.js/child/..", null, "unavailable"],
       ["require", "./extensionless", null, "not-found"],
       ["require", "./directory", null, "not-found"],
       ["require", "./feature", null, "not-found"],
@@ -325,6 +327,22 @@ cliTest.for(["CLI", "stdio MCP"] as const)(
           resolution_status: status,
         }),
       );
+      if (status === "unavailable")
+        expect(graph.edges).toContainEqual(
+          expect.objectContaining({
+            relation: "imports",
+            properties: expect.objectContaining({
+              specifier,
+              candidate_path: "esm/exact.js",
+              resolution_status: "unavailable",
+            }),
+            evidence: expect.objectContaining({
+              limitations: expect.arrayContaining([
+                expect.stringContaining("runtime platform"),
+              ]),
+            }),
+          }),
+        );
     }
   },
 );

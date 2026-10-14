@@ -666,6 +666,12 @@ jobs:
           tests/boundary/filesystem/hermesClientConfiguration.test.ts
           tests/boundary/filesystem/setupSkill.test.ts
           tests/acceptance/setup/selectedSkillSetup.test.ts
+          tests/acceptance/applications/JavaScriptModuleLookupCli.test.ts
+          tests/boundary/inspector/javascriptRuntimeObservation.test.ts
+          tests/boundary/inspector/javascriptRuntimeTargetLocations.test.ts
+          tests/boundary/sqlite/sqliteDatabaseProvider.test.ts
+          tests/acceptance/sqliteDatabaseCli.test.ts
+          tests/process-global/setupConfigurationRollback.test.ts
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: windows-process-boundary-fixture
