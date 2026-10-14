@@ -21,9 +21,6 @@ jobs:
     timeout-minutes: 45
     env:
       HUSKY: "0"
-      # Exercise the pinned opt-in bootstrap rather than the runner's Java.
-      JAVA_HOME: ""
-      GHIDRA_INSTALL_DIR: ""
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
@@ -36,11 +33,17 @@ jobs:
         run: ./scripts/windows.ps1 check
       - name: Prepare project-local Ghidra and JDK
         shell: pwsh
+        # Exercise the pinned opt-in bootstrap rather than the runner's Java.
+        env:
+          JAVA_HOME: ""
+          GHIDRA_INSTALL_DIR: ""
         run: ./scripts/windows.ps1 analysis-setup
       - name: Verify Codex registration and a real compiled program
         shell: pwsh
         env:
           CODEX_HOME: ${{ runner.temp }}/rea-codex
+          JAVA_HOME: ""
+          GHIDRA_INSTALL_DIR: ""
         run: |
           ./scripts/windows.ps1 rea setup --client codex --dry-run --json
           if ($LASTEXITCODE -ne 0) { throw 'Codex setup planning failed.' }

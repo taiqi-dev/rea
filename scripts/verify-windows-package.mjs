@@ -96,10 +96,19 @@ try {
     stderr: "pipe",
   });
   const client = new Client({ name: "rea-windows-package", version: "1.0.0" });
+  let serverDiagnostics = "";
+  server.stderr?.on("data", (chunk) => {
+    serverDiagnostics = (serverDiagnostics + String(chunk)).slice(-64 * 1024);
+  });
   let toolCount = 0;
   try {
     await client.connect(server);
     toolCount = (await verifyCompleteToolCatalog(client)).length;
+  } catch (cause) {
+    throw new Error(
+      `Packaged Windows MCP verification failed: ${serverDiagnostics || "server emitted no diagnostics"}`,
+      { cause },
+    );
   } finally {
     await client.close();
   }
