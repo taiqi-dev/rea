@@ -30,6 +30,11 @@ npm pack
 process-boundary fixture required for the complete Windows native probes.
 They can be rebuilt individually with `build:windows-native --
 --inspection-fixture` and `build:windows-native -- --process-fixture`.
+The source checkout's `scripts/windows.ps1 verify-analysis` also compiles
+`tests/fixtures/windows/analysisSample.cc` through `--analysis-fixture`, runs
+both program branches, and verifies real Ghidra decompilation through the
+CLI and the configured Codex MCP launcher. Its executable and proof outputs
+remain ignored local artifacts.
 
 `build/` is ignored by Git. The npm file inventory includes only the addon and
 its manifest. Release CI builds both, and `prepublishOnly` rejects a missing,

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createIdaMcpConnection } from "../../src/ida/IdaMcpConnection.js";
+import { testProcessEnvironment } from "../fixtures/hostEnvironment.js";
 
 describe("IDA startup diagnostics", () => {
   it("preserves the failing launcher's stderr instead of reporting only a closed transport", async () => {
@@ -14,7 +15,7 @@ describe("IDA startup diagnostics", () => {
         mode: "headless",
         timeoutMs: 1000,
       },
-      {},
+      testProcessEnvironment(),
     );
     try {
       await expect(connection.connect()).rejects.toMatchObject({
@@ -41,7 +42,7 @@ describe("IDA startup diagnostics", () => {
         mode: "headless",
         timeoutMs: 1000,
       },
-      {},
+      testProcessEnvironment(),
     );
     try {
       await expect(connection.connect()).rejects.toMatchObject({
@@ -70,7 +71,7 @@ it("drops a leading partial UTF-8 character from the bounded stderr tail", async
       mode: "headless",
       timeoutMs: 1000,
     },
-    {},
+    testProcessEnvironment(),
   );
   try {
     await expect(connection.connect()).rejects.toMatchObject({
@@ -97,7 +98,7 @@ it("retains an in-budget undecodable leading byte without claiming tail truncati
       mode: "headless",
       timeoutMs: 1000,
     },
-    {},
+    testProcessEnvironment(),
   );
   try {
     const failure = await connection.connect().catch((cause: unknown) => cause);

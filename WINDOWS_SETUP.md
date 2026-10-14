@@ -44,6 +44,35 @@ if ($LASTEXITCODE -ne 0) { throw 'Windows acceptance failed; retain the failing 
 
 `check` 会检查源码、类型、lint、依赖及元数据，运行核心/服务测试和 Windows 能力测试，实际验证原生文件系统/进程边界、子模块同步回归、打包后的 CLI/MCP、Python 辅助测试和文档等。不要用一次构建成功替代这一步。
 
+### 2.1 配好 Ghidra、Java 和当前 Codex
+
+用户要求完整分析环境时，开发依赖安装后还必须完成本节。源码开发环境检查通过，不代表分析引擎或当前 AI 接入已就绪。
+
+```powershell
+powershell.exe -NoProfile -File scripts/windows.ps1 analysis-setup
+if ($LASTEXITCODE -ne 0) { throw 'Ghidra/JDK setup failed.' }
+powershell.exe -NoProfile -File scripts/windows.ps1 rea setup --client codex --dry-run --json
+```
+
+`analysis-setup` 是明确选择的源码安装步骤：从 NSA Ghidra 和 Eclipse Adoptium 官方发布地址准备脚本固定版本的 Ghidra、64 位完整 JDK。工具解压到 `.cache/windows-analysis-tools/`，不安装 MSI、不改系统 PATH；已有 `GHIDRA_INSTALL_DIR` / `JAVA_HOME` 选择优先保留并验证，不静默替换不兼容的用户安装。`.cache/windows-analysis-tools/environment.json` 是本机默认路径记录，后续 `scripts/windows.ps1` 命令会自动加载。不要把另一台电脑的绝对路径或缓存复制过来。
+
+检查 dry-run 的实际计划：应仅为当前 Codex 增加本仓库 CLI 的 MCP 注册、Ghidra/JDK 路径和 REA skill，并保留其他配置。配置和 skill 的实际目标由该机客户端位置解析器决定，不要手工复制第一台电脑的 `config.toml`。沿用用户配置 Codex 的有效授权，确认计划符合授权后应用：
+
+```powershell
+powershell.exe -NoProfile -File scripts/windows.ps1 rea setup --client codex --yes --json
+if ($LASTEXITCODE -ne 0) { throw 'Codex registration failed.' }
+powershell.exe -NoProfile -File scripts/windows.ps1 rea doctor --client codex --provider ghidra --skill --json
+if ($LASTEXITCODE -ne 0) { throw 'Codex/Ghidra readiness failed.' }
+powershell.exe -NoProfile -File scripts/windows.ps1 verify-analysis
+if ($LASTEXITCODE -ne 0) { throw 'Real program analysis failed.' }
+```
+
+作用域自检应返回 `healthy: true`。未配置的 IDA、Windows 不支持的 Hopper 等可能使全局 `environment_healthy` 为 false；应按所选 Codex/Ghidra 范围判断，不安装无关引擎来凑全局绿色。
+
+`verify-analysis` 会用本机 MSVC 编译仓库自有的 [C++ 样例](tests/fixtures/windows/analysisSample.cc)，实际运行两个分支，再通过 CLI 和当前 Codex 配置中的真实 MCP 启动命令调用 Ghidra。它核对反编译、导出函数、调用关系、内存与文件字节对应、快照关闭/重开、源文件未改变和最终关闭状态。输出证据保存在 `.cache/windows-analysis-proof/` 的独立运行目录，不能提交到 Git。它不扫描或执行用户其他软件。
+
+当前 Codex 若尚未加载新增 REA 工具，按其客户端支持的方式重新加载或重启后，调用 `binary_session` 核对 `server_identity.alignment.state` 为 `aligned`，再对上述自有样例完成一次 `open_binary`、`procedure_pseudo_code` 和 `close_binary`；不要仅凭工具目录包含 193 个名字就声称真实分析可用。
+
 出错时保留命令、退出码及关键日志，先分类根因再修复。不要为了变绿删除断言、批量跳过失败或把全部跨平台旧测试都当作 Windows 缺陷。原 `check:pr` 是更广的跨平台诊断，不等于本 fork 的 Windows 验收；它的失败和未运行项要单独说明。
 
 ## 3. 核对 Git 与验收结果
@@ -70,8 +99,9 @@ powershell.exe -NoProfile -File scripts/init-windows-submodules.ps1
 ## 4. 两台电脑日常使用
 
 - 开工前先在 GitHub Desktop 拉取；切换电脑前提交并推送。两台电脑不要各自堆积尚未同步的提交。
-- 依赖或工具版本变动后重新运行 `setup`；原生源码或运行代码变动后运行 `build`；需要完整 Windows 验收时运行 `check`。这三个子命令都通过同一个 `scripts/windows.ps1` 入口执行。
+- 依赖或工具版本变动后重新运行 `setup`；原生源码或运行代码变动后运行 `build`；开发环境验收运行 `check`，实际引擎与 Codex 链路验收再运行 `verify-analysis`。这些子命令都通过同一个 `scripts/windows.ps1` 入口执行。
 - Desktop 的提交/推送 hooks 会使用项目固定工具链。普通拉取/推送不需要再次初始化可选子模块；不要把可选源码恢复命令加入日常同步。
+- Windows 会锁定正在被 REA MCP 加载的原生模块。需要重新构建原生源码时，先在客户端正常停止或重新加载 REA 服务，再执行 `build`；出现链接器无法写入 `.node` 时先核对占用，不反复编译、不结束身份不明的进程。普通 pull/push 和源码检查不需要重编译这个模块。
 - 验证 Desktop 同步时，使用真实 GitHub Desktop 或其自带 Git，在工作区干净且允许同步时拉取核对。只有存在已授权的实际改动时才提交/推送，不为安装验收制造测试提交或改写远端历史。
 
 ## 5. 给用户的完成回执

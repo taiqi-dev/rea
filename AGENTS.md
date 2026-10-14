@@ -19,6 +19,13 @@ Ghidra uses ephemeral databases without modifying executable bytes or controllin
 
 Configuration changes must be additive and idempotent, with backups. Installers must not install or upgrade unrelated software, including Homebrew, Node.js, npm, Java, or Ghidra. Ghidra and IDA are bring-your-own. `rea setup` must show its planned changes and require approval before writing files or installing Hopper.
 
+For this Windows fork, an explicitly requested source bootstrap through
+`scripts/windows.ps1 analysis-setup` may prepare the pinned official Ghidra and
+Temurin JDK archives inside the checkout's ignored cache. It preserves caller
+tool selections and does not change global PATH, install an MSI, or expand
+`rea setup` into an engine installer. Codex registration remains a separate,
+reviewable `rea setup --client codex` action with backups.
+
 Preserve caller-selected inputs and local evidence, including output, URLs, paths, digests, and metadata. Redact transport authentication credentials and explicitly marked sensitive values; do not infer secrecy from names or text patterns. Do not persist the ambient environment merely because a child inherits it.
 
 ## Game and Application Investigation Scope

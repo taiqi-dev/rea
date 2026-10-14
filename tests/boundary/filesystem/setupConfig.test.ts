@@ -10,9 +10,7 @@ import {
   configureClientConfiguration,
   inspectClientConfiguration,
 } from "../../../src/application/SetupClientConfiguration.js";
-import { PRODUCT_IDENTITY } from "../../../src/identity.js";
-
-const pinnedPackage = PRODUCT_IDENTITY.registrationPackageSpecifier;
+import { NPX_REGISTRATION_COMMAND as command } from "../../fixtures/clientEnvironment.js";
 
 describe("JSON client configuration transaction: writing configuration through safe paths", () => {
   it.skipIf(typeof process.getuid !== "function")(
@@ -56,8 +54,8 @@ describe("JSON client configuration transaction: writing configuration through s
       mcpServers: {
         other: { command: "other" },
         rea: {
-          command: "npx",
-          args: ["-y", pinnedPackage, "mcp"],
+          command: command[0],
+          args: command.slice(1),
         },
       },
     });
@@ -84,8 +82,8 @@ describe("JSON client configuration transaction: writing configuration through s
       theme: "dark",
       mcpServers: {
         rea: {
-          command: "npx",
-          args: ["-y", pinnedPackage, "mcp"],
+          command: command[0],
+          args: command.slice(1),
         },
       },
     });
@@ -128,7 +126,7 @@ describe("JSON client configuration transaction: keeping matching configuration 
     const configPath = join(directory, "mcp.json");
     await writeFile(
       configPath,
-      `${JSON.stringify({ mcpServers: { rea: { command: "npx", args: ["-y", pinnedPackage, "mcp"] } } })}\n`,
+      `${JSON.stringify({ mcpServers: { rea: { command: command[0], args: command.slice(1) } } })}\n`,
     );
     expect(
       await configureClientConfiguration({
@@ -156,8 +154,8 @@ describe("JSON client configuration transaction: keeping matching configuration 
               JAVA_HOME: "/usr/lib/jvm/jdk-21",
               GHIDRA_INSTALL_DIR: "/opt/ghidra",
             },
-            args: ["-y", pinnedPackage, "mcp"],
-            command: "npx",
+            args: command.slice(1),
+            command: command[0],
           },
         },
       })}\n`,
@@ -198,8 +196,8 @@ describe("JSON client configuration migration and provider paths", () => {
       theme: "dark",
       mcpServers: {
         rea: {
-          command: "npx",
-          args: ["-y", pinnedPackage, "mcp"],
+          command: command[0],
+          args: command.slice(1),
         },
         other: { command: "other" },
       },
@@ -224,8 +222,8 @@ describe("JSON client configuration migration and provider paths", () => {
     expect(JSON.parse(await readFile(configPath, "utf8"))).toMatchObject({
       mcpServers: {
         rea: {
-          command: "npx",
-          args: ["-y", pinnedPackage, "mcp"],
+          command: command[0],
+          args: command.slice(1),
           env: { HOPPER_LAUNCHER_PATH: hopperPath },
         },
       },

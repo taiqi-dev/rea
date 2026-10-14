@@ -1,4 +1,5 @@
 import { rename, rm, writeFile } from "node:fs/promises";
+import { writeFileSync } from "node:fs";
 import { createServer } from "node:net";
 
 const configuration = JSON.parse(
@@ -59,15 +60,18 @@ else {
       const address = server.address();
       if (address === null || typeof address === "string") process.exit(65);
       const pending = `${endpointPath}.pending`;
-      await writeFile(
-        pending,
-        `${JSON.stringify({
-          host: "127.0.0.1",
-          port: address.port,
-        })}\n`,
-        { flag: "wx" },
-      );
-      await rename(pending, endpointPath);
+      // Match the real bridge: Windows retains a private native directory
+      // handle that permits file creation but deliberately prevents renames.
+      const record = `${JSON.stringify({
+        host: "127.0.0.1",
+        port: address.port,
+      })}\n`;
+      if (process.platform === "win32")
+        writeFileSync(endpointPath, record, { flag: "wx" });
+      else {
+        await writeFile(pending, record, { flag: "wx" });
+        await rename(pending, endpointPath);
+      }
     });
   }
 }

@@ -150,6 +150,7 @@ export const snapshotRoots = async (
   scenario: ProcessScenario,
   signal?: AbortSignal,
 ): Promise<ProcessFilesystemSnapshot> => {
+  signal?.throwIfAborted();
   const entries: FileState[] = [];
   const completeRoots: string[] = [];
   let remainingBytes = scenario.limits.file_bytes;

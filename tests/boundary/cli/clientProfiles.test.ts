@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { expect } from "vitest";
 import { parse } from "jsonc-parser";
 import { PRODUCT_IDENTITY } from "../../../src/identity.js";
+import { npxRegistrationCommand } from "../../../src/application/ClientRegistrationIdentity.js";
 import { createTestTempDirectory } from "../../fixtures/temporaryDirectory.js";
 import { cliTest } from "../../support/cli/cliFixture.js";
 
@@ -275,12 +276,7 @@ cliTest(
         mcp: {
           rea: {
             type: "local",
-            command: [
-              "npx",
-              "-y",
-              PRODUCT_IDENTITY.registrationPackageSpecifier,
-              "mcp",
-            ],
+            command: npxRegistrationCommand(),
             enabled: true,
           },
         },
@@ -334,12 +330,7 @@ cliTest(
     await mkdir(dirname(custom), { recursive: true });
     const owned = {
       type: "local",
-      command: [
-        "npx",
-        "-y",
-        PRODUCT_IDENTITY.registrationPackageSpecifier,
-        "mcp",
-      ],
+      command: npxRegistrationCommand(),
       enabled: true,
     };
     const original = JSON.stringify({

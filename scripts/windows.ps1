@@ -1,8 +1,8 @@
 #Requires -Version 5.1
 $ErrorActionPreference = 'Stop'
 $Command = if ($args.Count -gt 0) { $args[0] } else { 'setup' }
-if (@('setup', 'build', 'check', 'npm') -notcontains $Command) {
-    throw 'Expected setup, build, check, or npm.'
+if (@('setup', 'analysis-setup', 'verify-analysis', 'build', 'check', 'npm', 'node', 'rea') -notcontains $Command) {
+    throw 'Expected setup, analysis-setup, verify-analysis, build, check, npm, node, or rea.'
 }
 $NpmArguments = @($args | Select-Object -Skip 1)
 if ($env:OS -ne 'Windows_NT' -or -not [Environment]::Is64BitOperatingSystem) {
@@ -57,6 +57,18 @@ if ($LASTEXITCODE -ne 0 -or $actualNpm -ne $npmVersion) {
 }
 # Use npm's generated Windows shims; its internal bin directory is not a prefix.
 $env:PATH = (Join-Path $npmPrefix 'node_modules\.bin') + ';' + $env:PATH
+$analysisEnvironment = Join-Path $repositoryRoot '.cache\windows-analysis-tools\environment.json'
+if ($Command -ne 'analysis-setup' -and (Test-Path -LiteralPath $analysisEnvironment -PathType Leaf)) {
+    $analysis = Get-Content -LiteralPath $analysisEnvironment -Raw -Encoding utf8 | ConvertFrom-Json
+    foreach ($name in @('GHIDRA_INSTALL_DIR', 'JAVA_HOME')) {
+        $selected = $analysis.$name
+        # Caller-selected tool paths take precedence over the local defaults.
+        if (-not [Environment]::GetEnvironmentVariable($name, 'Process')) {
+            if (-not (Test-Path -LiteralPath $selected -PathType Container)) { throw "Missing project analysis tool: $selected" }
+            [Environment]::SetEnvironmentVariable($name, $selected, 'Process')
+        }
+    }
+}
 
 function Invoke-Npm {
     param([string[]]$Arguments)
@@ -68,6 +80,7 @@ function Build-WindowsArtifacts {
     Invoke-Npm @('run', 'build:windows-native')
     Invoke-Npm @('run', 'build:windows-native', '--', '--inspection-fixture')
     Invoke-Npm @('run', 'build:windows-native', '--', '--process-fixture')
+    Invoke-Npm @('run', 'build:windows-native', '--', '--analysis-fixture')
     Invoke-Npm @('run', 'build:cached')
 }
 
@@ -80,6 +93,14 @@ try {
             Build-WindowsArtifacts
             Invoke-Npm @('run', 'verify:windows-native:artifact')
         }
+        'analysis-setup' {
+            & (Join-Path $PSScriptRoot 'setup-windows-analysis.ps1')
+        }
+        'verify-analysis' {
+            & $nodeExe (Join-Path $PSScriptRoot 'build-windows-native.mjs') --analysis-fixture
+            if ($LASTEXITCODE -ne 0) { throw 'Analysis sample compilation failed.' }
+            Invoke-Npm @('run', 'verify:windows-analysis')
+        }
         'build' {
             Build-WindowsArtifacts
         }
@@ -89,6 +110,14 @@ try {
         'npm' {
             if ($NpmArguments.Count -eq 0) { throw 'Supply npm arguments after the npm command.' }
             Invoke-Npm $NpmArguments
+        }
+        'rea' {
+            & $nodeExe (Join-Path $PSScriptRoot 'rea.mjs') @NpmArguments
+            if ($LASTEXITCODE -ne 0) { throw "REA failed (exit $LASTEXITCODE)." }
+        }
+        'node' {
+            & $nodeExe @NpmArguments
+            if ($LASTEXITCODE -ne 0) { throw "Node command failed (exit $LASTEXITCODE)." }
         }
     }
 } finally {

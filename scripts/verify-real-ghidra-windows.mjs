@@ -191,6 +191,13 @@ try {
   const mapping = await inventory("address_to_file_offset", {
     address: procedure.address,
   });
+  const byteSearch = await inventory("search_bytes", {
+    pattern: memory.bytes_hex.slice(0, 12),
+    start: procedure.address,
+    end: `0x${(BigInt(procedure.address) + 16n).toString(16)}`,
+  });
+  if (!byteSearch.matches.some(({ address }) => address === procedure.address))
+    throw new Error("Windows byte search lost the observed function prefix");
   const sourceBytes = await readFile(targetPath);
   if (
     memory.complete !== true ||

@@ -258,19 +258,27 @@ describe("parsePmPathOutput", () => {
     });
   });
 
-  it("preserves whitespace and the exact POSIX device path", () => {
+  it("preserves the exact device path in admitted or host-rejected records", () => {
     const devicePath = "/data/app/My App/résumé:final\\draft*.apk";
     const { paths, rejectedPaths, unparsedLines } = parsePmPathOutput(
       `package:${devicePath}\r\n`,
     );
-    expect(paths).toEqual([
-      {
-        device_path: devicePath,
-        file_name: "résumé:final\\draft*.apk",
-        role: "unknown",
-      },
-    ]);
-    expect(rejectedPaths).toEqual([]);
+    expect(paths).toEqual(
+      process.platform === "win32"
+        ? []
+        : [
+            {
+              device_path: devicePath,
+              file_name: "résumé:final\\draft*.apk",
+              role: "unknown",
+            },
+          ],
+    );
+    expect(rejectedPaths).toEqual(
+      process.platform === "win32"
+        ? [{ device_path: devicePath, reason: "unsupported_character" }]
+        : [],
+    );
     expect(unparsedLines).toEqual([]);
   });
 

@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { join, relative, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 
 import { Client } from "@modelcontextprotocol/client";
@@ -1221,7 +1222,7 @@ describe("application workflow CLI and MCP capture lifetimes", () => {
         "--input-type=module",
         "--eval",
         "const module = await import(process.argv[1]); console.log(JSON.stringify(module.default()));",
-        join(root, String(index), "parser.mjs"),
+        pathToFileURL(join(root, String(index), "parser.mjs")).href,
       ]);
       expect(JSON.parse(stdout)).toEqual({
         kind: "capture-boundary",
@@ -1589,10 +1590,28 @@ const runCli = async (
   arguments_: readonly string[],
   environment: Readonly<Record<string, string>> = {},
 ): Promise<unknown> => {
+  // Windows has a native command-line bound. Keep ordinary inline cases,
+  // but send large workflow graphs through the same public JSON-file input.
+  const selectedArguments = [...arguments_];
+  for (let index = 1; index < selectedArguments.length; index += 1) {
+    const value = selectedArguments[index]!;
+    if (
+      process.platform === "win32" &&
+      value.length > 8_192 &&
+      /^[\s]*[[{]/u.test(value)
+    ) {
+      const directory = await createTestTempDirectory(
+        "rea-cli-workflow-input-",
+      );
+      const input = join(directory, "input.json");
+      await writeFile(input, value);
+      selectedArguments[index] = input;
+    }
+  }
   try {
     const { stdout } = await execute(
       process.execPath,
-      ["scripts/rea.mjs", ...arguments_],
+      ["scripts/rea.mjs", ...selectedArguments],
       {
         cwd: process.cwd(),
         env: { ...process.env, ...environment },

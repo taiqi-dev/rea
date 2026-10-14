@@ -20,7 +20,9 @@ import { clientSkillDirectories } from "./SupportedClients.js";
 
 export const MANAGED_SKILL_FILES = [
   "SKILL.md",
+  "agents/openai.yaml",
   "references/connection-and-recovery.md",
+  "references/static-fallback.md",
   "references/native-and-artifacts.md",
   "references/javascript-applications.md",
   "references/android-applications.md",

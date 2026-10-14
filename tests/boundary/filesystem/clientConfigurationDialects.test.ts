@@ -1,5 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { join, normalize, resolve } from "node:path";
 
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { parse as parseJsonc, type ParseError } from "jsonc-parser";
@@ -99,7 +99,7 @@ describe("additional client configuration dialects", () => {
     if (name === "vscode" || name === "omp" || name === "pi")
       expect(registration).toMatchObject({
         type: "stdio",
-        command: "npx",
+        command: command[0],
         args: command.slice(1),
       });
     if (name === "copilot_cli")
@@ -108,7 +108,7 @@ describe("additional client configuration dialects", () => {
       expect(registration).toMatchObject({
         transport: "stdio",
         enabled: true,
-        command: "npx",
+        command: command[0],
         args: command.slice(1),
       });
 
@@ -403,7 +403,7 @@ describe("platform-aware client config paths", () => {
         supportedClients(home, platform, env).find(
           ({ name }) => name === "vscode",
         )?.configPath,
-      ).toBe(expected);
+      ).toBe(normalize(expected));
     },
   );
 
@@ -417,7 +417,7 @@ describe("platform-aware client config paths", () => {
       expect.objectContaining({
         name: "grok_build",
         displayName: "Grok Build",
-        configPath: "/custom/grok/config.toml",
+        configPath: normalize("/custom/grok/config.toml"),
         markerPath: "/custom/grok",
         format: "grok",
       }),
@@ -433,12 +433,12 @@ describe("platform-aware client config paths", () => {
       supportedClients("/home/a", "linux", {
         SAND_DATA_ROOT: "relative/sand",
       }).find(({ name }) => name === "grok_bot")?.configPath,
-    ).toBe("/home/a/.grokbot");
+    ).toBe(normalize("/home/a/.grokbot"));
     expect(
       supportedClients("/home/a", "darwin", {}).find(
         ({ name }) => name === "grok_build",
       )?.configPath,
-    ).toBe("/home/a/.grok/config.toml");
+    ).toBe(normalize("/home/a/.grok/config.toml"));
   });
 
   it("honors Copilot CLI and Devin platform configuration roots", () => {
@@ -447,12 +447,12 @@ describe("platform-aware client config paths", () => {
         COPILOT_HOME: "/custom/copilot",
         XDG_CONFIG_HOME: "/custom/config",
       }).find(({ name }) => name === "copilot_cli")?.configPath,
-    ).toBe("/custom/copilot/mcp-config.json");
+    ).toBe(normalize("/custom/copilot/mcp-config.json"));
     expect(
       supportedClients("C:/Users/a", "win32", {
         APPDATA: "D:/Profile/Roaming",
       }).find(({ name }) => name === "devin")?.configPath,
-    ).toBe("D:/Profile/Roaming/devin/mcp_config.json");
+    ).toBe(normalize("D:/Profile/Roaming/devin/mcp_config.json"));
   });
 
   it("prefers an existing OpenCode JSONC file and honors explicit harness roots", async () => {
@@ -476,15 +476,15 @@ describe("platform-aware client config paths", () => {
       expect.arrayContaining([
         expect.objectContaining({
           name: "opencode",
-          configPath: "/custom/open-code.jsonc",
+          configPath: resolve("/custom/open-code.jsonc"),
         }),
         expect.objectContaining({
           name: "claude_code",
-          configPath: "/custom/claude/.claude.json",
+          configPath: normalize("/custom/claude/.claude.json"),
         }),
         expect.objectContaining({
           name: "codex",
-          configPath: "/custom/codex/config.toml",
+          configPath: normalize("/custom/codex/config.toml"),
         }),
       ]),
     );
@@ -515,13 +515,13 @@ describe("platform-aware client config paths", () => {
     expect(
       isOwnedClientRegistrationCommand(
         [process.execPath, "/packaged/rea.mjs", "mcp"],
-        "/packaged/rea.mjs",
+        resolve("/packaged/rea.mjs"),
       ),
     ).toBe(true);
     expect(
       isOwnedClientRegistrationCommand(
         ["node", "/packaged/other-agent.mjs", "mcp"],
-        "/packaged/rea.mjs",
+        resolve("/packaged/rea.mjs"),
       ),
     ).toBe(false);
   });

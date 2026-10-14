@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { afterEach, expect, it, vi } from "vitest";
 import { DEFAULT_INHERITED_ENV_VARS } from "@modelcontextprotocol/client/stdio";
 import { createIdaMcpConnection } from "./IdaMcpConnection.js";
+import { testProcessEnvironment } from "../../tests/fixtures/hostEnvironment.js";
 
 const roots: string[] = [];
 afterEach(async () => {
@@ -52,7 +53,7 @@ input.on('line', (line) => {
         mode: "attached",
         timeoutMs: 5000,
       },
-      selected,
+      { ...testProcessEnvironment(), ...selected },
     );
     environment.REA_SELECTED_CONTEXT = "mutated-after-construction";
     try {

@@ -1,6 +1,7 @@
 import { readFile, readdir, rm } from "node:fs/promises";
 import { sep } from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { PrivateRuntimeRoot } from "../process/PrivateRuntimeRoot.js";
 import { z } from "zod";
 import {
   createIdaTarget,
@@ -13,7 +14,21 @@ import { ProviderAdapterError } from "../domain/providerAdapterError.js";
 import { projectAnalysisError } from "../domain/analysisErrorProjection.js";
 
 const roots: string[] = [];
+const fixtureRuntimes: PrivateRuntimeRoot[] = [];
+const allocateRuntime = PrivateRuntimeRoot.create.bind(PrivateRuntimeRoot);
+beforeEach(() => {
+  vi.spyOn(PrivateRuntimeRoot, "create").mockImplementation(async (options) => {
+    const runtime = await allocateRuntime(options);
+    fixtureRuntimes.push(runtime);
+    return runtime;
+  });
+});
 afterEach(async () => {
+  vi.restoreAllMocks();
+  // No real upstream worker exists in this fixture. After retained-ownership
+  // assertions finish, release the test-owned runtime handles through their
+  // real owner; Windows correctly refuses parent removal while they are open.
+  for (const runtime of fixtureRuntimes.splice(0)) await runtime.close();
   for (const root of roots.splice(0))
     await rm(root, { recursive: true, force: true });
 });

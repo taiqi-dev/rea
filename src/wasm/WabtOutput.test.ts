@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
 import { expect, it } from "vitest";
 import { parseWabtOutput } from "./WabtOutput.js";
 import { parseWabtWat } from "./WabtWat.js";
@@ -256,10 +257,12 @@ it("extracts escaped WAT import/export forms while retaining multiline producer 
   expect(() => parseWabtWat("(module) unexpected")).toThrow(/Unexpected/u);
 });
 it("keeps exact local, ambiguous URL, computed and unparseable glue distinct", () => {
-  const candidates = ["/app/module.wasm", "/other/module.wasm"];
+  // The adapter receives host filesystem paths from artifact admission, not
+  // POSIX paths interpreted by the Windows runner as drive-relative roots.
+  const candidates = [resolve("app/module.wasm"), resolve("other/module.wasm")];
   const result = associateWasmGlue(
     'fetch("./module.wasm"); new URL("https://example.com/module.wasm?x=1", import.meta.url); fetch(`module.wasm`); fetch(name + ".wasm");',
-    "/app/glue.js",
+    resolve("app/glue.js"),
     candidates,
   );
   expect(result.parse_status).toBe("complete");
@@ -267,7 +270,7 @@ it("keeps exact local, ambiguous URL, computed and unparseable glue distinct", (
     {
       value: "./module.wasm",
       association: "local-path-candidate",
-      candidate_paths: ["/app/module.wasm"],
+      candidate_paths: [candidates[0]],
     },
     {
       value: "https://example.com/module.wasm?x=1",

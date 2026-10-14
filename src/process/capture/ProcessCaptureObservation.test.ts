@@ -259,16 +259,19 @@ it("admits PTY samples only after stable session and token setup", () => {
   ).toBe(true);
 });
 
-it("cancels filesystem snapshots before traversing declared roots", async () => {
-  const controller = new AbortController();
-  controller.abort();
-  await expect(
-    snapshotRoots(
-      parseProcessScenario({
-        ...base,
-        filesystem_observation_paths: ["/tmp"],
-      }),
-      controller.signal,
-    ),
-  ).rejects.toMatchObject({ name: "AbortError" });
-});
+it.each([process.cwd(), `${process.cwd()}/missing-snapshot-root`])(
+  "cancels filesystem snapshots before traversing %s",
+  async (root) => {
+    const controller = new AbortController();
+    controller.abort();
+    await expect(
+      snapshotRoots(
+        parseProcessScenario({
+          ...base,
+          filesystem_observation_paths: [root],
+        }),
+        controller.signal,
+      ),
+    ).rejects.toMatchObject({ name: "AbortError" });
+  },
+);

@@ -21,6 +21,9 @@ jobs:
     timeout-minutes: 45
     env:
       HUSKY: "0"
+      # Exercise the pinned opt-in bootstrap rather than the runner's Java.
+      JAVA_HOME: ""
+      GHIDRA_INSTALL_DIR: ""
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
@@ -31,10 +34,29 @@ jobs:
       - name: Run Windows acceptance
         shell: pwsh
         run: ./scripts/windows.ps1 check
+      - name: Prepare project-local Ghidra and JDK
+        shell: pwsh
+        run: ./scripts/windows.ps1 analysis-setup
+      - name: Verify Codex registration and a real compiled program
+        shell: pwsh
+        env:
+          CODEX_HOME: ${{ runner.temp }}/rea-codex
+        run: |
+          ./scripts/windows.ps1 rea setup --client codex --dry-run --json
+          if ($LASTEXITCODE -ne 0) { throw 'Codex setup planning failed.' }
+          ./scripts/windows.ps1 rea setup --client codex --yes --json
+          if ($LASTEXITCODE -ne 0) { throw 'Codex setup failed.' }
+          ./scripts/windows.ps1 rea doctor --client codex --provider ghidra --skill --json
+          if ($LASTEXITCODE -ne 0) { throw 'Scoped readiness failed.' }
+          ./scripts/windows.ps1 verify-analysis
+          if ($LASTEXITCODE -ne 0) { throw 'Real analysis failed.' }
       - name: Retain validation diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: windows-diagnostics
-          path: .cache/static-checks/
+          path: |
+            .cache/static-checks/
+            .cache/windows-analysis-proof/**/report.json
+            .cache/windows-analysis-proof/**/diagnostics.log
           if-no-files-found: ignore

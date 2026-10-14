@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { resolve } from "node:path";
 
 import { createTestBinarySession } from "../../tests/fixtures/binarySession.js";
 import { parseConfig } from "../config/parseConfig.js";
@@ -13,7 +14,7 @@ import { GhidraSessionError } from "./GhidraSessionError.js";
 import { GHIDRA_SESSION_CAPABILITIES } from "./GhidraSessionValues.js";
 
 const TARGET: BinaryTarget = {
-  path: "/tmp/ghidra-cache-fixture",
+  path: resolve("ghidra-cache-fixture"),
   sha256: "a".repeat(64),
   kind: "executable",
   format: "elf",
@@ -210,7 +211,14 @@ describe("Ghidra snapshot cache", () => {
       expect(imported.ok && imported.value.result).toEqual(
         first.ok && first.value.result,
       );
-      expect(replay.calls).toEqual([]);
+      // Windows deliberately requires native source admission before an
+      // imported cache is trusted. The admitted session can then replay it.
+      const admissionCalls = process.platform === "win32" ? [operation] : [];
+      expect(replay.calls).toEqual(admissionCalls);
+      expect(await replay.session.execute(operation, parameters)).toMatchObject(
+        { ok: true },
+      );
+      expect(replay.calls).toEqual(admissionCalls);
       await replay.session.close();
 
       const changed = fixture("12.1.5");

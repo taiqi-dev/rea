@@ -13,16 +13,26 @@ const compiler = "x86_64-w64-mingw32-g++";
 const cache = join(root, ".cache", "windows-native-build");
 const inspectionFixture = process.argv[2] === "--inspection-fixture";
 const processFixture = process.argv[2] === "--process-fixture";
+const analysisFixture = process.argv[2] === "--analysis-fixture";
+const executableFixture = processFixture || analysisFixture;
+const executableName = analysisFixture
+  ? "rea-windows-analysis.exe"
+  : "process-boundary.exe";
+const executableSource = analysisFixture
+  ? "tests/fixtures/windows/analysisSample.cc"
+  : "tests/fixtures/windows/processBoundary.cc";
 if (
   process.argv.length > 3 ||
-  (process.argv.length > 2 && !inspectionFixture && !processFixture)
+  (process.argv.length > 2 && !inspectionFixture && !executableFixture)
 )
   throw new Error("Unknown Windows native build argument");
-const output = processFixture
-  ? join(root, ".cache", "windows-process-boundary")
-  : inspectionFixture
-    ? join(root, ".cache", "windows-native-inspection-fixture")
-    : join(root, "native", "windows", "build");
+const output = analysisFixture
+  ? join(root, "build", "fixtures")
+  : processFixture
+    ? join(root, ".cache", "windows-process-boundary")
+    : inspectionFixture
+      ? join(root, ".cache", "windows-native-inspection-fixture")
+      : join(root, "native", "windows", "build");
 let buildEnvironment = process.env;
 const run = (command, args, options = {}) => {
   const result = spawnSync(command, args, {
@@ -140,14 +150,16 @@ if (windowsBuild) {
   await verifiedDownload("win-x64/node.lib", library);
   const intermediate = join(
     cache,
-    processFixture
-      ? "process-fixture"
-      : inspectionFixture
-        ? "inspection"
-        : "release",
+    analysisFixture
+      ? "analysis-fixture"
+      : processFixture
+        ? "process-fixture"
+        : inspectionFixture
+          ? "inspection"
+          : "release",
   );
   await mkdir(intermediate, { recursive: true });
-  if (processFixture) {
+  if (executableFixture) {
     run("cl.exe", [
       "/nologo",
       "/std:c++17",
@@ -155,9 +167,10 @@ if (windowsBuild) {
       "/O2",
       "/MT",
       `/Fo${intermediate}\\`,
-      `/Fe${join(output, "process-boundary.exe")}`,
-      "tests/fixtures/windows/processBoundary.cc",
+      `/Fe${join(output, executableName)}`,
+      executableSource,
       "/link",
+      `/IMPLIB:${join(intermediate, "sample.lib")}`,
       "advapi32.lib",
     ]);
   } else
@@ -213,16 +226,16 @@ if (windowsBuild) {
     `LIBRARY node.exe\nEXPORTS\n${symbols.join("\n")}\n`,
   );
   run("x86_64-w64-mingw32-dlltool", ["-d", definition, "-y", library]);
-  if (processFixture) {
+  if (executableFixture) {
     run(compiler, [
-      "-municode",
+      ...(processFixture ? ["-municode"] : []),
       "-std=c++17",
       "-O2",
       "-static",
-      "tests/fixtures/windows/processBoundary.cc",
+      executableSource,
       "-ladvapi32",
       "-o",
-      join(output, "process-boundary.exe"),
+      join(output, executableName),
     ]);
   } else
     run(compiler, [
@@ -249,10 +262,8 @@ if (windowsBuild) {
       join(output, artifact),
     ]);
 }
-if (processFixture) {
-  console.log(
-    `Windows process boundary fixture: ${join(output, "process-boundary.exe")}`,
-  );
+if (executableFixture) {
+  console.log(`Windows executable fixture: ${join(output, executableName)}`);
 } else {
   const packageJson = JSON.parse(
     await readFile(join(root, "package.json"), "utf8"),

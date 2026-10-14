@@ -1,5 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import { join, resolve, normalize } from "node:path";
 
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { parse as parseJsonc } from "jsonc-parser";
@@ -27,16 +27,16 @@ describe("OMP configuration paths", () => {
     expect(ompPath({})).toEqual({
       name: "omp",
       displayName: "OMP",
-      configPath: "/home/a/.omp/agent/mcp.json",
-      markerPath: "/home/a/.omp/agent",
+      configPath: normalize("/home/a/.omp/agent/mcp.json"),
+      markerPath: normalize("/home/a/.omp/agent"),
       format: "omp",
     });
     // OMP joins PI_CONFIG_DIR to the home directory.
     expect(ompPath({ PI_CONFIG_DIR: ".pi" })?.configPath).toBe(
-      "/home/a/.pi/agent/mcp.json",
+      normalize("/home/a/.pi/agent/mcp.json"),
     );
     expect(ompPath({ PI_CODING_AGENT_DIR: "/custom/agent" })?.configPath).toBe(
-      "/custom/agent/mcp.json",
+      resolve("/custom/agent/mcp.json"),
     );
     // Match OMP by resolving the override against the caller working directory.
     expect(ompPath({ PI_CODING_AGENT_DIR: "agent" })?.configPath).toBe(
@@ -48,17 +48,17 @@ describe("OMP configuration paths", () => {
     expect(
       ompPath({ OMP_PROFILE: "work", PI_CODING_AGENT_DIR: "/custom/agent" })
         ?.configPath,
-    ).toBe("/home/a/.omp/profiles/work/agent/mcp.json");
+    ).toBe(normalize("/home/a/.omp/profiles/work/agent/mcp.json"));
     expect(ompPath({ PI_PROFILE: "legacy" })?.configPath).toBe(
-      "/home/a/.omp/profiles/legacy/agent/mcp.json",
+      normalize("/home/a/.omp/profiles/legacy/agent/mcp.json"),
     );
     // An explicitly empty OMP_PROFILE selects the default over PI_PROFILE.
     expect(ompPath({ OMP_PROFILE: "", PI_PROFILE: "legacy" })?.configPath).toBe(
-      "/home/a/.omp/agent/mcp.json",
+      normalize("/home/a/.omp/agent/mcp.json"),
     );
     for (const profile of ["default", " "])
       expect(ompPath({ OMP_PROFILE: profile })?.configPath).toBe(
-        "/home/a/.omp/agent/mcp.json",
+        normalize("/home/a/.omp/agent/mcp.json"),
       );
   });
 });
@@ -93,7 +93,7 @@ describe("OMP disabledServers denylist", () => {
     expect(parseJsonc(text)).toEqual({
       mcpServers: {
         other: { command: "other-server" },
-        rea: { type: "stdio", command: "npx", args: command.slice(1) },
+        rea: { type: "stdio", command: command[0], args: command.slice(1) },
       },
       disabledServers: ["other"],
     });

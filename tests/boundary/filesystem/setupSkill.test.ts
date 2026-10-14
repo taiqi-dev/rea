@@ -16,6 +16,7 @@ import { createTestTempDirectory } from "../../fixtures/temporaryDirectory.js";
 
 import {
   canonicalSkillNeedsInstall,
+  MANAGED_SKILL_FILES,
   installCanonicalSkill,
   skillDestinations,
   type SkillInstallFileOperations,
@@ -387,15 +388,7 @@ describe("canonical skill transaction", () => {
       ok: true,
       value: "installed",
     });
-    const paths = [
-      "SKILL.md",
-      "references/android-applications.md",
-      "references/connection-and-recovery.md",
-      "references/evidence-workflows.md",
-      "references/javascript-applications.md",
-      "references/native-and-artifacts.md",
-      "references/runtime-observation.md",
-    ];
+    const paths = [...MANAGED_SKILL_FILES].sort();
     const records = await Promise.all(
       paths.map(async (path) => {
         const bytes = await readFile(

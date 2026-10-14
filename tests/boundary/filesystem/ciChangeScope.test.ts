@@ -326,7 +326,11 @@ it("selects only a trusted successful ancestor from recent CI push runs", async 
   const output = join(directory, "baseline-output");
   const result = await execFileAsync(
     process.execPath,
-    [new URL("../../../scripts/ci/baseline.mjs", import.meta.url).pathname],
+    [
+      fileURLToPath(
+        new URL("../../../scripts/ci/baseline.mjs", import.meta.url),
+      ),
+    ],
     {
       cwd: directory,
       env: {
@@ -354,7 +358,11 @@ it("returns an empty baseline when GitHub lookup fails", async () => {
   await chmod(gh, 0o755);
   const result = await execFileAsync(
     process.execPath,
-    [new URL("../../../scripts/ci/baseline.mjs", import.meta.url).pathname],
+    [
+      fileURLToPath(
+        new URL("../../../scripts/ci/baseline.mjs", import.meta.url),
+      ),
+    ],
     {
       cwd: directory,
       env: {

@@ -146,6 +146,8 @@ protocols in adapters and shared CLI/MCP workflows in the application layer.
 
 For AI-assisted setup on another computer, follow
 [the Windows setup and acceptance guide](WINDOWS_SETUP.md).
+That guide also covers opt-in project-local Ghidra/JDK preparation,
+backed-up Codex registration, and real compiled-program analysis through CLI/MCP.
 
 This fork is maintained independently for Windows x64. On each computer,
 clone `https://github.com/taiqi-dev/rea.git` with GitHub Desktop or Git, then run:
