@@ -12,6 +12,10 @@ import type { ProgressUpdate } from "../../../../src/application/ProgressReporte
 
 import { ok } from "../../../../src/domain/result.js";
 import { GhidraClient } from "../../../../src/ghidra/GhidraClient.js";
+import {
+  spawnOwnedProviderProcess,
+  type ProviderProcessHandle,
+} from "../../../../src/process/ProviderProcess.js";
 import { OwnedFileHandle } from "../../../../src/filesystem/OwnedFileHandle.js";
 import { GHIDRA_PROCESS_DIAGNOSTIC_BYTES } from "../../../../src/ghidra/GhidraDiagnostics.js";
 import { GhidraHeadlessLauncher } from "../../../../src/ghidra/GhidraLauncher.js";
@@ -59,14 +63,14 @@ type FixtureMode =
   | "diagnostic_output";
 
 class FixtureLauncher implements GhidraLauncher {
-  #notifyStarted: ((child: ChildProcess) => void) | undefined;
-  readonly started = new Promise<ChildProcess>((resolve) => {
+  #notifyStarted: ((child: ProviderProcessHandle) => void) | undefined;
+  readonly started = new Promise<ProviderProcessHandle>((resolve) => {
     this.#notifyStarted = resolve;
   });
   readonly runtimeRoots: string[] = [];
   readonly endpointPaths: string[] = [];
   readonly tokens: string[] = [];
-  readonly processes: ChildProcess[] = [];
+  readonly processes: ProviderProcessHandle[] = [];
   readonly requests: string[] = [];
 
   constructor(readonly mode: FixtureMode = "success") {}
@@ -77,22 +81,49 @@ class FixtureLauncher implements GhidraLauncher {
     this.tokens.push(session.token);
     const projectRoot = join(session.runtimeRoot, "project");
     await mkdir(projectRoot, { recursive: true });
-    const process_ = spawn(process.execPath, [fixturePath], {
-      stdio: ["ignore", "pipe", "pipe", "ipc"],
-      env: {
-        ...process.env,
-        REA_GHIDRA_FIXTURE_CONFIG: JSON.stringify({
-          endpointPath: session.endpointPath,
-          token: session.token,
-          runId: session.runId,
-          providerVersion: session.providerVersion,
-          profileDigest: session.profileDigest,
-          targetSha256: session.targetSha256,
-          transport: session.transport,
-          mode: this.mode,
-        }),
-      },
-    });
+    const environment = {
+      ...process.env,
+      REA_GHIDRA_FIXTURE_CONFIG: JSON.stringify({
+        endpointPath: session.endpointPath,
+        token: session.token,
+        runId: session.runId,
+        providerVersion: session.providerVersion,
+        profileDigest: session.profileDigest,
+        targetSha256: session.targetSha256,
+        transport: session.transport,
+        mode: this.mode,
+        reportRequests:
+          process.platform === "win32" && this.mode === "hang_tools",
+      }),
+    };
+    // The real launcher normalizes the child token's default file owner. An
+    // elevated CI account's raw spawn defaults to Administrators instead.
+    const owned =
+      process.platform === "win32"
+        ? await spawnOwnedProviderProcess({
+            command: process.execPath,
+            arguments: [fixturePath],
+            env: environment,
+            runId: session.runId,
+          })
+        : undefined;
+    const process_: ProviderProcessHandle =
+      owned?.process ??
+      spawn(process.execPath, [fixturePath], {
+        stdio: ["ignore", "pipe", "pipe", "ipc"],
+        env: environment,
+      });
+    if (owned !== undefined) {
+      let pending = "";
+      process_.stdout?.on("data", (chunk: Buffer) => {
+        const lines = (pending + chunk.toString("utf8")).split("\n");
+        pending = (lines.pop() ?? "").slice(-4096);
+        for (const line of lines) {
+          const method = /^REA_FIXTURE_REQUEST ([a-z_]+)$/u.exec(line)?.[1];
+          if (method !== undefined) this.requests.push(method);
+        }
+      });
+    }
     process_.on("message", (value: unknown) => {
       if (
         typeof value === "object" &&
@@ -103,8 +134,11 @@ class FixtureLauncher implements GhidraLauncher {
         this.requests.push(value.method);
     });
     this.processes.push(process_);
-    process_.once("spawn", () => this.#notifyStarted?.(process_));
+    if (owned === undefined)
+      process_.once("spawn", () => this.#notifyStarted?.(process_));
+    else this.#notifyStarted?.(process_);
     return ok({
+      ...owned,
       process: process_,
       ownsProcessLifetime: true as const,
       projectRoot,
@@ -683,17 +717,30 @@ describe("GhidraClient cleanup and diagnostics", () => {
 
   it("bounds long-lived launcher diagnostics without interrupting the session", async () => {
     const launcher = new FixtureLauncher("diagnostic_output");
-    const client = clientFor(launcher);
+    // This case drains 8 MiB through the real Windows job's bounded polling
+    // pipes; its purpose is diagnostic retention, not the startup deadline.
+    const client = clientFor(launcher, { startupTimeoutMs: 10_000 });
     await expect(client.start()).resolves.toMatchObject({ ok: true });
     await expect(
       client.callTool("list_strings", { document: null }),
     ).resolves.toMatchObject({ ok: true });
 
-    await vi.waitFor(() => {
-      expect(client.diagnostics()).toMatchObject({
-        diagnostic_truncated: true,
-      });
-    });
+    await vi.waitFor(
+      () => {
+        expect(client.diagnostics()).toMatchObject({
+          diagnostic_truncated: true,
+        });
+        // Native pipes deliver bounded chunks. Budget exhaustion alone does not
+        // mean that the later split-token suffix has reached the observer yet.
+        const stderr = client.diagnostics().stderr as { text: string };
+        expect(
+          stderr.text.endsWith(
+            "source=/tmp/local-evidence.bin?cursor=keep&[REDACTED]",
+          ),
+        ).toBe(true);
+      },
+      { timeout: 10_000 },
+    );
     const diagnostics = client.diagnostics();
     const stdout = diagnostics.stdout as {
       bytes: number;
@@ -748,12 +795,12 @@ describe("GhidraClient cleanup and diagnostics", () => {
   });
 });
 
-const exited = (process_: ChildProcess | undefined): boolean =>
+const exited = (process_: ProviderProcessHandle | undefined): boolean =>
   process_ !== undefined &&
   (process_.exitCode !== null || process_.signalCode !== null);
 
 const waitForExit = async (
-  process_: ChildProcess | undefined,
+  process_: ProviderProcessHandle | undefined,
 ): Promise<boolean> => {
   return process_ !== undefined && waitForChildExit(process_, 10_000);
 };
@@ -983,7 +1030,10 @@ it("preserves failed startup and retained Ghidra cleanup capabilities until a ve
         cleanup: async () => {
           cleanupAttempts += 1;
           return cleanupAllowed
-            ? { cleaned: true as const, signaled: false }
+            ? ((await launched.value.cleanup?.()) ?? {
+                cleaned: true as const,
+                signaled: false,
+              })
             : {
                 cleaned: false as const,
                 reason: "fixture process cleanup unconfirmed",

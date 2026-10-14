@@ -6,6 +6,7 @@ import {
 } from "node:child_process";
 
 import { test as base } from "vitest";
+import type { ProviderProcessHandle } from "../../../src/process/ProviderProcess.js";
 
 const SHUTDOWN_GRACE_MS = 1_000;
 
@@ -40,7 +41,10 @@ export interface TestProcesses {
 
 /** Wait for a child process to exit within a timeout, reporting completion. */
 export const waitForExit = (
-  child: ChildProcess,
+  child: Pick<
+    ProviderProcessHandle,
+    "exitCode" | "signalCode" | "once" | "off"
+  >,
   timeoutMs: number,
 ): Promise<boolean> =>
   new Promise((resolve) => {
@@ -49,7 +53,7 @@ export const waitForExit = (
       return;
     }
     const timer = setTimeout(() => {
-      child.removeListener("exit", onExit);
+      child.off("exit", onExit);
       resolve(false);
     }, timeoutMs);
     timer.unref();

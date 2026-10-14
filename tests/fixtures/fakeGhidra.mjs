@@ -14,6 +14,7 @@ const {
   targetSha256,
   transport,
   mode = "success",
+  reportRequests = false,
 } = configuration ?? {};
 
 if (
@@ -85,6 +86,8 @@ const onSocketData = (socket, server, chunk, state) => {
     newline = state.buffer.value.indexOf("\n");
     const request = JSON.parse(line);
     process.send?.({ method: request.method });
+    if (reportRequests)
+      process.stdout.write(`\nREA_FIXTURE_REQUEST ${request.method}\n`);
     if (request.token !== state.token) {
       socket.end(
         `${JSON.stringify({
