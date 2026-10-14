@@ -144,6 +144,9 @@ protocols in adapters and shared CLI/MCP workflows in the application layer.
 
 ### Windows source checkouts
 
+For AI-assisted setup on another computer, follow
+[the Windows setup and acceptance guide](WINDOWS_SETUP.md).
+
 This fork is maintained independently for Windows x64. On each computer,
 clone `https://github.com/taiqi-dev/rea.git` with GitHub Desktop or Git, then run:
 
