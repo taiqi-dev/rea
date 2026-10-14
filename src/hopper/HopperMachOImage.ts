@@ -44,7 +44,7 @@ export const resolveHopperMachOImage = async (
       ),
     );
   if (signal?.aborted) return err(new AnalysisCancelledError("open_binary"));
-  if (target.format !== "mach-o")
+  if (target.format !== "mach-o" && target.format !== "mach-o-universal")
     return invalid("Hopper FAT64 image preparation requires a Mach-O target");
   let file: FileHandle;
   try {

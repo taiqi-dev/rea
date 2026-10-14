@@ -5,7 +5,7 @@ import { AnalysisError } from "../../domain/analysisErrorBase.js";
 import { ProviderAdapterError } from "../../domain/providerAdapterError.js";
 import type { ProviderOperationHealth } from "../../domain/providerOperationHealth.js";
 import { err, ok } from "../../domain/result.js";
-import { ABORTED, waitForAbortable } from "./AbortablePromise.js";
+import { ABORTED, waitForAbortable } from "../../process/AbortablePromise.js";
 import type {
   AnalysisClient,
   AnalysisClientContext,
@@ -78,6 +78,14 @@ class LazyAnalysisClient implements AnalysisClient {
   #client: AnalysisClient | undefined;
   #loading: Promise<AnalysisClient> | undefined;
   #closed = false;
+
+  executeIfReady: NonNullable<AnalysisClient["executeIfReady"]> = (
+    operation,
+    parameters,
+    options,
+  ) =>
+    this.#client?.executeIfReady?.(operation, parameters, options) ??
+    Promise.resolve(undefined);
 
   constructor(loadClient: () => Promise<AnalysisClient>, providerId: string) {
     this.#loadClient = loadClient;

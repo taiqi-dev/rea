@@ -8,7 +8,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, onTestFinished, vi } from "vitest";
 import { fixtureDosLoadImage } from "./GhidraLoadImage.fixture.js";
 import { fixtureRawBinaryLoadImage } from "./GhidraRawBinaryLoadImage.fixture.js";
 import {
@@ -23,12 +23,15 @@ import { parseExecutableHeader } from "../domain/binaryTarget.js";
 import { GhidraProvider } from "./GhidraProvider.js";
 import type { GhidraTargetSnapshot } from "./GhidraClient.js";
 import type { GhidraProviderClientFactory } from "./GhidraProviderClient.js";
+import type { GhidraHeadlessLauncher } from "./GhidraLauncher.js";
 import type { GhidraInstallationHost } from "./GhidraInstallation.js";
 import { GHIDRA_SESSION_CAPABILITIES } from "./GhidraSessionValues.js";
 import { err, ok } from "../domain/result.js";
 import type { Result } from "../domain/result.js";
 import { GhidraSessionError } from "./GhidraSessionError.js";
 import { silentLogger } from "../logger.js";
+import * as WindowsNativeLoader from "../windows/WindowsNativeLoader.js";
+import { WINDOWS_NATIVE_AUTHORITY_UNAVAILABLE_REASON } from "../process/WindowsAuthority.js";
 import { ProviderCleanupError } from "../domain/providerCleanupError.js";
 import { projectAnalysisError } from "../domain/analysisErrorProjection.js";
 import { ProviderStartupDeadline } from "../process/ProviderDeadline.js";
@@ -37,7 +40,7 @@ const INSTALL = "/opt/ghidra_12.1.4_PUBLIC";
 const installationHost = (): GhidraInstallationHost => ({
   platform: "linux",
   architecture: "x64",
-  readText: () => "application.version=12.1.4\n",
+  readText: () => "application.version=12.1.4\napplication.java.min=21\n",
   executable: () => true,
   probeJava: () => ({
     version: "21.0.11",
@@ -45,6 +48,7 @@ const installationHost = (): GhidraInstallationHost => ({
     home: "/usr/lib/jvm/jdk-21",
     bits: 64,
     runtime: "jdk",
+    vmName: "OpenJDK 64-Bit Server VM",
   }),
 });
 
@@ -61,6 +65,15 @@ const provider = (
     host,
     clientFactory,
   );
+};
+
+const createElfClient = async (ghidra: GhidraProvider) => {
+  const target = executableTarget("elf", "x86_64");
+  const resolved = await ghidra.resolveAnalysisProfile(target);
+  if (!resolved.ok) throw resolved.error;
+  if (resolved.value.profile === null)
+    throw new Error("Expected a bound Ghidra profile");
+  return ghidra.createClient(target, resolved.value.profile);
 };
 
 describe("Ghidra provider", () => {
@@ -179,6 +192,36 @@ describe("Ghidra provider", () => {
 });
 
 describe("Ghidra raw-binary profile", () => {
+  it("admits raw 6502 on Windows and binds its 16-bit language without mutation authority", async () => {
+    const ghidra = provider({ ...installationHost(), platform: "win32" });
+    const target: BinaryTarget = {
+      path: "/tmp/6502.bin",
+      sha256: "a".repeat(64),
+      kind: "executable",
+      format: "raw-binary",
+      architecture: "6502",
+      availableArchitectures: ["6502"],
+      entryPoint: "0x8001",
+      entryPointSource: "0x008001",
+    };
+    expect(ghidra.inspectTargetSupport(target).status).toBe("supported");
+    const resolved = await ghidra.resolveAnalysisProfile(target);
+    if (!resolved.ok) throw resolved.error;
+    expect(resolved.value.profile?.parameters).toMatchObject({
+      architecture: "6502",
+      loader: "BinaryLoader",
+      language_id: "6502:LE:16:default",
+      compiler_spec_id: "default",
+      entry_point: "0x8001",
+      language_selection: "caller-supplied-v1",
+      load_image_evidence: "independent-raw-mapping-context-v4",
+    });
+    expect(
+      ghidra
+        .capabilities()
+        .some(({ available, effects }) => available && effects.mutatesArtifact),
+    ).toBe(false);
+  });
   it("commits BinaryLoader language and caller-supplied entry", async () => {
     const ghidra = provider();
     const target: BinaryTarget = {
@@ -229,9 +272,10 @@ describe("Ghidra Mach-O slice support", () => {
       path: "/tmp/fixture",
       sha256: "a".repeat(64),
       kind: "executable",
-      format: "mach-o",
+      format: "mach-o-universal",
       architecture: "arm64",
       availableArchitectures: ["x86_64", "arm64"],
+      universalSlice: { offset: 0, size: 32 },
     };
 
     expect(ghidra.inspectTargetSupport(universal)).toMatchObject({
@@ -245,6 +289,13 @@ describe("Ghidra Mach-O slice support", () => {
     });
     expect(
       ghidra.inspectTargetSupport(executableTarget("mach-o", "arm64")),
+    ).toMatchObject({ status: "supported" });
+
+    expect(
+      ghidra.inspectTargetSupport({
+        ...universal,
+        availableArchitectures: ["arm64"] as const,
+      }),
     ).toMatchObject({ status: "supported" });
   });
 });
@@ -305,6 +356,13 @@ describe("Ghidra platform support", () => {
   });
 
   it("keeps Windows P0 unavailable until native isolation authority exists", () => {
+    const native = vi
+      .spyOn(WindowsNativeLoader, "systemWindowsNativeAuthority")
+      .mockReturnValue({
+        available: false,
+        reason: WINDOWS_NATIVE_AUTHORITY_UNAVAILABLE_REASON,
+      });
+    onTestFinished(() => native.mockRestore());
     const ghidra = provider({ ...installationHost(), platform: "win32" });
     const nativeApplication = peTarget("x86_64");
 
@@ -569,6 +627,7 @@ describe("Ghidra client projection", () => {
     expect(resolved.value.profile.parameters).toMatchObject({
       language_id: "auto-from-header",
       compiler_spec_id: "auto-default",
+      call_relationship_coverage: "resolved-call-reference-diagnostics-v1",
     });
 
     const result = await ghidra
@@ -580,6 +639,11 @@ describe("Ghidra client projection", () => {
       expect.objectContaining({
         runId: "11111111-1111-4111-8111-111111111111",
         platform: "linux",
+        launcher: expect.objectContaining({
+          options: expect.objectContaining({
+            javaVmName: "OpenJDK 64-Bit Server VM",
+          }),
+        }),
       }),
     ]);
     expect(toolCalls).toEqual([
@@ -607,15 +671,6 @@ describe("Ghidra client projection", () => {
 });
 
 describe("Ghidra result projection", () => {
-  const createElfClient = async (ghidra: GhidraProvider) => {
-    const target = executableTarget("elf", "x86_64");
-    const resolved = await ghidra.resolveAnalysisProfile(target);
-    if (!resolved.ok) throw resolved.error;
-    if (resolved.value.profile === null)
-      throw new Error("Expected a bound Ghidra profile");
-    return ghidra.createClient(target, resolved.value.profile);
-  };
-
   it("rejects malformed inventory output before Evidence creation", async () => {
     const ghidra = provider(installationHost(), () => ({
       start: () => Promise.resolve(ok(sessionInfo())),
@@ -746,6 +801,11 @@ describe("Ghidra result projection", () => {
       ok: false,
       error: { _tag: tag },
     });
+    if (!result.ok)
+      expect(projectAnalysisError(result.error)).toMatchObject({
+        code: "cancelled",
+        details: { diagnostics: { remote_code: code } },
+      });
   });
 
   it("returns cancellation before profile work", async () => {
@@ -762,11 +822,55 @@ describe("Ghidra result projection", () => {
   });
 });
 
-describe("Ghidra measured load-image projection", () => {
-  it.each(["verified", "changed-snapshot", "cancelled"] as const)(
+describe("Ghidra relationship coverage", () => {
+  it("marks the full direct call-reference response complete while keeping static caveats", async () => {
+    const ghidra = provider(installationHost(), () => ({
+      start: () => Promise.resolve(ok(sessionInfo())),
+      callTool: (operation) =>
+        Promise.resolve(
+          ok(
+            operation === "procedure_callees"
+              ? { value: ["0x2000"], limitations: [] }
+              : { value: [], limitations: [] },
+          ),
+        ),
+      close: () => Promise.resolve(ok(null)),
+    }));
+    const client = await createElfClient(ghidra);
+    const execution = await client.execute("procedure_callees", {
+      procedure: "0x1000",
+      document: "fixture",
+    });
+    if (!execution.ok) throw execution.error;
+    expect(execution.value.relationshipCoverage).toEqual({
+      status: "complete",
+      diagnostics: [
+        "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals.",
+      ],
+    });
+    expect(execution.value.limitations).not.toContain(
+      "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals.",
+    );
+    await client.close();
+  });
+});
+
+describe("Ghidra measured raw load-image projection", () => {
+  it.each([
+    "verified",
+    "mapping-mismatch",
+    "changed-snapshot",
+    "cancelled",
+  ] as const)(
     "streams raw snapshot identity and preserves %s outcomes",
     async (state) => {
       const fixture = fixtureRawBinaryLoadImage();
+      if (state === "mapping-mismatch") {
+        const mapping = fixture.observation.mappings[0];
+        if (mapping === undefined)
+          throw new Error("Missing source mapping fixture");
+        mapping.overlay = true;
+      }
       const controller = new AbortController();
       const signals: (AbortSignal | undefined)[] = [];
       const ghidra = provider(installationHost(), () => ({
@@ -822,12 +926,23 @@ describe("Ghidra measured load-image projection", () => {
           { signal: controller.signal },
         );
         expect(signals).toEqual([controller.signal]);
-        if (state === "verified") {
+        if (state === "verified" || state === "mapping-mismatch") {
           if (!result.ok) throw result.error;
           expect(result.value.result).toMatchObject({
-            status: "verified",
+            status: state === "verified" ? "verified" : "mismatch",
             observations: fixture.observation,
           });
+          if (state === "mapping-mismatch") {
+            expect(result.value.result).toMatchObject({
+              checks: expect.arrayContaining([
+                expect.objectContaining({
+                  name: "mapping.overlay",
+                  observed: true,
+                  matched: false,
+                }),
+              ]),
+            });
+          }
         } else {
           expect(result).toMatchObject({
             ok: false,
@@ -844,7 +959,9 @@ describe("Ghidra measured load-image projection", () => {
       }
     },
   );
+});
 
+describe("Ghidra measured DOS load-image projection", () => {
   it.each([
     "verified",
     "mismatch",
@@ -1424,6 +1541,113 @@ const sessionInfo = () => ({
   },
 });
 
+describe("Ghidra PDB coverage", () => {
+  it.each([
+    { name: "missing bridge report", pdb: undefined, warns: true },
+    {
+      name: "report without a PDB reference",
+      pdb: {
+        file: null,
+        guid: null,
+        age: null,
+        signature: null,
+        version: null,
+        loaded: null,
+      },
+      warns: false,
+    },
+  ])("distinguishes $name in direct PE searches", async ({ pdb, warns }) => {
+    const ghidra = provider(installationHost(), () => ({
+      start: () =>
+        Promise.resolve(
+          ok(pdb === undefined ? sessionInfo() : { ...sessionInfo(), pdb }),
+        ),
+      callTool: () => Promise.resolve(ok([])),
+      close: () => Promise.resolve(ok(null)),
+    }));
+    const target = executableTarget("pe", "x86_64");
+    const resolved = await ghidra.resolveAnalysisProfile(target);
+    if (!resolved.ok || resolved.value.profile === null)
+      throw new Error("Expected a PE profile");
+    const client = ghidra.createClient(target, resolved.value.profile);
+    try {
+      const searched = await client.execute("search_procedures", {
+        pattern: "add_numbers",
+      });
+      if (!searched.ok) throw searched.error;
+      expect(searched.value.result).toEqual([]);
+      const warnings = searched.value.limitations.filter((limitation) =>
+        limitation.includes("PDB"),
+      );
+      expect(warnings).toEqual(
+        warns
+          ? [
+              "Ghidra did not report PDB attributes; debug-symbol coverage is unknown.",
+            ]
+          : [],
+      );
+    } finally {
+      await client.close();
+    }
+  });
+  const pdb = {
+    file: "C:\\build\\fixture.pdb",
+    guid: "01234567-89AB-CDEF-0123-456789ABCDEF",
+    age: "a",
+    signature: null,
+    version: "RSDS",
+    loaded: false as boolean | null,
+  };
+  it.each([false, null, true])(
+    "carries PDB load state %s into direct search and health Evidence",
+    async (loaded) => {
+      let starts = 0;
+      const ghidra = provider(installationHost(), () => ({
+        start: () => {
+          starts += 1;
+          return Promise.resolve(
+            ok({ ...sessionInfo(), pdb: { ...pdb, loaded } }),
+          );
+        },
+        callTool: () => Promise.resolve(ok([])),
+        close: () => Promise.resolve(ok(null)),
+      }));
+      const target = executableTarget("pe", "x86_64");
+      const resolved = await ghidra.resolveAnalysisProfile(target);
+      if (!resolved.ok || resolved.value.profile === null)
+        throw new Error("Expected a PE profile");
+      const client = ghidra.createClient(target, resolved.value.profile);
+      // No preceding health call: a name search must establish symbol coverage itself.
+      const searched = await client.execute("search_procedures", {
+        pattern: "add_numbers",
+      });
+      expect(starts).toBe(1);
+      if (!searched.ok) throw searched.error;
+      expect(searched.value.result).toEqual([]);
+      const health = await client.execute("health", {});
+      if (!health.ok) throw health.error;
+      expect(health.value.result).toMatchObject({ pdb: { ...pdb, loaded } });
+      for (const observation of [searched.value, health.value]) {
+        const limitations = observation.limitations.join("\n");
+        if (loaded === true) {
+          expect(limitations).toContain("loaded PDB");
+          expect(limitations).toContain("not an independent PDB identity");
+          expect(limitations).toContain("empty name search does not prove");
+        } else {
+          expect(limitations).toContain(pdb.file);
+          expect(limitations).toContain(pdb.guid);
+          expect(limitations).toContain("age (hex) a");
+          expect(limitations).toContain("list_procedures");
+          expect(limitations).toContain(
+            loaded === null ? "unknown" : "not loaded",
+          );
+        }
+      }
+      await client.close();
+    },
+  );
+});
+
 const executableTarget = (
   format: "mach-o" | "elf" | "pe",
   architecture: Extract<BinaryTarget, { format: "pe" }>["architecture"],
@@ -1652,7 +1876,10 @@ it("projects Ghidra startup failure and its incomplete cleanup together", async 
         diagnostics: {
           primary_error: {
             code: "provider_timeout",
-            details: { timeout_ms: 250 },
+            details: {
+              timeout_ms: 250,
+              diagnostics: { failure_kind: "timeout" },
+            },
           },
           cleanup_error: { code: "cleanup_incomplete" },
         },
@@ -1806,6 +2033,155 @@ describe("Ghidra analysis seeds and configured language", () => {
       ).createClient(target, resolved.value.profile);
       const failed = await client.execute("health", {});
       expect(failed.ok).toBe(false);
+      expect(starts).toBe(0);
+    }
+  });
+});
+
+describe("Ghidra disabled analyzer options", () => {
+  const configuredProvider = (
+    environment: Record<string, string>,
+    clientFactory?: GhidraProviderClientFactory,
+  ) => {
+    const config = parseConfig({ GHIDRA_INSTALL_DIR: INSTALL, ...environment });
+    if (!config.ok) throw config.error;
+    return new GhidraProvider(
+      config.value,
+      silentLogger,
+      {},
+      installationHost(),
+      clientFactory,
+    );
+  };
+
+  it("records the configured analyzer options in the analysis profile", async () => {
+    const ghidra = configuredProvider({
+      REA_GHIDRA_DISABLED_ANALYZERS:
+        "Objective-C Message Analyzer,Decompiler Switch Analysis",
+    });
+    const resolved = await ghidra.resolveAnalysisProfile(
+      executableTarget("elf", "x86_64"),
+    );
+    if (!resolved.ok || resolved.value.profile === null)
+      throw new Error("expected a bound Ghidra profile");
+    expect(resolved.value.profile.parameters).toMatchObject({
+      analyzer_preset:
+        "ghidra-default+disabled:Objective-C Message Analyzer,Decompiler Switch Analysis",
+      analysis_options: {
+        disabled_analyzers: [
+          "Objective-C Message Analyzer",
+          "Decompiler Switch Analysis",
+        ],
+      },
+    });
+  });
+
+  it("hands the configured analyzers to the launcher for a matching profile", async () => {
+    const launchers: GhidraHeadlessLauncher[] = [];
+    const ghidra = configuredProvider(
+      { REA_GHIDRA_DISABLED_ANALYZERS: "Objective-C Message Analyzer" },
+      (options) => {
+        launchers.push(options.launcher as GhidraHeadlessLauncher);
+        return {
+          start: () => Promise.resolve(ok(sessionInfo())),
+          callTool: () => Promise.resolve(ok(null)),
+          close: () => Promise.resolve(ok(null)),
+        };
+      },
+    );
+    const target = executableTarget("elf", "x86_64");
+    const resolved = await ghidra.resolveAnalysisProfile(target);
+    if (!resolved.ok || resolved.value.profile === null)
+      throw new Error("expected a bound Ghidra profile");
+    const client = ghidra.createClient(target, resolved.value.profile);
+    const health = await client.execute("health", {});
+    expect(health.ok).toBe(true);
+    expect(launchers).toHaveLength(1);
+    expect(launchers[0]?.options.disabledAnalyzers).toEqual([
+      "Objective-C Message Analyzer",
+    ]);
+  });
+
+  it("binds analyzer overrides and raw import settings in one profile", async () => {
+    const launchers: GhidraHeadlessLauncher[] = [];
+    const ghidra = configuredProvider(
+      { REA_GHIDRA_DISABLED_ANALYZERS: "Decompiler Switch Analysis" },
+      (options) => {
+        launchers.push(options.launcher as GhidraHeadlessLauncher);
+        return {
+          start: () => Promise.resolve(ok(sessionInfo())),
+          callTool: () => Promise.resolve(ok(null)),
+          close: () => Promise.resolve(ok(null)),
+        };
+      },
+    );
+    const target: BinaryTarget = {
+      path: "/tmp/entry.bin",
+      sha256: "a".repeat(64),
+      kind: "executable",
+      format: "raw-binary",
+      architecture: "x86",
+      availableArchitectures: ["x86"],
+      entryPoint: "0x1000",
+      entryPointSource: "0x1000",
+    };
+    const resolved = await ghidra.resolveAnalysisProfile(target);
+    if (!resolved.ok || resolved.value.profile === null)
+      throw new Error("expected a bound raw-binary profile");
+    expect(resolved.value.profile.parameters).toMatchObject({
+      target_format: "raw-binary",
+      entry_point: "0x1000",
+      analyzer_preset: "ghidra-default+disabled:Decompiler Switch Analysis",
+      analysis_options: { disabled_analyzers: ["Decompiler Switch Analysis"] },
+    });
+    const client = ghidra.createClient(target, resolved.value.profile);
+    expect(launchers).toHaveLength(1);
+    expect(launchers[0]?.options).toMatchObject({
+      disabledAnalyzers: ["Decompiler Switch Analysis"],
+      rawBinary: {
+        languageId: "x86:LE:32:default",
+        compilerSpecId: "gcc",
+        baseAddr: "0x1000",
+      },
+    });
+    await client.close();
+  });
+
+  it("refuses a profile resolved without or with other analyzer options", async () => {
+    const target = executableTarget("elf", "x86_64");
+    const plainProvider = configuredProvider({});
+    const plain = await plainProvider.resolveAnalysisProfile(target);
+    if (!plain.ok || plain.value.profile === null)
+      throw new Error("expected profile");
+    const configuredProvider2 = configuredProvider({
+      REA_GHIDRA_DISABLED_ANALYZERS: "Objective-C Message Analyzer",
+    });
+    const configured = await configuredProvider2.resolveAnalysisProfile(target);
+    if (!configured.ok || configured.value.profile === null)
+      throw new Error("expected configured profile");
+    for (const [profile, environment] of [
+      [
+        plain.value.profile,
+        { REA_GHIDRA_DISABLED_ANALYZERS: "Objective-C Message Analyzer" },
+      ],
+      [configured.value.profile, {}],
+      [
+        configured.value.profile,
+        { REA_GHIDRA_DISABLED_ANALYZERS: "Decompiler Switch Analysis" },
+      ],
+    ] as const) {
+      let starts = 0;
+      const client = configuredProvider(environment, () => ({
+        start: () => {
+          starts++;
+          return Promise.resolve(ok(sessionInfo()));
+        },
+        callTool: () => Promise.resolve(ok(null)),
+        close: () => Promise.resolve(ok(null)),
+      })).createClient(target, profile);
+      const failed = await client.execute("health", {});
+      expect(failed.ok).toBe(false);
+      if (!failed.ok) expect(failed.error._tag).toBe("ProviderAdapterError");
       expect(starts).toBe(0);
     }
   });

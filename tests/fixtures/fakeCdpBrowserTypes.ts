@@ -13,6 +13,8 @@ export interface FakeCdpBrowser {
   readonly commands: readonly FakeCdpCommand[];
   /** Actual WebSocket connections still held by the wire fixture. */
   activeConnectionCount(): number;
+  /** WebSocket upgrades accepted over the fixture's lifetime. */
+  openedConnectionCount(): number;
   /** Deliver actual malformed wire data without bypassing the production transport parser. */
   emitRawMessage(message: string): void;
   emitEvent(event: {
@@ -114,6 +116,8 @@ export interface FakeOptions {
   readonly webMcpChildRecoversAfterTransient?: boolean;
   readonly webMcpChildNavigatesAllowed?: boolean;
   readonly electronFileUrl?: string;
+  /** Omit attached from the Electron page's HTTP discovery target. */
+  readonly omitElectronTargetAttachmentState?: boolean;
   readonly duplicateElectronInventory?: boolean;
   readonly electronInventoryCount?: number;
   readonly urlShapedAllowedTitle?:

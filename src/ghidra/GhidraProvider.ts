@@ -14,7 +14,10 @@ import {
   createAnalysisProfile,
   type AnalysisProfileCommitment,
 } from "../domain/analysisProfile.js";
-import type { BinaryTarget } from "../domain/binaryTargetTypes.js";
+import {
+  isMachOFormat,
+  type BinaryTarget,
+} from "../domain/binaryTargetTypes.js";
 import {
   jsonObjectSchema,
   jsonValueSchema,
@@ -46,7 +49,6 @@ import {
   CAPABILITIES,
   windowsP0Capabilities,
   GHIDRA_PROVIDER_IDENTITY,
-  GHIDRA_OPERATIONS,
 } from "./GhidraProviderCapabilities.js";
 import {
   createGhidraProviderClient,
@@ -64,6 +66,8 @@ const SUPPORTED_ARCHITECTURES = new Set([
   "arm",
   "arm64",
   "mips",
+  "6502",
+  "riscv",
 ]);
 
 /** Ghidra candidate backed by an isolated ephemeral headless import. */
@@ -165,7 +169,10 @@ export class GhidraProvider implements AnalysisProviderCandidate {
         reason: mipsReason,
         diagnostics,
       };
-    if (target.format === "mach-o" && target.availableArchitectures.length > 1)
+    if (
+      isMachOFormat(target.format) &&
+      target.availableArchitectures.length > 1
+    )
       return {
         status: "unsupported",
         code: "architecture_unsupported",
@@ -178,7 +185,7 @@ export class GhidraProvider implements AnalysisProviderCandidate {
         status: "unsupported",
         code: "architecture_unsupported",
         reason:
-          "Ghidra v1 requires a supported x86, x86_64, arm, arm64, or MIPS target profile.",
+          "Ghidra v1 requires a supported x86, x86_64, arm, arm64, MIPS, RISC-V, or raw 6502 target profile.",
         diagnostics,
       };
     return {
@@ -200,6 +207,7 @@ export class GhidraProvider implements AnalysisProviderCandidate {
       installation,
       options?.signal,
       this.config.ghidraLanguageOverride,
+      this.config.ghidraDisabledAnalyzers,
     );
     if (!resolved.ok || resolved.value.profile === null) return resolved;
     const override = this.config.ghidraLanguageOverride;
@@ -297,11 +305,15 @@ const inspectWindowsP0TargetSupport = (
   target: BinaryTarget,
   diagnostics: Readonly<Record<string, JsonValue>>,
 ): ProviderTargetSupport => {
+  // The raw 6502 lane uses the same immutable snapshot and native ownership boundary.
+  if (target.format === "raw-binary" && target.architecture === "6502")
+    return { status: "supported", code: null, reason: null, diagnostics };
   if (target.format !== "pe")
     return {
       status: "unsupported",
       code: "target_format_unsupported",
-      reason: "Windows Ghidra P0 accepts PE targets only.",
+      reason:
+        "Windows Ghidra P0 accepts native PE and explicitly selected raw 6502 targets only.",
       diagnostics,
     };
   if (target.architecture !== "x86" && target.architecture !== "x86_64")

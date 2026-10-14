@@ -52,10 +52,28 @@ const seedMatch = (
         ]
       : [];
   if (!kindMatches(node, seed.kind)) return [];
+  const requestedEntryPath =
+    seed.kind === "api" && "entry_path" in seed ? seed.entry_path : undefined;
+  if (
+    seed.kind === "api" &&
+    requestedEntryPath !== undefined &&
+    !node.observations.some(({ properties }) => {
+      const entryPath = properties.entry_path;
+      return (
+        Array.isArray(entryPath) &&
+        entryPath.length === requestedEntryPath.length &&
+        entryPath.every(
+          (segment, index) => segment === requestedEntryPath[index],
+        )
+      );
+    })
+  )
+    return [];
   const mode = featureSeedMatchMode(seed);
-  const query = normalized(seed.value, seed.case_sensitive);
+  const caseSensitive = seed.case_sensitive;
+  const query = normalized(seed.value, caseSensitive);
   const match = candidateFields(node, seed.kind).find((candidate) => {
-    const value = normalized(candidate.value, seed.case_sensitive);
+    const value = normalized(candidate.value, caseSensitive);
     return mode === "exact" ? value === query : value.includes(query);
   });
   return match === undefined
@@ -82,7 +100,12 @@ const kindMatches = (
         ({ properties }) => properties.endpoint_kind === "route",
       )
     );
-  if (kind === "api") return node.kind === "context-bridge-api";
+  if (kind === "api")
+    return (
+      node.kind === "context-bridge-api" ||
+      (node.kind === "javascript-expression" &&
+        node.observations.some((o) => o.properties.step_kind === "exposure"))
+    );
   if (kind === "channel") return node.kind === "ipc-channel";
   if (kind === "module")
     return ["javascript-asset", "javascript-module", "source-module"].includes(

@@ -52,6 +52,83 @@ describe("Ghidra DOS import commitment", () => {
   });
 });
 
+describe("Ghidra PDB observations", () => {
+  const pdb = {
+    file: "C:\\build\\fixture.pdb",
+    guid: "01234567-89AB-CDEF-0123-456789ABCDEF",
+    age: "a",
+    signature: null,
+    version: "RSDS",
+    loaded: false,
+  };
+  it("retains the referenced identity and observed load state", () => {
+    const parsed = parseGhidraSessionInfo({ ...session(), pdb }, expected);
+    if (!parsed.ok) throw parsed.error;
+    expect(parsed.value.pdb).toEqual(pdb);
+  });
+  it("preserves missing attributes as unknown", () => {
+    const unknown = Object.fromEntries(
+      Object.keys(pdb).map((key) => [key, null]),
+    );
+    const parsed = parseGhidraSessionInfo(
+      { ...session(), pdb: unknown },
+      expected,
+    );
+    if (!parsed.ok) throw parsed.error;
+    expect(parsed.value.pdb).toEqual(unknown);
+  });
+  it.each([
+    { ...pdb, loaded: "false" },
+    { ...pdb, age: 1 },
+    {
+      guid: pdb.guid,
+      age: pdb.age,
+      signature: null,
+      version: "RSDS",
+      loaded: false,
+    },
+    { ...pdb, matched: true },
+  ])("rejects malformed PDB reports", (report) => {
+    expect(
+      parseGhidraSessionInfo({ ...session(), pdb: report }, expected).ok,
+    ).toBe(false);
+  });
+});
+
+describe("Ghidra MIPS soft-float storage report", () => {
+  const valid = {
+    policy: "o32-soft-float-prototype-v1",
+    functions: 2,
+    definitions: 1,
+  };
+  it("accepts the exact committed policy outcome", () => {
+    const parsed = parseGhidraSessionInfo(
+      { ...session(), mips_soft_float_storage: valid },
+      expected,
+    );
+    if (!parsed.ok) throw parsed.error;
+    expect(parsed.value.mips_soft_float_storage).toEqual(valid);
+  });
+  it.each([
+    [
+      "the superseded storage policy",
+      { policy: "o32-integer-registers-v1", remapped: 2, retyped: 1 },
+    ],
+    ["a negative count", { ...valid, definitions: -1 }],
+    ["a fractional count", { ...valid, functions: 1.5 }],
+    ["a missing count", { policy: valid.policy, functions: 2 }],
+    ["an undeclared field", { ...valid, skipped: 0 }],
+    ["a non-object report", "functions"],
+  ])("rejects %s", (_label, report) => {
+    expect(
+      parseGhidraSessionInfo(
+        { ...session(), mips_soft_float_storage: report },
+        expected,
+      ).ok,
+    ).toBe(false);
+  });
+});
+
 describe("Ghidra mutation handshake", () => {
   it("requires the exact mutation authority and rejects duplicate capabilities", () => {
     const value = session();

@@ -91,4 +91,19 @@ const parameters = (
 ): EvidenceObservation["parameters"] => ({
   format: input.format,
   integrity_policy: input.integrity_policy,
+  ...(input.max_semantic_nodes === undefined
+    ? {}
+    : { max_semantic_nodes: input.max_semantic_nodes }),
+  ...(input.max_semantic_nodes_per_file === undefined
+    ? {}
+    : { max_semantic_nodes_per_file: input.max_semantic_nodes_per_file }),
+  ...(input.source_paths === undefined
+    ? {}
+    : { source_paths: input.source_paths }),
+  ...(input.max_heap_mb === undefined
+    ? {}
+    : { max_heap_mb: input.max_heap_mb }),
+  ...(input.analysis_timeout_ms === undefined
+    ? {}
+    : { analysis_timeout_ms: input.analysis_timeout_ms }),
 });

@@ -277,6 +277,40 @@ it("fetches all class pages rather than silently retaining the first upstream pa
   await verifyCleanup(launches);
 });
 
+it("preserves duplicate class-name rows and occurrence counts", async () => {
+  const { service, apk, launches, provider } = await setup(
+    "duplicate-class-name",
+  );
+  const outcome = await service.execute("search_android_classes", {
+    path: apk,
+    query: "fixture.Target",
+  });
+  if (!outcome.ok) throw outcome.error;
+  const result = androidResultSchemas.search_android_classes.parse(
+    outcome.value.normalized_result,
+  );
+  expect(result.total_classes).toBe(402);
+  expect(result.matches).toEqual(["fixture.Target", "fixture.Target"]);
+  expect(result.duplicate_names).toEqual([
+    { name: "fixture.Target", occurrences: 2 },
+  ]);
+  const full = await service.execute("search_android_classes", {
+    path: apk,
+    query: "",
+  });
+  if (!full.ok) throw full.error;
+  const fullResult = androidResultSchemas.search_android_classes.parse(
+    full.value.normalized_result,
+  );
+  expect(fullResult.total_classes).toBe(402);
+  expect(fullResult.matches).toHaveLength(402);
+  expect(fullResult.duplicate_names).toEqual([
+    { name: "fixture.Target", occurrences: 2 },
+  ]);
+  await provider.close();
+  await verifyCleanup(launches);
+});
+
 it("exposes overload candidates and executes only an explicitly selected ambiguous method", async () => {
   const { service, apk, launches, provider } = await setup();
   const input = {
@@ -308,16 +342,29 @@ it("exposes overload candidates and executes only an explicitly selected ambiguo
   expect(result.method).toMatchObject({
     overload_index: 1,
     reported_signature: "choose(int): void",
-    dex_descriptor: null,
+    dex_descriptor: "(I)V",
   });
   expect(result.source.text).toContain("overload 1");
   const references = await service.execute("trace_android_references", input);
   expect(references).toMatchObject({
     ok: false,
     error: {
-      _tag: "AnalysisCapabilityUnavailableError",
-      reason: expect.stringContaining("unique method name"),
+      _tag: "AnalysisInputError",
+      issues: [expect.objectContaining({ path: ["overload_index"] })],
     },
+  });
+  const selectedReferences = await service.execute("trace_android_references", {
+    ...input,
+    overload_index: 1,
+  });
+  if (!selectedReferences.ok) throw selectedReferences.error;
+  expect(
+    androidResultSchemas.trace_android_references.parse(
+      selectedReferences.value.normalized_result,
+    ),
+  ).toMatchObject({
+    overload_index: 1,
+    reported_signature: "choose(int): void",
   });
   await provider.close();
   await verifyCleanup(launches);
@@ -504,7 +551,7 @@ it("rejects bytes changed after target admission without launching an engine", a
 });
 
 it("retains an uncertain workspace and blocks later launches after cleanup cannot be verified", async () => {
-  const { service, apk, launches, provider } = await setup("cleanup-failure");
+  const { service, apk, launches } = await setup("cleanup-failure");
   const outcome = await service.execute("inspect_android_package", {
     path: apk,
   });

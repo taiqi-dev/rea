@@ -27,6 +27,7 @@ import {
 } from "./evidenceBundle.js";
 import {
   evidenceLocationSchema,
+  rebindEvidenceToTargetPath,
   type Evidence,
   type EvidenceLocation,
   type EvidenceSubjectTarget,
@@ -40,12 +41,20 @@ import { digestSchema } from "./../domain/digests.js";
 import { prefixedDigestSchema } from "./../domain/digests.js";
 import { canonicalJsonDigestSteps } from "./canonicalJsonDigestSteps.js";
 import { freezeJsonSnapshot } from "./immutableJson.js";
-import { rawBinaryEntryPointSchema } from "./rawBinary.js";
+import {
+  binaryArchitectureSchema,
+  rawBinaryEntryPointSchema,
+} from "./rawBinary.js";
+import {
+  relationshipCoverageSchema,
+  type RelationshipCoverage,
+} from "./relationshipCoverage.js";
 
 const architectureSchema = z.enum(BINARY_ARCHITECTURES);
 const formatSchema = z.enum([
   "analysis-database",
   "mach-o",
+  "mach-o-universal",
   "elf",
   "pe",
   "dos-mz",
@@ -67,21 +76,30 @@ const formatSchema = z.enum([
   "source-map",
 ]);
 const kindSchema = z.enum(["executable", "database", "archive", "artifact"]);
-const subjectSchema = z.object({
+const subjectBaseSchema = z.object({
   path: localPathStringSchema,
   sha256: digestSchema,
-  format: z.enum([
-    ...formatSchema.options,
-    "hopper",
-    "directory",
-    "file",
-    "unknown",
-    "mach-o-universal",
-    "javascript-bundle",
-    "entitlements",
-  ]),
-  architecture: architectureSchema.nullable(),
 });
+const subjectFormatSchema = z.enum([
+  ...formatSchema.options,
+  "hopper",
+  "directory",
+  "file",
+  "unknown",
+  "javascript-bundle",
+  "entitlements",
+]);
+// Snapshot entries retain the same raw-only architecture boundary as targets.
+const subjectSchema = z.discriminatedUnion("format", [
+  subjectBaseSchema.extend({
+    format: subjectFormatSchema.exclude(["raw-binary"]),
+    architecture: architectureSchema.exclude(["6502"]).nullable(),
+  }),
+  subjectBaseSchema.extend({
+    format: z.literal("raw-binary"),
+    architecture: architectureSchema.nullable(),
+  }),
+]);
 const targetIdentitySchema = z.object({
   sha256: digestSchema,
   kind: kindSchema,
@@ -92,9 +110,12 @@ const targetSchema = z.discriminatedUnion("format", [
     format: z.enum(
       formatSchema.options.filter((format) => format !== "raw-binary"),
     ),
+    architecture: architectureSchema.exclude(["6502"]).nullable(),
   }),
   targetIdentitySchema.extend({
     format: z.literal("raw-binary"),
+    kind: z.literal("executable"),
+    architecture: binaryArchitectureSchema,
     entry_point: rawBinaryEntryPointSchema,
   }),
 ]);
@@ -124,6 +145,7 @@ const entrySchema = z.object({
     raw_result: jsonValueSchema.nullable(),
     provider: committedProviderSchema,
     limitations: z.array(z.string()),
+    relationship_coverage: relationshipCoverageSchema.nullable().default(null),
     locations: z.array(evidenceLocationSchema),
     subject: subjectSchema.nullable(),
   }),
@@ -138,6 +160,7 @@ const workflowEntrySchema = z.object({
     provider: committedProviderSchema,
     analysis_profile: analysisProfileSchema,
     limitations: z.array(z.string()),
+    relationship_coverage: relationshipCoverageSchema.nullable().default(null),
     locations: z.array(evidenceLocationSchema),
     subject: subjectSchema.nullable(),
   }),
@@ -267,7 +290,7 @@ const snapshotContentDigest = (
   rawResult: JsonValue | null,
   execution: Pick<
     AnalysisSnapshotEntry["execution"],
-    "limitations" | "locations" | "subject"
+    "limitations" | "locations" | "subject" | "relationship_coverage"
   >,
 ): string => {
   const metadata = jsonObjectSchema.parse({
@@ -282,6 +305,9 @@ const snapshotContentDigest = (
             format: execution.subject.format,
             architecture: execution.subject.architecture,
           },
+    ...(execution.relationship_coverage === null
+      ? {}
+      : { relationship_coverage: execution.relationship_coverage }),
   });
   return contentDigest({
     ...metadata,
@@ -308,6 +334,7 @@ interface SnapshotExecution {
   };
   readonly analysisProfile?: AnalysisProfileCommitment;
   readonly limitations: readonly string[];
+  readonly relationshipCoverage?: RelationshipCoverage | null | undefined;
   readonly locations: readonly EvidenceLocation[];
   readonly subject: EvidenceSubjectTarget | null;
 }
@@ -321,18 +348,21 @@ const canonicalJson = (value: unknown): string => {
 };
 
 /** Project a binary into the path-free identity used for cache invalidation. */
-export const snapshotTarget = (
-  target: BinaryTarget,
-): AnalysisSnapshotTarget => {
-  const identity = {
-    sha256: target.sha256,
-    kind: target.kind,
-    architecture: target.architecture ?? null,
-  };
-  return target.format === "raw-binary"
-    ? { ...identity, format: target.format, entry_point: target.entryPoint }
-    : { ...identity, format: target.format };
-};
+export const snapshotTarget = (target: BinaryTarget): AnalysisSnapshotTarget =>
+  target.format === "raw-binary"
+    ? {
+        sha256: target.sha256,
+        kind: target.kind,
+        architecture: target.architecture,
+        format: target.format,
+        entry_point: target.entryPoint,
+      }
+    : {
+        sha256: target.sha256,
+        kind: target.kind,
+        architecture: target.architecture ?? null,
+        format: target.format,
+      };
 
 /** Build the immutable provider/profile binding used by a cached snapshot. */
 export const snapshotBinding = (
@@ -411,7 +441,7 @@ export const snapshotEvidenceForQuery = (
     (candidate) => candidate.query_id === queryId,
   );
   if (entry === undefined && workflowEntry === undefined) return undefined;
-  return snapshot.evidence_bundle.records.find(
+  const evidence = snapshot.evidence_bundle.records.find(
     (record) =>
       record.subject?.digest.sha256 === target.sha256 &&
       record.operation === operation &&
@@ -425,6 +455,9 @@ export const snapshotEvidenceForQuery = (
         (workflowEntry !== undefined &&
           evidenceMatchesWorkflowEntry(record, workflowEntry, snapshot))),
   );
+  return evidence === undefined
+    ? undefined
+    : rebindEvidenceToTargetPath(evidence, target);
 };
 
 /** Create one exact replay record for a derived application workflow result. */
@@ -456,14 +489,15 @@ export const createAnalysisSnapshotWorkflowEntry = (input: {
       provider: execution.analysisProfile.provider,
       analysis_profile: execution.analysisProfile,
       limitations: [...execution.limitations],
+      relationship_coverage: execution.relationshipCoverage ?? null,
       locations: [...execution.locations],
       subject:
         execution.subject === null
           ? null
-          : {
+          : subjectSchema.parse({
               ...execution.subject,
               architecture: execution.subject.architecture ?? null,
-            },
+            }),
     },
   };
 };
@@ -518,14 +552,15 @@ export const createAnalysisSnapshotEntry = (input: {
       raw_result: execution.rawResult,
       provider: binding.provider,
       limitations: [...execution.limitations],
+      relationship_coverage: execution.relationshipCoverage ?? null,
       locations: [...execution.locations],
       subject:
         execution.subject === null
           ? null
-          : {
+          : subjectSchema.parse({
               ...execution.subject,
               architecture: execution.subject.architecture ?? null,
-            },
+            }),
     },
   };
 };
@@ -834,19 +869,24 @@ const evidenceMatchesWorkflowEntry = (
     evidenceContentDigest(evidence),
   ]) === workflowEntryEvidenceKey(entry);
 
-const evidenceContentMetadata = (evidence: Evidence) => ({
-  limitations: evidence.limitations,
-  locations: evidence.locations,
-  subject:
-    evidence.subject === null
-      ? null
-      : {
-          local_path: evidence.subject.local_path,
-          sha256: evidence.subject.digest.sha256,
-          format: evidence.subject.format,
-          architecture: evidence.subject.architecture,
-        },
-});
+const evidenceContentMetadata = (evidence: Evidence) => {
+  return {
+    limitations: evidence.limitations,
+    ...(evidence.relationship_coverage === null
+      ? {}
+      : { relationship_coverage: evidence.relationship_coverage }),
+    locations: evidence.locations,
+    subject:
+      evidence.subject === null
+        ? null
+        : {
+            local_path: evidence.subject.local_path,
+            sha256: evidence.subject.digest.sha256,
+            format: evidence.subject.format,
+            architecture: evidence.subject.architecture,
+          },
+  };
+};
 
 /** Serialize a validated snapshot with byte-stable canonical entry ordering. */
 export const serializeAnalysisSnapshot = (snapshot: AnalysisSnapshot): string =>

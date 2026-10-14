@@ -2,6 +2,7 @@ import type {
   CapabilityDescriptor,
   ProviderIdentity,
 } from "../application/AnalysisProvider.js";
+import type { RelationshipCoverage } from "../domain/relationshipCoverage.js";
 import {
   hasWindowsNativeAuthority,
   windowsNativeAuthorityUnavailableReason,
@@ -32,7 +33,7 @@ export const healthLimitations = Object.freeze([
 
 /** Additional limitations applied to the experimental Windows x64 P0 boundary. */
 export const windowsP0Limitations = Object.freeze([
-  "Windows Ghidra P0 accepts approved native x86 and x86-64 PE applications and DLLs; managed, hostile, sensitive, and mutable-path targets are unsupported.",
+  "Windows Ghidra P0 accepts native x86 and x86-64 PE applications and DLLs, and explicitly selected raw 6502 images; managed, hostile, sensitive, and mutable-path targets are unsupported.",
   "The Windows bridge uses authenticated IPv4 loopback because Node path-based IPC does not expose Java AF_UNIX sockets; the endpoint file contains no bearer token.",
   "Windows sessions require the matching packaged Windows x64 native addon, local NTFS targets and runtimes, and Windows 10 or later. Native handles enforce path admission, private DACLs, and Job Object ownership automatically.",
 ]);
@@ -42,6 +43,20 @@ const stringInventoryLimitation =
 
 const searchLimitation =
   "Regex mode uses Java Pattern semantics. Matcher or compiler stack exhaustion returns a resource constraint without closing the session; literal mode avoids regex recursion and returns complete matching values.";
+
+const resolvedCallReferenceLimitation =
+  "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals.";
+
+/** Relationship-only caveats belong to each observed caller/callee result. */
+export const relationshipCoverageFor = (
+  operation: string,
+): RelationshipCoverage | undefined =>
+  operation === "procedure_callers" || operation === "procedure_callees"
+    ? {
+        status: "complete",
+        diagnostics: [resolvedCallReferenceLimitation],
+      }
+    : undefined;
 
 /** Limitation text for one admitted operation, including the common base. */
 export const limitationsFor = (operation: string): readonly string[] => {
@@ -68,12 +83,17 @@ export const limitationsFor = (operation: string): readonly string[] => {
     case "inspect_native_load_image":
       return [
         ...common,
-        "Independent verification supports DOS MZ and explicitly selected COM, including measured COM entry context. Measured source mappings use inclusive end addresses and complete region digests; no target execution or project mutation occurs.",
+        "Independent verification covers admitted DOS MZ, explicitly selected COM with measured entry context, and caller-supplied raw-binary imports. Measured source mappings use inclusive end addresses and complete region digests; no target execution or project mutation occurs.",
       ];
     case "read_bytes":
       return [
         ...common,
         "Bytes reflect Ghidra's initialized memory, including loader fixups. Reads stop at an unmapped or uninitialized byte and report completeness explicitly.",
+      ];
+    case "search_bytes":
+      return [
+        ...common,
+        "Searches initialized loader-adjusted memory independently per block, in provider address order. Bounds and page coverage ends are inclusive. Uninitialized blocks are listed separately. Overlapping matches are included; patterns never cross block boundaries. A cursor resumes the same target, profile and query. Cancellation discards the active search and returns no successful partial page.",
       ];
     case "address_to_file_offset":
       return [
@@ -135,10 +155,7 @@ export const limitationsFor = (operation: string): readonly string[] => {
       ];
     case "procedure_callers":
     case "procedure_callees":
-      return [
-        ...common,
-        "Only resolved Ghidra call references are returned; unresolved computed or indirect calls remain unknown, while function classifications distinguish thunks and externals.",
-      ];
+      return common;
     case "xrefs":
       return [
         ...common,

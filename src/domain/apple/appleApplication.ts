@@ -17,7 +17,10 @@ import {
   isSwiftRuntimeLibrary,
   nativeRuntimeConvention,
 } from "../nativeConvention.js";
-import { parseArtifactInventoryEvidence } from "../artifactInventoryEvidence.js";
+import {
+  hasCompleteInventoryCoverage,
+  parseArtifactInventoryEvidence,
+} from "../artifactInventoryEvidence.js";
 import { evidenceSchema } from "../evidence.js";
 import { digestSchema } from "../digests.js";
 import { prefixedDigestSchema } from "../digests.js";
@@ -88,6 +91,7 @@ export const appleApplicationProjectionResultSchema = z.strictObject({
   bridge_candidate_coverage: bridgeCandidateCoverageSchema,
   coverage: z.strictObject({
     status: z.enum(["complete-within-inventory", "partial"]),
+    // Count completeness is separate from the declared coverage status.
     inventory_complete: z.boolean(),
   }),
   limitations: z.array(z.string().min(1)),
@@ -165,9 +169,10 @@ export const projectAppleApplication = (
   );
   const uninventoriedImage =
     rootFormat === "dmg" && inventory.occurrences.length === 1;
-  const complete = inventory.complete && !uninventoriedImage;
+  const inventoryComplete = hasCompleteInventoryCoverage(inventory);
+  const complete = inventoryComplete && !uninventoriedImage;
   const limitations = projectionLimitations({
-    complete: inventory.complete,
+    complete: inventoryComplete,
     uninventoriedImage,
     roots,
     bundles,
@@ -213,8 +218,9 @@ export const appleProjectionId = (projection: unknown): string =>
   `aap_${digest(projection)}`;
 
 /**
- * IPA projection keeps every archive component, as before. Directory, ZIP,
- * and DMG inventories can hold installers and other siblings, so only
+ * AppleDouble sidecars describe neighbouring files and are never components.
+ * IPA projection keeps every other archive component, as before. Directory,
+ * ZIP, and DMG inventories can hold installers and other siblings, so only
  * components inside an application root are attributed to it.
  */
 const attributeComponents = (
@@ -222,8 +228,8 @@ const attributeComponents = (
   roots: readonly string[],
   rootFormat: RootFormat,
 ): { readonly all: Component[]; readonly unattributed: number } => {
-  if (rootFormat === "ipa") return { all: [...inventoried], unattributed: 0 };
   const visible = inventoried.filter(({ path }) => !isSidecar(path));
+  if (rootFormat === "ipa") return { all: visible, unattributed: 0 };
   const all = visible.filter(({ path }) =>
     roots.some((root) => isWithin(path, root)),
   );
@@ -390,7 +396,7 @@ const projectionLimitations = (facts: {
   readonly bridgeCandidateCoverage: AppleApplicationProjectionResult["bridge_candidate_coverage"];
 }): string[] => [
   ...(!facts.complete
-    ? ["Source inventory pages are incomplete; absence is unknown."]
+    ? ["Source inventory coverage is partial; absence is unknown."]
     : []),
   ...(facts.uninventoriedImage
     ? [

@@ -61,6 +61,8 @@ export interface ProviderProcessHandle extends Pick<
   /** True once an enforced process memory limit reported an allocation failure. */
   readonly memoryLimitReached?: boolean;
   kill(signal?: NodeJS.Signals | number): boolean;
+  unref?(): void;
+  ref?(): void;
 }
 
 /** Process handle returned by a provider-specific launcher. */
@@ -77,6 +79,15 @@ export type ProviderProcessLaunch =
       readonly ownership?: OwnedProcessGroup;
       readonly cleanup?: () => Promise<ProcessCleanupResult>;
     };
+
+/**
+ * Process exit recorded by the supervisor.
+ * Independent of retained stream diagnostics.
+ */
+export interface ProviderProcessExitObservation {
+  readonly code: number | null;
+  readonly signal: NodeJS.Signals | null;
+}
 
 /** Detached diagnostics captured for one supervised provider process. */
 export interface ProviderProcessSnapshot {
@@ -233,10 +244,7 @@ export class ProviderProcessSupervisor {
   readonly #options: ProviderProcessSupervisorOptions;
   readonly #stdout = new ProcessOutputCapture();
   readonly #stderr = new ProcessOutputCapture();
-  readonly #exit = deferred<{
-    readonly code: number | null;
-    readonly signal: NodeJS.Signals | null;
-  }>();
+  readonly #exit = deferred<ProviderProcessExitObservation>();
   readonly #outputClose = deferred<void>();
   #outputClosed = false;
   #stdoutObservedBytes = 0;
@@ -271,9 +279,7 @@ export class ProviderProcessSupervisor {
   readonly #onError = (cause: Error): void => {
     this.#options.onDiagnostic?.({ type: "error", message: cause.message });
   };
-  #exitObservation:
-    | { readonly code: number | null; readonly signal: NodeJS.Signals | null }
-    | undefined;
+  #exitObservation: ProviderProcessExitObservation | undefined;
   #stopPromise: Promise<ProviderProcessStopResult> | undefined;
   #disposed = false;
 
@@ -290,6 +296,16 @@ export class ProviderProcessSupervisor {
     launch.process.on("error", this.#onError);
     if (launch.process.exitCode !== null || launch.process.signalCode !== null)
       this.#recordExit(launch.process.exitCode, launch.process.signalCode);
+  }
+
+  /**
+   * Recorded process exit without concatenating retained stream diagnostics.
+   * Undefined until exit or close is observed.
+   */
+  observedExit(): ProviderProcessExitObservation | undefined {
+    const exit = this.#exitObservation;
+    if (exit === undefined) return undefined;
+    return { code: exit.code, signal: exit.signal };
   }
 
   /** Latest retained output and exit observation, with explicit configured truncation. */
@@ -357,13 +373,33 @@ export class ProviderProcessSupervisor {
     this.launch.process.off("error", this.#onError);
   }
 
+  /** Release event-loop references so incomplete cleanup does not prevent host exit. */
+  unref(): void {
+    const process = this.launch.process;
+    process.unref?.();
+    (process.stdin as { unref?: () => void } | null | undefined)?.unref?.();
+    (process.stdout as { unref?: () => void } | null | undefined)?.unref?.();
+    (process.stderr as { unref?: () => void } | null | undefined)?.unref?.();
+  }
+
+  /** Restore event-loop references when retrying supervised process cleanup. */
+  ref(): void {
+    const process = this.launch.process;
+    process.ref?.();
+    (process.stdin as { ref?: () => void } | null | undefined)?.ref?.();
+    (process.stdout as { ref?: () => void } | null | undefined)?.ref?.();
+    (process.stderr as { ref?: () => void } | null | undefined)?.ref?.();
+  }
+
   async #stop(
     options: ProviderProcessStopOptions,
   ): Promise<ProviderProcessStopResult> {
+    this.ref();
     let completed = false;
     try {
       const result = await this.#stopWithin(options);
       completed = result.status !== "incomplete";
+      if (!completed) this.unref();
       return result;
     } finally {
       if (completed) this.dispose();

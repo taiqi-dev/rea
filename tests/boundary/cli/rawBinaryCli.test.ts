@@ -32,8 +32,38 @@ cliTest(
     });
     expect(missing.exitCode).toBe(1);
     expect(missing.json).toMatchObject({
-      code: "target_unavailable",
+      code: "invalid_request",
       details: { reason: expect.stringContaining("architecture") },
+    });
+  },
+);
+
+cliTest(
+  "rejects a 6502 image crossing the 16-bit boundary before provider startup",
+  async ({ cli }) => {
+    const root = await createTestTempDirectory("rea-6502-cli-overflow-");
+    const path = join(root, "image.bin");
+    await writeFile(path, Buffer.from("a92a60", "hex"));
+    const result = await cli.run({
+      arguments: [
+        "inspect",
+        path,
+        "--target-format",
+        "raw-binary",
+        "--architecture",
+        "6502",
+        "--entry-point",
+        "0xffff",
+        "--provider",
+        "ghidra",
+        "--json",
+      ],
+      environment: { HOME: root, XDG_CONFIG_HOME: root, XDG_CACHE_HOME: root },
+    });
+    expect(result.exitCode).toBe(1);
+    expect(result.json).toMatchObject({
+      code: "invalid_request",
+      details: { reason: expect.stringContaining("6502 address width") },
     });
   },
 );
@@ -62,7 +92,7 @@ cliTest(
     });
     expect(result.exitCode).toBe(1);
     expect(result.json).toMatchObject({
-      code: "target_unavailable",
+      code: "invalid_request",
       details: { reason: expect.stringContaining("must be 4-byte aligned") },
     });
   },

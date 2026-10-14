@@ -1,6 +1,9 @@
 import { z } from "zod";
 
-import type { BinaryArchitecture } from "./binaryTargetTypes.js";
+import type {
+  BinaryArchitecture,
+  HeaderArchitecture,
+} from "./binaryTargetTypes.js";
 import type { ExecutableFormatHint } from "./dosCom.js";
 import { err, ok, type Result } from "./result.js";
 
@@ -10,6 +13,7 @@ export const BINARY_ARCHITECTURES = [
   "x86_64",
   "arm",
   "arm64",
+  "6502",
 ] as const satisfies readonly BinaryArchitecture[];
 
 /** Provider-neutral CPU family for a caller-supplied raw-binary load. */
@@ -55,48 +59,74 @@ export const validateRawBinaryLength = (
 
 /** Admitted headerless load identity used by target resolution and profiles. */
 export interface RawBinaryAdmission {
-  readonly architecture: Exclude<BinaryArchitecture, "mips">;
+  readonly architecture: HeaderArchitecture | "6502";
   readonly entryPoint: string;
   readonly entryPointSource: string;
 }
 
+/** Why a headerless load was refused, with its owning classification. */
+export interface RawBinaryAdmissionRejection {
+  readonly reason: string;
+  /**
+   * `load_selection_rejected` names a caller-input selection problem;
+   * `file_format_rejected` names a refusal caused by the target file itself.
+   */
+  readonly constraint: "load_selection_rejected" | "file_format_rejected";
+}
+
 const addressWidth = (architecture: BinaryArchitecture): bigint =>
-  architecture === "x86" || architecture === "arm"
-    ? 0xffffffffn
-    : 0xffffffffffffffffn;
+  architecture === "6502"
+    ? 0xffffn
+    : architecture === "x86" || architecture === "arm"
+      ? 0xffffffffn
+      : 0xffffffffffffffffn;
 
 /** Validate architecture, entry, and that the mapped image fits the CPU width. */
 export const admitRawBinary = (input: {
   readonly architecture: unknown;
   readonly entryPoint: unknown;
   readonly fileBytes: number;
-}): Result<RawBinaryAdmission, string> => {
+}): Result<RawBinaryAdmission, RawBinaryAdmissionRejection> => {
   const architecture = binaryArchitectureSchema.safeParse(input.architecture);
   if (!architecture.success)
-    return err(
-      "raw-binary format requires architecture (x86, x86_64, arm, or arm64)",
-    );
+    return err({
+      reason:
+        "raw-binary format requires architecture (x86, x86_64, arm, arm64, or 6502)",
+      constraint: "load_selection_rejected",
+    });
   if (typeof input.entryPoint !== "string")
-    return err(
-      "raw-binary format requires entry_point as a hexadecimal address of the form 0x…",
-    );
+    return err({
+      reason:
+        "raw-binary format requires entry_point as a hexadecimal address of the form 0x…",
+      constraint: "load_selection_rejected",
+    });
   const entry = parseRawBinaryEntryPoint(input.entryPoint);
-  if (!entry.ok) return entry;
+  if (!entry.ok)
+    return err({
+      reason: entry.error,
+      constraint: "load_selection_rejected",
+    });
   if (
     (architecture.data === "arm" || architecture.data === "arm64") &&
     entry.value.value % 4n !== 0n
   )
-    return err(
-      `raw-binary ${architecture.data} entry_point ${entry.value.canonical} must be 4-byte aligned`,
-    );
+    return err({
+      reason: `raw-binary ${architecture.data} entry_point ${entry.value.canonical} must be 4-byte aligned`,
+      constraint: "load_selection_rejected",
+    });
   const length = validateRawBinaryLength(input.fileBytes);
-  if (!length.ok) return length;
+  if (!length.ok)
+    return err({
+      reason: length.error,
+      constraint: "file_format_rejected",
+    });
   const last = entry.value.value + BigInt(input.fileBytes) - 1n;
   const max = addressWidth(architecture.data);
   if (entry.value.value > max || last > max)
-    return err(
-      `raw-binary mapping from ${entry.value.canonical} must fit in the ${architecture.data} address width`,
-    );
+    return err({
+      reason: `raw-binary mapping from ${entry.value.canonical} must fit in the ${architecture.data} address width`,
+      constraint: "load_selection_rejected",
+    });
   return ok({
     architecture: architecture.data,
     entryPoint: entry.value.canonical,

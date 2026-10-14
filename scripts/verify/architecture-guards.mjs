@@ -1,4 +1,3 @@
-import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
 import { join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -88,6 +87,30 @@ check(
   files,
   /VISITOR_KEYS/,
   ["src/domain/javascript/javascriptSemanticTraversal.ts"],
+);
+
+// A producer that pins both the soft and hard ceiling of every resource must take
+// the vector from one owner. Audited 2026-10-13 against the other prlimit lanes:
+// src/pcap/PcapNativeBound.ts pairs soft and hard but budgets 300 CPU seconds and
+// has no resident-input ceiling; src/evm/EvmoleInterfaceProvider.ts,
+// src/firmware/FirmwareCommand.ts and src/javascript/recovery/WakaruCommand.ts
+// spell soft-only forms (`--core=0:`, `--core=0`). Those four stay as they are;
+// a new paired producer calls prlimitArgumentVector instead of spelling options.
+check(
+  "inline paired prlimit ceilings (use prlimitArgumentVector from src/process/LinuxResourceLimits)",
+  files,
+  /--core=0:0/,
+  ["src/process/LinuxResourceLimits.ts", "src/pcap/PcapNativeBound.ts"],
+);
+
+// Census is spelling-shaped, like the rules above: a lane that expresses the same
+// ceilings differently (`1024 ** 3`, camelCase fields) is not caught here, which is
+// why the four lanes above are listed rather than left to a future reader.
+check(
+  "inline resident-input budget (use BOUNDED_PRODUCER_LIMITS from src/process/LinuxResourceLimits)",
+  files,
+  /input_bytes:\s*32 \* 1024 \* 1024/,
+  ["src/process/LinuxResourceLimits.ts"],
 );
 
 // Fixed-arity backtick keys audited 2026-10-10: every prefix field is NUL-free

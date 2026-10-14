@@ -1,12 +1,17 @@
-import { EvidenceIntegrityError } from "../domain/evidenceErrors.js";
+import {
+  EvidenceFileError,
+  EvidenceIntegrityError,
+} from "../domain/evidenceErrors.js";
 import type { AnalysisError } from "../domain/analysisErrorBase.js";
 import type { EvidenceBundle } from "../domain/evidenceBundle.js";
 import type { JsonValue } from "../domain/jsonValue.js";
 import { jsonValueSchema } from "../domain/jsonValue.js";
 import { err, ok, type Result } from "../domain/result.js";
 import { compareBundles } from "../domain/bundleComparison.js";
+import { ArtifactResourceScope } from "../artifacts/ArtifactResourceScope.js";
 import {
   readEvidenceBundle,
+  readImmutableEvidenceBundle,
   writeEvidenceBundle,
 } from "./EvidenceBundleFiles.js";
 
@@ -29,12 +34,36 @@ export const exportEvidenceBundleCommand = async (
   outputPath: string,
   overwrite: boolean,
 ): Promise<Result<JsonValue, AnalysisError>> => {
-  const loaded = await readEvidenceBundle(sourcePath);
+  // The sealed snapshot lets the writer reuse this authentication.
+  const loaded = await readImmutableEvidenceBundle(sourcePath);
   if (!loaded.ok) return loaded;
-  return projectWrite(
+  const resources = new ArtifactResourceScope();
+  const written = await writeEvidenceBundle(
     loaded.value,
-    await writeEvidenceBundle(loaded.value, outputPath, overwrite),
+    outputPath,
+    overwrite,
+    resources,
   );
+  if (written.ok) return projectWrite(loaded.value, written);
+
+  let cleanupSucceeded = false;
+  try {
+    await resources.close();
+    cleanupSucceeded = true;
+  } catch {
+    // The original error cause retains the same staged-output owner for diagnostics.
+  }
+  if (
+    cleanupSucceeded &&
+    written.error instanceof EvidenceFileError &&
+    written.error.published
+  ) {
+    return projectWrite(loaded.value, {
+      ok: true,
+      value: written.error.published,
+    });
+  }
+  return written;
 };
 
 /** Compare two validated canonical Evidence bundles without session state. */
@@ -42,9 +71,11 @@ export const compareEvidenceBundlesCommand = async (input: {
   readonly leftPath: string;
   readonly rightPath: string;
 }): Promise<Result<JsonValue, AnalysisError>> => {
+  // Sealed snapshots let comparison and its bundle digests reuse this
+  // authentication instead of re-validating every record twice more.
   const [left, right] = await Promise.all([
-    readEvidenceBundle(input.leftPath),
-    readEvidenceBundle(input.rightPath),
+    readImmutableEvidenceBundle(input.leftPath),
+    readImmutableEvidenceBundle(input.rightPath),
   ]);
   if (!left.ok) return left;
   if (!right.ok) return right;

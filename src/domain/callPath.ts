@@ -10,6 +10,7 @@ import {
   parseFunctionEvidence,
   type FunctionSnapshot,
 } from "./functionDossierEvidence.js";
+import { isCallerOnlyUnknownCoverage } from "./functionCallCoverage.js";
 import { compareUnicodeCodePoints } from "./unicodeCodePointOrder.js";
 
 /** Minimal directed caller-to-callee adjacency for call-path search. */
@@ -229,16 +230,55 @@ const inspectSearch = ({
   const reached = new Map<string, number>([[start, 0]]);
   const queue = [start];
   const limitations: string[] = [];
+  let incompleteExpandedCoverage = false;
   for (let index = 0; index < queue.length; index += 1) {
     const node = queue[index];
     if (node === undefined) continue;
     const depth = reached.get(node) ?? 0;
-    if (node === goal) continue;
     const snapshot = snapshots.get(node);
+    if (snapshot !== undefined) {
+      const coverage = snapshot.evidence.relationship_coverage;
+      for (const limitation of snapshot.limitations)
+        limitations.push(limitation);
+      if (coverage?.status === "partial")
+        for (const limitation of coverage.limitations)
+          limitations.push(limitation);
+      else if (coverage?.status === "unknown")
+        limitations.push(coverage.reason);
+      for (const diagnostic of coverage !== null && "diagnostics" in coverage
+        ? coverage.diagnostics
+        : [])
+        limitations.push(diagnostic);
+      // The requested goal is a terminal for this search. Its outgoing edges
+      // cannot add a path to the goal, so its dossier limits are contextual
+      // but do not make the searched start-to-goal closure incomplete.
+      if (node === goal) continue;
+      const callees = snapshot.dossier.facet_availability?.callees;
+      if (callees?.available === false) {
+        limitations.push(callees.reason);
+        incompleteExpandedCoverage = true;
+      }
+      // Explicit, Evidence-bound relationship coverage owns completeness;
+      // generic provider/dossier limitations remain contextual. Legacy Evidence
+      // without that metadata retains its conservative limitation-based rule.
+      // The search only expands callee edges, so coverage that is unknown
+      // solely because callers are unobservable does not make the searched
+      // callee closure incomplete; the caller caveat stays in limitations.
+      if (
+        coverage === null
+          ? snapshot.limitations.length > 0
+          : coverage.status !== "complete" &&
+            !isCallerOnlyUnknownCoverage(coverage)
+      )
+        incompleteExpandedCoverage = true;
+    } else if (node === goal) {
+      continue;
+    }
     if (snapshot === undefined) {
       limitations.push(
         `No analyze_function Evidence covers reachable function ${node}`,
       );
+      incompleteExpandedCoverage = true;
       continue;
     }
     const neighbors = graph.outNeighbors(node).sort(compareUnicodeCodePoints);
@@ -252,7 +292,7 @@ const inspectSearch = ({
     graph,
     snapshots,
     reached,
-    exhaustive: limitations.length === 0,
+    exhaustive: !incompleteExpandedCoverage,
     limitations,
   };
 };

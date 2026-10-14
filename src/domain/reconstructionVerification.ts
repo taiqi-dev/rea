@@ -16,6 +16,7 @@ import {
   isProcessEvidenceProvider,
 } from "./process/processEvidenceProvider.js";
 import { functionDossierSchema } from "./hopperValues.js";
+import { functionCallCoverageLimitations } from "./functionCallCoverage.js";
 import {
   deriveProcessComparisonStatus,
   PROCESS_COMPARISON_DIMENSIONS,
@@ -57,6 +58,11 @@ const providers = {
     name: "REA artifact comparison",
   },
 } as const;
+
+interface FunctionSourceFacts {
+  readonly evidence_id: string;
+  readonly callCoverageLimitations: readonly string[];
+}
 
 const acceptsPredicate = (
   expected: readonly string[],
@@ -137,14 +143,24 @@ const evaluateClaim = (
       throw new TypeError(`Missing source Evidence ${id}`);
     return source;
   });
-  validateSourceKinds(claim, sources);
-  const observed = observedStatus(claim, comparison);
-  const limitations = authorityLimitations(claim, sources, sides);
-  const relevantUnknowns = reconstructionClaimUnknowns(
+  const functionSourceFacts = readValidatedSourceFacts(claim, sources);
+  const observation = comparisonObservation(claim, comparison);
+  const observed = observation.status;
+  const limitations = [
+    ...authorityLimitations(claim, sources, sides),
+    ...sourceCallCoverageLimitations(
+      claim,
+      functionSourceFacts,
+      observation.hasIndependentFunctionChange === true,
+    ),
+  ];
+  const relatedUnknowns = reconstructionClaimUnknowns(
     heads,
     comparison.evidence_id,
     allSourceIds,
+    claim.dimension,
   );
+  const relevantUnknowns = relatedUnknowns;
   const status = classify(observed, limitations, relevantUnknowns);
   const displayedUnknowns = relevantUnknowns;
   return reconstructionClaimResultSchema.parse({
@@ -168,10 +184,10 @@ const evaluateClaim = (
   });
 };
 
-const validateSourceKinds = (
+const readValidatedSourceFacts = (
   claim: Claim,
   sources: readonly Evidence[],
-): void => {
+): readonly FunctionSourceFacts[] => {
   const expected =
     claim.kind === "behavioral"
       ? ["capture_process_scenario", "rea.process-capture"]
@@ -188,13 +204,22 @@ const validateSourceKinds = (
     throw new TypeError(
       "Comparison source Evidence has an unexpected observation type",
     );
+  const functionSources: FunctionSourceFacts[] = [];
   for (const source of sources) {
     if (claim.kind === "behavioral")
       parseProcessCapture(source.normalized_result);
-    else if (claim.kind === "structural-function")
-      functionDossierSchema.parse(source.normalized_result);
-    else artifactInventoryResultSchema.parse(source.normalized_result);
+    else if (claim.kind === "structural-function") {
+      const dossier = functionDossierSchema.parse(source.normalized_result);
+      functionSources.push({
+        evidence_id: source.evidence_id,
+        callCoverageLimitations: functionCallCoverageLimitations(
+          source.relationship_coverage,
+          dossier,
+        ),
+      });
+    } else artifactInventoryResultSchema.parse(source.normalized_result);
   }
+  return functionSources;
 };
 
 const validateComparisonIdentity = (claim: Claim, evidence: Evidence): void => {
@@ -215,21 +240,40 @@ const validateComparisonIdentity = (claim: Claim, evidence: Evidence): void => {
     throw new TypeError("Comparison Evidence identity or authority disagrees");
 };
 
-const observedStatus = (claim: Claim, evidence: Evidence): ObservedStatus => {
+const comparisonObservation = (
+  claim: Claim,
+  evidence: Evidence,
+): {
+  readonly status: ObservedStatus;
+  readonly hasIndependentFunctionChange?: boolean;
+} => {
   if (claim.kind === "behavioral") {
     const result = processCaptureComparisonSchema.parse(
       evidence.normalized_result,
     );
     validateProcessStatus(result);
-    return claim.dimension === "overall"
-      ? result.status
-      : result[claim.dimension];
+    return {
+      status:
+        claim.dimension === "overall" ? result.status : result[claim.dimension],
+    };
   }
   if (claim.kind === "structural-function") {
     const result = functionComparisonResultSchema.parse(
       evidence.normalized_result,
     );
-    if (claim.dimension === "overall") return result.status;
+    if (claim.dimension === "overall")
+      return {
+        status: result.status,
+        // Historical overall changes may come solely from incomplete call sets.
+        hasIndependentFunctionChange:
+          result.function_match.status === "mismatched" ||
+          (result.function_match.status === "matched" &&
+            result.dimensions.some(
+              (dimension) =>
+                dimension.dimension !== "calls" &&
+                dimension.status === "changed",
+            )),
+      };
     const dimension = result.dimensions.find(
       (item) => item.dimension === claim.dimension,
     );
@@ -243,7 +287,7 @@ const observedStatus = (claim: Claim, evidence: Evidence): ObservedStatus => {
       throw new TypeError(
         "Function dimension cites Evidence outside comparison closure",
       );
-    return dimension.status;
+    return { status: dimension.status };
   }
   const result = artifactComparisonResultSchema.parse(
     evidence.normalized_result,
@@ -256,7 +300,7 @@ const observedStatus = (claim: Claim, evidence: Evidence): ObservedStatus => {
     throw new TypeError(
       "Artifact change cites Evidence outside comparison closure",
     );
-  return result.status;
+  return { status: result.status };
 };
 
 const validateProcessStatus = (
@@ -315,6 +359,22 @@ const authorityLimitations = (
       );
   }
   return limitations;
+};
+
+const sourceCallCoverageLimitations = (
+  claim: Claim,
+  functionSources: readonly FunctionSourceFacts[],
+  hasIndependentFunctionChange: boolean,
+): string[] => {
+  if (
+    claim.kind !== "structural-function" ||
+    (claim.dimension !== "calls" &&
+      !(claim.dimension === "overall" && !hasIndependentFunctionChange))
+  )
+    return [];
+  return functionSources.flatMap(({ evidence_id, callCoverageLimitations }) =>
+    callCoverageLimitations.map((reason) => `Source ${evidence_id}: ${reason}`),
+  );
 };
 
 const classify = (

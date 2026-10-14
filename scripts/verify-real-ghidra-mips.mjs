@@ -12,9 +12,11 @@ import { StdioClientTransport } from "@modelcontextprotocol/client/stdio";
 import { parseBinaryTarget } from "../dist/application/BinaryTargetResolver.js";
 import {
   inspectMipsReadelf,
+  inspectLegacyMipsReadelf,
   assertMipsLoadedImage,
   assertMipsProbe,
   assertMipsGlobal,
+  assertMipsSoftFloatStorage,
 } from "../tests/conformance/ghidra/mips-checks.mjs";
 import { parseEvidence } from "../dist/domain/evidence.js";
 import { parseAnalysisSnapshot } from "../dist/domain/analysisSnapshot.js";
@@ -77,16 +79,215 @@ const env = {
 for (const setting of ["GHIDRA_HEADLESS_MAXMEM", "GHIDRA_MAXMEM"]) {
   if (process.env[setting] !== undefined) env[setting] = process.env[setting];
 }
+
+/**
+ * Typed float signatures must use soft-float o32 storage, and callers must see
+ * the source constants through it rather than FPU inputs.
+ */
+async function verifySoftFloat(call, symbols, byteOrder) {
+  const boundaries = {};
+  for (const name of [
+    "rea_mips_soft_pick",
+    "rea_mips_soft_wide",
+    "rea_mips_soft_mixed",
+    "rea_mips_soft_struct",
+  ]) {
+    const api = await call("inspect_native_api", { procedure: symbols[name] });
+    boundaries[name] = api.boundary;
+  }
+  assertMipsSoftFloatStorage(boundaries, byteOrder);
+  const caller = functionDossierSchema.parse(
+    await call("analyze_function", {
+      procedure: symbols.rea_mips_soft_caller,
+    }),
+  );
+  // Includes the struct call and the indirect call through a typed pointer.
+  assert.doesNotMatch(caller.pseudocode, /\bin_f\d+\b/u);
+  for (const literal of [
+    "1.5",
+    "2.5",
+    "3.25",
+    "4.75",
+    "5.5",
+    "6.125",
+    "7.5",
+    "8.5",
+    "9.5",
+  ])
+    assert.ok(
+      caller.pseudocode.includes(literal),
+      `Soft-float caller lost argument ${literal}`,
+    );
+  return { storage: boundaries };
+}
 const reports = [];
 let primaryFailure;
 try {
-  for (const byteOrder of psp ? ["little"] : ["little", "big"]) {
+  if (!psp) {
+    // Recordless legacy admission: ABI field 0, no ABI flags record, pinned
+    // 32-bit language. Independent GNU readelf checks the header interpretation.
+    for (const byteOrder of ["little", "big"]) {
+      const fixture = await buildMipsFixture(workspace, byteOrder, "hard", {
+        legacy: true,
+      });
+      const legacy = await inspectLegacyMipsReadelf(fixture.path, byteOrder);
+      const resolved = await parseBinaryTarget(fixture.path);
+      if (!resolved.ok) throw resolved.error;
+      assert.equal(resolved.value.mips.flags, 0x50000001);
+      assert.equal(resolved.value.mips.abiFlags, null);
+      assert.deepEqual(
+        resolved.value.mips.limitations ?? [],
+        legacy.limitations,
+        "REA legacy ABI-record absence interpretation disagrees with GNU readelf",
+      );
+      assert.equal(resolved.value.sha256, fixture.sha256);
+      const snapshotPath = join(workspace, `${byteOrder}-legacy.snapshot.json`);
+      const transport = new StdioClientTransport({
+        command: process.execPath,
+        args: [entrypoint, "mcp"],
+        env,
+        stderr: "pipe",
+      });
+      const client = new Client({
+        name: "rea-real-mips-legacy-proof",
+        version: "1",
+      });
+      let stderr = "";
+      transport.stderr?.on("data", (chunk) => {
+        stderr = (stderr + chunk.toString()).slice(-65536);
+      });
+      const call = async (name, args = {}) => {
+        const reply = await client.callTool(
+          { name, arguments: args },
+          undefined,
+          { timeout: 180000 },
+        );
+        return requireMcpOperationResult(reply, name);
+      };
+      try {
+        await client.connect(transport);
+        const selected = await call("open_binary", {
+          path: fixture.path,
+          provider_id: "ghidra",
+        });
+        assert.equal(selected.architecture, "mips");
+        assert.equal(selected.sha256, fixture.sha256);
+        const image = await call("inspect_native_load_image");
+        assertMipsLoadedImage(image.observations, byteOrder, fixture.sha256);
+        // The pinned import language is the checked one, not an auto-selection.
+        assert.equal(
+          image.observations.language_id,
+          `MIPS:${byteOrder === "little" ? "LE" : "BE"}:32:default`,
+        );
+        const procedures = await call("list_procedures");
+        const entry = procedures.find((p) => p.value === "rea_mips_entry");
+        assert.ok(entry, "Entry function missing from legacy inventory");
+        assert.equal(
+          BigInt(entry.address),
+          BigInt(legacy.symbols.rea_mips_entry),
+        );
+        const probe = await call("inspect_native_instruction", {
+          address: legacy.symbols.rea_mips_probe,
+        });
+        const probeBranch = await call("inspect_native_instruction", {
+          address: `0x${(BigInt(legacy.symbols.rea_mips_probe) + 4n).toString(16)}`,
+        });
+        assertMipsProbe(
+          probe,
+          probeBranch,
+          byteOrder,
+          legacy.symbols.rea_mips_probe,
+        );
+        const dossier = functionDossierSchema.parse(
+          await call("analyze_function", { procedure: entry.address }),
+        );
+        assert.ok(dossier.pseudocode.trim().length > 0);
+        const saved = await call("close_binary", {
+          snapshot_path: snapshotPath,
+        });
+        assert.ok(saved.evidence_records > 0);
+        const snapshot = parseAnalysisSnapshot(
+          JSON.parse(await readFile(snapshotPath, "utf8")),
+        );
+        assert.equal(snapshot.target.architecture, "mips");
+        const parameters = snapshot.binding.analysis_profile.parameters;
+        assert.equal(
+          parameters.language_id,
+          `MIPS:${byteOrder === "little" ? "LE" : "BE"}:32:default`,
+        );
+        assert.equal(parameters.language_selection, "provider-pinned-v1");
+        assert.equal(
+          parameters.mips_support_lane,
+          "elf32-exec-arch32-legacy-pinned-v1",
+        );
+        assert.equal(parameters.mips_abi_basis, "inferred-o32-assumption-v1");
+        assert.ok(
+          snapshot.evidence_bundle.records.some((record) =>
+            parseEvidence(record).limitations.some((item) =>
+              item.includes("analysis assumption"),
+            ),
+          ),
+          "Legacy o32 assumption limitation missing from retained Evidence",
+        );
+        assert.ok(
+          snapshot.evidence_bundle.records.some((record) =>
+            parseEvidence(record).limitations.some((item) =>
+              item.includes("Floating-point ABI semantics are unverified"),
+            ),
+          ),
+          "Legacy floating-point uncertainty missing from retained Evidence",
+        );
+        await call("open_binary", {
+          path: fixture.path,
+          provider_id: "ghidra",
+          snapshot_path: snapshotPath,
+        });
+        assert.deepEqual(await call("list_procedures"), procedures);
+        await call("close_binary");
+      } catch (cause) {
+        throw new Error(
+          `MIPS legacy ${byteOrder} verification failed; MCP stderr: ${stderr}`,
+          { cause },
+        );
+      } finally {
+        try {
+          await client.close();
+        } finally {
+          await transport.close();
+        }
+      }
+      reports.push({
+        ...fixture,
+        independent_reader: legacy,
+        variant: "recordless-legacy-pinned",
+        effective_language: `MIPS:${
+          byteOrder === "little" ? "LE" : "BE"
+        }:32:default`,
+        procedures: "verified-through-snapshot",
+        checks: [
+          "recordless header admitted with inferred o32 assumption",
+          "pinned 32-bit language checked after import",
+          "legacy limitations retained in Evidence",
+          "snapshot round-trip and profile parameters",
+        ],
+        status: "passed",
+      });
+    }
+  }
+  for (const [byteOrder, floatAbi] of psp
+    ? [["little", "hard"]]
+    : [
+        ["little", "hard"],
+        ["big", "hard"],
+        ["little", "soft"],
+        ["big", "soft"],
+      ]) {
     const fixture = psp
       ? await buildPspFixture(workspace)
-      : await buildMipsFixture(workspace, byteOrder);
+      : await buildMipsFixture(workspace, byteOrder, floatAbi);
     const independent = psp
       ? fixture
-      : await inspectMipsReadelf(fixture.path, byteOrder);
+      : await inspectMipsReadelf(fixture.path, byteOrder, floatAbi);
     const resolved = await parseBinaryTarget(fixture.path);
     if (!resolved.ok) throw resolved.error;
     if (psp) {
@@ -104,7 +305,10 @@ try {
       );
     }
     assert.equal(resolved.value.sha256, fixture.sha256);
-    const snapshotPath = join(workspace, `${byteOrder}.snapshot.json`);
+    const snapshotPath = join(
+      workspace,
+      `${byteOrder}-${floatAbi}.snapshot.json`,
+    );
     const transport = new StdioClientTransport({
       command: process.execPath,
       args: [entrypoint, "mcp"],
@@ -119,7 +323,6 @@ try {
     const call = async (name, args = {}) => {
       const reply = await client.callTool(
         { name, arguments: args },
-        undefined,
         { timeout: 180000 },
       );
       return requireMcpOperationResult(reply, name);
@@ -132,7 +335,6 @@ try {
             name: "open_binary",
             arguments: { path: fixture.path, provider_id: "ghidra" },
           },
-          undefined,
           { timeout: 60000 },
         );
         const error = requireMcpToolError(rejected);
@@ -238,6 +440,10 @@ try {
         callees.includes(leaf.address),
         "Expected direct call not recovered",
       );
+      const softFloat =
+        floatAbi === "soft"
+          ? await verifySoftFloat(call, independent.symbols, byteOrder)
+          : undefined;
       const assembly = await call("procedure_assembly", {
         procedure: entry.address,
       });
@@ -292,6 +498,19 @@ try {
           },
         },
         "Snapshot profile did not retain the independently inspected ELF/ABI declaration",
+      );
+      assert.equal(
+        snapshot.binding.analysis_profile.parameters.mips_soft_float_storage,
+        floatAbi === "soft" ? "o32-soft-float-prototype-v1" : undefined,
+      );
+      assert.equal(
+        snapshot.evidence_bundle.records.some((record) =>
+          /Soft-float prototype outcome: 4 functions and [1-9]\d* function-pointer definitions use __rea_soft_float\./u.test(
+            JSON.stringify(record),
+          ),
+        ),
+        floatAbi === "soft",
+        "Soft-float prototype outcome missing from, or unexpected in, retained Evidence",
       );
       assert.ok(snapshot.evidence_bundle.records.length > 0);
       if (psp) {
@@ -354,7 +573,6 @@ try {
               snapshot_path: snapshotPath,
             },
           },
-          undefined,
           { timeout: 180000 },
         );
         requireMcpToolError(wrongSnapshot);
@@ -419,7 +637,10 @@ try {
           assert.ok(read32(offset + 4) + read32(offset + 16) <= cut);
         }
         const carvedBytes = sourceBytes.subarray(0, cut);
-        const carvedPath = join(workspace, `${byteOrder}-carved.elf`);
+        const carvedPath = join(
+          workspace,
+          `${byteOrder}-${floatAbi}-carved.elf`,
+        );
         const carvedSha256 = createHash("sha256")
           .update(carvedBytes)
           .digest("hex");
@@ -460,7 +681,7 @@ try {
         assert.ok(carvedDossier.pseudocode.trim().length > 0);
         const carvedSnapshotPath = join(
           workspace,
-          `${byteOrder}-carved.snapshot.json`,
+          `${byteOrder}-${floatAbi}-carved.snapshot.json`,
         );
         await call("close_binary", { snapshot_path: carvedSnapshotPath });
         const carvedSnapshot = parseAnalysisSnapshot(
@@ -523,7 +744,11 @@ try {
             : "conditional branch destination",
           "global word and marker bytes",
           "CLI/MCP and snapshot identity",
+          ...(floatAbi === "soft"
+            ? ["soft-float o32 parameter/return storage and caller constants"]
+            : []),
         ],
+        ...(softFloat === undefined ? {} : { soft_float: softFloat }),
         procedures: procedures.length,
         carved: carved ?? {
           status: "not_run",
@@ -534,7 +759,7 @@ try {
       });
     } catch (cause) {
       throw new Error(
-        `MIPS ${byteOrder} verification failed; MCP stderr: ${stderr}`,
+        `MIPS ${byteOrder} ${floatAbi}-float verification failed; MCP stderr: ${stderr}`,
         { cause },
       );
     } finally {

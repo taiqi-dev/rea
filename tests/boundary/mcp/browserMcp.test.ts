@@ -10,7 +10,11 @@ import { CdpBrowserProvider } from "../../../src/browser/CdpBrowserProvider.js";
 import { webPageInspectionSchema } from "../../../src/domain/browserObservationSchemas.js";
 import { createWebScreenshotArtifact } from "../../../src/domain/webScreenshot.js";
 import { JAVASCRIPT_RUNTIME_RECONCILIATION_EXAMPLE } from "../../../src/contracts/javascript/javascriptRuntimeReconciliationExample.js";
-import { TOOL_CONTRACTS } from "../../../src/contracts/toolContracts.js";
+import {
+  TOOL_CONTRACTS,
+  toolContract,
+} from "../../../src/contracts/toolContracts.js";
+import { expandToolAvailability } from "../../../src/contracts/toolOutputSchemaPrimitives.js";
 import { createServer } from "../../../src/server/createServer.js";
 import { observed } from "../../fixtures/analysisExecution.js";
 import { runCliJson } from "../../fixtures/cliJsonProcess.js";
@@ -59,16 +63,18 @@ it(
       name: "binary_session",
       arguments: {},
     });
-    expect(status.structuredContent).toMatchObject({
-      result: {
-        tool_availability: expect.arrayContaining([
-          expect.objectContaining({
-            name: "inspect_web_page",
-            reason: expect.any(String),
-          }),
-        ]),
-      },
-    });
+    const sessionStatus = toolContract("binary_session").outputSchema.parse(
+      status.structuredContent,
+    );
+    const availability = expandToolAvailability(
+      sessionStatus.result.tool_availability,
+    );
+    expect(availability).toContainEqual(
+      expect.objectContaining({
+        name: "inspect_web_page",
+        reason: expect.any(String),
+      }),
+    );
     const listed = await connected.client.callTool({
       name: "list_browser_targets",
       arguments: {
@@ -416,6 +422,47 @@ it("delivers the source-map response URL through authenticated MCP Evidence", as
         referer === undefined,
     ),
   ).toBe(true);
+});
+
+it("records a browser-socket endpoint redacted and reconciles its Evidence", async () => {
+  const browser = await startFakeCdpBrowser();
+  browsers.push(browser);
+  const connected = await connectBrowser();
+  const tool = (await connected.client.listTools()).tools.find(
+    ({ name }) => name === "inspect_web_page",
+  );
+  expect(tool?.inputSchema.properties?.cdp_endpoint).toMatchObject({
+    description: expect.stringContaining("/devtools/browser/ID"),
+  });
+  const inspected = await connected.client.callTool({
+    name: "inspect_web_page",
+    arguments: {
+      cdp_endpoint: browser.browserWebSocketUrl,
+      target_id: "allowed-page",
+      observation_ms: 0,
+      include_script_sources: true,
+    },
+  });
+  expect(inspected.isError).not.toBe(true);
+  expect(inspected.structuredContent).toMatchObject({
+    parameters: {
+      cdp_endpoint: browser.browserWebSocketUrl.replace(/fake$/u, "[REDACTED]"),
+    },
+  });
+  expect(JSON.stringify(inspected.structuredContent)).not.toContain(
+    "/devtools/browser/fake",
+  );
+  const reconciled = await connected.client.callTool({
+    name: "reconcile_javascript_runtime",
+    arguments: {
+      static_layers: JAVASCRIPT_RUNTIME_RECONCILIATION_EXAMPLE.static_layers,
+      runtime_observations: [evidenceFor(inspected.structuredContent)],
+    },
+  });
+  expect(reconciled.isError).not.toBe(true);
+  expect(reconciled.structuredContent).toMatchObject({
+    normalized_result: { summary: { runtime_scripts: 1 } },
+  });
 });
 
 it("does not attach to a target outside the request's allowed origin scope", async () => {

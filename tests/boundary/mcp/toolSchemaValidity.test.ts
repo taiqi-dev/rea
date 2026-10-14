@@ -19,13 +19,30 @@ interface ToolSchemas {
 }
 
 function schemaErrors(tools: readonly ToolSchemas[]): string[] {
-  const ajv = new Ajv2020({ strict: false, validateFormats: false });
+  // Reuse Ajv's meta-schema validators, then clear each root's reference
+  // namespace, including nested IDs, before validating the next schema.
+  const ajv = new Ajv2020({
+    strict: false,
+    validateFormats: false,
+    addUsedSchema: false,
+  });
   return tools.flatMap((tool) =>
     ["inputSchema", "outputSchema"].flatMap((kind) => {
       const schema =
         kind === "inputSchema" ? tool.inputSchema : tool.outputSchema;
-      if (schema === undefined || ajv.validateSchema(schema)) return [];
-      return [`${tool.name}.${kind}: ${ajv.errorsText(ajv.errors)}`];
+      if (schema === undefined) return [];
+      try {
+        if (!ajv.validateSchema(schema))
+          return [`${tool.name}.${kind}: ${ajv.errorsText(ajv.errors)}`];
+        ajv.compile(schema);
+        return [];
+      } catch (cause: unknown) {
+        return [
+          `${tool.name}.${kind}: ${cause instanceof Error ? cause.message : String(cause)}`,
+        ];
+      } finally {
+        ajv.removeSchema();
+      }
     }),
   );
 }
@@ -198,6 +215,46 @@ function resolveReference(schema: unknown, reference: string): unknown {
     value = Reflect.get(value, key);
   }
   return value;
+}
+
+function localReferenceExpansions(schema: Record<string, unknown>): number {
+  // Clients that render SDK declarations from the advertised input expand
+  // schema-local references against a shared per-input budget; Pi 1.1.0
+  // code-mode allows 32 and renders every later reference as `unknown`.
+  // Count conservatively: every resolvable, non-cyclic reference occurrence
+  // reached while walking the input, never the definitions themselves.
+  let count = 0;
+  const visit = (node: unknown, active: ReadonlySet<string>): void => {
+    if (Array.isArray(node)) {
+      node.forEach((child) => visit(child, active));
+      return;
+    }
+    if (!isRecord(node)) return;
+    if (typeof node.$ref === "string" && !active.has(node.$ref)) {
+      const target = resolveReference(schema, node.$ref);
+      if (target !== undefined) {
+        count += 1;
+        visit(target, new Set([...active, node.$ref]));
+        return;
+      }
+    }
+    for (const [key, value] of Object.entries(node)) {
+      if (
+        [
+          "$defs",
+          "definitions",
+          "examples",
+          "default",
+          "const",
+          "enum",
+        ].includes(key)
+      )
+        continue;
+      visit(value, active);
+    }
+  };
+  visit(schema, new Set());
+  return count;
 }
 
 function recursiveReferences(tools: readonly ToolSchemas[]): string[] {
@@ -437,6 +494,35 @@ describe("MCP root input schemas", () => {
 
       expectStrictInputSchemaParity(tools, ajv);
 
+      for (const name of ["inspect_web_page", "analyze_web_bundle"]) {
+        const contract = TOOL_CONTRACTS.find((tool) => tool.name === name);
+        const tool = advertised.get(name);
+        if (contract === undefined || tool === undefined)
+          throw new Error(`${name} was not advertised`);
+        const validate = ajv.compile(tool.inputSchema);
+        const base = {
+          cdp_endpoint: "http://127.0.0.1:9222",
+          target_id: "target",
+        };
+        for (const flag of [undefined, false, true, "false", null]) {
+          const input =
+            flag === undefined
+              ? base
+              : { ...base, include_script_sources: flag };
+          const accepted =
+            flag === undefined ||
+            flag === true ||
+            (name === "inspect_web_page" && flag === false);
+          const parsed = contract.inputSchema.safeParse(input);
+          expect(parsed.success, `${name}: ${String(flag)}`).toBe(accepted);
+          expect(validate(input), `${name}: ${String(flag)}`).toBe(accepted);
+          if (parsed.success && flag === undefined)
+            expect(parsed.data).toMatchObject({
+              include_script_sources: name === "analyze_web_bundle",
+            });
+        }
+      }
+
       const nativeObservation = TOOL_CONTRACTS.find(
         ({ name }) => name === "observe_native_ui",
       );
@@ -627,6 +713,77 @@ it("ships nonrecursive input and output schemas in the generated catalog", () =>
   expect(schemaErrors(GENERATED_MCP_TOOL_CATALOG)).toEqual([]);
   expect(recursiveReferences(GENERATED_MCP_TOOL_CATALOG)).toEqual([]);
 });
+
+it("keeps advertised input references within the client expansion budget", () => {
+  for (const tool of GENERATED_MCP_TOOL_CATALOG)
+    expect(
+      localReferenceExpansions(tool.inputSchema),
+      `${tool.name} exhausts the shared reference-expansion budget`,
+    ).toBeLessThanOrEqual(32);
+});
+
+it("rejects unresolved output-schema references even for uncalled tools", () => {
+  const errors = schemaErrors([
+    {
+      name: "dangling",
+      inputSchema: { type: "object" },
+      outputSchema: { $ref: "#/$defs/missing" },
+    },
+  ]);
+  expect(errors).toHaveLength(1);
+  expect(errors[0]).toContain("dangling.outputSchema");
+});
+
+it("validates each tool independently when output schema IDs repeat", () => {
+  const outputSchema = { $id: "urn:rea:test:shared-output", type: "string" };
+  const errors = schemaErrors([
+    { name: "first", inputSchema: { type: "object" }, outputSchema },
+    {
+      name: "second",
+      inputSchema: { type: "object" },
+      outputSchema: { ...outputSchema },
+    },
+    {
+      name: "broken",
+      inputSchema: { type: "object" },
+      outputSchema: { $id: outputSchema.$id, $ref: "#/$defs/missing" },
+    },
+  ]);
+  expect(errors).toHaveLength(1);
+  expect(errors[0]).toContain("broken.outputSchema");
+  expect(errors[0]).toContain("missing");
+});
+
+it.each([false, true])(
+  "rejects references to another tool's nested IDs (earlier compilation fails: %s)",
+  (invalidPrevious) => {
+    const nestedId = "urn:rea:test:nested-output";
+    const errors = schemaErrors([
+      {
+        name: "first",
+        inputSchema: { type: "object" },
+        outputSchema: {
+          $defs: { shared: { $id: nestedId, type: "string" } },
+          ...(invalidPrevious ? { pattern: "[" } : {}),
+        },
+      },
+      {
+        name: "broken",
+        inputSchema: { type: "object" },
+        outputSchema: {
+          $ref: nestedId,
+          $defs: { shared: { type: "number" } },
+        },
+      },
+    ]);
+    expect(errors).toHaveLength(invalidPrevious ? 2 : 1);
+    const brokenErrors = errors.filter((error) =>
+      error.startsWith("broken.outputSchema:"),
+    );
+    expect(brokenErrors).toHaveLength(1);
+    expect(brokenErrors[0]).toContain(nestedId);
+  },
+);
 
 it("distinguishes recursive references from shared definitions", () => {
   const diamond = {

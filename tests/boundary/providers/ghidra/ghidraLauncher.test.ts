@@ -1,4 +1,11 @@
-import { access, chmod, readFile, stat } from "node:fs/promises";
+import {
+  access,
+  chmod,
+  mkdir,
+  readFile,
+  stat,
+  writeFile,
+} from "node:fs/promises";
 import { join, posix, win32 } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -191,6 +198,45 @@ describe("Ghidra headless launcher", () => {
     expect(arguments_).toContain("-readOnly");
     expect(arguments_).toContain("-deleteProject");
   });
+  it("remaps soft-float storage after the no-return fix and before the bridge", () => {
+    const base = {
+      platform: "linux" as const,
+      projectRoot: "/tmp/project",
+      targetPath: "/tmp/target",
+      bridgeScriptPath: "/package/bridge/ReaGhidraBridge.java",
+      descriptorPath: "/tmp/session.json",
+      ghidraLogPath: "/tmp/ghidra.log",
+      scriptLogPath: "/tmp/script.log",
+    };
+    const soft = "/package/bridge/ReaGhidraMipsSoftFloat.java";
+    expect(ghidraHeadlessArguments(base)).not.toContain(soft);
+    const arguments_ = ghidraHeadlessArguments({
+      ...base,
+      mipsSoftFloat: true,
+    });
+    expect(arguments_[arguments_.indexOf(soft) - 1]).toBe("-postScript");
+    expect(
+      arguments_.indexOf("/package/bridge/ReaGhidraNoReturnFix.java"),
+    ).toBeLessThan(arguments_.indexOf(soft));
+    expect(arguments_.indexOf(soft)).toBeLessThan(
+      arguments_.indexOf("/package/bridge/ReaGhidraBridge.java"),
+    );
+    for (const conflict of [
+      { psp: true as const },
+      { dosMz: true as const },
+      { dosCom: true as const },
+      {
+        rawBinary: {
+          languageId: "x86:LE:32:default",
+          compilerSpecId: "default",
+          baseAddr: "0x1000",
+        },
+      },
+    ])
+      expect(() =>
+        ghidraHeadlessArguments({ ...base, mipsSoftFloat: true, ...conflict }),
+      ).toThrow(/generic MIPS ELF/u);
+  });
 });
 
 describe("Ghidra configured import language and seeds", () => {
@@ -289,6 +335,99 @@ describe("Ghidra configured import language and seeds", () => {
   });
 });
 
+describe("Ghidra disabled analyzers", () => {
+  const base = {
+    platform: "darwin" as const,
+    projectRoot: "/tmp/project",
+    targetPath: "/tmp/target",
+    bridgeScriptPath: "/package/bridge/ReaGhidraBridge.java",
+    descriptorPath: "/tmp/session.json",
+    ghidraLogPath: "/tmp/ghidra.log",
+    scriptLogPath: "/tmp/script.log",
+  };
+
+  it("applies the analyzer options after seeds and before analysis scripts", () => {
+    const arguments_ = ghidraHeadlessArguments({
+      ...base,
+      dosCom: true,
+      seedPath: posix.join("/tmp/runtime/seeds", "seeds.tsv"),
+      disabledAnalyzers: [
+        "Objective-C Message Analyzer",
+        "Decompiler Switch Analysis",
+      ],
+    });
+    const options = arguments_.indexOf(
+      posix.join("/package/bridge", "ReaGhidraAnalysisOptions.java"),
+    );
+    expect(arguments_[options - 1]).toBe("-preScript");
+    expect(arguments_[options + 1]).toBe(
+      "Objective-C Message Analyzer,Decompiler Switch Analysis",
+    );
+    const prepare = arguments_.indexOf(
+      posix.join("/package/bridge", "ReaGhidraPrepareCom.java"),
+    );
+    const seeds = arguments_.indexOf(
+      posix.join("/package/bridge", "ReaGhidraApplySeeds.java"),
+    );
+    expect(prepare).toBeLessThan(seeds);
+    expect(seeds).toBeLessThan(options);
+    expect(options).toBeLessThan(arguments_.indexOf("-postScript"));
+  });
+
+  it.each(["darwin", "win32"] as const)(
+    "uses the target platform's script path for the options script on %s",
+    (platform) => {
+      const path = platform === "win32" ? win32 : posix;
+      const arguments_ = ghidraHeadlessArguments({
+        ...base,
+        platform,
+        bridgeScriptPath: path.join(
+          "/package",
+          "bridge",
+          "ReaGhidraBridge.java",
+        ),
+        disabledAnalyzers: ["Objective-C Message Analyzer"],
+      });
+      const options = arguments_.indexOf(
+        path.join("/package", "bridge", "ReaGhidraAnalysisOptions.java"),
+      );
+      expect(arguments_[options - 1]).toBe("-preScript");
+      expect(arguments_[options + 1]).toBe("Objective-C Message Analyzer");
+      expect(options).toBeLessThan(arguments_.indexOf("-postScript"));
+    },
+  );
+
+  it("keeps the invocation byte-identical without an override", () => {
+    expect(ghidraHeadlessArguments(base)).toEqual([
+      "/tmp/project",
+      "rea-project",
+      "-import",
+      "/tmp/target",
+      "-readOnly",
+      "-deleteProject",
+      "-log",
+      "/tmp/ghidra.log",
+      "-scriptlog",
+      "/tmp/script.log",
+      "-scriptPath",
+      "/package/bridge",
+      "-postScript",
+      "/package/bridge/ReaGhidraNoReturnFix.java",
+      "-postScript",
+      "/package/bridge/ReaGhidraBridge.java",
+      "/tmp/session.json",
+    ]);
+  });
+
+  it("adds no analyzer script for an empty override", () => {
+    expect(
+      ghidraHeadlessArguments({ ...base, disabledAnalyzers: [] }),
+    ).not.toContain(
+      posix.join("/package/bridge", "ReaGhidraAnalysisOptions.java"),
+    );
+  });
+});
+
 describe("Ghidra Windows launcher", () => {
   it("keeps analysis repair outside Windows P0 authority", () => {
     const args = ghidraHeadlessArguments({
@@ -347,6 +486,66 @@ describe("Ghidra Windows launcher", () => {
       }),
     ).toThrow(/metacharacters/u);
   });
+});
+
+describe("Ghidra Windows launcher runtime", () => {
+  it.skipIf(process.platform !== "win32").each([
+    {
+      properties:
+        "application.version=12.1.4\napplication.release.name=PUBLIC\n",
+      release: "ghidra_12.1.4_PUBLIC",
+    },
+    { properties: undefined, release: "renamed-install" },
+    { properties: "application.version=12.1.4\n", release: "renamed-install" },
+  ])(
+    "prepares the release directory through the Windows runtime ($release)",
+    async ({ properties, release }) => {
+      const parent = await createTestTempDirectory("rea-launch-config-");
+      const installRoot = join(parent, "renamed-install");
+      if (properties !== undefined) {
+        await mkdir(join(installRoot, "Ghidra"), { recursive: true });
+        await writeFile(
+          join(installRoot, "Ghidra", "application.properties"),
+          properties,
+        );
+      }
+      const runtime = await createGhidraTestRuntime(parent);
+      runtimes.push(runtime);
+      const spawnProcess = vi.fn(async () => {
+        throw new Error("fixture stops before process creation");
+      });
+      const launcher = new GhidraHeadlessLauncher({
+        environment: process.env,
+        platform: "win32",
+        analyzeHeadlessPath: join(
+          installRoot,
+          "support",
+          "analyzeHeadless.bat",
+        ),
+        javaHome: "C:\\Java\\jdk-21",
+        bridgeScriptPath: join(parent, "ReaGhidraBridge.java"),
+        spawnProcess,
+      });
+      const launched = await launcher.launch({
+        runtimeRoot: runtime.path,
+        transport: "unix-socket",
+        endpointPath: join(runtime.path, "bridge.sock"),
+        token: "fixture-token",
+        runId: "d6fcbb66-e829-4ff6-a535-0035aec63139",
+        targetPath: join(parent, "fixture.exe"),
+        targetSha256: "b".repeat(64),
+        providerVersion: "12.1.4",
+        profileDigest: "a".repeat(64),
+      });
+      expect(launched.ok).toBe(false);
+      expect(spawnProcess).toHaveBeenCalledOnce();
+      expect(
+        (
+          await stat(join(runtime.path, "config", "ghidra", release))
+        ).isDirectory(),
+      ).toBe(true);
+    },
+  );
 
   it.skipIf(process.platform !== "win32")(
     "keeps authority in a private descriptor and isolates Ghidra state through the batch launcher",

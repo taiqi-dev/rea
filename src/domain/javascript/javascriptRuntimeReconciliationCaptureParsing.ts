@@ -3,6 +3,7 @@ import { z } from "zod";
 import {
   browserAllowedOriginsSchema,
   browserEndpointSchema,
+  recordedBrowserObservationEndpointSchema,
 } from "../browserObservation.js";
 import {
   webPageInspectionSchema,
@@ -44,21 +45,21 @@ interface NormalizedV8Inspection {
         readonly target_id: string;
         readonly type: string;
         readonly title: string;
-        readonly attached: boolean;
+        readonly attached: boolean | null;
         readonly file_path: string;
       }
     | {
         readonly target_id: string;
         readonly type: string;
         readonly title: string;
-        readonly attached: boolean;
+        readonly attached: boolean | null;
         readonly url: string;
       }
     | {
         readonly target_id: string;
         readonly type: string;
         readonly title: string;
-        readonly attached: boolean;
+        readonly attached: boolean | null;
         readonly unresolved_location: Extract<
           JavaScriptRuntimeObservation["target"]["location"],
           { kind: "unresolved" }
@@ -424,14 +425,17 @@ const assertRuntimeParameters = (
 ): void => {
   const common = {
     target_id: z.string().trim().min(1),
-    cdp_endpoint: browserEndpointSchema,
     include_script_sources: z.boolean(),
   };
   if (expected.kind === "browser") {
     const parameters = parseAtPath(
       (value) =>
         z
-          .object({ ...common, allowed_origins: browserAllowedOriginsSchema })
+          .object({
+            ...common,
+            cdp_endpoint: recordedBrowserObservationEndpointSchema,
+            allowed_origins: browserAllowedOriginsSchema,
+          })
           .passthrough()
           .parse(value),
       evidence.parameters,
@@ -455,7 +459,11 @@ const assertRuntimeParameters = (
     return;
   }
   const parameters = parseAtPath(
-    (value) => z.object(common).passthrough().parse(value),
+    (value) =>
+      z
+        .object({ ...common, cdp_endpoint: browserEndpointSchema })
+        .passthrough()
+        .parse(value),
     evidence.parameters,
     [...path, "parameters"],
   );
