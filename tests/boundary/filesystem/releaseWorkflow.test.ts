@@ -1,6 +1,7 @@
 import { execFile } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
 import { delimiter, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { expect, it } from "vitest";
 import { parse } from "yaml";
@@ -99,7 +100,9 @@ it("keeps main pushes proposal-only and gates merged-release automation", async 
     branches: ["main"],
   });
   const proposal = workflow.jobs["release-proposal"];
-  expect(proposal.if).toBe("github.event_name == 'push'");
+  expect(proposal.if).toBe(
+    "github.repository != 'taiqi-dev/rea' && github.event_name == 'push'",
+  );
   const action = proposal.steps.find((step) =>
     step.uses?.startsWith("googleapis/release-please-action@"),
   );
@@ -335,7 +338,7 @@ it("binds npm and MCP publication to the same immutable release SHA", async () =
       import.meta.url,
     );
     const result = await execFileAsync(process.execPath, [
-      helper.pathname,
+      fileURLToPath(helper),
       version,
     ]);
     expect(result.stdout).toBe(tag);

@@ -17,7 +17,7 @@ application code.
 Fetch source for inspection with:
 
 ```sh
-git submodule update --init third_party/jadx-headless-mcp
+git submodule update --init --checkout third_party/jadx-headless-mcp
 ```
 
 Normal REA builds and installed npm packages do not require this submodule or a

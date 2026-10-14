@@ -87,7 +87,7 @@ it("qualifies only ci:full label additions at the caller's merge revision", asyn
   expect(Object.values(full.jobs)).toEqual([
     {
       name: "Qualify labeled PR revision",
-      if: "github.event.label.name == 'ci:full'",
+      if: "github.repository != 'taiqi-dev/rea' && github.event.label.name == 'ci:full'",
       uses: "./.github/workflows/ci.yml",
       with: { source_sha: "${{ github.sha }}" },
     },

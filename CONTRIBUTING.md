@@ -144,24 +144,48 @@ protocols in adapters and shared CLI/MCP workflows in the application layer.
 
 ### Windows source checkouts
 
-Clone without `--recurse-submodules`. To initialize or repair the optional
-Unblob and Wakaru source checkouts, run this helper with PowerShell 7:
+This fork is maintained independently for Windows x64. On each computer,
+clone `https://github.com/taiqi-dev/rea.git` with GitHub Desktop or Git, then run:
 
 ```powershell
-pwsh -NoProfile -File scripts/init-windows-submodules.ps1
+powershell.exe -NoProfile -File scripts/windows.ps1 setup
+powershell.exe -NoProfile -File scripts/windows.ps1 check
+```
+
+Setup installs the exact Node/npm versions into the ignored project cache,
+installs locked dependencies, configures Git, and builds the runtime and
+Windows native controls. It requires existing Visual Studio C++ x64 tools,
+a Windows SDK, and Python 3; it does not install those tools or any analysis
+engine. No global Node/npm installation is changed. Ghidra and Java remain
+optional, caller-supplied prerequisites for their own capabilities.
+
+Use `origin` for ordinary pull and push on both computers. Pull before starting
+work, commit, and push before switching computers. Do not use Sync fork.
+Setup backs up Git configuration, removes only an `upstream` remote that points
+to `morluto/rea`, and makes `origin` the default push remote. GitHub Desktop's
+commit/push hooks use the same project-local toolchain. Repeat setup after
+dependency changes; use `scripts/windows.ps1 build` after source changes.
+Caches, dependencies, and compiled artifacts stay local to each computer.
+
+Optional engine sources default to `update = none` in `.gitmodules`, including
+on a recursive clone. Normal builds do not use those sources. `npm ci`
+automatically configures them as inactive on Windows, so recursive Desktop
+pull/checkout operations do not enter their platform-specific test trees.
+To explicitly inspect or repair Unblob and Wakaru sources, use Windows PowerShell:
+
+```powershell
+powershell.exe -NoProfile -File scripts/init-windows-submodules.ps1
 ```
 
 It checks out REA's pinned revisions, preserves local changes, and backs up Git
 settings. Unblob uses a local cone-mode sparse index that excludes only
 `tests/integration/`: those upstream fixtures contain names Windows cannot
 create. Its source and other tests remain available; Wakaru is checked out in
-full. Other optional submodules can use ordinary `git submodule update --init`.
-Unblob is marked inactive in this checkout's local Git configuration so GitHub
-Desktop's recursive pull and checkout operations do not expand its sparse
-index. Its source stays available; rerun the helper to explicitly update it
-when REA's pinned revision changes. This also repairs checkouts initialized
-with an earlier version of the helper. Verify this workflow on Windows with
-`node --test scripts/lib/windows-submodules.test.mjs` (Git and PowerShell 7).
+full. Other optional sources require an explicit
+`git submodule update --init --checkout PATH`. Rerun the helper after pinned
+source revisions change. `node --test scripts/lib/windows-submodules.test.mjs`
+checks fresh recursive clone, independent checkout pull/push, and local-change
+preservation using a local test remote.
 The helper keeps Windows filename protection enabled and installs no engines
 or dependencies. REA's firmware and Wakaru runtime integrations still require
 Linux x64; source checkout does not add Windows runtime support. For Unblob
@@ -176,11 +200,16 @@ produces `rea-windows-x64.node` or `manifest.json` in that directory.
 Windows workflows and tests that require native controls need these artifacts;
 without them, those controls are unavailable even after a successful runtime build.
 
-Follow the [Windows native build guide](native/windows/README.md#build) before
-running those workflows from source. The artifact build requires Linux,
-MinGW-w64, and `tar`; the build script does not run on Windows. See that guide
-for the build and artifact-verification commands and the separate real Windows
-verification prerequisites. Keep the generated addon and manifest uncommitted.
+The setup command builds these artifacts directly on Windows with MSVC. See
+the [Windows native build guide](native/windows/README.md#build) for details.
+Keep the generated addon and manifest uncommitted.
+
+`check:windows` is this fork's maintained acceptance gate: source checks,
+domain/service tests, the retained Windows capability suite, actual native
+boundary probes, Git regressions, Python tests, and documentation validation.
+The legacy `check:pr` command remains available as a broad diagnostic. Its
+repository-wide research-document formatting and POSIX-specific tests are
+reported separately; they are not claims of Windows provider support.
 
 ## Documentation website
 

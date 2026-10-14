@@ -167,7 +167,9 @@ static Handle createRelative(HANDLE parent, const std::wstring& name, DWORD acce
   HANDLE raw = INVALID_HANDLE_VALUE;
   const auto status = NtCreateFile(&raw, access | SYNCHRONIZE, &attributes, &observation, nullptr,
                                    FILE_ATTRIBUTE_NORMAL,
-                                   directory ? FILE_SHARE_READ | FILE_SHARE_DELETE : FILE_SHARE_READ,
+                                   // Retained owners must deny replacement and rename. Cleanup
+                                   // duplicates these handles instead of reopening the root.
+                                   FILE_SHARE_READ,
                                    FILE_CREATE,
                                    FILE_SYNCHRONOUS_IO_NONALERT | FILE_OPEN_REPARSE_POINT |
                                    (directory ? FILE_DIRECTORY_FILE : FILE_NON_DIRECTORY_FILE), nullptr, 0);

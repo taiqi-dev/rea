@@ -10,7 +10,7 @@ import {
   writeFile,
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { posix } from "node:path";
 import { promisify } from "node:util";
 
 import { z } from "zod";
@@ -21,6 +21,8 @@ import {
 } from "./HopperDownload.js";
 
 const execFileAsync = promisify(execFile);
+// These paths belong to the macOS installer contract, not the test runner OS.
+const join = posix.join;
 const RELEASES_URL =
   "https://www.hopperapp.com/include/files-api.php?request=releases&public=true";
 const DOWNLOAD_PREFIX = "https://www.hopperapp.com:443/downloader/public/";

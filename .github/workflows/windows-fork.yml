@@ -1,0 +1,40 @@
+name: Windows fork
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-fork-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows x64 acceptance
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      HUSKY: "0"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          submodules: recursive
+      - name: Install pinned tools, dependencies, and native controls
+        shell: pwsh
+        run: ./scripts/windows.ps1 setup
+      - name: Run Windows acceptance
+        shell: pwsh
+        run: ./scripts/windows.ps1 check
+      - name: Retain validation diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: windows-diagnostics
+          path: .cache/static-checks/
+          if-no-files-found: ignore

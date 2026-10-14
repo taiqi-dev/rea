@@ -16,6 +16,7 @@ permissions:
 jobs:
   report:
     name: Collect recent completed workflow attempts
+    if: github.repository != 'taiqi-dev/rea'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

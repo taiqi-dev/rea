@@ -367,7 +367,9 @@ it("keeps fast feedback separate from complete qualification and release proof",
   );
   // Failed dependencies still reach the gate, but superseded PR runs must
   // release their concurrency slot without waiting for another runner.
-  expect(ci.jobs.required?.if).toBe("${{ !cancelled() }}");
+  expect(ci.jobs.required?.if).toBe(
+    "${{ !cancelled() && github.repository != 'taiqi-dev/rea' }}",
+  );
   const shards = ci.jobs["test-shard"]?.steps ?? [];
   const fast = shards.find((step) => step.run?.includes("npm run test:run"));
   const full = shards.find((step) => step.run?.includes("test:ci:shard:run"));

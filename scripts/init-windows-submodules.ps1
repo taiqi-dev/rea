@@ -1,12 +1,19 @@
-#Requires -Version 7.0
+#Requires -Version 5.1
 [CmdletBinding()]
 param()
 
 $ErrorActionPreference = 'Stop'
 if ($env:OS -ne 'Windows_NT') {
-    throw 'This checkout helper requires Windows and PowerShell 7.'
+    throw 'This checkout helper requires Windows PowerShell 5.1 or later.'
 }
 $repositoryRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
+$nodeVersion = (Get-Content -LiteralPath (Join-Path $repositoryRoot '.nvmrc') -Encoding utf8 -Raw).Trim()
+$nodeExecutable = Join-Path $repositoryRoot ".cache\windows-toolchain\node-v$nodeVersion-win-x64\node.exe"
+if (-not (Test-Path -LiteralPath $nodeExecutable)) {
+    $nodeCommand = Get-Command node -ErrorAction SilentlyContinue
+    if ($null -eq $nodeCommand) { throw 'Run scripts/windows.ps1 setup before inspecting optional sources.' }
+    $nodeExecutable = $nodeCommand.Source
+}
 
 function Invoke-Git {
     param([string]$Directory, [string[]]$Arguments)
@@ -110,11 +117,10 @@ foreach ($module in $modules) {
     if ($changes.Count -gt 0) {
         throw "$($module.Path) is not clean after checkout; backups are at $backupPath."
     }
-    if ($module.Name -eq 'unblob') {
-        # Recursive pull/checkout can expand this sparse index even when no
-        # gitlink changed. Explicit updates above still work for inactive modules.
-        Invoke-Git $repositoryRoot @('config', '--local', 'submodule.third_party/unblob.active', 'false')
-    }
     Write-Host "$($module.Path): ready at the revision pinned by REA."
+}
+& $nodeExecutable (Join-Path $PSScriptRoot 'prepare.mjs') --windows-checkout-only
+if ($LASTEXITCODE -ne 0) {
+    throw "Windows Git configuration failed; backups are at $backupPath."
 }
 Write-Host "Git settings backed up at $backupPath. No analysis engines were installed."

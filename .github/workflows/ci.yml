@@ -33,6 +33,9 @@ env:
 jobs:
   changes:
     name: Classify changes
+    # This independent fork accepts Windows; retain the original multi-platform
+    # workflow as a reference for its original repository.
+    if: github.repository != 'taiqi-dev/rea'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
@@ -778,7 +781,7 @@ jobs:
   required:
     name: CI required
     # Report failed dependencies, but release superseded PR concurrency slots.
-    if: ${{ !cancelled() }}
+    if: ${{ !cancelled() && github.repository != 'taiqi-dev/rea' }}
     needs:
       [
         changes,

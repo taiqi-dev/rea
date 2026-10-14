@@ -34,7 +34,7 @@ existing `git`, `javac` and `jar`; it does not invoke Gradle, download toolchain
 or change host configuration:
 
 ```sh
-git submodule update --init third_party/ghidra-nativeaot
+git submodule update --init --checkout third_party/ghidra-nativeaot
 npm run build:ghidra:nativeaot
 export REA_GHIDRA_NATIVEAOT_JAR="$PWD/_reference/nativeaot-integration/extension/rea-ghidra-nativeaot.jar"
 ```

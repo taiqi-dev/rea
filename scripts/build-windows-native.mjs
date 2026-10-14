@@ -10,19 +10,29 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const nodeVersion = "22.19.0";
 const compiler = "x86_64-w64-mingw32-g++";
-const cache = join(homedir(), ".cache", "rea-windows-native");
+const cache = join(root, ".cache", "windows-native-build");
 const inspectionFixture = process.argv[2] === "--inspection-fixture";
-if (process.argv.length > 3 || (process.argv.length > 2 && !inspectionFixture))
+const processFixture = process.argv[2] === "--process-fixture";
+if (
+  process.argv.length > 3 ||
+  (process.argv.length > 2 && !inspectionFixture && !processFixture)
+)
   throw new Error("Unknown Windows native build argument");
-const output = inspectionFixture
-  ? join(root, ".cache", "windows-native-inspection-fixture")
-  : join(root, "native", "windows", "build");
-const run = (command, args) => {
+const output = processFixture
+  ? join(root, ".cache", "windows-process-boundary")
+  : inspectionFixture
+    ? join(root, ".cache", "windows-native-inspection-fixture")
+    : join(root, "native", "windows", "build");
+let buildEnvironment = process.env;
+const run = (command, args, options = {}) => {
   const result = spawnSync(command, args, {
     cwd: root,
     encoding: "utf8",
     maxBuffer: 4 * 1_024 * 1_024,
     timeout: 120_000,
+    env: buildEnvironment,
+    windowsHide: true,
+    ...options,
   });
   if (result.error !== undefined)
     throw new Error(
@@ -34,11 +44,12 @@ const run = (command, args) => {
     );
   return result.stdout;
 };
-if (process.platform !== "linux")
+const windowsBuild = process.platform === "win32" && process.arch === "x64";
+if (!windowsBuild && process.platform !== "linux")
   throw new Error(
-    "The Windows x64 artifact build lane currently requires Linux and MinGW-w64.",
+    "The Windows x64 artifact build requires Windows x64 with Visual Studio C++ tools, or Linux with MinGW-w64.",
   );
-run(compiler, ["--version"]);
+if (!windowsBuild) run(compiler, ["--version"]);
 await mkdir(cache, { recursive: true });
 await mkdir(output, { recursive: true });
 const exists = async (path) =>
@@ -88,71 +99,179 @@ if (!(await exists(join(headers, "node_api.h")))) {
   headers = join(cache, `node-v${nodeVersion}`, "include", "node");
 }
 const artifact = "rea-windows-x64.node";
-// MSVC short-import libraries do not produce a correct Node import table with
-// GNU ld. Generate a GNU delay-import library for the exact stable Node-API
-// symbols; addon.cc binds it to the host executable, whatever its file name.
-const sources = ["addon.cc", "filesystem.cc", "process.cc"];
-const sourceText = (
-  await Promise.all(
-    sources.map((path) =>
-      readFile(join(root, "native", "windows", "src", path), "utf8"),
+if (windowsBuild) {
+  const locator = join(
+    process.env["ProgramFiles(x86)"] ?? "C:\\Program Files (x86)",
+    "Microsoft Visual Studio",
+    "Installer",
+    "vswhere.exe",
+  );
+  const installation = run(locator, [
+    "-latest",
+    "-products",
+    "*",
+    "-requires",
+    "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+    "-property",
+    "installationPath",
+  ]).trim();
+  if (installation.length === 0)
+    throw new Error(
+      "Windows native build requires the Visual Studio C++ x64 tools and Windows SDK.",
+    );
+  const setup = join(installation, "VC", "Auxiliary", "Build", "vcvars64.bat");
+  const environment = run(
+    "cmd.exe",
+    ["/d", "/s", "/c", `chcp 65001 >nul && call "${setup}" >nul && set`],
+    { windowsVerbatimArguments: true },
+  );
+  buildEnvironment = { ...process.env };
+  for (const line of environment.split(/\r?\n/u)) {
+    const separator = line.indexOf("=");
+    if (separator > 0) {
+      const name = line.slice(0, separator);
+      for (const existing of Object.keys(buildEnvironment))
+        if (existing.toLowerCase() === name.toLowerCase())
+          delete buildEnvironment[existing];
+      buildEnvironment[name] = line.slice(separator + 1);
+    }
+  }
+  const library = join(cache, "node.lib");
+  await verifiedDownload("win-x64/node.lib", library);
+  const intermediate = join(
+    cache,
+    processFixture
+      ? "process-fixture"
+      : inspectionFixture
+        ? "inspection"
+        : "release",
+  );
+  await mkdir(intermediate, { recursive: true });
+  if (processFixture) {
+    run("cl.exe", [
+      "/nologo",
+      "/std:c++17",
+      "/EHsc",
+      "/O2",
+      "/MT",
+      `/Fo${intermediate}\\`,
+      `/Fe${join(output, "process-boundary.exe")}`,
+      "tests/fixtures/windows/processBoundary.cc",
+      "/link",
+      "advapi32.lib",
+    ]);
+  } else
+    run("cl.exe", [
+      "/nologo",
+      "/std:c++17",
+      "/EHsc",
+      "/O2",
+      "/MT",
+      "/LD",
+      "/DNAPI_VERSION=8",
+      "/D_WIN32_WINNT=0x0A00",
+      `/I${headers}`,
+      `/Fo${intermediate}\\`,
+      "native/windows/src/addon.cc",
+      inspectionFixture
+        ? "tests/fixtures/windows-native-inspection-failure.cc"
+        : "native/windows/src/filesystem.cc",
+      "native/windows/src/process.cc",
+      library,
+      "/link",
+      `/OUT:${join(output, artifact)}`,
+      `/IMPLIB:${join(intermediate, "rea-windows-x64.lib")}`,
+      "/DELAYLOAD:node.exe",
+      "delayimp.lib",
+      "advapi32.lib",
+      "bcrypt.lib",
+      "ntdll.lib",
+    ]);
+} else {
+  // MSVC short-import libraries do not produce a correct Node import table with
+  // GNU ld. Generate a GNU delay-import library for the exact stable Node-API
+  // symbols; addon.cc binds it to the host executable, whatever its file name.
+  const sources = ["addon.cc", "filesystem.cc", "process.cc"];
+  const sourceText = (
+    await Promise.all(
+      sources.map((path) =>
+        readFile(join(root, "native", "windows", "src", path), "utf8"),
+      ),
+    )
+  ).join("\n");
+  const symbols = [
+    ...new Set(
+      [...sourceText.matchAll(/\b(napi_[a-z0-9_]+)\s*\(/gu)].map(
+        (match) => match[1],
+      ),
     ),
-  )
-).join("\n");
-const symbols = [
-  ...new Set(
-    [...sourceText.matchAll(/\b(napi_[a-z0-9_]+)\s*\(/gu)].map(
-      (match) => match[1],
-    ),
-  ),
-].sort();
-const definition = join(cache, "node-api.def");
-const library = join(cache, "libnode-api.a");
-await writeFile(
-  definition,
-  `LIBRARY node.exe\nEXPORTS\n${symbols.join("\n")}\n`,
-);
-run("x86_64-w64-mingw32-dlltool", ["-d", definition, "-y", library]);
-run(compiler, [
-  "-std=c++17",
-  "-O2",
-  "-DNAPI_VERSION=8",
-  "-D_WIN32_WINNT=0x0A00",
-  "-shared",
-  "-static",
-  "-static-libgcc",
-  "-static-libstdc++",
-  "-Wl,--no-insert-timestamp",
-  `-I${headers}`,
-  "native/windows/src/addon.cc",
-  inspectionFixture
-    ? "tests/fixtures/windows-native-inspection-failure.cc"
-    : "native/windows/src/filesystem.cc",
-  "native/windows/src/process.cc",
-  library,
-  "-ladvapi32",
-  "-lbcrypt",
-  "-lntdll",
-  "-o",
-  join(output, artifact),
-]);
-const packageJson = JSON.parse(
-  await readFile(join(root, "package.json"), "utf8"),
-);
-const bytes = await readFile(join(output, artifact));
-const metadata = {
-  packageVersion: packageJson.version,
-  platform: "win32",
-  architecture: "x64",
-  abiVersion: 1,
-  nodeApiVersion: 8,
-  artifact,
-  artifactSha256: createHash("sha256").update(bytes).digest("hex"),
-};
-await writeFile(
-  join(output, "manifest.json"),
-  `${JSON.stringify(metadata, null, 2)}\n`,
-);
-process.stdout.write(
-  `${JSON.stringify({ ...metadata, artifactBytes: bytes.length })}\n`,
-);
+  ].sort();
+  const definition = join(cache, "node-api.def");
+  const library = join(cache, "libnode-api.a");
+  await writeFile(
+    definition,
+    `LIBRARY node.exe\nEXPORTS\n${symbols.join("\n")}\n`,
+  );
+  run("x86_64-w64-mingw32-dlltool", ["-d", definition, "-y", library]);
+  if (processFixture) {
+    run(compiler, [
+      "-municode",
+      "-std=c++17",
+      "-O2",
+      "-static",
+      "tests/fixtures/windows/processBoundary.cc",
+      "-ladvapi32",
+      "-o",
+      join(output, "process-boundary.exe"),
+    ]);
+  } else
+    run(compiler, [
+      "-std=c++17",
+      "-O2",
+      "-DNAPI_VERSION=8",
+      "-D_WIN32_WINNT=0x0A00",
+      "-shared",
+      "-static",
+      "-static-libgcc",
+      "-static-libstdc++",
+      "-Wl,--no-insert-timestamp",
+      `-I${headers}`,
+      "native/windows/src/addon.cc",
+      inspectionFixture
+        ? "tests/fixtures/windows-native-inspection-failure.cc"
+        : "native/windows/src/filesystem.cc",
+      "native/windows/src/process.cc",
+      library,
+      "-ladvapi32",
+      "-lbcrypt",
+      "-lntdll",
+      "-o",
+      join(output, artifact),
+    ]);
+}
+if (processFixture) {
+  console.log(
+    `Windows process boundary fixture: ${join(output, "process-boundary.exe")}`,
+  );
+} else {
+  const packageJson = JSON.parse(
+    await readFile(join(root, "package.json"), "utf8"),
+  );
+  const bytes = await readFile(join(output, artifact));
+  const metadata = {
+    packageVersion: packageJson.version,
+    platform: "win32",
+    architecture: "x64",
+    abiVersion: 1,
+    nodeApiVersion: 8,
+    artifact,
+    artifactSha256: createHash("sha256").update(bytes).digest("hex"),
+  };
+  await writeFile(
+    join(output, "manifest.json"),
+    `${JSON.stringify(metadata, null, 2)}\n`,
+  );
+  process.stdout.write(
+    `${JSON.stringify({ ...metadata, artifactBytes: bytes.length })}\n`,
+  );
+}

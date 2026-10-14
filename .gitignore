@@ -6,6 +6,10 @@ __pycache__/
 # Distribution
 dist/
 build/
+*.obj
+*.lib
+*.exp
+*.pdb
 node_modules
 *.egg-info/
 *.egg

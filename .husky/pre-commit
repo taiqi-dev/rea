@@ -1,1 +1,5 @@
-npx --no-install lint-staged
+if [ "$OS" = "Windows_NT" ]; then
+  powershell.exe -NoProfile -File scripts/windows.ps1 npm exec --no -- lint-staged
+else
+  npx --no-install lint-staged
+fi

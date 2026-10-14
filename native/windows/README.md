@@ -10,8 +10,13 @@ There is no environment override for loading an arbitrary native module.
 
 ## Build
 
-The artifact lane requires Linux, MinGW-w64 `x86_64-w64-mingw32-g++`,
-`x86_64-w64-mingw32-dlltool`, and `tar`. It never installs these commands.
+On Windows x64 the artifact lane discovers an existing Visual Studio C++
+toolchain with `vswhere`, uses its Windows SDK, and compiles with MSVC and a
+static C++ runtime. It does not install or modify Visual Studio or global
+environment settings. Native prerequisites and intermediates stay in the
+project cache; only the addon and manifest go into `native/windows/build/`.
+The original Linux/MinGW cross-build route remains available for historical
+workflows, but Windows is this fork's acceptance platform.
 Node-API headers are reused from the build cache or downloaded from the
 pinned official Node release with its published SHA-256 checked.
 
@@ -20,6 +25,11 @@ npm run build:windows-native
 npm run verify:windows-native:artifact
 npm pack
 ```
+
+`scripts/windows.ps1 setup` also builds the inspection-failure addon and the
+process-boundary fixture required for the complete Windows native probes.
+They can be rebuilt individually with `build:windows-native --
+--inspection-fixture` and `build:windows-native -- --process-fixture`.
 
 `build/` is ignored by Git. The npm file inventory includes only the addon and
 its manifest. Release CI builds both, and `prepublishOnly` rejects a missing,

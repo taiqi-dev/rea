@@ -1,1 +1,5 @@
-npm run check:fast
+if [ "$OS" = "Windows_NT" ]; then
+  powershell.exe -NoProfile -File scripts/windows.ps1 npm run check:fast
+else
+  npm run check:fast
+fi

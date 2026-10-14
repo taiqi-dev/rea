@@ -142,7 +142,12 @@ class ContextCaptureTests(unittest.TestCase):
             foreign = root / 'foreign'
             foreign.mkdir()
             (foreign / 'rollout.jsonl').write_text('private marker')
-            (home / 'sessions').symlink_to(foreign, target_is_directory=True)
+            try:
+                (home / 'sessions').symlink_to(foreign, target_is_directory=True)
+            except OSError as error:
+                if getattr(error, 'winerror', None) == 1314:
+                    self.skipTest('Windows account lacks symbolic-link creation privilege')
+                raise
             output = root / 'directory-result'
             output.mkdir()
             receipt = capture_tool_context(home, output)

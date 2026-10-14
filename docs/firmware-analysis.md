@@ -40,7 +40,7 @@ analysis report retain partial results and dependency names inline.
 Upstream sources are preserved unmodified as optional pinned submodules:
 
 ```sh
-git submodule update --init third_party/binwalk third_party/unblob
+git submodule update --init --checkout third_party/binwalk third_party/unblob
 ```
 
 Normal REA builds and npm packages do not include or build these sources or

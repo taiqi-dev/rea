@@ -3,7 +3,7 @@ import { execFile } from "node:child_process";
 import { createReadStream } from "node:fs";
 import { access, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { posix } from "node:path";
 import { promisify } from "node:util";
 
 import { execFileOutput } from "../process/ExecFileOutput.js";
@@ -13,6 +13,9 @@ import {
 } from "./HopperDownload.js";
 
 const execFileAsync = promisify(execFile);
+// This host contract describes Linux paths, including when a recording host
+// exercises the installer from a Windows test runner.
+const join = posix.join;
 const DOWNLOAD_PREFIX = "https://www.hopperapp.com:443/downloader/public/";
 const SUPPORTED_HOPPER_SHA256 = new Set([
   "0294ced141cc373468ee22d8343e7dac41980cb05a937994ca81c9f09afe7ded",
