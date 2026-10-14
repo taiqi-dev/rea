@@ -110,6 +110,11 @@ foreach ($module in $modules) {
     if ($changes.Count -gt 0) {
         throw "$($module.Path) is not clean after checkout; backups are at $backupPath."
     }
+    if ($module.Name -eq 'unblob') {
+        # Recursive pull/checkout can expand this sparse index even when no
+        # gitlink changed. Explicit updates above still work for inactive modules.
+        Invoke-Git $repositoryRoot @('config', '--local', 'submodule.third_party/unblob.active', 'false')
+    }
     Write-Host "$($module.Path): ready at the revision pinned by REA."
 }
 Write-Host "Git settings backed up at $backupPath. No analysis engines were installed."

@@ -156,6 +156,12 @@ settings. Unblob uses a local cone-mode sparse index that excludes only
 `tests/integration/`: those upstream fixtures contain names Windows cannot
 create. Its source and other tests remain available; Wakaru is checked out in
 full. Other optional submodules can use ordinary `git submodule update --init`.
+Unblob is marked inactive in this checkout's local Git configuration so GitHub
+Desktop's recursive pull and checkout operations do not expand its sparse
+index. Its source stays available; rerun the helper to explicitly update it
+when REA's pinned revision changes. This also repairs checkouts initialized
+with an earlier version of the helper. Verify this workflow on Windows with
+`node --test scripts/lib/windows-submodules.test.mjs` (Git and PowerShell 7).
 The helper keeps Windows filename protection enabled and installs no engines
 or dependencies. REA's firmware and Wakaru runtime integrations still require
 Linux x64; source checkout does not add Windows runtime support. For Unblob
