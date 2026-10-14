@@ -183,3 +183,19 @@ Destroy `@0x14452c970` 在owner上下文从consum_list找到自身ID并删除（
 可选反汇编：[弩手Create](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Object_o_bandit_arbalester_Create_0.txt)、[生产助手](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Script_scr_enemy_create_invisible_consum.txt)、[绷带许可](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Script_scr_enemy_skill_bleed_bandage.txt)、[夹板许可](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Script_scr_enemy_skill_wound_splint.txt)、[评分](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Script_scr_enemy_consum_get_priority.txt)、[候选消费者](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Object_o_enemy_Other_12.txt)、[绷带执行](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Object_o_b_mobBandage_Other_10.txt)、[夹板执行](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Object_o_b_mobSplint_Other_10.txt)、[公共消耗](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Object_o_b_consum_imitation_Other_10.txt)、[列表清理](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Object_o_b_consum_imitation_Destroy_0.txt)、[旧状态比较](../../../_reference/stoneshard-study/ninth-survival-disassembly/gml_Script_scr_enemy_choose_state.txt)。
 
 已回答：弩手的真实资源生产、状态/资源局部许可、治疗评分的明确分派和部分规则、执行时扣除/销毁、绷带目标和夹板局部恢复。部分回答：全部FSM分支和治疗/攻击/装填具体竞争、夹板后处理。未回答：完整实际场景的各候选输入与运行行为、逃跑实际触发、全部异常取消、资源保存/离图生命周期和所有多伤势枚举排序。验证为静态解码与构造演算，未运行游戏。主要风险是把已贯通的静态条件链误当某次运行已发生；本篇明确不作这种保证。
+
+## 11．聚焦收敛：治疗何时有机会压过瞄准、攻击与装填
+
+本增量复用相同制品的原生记录，[本轮身份](../../../_reference/stoneshard-study/thirteenth-target-identity.json)完整摘要匹配；不新增游戏执行。完整竞争条件表及逐项例子集中在[33第13节](33-arbalester-skill-scoring-and-action-choice.md)。下列是能直接用于自研评审的治疗边界。
+
+**真实指令证据：**本篇第5节的治疗候选比较，位于主选择器读取 `lock_skills @0x143645335`、调用列表为空检查 `@0x14364538a` 之后。布尔结果为假在 `0x143645399` 跳至 `0x14364599f`，绕过所追消耗品遍历。因此“有绷带、有流血”不是充分条件；当前治疗候选段还可能被锁挡住。这个实际门禁不等于第3节独立helper返回1，也不能将独立helper擅自插入当前主循环。
+
+治疗候选通过这一段后，最终评分仍需与best比较。消耗品间平分后者覆盖；后续技能与已选治疗平分走技能段的一般二选一。治疗B分7、Headshot分8但被许可拒绝时，B仍可能保留；Headshot许可通过才会用8覆盖7。得分与可用性必须分别记录。
+
+**贯通条件例：**构造带head流血H、左手流血L的弩手，绷带代理B的charge2且owner为该弩手，lock_skills为空，K=0，治疗评分后续不改分，所以B最终7。普通攻击总基线指定1，Taking_Aim指定已装填、无瞄准buff且第33章例A输入使最终7、许可true；其他候选均不胜出。B先成为best。一般平分若本次choose选择保留B，则执行enemy.Other11的非字符串分流→B.Other10，先charge2→1，再优先销毁H；L仍在。若平分选择替换，则本次走瞄准路径，**不会沿上述治疗代理路径扣这份绷带或移除H**；其他后续效果未由此例排除。原作竞争规则与资源执行顺序是指令事实，列表内容、分数后的未改分约束和这次随机结果是构造输入。
+
+同一例只改lock_skills为非空，即跳过所追消耗品评估；不能再声称B已用7进入该次竞争。只改弩未装填，不会自动在这里排除B：Taking_Aim有自己的评分早退、ranged技能有空弩许可，但治疗实例不是已确认同一门禁的技能字符串。若普通attack最终留存，后续是否装填又由enemy_turn返回与hit门禁决定，不能说“绷带没选中，就一定装填”。
+
+**可支持的推断：**资源存在、有效状态、锁门禁、评分竞争与事件分派共同决定治疗机会，原作这条路径允许治疗与瞄准互相替代；装填与位置动作位于另一个执行层。这是由所追条件结构得到的解释，未确认某只运行中弩手的实际候选值或随机序列。
+
+**未知与验证：**治疗评分的完整target／距离组合、全部代理有效性再检、提交后状态已消失是否仍耗材、异常取消、动画和回合精确时序仍未闭合。独立演算验证见[本轮例子](../../../_reference/stoneshard-study/thirteenth-ai-convergence-derived-examples.json)，它核对条件规格，不测试目标程序。本轮未运行游戏、未读新私人存档、未改CGPK或复制恢复代码。风险是把所列构造输入当已观察场景，或由局部已闭合事件桥扩大为完整AI。

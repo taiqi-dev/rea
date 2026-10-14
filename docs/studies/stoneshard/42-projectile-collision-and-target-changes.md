@@ -2,6 +2,8 @@
 
 [总目录](README.md) · [证据范围](00-evidence-and-scope.md) · [反射与来源归属](39-reflection-redirection-and-source-ownership.md) · [攻击事件顺序](35-attack-results-and-event-order.md) · [链式闪电](40-chain-lightning-target-propagation.md)
 
+后续发射前墙格与偏移许可、阻挡代理位写入、size截获和终点选择，见 [50 墙体与终点选择](50-projectile-wall-blocking-and-endpoint-selection.md)。墙体检查在发射前也有实际消费者，不能只凭本篇飞行碰撞推断全体墙规则。
+
 本章选一个真实法术投射物 `Fire_Barrage → o_fire_barrage_birth → o_fire_barrage`。**它以目标实例和目标坐标维护飞行方向；目标消失时，子类会先在保存坐标创建终点代理，再调用父层飞行。单位碰撞只有当前目标匹配、尚未执行且靠近终点时才结算；反射改变目标则先保留投射物，后续 Step 再跟随新目标。** 这不是“撞上任意单位就立即命中”的已证实规则。
 
 墙体、门、终点代理的事件与单位事件不同。本轮确认这些公共事件的门禁和派发，仍未恢复所有地图墙表示与选择阶段的遮挡算法，因此不保证任意墙都会在飞行阶段拦截。

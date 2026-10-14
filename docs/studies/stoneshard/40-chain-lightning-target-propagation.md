@@ -2,6 +2,8 @@
 
 [总目录](README.md) · [证据范围](00-evidence-and-scope.md) · [特殊技能候选](22-special-skill-candidates.md) · [反射](39-reflection-redirection-and-source-ownership.md) · [投射物](42-projectile-collision-and-target-changes.md)
 
+后续跳数字段全代码节指定形式扩查与marker真实父链/时钟，见 [49 跳数与标记寿命](49-chain-lightning-hop-budget-and-marker-lifetime.md)。仍未恢复固定硬跳数，较广负证据不表示无限传播。
+
 本章追真实 `Chain_Lightning`，把出生对象、命中事件、候选过滤、下一跳选择与新载体创建连通。**已核的下一跳不是任意附近单位：候选排除已有 chain_struck 状态、原 owner 和当前目标，距离不超过 8，并要求具有 Resonance 或 Impulse 对应状态。通过后按距离取更小值，创建一个新的同类载体。** 名义技能范围、传播距离、表现粒子数量和总跳数不能混为一谈。
 
 本轮尚未恢复一个明确的总跳数上限。`count_of_bolts=0` 的初始化只证明初值；在所查本对象事件中没有找到它作为传播次数门禁。后续 damage 字段直接传递，也不能反推所有最终伤害都相同。下面分别说明正证据与未决部分。

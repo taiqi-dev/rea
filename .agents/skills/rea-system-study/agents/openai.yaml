@@ -1,0 +1,6 @@
+interface:
+  display_name: "通用软件系统分析"
+  short_description: "跨项目分析源码与软件制品，追踪系统算法并整理证据、具体例子和实现规格"
+  default_prompt: "使用 $rea-system-study 分析我指定项目的系统实现，先判断源码或制品路线，再给出算法、证据、具体例子及未知项。"
+policy:
+  allow_implicit_invocation: true

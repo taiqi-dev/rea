@@ -46,6 +46,18 @@
 
 第十一轮收尾完整摘要复核时间为2026-10-13 02:56:45 PDT（09:56:45 UTC），两项制品均与开始摘要一致。全目录49篇Markdown的UTF-8、标题/围栏和本地链接已经核对；40–47的地址检查验证来源关联及PE映射，不自动证明指令语义。八方向的 [条件规格演算](../../../_reference/stoneshard-study/eleventh-derived-examples.json) 均通过，其中真实配置、构造条件与未知运行槽分开保存。
 
+第十二轮开始完整摘要读取时间为2026-10-13 20:57:12 PDT（2026-10-14 03:57:12 UTC），EXE/data.win与前轮一致，见 [本轮身份](../../../_reference/stoneshard-study/twelfth-target-identity.json)。按用户请求续查四项战斗缺口并新增背包研究，形成 [48 选位竞争](48-ranged-position-selection-and-path-failure.md)、[49 连锁预算](49-chain-lightning-hop-budget-and-marker-lifetime.md)、[50 墙体与终点](50-projectile-wall-blocking-and-endpoint-selection.md)、[51 巨石到期](51-runic-boulder-turn-expiry.md)、[52 拖拽/掉落](52-inventory-ui-drag-placement-and-dropping.md)、[53 堆叠/拆分](53-item-stacking-split-and-transfer.md)、[54 自动整理](54-inventory-autosort-and-grid-packing.md)。远程候选与九格竞争、阻挡位生产/检测、选中到提交/掉落、数量守恒及尺寸整理有新增正证据；连锁数字硬上限和巨石本体自动到期仍未闭合，不以较广负检索代替运行结果。
+
+本轮仍无可用REA原生工具/提供者或目标运行观察会话，继续静态读取，不进行setup、目标启动、附加、内存修改、新存档读取或网络监测。新解码按文件记录Capstone 5.0.7或5.0.9；字段名称来自refVA−8，类型、未知槽和首段覆盖保持明确。54另外使用[官方array_sort公开契约](https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Variable_Functions/array_sort.htm)解释比较器返回与不应承诺稳定平分；当前公开文档不是本机制品runtime内部实现的证明，和本地指令证据分开。
+
+收尾记录为 [完整摘要复核](../../../_reference/stoneshard-study/twelfth-target-final-verification.json)、[56篇目录与新增地址验证](../../../_reference/stoneshard-study/twelfth-document-validation.json)、[UI与矩形条件演算](../../../_reference/stoneshard-study/twelfth-inventory-derived-examples.json)，其他位置/连锁/堆叠局部演算见各篇证据。地址核对只验证来源关联和映射，构造算例只检验明示规格，不保证实战全状态、输入竞态、失败回滚或安装制品未覆盖路径。
+
+2026-10-13 21:26:12 PDT（2026-10-14 04:26:12 UTC）开始的收尾完整文件读取确认EXE/data.win均与本轮开始一致。56篇文档的UTF-8、围栏、正文一级标题与1011个链接检查通过；48–54中494个不同地址均有本机证据关联并通过PE映射，20项明示条件演算通过。地址与演算验证不会把连锁硬上限、巨石自动到期或未覆盖运行路径提升为已确定。
+
+第十三轮聚焦已有研究供独立项目评审：同状态重施的持续/强度/来源策略、控制解除后的剩余限制，以及弩手治疗、瞄准、攻击、装填和位置处理的竞争与重新评分。2026-10-13 22:15:27 PDT（2026-10-14 05:15:27 UTC）的[完整身份复核](../../../_reference/stoneshard-study/thirteenth-target-identity.json)与前轮一致。结论补在11、36、33、34各模块，不启动游戏、不读取新私人存档，不把尚未闭合的完整AI或全部状态策略填成默认规则，也不修改其他产品仓库。收尾来源/文档核对见[本轮验证](../../../_reference/stoneshard-study/thirteenth-document-validation.json)。
+
+第十三轮新增正证据是Taking Aim附属临时属性按source+atr匹配、覆盖持续与条件新增6171实例、属性实例按自身id退出，以及治疗候选与普通hit的具体锁/FOV门禁。主Buff全部重施策略、来源键是否等于施法者身份、动作锁删除槽、完整移动仲裁与所有重评分触发仍未知。2026-10-13 22:23:39 PDT（2026-10-14 05:23:39 UTC）[收尾完整摘要](../../../_reference/stoneshard-study/thirteenth-target-final-verification.json)再次匹配；四模块426个不同地址完成来源关联/PE映射，38项条件模型检查通过。该检查数包含不同研究者对部分相同规格的复核，不代表38个实战场景或运行覆盖。
+
 第三轮结束前重读 EXE 与 data.win 的完整 SHA256，与本轮开始及前轮记录一致，见[本机制品复核](../../../_reference/stoneshard-study/third-target-hash-verification.json)。本轮没有修改这两个目标文件。
 
 ## 如何理解确定程度

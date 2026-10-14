@@ -126,6 +126,12 @@
 
 ## 建议的下一轮切片
 
+第十二轮已推进 [48–51 战斗缺口](48-ranged-position-selection-and-path-failure.md) 和 [52–54 背包交互](52-inventory-ui-drag-placement-and-dropping.md)。新增真实选择比较、默认因子、特殊实体单结果模式、阻挡代理网格位写入、UI掉落来源/遮挡门禁、部分堆叠余数和拆分，以及尺寸分组/first-fit。跳数和到期的更广静态检索仍未闭合，后续不能继续只靠同一字段名称重复扫描来提高确定度。
+
+背包最值得补的三个小问题是：①拆分面板valueMax的实际生产者，让53的真实预览+1连到源栈数量；②整理临时容器全部退出/失败清理及提交失败后物品位置，让54的forced_drop路径覆盖具体有效配置；③菜单关闭、Escape、失焦或拖拽中源实例销毁时，52的手持/占格/高亮怎样恢复。每项需一个具体入口、一个取消/失败分支和可检查的前后状态，不能用通用UI经验补原作行为。
+
+战斗仍需补48全部工作布尔与末尾覆盖、49敌人marker实际递减相位、50一种实际门开闭的位写入/清除，以及51同一巨石的调度/递减/退出。当前已保留下一调用者和运行观察指标；没有可用目标观察会话时，重复静态负查询不能得出“无硬上限”“永不到期”或全部墙可穿的保证。
+
 第十轮已推进 [36 控制重叠](36-control-overlap-and-action-locks.md)、[37 预告取消](37-telegraph-interruption-and-cancellation.md)、[38 格挡响应与反击](38-block-reactions-and-counterattack.md)、[39 反射](39-reflection-redirection-and-source-ownership.md)。Stasis/Stun的五锁生产与按位置删除、skill/spell取消、Riposte/Deflect真实响应、反击Alarm6复查和封印替代目标/来源消费已有具体链。当前重点缺口是删除槽运行值、精确动态相位、死亡/已发射载体取消、临时属性最终语义、全部反击重入及反射并行覆盖，不能仍将这些方向统称只找到入口。
 
 第十一轮已将八个方向拆成 [40](40-chain-lightning-target-propagation.md)–[47](47-ally-skills-and-group-response.md)：连锁与平分选择、远程选位、Fire Barrage投射物、吸血吸魔、混合伤害/暴击/失误、装备与Buff属性、符文巨石消费、号令与盟友响应。已有状态资格/最小距离、飞行子类/父类和反射、HP前吸取、13类型系数/Fire实参、缓冲重建/命中钳制、主动消费的−4退出区别和犬类消费者，不能再把这些统称只有名字或入口。

@@ -2,6 +2,8 @@
 
 [总目录](README.md) · [证据范围](00-evidence-and-scope.md) · [22 候选阶段](22-special-skill-candidates.md) · [19 公共位移](19-kick-pull-and-knockback.md)
 
+后续自动到期专查见 [51](51-runic-boulder-turn-expiry.md)：扩大字段引用和本体/父事件覆盖，分清HP通知、父类破坏与Buff寿命。仍未取得本体duration递减到期链，本篇主动消费不能替代它。
+
 本篇围绕 Runic Boulder、Boulder Toss、Runic Explosion，解释一个世界实体如何被两个后续技能取值并消费。**本轮已闭合巨石创建／占格、主动抛投与爆破的参数转移、原实体销毁和 aura／占格清理。尚未闭合巨石自动到期的触发器，也未证明字段 `duration` 是一个按回合递减的寿命。**不能把本机 Create 中的20、后续抛投的0.1系数直接拼成“巨石存活二十回合、每剩一回合增加10%伤害”。
 
 目标仍为 `E:/Steam/steamapps/common/Stoneshard` 的 Windows x64 GameMaker YYC 制品。EXE SHA256 `d45797505f04b9112c5fbb8e85c0f8cda2fa60aee954b4e108bad8a0dc514afa`，data.win SHA256 `84034525fcdef3c6fd9803628b8de6c43fea479c930e168a95906de37a2ae19c`。沿用已记录的 REA 工具／提供者缺失，使用本机 Capstone 5.0.9 静态 fallback；没有启动、附加、改游戏或存档、读取新存档或联网。原始记录不是 REA Evidence；字段按 refVA−8 复核，BSS未知值不当常量，首 `.pdata` 范围不等于完整函数语义。

@@ -12,6 +12,25 @@ Configuration changes must be additive and idempotent, with backups. Installers 
 
 Preserve caller-selected inputs and local evidence, including output, URLs, paths, digests, and metadata. Redact transport authentication credentials and explicitly marked sensitive values; do not infer secrecy from names or text patterns. Do not persist the ambient environment merely because a child inherits it.
 
+## Game and Application Investigation Scope
+
+Game and application investigations in this workspace are for learning system design and independently developing our own products. Scope each investigation to a specific gameplay system, algorithm, or program effect and explain its structure, state transitions, data flow, and implementation principles.
+
+The team operates in the United States. Evaluate these investigations and resulting products under applicable United States federal and state law and the target's licensing terms; do not use Chinese laws or regulations as the legal framework for this workspace.
+
+- Use disassembly and decompilation only as research evidence for the selected system. Do not treat recovered code as production code to copy, translate, or repackage for sale or distribution.
+- Do not modify an original game or application and publish or sell the modified product. Do not reconstruct an entire product for direct redistribution or resale.
+- Deliver behavioral specifications, algorithm explanations, evidence, and explicit unknowns. Distinguish observed behavior from inferred design choices; do not claim to know the original developer's intent without evidence.
+- When implementation is requested, independently write our own code from the behavioral specification and our own product requirements. Use independently created or appropriately licensed assets; do not carry the target's proprietary code or assets into our deliverables.
+
+## System Study Skill Routing
+
+When the user asks to explain a software system's implementation or algorithms, trace a feature across modules, compare behavior, extend an investigation, or produce evidence-backed technical studies, read and apply [rea-system-study](.agents/skills/rea-system-study/SKILL.md) automatically. It is a reusable cross-project workflow for source repositories and supported software artifacts, including desktop apps, services, Web/Electron, managed/native software, packages, firmware and games. Requests such as “检查这个项目的系统实现”, “分析这个程序的算法”, and “把实现原理拆成详细文档” do not require naming the skill.
+
+Use source tools when the available repository can answer the question. When an answer depends on shipped-artifact or requested runtime evidence, use [reverse-engineer-anything](.agents/skills/reverse-engineer-anything/SKILL.md) for target/tool routing, provider recovery and Evidence semantics. Read GameMaker examples only for relevant targets. Resolve report locations and rules from the target project; retain the current conversation's target and authorization scope rather than inheriting a study's paths or permissions.
+
+Routine edits without an investigation question and setup-only troubleshooting do not trigger this workflow. Source-only architecture analysis may use the study workflow without binary analysis or provider setup. The authored skills under `.agents/skills/` are the maintained source; user-scoped installed copies make them available outside this repository. Do not modify Codex tool permissions or the generated `skills/` bundle merely to invoke them.
+
 ## Architecture and Cleanup
 
 Dependencies flow inward: domain semantics and contracts, provider adapters, shared application workflows, then CLI/MCP adapters. Keep engine protocols and provider-specific code out of domain/application layers. See [docs/architecture.mermaid](docs/architecture.mermaid) when changing composition.

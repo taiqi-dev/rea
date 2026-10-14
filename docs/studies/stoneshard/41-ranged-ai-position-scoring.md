@@ -2,6 +2,8 @@
 
 [总目录](README.md) · [证据范围](00-evidence-and-scope.md) · [弩手动作选择](33-arbalester-skill-scoring-and-action-choice.md) · [怪物预告攻击](13-telegraphed-attacks.md) · [视觉听觉](03-enemy-perception.md)
 
+后续真实候选比较、因子初始化、九格数值、周边特殊实体单结果与最终返回，见 [48 选位竞争与无路处理](48-ranged-position-selection-and-path-failure.md)。本篇保留格门禁阶段；不能再把所有后续选择都概括为尚未恢复。
+
 **本轮已建立选位入口的空间检查、危险标记转换、候选门禁和主动作选择器消费；完整“哪一个格最终最好”的评分和所有无路回退仍只恢复了部分。** 可以具体解释一个陷阱相关负值怎样使候选跳过一段普通处理，也能确认射击范围、FOV、AOE、占格和临时寻路数据参与这条链；不能据此编出“距离×权重＋安全分”的完整效用公式。
 
 目标沿用 00 固定的 Stoneshard GameMaker YYC x64 EXE/data.win，本轮完整摘要一致。REA 工具/提供者不可用，复用已有本地索引，以 Capstone 5.0.7 解码14个选定入口，再用5.0.9补注释和核对小助手。证据文件分别标明生成范围；它们不是 REA Evidence。没有运行、附加或修改游戏，没有读取新存档。

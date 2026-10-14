@@ -31,6 +31,11 @@ Diagnose the observed blocker, continue useful supported work, and resume the
 original task after repair. Client approval, shell PATH, registration and engine
 availability have different remedies; avoid repeating setup for all of them.
 
+When native analysis is blocked but static material can still answer part of
+the question, read [bounded static fallback](references/static-fallback.md).
+Reuse the recorded blocker until a relevant state change; keep ordinary-file,
+public-source and independent-model findings separate from REA Evidence.
+
 Prefer an existing `rea` CLI. When none is installed and REA package acquisition
 is within the authorized scope, use `npx -y rea-agents@latest` in its place.
 Configuration repair starts with a read-only setup plan; show paths, backups and
