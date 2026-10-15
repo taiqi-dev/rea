@@ -1,5 +1,7 @@
 # 掘地求财：矿物组件的销毁分支与渲染连接边界
 
+> 后续 [07：材质槽与处理器选择](07-material-slots-and-handler-selection.md)已确认煤网格默认 slot 0，并从 MainLevel 配置与构造默认值推导 Mixed handler。下文 Basic 路径是已编入的实现分支，不能当成本关卡默认执行路径；运行加载/覆盖仍未验证。
+
 接续[矿物网格与表现](04-mesh-materials-and-ore-presentation.md)和[重建任务寿命](05-task-lifetimes-growth-and-performance.md)，本篇解开先前未解释的 `DestroyOre` 条件，并沿本作 EXE 中的 Voxel 插件代码，追到 chunk 完成数据被组件作为网格 section 与材质接收的实际调用链。结论限于发行制品静态语义：`DestroyOre` 的传入组件显示名**包含** `Voxel` 时跳过紧邻销毁，**不包含**时调用销毁；Voxel Basic handler 则把构建所得 section 交给 `UVoxelProceduralMeshComponent`，由组件的 `GetMaterial(index)` 读取对应材质。游戏是否实际选择 Basic handler、矿物网格材质槽和画面仍未实测。
 
 ## 输入与方法

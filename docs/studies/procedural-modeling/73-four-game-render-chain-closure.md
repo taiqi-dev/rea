@@ -1,5 +1,7 @@
 # 四款游戏：材质、渲染与局部更新的续查账本
 
+> 后续静态结果见 [76](76-four-static-chain-answers.md)：本篇列出的 G-buffer 句柄、相机纹理来源、材质槽/handler 初始选择和 sampler/LOD 已有进一步答案；下文保留前轮证据范围，运行验证仍未执行。
+
 本轮承接[71 的缺口](71-four-game-art-updates-and-performance.md)，优先补实际资源身份、CPU 调用与产物接收点。新增四款专题，另把[需要运行的用例](74-runtime-validation-cases.md)独立成页。**静态未闭合不等于只能运行才能查；运行 Not Run 也不推翻已经读出的代码和资源链。** 本轮没有启动、附加或改写游戏，没有读取私人存档。
 
 ## 新增专题和实际进展

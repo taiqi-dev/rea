@@ -12,6 +12,7 @@
 6. [湿沙材质、水体折射与光照](06-surface-materials-and-effects.md)：水量颜色门槛、流动纹理、深度回退、距离衰减与视角高光的实际公式。
 7. [局部更新、读回与成本](07-local-updates-readback-and-costs.md)：模拟、画刷、读回与碰撞分别处理多大的范围，条件和未知参数如何影响开销。
 8. [材质绑定、渲染状态与变化传播](08-material-bindings-render-state-and-invalidation.md)：实际场景组件、材质和贴图的引用，沙水 pass 状态，以及 CPU 全局参数生产者。
+9. [相机颜色与深度纹理来源](09-camera-color-depth-resource-provenance.md)：从真实 property ID 字面量，追到颜色/深度附件、两种复制、全局纹理设置与释放。
 
 一手开发者访谈称，游戏在 Unity 中自研沙水模拟，将沙作为高黏性、强阻尼的流体处理，沙水采用不同分辨率，并考虑侵蚀与沉积；还称各海滩共用算法但地形和参数有差异。这些是**开发者陈述**，不是我们对每个本地公式的证明。来源：[80 Level 对 Sandcastle 开发者的访谈](https://80.lv/articles/creating-cozy-sandbox-sandcastle-with-a-focus-on-water-sand-simulation)。
 

@@ -1,6 +1,6 @@
 # 程序化建造与美术研究
 
-最新进展见[四款游戏：材质、渲染与局部更新续查账本](73-four-game-render-chain-closure.md)，按游戏进入四篇新专题；[运行验证用例](74-runtime-validation-cases.md)单独维护，当前均未运行。
+最新进展见[四款游戏：指定静态断点的续查结果](76-four-static-chain-answers.md)：Tiny Glade 的 G-buffer 句柄、沙堡的相机纹理来源、掘地求财的实际材质槽/处理器选择，以及 SUMMERHOUSE 的过滤/LOD。前轮[材质、渲染与局部更新账本](73-four-game-render-chain-closure.md)保留其历史范围；[运行验证用例](74-runtime-validation-cases.md)单独维护，本轮依要求未运行。
 
 上一轮见[四款游戏：美术表现、局部更新与性能缺口](71-four-game-art-updates-and-performance.md)。按 SUMMERHOUSE、Tiny Glade、沙堡、掘地求财的顺序，各补两篇专题，区分实际资源/指令、条件成本推导与仍未运行验证的部分。
 

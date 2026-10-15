@@ -1,5 +1,7 @@
 # 沙堡：场景材质绑定、渲染状态与局部变化传播
 
+> 后续 [09：相机纹理来源](09-camera-color-depth-resource-provenance.md)已接通颜色/深度附件、复制目标、真实全局 ID 字面量与水 Shader 取样；下文保留前轮范围。
+
 本篇补 [06](06-surface-materials-and-effects.md) 留下的“实际材质和最终混合状态”断点，并与 [07](07-local-updates-readback-and-costs.md) 的全域 GPU 调度区分。只读输入为同一 Sandcastle Demo 安装版本的 `Sandcastle_Data/level0`、`sharedassets0.assets`、`GameAssembly.dll`，身份沿用 [01](01-artifact-and-method-map.md) 与 [04](04-gpu-simulation-and-brush.md) 的制品记录。未运行游戏或修改原文件。
 
 ## 场景组件确实指向这两份材质

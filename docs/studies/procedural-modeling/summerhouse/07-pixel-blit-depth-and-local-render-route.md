@@ -1,5 +1,7 @@
 # SUMMERHOUSE：像素化回贴、深度与局部修改的渲染连接
 
+> 后续 [08：过滤与 LOD 来源](08-filtering-and-lod-provenance.md)补上 inline sampler 原始记录/格式解读，以及复制写 LOD 0、回贴继承共享属性的条件；下文保留前轮证据范围。
+
 本篇补[05](05-materials-pixelization-and-camera.md)的最终 blit shader 断点，并把[06](06-local-updates-and-render-costs.md)的单块修改接到渲染消费者。**新闭合的是：配置中的 Shader 65 → 回贴材质 → 颜色/深度纹理槽 → 实际取样与输出 → 包内混合/深度状态。** 没有运行游戏，仍不把配置链当作一次真实帧捕获。
 
 ## 身份、压缩段与读取范围

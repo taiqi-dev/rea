@@ -2,7 +2,7 @@
 
 本机《A Game About Digging A Hole》走的是 **Unreal + Voxel Pro 的三维体素路径**。目前已从匹配的 EXE/PDB 和解码后的游戏资源确认技术栈，逐项追到值场编辑、受影响区域筛选、网格与碰撞任务，以及保存快照和队列。游戏的实际资源调用与插件本身的能力在各页分别标明；未运行游戏或测量 FPS。
 
-最新续查见[06：组件 section、材质接收与销毁分支](06-mesh-material-binding-and-edit-lifecycle.md)，将 Basic handler 的完成产物接到组件网格/材质和渲染/碰撞标记；游戏实际 handler 配置与矿物材质槽仍未知。
+最新续查见[07：材质槽与处理器选择](07-material-slots-and-handler-selection.md)：煤网格默认 slot 0 指向 `M_Ores_1-3`；MainLevel 配置结合构造默认值推导选择 Mixed handler。[06：组件 section、材质接收与销毁分支](06-mesh-material-binding-and-edit-lifecycle.md)中的 Basic handler 是已编入的实现分支，不能当成本关卡默认选择；实际运行加载/覆盖仍未验证。
 
 | 要回答的问题                     | 阅读入口                                                              | 已有证据与边界                                                             |
 | -------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------- |
