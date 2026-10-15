@@ -1,5 +1,7 @@
 # 沙堡：相机颜色临时纹理的格式选择
 
+> 后续 [11：色彩空间配置](11-color-space-configuration.md)已用精确版本 Release 布局读出打包的 Linear 配置；schema 尾四字节未解，实际 activeColorSpace 仍与配置分开。
+
 本篇追 [09](09-camera-color-depth-resource-provenance.md) 中 A 颜色附件和 opaque 副本共用的静态 `colorFormat`。输入仍是同一 Sandcastle Demo 安装版本的 `GameAssembly.dll`、IL2CPP metadata v39，以及只读查看的 `Sandcastle_Data/globalgamemanagers`；制品身份沿用 [01](01-artifact-and-method-map.md)，本轮未新算摘要。没有启动游戏。下面的 `HDR` 指代码传给 Unity 的**格式类别请求**，不是已观测的最终像素格式或显示输出能力。
 
 ## 唯一核到的静态赋值者

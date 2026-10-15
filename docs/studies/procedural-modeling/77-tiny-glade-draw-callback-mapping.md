@@ -1,5 +1,7 @@
 # Tiny Glade：墙绘制条目的回调映射
 
+> 后续 [79：绘制命令槽来源](79-tiny-glade-draw-command-slot-provenance.md)接上同一 typed buffer、CPU 基址 16 和 shader 槽 16–22；回调槽 23 的生产者仍未闭合。
+
 本篇回答 [72](72-tiny-glade-cpu-render-bindings-and-lifecycle.md) 留下的墙条目断点：**墙启动路径注册的是 `draw_bricks::indirect_draw_bricks`，而不是直接注册 `CustomDrawFn::indexed_indirect::draw_fn`。** 前者按绘制阶段与墙组 payload 选择间接命令索引，满足条件时再尾调用后者。`build_draw_lists` 将 ECS `CustomDrawFn` 的两个机器字复制到 64 B 的 `DrawListItem`，`render_bucket` 从条目 `+0x20` 读取函数指针并以 `+0x28` 的 payload 调用。这是静态的注册→条目→录制链，不代表任一墙在每一帧实际可见或 GPU 已执行。
 
 ## 输入与证据边界

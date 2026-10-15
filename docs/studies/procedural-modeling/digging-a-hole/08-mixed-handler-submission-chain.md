@@ -1,5 +1,7 @@
 # 掘地求财：Mixed 处理器的渲染、碰撞与完成提交
 
+> 后续 [09：旧碰撞结果接受门](09-collision-result-acceptance.md)补上 cooker 完成队列、当前编号相等检查、Finalize 与 BodySetup 交换；下文保留此前未追到物理最终门的范围。
+
 [07](07-material-slots-and-handler-selection.md)从 `MainLevel` 的 `VoxelWorld` 属性与本作原生构造代码推导出静态初始设置会选 `FVoxelRendererMixedMeshHandler`。本篇沿**这个条件下已编入 EXE 的 Mixed 分支**继续追踪：Mixed 将可见网格送入 Clustered 合并支路，将碰撞和导航网格送入 Basic 支路；两侧各自完成、接收和清理。它补充了[06](06-mesh-material-binding-and-edit-lifecycle.md)只追 Basic 可用能力的边界。未启动或附加游戏，不能把静态路由写成运行时每次挖掘均已观察到。
 
 ## 输入与核对方式

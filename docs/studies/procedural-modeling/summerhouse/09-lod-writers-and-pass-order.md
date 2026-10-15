@@ -1,5 +1,7 @@
 # SUMMERHOUSE：LOD 写入者与回贴前的 pass 顺序
 
+> 后续 [10：低分辨率 mip 与附件](10-low-resolution-mips-and-attachments.md)补主相机 target 配置、mip 标志构造/分配，以及 lowPair/cameraPair 的附件选择；下文调度条件保持原范围。
+
 [08](08-filtering-and-lod-provenance.md)查到复制写 LOD 0、回贴继承共享属性块，但没有展开中间的调度。本轮把默认 renderer 的 feature、URP 队列和实际 Blitter 重载接起来：**在已读发行配置与正常复制成功的这条路径中，事件 300 写 0 后，到事件 400 的自定义回贴之间，没有找到另一处写非零 LOD 的直接调用。** 反射探针/灯光图集确实有可写非零 mip 的调用，但其已追入口在复制之前；不能把它们仅因共享 Blitter 就当作两次 pass 之间的覆盖。
 
 这是一项配置和指令顺序的静态结论。复制因空源跳过、运行中更换 renderer/feature 或其它未覆盖入口时，仍不能保证回贴的绝对值；未运行游戏。

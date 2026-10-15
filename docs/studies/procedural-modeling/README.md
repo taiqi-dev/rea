@@ -1,6 +1,6 @@
 # 程序化建造与美术研究
 
-最新进展见[四款游戏：提交、回调、格式与 LOD 顺序](78-four-static-submission-chains.md)：Mixed 的渲染/碰撞分派与完成提交、Tiny Glade 墙回调映射、沙堡 HDR 格式查询来源，以及 SUMMERHOUSE 回贴前的 LOD 写入次序。前轮[指定静态断点结果](76-four-static-chain-answers.md)和[渲染连接账本](73-four-game-render-chain-closure.md)保留原有范围；[运行验证用例](74-runtime-validation-cases.md)单独维护，本轮依要求未运行。
+最新进展见[四款游戏：碰撞接受、命令槽与渲染目标](80-four-static-resource-acceptance.md)：旧碰撞结果的编号门、Tiny Glade 命令槽 16–22 与仍未闭合的 23、沙堡打包 Linear 配置，以及 SUMMERHOUSE 的 mip/附件链。前轮[提交与调度](78-four-static-submission-chains.md)、[指定断点结果](76-four-static-chain-answers.md)和[渲染连接账本](73-four-game-render-chain-closure.md)保留原有范围；[运行验证用例](74-runtime-validation-cases.md)本轮依要求未运行。
 
 上一轮见[四款游戏：美术表现、局部更新与性能缺口](71-four-game-art-updates-and-performance.md)。按 SUMMERHOUSE、Tiny Glade、沙堡、掘地求财的顺序，各补两篇专题，区分实际资源/指令、条件成本推导与仍未运行验证的部分。
 

@@ -138,15 +138,29 @@ try
         rows.Add(new { token = $"0x{MetadataTokens.GetToken(handle):X8}", type = TypeName(type), name,
             rva = method.RelativeVirtualAddress, il_bytes = il.Length,
             signature = Convert.ToHexString(metadata.GetBlobBytes(method.Signature)),
+            parameters = method.GetParameters().Select(h => metadata.GetParameter(h))
+                .Select(p => new { sequence = p.SequenceNumber, name = metadata.GetString(p.Name) }),
             status = "decoded", instructions,
             exception_regions = body.ExceptionRegions.Select(r => new { kind = r.Kind.ToString(),
                 r.TryOffset, r.TryLength, r.HandlerOffset, r.HandlerLength, r.FilterOffset }) });
     }
-    if (examinedMethods == 0) throw new InvalidDataException("No selected methods");
+    var declaredFields = args[1] == "*" ? [] : selected.SelectMany(type =>
+        metadata.GetTypeDefinition(type).GetFields().Select(handle =>
+        {
+            var field = metadata.GetFieldDefinition(handle);
+            var constantHandle = field.GetDefaultValue();
+            var constant = constantHandle.IsNil ? (Constant?)null : metadata.GetConstant(constantHandle);
+            return new { token = $"0x{MetadataTokens.GetToken(handle):X8}", name = metadata.GetString(field.Name),
+                flags = (int)field.Attributes, constant_type = constant?.TypeCode.ToString(),
+                constant_bytes = constant is null ? null : Convert.ToHexString(metadata.GetBlobBytes(constant.Value.Value)) };
+        })).ToArray();
+    if (examinedMethods == 0 && !(args[2] == "*" && declaredFields.Length > 0))
+        throw new InvalidDataException("No selected methods or declared fields");
     var result = new { input, bytes = file.Length,
         mvid = metadata.GetGuid(metadata.GetModuleDefinition().Mvid), type = args[1],
         coverage = new { selected_types = selected.Length, examined_methods = examinedMethods,
             decoded_methods = decodedMethods, operand_filter = args.Length == 5 ? args[4] : null },
+        declared_fields = declaredFields,
         methods = rows, scope = "offline CIL/metadata only; no target execution or dependency loading" };
     var output = Path.GetFullPath(args[3]);
     Directory.CreateDirectory(Path.GetDirectoryName(output)!);
