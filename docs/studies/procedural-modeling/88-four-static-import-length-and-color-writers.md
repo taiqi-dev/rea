@@ -1,5 +1,7 @@
 # 四款游戏：导入缓冲、对象长度门与顶点色写端
 
+最新续查见[91](91-four-static-other-writers-and-reader-selection.md)：Tiny Glade 补上另一节点的槽 0…22 模板和实际初建容量；沙堡已接通本资源 class129 到直接 reader 的分支，排除入口预读 4 B。下文未知项保留当时范围，以新专题为当前结论。
+
 接续[86](86-four-static-bucket-loader-and-material-owners.md)。本轮四款各新增专题，重点补实际写入/分配与外层检查：**Tiny Glade 的导入分派保留原raw handle，没有在此扩容；沙堡通用直接读取分支会核对对象消费长度；SUMMERHOUSE 找到实际墙块的顶点alpha写端；掘地求财查清普通配置加载的属性门。** 所有结果均为静态证据，运行验证 **Not Run**。
 
 | 专题                                                                                            | 新增的确定连接                                                                                                            | 仍未回答的部分                                                                                                                   |

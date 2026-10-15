@@ -1,5 +1,7 @@
 # Sandcastle Demo：沙、水与地表生成的静态研究
 
+最新续查见[16：class129 读取分支与尾值来源边界](16-class129-reader-branch-and-tail-origin.md)：无 type tree 的实际类型记录接到直接 reader；从对象首字节读取，912/916 差额进入不等长诊断。末尾 3 的构建 writer/成员与诊断实际后果仍未知，运行未做。
+
 最新续查见[15：三值生产与外层长度门](15-tail-production-and-serialized-loader.md)：通用直接reader分支返回后核对消费量，并接通对象终点到上下文界限。class129实际分支和尾部3的构建生产者仍未知，运行未做。
 
 最新续查见[14：尾部三值的处理边界](14-player-settings-tail-owner-and-loader.md)：class129注册、factory和构造写入接到真正虚表起点与reader槽。三值的构建生产者、外层loader调用和长度处理仍未闭合，运行验证未做。

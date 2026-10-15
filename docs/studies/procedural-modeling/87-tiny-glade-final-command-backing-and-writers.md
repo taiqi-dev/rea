@@ -1,5 +1,7 @@
 # Tiny Glade：槽 23 命令的图导入、backing 与后续写端
 
+续查见[89：完整模板写端](89-tiny-glade-other-command-writers.md)与[90：实际创建容量](90-tiny-glade-command-capacity-and-lifetime.md)。89 已在另一图节点找到同一 typed 资源的 23 条模板，补上本篇所查链以外的字段生产路径；模板仍不含槽 23。tag3 保留原 handle 的本篇结论继续适用，最终生命周期未穷尽。
+
 承接 [81](81-tiny-glade-command-initialization-and-slot23.md)、[83](83-tiny-glade-slot23-write-growth-and-submission.md) 和 [85](85-tiny-glade-wall-bucket-and-command-writes.md)。本轮把同一 typed `DrawIndexedIndirectBuffer` 从写租约继续追到 raw buffer 的图导入登记和注册器分派。**新导入的tag3状态在注册器中保留原raw handle，不走通用池化/新分配分支；所查链没有生成命令模板或提供槽23四个非计数字段写者。**完整生命周期和其它写入仍未穷尽，因此最终 backing 是否覆盖 `[460,480)` 及槽 23 的有效命令仍是未知，不能据此宣称运行越界或有效绘制。
 
 ## 范围和原始证据

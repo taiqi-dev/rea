@@ -1,5 +1,7 @@
 # 沙堡：尾部 `3` 的生产来源与 SerializedFile 对象长度门
 
+后续[16](16-class129-reader-branch-and-tail-origin.md)已把本文件类型记录接到直接 reader 分支，并核对入口没有预读 4 B；本篇的长度门条件因此获得本资源分支依据。三值的构建来源与诊断实际后果仍未知。
+
 [12](12-player-settings-tail-field.md)、[13](13-player-settings-exact-tail-mapping.md)、[14](14-player-settings-tail-owner-and-loader.md) 已把本作 `PlayerSettings` 的本地 reader 绑定到 class 129 对象：它从文件相对 `+0x38c` 读取 `allowedHttpConnections=0`，在 `+0x390` 返回；对象表长度却是 `0x394`，最后的 `03 00 00 00` 还属于对象。本轮找到了**通用对象读取路径中的虚调用与长度比较**，也接通了 reader 所用 `context+0x48` 的缓冲上界。构建时是谁写入尾部 `3`，仍没有生产者证据。
 
 ## 结论及适用条件

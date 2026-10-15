@@ -1,5 +1,7 @@
 # SUMMERHOUSE：顶点色 alpha 如何进入遮罩裁剪
 
+遮罩相机的上游调度续查见[15](15-mask-camera-order-and-render-admission.md)：同一列表内的两台相机有条件先后，但原生准入与实际重绘频率仍未知，不由本篇的全局参数更新推定。
+
 **结论（静态）：** 一个实际打包墙块把 `Maskable` 挂在根对象，把带 COLOR0 的网格和 Shader622 材质挂在子对象。该网格保存的 412 个顶点 alpha 字节全为 255；`Maskable.Awake` 的 CIL 在实例初始化时逐顶点把 alpha 写成 0。已在[13](13-global-mask-material-consumers.md)验证的 Shader622 Alpha Test 变体把这个 alpha 加入全局遮罩比较结果，故包内颜色初值不能直接代入运行中片元公式。这是资源加 CIL 的静态连接，没有观察游戏实例、实际帧或像素。
 
 ## 身份、覆盖与写入端

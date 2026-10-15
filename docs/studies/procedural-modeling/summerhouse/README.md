@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[15：遮罩相机排序与准入](15-mask-camera-order-and-render-admission.md)：实际父子层级、Base 类型和 depth 接到 URP 比较器；两台同时进入列表时遮罩先绘制。原生列表准入、截图调度及重绘频率仍未知，运行未做。
+
 最新续查见[14：顶点alpha与遮罩裁剪](14-vertex-color-mask-and-local-updates.md)：实际墙块的包内alpha=1，Maskable.Awake在实例子网格写为0，接到Shader622消费；与全局参数更新分别解释，实际帧和成本仍未测。
 
 最新续查见[13：全局遮罩的材质消费](13-global-mask-material-consumers.md)：逐变体压缩参数接到Shader622的实际纹理槽、动画世界坐标、透明度和提前裁剪。12个前向变体中8个消费遮罩，其他shader逐变体覆盖与运行性能仍未验证。

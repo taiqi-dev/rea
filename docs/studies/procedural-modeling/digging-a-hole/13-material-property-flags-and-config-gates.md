@@ -1,5 +1,7 @@
 # 掘地求财：材质模式属性与普通配置加载的边界
 
+后续[14](14-other-mode-writers-and-default-copy.md)补出模板/CDO 的普通属性复制入口。它与本篇 Config 门是不同路径；普通 LoadConfig 跳过这两字段，不等于 ctor 后不存在其它写端。
+
 [12](12-initial-material-authority-and-overrides.md)确认关卡 actor 使用原生 VoxelWorld CDO，并在创建/重建 renderer 时读取当时的 world。本篇继续核对“是否由普通配置加载改写默认值”。**MaterialConfig 和 RenderType 的本作反射描述符均不含 Config 位；同一 EXE 的 LoadConfig 属性循环明确跳过该位为零的属性。** 因而在保留这些构造标志的普通配置路径中，它们不会因同名 ini 项而被这个循环导入。其他代码改写值或反射标志、特殊加载钩子仍未排除。
 
 ## 两个实际属性描述符
