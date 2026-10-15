@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+新增[《掘地求财》：挖掘、存档与性能](digging-a-hole/README.md)。本专题从 Unreal/Voxel Pro 的实际安装制品追踪体素编辑、局部网格与碰撞重建、稀疏保存和任务调度；分别标明游戏资源连接、插件能力及尚未运行验证的边界。
+
 本次续查加入 **Sandcastle Demo（沙堡）** 与 **SUMMERHOUSE**。先读[本机路径、证据迁移与三款对照](68-local-targets-and-three-game-comparison.md)。沙堡重点看[水沙模拟、工具和表面模型](sandcastle/README.md)；SUMMERHOUSE 重点看[格点拼装、前后层次和组合变体](summerhouse/README.md)。下方 Bad North 与 Tiny Glade 各轮记录保留其原有证据范围；新调查不把历史未验证项自动升级为通过。
 
 本case study的自研落地目标现统一为**Unity最小造房沙盒**。先读[Unity实施规格入口](unity-building-demo/README.md)，再按[研究到demo对应表](unity-building-demo/06-study-to-demo-map.md)选择原研究。规格已拆清AI/程序资产、墙/房屋/真实开口、挂灯、火水、永久破坏、局部重建与存档及验收；本轮先交付文档，尚未实现或运行Unity工程。历史研究保留原目标事实与未知，不被改写成我们的实现。
