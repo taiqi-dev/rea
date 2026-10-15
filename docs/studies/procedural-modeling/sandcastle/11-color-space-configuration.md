@@ -1,5 +1,7 @@
 # 沙堡：项目色彩空间配置与实际生效值
 
+末尾四字节的对象边界、类型树反证和候选映射续查见[12](12-player-settings-tail-field.md)；字段名仍保持未唯一确定，不改本篇 Partial 状态。
+
 本篇收束 [10](10-camera-color-format-selection.md) 留下的 `QualitySettings.activeColorSpace` 分支输入。对同一 Sandcastle Demo 安装版的 `globalgamemanagers`、IL2CPP metadata v39、`GameAssembly.dll` 与 `UnityPlayer.dll` 做静态只读检查；制品身份沿用 [01](01-artifact-and-method-map.md)，没有新算摘要或启动游戏。**已解出本作打包的 PlayerSettings 色彩空间配置为 `Linear=1`**；相机颜色格式决策仍读取 Unity 原生接口返回的**实际**色彩空间，不能仅凭配置断言运行时分支。完整 schema 消费还剩一个未映射的末尾四字节，下面保留 Partial 边界。
 
 ## 精确版本 Release 类型树定位配置值

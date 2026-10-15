@@ -1,5 +1,7 @@
 # Tiny Glade：墙绘制命令槽的静态来源
 
+后续的[命令初始化与槽 23](81-tiny-glade-command-initialization-and-slot23.md)补查空输入创建、初始零数据和另一套完整模板的资源身份；本篇的逐槽证据保留原范围。
+
 承接 [77](77-tiny-glade-draw-callback-mapping.md) 的 `CustomDrawFn` 回调。本篇把墙 compute 写入的资源追到最终 `indexed_indirect::draw_fn` 读取，并核对逐槽公式。**同一 `DrawIndexedIndirectBuffer` 资源已由 CPU 类型键与绑定字段接通；所查三个写命令的墙 compute 都由 CPU 选择基址 `0x10=16`。** 因此可确认这些 shader 的绝对写入槽为 `16…22`。墙目录其余 compute 也已逐个检查，仍未找到槽 23 的生产者；不能把名字或 20 B 格式当成该槽身份证明。
 
 ## 输入与方法

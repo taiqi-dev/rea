@@ -4,6 +4,8 @@
 
 最新续查见[09：碰撞结果接受门](09-collision-result-acceptance.md)：旧 cook 即使已入队，仍须通过当前 cooker 编号相等等检查，再进入 BodySetup 交换与物理状态重建。[08 的 Mixed 分派](08-mixed-handler-submission-chain.md)和[07 的初始配置条件](07-material-slots-and-handler-selection.md)继续适用；实际加载、覆盖与物理时序未运行验证。
 
+新增[10：地形材质到可见 section](10-terrain-material-to-sections.md)：区间选择、LOD2/3/4 演算、材质包装与 Mixed 的 Clustered 提交已接通；每个 chunk 的实际模式、LOD 和最终 shader 仍未观测。
+
 | 要回答的问题                     | 阅读入口                                                              | 已有证据与边界                                                             |
 | -------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | 铲子怎样改变地形，洞怎样变成模型 | [挖掘与局部重建](01-excavation-and-local-rebuild.md)                  | 体素编辑公式、脏区、mesh 与碰撞链；游戏具体工具分支另列                    |

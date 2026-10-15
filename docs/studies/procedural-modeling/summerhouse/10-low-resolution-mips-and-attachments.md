@@ -1,5 +1,7 @@
 # SUMMERHOUSE：低分辨率目标的 mip 与颜色/深度附件
 
+外部遮罩目标与截图临时替换主相机 target 的具体分支续见[11](11-mask-target-and-camera-overrides.md)；下文普通相机推导仍以 target 未被替换为条件。
+
 本篇继续 [09](09-lod-writers-and-pass-order.md) 的资源问题。**level0 主相机没有序列化 targetTexture，普通相机描述符默认 `useMipMap=false`、`autoGenerateMips=true`；像素化 feature 继承这两个标志。分配器把低分辨率颜色申请为 HDR 类别颜色目标，把带深度位数的另一申请转成 Depth 类别。复制和重绘明确使用这一颜色/深度对，回贴则恢复相机颜色/深度对，附件选择的 mipLevel 为 0。** 这些是创建请求和静态绑定关系，没有运行时纹理对象或 GPU 抓帧。
 
 ## 身份与新证据

@@ -13,14 +13,14 @@ import struct
 from pathlib import Path
 
 
-def resource_index(path):
+def resource_index(path, include_externals=False):
     data = path.read_bytes()
     if len(data) < 48:
         raise ValueError(f"Short serialized file: {path}")
     _, _, version, _ = struct.unpack_from(">4I", data)
     if version != 22 or data[16] != 0:
         raise ValueError(f"Unsupported serialized format/endian: {version}, {data[16]}")
-    _, size, data_offset, _ = struct.unpack_from(">IQQQ", data, 20)
+    metadata_size, size, data_offset, _ = struct.unpack_from(">IQQQ", data, 20)
     if size != len(data) or not 48 <= data_offset <= size:
         raise ValueError("Invalid file size or data offset")
     pos = 48
@@ -68,9 +68,60 @@ def resource_index(path):
             if 0 <= name_length <= min(512, length - 4):
                 item["name"] = data[start + 4:start + 4 + name_length].decode("utf-8", errors="replace")
         objects.append(item)
-    return data, {"file": str(path), "unity": unity, "format": version, "platform": platform,
-                  "type_trees": False, "object_count": object_count,
-                  "classes": dict(collections.Counter(x["class_id"] for x in objects)), "objects": objects}
+    index = {"file": str(path), "unity": unity, "format": version, "platform": platform,
+             "type_trees": False, "object_count": object_count,
+             "classes": dict(collections.Counter(x["class_id"] for x in objects)), "objects": objects}
+    if include_externals:
+        # Format-22 metadata ordering: objects, script identifiers, externals,
+        # reference types, user information. External PPtr file IDs are 1-based.
+        script_count = read("i")
+        if not 0 <= script_count <= (data_offset - pos) // 12:
+            raise ValueError("Invalid script identifier count")
+        scripts = []
+        for _ in range(script_count):
+            file_index = read("i")
+            pos = (pos + 3) & ~3
+            scripts.append({"file_index": file_index, "path_id": read("q")})
+
+        def cstring():
+            nonlocal pos
+            end = data.index(0, pos, data_offset)
+            value = data[pos:end].decode("utf-8", errors="strict")
+            pos = end + 1
+            return value
+
+        external_count = read("i")
+        if not 0 <= external_count <= (data_offset - pos) // 22:
+            raise ValueError("Invalid external file count")
+        externals = []
+        for ordinal in range(external_count):
+            empty = cstring()
+            if empty:
+                raise ValueError("Unexpected nonempty external file prefix")
+            guid = read("16s")
+            kind = read("i")
+            externals.append({"file_id": ordinal + 1, "guid_bytes": guid.hex(),
+                              "type": kind, "path": cstring()})
+        ref_count = read("i")
+        if not 0 <= ref_count <= (data_offset - pos) // 23:
+            raise ValueError("Invalid reference type count")
+        ref_types = []
+        for _ in range(ref_count):
+            class_id = read("i")
+            stripped = read("?")
+            script_index = read("h")
+            if script_index >= 0:
+                read("16s")
+            read("16s")
+            ref_types.append({"class_id": class_id, "stripped": stripped,
+                              "script_type_index": script_index})
+        user_info = cstring()
+        if pos != 48 + metadata_size:
+            raise ValueError("Serialized metadata not fully consumed")
+        index.update({"script_identifiers": scripts, "externals": externals,
+                      "reference_types": ref_types, "user_information": user_info,
+                      "metadata_consumed_end": pos})
+    return data, index
 
 
 def disassemble(bytecode, hexadecimal=False):

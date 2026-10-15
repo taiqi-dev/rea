@@ -15,6 +15,7 @@
 9. [相机颜色与深度纹理来源](09-camera-color-depth-resource-provenance.md)：从真实 property ID 字面量，追到颜色/深度附件、两种复制、全局纹理设置与释放。
 10. [相机颜色格式选择](10-camera-color-format-selection.md)：HDR 类别查询、唯一核到的字段赋值，以及颜色附件/副本的 sRGB/Linear 转换。
 11. [项目色彩空间配置](11-color-space-configuration.md)：精确版本 Release 布局读出的 Linear 字段、未映射尾部，以及配置与实际生效值的区别。
+12. [PlayerSettings 尾字段](12-player-settings-tail-field.md)：末尾四字节的对象归属、类型树/对齐反证与仍未消歧的两种字段映射。
 
 一手开发者访谈称，游戏在 Unity 中自研沙水模拟，将沙作为高黏性、强阻尼的流体处理，沙水采用不同分辨率，并考虑侵蚀与沉积；还称各海滩共用算法但地形和参数有差异。这些是**开发者陈述**，不是我们对每个本地公式的证明。来源：[80 Level 对 Sandcastle 开发者的访谈](https://80.lv/articles/creating-cozy-sandbox-sandcastle-with-a-focus-on-water-sand-simulation)。
 
