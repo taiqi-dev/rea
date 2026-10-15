@@ -1,5 +1,7 @@
 # 沙堡：PlayerSettings 尾槽能定位到哪一步
 
+后续[14](14-player-settings-tail-owner-and-loader.md)从构造写入确定真正虚表入口，并接通class129注册factory；本篇相邻三槽是该虚表内部槽，不能以其附近地址作为表头。三值的构建来源和外层长度门仍未知。
+
 [12](12-player-settings-tail-field.md) 已确认本作 `globalgamemanagers` 的 class 129 对象长 916 字节，而精确版本公开 Release 类型树只消费 912 字节。本篇沿本作 `UnityPlayer.dll` 的字段路径追到**相邻的实际二进制读取回调**：在普通读取分支、目标资源两个零长设备列表和三个空 PPtr 的条件下，回调把对象 `+0x38c` 的 `0` 读入内存字段 `+0x2c0`，随后游标结束于 `+0x390`。因此，**安装包内 reader 对 `allowedHttpConnections` 的静态绑定是 0，`+0x390` 的 3 在该 reader 路径之后尚未消费。** 额外三值的构建时生产成员、是否有更外层尾处理及游戏实际运行时值仍未知；未运行游戏。
 
 ## 本地字段路径与 Release 树逐项对齐

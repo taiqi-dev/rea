@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+最新续查见[12：初始材质权威与覆盖](12-initial-material-authority-and-overrides.md)：关卡actor模板精确指向原生VoxelWorld CDO，首次创建和重建renderer均从当时world状态取值。基类/CDO配置与其他脚本写端尚未穷尽，运行未做。
+
 本机《A Game About Digging A Hole》走的是 **Unreal + Voxel Pro 的三维体素路径**。目前已从匹配的 EXE/PDB 和解码后的游戏资源确认技术栈，逐项追到值场编辑、受影响区域筛选、网格与碰撞任务，以及保存快照和队列。游戏的实际资源调用与插件本身的能力在各页分别标明；未运行游戏或测量 FPS。
 
 最新续查见[09：碰撞结果接受门](09-collision-result-acceptance.md)：旧 cook 即使已入队，仍须通过当前 cooker 编号相等等检查，再进入 BodySetup 交换与物理状态重建。[08 的 Mixed 分派](08-mixed-handler-submission-chain.md)和[07 的初始配置条件](07-material-slots-and-handler-selection.md)继续适用；实际加载、覆盖与物理时序未运行验证。

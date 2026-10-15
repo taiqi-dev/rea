@@ -1,5 +1,7 @@
 # 掘地求财：chunk 材质模式的生产与 section 分派
 
+后续[12](12-initial-material-authority-and-overrides.md)已核对原生CDO模板及创建/重建renderer的取值时机；引擎基类、配置和其他脚本覆盖仍未穷尽，本篇默认值推导保持条件范围。
+
 [10](10-terrain-material-to-sections.md)已追踪关卡材质引用进入可见 section 的过程，但当时没有约束 `FVoxelChunkMesh` 的单材质／索引材质分支。本篇从**网格首字节的生产者**反向核对关卡初始配置，再跟踪索引模式的生产和消费。结论是：在本关卡已解码的初始配置、原生构造默认值和正常 mesher 生产路径下，chunk mesh 首字节写为 `1`，`GetMeshesToBuild` 走单材质分支；按 `FVoxelMaterialIndices` 分组是插件已编入的另一条路径，不能据其存在断言本关卡实际使用了材质集合。
 
 ## 证据与实例边界

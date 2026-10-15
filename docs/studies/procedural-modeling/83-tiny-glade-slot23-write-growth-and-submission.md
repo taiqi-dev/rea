@@ -1,5 +1,7 @@
 # Tiny Glade：槽 23 的后续写入、容量与 shadow 提交条件
 
+后续[85](85-tiny-glade-wall-bucket-and-command-writes.md)已接通同一DrawLists的构造到shadow，并将首桶条件定位为缺少`DontCastShadow`；墙初始bundle与该条件相容。后续四字段写入、最终backing长度和运行提交仍未闭合。
+
 承接 [81](81-tiny-glade-command-initialization-and-slot23.md) 的 460 B 初始零 payload 与 typed `DrawIndexedIndirectBuffer` 身份。本轮新增两个确定连接：**阶段字节 3 有实际的 shadow 图构造路径**；主 `gpu_generate_draw_lists` 两个分支把同一 typed 图句柄接入 `draw_indexed_indirect_to_dispatch`，该 shader 读取命令的 `instanceCount` 并写入另一份 dispatch 参数缓冲。前者仍要有第二个 shadow 项、非空且合格的墙条目、成功的资源绑定与图节点执行，才会走到槽 23 回调。后者不提供同一命令缓冲的四个非计数字段后续写者或扩至 ≥480 B 的确定路径，故不能将静态条件冲突定性为运行越界。
 
 ## 输入与读取边界

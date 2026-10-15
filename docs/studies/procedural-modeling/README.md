@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：墙组入桶、加载边界与材质消费](86-four-static-bucket-loader-and-material-owners.md)：Tiny Glade墙初始组件到首桶/槽23的条件、沙堡class129注册到实际reader虚表、掘地求财原生CDO与renderer重采样，以及SUMMERHOUSE逐变体的遮罩采样/透明裁剪。命令四字段与扩容、沙堡尾部3的生产和外层处理仍保留明确未知；运行未做。
+
 最新续查见[四款游戏：二进制读取、提交条件与过滤](84-four-static-readers-and-render-filters.md)：沙堡零槽到allowed的实际reader映射、Tiny Glade阶段3与只读转换节点、掘地求财chunk模式，以及SUMMERHOUSE相机层交集和遮罩灰度。Tiny Glade写入/扩容、沙堡三值的构建来源仍未闭合，运行未做。
 
 前轮见[四款游戏：初始化、尾字段与相机目标](82-four-static-initialization-and-tail.md)：Tiny Glade 的 23 条初始零命令与槽 23 边界、沙堡尾值的两种映射、掘地求财材质到 section，以及 SUMMERHOUSE 遮罩/截图目标。前两项仍保留明确静态缺口，运行验证未做。

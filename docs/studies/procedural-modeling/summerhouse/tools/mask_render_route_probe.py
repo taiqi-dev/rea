@@ -24,6 +24,51 @@ def load(name, path):
     return module
 
 
+def program_records(value, shader):
+    if value["platforms"]["Array"] != [4]:
+        raise ValueError("Expected the selected Direct3D platform only")
+    source = bytes(value["compressedBlob"]["Array"])
+    offsets, sizes, decoded_sizes = [value[key]["Array"][0]["Array"] for key in
+                                   ("offsets", "compressedLengths", "decompressedLengths")]
+    if offsets != [0] or len(sizes) != 1 or len(decoded_sizes) != 1 or sizes[0] != len(source):
+        raise ValueError("Expected one complete compressed shader section")
+    if not 0 < decoded_sizes[0] <= 16 * 1024 * 1024:
+        raise ValueError("Shader section exceeds the decoder allocation bound")
+    decoded = shader.decode_lz4(source, decoded_sizes[0])
+    if len(decoded) < 4:
+        raise ValueError("Truncated program record count")
+    count = struct.unpack_from("<I", decoded)[0]
+    if not 0 < count <= (len(decoded) - 4) // 12:
+        raise ValueError("Invalid subprogram record count")
+    records = []
+    for i in range(count):
+        start, length, segment = struct.unpack_from("<III", decoded, 4 + 12 * i)
+        if segment != 0 or start < 4 + 12 * count or start > len(decoded) or length > len(decoded) - start:
+            raise ValueError("Invalid subprogram record range/segment")
+        records.append({"index": i, "offset": start, "bytes": length, "segment": segment})
+    return decoded, records
+
+
+def program_dxbc(decoded, record):
+    body = decoded[record["offset"]:record["offset"] + record["bytes"]]
+    hits = list(re.finditer(b"DXBC", body))
+    if len(hits) != 1:
+        raise ValueError("Expected one DXBC container in the selected program record")
+    at = hits[0].start()
+    if len(body) - at < 32:
+        raise ValueError("Truncated DXBC header")
+    marker, size, chunks = struct.unpack_from("<III", body, at + 20)
+    if marker != 1 or not 1 <= chunks <= 64 or not 32 + 4 * chunks <= size <= len(body) - at:
+        raise ValueError("Invalid DXBC header/range")
+    for chunk in struct.unpack_from("<" + "I" * chunks, body, at + 32):
+        if not 32 + 4 * chunks <= chunk <= size - 8:
+            raise ValueError("Invalid DXBC chunk offset")
+        chunk_size = struct.unpack_from("<I", body, at + chunk + 4)[0]
+        if chunk_size > size - chunk - 8:
+            raise ValueError("Invalid DXBC chunk length")
+    return at, body[at:at + size]
+
+
 def probe(game_data, schema_path, output):
     unity = load("unity_index", ROOT / "tools/unity22-compute-probe.py")
     objects = load("object_reader", ROOT / "sandcastle/tools/player_color_space_probe.py")
@@ -96,23 +141,7 @@ def probe(game_data, schema_path, output):
                            "tags": state["m_Tags"]["tags"]["Array"], "state": state,
                            "name_indices": item["m_NameIndices"]["Array"],
                            "vertex": item["progVertex"], "fragment": item["progFragment"]})
-    source = bytes(value["compressedBlob"]["Array"])
-    offsets, sizes, decoded_sizes = [value[key]["Array"][0]["Array"] for key in
-                                   ("offsets", "compressedLengths", "decompressedLengths")]
-    if offsets != [0] or len(sizes) != 1 or len(decoded_sizes) != 1 or sizes[0] != len(source):
-        raise ValueError("Expected one complete compressed shader section")
-    if not 0 < decoded_sizes[0] <= 16 * 1024 * 1024:
-        raise ValueError("Shader section exceeds the decoder allocation bound")
-    decoded = shader.decode_lz4(source, decoded_sizes[0])
-    count = struct.unpack_from("<I", decoded)[0]
-    if not 0 < count <= (len(decoded) - 4) // 12:
-        raise ValueError("Invalid subprogram record count")
-    records = []
-    for i in range(count):
-        start, length, segment = struct.unpack_from("<III", decoded, 4 + 12 * i)
-        if segment != 0 or start < 4 + 12 * count or start > len(decoded) or length > len(decoded) - start:
-            raise ValueError("Invalid subprogram record range/segment")
-        records.append({"index": i, "offset": start, "bytes": length, "segment": segment})
+    decoded, records = program_records(value, shader)
     first = passes[0]
     disassembly = []
     for stage in ("vertex", "fragment"):
@@ -124,28 +153,13 @@ def probe(game_data, schema_path, output):
         if not 0 <= blob_index < len(records):
             raise ValueError("Forward program index exceeds section table")
         record = records[blob_index]
-        body = decoded[record["offset"]:record["offset"] + record["bytes"]]
-        hits = list(re.finditer(b"DXBC", body))
-        if len(hits) != 1:
-            raise ValueError("Expected one DXBC container in the selected program record")
-        at = hits[0].start()
-        if len(body) - at < 32:
-            raise ValueError("Truncated DXBC header")
-        marker, size, chunks = struct.unpack_from("<III", body, at + 20)
-        if marker != 1 or not 1 <= chunks <= 64 or not 32 + 4 * chunks <= size <= len(body) - at:
-            raise ValueError("Invalid DXBC header/range")
-        for chunk in struct.unpack_from("<" + "I" * chunks, body, at + 32):
-            if not 32 + 4 * chunks <= chunk <= size - 8:
-                raise ValueError("Invalid DXBC chunk offset")
-            chunk_size = struct.unpack_from("<I", body, at + chunk + 4)[0]
-            if chunk_size > size - chunk - 8:
-                raise ValueError("Invalid DXBC chunk length")
+        at, code = program_dxbc(decoded, record)
         filename = f"mask-forward-{stage}.asm.txt"
         with (output / filename).open("x", encoding="utf-8", newline="\n") as stream:
-            stream.write(unity.disassemble(body[at:at + size]))
+            stream.write(unity.disassemble(code))
         disassembly.append({"stage": stage, "blob_index": blob_index,
                             "record": record, "dxbc_record_offset": at,
-                            "dxbc_bytes": size, "disassembly": filename})
+                            "dxbc_bytes": len(code), "disassembly": filename})
     return {"game_data": str(game_data), "schema": str(schema_path), "version": VERSION,
             "cameras": cameras, "renderer_count": len(renderers), "renderers": renderers,
             "layer_histogram": dict(collections.Counter(x["layer"] for x in renderers)),

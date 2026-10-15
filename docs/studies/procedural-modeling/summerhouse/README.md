@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[13：全局遮罩的材质消费](13-global-mask-material-consumers.md)：逐变体压缩参数接到Shader622的实际纹理槽、动画世界坐标、透明度和提前裁剪。12个前向变体中8个消费遮罩，其他shader逐变体覆盖与运行性能仍未验证。
+
 本轮调查的是本机发行版 `SUMMERHOUSE` 1.2.12 的静态托管代码与发行资源，聚焦与 Tiny Glade 可比较的建筑、邻接、层次、装饰和变体机制。先看[证据与边界](00-evidence-and-scope.md)，再按问题读：
 
 1. [放置、格点与前后层次](01-placement-grid-and-depth.md)：一件建筑块从预览到落地如何定位、翻转和决定深度。

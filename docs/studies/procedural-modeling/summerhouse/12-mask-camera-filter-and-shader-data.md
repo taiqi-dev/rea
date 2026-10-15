@@ -1,5 +1,7 @@
 # SUMMERHOUSE：遮罩相机的层筛选与纹理内容
 
+后续[13](13-global-mask-material-consumers.md)已将这张遮罩接到Shader622逐变体参数及实际采样、透明度/裁剪指令；其余shader覆盖、颜色写端和运行时结果仍未知。
+
 [11](11-mask-target-and-camera-overrides.md)已把遮罩相机接到 2048² 的 MaskingMap。本篇补上“哪些块有资格进入这张图”和“图里写什么”，同时修正[05](05-materials-pixelization-and-camera.md)只看 feature LayerMask 的覆盖推导。**主相机排除层 8，遮罩相机只选层 8；Mask 材质的 forward shader 则把世界 Z 归一化到 0–1，写入 RGB，alpha 写 1。** 这些是静态配置、调用与指令，仍没有游戏帧或实际像素。
 
 ## 当前文件与完整字段读取

@@ -1,5 +1,7 @@
 # 四款游戏：二进制读取、提交条件与渲染过滤续查
 
+后续[86](86-four-static-bucket-loader-and-material-owners.md)补上墙组首桶资格、沙堡注册到真实虚表、关卡CDO和renderer取值，以及SUMMERHOUSE逐变体遮罩消费；本篇未知清单保留其当轮范围。
+
 本轮继续[82](82-four-static-initialization-and-tail.md)的具体断点，四款各补一篇。**沙堡已将零值槽接到本地 reader 的 allowedHttpConnections；Tiny Glade 已查清阶段3的 shadow 传参和一个只读命令转换节点，但槽23的后续模板与扩容仍未找到。** 所有结论保持静态范围，游戏及其原生函数、GPU、截图写入、私人存档与性能测量均为 **Not Run**。
 
 | 专题                                                                                          | 新增的确定连接                                                                                                                                                                        | 保留的未知                                                                                                                                 |
