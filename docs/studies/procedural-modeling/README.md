@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：美术表现、局部更新与性能缺口](71-four-game-art-updates-and-performance.md)。按 SUMMERHOUSE、Tiny Glade、沙堡、掘地求财的顺序，各补两篇专题，区分实际资源/指令、条件成本推导与仍未运行验证的部分。
+
 新增[《掘地求财》：挖掘、存档与性能](digging-a-hole/README.md)。本专题从 Unreal/Voxel Pro 的实际安装制品追踪体素编辑、局部网格与碰撞重建、稀疏保存和任务调度；分别标明游戏资源连接、插件能力及尚未运行验证的边界。
 
 本次续查加入 **Sandcastle Demo（沙堡）** 与 **SUMMERHOUSE**。先读[本机路径、证据迁移与三款对照](68-local-targets-and-three-game-comparison.md)。沙堡重点看[水沙模拟、工具和表面模型](sandcastle/README.md)；SUMMERHOUSE 重点看[格点拼装、前后层次和组合变体](summerhouse/README.md)。下方 Bad North 与 Tiny Glade 各轮记录保留其原有证据范围；新调查不把历史未验证项自动升级为通过。
