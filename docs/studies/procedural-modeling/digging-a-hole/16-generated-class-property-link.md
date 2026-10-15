@@ -1,5 +1,7 @@
 # 掘地求财：生成类的两个模式属性如何进入正常链接
 
+后续[17](17-native-cdo-construction-and-mode-state.md)把本类原生CDO创建接到构造函数，并核对CDO自己的复制门；最终运行状态仍未观察。本篇保留属性正常链接的证据范围。
+
 [15](15-property-copy-virtual-target.md)证明 `FEnumProperty::LinkInternal` 会为 `MaterialConfig` 与 `RenderType` 设置一字节元素大小和 bit30，但当时未把本作 `AVoxelWorld` 的生成类注册接到这次虚分派。本轮补出**静态连接**：`Z_Construct_UClass_AVoxelWorld → ConstructUClass → StaticLink → UClass::Link/UStruct::Link → FEnumProperty::LinkInternal`。所以第 15 篇的“一字节 `memcpy`”现在有本生成类的正常链接入口支撑；仍未观察游戏实际调用、CDO 最终值或关卡 actor 的初始化现场。
 
 ## 证据范围

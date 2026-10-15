@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+最新续查见[17：原生CDO构造与模式初值](17-native-cdo-construction-and-mode-state.md)：本类构造回调接到两处模式零写；静态flags关闭CDO自身普通属性复制门，并补核PostInitProperties。最终值仍有条件，运行未做。
+
 最新续查见[16：生成类属性链接入口](16-generated-class-property-link.md)：本作134项属性表接到主枚举类链，StaticLink(false)经实际虚表分派到LinkInternal，为一字节复制提供正常链接依据。CDO最终值与actor实际初始化仍未观察。
 
 最新续查见[15：模式枚举的复制宽度](15-property-copy-virtual-target.md)：描述符接到Enum/Byte属性，链接后置bit30并确定一字节memcpy；Config位仍为零。默认源最终值和actor实际分支仍未运行验证。

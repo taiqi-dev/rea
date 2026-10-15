@@ -1,5 +1,7 @@
 # 四款游戏：BufferState 写端、引用传递与目标生命周期
 
+后续见[98：可变别名、引用映射与默认配置](98-four-static-alias-interface-and-defaults.md)，补上真实Any表、沙堡非空接口实现、CDO构造门和管线纹理开关；新的调查顺序见[97](97-next-study-recommendations.md)。下文保留本轮原始范围。
+
 接续[93](93-four-static-replacement-and-effect-gates.md)。本轮优先从实际字段写入和间接调用接续，而非再以函数名判断：**Tiny Glade 的同键图租约及图完成路径未提供指针替换，构造 vtable 的取句柄槽也只返回原地址；沙堡 `+0x88` 可见本体处理资源引用候选回填，没有补写末尾 `3`。** 两个优先问题仍未全闭合。掘地求财补上生成类的正常属性链接入口，SUMMERHOUSE 接通 TAA 历史目标的分配／关闭与销毁。运行验证 **Not Run**。
 
 | 专题                                                                                    | 新确认的连接                                                                                                                                                                                   | 剩余静态边界                                                                                                         |

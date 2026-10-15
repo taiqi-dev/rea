@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：可变别名、引用映射与默认配置](98-four-static-alias-interface-and-defaults.md)：Tiny Glade的Any表／TypeId已定位，raw handle改写者仍缺；沙堡接到真实引用映射接口，但class129接收者与末尾3生产者仍未知。另补掘地求财CDO构造门和SUMMERHOUSE管线纹理开关。运行未做；[下一轮建议与顺序](97-next-study-recommendations.md)单列。
+
 最新续查见[四款游戏：BufferState写端、引用传递与目标生命周期](95-four-static-bufferstate-and-reference-transfer.md)：Tiny Glade同键图访问和完成未改指针，实际取句柄虚槽只返回原地址；沙堡+0x88本体接到资源引用回填。另补掘地求财生成类属性链接和SUMMERHOUSE的TAA分配／关闭门。槽23最终容量、四字段及尾值3构建来源仍未知，运行未做。
 
 最新续查见[四款游戏：替换边界、构建端线索与效果开关](93-four-static-replacement-and-effect-gates.md)：Tiny Glade 同键插入和通用更新均不能解释扩容；沙堡补查发行资源和空虚槽，构建生产者仍缺失。另补掘地求财链接后一字节复制，以及 SUMMERHOUSE 完整相机追加配置。槽23最终容量和尾值3来源继续 Unknown，运行未做。

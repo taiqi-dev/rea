@@ -1,5 +1,7 @@
 # Tiny Glade：BufferState 指针写端与槽 23 的剩余边界
 
+后续[96](96-tiny-glade-mutable-alias-and-raw-handle.md)继续追同一typed对象的可变Any别名、TypeId与内部raw字段；仍未定位到旧对象的替换store或槽23最终容量。本篇保留外层BufferState写端的原始范围。
+
 承接 [87](87-tiny-glade-final-command-backing-and-writers.md)、[89](89-tiny-glade-other-command-writers.md)、[90](90-tiny-glade-command-capacity-and-lifetime.md) 与 [92](92-tiny-glade-typed-buffer-replacement-and-final-range.md)。本轮从 `BufferState` 首 16 B 的实际写入和状态分支复查同一 `DrawIndexedIndirectBuffer` 项。**已定位的本类型写入仍是创建时把新 typed 对象及 vtable 放入新项；图读写和完成只改状态/图句柄，`export_from_rg` 只清状态；具名 `HashMap::get_mut` 的两个直接调用是另一种名称键缓冲。**另一类型 `NaniDrawListSsbo` 确有旧项内指针/vtable 写回，但其键和 vtable 与本类型不同。未发现本类型图使用前取得新 raw handle 的连通路径，因此不能从这些入口推出 480 B 容量或槽 23 的四个非动态计数字段；这仍是限定静态结论，不是全程序无写者证明。
 
 ## 身份、方法和可复查原始记录
