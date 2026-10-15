@@ -1,5 +1,7 @@
 # 掘地求财：煤矿材质槽与主关卡体素处理器选择
 
+> 后续 [08：Mixed 提交链](08-mixed-handler-submission-chain.md)沿本篇初始配置条件接通可见 Clustered、碰撞/导航 Basic、完成接收及清理；不把本篇配置推导升级为运行观察。
+
 接续[矿物网格与表现](04-mesh-materials-and-ore-presentation.md)和[网格组件接收路径](06-mesh-material-binding-and-edit-lifecycle.md)。本篇解决两处原先保留的静态缺口：发行包 `SM_Ore_Coal` 的 `StaticMaterials[0]` 实际引用 `/Game/Art/Materials/M_Ores_1-3`；`MainLevel` 的 `VoxelWorld` 在当前序列化配置和本作构造默认值下，进入 `FVoxelRendererMixedMeshHandler` 分支。后者是**静态初始选择的推导**，没有运行游戏来证明整个游玩期间一直保持此选择。
 
 ## 输入、格式与证据边界

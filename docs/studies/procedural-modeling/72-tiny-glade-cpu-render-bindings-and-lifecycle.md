@@ -2,6 +2,8 @@
 
 > 后续 [75：纹理句柄对应](75-tiny-glade-texture-handle-provenance.md)已逐跳接通 G-buffer 图资源记录到 `gbuffer_tex` 的 set 0 / binding 1；下文保留此前调查的范围，实际 GPU 对象与帧执行仍未观察。
 
+> [77：墙绘制回调映射](77-tiny-glade-draw-callback-mapping.md)另补墙实体注册、DrawListItem 字段、阶段筛选与 indirect draw 命令寻址。
+
 本篇补齐[材质与光照](69-tiny-glade-shading-lighting-and-contact.md)和[局部更新成本](70-tiny-glade-update-and-render-costs.md)之间的一段 CPU 调用链。静态证据已把 **G-buffer pass 注册 → 绘制桶绑定 → 条目绘制**，以及 **同一 `render_world` 路径注册 deferred 光照 pass** 接起来；具体 G-buffer 纹理句柄是否就是 `solid_light_sun_sky` 的 `gbuffer_tex`，仍须资源身份追踪或运行抓帧确认。
 
 ## 输入与核验方式

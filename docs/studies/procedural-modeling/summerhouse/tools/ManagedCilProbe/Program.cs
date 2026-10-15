@@ -7,9 +7,9 @@ using System.Reflection.Metadata.Ecma335;
 using System.Reflection.PortableExecutable;
 using System.Text.Json;
 
-if (args.Length != 4)
+if (args.Length is < 4 or > 5)
 {
-    Console.Error.WriteLine("usage: ManagedCilProbe assembly exact-type method-substring-or-* NEW-output.json");
+    Console.Error.WriteLine("usage: ManagedCilProbe assembly exact-type-or-* method-substring-or-* NEW-output.json [resolved-operand-substring]");
     return 2;
 }
 try
@@ -59,17 +59,23 @@ try
         }
     }
 
-    var selected = metadata.TypeDefinitions.Where(h => TypeName(h) == args[1]).ToArray();
-    if (selected.Length != 1) throw new InvalidDataException("Expected exactly one exact type match");
+    var selected = metadata.TypeDefinitions.Where(h => args[1] == "*" || TypeName(h) == args[1]).ToArray();
+    if (selected.Length == 0 || (args[1] != "*" && selected.Length != 1))
+        throw new InvalidDataException("Expected exactly one exact type match or a nonempty wildcard selection");
+    var examinedMethods = 0;
+    var decodedMethods = 0;
     var rows = new List<object>();
-    foreach (var handle in metadata.GetTypeDefinition(selected[0]).GetMethods())
+    foreach (var type in selected)
+    foreach (var handle in metadata.GetTypeDefinition(type).GetMethods())
     {
         var method = metadata.GetMethodDefinition(handle);
         var name = metadata.GetString(method.Name);
         if (args[2] != "*" && !name.Contains(args[2], StringComparison.Ordinal)) continue;
+        examinedMethods++;
         if (method.RelativeVirtualAddress == 0)
         {
-            rows.Add(new { token = $"0x{MetadataTokens.GetToken(handle):X8}", name, status = "no-body" });
+            if (args.Length == 4)
+                rows.Add(new { token = $"0x{MetadataTokens.GetToken(handle):X8}", type = TypeName(type), name, status = "no-body" });
             continue;
         }
         var body = pe.GetMethodBody(method.RelativeVirtualAddress);
@@ -83,7 +89,9 @@ try
             position += length;
             return result;
         }
+        decodedMethods++;
         var instructions = new List<object>();
+        var matchedOperand = args.Length == 4;
         while (position < il.Length)
         {
             var at = position;
@@ -122,18 +130,23 @@ try
                     var token = BitConverter.ToInt32(Take(4)); value = $"0x{token:X8}"; resolved = Resolve(token); break;
                 default: throw new InvalidDataException($"Unsupported CIL operand type {op.OperandType}");
             }
+            if (args.Length == 5 && resolved?.Contains(args[4], StringComparison.Ordinal) == true)
+                matchedOperand = true;
             instructions.Add(new { offset = at, opcode = op.Name, operand = value, resolved });
         }
-        rows.Add(new { token = $"0x{MetadataTokens.GetToken(handle):X8}", name,
+        if (!matchedOperand) continue;
+        rows.Add(new { token = $"0x{MetadataTokens.GetToken(handle):X8}", type = TypeName(type), name,
             rva = method.RelativeVirtualAddress, il_bytes = il.Length,
             signature = Convert.ToHexString(metadata.GetBlobBytes(method.Signature)),
             status = "decoded", instructions,
             exception_regions = body.ExceptionRegions.Select(r => new { kind = r.Kind.ToString(),
                 r.TryOffset, r.TryLength, r.HandlerOffset, r.HandlerLength, r.FilterOffset }) });
     }
-    if (rows.Count == 0) throw new InvalidDataException("No selected methods");
+    if (examinedMethods == 0) throw new InvalidDataException("No selected methods");
     var result = new { input, bytes = file.Length,
         mvid = metadata.GetGuid(metadata.GetModuleDefinition().Mvid), type = args[1],
+        coverage = new { selected_types = selected.Length, examined_methods = examinedMethods,
+            decoded_methods = decodedMethods, operand_filter = args.Length == 5 ? args[4] : null },
         methods = rows, scope = "offline CIL/metadata only; no target execution or dependency loading" };
     var output = Path.GetFullPath(args[3]);
     Directory.CreateDirectory(Path.GetDirectoryName(output)!);

@@ -1,5 +1,7 @@
 # 沙堡：水面所用相机颜色与深度纹理的静态来源
 
+> 后续 [10：相机颜色格式选择](10-camera-color-format-selection.md)已追到静态 colorFormat 的 HDR 类别查询和色彩空间转换；具体设备查询返回值仍非静态常量。
+
 本篇闭合 [08](08-material-bindings-render-state-and-invalidation.md) 留下的两张相机纹理生产者断点。证据来自同一安装版本的 `GameAssembly.dll`、`Sandcastle_Data/il2cpp_data/Metadata/global-metadata.dat` 和 [06](06-surface-materials-and-effects.md) 已核的 Shader 587；文件身份沿用 [01](01-artifact-and-method-map.md) 的记录，本轮没有扩大输入或重新计算摘要。研究全程只读、未运行游戏。以下“调用”是静态原生指令事实；实际一帧的图像、显存和耗时仍需运行抓帧。
 
 ## 属性 ID 的字符串和句柄各有独立来源

@@ -1,5 +1,7 @@
 # SUMMERHOUSE：回贴过滤与 LOD 的静态来源
 
+> 后续 [09：LOD 写入与 pass 顺序](09-lod-writers-and-pass-order.md)补默认 feature/URP 的调度：已读路径中，成功 copy300 写 0 后到 back400 没有另一处非零 writer；本篇共享属性机制和跳过复制的边界仍成立。
+
 [07](07-pixel-blit-depth-and-local-render-route.md)已经确认颜色、深度各取样一次并回写颜色/深度。本篇补两个上游：**包内 inline sampler 的原始记录为 `0x54 / s0`，按固定版本格式解读是 Point + Clamp；LOD 则来自引擎共享属性块，复制 pass 明确写 0，最终自定义材质回贴重载沿用其当前值。** 因此“该路径先写入 LOD 0”有指令依据，“所有帧回贴必定 LOD 0”仍需要额外的调度条件。
 
 ## 证据身份与边界
