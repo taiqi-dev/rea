@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[14：顶点alpha与遮罩裁剪](14-vertex-color-mask-and-local-updates.md)：实际墙块的包内alpha=1，Maskable.Awake在实例子网格写为0，接到Shader622消费；与全局参数更新分别解释，实际帧和成本仍未测。
+
 最新续查见[13：全局遮罩的材质消费](13-global-mask-material-consumers.md)：逐变体压缩参数接到Shader622的实际纹理槽、动画世界坐标、透明度和提前裁剪。12个前向变体中8个消费遮罩，其他shader逐变体覆盖与运行性能仍未验证。
 
 本轮调查的是本机发行版 `SUMMERHOUSE` 1.2.12 的静态托管代码与发行资源，聚焦与 Tiny Glade 可比较的建筑、邻接、层次、装饰和变体机制。先看[证据与边界](00-evidence-and-scope.md)，再按问题读：

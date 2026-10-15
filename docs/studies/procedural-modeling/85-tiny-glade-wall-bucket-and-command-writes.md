@@ -1,5 +1,7 @@
 # Tiny Glade：墙条目首桶条件与命令缓冲回写
 
+后续[87](87-tiny-glade-final-command-backing-and-writers.md)接通raw handle图导入和注册器tag3分派：该状态保留原buffer，不在此扩容。四个非计数字段和最终容量仍未知。
+
 承接 [83](83-tiny-glade-slot23-write-growth-and-submission.md) 的阶段 3 与 typed `DrawIndexedIndirectBuffer` 链。本轮补上的正向连接是：`render` 构造、填充、排序的**同一个 `DrawLists` 地址**，经 `compile` 的闭包参数传给 `render_world`，再成为 shadow raster closure 读取的列表。`build_draw_lists` 把**没有 `DontCastShadow`** 的匹配实体加入第一桶；墙循环组的初始 spawn bundle 与该条件相容，因此阶段 3 的槽 23 路径在静态结构上可达，仍须实体存活、查询及回调门控。另核对了 typed buffer 的 `finish_write_rg_buffer → GraphImportable::export`：它将已导入的图资源登记为导出，所查指令不直接填充五字段或改写长度；图编译后的 backing 仍需另证。
 
 ## 输入与证据范围

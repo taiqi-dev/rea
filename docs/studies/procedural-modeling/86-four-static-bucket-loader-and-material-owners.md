@@ -1,5 +1,7 @@
 # 四款游戏：墙组入桶、加载器边界与材质消费
 
+后续[88](88-four-static-import-length-and-color-writers.md)补上导入分派、通用对象长度门、普通配置属性门与实际顶点alpha写端；本篇保留其当轮范围。
+
 本轮承接[84](84-four-static-readers-and-render-filters.md)，四款各新增一篇专题。**Tiny Glade 已明确墙组进入首桶的组件条件，SUMMERHOUSE 已接通选定材质的遮罩消费；沙堡找到了实际 PlayerSettings 虚表和类注册，但末尾三值的构建生产者仍未知。** 全部为静态调查，运行验证 **Not Run**。
 
 | 专题                                                                                              | 本轮接通的连接                                                                                                                                                                                                            | 尚未闭合的边                                                                                                                                  |

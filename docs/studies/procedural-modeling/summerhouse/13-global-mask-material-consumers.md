@@ -1,5 +1,7 @@
 # SUMMERHOUSE：全局遮罩到材质采样、透明度与裁剪
 
+后续[14](14-vertex-color-mask-and-local-updates.md)已从实际墙块Mesh COLOR0接到Maskable.Awake的alpha写端，再回到本篇裁剪输入；实际变体选择与运行像素仍未验证。
+
 [12](12-mask-camera-filter-and-shader-data.md)已追到 MaskingMap 的灰度生产。本篇把其中一类实际材质的消费端接通：**Shader622 的前向片元程序有 12 个变体，其中 8 个通过逐变体参数记录绑定 `_GlobalMaskTexture`，4 个普通不透明变体不绑定它。透明变体将比较结果用于 alpha；Alpha Test 变体在主要光照计算之前执行裁剪。** 这不是全部材质的覆盖结论，也没有实际帧、GPU 或性能测量。
 
 ## 输入、范围与参数表的关键区别

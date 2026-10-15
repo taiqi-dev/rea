@@ -1,5 +1,7 @@
 # 沙堡：PlayerSettings 尾部 `3` 的处理边界
 
+后续[15](15-tail-production-and-serialized-loader.md)已找到通用直接分支的对象`+0x90`虚调用、游标/上界和返回长度门；class129是否进入该分支及构建writer仍未闭合。
+
 [13](13-player-settings-exact-tail-mapping.md) 已把安装包内二进制 reader 的末项读值定位到对象 `+0x38c`。本篇继续问：**对象 `+0x390` 的 `3` 是否被相邻 typed 回调或外层加载器接管，谁在构建时写入它？** 新静态证据把 reader 接到 `PlayerSettings` 对象的实际虚表及 class 129 注册表，但仍没有接通通用加载器的虚调用或对象长度门。末尾四字节不能据此称为无用、padding 或可丢弃字段。
 
 ## 对象虚表和类注册的直接连接

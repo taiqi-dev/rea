@@ -1,5 +1,7 @@
 # 掘地求财：关卡地形材质模式的初始权威与覆盖边界
 
+后续[13](13-material-property-flags-and-config-gates.md)核对本作属性flags和普通LoadConfig筛选门，收窄默认值配置覆盖的范围；特殊加载与其他写端仍保留未知。
+
 [11](11-chunk-material-mode-selection.md)把 `MaterialConfig=0` 连到 chunk 的单材质分支，但仍保留“是否另有 Blueprint/archetype 默认值或加载时覆盖”的问题。本篇核对 `MainLevel` 的实际 actor 模板身份，以及加载后首次建世界和重建 renderer 的取值入口。结论限定于**这份发行关卡实例和已读的本作原生函数**，不声称穷尽游玩期间的脚本写入。
 
 ## 关卡 actor 的模板是原生 VoxelWorld CDO
