@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[17：TAA目标生命周期与关闭成本](17-taa-target-lifetime-and-disabled-cost.md)：CPU状态对象、Init、目标分配与释放分别接通；普通入口在AA=None条件下走释放／清空分支。实际相机准入、帧次和性能仍未验证。
+
 最新续查见[16：完整追加配置与效果门](16-additional-camera-layout-and-effect-gates.md)：补完两对象原余124 B；主后处理开启、遮罩关闭，两者AA=None。接通初始化和版本迁移条件，实际pass／重绘频率及性能仍未验证。
 
 最新续查见[15：遮罩相机排序与准入](15-mask-camera-order-and-render-admission.md)：实际父子层级、Base 类型和 depth 接到 URP 比较器；两台同时进入列表时遮罩先绘制。原生列表准入、截图调度及重绘频率仍未知，运行未做。

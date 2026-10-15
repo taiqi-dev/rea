@@ -1,5 +1,7 @@
 # Tiny Glade：typed 命令缓冲的替换入口与容量边界
 
+后续[94](94-tiny-glade-bufferstate-pointer-writers.md)从BufferState字段写入、实际构造vtable和图完成分支补查；取raw handle所用虚槽也没有隐含替换。未发现本键的新句柄，最终容量和槽23四字段继续未知。
+
 承接 [81](81-tiny-glade-command-initialization-and-slot23.md)、[87](87-tiny-glade-final-command-backing-and-writers.md)、[89](89-tiny-glade-other-command-writers.md)、[90](90-tiny-glade-command-capacity-and-lifetime.md)。本轮找到可对照的 **同一个 `AssetSsboLibrary` 容器的替换机制**，但在这份发行制品的具名特化里，`DrawIndexedIndirectBuffer` 有 `add_new`、图读写/完成及 tuple fetch 等入口，**未找到该类型的 `replace_with_data`**。它的已定位 `add_new` 重复键分支报错；通用 `update_buffer_bytes` 按原 raw buffer 记录大小检查目标区间，不能靠这一接口把 460 B 的原 buffer 扩为覆盖槽 23 的 480 B。以上是有界静态结论；其它类型擦除写入、图记录重建或 GPU 路径尚未穷尽，最终逻辑容量和槽 23 四字段仍未知。
 
 ## 目标、方法与原始证据

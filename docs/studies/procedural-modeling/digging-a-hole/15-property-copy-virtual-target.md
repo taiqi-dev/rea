@@ -1,5 +1,7 @@
 # 掘地求财：两个模式枚举的默认值复制宽度
 
+后续[16](16-generated-class-property-link.md)把本作生成类注册、属性表与类链接到StaticLink(false)及实际LinkInternal虚分派。本篇的正常链接条件已有具体入口支持，CDO值与运行调用仍未知。
+
 沿 [14](14-other-mode-writers-and-default-copy.md) 的 `FObjectInitializer::InitProperties` 继续追查，静态链条现可接到 **一字节 `memcpy`**：`AVoxelWorld.MaterialConfig` 和 `RenderType` 的 generated 描述符选择 `FEnumProperty`，各有一个 `FByteProperty` 底层属性。枚举属性完成正常 `LinkInternal` 后取得一字节元素大小和 bit30；`InitProperties` 据 bit30 走直接内存复制。**枚举虚表 `+0x100` 槽确实指向空实现，但在这个已链接条件下不走该槽。** 这修正了仅凭构造期 flags 把虚调用视为两字段最终复制方式的推断。
 
 目标、身份和静态读取边界沿用 [00](00-evidence-and-reproduction.md)、[13](13-material-property-flags-and-config-gates.md)；本轮只读 `C:/Software/Steam/steamapps/common/A Game About Digging A Hole/DiggingGame/Binaries/Win64/DiggingGame-Win64-Shipping.exe` 及其同目录 PDB。没有重算摘要、执行目标代码或观察游戏。新增原始 PDB/PE/反汇编记录在 ignored `.cache/procedural-modeling/static-replacement-followup/digging-a-hole/`。

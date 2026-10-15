@@ -1,5 +1,7 @@
 # 四款游戏：替换边界、构建端线索与效果开关
 
+最新续查见[95](95-four-static-bufferstate-and-reference-transfer.md)：补核BufferState实际写端／取句柄虚槽、沙堡+0x88引用回填、生成类正常链接与TAA目标生命周期。本篇保留原轮次范围。
+
 接续[91](91-four-static-other-writers-and-reader-selection.md)。本轮继续收紧静态链：**Tiny Glade 已排除重复插入和通用字节更新作为本缓冲扩容解释；沙堡发行范围仍缺少尾值 `3` 的构建生产者。** 掘地求财接通链接后的单字节属性复制，SUMMERHOUSE 补完两台相机的追加配置及后处理／抗锯齿门。没有运行游戏或目标函数。
 
 | 专题                                                                                         | 本轮新增连接                                                                                                                                                     | 当前缺口                                                                                     |

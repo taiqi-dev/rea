@@ -1,5 +1,7 @@
 # Sandcastle Demo：沙、水与地表生成的静态研究
 
+最新续查见[18：+0x88引用传递与尾字节边界](18-transfer88-and-tail-production.md)：六个顶层调用接到资源引用成员／数组及条件回填，末段没有可见额外tail写。接口目标和构建生产者仍未知，运行未做。
+
 最新续查见[17：尾值3的构建端证据边界](17-tail-build-writer-and-profile.md)：七份选定资源没有另一个class129或类型树，本机两个相关虚槽为空；尚未定位构建writer/profile到末尾3的生产链。运行未做。
 
 最新续查见[16：class129 读取分支与尾值来源边界](16-class129-reader-branch-and-tail-origin.md)：无 type tree 的实际类型记录接到直接 reader；从对象首字节读取，912/916 差额进入不等长诊断。末尾 3 的构建 writer/成员与诊断实际后果仍未知，运行未做。

@@ -1,5 +1,7 @@
 # SUMMERHOUSE：相机追加配置的完整布局与效果开关
 
+后续[17](17-taa-target-lifetime-and-disabled-cost.md)补上TAA状态对象与历史纹理的分离：Init不直接分配，普通入口由启用门选择AllocateTargets或DeallocateTargets。本篇的CPU维护与真实成本未知边界继续适用。
+
 [15](15-mask-camera-order-and-render-admission.md)只读到两个 `UniversalAdditionalCameraData` 对象的前 56 B，尚余 124 B。本篇通过同一发行 DLL 的字段类型、`SerializeField`／非序列化标志与嵌套 TAA Settings，把选定布局完整读取到 180 B：**主相机的后处理开关为 1，遮罩相机为 0；两者抗锯齿模式均为 None。** 保存的 TAA 参数不是 TAA 已启用的证据。对象原生准入、动态改写、实际 pass／GPU 成本仍未运行验证。
 
 ## 布局的证据与完整消费
