@@ -13,6 +13,7 @@
 9. [LOD 写入者与 pass 顺序](09-lod-writers-and-pass-order.md)：默认配置、稳定事件排序、图集 writer 与回贴之间的实际静态先后。
 10. [低分辨率目标的 mip 与附件](10-low-resolution-mips-and-attachments.md)：主相机 target、默认 mip 标志、颜色/深度分配，以及重绘与回贴的附件身份。
 11. [遮罩目标与截图相机切换](11-mask-target-and-camera-overrides.md)：MaskingMap 的外部引用、过滤/mip 配置与全局发布，以及主相机截图的目标替换和正常清理。
+12. [相机层筛选与遮罩内容](12-mask-camera-filter-and-shader-data.md)：相机剔除与feature层掩码交集，Mask材质的完整pass/程序索引，以及世界Z灰度编码。
 
 **已验证的主要区别：**这份程序集以 `BuildingBlock` 预制件为构造单位，使用格点吸附、Z 深度候选和相对位置组合规则。组合成功可以解锁新块，也可用另一块替换已放置块。调查中没有发现足以证明它像 Tiny Glade 那样从连续建筑轮廓生成墙、屋顶和接缝的代码路径；这个否定仅限于当前读取的 `Assembly-CSharp.dll` 与选定模块，不涵盖包内全部资源或其它代码。Tiny Glade 的相应证据见[建筑资产与拼装](../64-tiny-glade-building-kit-and-asset-assembly.md)。
 

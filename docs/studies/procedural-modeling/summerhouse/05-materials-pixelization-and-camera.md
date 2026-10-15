@@ -1,5 +1,7 @@
 # SUMMERHOUSE：材质、像素化与相机的实际资源链
 
+**相机覆盖修订：** [12](12-mask-camera-filter-and-shader-data.md)确认主相机掩码759排除层8，feature471无法把它恢复；下文“层8落在feature范围”的事实不代表Mask进入主相机重绘。MeshRenderer启用字节也已从+14修正为+12，当前634个对象的旧投影值恰好不变。
+
 **后续补证：** [07](07-pixel-blit-depth-and-local-render-route.md) 已按真实 LZ4 表解出 Shader 65，核实颜色/深度取样和 pass 混合状态。本篇“最终采样未知”保留为上一轮记录，以 07 的新增证据和剩余边界续接。
 
 本篇续接[发行块与组合](04-packaged-blocks-and-combinations.md)和[保存及换色](03-save-palette-and-visuals.md)。目标是解释已发行资源怎样把方块变成可渲染对象，以及像素化是否接入相机。所有结论来自静态文件和托管 CIL；没有启动游戏或取得玩家画面。证据身份沿用[00](00-evidence-and-scope.md)：`Assembly-CSharp.dll` SHA-256 `f4e8bf23…8379de`、MVID `84569538-a19f-4c17-8ccf-f40b95e99253`；资源摘要和偏移以下逐项给出。本文的 Unity pathID、文件内字节偏移和 IL 偏移仅对本次包有效。

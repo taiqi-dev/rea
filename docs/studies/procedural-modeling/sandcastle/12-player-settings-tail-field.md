@@ -1,5 +1,7 @@
 # 沙堡：PlayerSettings 末尾四字节的归属与字段歧义
 
+**后续修订：** [13](13-player-settings-exact-tail-mapping.md)已追到本地二进制reader，明确它把+0x38c的零读入allowedHttpConnections，+0x390的三值尚未消费。下文两映射保留为前轮假说；构建侧尾载荷的生产成员仍未知。
+
 [11](11-color-space-configuration.md) 的精确版本 Release 类型树把本作 `PlayerSettings.m_ActiveColorSpace` 解到对象 `+0xf8=1`，但仅解释 916 字节对象中的前 912 字节。本篇专门挑战末尾 `03 00 00 00` 的来源。**静态确定的是它属于 class 129 的对象载荷；尚不能给它唯一的成员名。** 公开项目配置中 `allowedHttpConnections: 3` 使它是一个有根据的候选，但本作自己的零值槽及类型树差异尚未消歧，不能把候选写成事实。此前色彩空间配置 `Linear=1` 的字段定位不受这段尾部歧义影响。
 
 ## 从对象表到最后两个四字节

@@ -1,5 +1,7 @@
 # Tiny Glade：间接命令的初始数据与槽 23 边界
 
+阶段3的shadow上游、首桶传参及主命令表到只读转换节点的续查见[83](83-tiny-glade-slot23-write-growth-and-submission.md)；后续写入/扩容仍未闭合，本篇初始状态证据继续适用。
+
 承接 [79](79-tiny-glade-draw-command-slot-provenance.md) 的同一 typed `DrawIndexedIndirectBuffer`：本轮从构造端确认其**空输入创建路径**请求 `0x1CC=460` B 零数据，即 23 条 20 B 命令的初始 payload。墙回调的槽 23 则从偏移 460 B 读取 20 B。两者构成一个**有条件的范围冲突**：只有 backing buffer 在该 draw 之前仍保持 460 B 逻辑可用长度、且阶段 3 的该条目实际到达提交时才成立。当前静态证据没有证明这些运行条件同时成立，因此不能断言游戏发生越界、无绘制或驱动错误，也不能把槽 23 称为已确认的保留槽。
 
 ## 证据范围

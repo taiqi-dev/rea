@@ -1,5 +1,7 @@
 # SUMMERHOUSE：遮罩纹理来源与截图相机的目标切换
 
+遮罩的相机层筛选、完整shader pass索引和写入灰度的公式续见[12](12-mask-camera-filter-and-shader-data.md)；本篇资源来源及截图切换证据保留原范围。
+
 [10](10-low-resolution-mips-and-attachments.md)已解释普通主相机的低分辨率目标，本篇补上两个具体例外。**Masking Camera 的外部目标确实是 `MaskingMap`：2048×2048、Point/Clamp、关闭 mip。ScreenshotTaker 绑定的则是主相机，静态代码会临时给它设置 1024×1024 的 RenderTexture。** 因而主相机的空 target 配置不能推广到截图调用内部；遮罩纹理也不是主相机低分辨率颜色目标。
 
 ## 证据范围与读取方法

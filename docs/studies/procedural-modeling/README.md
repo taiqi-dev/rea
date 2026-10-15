@@ -1,6 +1,8 @@
 # 程序化建造与美术研究
 
-最新续查见[四款游戏：初始化、尾字段与相机目标](82-four-static-initialization-and-tail.md)：Tiny Glade 的 23 条初始零命令与槽 23 边界、沙堡尾值的两种映射、掘地求财材质到 section，以及 SUMMERHOUSE 遮罩/截图目标。前两项仍保留明确静态缺口，运行验证未做。
+最新续查见[四款游戏：二进制读取、提交条件与过滤](84-four-static-readers-and-render-filters.md)：沙堡零槽到allowed的实际reader映射、Tiny Glade阶段3与只读转换节点、掘地求财chunk模式，以及SUMMERHOUSE相机层交集和遮罩灰度。Tiny Glade写入/扩容、沙堡三值的构建来源仍未闭合，运行未做。
+
+前轮见[四款游戏：初始化、尾字段与相机目标](82-four-static-initialization-and-tail.md)：Tiny Glade 的 23 条初始零命令与槽 23 边界、沙堡尾值的两种映射、掘地求财材质到 section，以及 SUMMERHOUSE 遮罩/截图目标。前两项仍保留明确静态缺口，运行验证未做。
 
 上一轮见[四款游戏：碰撞接受、命令槽与渲染目标](80-four-static-resource-acceptance.md)：旧碰撞结果的编号门、Tiny Glade 命令槽 16–22 与仍未闭合的 23、沙堡打包 Linear 配置，以及 SUMMERHOUSE 的 mip/附件链。前轮[提交与调度](78-four-static-submission-chains.md)、[指定断点结果](76-four-static-chain-answers.md)和[渲染连接账本](73-four-game-render-chain-closure.md)保留原有范围；[运行验证用例](74-runtime-validation-cases.md)本轮依要求未运行。
 

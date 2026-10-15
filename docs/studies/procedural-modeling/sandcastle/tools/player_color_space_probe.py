@@ -21,6 +21,8 @@ PRIMITIVES = {
     "char": ("B", 1),
     "UInt8": ("B", 1),
     "SInt8": ("b", 1),
+    "UInt16": ("H", 2),
+    "SInt16": ("h", 2),
     "int": ("i", 4),
     "unsigned int": ("I", 4),
     "SInt64": ("q", 8),

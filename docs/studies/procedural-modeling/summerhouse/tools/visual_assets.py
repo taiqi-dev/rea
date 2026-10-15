@@ -149,8 +149,11 @@ def main():
         for ref in refs:
             if ref["file_id"] == 0 and ref["path_id"]:
                 raw(ref["path_id"], 21)
+        if blob[12] not in (0, 1):
+            raise ValueError(f"Invalid MeshRenderer enabled flag in {path_id}")
         return {"path_id": path_id, "offset": items[path_id]["offset"], "materials": refs,
-                "enabled": bool(blob[14])}
+                # Release MeshRenderer: enabled +12, cast/receive shadows +13/+14.
+                "enabled": bool(blob[12])}
 
     block_meshes = json.loads((args.input / "building-block-meshes.json").read_text(encoding="utf-8"))
     selected_ids = {7196, 7632, 7510, 7432}
