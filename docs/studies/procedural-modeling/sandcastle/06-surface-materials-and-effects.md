@@ -1,5 +1,7 @@
 # 沙堡：湿沙颜色、水体折射与光照
 
+后续 [08](08-material-bindings-render-state-and-invalidation.md) 补齐实际场景组件到 Material/Shader/纹理的引用，以及所选 Forward 的 blend/depth 状态；本篇公式证据保留，运行表现仍未验证。
+
 本篇补[表面网格研究](05-surface-mesh-and-water-rendering.md)没有展开的美术表现。新证据来自同一安装版本的 Shader 参数表、沙面顶点/片元和水面片元指令；没有启动游戏。可以确认湿沙过渡、随流动变化的纹理、屏幕空间折射、随距离衰减的水底颜色和方向光高光。实际材质数值、最终混合状态、玩家画面与帧耗时仍未测得。
 
 ## 证据身份和参数连接

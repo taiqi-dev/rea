@@ -1,5 +1,7 @@
 # Tiny Glade 局部更新与绘制列表成本
 
+后续 [72](72-tiny-glade-cpu-render-bindings-and-lifecycle.md) 补充 `render_world` 的 pass 编排、binding 与直接/间接绘制入口；本篇的静态成本与未运行边界保留。
+
 本篇回答一个范围明确的问题：一次或多次建筑编辑改变了哪些CPU对象与GPU实例；已有实例又怎样进入可见性筛选和绘制列表。静态证据支持**按语义对象重建产物**与**按当前候选集合生成绘制列表**两种不同粒度，不能把后者缩成“只检查刚编辑的砖”，也不能据函数存在声称每个游戏帧必然执行。本篇成本是由循环、记录宽度和着色器工作组推出的规模关系，**不是FPS或实测耗时**。
 
 既有[共享失效](45-tiny-glade-shared-invalidation-and-rebuild.md)、[屋顶消息](50-tiny-glade-roof-edit-messages-and-regeneration.md)、[编辑到实例上传](55-tiny-glade-edit-rebuild-stages-and-upload.md)、[屋瓦GPU可见性](49-tiny-glade-roof-gpu-visibility-and-depth.md)、[植被active-list](51-tiny-glade-vegetation-counts-and-active-list-rebuild.md)及[历史回放](62-tiny-glade-history-snapshots-and-regeneration.md)给出各生产者边界。本篇新增CPU绘制编排、派生buffer初始化和选定墙/通用实例compute指令。资产身份与独立建筑资产边界见[67](67-tiny-glade-building-assets-and-assembly-ledger.md)。

@@ -8,6 +8,7 @@
 4. [发行资源中的方块与组合](04-packaged-blocks-and-combinations.md)：真实预制件 ID、相对格点配方和网格引用如何与代码接合。
 5. [材质、像素化与相机](05-materials-pixelization-and-camera.md)：预制块到材质/纹理引用、主相机与低分辨率重绘的实际配置链。
 6. [局部更新与渲染成本](06-local-updates-and-render-costs.md)：放置组合扫描、单目标材质切换、网格实例与条件性的格线重画开销。
+7. [像素化回贴、深度与局部修改](07-pixel-blit-depth-and-local-render-route.md)：Shader 65 的实际取样、透明混合和深度输出，以及块级修改怎样被层重绘消费。
 
 **已验证的主要区别：**这份程序集以 `BuildingBlock` 预制件为构造单位，使用格点吸附、Z 深度候选和相对位置组合规则。组合成功可以解锁新块，也可用另一块替换已放置块。调查中没有发现足以证明它像 Tiny Glade 那样从连续建筑轮廓生成墙、屋顶和接缝的代码路径；这个否定仅限于当前读取的 `Assembly-CSharp.dll` 与选定模块，不涵盖包内全部资源或其它代码。Tiny Glade 的相应证据见[建筑资产与拼装](../64-tiny-glade-building-kit-and-asset-assembly.md)。
 

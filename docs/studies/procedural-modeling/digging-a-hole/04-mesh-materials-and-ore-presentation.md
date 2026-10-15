@@ -1,5 +1,7 @@
 # 掘地求财：矿物网格的生成、摆放与移除
 
+后续 [06](06-mesh-material-binding-and-edit-lifecycle.md) 已解释 `0x4d` 执行流及 `DestroyOre` 局部销毁条件，并补 Voxel Basic 的 section/材质接收链；本篇矿物 StaticMesh 材质槽仍保留为未知。
+
 本篇补齐[挖掘与局部重建](01-excavation-and-local-rebuild.md)、[保存](02-save-load-and-consistency.md)和[性能边界](03-performance-and-independent-design.md)之外的可见物体路径：矿物与石块并非由本次已证实的体素 mesher 直接合成。游戏自己的 cooked `BP_OreSpawner` 图会添加 `StaticMeshComponent`，给它选择包内静态网格，再对其设置可见距离；角色命中后可把组件交回 spawner 移除。这是**发行制品中的静态执行语义**，不是已观察的游戏画面。
 
 目标仍是 `C:\Software\Steam\steamapps\common\A Game About Digging A Hole`，文件身份、工具和提取边界见[00](00-evidence-and-reproduction.md)。本篇新读 `BP_OreSpawner.uasset`（包名 `/Game/Blueprints/BP_OreSpawner`）、角色主图和 `SM_Ore_Coal.uasset`。蓝图字节码用[项目探针](tools/blueprint_probe.py)完整解码：spawner 主图序列化 `129075/129075` 字节、逻辑 `88931/88931` 字节。物体包按 Zen name/import/export 解析；忽略的本机原始记录在 `.cache/procedural-modeling/digging-a-hole/art-followup/`，不随文档迁移。本篇偏移是 Kismet **逻辑 code offset**，需要时另列 `.uasset` 文件偏移。没有启动或附加游戏，没有读取个人存档。
