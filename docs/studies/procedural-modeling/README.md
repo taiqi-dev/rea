@@ -1,4 +1,6 @@
-# Bad North 与 Tiny Glade 程序化模型研究
+# 程序化建造与美术研究
+
+本次续查加入 **Sandcastle Demo（沙堡）** 与 **SUMMERHOUSE**。先读[本机路径、证据迁移与三款对照](68-local-targets-and-three-game-comparison.md)。沙堡重点看[水沙模拟、工具和表面模型](sandcastle/README.md)；SUMMERHOUSE 重点看[格点拼装、前后层次和组合变体](summerhouse/README.md)。下方 Bad North 与 Tiny Glade 各轮记录保留其原有证据范围；新调查不把历史未验证项自动升级为通过。
 
 本case study的自研落地目标现统一为**Unity最小造房沙盒**。先读[Unity实施规格入口](unity-building-demo/README.md)，再按[研究到demo对应表](unity-building-demo/06-study-to-demo-map.md)选择原研究。规格已拆清AI/程序资产、墙/房屋/真实开口、挂灯、火水、永久破坏、局部重建与存档及验收；本轮先交付文档，尚未实现或运行Unity工程。历史研究保留原目标事实与未知，不被改写成我们的实现。
 
@@ -28,77 +30,77 @@
 
 第十五轮直接检查建筑小件资源与实际拼装：解析选定JSON网格、RON子类和包内起始小屋的参数状态，补上窗体/玻璃/楣梁请求、SDF层到真实窗组件的路径表、灯壳/inside/实际光源，以及相交处砖梁实例。原网格静态叠合预览与独立建模规格见64–66；完整renderer绑定、室内内腔和全局封口仍有缺口。
 
-| 阅读入口 | 内容 | 证据范围 |
-| --- | --- | --- |
-| [Unity最小造房demo规格](unity-building-demo/README.md) | 最小资产库、墙/小屋/窗洞、灯、燃烧/灭火/破坏、保存与M0–M7实施验收 | 独立自研方案；尚无Unity运行结果 |
-| [证据身份与范围](00-evidence-and-scope.md) | 安装路径、摘要、工具、版本对齐与未验证项 | 本地静态调查 |
-| [Bad North 岛屿生成](01-bad-north.md) | 候选传播、房屋与通行约束、模块重建、顶点软化 | 本地托管程序集 IL |
-| [Tiny Glade 建筑生成](02-tiny-glade.md) | 曲线空间、路径开拱、结构模块、GPU 实例、屋瓦动画 | 发行版符号和 SPIR-V，另列公开原型 |
-| [Tiny Glade 屋顶形状](03-tiny-glade-roof-shapes.md) | 20 点幂剖面、逆截面、高度上限、屋脊、檐口扩张 | 发行版 CPU 指令 |
-| [Tiny Glade 建筑相交](04-tiny-glade-intersections.md) | 墙坐标、洞口、石砖和木墙局部分割、接缝生成 | 发行版 CPU 指令及直接调用 |
-| [Tiny Glade 接缝显示](05-tiny-glade-seams.md) | 瓦片平面、天窗洞形、底板共面分相、梁和尖顶 | 发行版 SPIR-V 指令 |
-| [第二轮证据账本](06-tiny-glade-evidence-ledger.md) | 地址规则、解码覆盖、关键入口、算术检查和缺口 | 本地静态调查 |
-| [Tiny Glade 水域与河岸](07-tiny-glade-water-shape-and-banks.md) | 笔画、栅格、实际模糊通道、河床高度与泥土带 | 发行版 CPU 与 SPIR-V |
-| [Tiny Glade 水生植物及水面](08-tiny-glade-water-vegetation-and-surface.md) | 芦苇/睡莲簇状分布、花朵动画、噪声 LUT 与涟漪 | 发行版 SPIR-V，另核 CPU 调度 |
-| [水体证据账本](09-tiny-glade-water-evidence-ledger.md) | 上传桥接、四次模糊实参、位置、复核与未知 | 本地静态调查 |
-| [Tiny Glade 水面绘制与岸边过渡](10-tiny-glade-water-render-pipeline-and-bank-transition.md) | CPU 构图、地表顶点、暗岸带、世界外缘、深度与反射像素覆盖 | 发行版 CPU、SPIR-V 与网格结构 |
-| [Tiny Glade 楼梯端点与路径](11-tiny-glade-stair-anchors-and-paths.md) | 墙锚、宽度偏移、邻居评分、样条、弧长、地形托高与子段分类 | 发行版 CPU 指令与实际生产者 |
-| [Tiny Glade 踏步与平台](12-tiny-glade-stair-treads-and-platforms.md) | 玩家木/石踏步、连续楼面、平台等分布局、踢板与侧梁 | 发行版 CPU，另列 GPU 契约缺口 |
-| [Tiny Glade 楼梯支撑](13-tiny-glade-stair-supports.md) | 承托站位、底端探测、斜撑、墙侧射线、结构图与漂浮砖 | 发行版 CPU 条件公式及构件输出 |
-| [Tiny Glade 楼梯局部重建](14-tiny-glade-stair-local-rebuild.md) | 快照差、地块订阅、失效集合、碰撞/RT/显示清理与邻接标脏 | 发行版 CPU 生命周期与集合规则 |
-| [楼梯证据账本](15-tiny-glade-stair-evidence-ledger.md) | 身份、关键入口、各模块确认程度、原始证据与验证边界 | 本轮静态调查 |
-| [Tiny Glade 普通窗与墙洞生产](16-tiny-glade-window-placement-and-holes.md) | modified 窗对象、蓝图、粗洞/精细 cut 发布、周期副本与视觉比较 | 发行版 CPU 实际调用与数据转换 |
-| [Tiny Glade 窗洞与砖木重建](17-tiny-glade-window-wall-reconstruction.md) | 砖切分、板区域扣洞、每构件窗口列表、形状距离场及深度/法线 | 发行版 CPU 与木板 SPIR-V |
-| [Tiny Glade 窗框贴合](18-tiny-glade-window-frames.md) | 弦中点/yaw、出墙偏移、分段楣梁、gothic 局部参数与花槽标记 | 发行版 CPU 公式及模型请求 |
-| [Tiny Glade 窗边自动装饰](19-tiny-glade-window-autoclutter.md) | 窗台候选、双侧区域、加权选择、采样、重叠排除及局部更新 | 发行版 CPU 与明确的 deferred 生命周期 |
-| [窗户证据账本](20-tiny-glade-window-evidence-ledger.md) | 已确认/未知、身份、105 个去重范围、模块与算例验证 | 第六轮静态调查 |
-| [Tiny Glade 常春藤起点与状态](21-tiny-glade-ivy-roots-and-state.md) | 起点候选、墙侧、根点密度、预算、点与枝身份 | 发行版 CPU 实际读写与调用 |
-| [Tiny Glade 常春藤生长与贴墙](22-tiny-glade-ivy-growth-and-wall-following.md) | 方向噪声、墙坐标、洞口阻塞、跨墙余步与展开事件 | 发行版 CPU 公式和辅助函数 |
-| [Tiny Glade 常春藤枝叶与显示](23-tiny-glade-ivy-leaves-and-rendering.md) | 叶片筛选、位置朝向、延迟、叶花分类、粗细及 GPU 实例 | 发行版 CPU 与两个 SPIR-V 顶点模块 |
-| [Tiny Glade 常春藤修剪与变化](24-tiny-glade-ivy-pruning-and-updates.md) | 位置请求、头尾截断、叶片清理、根更新和整条删除 | 发行版 CPU 状态与消息消费者 |
-| [常春藤证据账本](25-tiny-glade-ivy-evidence-ledger.md) | 身份、关键入口、原始记录、验证与未知 | 第七轮静态调查 |
-| [Tiny Glade 道路洞口与合并](26-tiny-glade-road-openings-and-merge.md) | 四场采样、平滑/抬升、连续run、周期合并及精确分割坐标 | 发行版CPU指令与道路SPIR-V |
-| [Tiny Glade 石拱形状](27-tiny-glade-stone-arch-profiles.md) | 立方冠形、端部二次混合、H/B选择、高度映射和后续上限 | 发行版CPU公式与实际调用 |
-| [Tiny Glade 拱砖与显示](28-tiny-glade-arch-bricks-and-rendering.md) | .56长度目标、折线采样、砖轴/编码、普通墙拱高与片元裁洞 | 发行版CPU与石砖SPIR-V |
-| [Tiny Glade 道路拱门局部重建](29-tiny-glade-road-arch-local-rebuild.md) | 道路dirty、订阅与关联墙、事件、缓存替换及旧实例清理 | 发行版CPU状态与消息 |
-| [道路石拱证据账本](30-tiny-glade-road-arches-evidence-ledger.md) | 身份、入口、已回答与未知、原始范围及独立复核 | 第八轮静态调查 |
-| [Tiny Glade 地形笔刷与高度场](31-tiny-glade-terrain-strokes-and-heightfield.md) | 末段改形、p/H编辑、GPU距离场/max、平滑及u16编码 | 发行版CPU与SPIR-V实际绑定 |
-| [Tiny Glade 建筑地面采样与高度](32-tiny-glade-building-ground-sampling-and-heights.md) | 周边地面采样、参考曲线/差值、形状高度统计与石基标量 | 发行版CPU调用和公式 |
-| [Tiny Glade 石基表面与窗洞](33-tiny-glade-foundation-surfaces-and-cutouts.md) | 上下界、跳变面带、32quad分块、显示cutout及旧产物回收 | 发行版CPU与石基SPIR-V |
-| [Tiny Glade 地形读回与局部更新](34-tiny-glade-terrain-readback-and-local-updates.md) | 两高度buf、调用次数延迟、8×8判差、dirty并集及墙级筛选 | 发行版CPU身份和生命周期 |
-| [地形证据账本](35-tiny-glade-terrain-evidence-ledger.md) | 身份、阶段区分、原始范围、独立复核和未知 | 第九轮静态调查 |
-| [Tiny Glade 普通砖行](36-tiny-glade-brick-row-layout.md) | 行高、顶高场裁段、横分与错缝、行端扰动及碎砖门槛 | 发行版CPU公式和实际参数 |
-| [Tiny Glade 转角与扰动](37-tiny-glade-brick-corners-and-noise.md) | 近直角筛选、交替收口、占用区反馈、正弦哈希与四端值 | 发行版CPU指令 |
-| [Tiny Glade 木骨架与窗洞](38-tiny-glade-timber-layout-and-window-avoidance.md) | 高度带、候选点、周期窗口、一维减梁、窗下三段与构件类型 | 发行版CPU贯通生产链 |
-| [Tiny Glade 砖墙与木梁显示](39-tiny-glade-wall-and-timber-rendering.md) | 外层实际调用、砖GPU变形、曲梁80B参数/展开和精细cut上传 | 发行版CPU与SPIR-V |
-| [砖墙木骨架证据账本](40-tiny-glade-wall-layout-evidence-ledger.md) | 输入身份、关键入口、确认/未知、原始记录及独立复核 | 第十轮静态调查 |
-| [Tiny Glade 屋瓦铺排](41-tiny-glade-roof-tile-layout-and-clipping.md) | 64B瓦片、矩形输出、圆环计数/旋转/倾角、额外构件和清旧 | 发行版CPU实际生产与GPU字段 |
-| [Tiny Glade 屋瓦边平面](42-tiny-glade-roof-edge-planes-and-seams.md) | 本屋顶上下轮廓、plane余量/选择/压缩、GPU校正及相交缺口 | 发行版CPU与SPIR-V |
-| [Tiny Glade 普通木墙板](43-tiny-glade-wooden-wall-board-layout.md) | 粗洞/精细列表、方向/均分/递归、窄板合并、扩展墙面与曲板 | 发行版CPU实际调用与公式 |
-| [Tiny Glade 稳定随机](44-tiny-glade-stable-randomness.md) | 墙身份/行/区域seed、屋瓦零初态、实例counter及空间噪声 | 发行版规则及条件推导 |
-| [Tiny Glade 共享失效与重建](45-tiny-glade-shared-invalidation-and-rebuild.md) | 内容hash、staging发布、区域到墙、各产物所有权与调度限制 | 新发布桥与既有静态生命周期 |
-| [Tiny Glade 陆地植被](46-tiny-glade-land-vegetation-and-exclusions.md) | garden/建筑bush与flower、值噪声、草序列/双通道mask、预置树 | 发行版CPU绑定与SPIR-V |
-| [四系统证据账本](47-tiny-glade-four-systems-evidence-ledger.md) | 身份、四方向确认/未知、解释修正、原始记录与复核 | 第十一轮静态调查 |
-| [Tiny Glade 屋顶表面与附着](48-tiny-glade-roof-trigger-mesh-and-attachments.md) | triangle/UV/normal、4/9带与15格、数组替换、RT标记和装饰重心查询 | 发行版CPU实际读写与消费者 |
-| [Tiny Glade 屋瓦可见性与屋面深度](49-tiny-glade-roof-gpu-visibility-and-depth.md) | 11模块资源审计、视锥/visibility位、主HZB min与太阳max、局部FragDepth | 发行版SPIR-V与明确pass缺口 |
-| [Tiny Glade 编辑到重新铺瓦](50-tiny-glade-roof-edit-messages-and-regeneration.md) | typed消息桥、reader游标、实体generation、索引回收、形状分派和注册边界 | 发行版CPU调用与状态 |
-| [Tiny Glade 植被计数与活跃列表](51-tiny-glade-vegetation-counts-and-active-list-rebuild.md) | draw模板reset、草计数clear、45056输入/逻辑ID、活动前缀与消费 | 发行版CPU、SPIR-V及ABI推导 |
-| [屋顶与植被续查账本](52-tiny-glade-roof-and-vegetation-followup-ledger.md) | 身份、四方向确认/未知、原始记录、独立复核和运行缺口 | 第十二轮静态调查 |
-| [Tiny Glade 墙线与轮廓输入](53-tiny-glade-wall-footprint-input-and-curves.md) | 世界/屏幕采点、Curve弧长/失败、50轮平滑/RDP、圆矩形和状态owner | 发行版CPU生产链与具体分支 |
-| [Tiny Glade 编辑拾取与墙面放置](54-tiny-glade-edit-picking-and-wall-placement.md) | ray、两种hit、最近段/墙坐标、周期资格、目的地与放置写端 | 发行版CPU，明确磁吸/尺寸缺口 |
-| [Tiny Glade 编辑阶段与实例上传](55-tiny-glade-edit-rebuild-stages-and-upload.md) | 状态/dirty键、45名称、阶段图连边、砖回收/64Bpush与范围写入口 | 发行版CPU静态配置与调用 |
-| [Tiny Glade 树木展开与树冠](56-tiny-glade-tree-resources-growth-and-canopy.md) | 资源/处理器边界、干冠不同展开、风摆/弯曲、冠片及纹理门槛 | 包内配置/元数据与SPIR-V |
-| [Tiny Glade 岩层位移](57-tiny-glade-rock-mesh-displacement-and-masks.md) | 单元网格/48B记录、ID扰动、组合mask、贴地/坡、法线与失活 | 发行版CPU绑定与SPIR-V |
-| [输入编辑与树岩证据账本](58-tiny-glade-input-edit-and-natural-shapes-ledger.md) | 身份、四方向回答程度、修正、范围及验证 | 第十三轮静态调查 |
-| [Tiny Glade 窗户邻居协调](59-tiny-glade-decoration-snapping-and-merging.md) | 候选、等级/新尺寸、中心调整、第三者排除、评分与写回 | 发行版CPU实际分支与存储 |
-| [Tiny Glade 墙厚与轮廓收口](60-tiny-glade-wall-thickness-and-contour-joints.md) | 外轮廓、墙坐标/法线、普通砖深度、短片段和转角策略 | 发行版CPU，明确全局offset缺口 |
-| [Tiny Glade 树木网格加工](61-tiny-glade-tree-mesh-processing-and-publication.md) | 干冠筛选、重映射、冠片中心/法线、默认属性与实例staging | 发行版CPU与资源属性统计 |
-| [Tiny Glade 历史与恢复重建](62-tiny-glade-history-snapshots-and-regeneration.md) | 操作聚合、未来裁剪、JSON、快照选择、回放写端与ID恢复 | 发行版CPU，明确运行/持久化缺口 |
-| [装饰轮廓树木历史账本](63-tiny-glade-coordination-contours-trees-and-history-ledger.md) | 四方向确认/未知、身份、原始记录与核验 | 第十四轮静态调查 |
-| [Tiny Glade 建筑小件与拼装](64-tiny-glade-building-kit-and-asset-assembly.md) | 原网格叠合预览、参数化小屋、砖板瓦窗灯和辅助几何 | 发行资源JSON/RON、包内历史样例与CPU请求 |
-| [Tiny Glade 窗洞与灯具部件](65-tiny-glade-window-holes-and-lantern-components.md) | 组件请求、真实SDF输入、墙重建、挂灯变换及光源/发光 | 发行版CPU、资源和灯具SPIR-V |
-| [Tiny Glade 接缝与自研建模规格](66-tiny-glade-seams-and-independent-building-kit-spec.md) | 接缝砖梁类型、显示裁剪、独立小件库与产物所有权 | 发行版写端及明确标注的自研建议 |
-| [建筑资产与拼装账本](67-tiny-glade-building-assets-and-assembly-ledger.md) | 问题回答程度、身份、资源来源、修正和核验 | 第十五轮静态调查 |
+| 阅读入口                                                                                    | 内容                                                                  | 证据范围                                |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------- |
+| [Unity最小造房demo规格](unity-building-demo/README.md)                                      | 最小资产库、墙/小屋/窗洞、灯、燃烧/灭火/破坏、保存与M0–M7实施验收     | 独立自研方案；尚无Unity运行结果         |
+| [证据身份与范围](00-evidence-and-scope.md)                                                  | 安装路径、摘要、工具、版本对齐与未验证项                              | 本地静态调查                            |
+| [Bad North 岛屿生成](01-bad-north.md)                                                       | 候选传播、房屋与通行约束、模块重建、顶点软化                          | 本地托管程序集 IL                       |
+| [Tiny Glade 建筑生成](02-tiny-glade.md)                                                     | 曲线空间、路径开拱、结构模块、GPU 实例、屋瓦动画                      | 发行版符号和 SPIR-V，另列公开原型       |
+| [Tiny Glade 屋顶形状](03-tiny-glade-roof-shapes.md)                                         | 20 点幂剖面、逆截面、高度上限、屋脊、檐口扩张                         | 发行版 CPU 指令                         |
+| [Tiny Glade 建筑相交](04-tiny-glade-intersections.md)                                       | 墙坐标、洞口、石砖和木墙局部分割、接缝生成                            | 发行版 CPU 指令及直接调用               |
+| [Tiny Glade 接缝显示](05-tiny-glade-seams.md)                                               | 瓦片平面、天窗洞形、底板共面分相、梁和尖顶                            | 发行版 SPIR-V 指令                      |
+| [第二轮证据账本](06-tiny-glade-evidence-ledger.md)                                          | 地址规则、解码覆盖、关键入口、算术检查和缺口                          | 本地静态调查                            |
+| [Tiny Glade 水域与河岸](07-tiny-glade-water-shape-and-banks.md)                             | 笔画、栅格、实际模糊通道、河床高度与泥土带                            | 发行版 CPU 与 SPIR-V                    |
+| [Tiny Glade 水生植物及水面](08-tiny-glade-water-vegetation-and-surface.md)                  | 芦苇/睡莲簇状分布、花朵动画、噪声 LUT 与涟漪                          | 发行版 SPIR-V，另核 CPU 调度            |
+| [水体证据账本](09-tiny-glade-water-evidence-ledger.md)                                      | 上传桥接、四次模糊实参、位置、复核与未知                              | 本地静态调查                            |
+| [Tiny Glade 水面绘制与岸边过渡](10-tiny-glade-water-render-pipeline-and-bank-transition.md) | CPU 构图、地表顶点、暗岸带、世界外缘、深度与反射像素覆盖              | 发行版 CPU、SPIR-V 与网格结构           |
+| [Tiny Glade 楼梯端点与路径](11-tiny-glade-stair-anchors-and-paths.md)                       | 墙锚、宽度偏移、邻居评分、样条、弧长、地形托高与子段分类              | 发行版 CPU 指令与实际生产者             |
+| [Tiny Glade 踏步与平台](12-tiny-glade-stair-treads-and-platforms.md)                        | 玩家木/石踏步、连续楼面、平台等分布局、踢板与侧梁                     | 发行版 CPU，另列 GPU 契约缺口           |
+| [Tiny Glade 楼梯支撑](13-tiny-glade-stair-supports.md)                                      | 承托站位、底端探测、斜撑、墙侧射线、结构图与漂浮砖                    | 发行版 CPU 条件公式及构件输出           |
+| [Tiny Glade 楼梯局部重建](14-tiny-glade-stair-local-rebuild.md)                             | 快照差、地块订阅、失效集合、碰撞/RT/显示清理与邻接标脏                | 发行版 CPU 生命周期与集合规则           |
+| [楼梯证据账本](15-tiny-glade-stair-evidence-ledger.md)                                      | 身份、关键入口、各模块确认程度、原始证据与验证边界                    | 本轮静态调查                            |
+| [Tiny Glade 普通窗与墙洞生产](16-tiny-glade-window-placement-and-holes.md)                  | modified 窗对象、蓝图、粗洞/精细 cut 发布、周期副本与视觉比较         | 发行版 CPU 实际调用与数据转换           |
+| [Tiny Glade 窗洞与砖木重建](17-tiny-glade-window-wall-reconstruction.md)                    | 砖切分、板区域扣洞、每构件窗口列表、形状距离场及深度/法线             | 发行版 CPU 与木板 SPIR-V                |
+| [Tiny Glade 窗框贴合](18-tiny-glade-window-frames.md)                                       | 弦中点/yaw、出墙偏移、分段楣梁、gothic 局部参数与花槽标记             | 发行版 CPU 公式及模型请求               |
+| [Tiny Glade 窗边自动装饰](19-tiny-glade-window-autoclutter.md)                              | 窗台候选、双侧区域、加权选择、采样、重叠排除及局部更新                | 发行版 CPU 与明确的 deferred 生命周期   |
+| [窗户证据账本](20-tiny-glade-window-evidence-ledger.md)                                     | 已确认/未知、身份、105 个去重范围、模块与算例验证                     | 第六轮静态调查                          |
+| [Tiny Glade 常春藤起点与状态](21-tiny-glade-ivy-roots-and-state.md)                         | 起点候选、墙侧、根点密度、预算、点与枝身份                            | 发行版 CPU 实际读写与调用               |
+| [Tiny Glade 常春藤生长与贴墙](22-tiny-glade-ivy-growth-and-wall-following.md)               | 方向噪声、墙坐标、洞口阻塞、跨墙余步与展开事件                        | 发行版 CPU 公式和辅助函数               |
+| [Tiny Glade 常春藤枝叶与显示](23-tiny-glade-ivy-leaves-and-rendering.md)                    | 叶片筛选、位置朝向、延迟、叶花分类、粗细及 GPU 实例                   | 发行版 CPU 与两个 SPIR-V 顶点模块       |
+| [Tiny Glade 常春藤修剪与变化](24-tiny-glade-ivy-pruning-and-updates.md)                     | 位置请求、头尾截断、叶片清理、根更新和整条删除                        | 发行版 CPU 状态与消息消费者             |
+| [常春藤证据账本](25-tiny-glade-ivy-evidence-ledger.md)                                      | 身份、关键入口、原始记录、验证与未知                                  | 第七轮静态调查                          |
+| [Tiny Glade 道路洞口与合并](26-tiny-glade-road-openings-and-merge.md)                       | 四场采样、平滑/抬升、连续run、周期合并及精确分割坐标                  | 发行版CPU指令与道路SPIR-V               |
+| [Tiny Glade 石拱形状](27-tiny-glade-stone-arch-profiles.md)                                 | 立方冠形、端部二次混合、H/B选择、高度映射和后续上限                   | 发行版CPU公式与实际调用                 |
+| [Tiny Glade 拱砖与显示](28-tiny-glade-arch-bricks-and-rendering.md)                         | .56长度目标、折线采样、砖轴/编码、普通墙拱高与片元裁洞                | 发行版CPU与石砖SPIR-V                   |
+| [Tiny Glade 道路拱门局部重建](29-tiny-glade-road-arch-local-rebuild.md)                     | 道路dirty、订阅与关联墙、事件、缓存替换及旧实例清理                   | 发行版CPU状态与消息                     |
+| [道路石拱证据账本](30-tiny-glade-road-arches-evidence-ledger.md)                            | 身份、入口、已回答与未知、原始范围及独立复核                          | 第八轮静态调查                          |
+| [Tiny Glade 地形笔刷与高度场](31-tiny-glade-terrain-strokes-and-heightfield.md)             | 末段改形、p/H编辑、GPU距离场/max、平滑及u16编码                       | 发行版CPU与SPIR-V实际绑定               |
+| [Tiny Glade 建筑地面采样与高度](32-tiny-glade-building-ground-sampling-and-heights.md)      | 周边地面采样、参考曲线/差值、形状高度统计与石基标量                   | 发行版CPU调用和公式                     |
+| [Tiny Glade 石基表面与窗洞](33-tiny-glade-foundation-surfaces-and-cutouts.md)               | 上下界、跳变面带、32quad分块、显示cutout及旧产物回收                  | 发行版CPU与石基SPIR-V                   |
+| [Tiny Glade 地形读回与局部更新](34-tiny-glade-terrain-readback-and-local-updates.md)        | 两高度buf、调用次数延迟、8×8判差、dirty并集及墙级筛选                 | 发行版CPU身份和生命周期                 |
+| [地形证据账本](35-tiny-glade-terrain-evidence-ledger.md)                                    | 身份、阶段区分、原始范围、独立复核和未知                              | 第九轮静态调查                          |
+| [Tiny Glade 普通砖行](36-tiny-glade-brick-row-layout.md)                                    | 行高、顶高场裁段、横分与错缝、行端扰动及碎砖门槛                      | 发行版CPU公式和实际参数                 |
+| [Tiny Glade 转角与扰动](37-tiny-glade-brick-corners-and-noise.md)                           | 近直角筛选、交替收口、占用区反馈、正弦哈希与四端值                    | 发行版CPU指令                           |
+| [Tiny Glade 木骨架与窗洞](38-tiny-glade-timber-layout-and-window-avoidance.md)              | 高度带、候选点、周期窗口、一维减梁、窗下三段与构件类型                | 发行版CPU贯通生产链                     |
+| [Tiny Glade 砖墙与木梁显示](39-tiny-glade-wall-and-timber-rendering.md)                     | 外层实际调用、砖GPU变形、曲梁80B参数/展开和精细cut上传                | 发行版CPU与SPIR-V                       |
+| [砖墙木骨架证据账本](40-tiny-glade-wall-layout-evidence-ledger.md)                          | 输入身份、关键入口、确认/未知、原始记录及独立复核                     | 第十轮静态调查                          |
+| [Tiny Glade 屋瓦铺排](41-tiny-glade-roof-tile-layout-and-clipping.md)                       | 64B瓦片、矩形输出、圆环计数/旋转/倾角、额外构件和清旧                 | 发行版CPU实际生产与GPU字段              |
+| [Tiny Glade 屋瓦边平面](42-tiny-glade-roof-edge-planes-and-seams.md)                        | 本屋顶上下轮廓、plane余量/选择/压缩、GPU校正及相交缺口                | 发行版CPU与SPIR-V                       |
+| [Tiny Glade 普通木墙板](43-tiny-glade-wooden-wall-board-layout.md)                          | 粗洞/精细列表、方向/均分/递归、窄板合并、扩展墙面与曲板               | 发行版CPU实际调用与公式                 |
+| [Tiny Glade 稳定随机](44-tiny-glade-stable-randomness.md)                                   | 墙身份/行/区域seed、屋瓦零初态、实例counter及空间噪声                 | 发行版规则及条件推导                    |
+| [Tiny Glade 共享失效与重建](45-tiny-glade-shared-invalidation-and-rebuild.md)               | 内容hash、staging发布、区域到墙、各产物所有权与调度限制               | 新发布桥与既有静态生命周期              |
+| [Tiny Glade 陆地植被](46-tiny-glade-land-vegetation-and-exclusions.md)                      | garden/建筑bush与flower、值噪声、草序列/双通道mask、预置树            | 发行版CPU绑定与SPIR-V                   |
+| [四系统证据账本](47-tiny-glade-four-systems-evidence-ledger.md)                             | 身份、四方向确认/未知、解释修正、原始记录与复核                       | 第十一轮静态调查                        |
+| [Tiny Glade 屋顶表面与附着](48-tiny-glade-roof-trigger-mesh-and-attachments.md)             | triangle/UV/normal、4/9带与15格、数组替换、RT标记和装饰重心查询       | 发行版CPU实际读写与消费者               |
+| [Tiny Glade 屋瓦可见性与屋面深度](49-tiny-glade-roof-gpu-visibility-and-depth.md)           | 11模块资源审计、视锥/visibility位、主HZB min与太阳max、局部FragDepth  | 发行版SPIR-V与明确pass缺口              |
+| [Tiny Glade 编辑到重新铺瓦](50-tiny-glade-roof-edit-messages-and-regeneration.md)           | typed消息桥、reader游标、实体generation、索引回收、形状分派和注册边界 | 发行版CPU调用与状态                     |
+| [Tiny Glade 植被计数与活跃列表](51-tiny-glade-vegetation-counts-and-active-list-rebuild.md) | draw模板reset、草计数clear、45056输入/逻辑ID、活动前缀与消费          | 发行版CPU、SPIR-V及ABI推导              |
+| [屋顶与植被续查账本](52-tiny-glade-roof-and-vegetation-followup-ledger.md)                  | 身份、四方向确认/未知、原始记录、独立复核和运行缺口                   | 第十二轮静态调查                        |
+| [Tiny Glade 墙线与轮廓输入](53-tiny-glade-wall-footprint-input-and-curves.md)               | 世界/屏幕采点、Curve弧长/失败、50轮平滑/RDP、圆矩形和状态owner        | 发行版CPU生产链与具体分支               |
+| [Tiny Glade 编辑拾取与墙面放置](54-tiny-glade-edit-picking-and-wall-placement.md)           | ray、两种hit、最近段/墙坐标、周期资格、目的地与放置写端               | 发行版CPU，明确磁吸/尺寸缺口            |
+| [Tiny Glade 编辑阶段与实例上传](55-tiny-glade-edit-rebuild-stages-and-upload.md)            | 状态/dirty键、45名称、阶段图连边、砖回收/64Bpush与范围写入口          | 发行版CPU静态配置与调用                 |
+| [Tiny Glade 树木展开与树冠](56-tiny-glade-tree-resources-growth-and-canopy.md)              | 资源/处理器边界、干冠不同展开、风摆/弯曲、冠片及纹理门槛              | 包内配置/元数据与SPIR-V                 |
+| [Tiny Glade 岩层位移](57-tiny-glade-rock-mesh-displacement-and-masks.md)                    | 单元网格/48B记录、ID扰动、组合mask、贴地/坡、法线与失活               | 发行版CPU绑定与SPIR-V                   |
+| [输入编辑与树岩证据账本](58-tiny-glade-input-edit-and-natural-shapes-ledger.md)             | 身份、四方向回答程度、修正、范围及验证                                | 第十三轮静态调查                        |
+| [Tiny Glade 窗户邻居协调](59-tiny-glade-decoration-snapping-and-merging.md)                 | 候选、等级/新尺寸、中心调整、第三者排除、评分与写回                   | 发行版CPU实际分支与存储                 |
+| [Tiny Glade 墙厚与轮廓收口](60-tiny-glade-wall-thickness-and-contour-joints.md)             | 外轮廓、墙坐标/法线、普通砖深度、短片段和转角策略                     | 发行版CPU，明确全局offset缺口           |
+| [Tiny Glade 树木网格加工](61-tiny-glade-tree-mesh-processing-and-publication.md)            | 干冠筛选、重映射、冠片中心/法线、默认属性与实例staging                | 发行版CPU与资源属性统计                 |
+| [Tiny Glade 历史与恢复重建](62-tiny-glade-history-snapshots-and-regeneration.md)            | 操作聚合、未来裁剪、JSON、快照选择、回放写端与ID恢复                  | 发行版CPU，明确运行/持久化缺口          |
+| [装饰轮廓树木历史账本](63-tiny-glade-coordination-contours-trees-and-history-ledger.md)     | 四方向确认/未知、身份、原始记录与核验                                 | 第十四轮静态调查                        |
+| [Tiny Glade 建筑小件与拼装](64-tiny-glade-building-kit-and-asset-assembly.md)               | 原网格叠合预览、参数化小屋、砖板瓦窗灯和辅助几何                      | 发行资源JSON/RON、包内历史样例与CPU请求 |
+| [Tiny Glade 窗洞与灯具部件](65-tiny-glade-window-holes-and-lantern-components.md)           | 组件请求、真实SDF输入、墙重建、挂灯变换及光源/发光                    | 发行版CPU、资源和灯具SPIR-V             |
+| [Tiny Glade 接缝与自研建模规格](66-tiny-glade-seams-and-independent-building-kit-spec.md)   | 接缝砖梁类型、显示裁剪、独立小件库与产物所有权                        | 发行版写端及明确标注的自研建议          |
+| [建筑资产与拼装账本](67-tiny-glade-building-assets-and-assembly-ledger.md)                  | 问题回答程度、身份、资源来源、修正和核验                              | 第十五轮静态调查                        |
 
 建筑专题先读屋顶形状，再读建筑相交与接缝显示；水体专题按 07 → 08 → 10 阅读，09 用于证据核对。02 保留首轮墙体/拱门与作者原型研究；其中原型常数不替代发行版算法。Bad North 可以作为模块拼接与约束传播的对照。
 
