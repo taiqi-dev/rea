@@ -1,5 +1,7 @@
 # SUMMERHOUSE：遮罩相机的排序与渲染入口条件
 
+后续[16](16-additional-camera-layout-and-effect-gates.md)按同DLL字段类型和SerializeField补完原余124 B，完整读取两个180 B对象，并接到后处理／AA与旧版本迁移门。本篇原生准入、截图和频率未知项继续保留。
+
 [14](14-vertex-color-mask-and-local-updates.md)已接通顶点alpha写端，本篇补遮罩纹理与主相机之间的调度条件。**同一URP相机列表若同时包含本场景两台相机且配置未变，Masking Camera的depth=-1排在Main Camera的depth=1之前。** 这是当前资源与托管调度代码的静态连接；原生侧是否把两台相机送进本次列表、实际GPU执行和重绘频率仍未观察。
 
 ## 相机、层级与追加配置

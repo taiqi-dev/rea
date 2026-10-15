@@ -1,5 +1,7 @@
 # Tiny Glade：命令缓冲初始容量与最终容量的静态挑战
 
+后续[92](92-tiny-glade-typed-buffer-replacement-and-final-range.md)核对同键插入、其它类型的真正替换机制和通用字节更新的原容量门；仍未找到本类型替换到480 B的证据，最终范围保持未知。
+
 承接 [81](81-tiny-glade-command-initialization-and-slot23.md)、[83](83-tiny-glade-slot23-write-growth-and-submission.md)、[85](85-tiny-glade-wall-bucket-and-command-writes.md) 和 [87](87-tiny-glade-final-command-backing-and-writers.md)。本轮确认：**已定位的实际 `AssetSsboLibrary::add_new<DrawIndexedIndirectBuffer>` 调用会传空数据，创建的底层 buffer 请求长度确为 460 B；不能把这 460 B 仅解释为一个从未使用的默认分支。** 非空数据分支也固定构造 460 B 描述符，允许的完整 20 B 记录最多 23 条。图导入句柄的 20 B 宽度和设备内存分配对齐均不是命令 buffer 扩容证据。若该原始 raw handle 一直存活且没有被替换或改变底层资源，槽 23 要求的 `[460,480)` 不在这次创建的逻辑范围内；**完整后续生命周期、图执行和实际墙 draw 仍未穷尽，不能宣称最终必为 460 B、发生越界或有效绘制。**
 
 ## 身份、方法与原始记录

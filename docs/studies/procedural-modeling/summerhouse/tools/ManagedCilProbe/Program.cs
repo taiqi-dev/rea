@@ -151,7 +151,13 @@ try
             var constantHandle = field.GetDefaultValue();
             var constant = constantHandle.IsNil ? (Constant?)null : metadata.GetConstant(constantHandle);
             return new { token = $"0x{MetadataTokens.GetToken(handle):X8}", name = metadata.GetString(field.Name),
-                flags = (int)field.Attributes, constant_type = constant?.TypeCode.ToString(),
+                flags = (int)field.Attributes,
+                signature = Convert.ToHexString(metadata.GetBlobBytes(field.Signature)),
+                field_type = field.DecodeSignature(new MetadataTypeNames(), metadata),
+                custom_attributes = field.GetCustomAttributes().Select(h => metadata.GetCustomAttribute(h))
+                    .Select(a => new { constructor = Resolve(MetadataTokens.GetToken(a.Constructor)),
+                        value_bytes = Convert.ToHexString(metadata.GetBlobBytes(a.Value)) }).ToArray(),
+                constant_type = constant?.TypeCode.ToString(),
                 constant_bytes = constant is null ? null : Convert.ToHexString(metadata.GetBlobBytes(constant.Value.Value)) };
         })).ToArray();
     if (examinedMethods == 0 && !(args[2] == "*" && declaredFields.Length > 0))
@@ -173,4 +179,41 @@ catch (Exception error)
 {
     Console.Error.WriteLine(error.ToString());
     return 1;
+}
+
+// Decode names from metadata signatures without loading the target or resolving
+// any dependency assembly. A name preserves shape; it is not a runtime type.
+sealed class MetadataTypeNames : ISignatureTypeProvider<string, MetadataReader>
+{
+    public string GetArrayType(string elementType, ArrayShape shape) => elementType + "[" + new string(',', shape.Rank - 1) + "]";
+    public string GetByReferenceType(string elementType) => elementType + "&";
+    public string GetFunctionPointerType(MethodSignature<string> signature) => "methodptr(" + string.Join(",", signature.ParameterTypes) + ")->" + signature.ReturnType;
+    public string GetGenericInstantiation(string genericType, System.Collections.Immutable.ImmutableArray<string> typeArguments) => genericType + "<" + string.Join(",", typeArguments) + ">";
+    public string GetGenericMethodParameter(MetadataReader context, int index) => "!!" + index;
+    public string GetGenericTypeParameter(MetadataReader context, int index) => "!" + index;
+    public string GetModifiedType(string modifier, string unmodifiedType, bool isRequired) => unmodifiedType + (isRequired ? " modreq(" : " modopt(") + modifier + ")";
+    public string GetPinnedType(string elementType) => elementType + " pinned";
+    public string GetPointerType(string elementType) => elementType + "*";
+    public string GetPrimitiveType(PrimitiveTypeCode typeCode) => typeCode.ToString();
+    public string GetSZArrayType(string elementType) => elementType + "[]";
+    public string GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind)
+    {
+        var type = reader.GetTypeDefinition(handle);
+        var name = reader.GetString(type.Name);
+        var parent = type.GetDeclaringType();
+        if (!parent.IsNil) return GetTypeFromDefinition(reader, parent, rawTypeKind) + "+" + name;
+        var ns = reader.GetString(type.Namespace);
+        return ns.Length == 0 ? name : ns + "." + name;
+    }
+    public string GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind)
+    {
+        var type = reader.GetTypeReference(handle);
+        var name = reader.GetString(type.Name);
+        if (type.ResolutionScope.Kind == HandleKind.TypeReference)
+            return GetTypeFromReference(reader, (TypeReferenceHandle)type.ResolutionScope, rawTypeKind) + "+" + name;
+        var ns = reader.GetString(type.Namespace);
+        return ns.Length == 0 ? name : ns + "." + name;
+    }
+    public string GetTypeFromSpecification(MetadataReader reader, MetadataReader context, TypeSpecificationHandle handle, byte rawTypeKind)
+        => reader.GetTypeSpecification(handle).DecodeSignature(this, context);
 }

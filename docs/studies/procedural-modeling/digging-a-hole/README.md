@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+最新续查见[15：模式枚举的复制宽度](15-property-copy-virtual-target.md)：描述符接到Enum/Byte属性，链接后置bit30并确定一字节memcpy；Config位仍为零。默认源最终值和actor实际分支仍未运行验证。
+
 最新续查见[14：其它模式写端与默认复制](14-other-mode-writers-and-default-copy.md)：模板/CDO 到 InitProperties 的属性复制补上 ctor 之后的状态来源；所查同偏移候选经接收者与指令边界筛选。实际最终 CDO 值与所有写者仍未穷尽，运行未做。
 
 最新续查见[13：材质属性与配置加载门](13-material-property-flags-and-config-gates.md)：两个模式属性的本作flags不含Config，普通LoadConfig在bit14门跳过；其他主动写入仍未穷尽，运行未做。

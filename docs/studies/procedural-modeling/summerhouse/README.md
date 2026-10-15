@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[16：完整追加配置与效果门](16-additional-camera-layout-and-effect-gates.md)：补完两对象原余124 B；主后处理开启、遮罩关闭，两者AA=None。接通初始化和版本迁移条件，实际pass／重绘频率及性能仍未验证。
+
 最新续查见[15：遮罩相机排序与准入](15-mask-camera-order-and-render-admission.md)：实际父子层级、Base 类型和 depth 接到 URP 比较器；两台同时进入列表时遮罩先绘制。原生列表准入、截图调度及重绘频率仍未知，运行未做。
 
 最新续查见[14：顶点alpha与遮罩裁剪](14-vertex-color-mask-and-local-updates.md)：实际墙块的包内alpha=1，Maskable.Awake在实例子网格写为0，接到Shader622消费；与全局参数更新分别解释，实际帧和成本仍未测。

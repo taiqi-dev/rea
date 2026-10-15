@@ -1,5 +1,7 @@
 # 掘地求财：模式字段的通用默认值复制与直接写入边界
 
+后续[15](15-property-copy-virtual-target.md)补出链接期标志：正常LinkInternal将bit30置位，两个字段各走一字节memcpy。本篇按构造期flags演算的虚调用条件不代表链接后的实际分支；通用模板选择与遍历证据继续适用。
+
 在[12](12-initial-material-authority-and-overrides.md)已确认的主关卡 `VoxelWorld` 原生 CDO 模板、实例未序列化 `MaterialConfig`／`RenderType`，以及[13](13-material-property-flags-and-config-gates.md)已确认的普通 `LoadConfig` 跳过门之外，本轮找到一个**正向的默认值复制机制**。对象初始化可从模板或类 CDO 向新对象逐属性复制；两字段现有属性 flags 不触发这个函数的跳过门。因此原生构造写零并非实例值的最后一道静态写入。模板 CDO 的实际值和本关卡加载时是否经该分支执行仍未观察，不能据此宣称实例后来改为非零。
 
 ## 从模板到实例的属性复制
