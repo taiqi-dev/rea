@@ -1,5 +1,7 @@
 # Tiny Glade：单墙恢复后的砖 seed 与稳定重建边界
 
+后续[101](101-tiny-glade-seed-array-and-snapshot-scheduling.md)已将12B数组接到重采样Curve点Vec，并补上快照创建候选+0x30→Public消息→普通砖消费者。系统实际run／同帧／GPU边界仍未验证；下文保留当时尚未定位生产者的范围。
+
 本篇只追一面普通砖墙：历史回放或快照恢复其逻辑身份后，什么条件把它送回普通砖生成，以及相同输入能保证哪一层重复。前置结论见[62：历史与快照](62-tiny-glade-history-snapshots-and-regeneration.md)、[44：稳定随机](44-tiny-glade-stable-randomness.md)、[36：砖行](36-tiny-glade-brick-row-layout.md)与[55：编辑重建和上传](55-tiny-glade-edit-rebuild-stages-and-upload.md)。本篇新增的关键边是：先前只称为 `PublicWallState+0x48` 的每墙 seed 加数，在所选发行版布局中是一个 12 字节元素数组的**长度**。它不是可据此命名的“重新随机计数”。
 
 ## 身份、证据范围与坐标

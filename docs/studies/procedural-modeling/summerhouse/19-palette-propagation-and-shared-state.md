@@ -1,5 +1,7 @@
 # SUMMERHOUSE：晴雨夜调色板怎样传播到共享状态
 
+后续[20](20-blend-curves-and-particle-listener-lifecycle.md)补上真实分类曲线和14件scene监听实例，并修正退订概括：OnDisable调用退订入口，但该实现非空列表直接返回，不能等同实际移除。动态集合与实际通知仍未运行验证。
+
 本篇接续[03：换色与保存](03-save-palette-and-visuals.md)、[05：真实材质绑定](05-materials-pixelization-and-camera.md)。**Lake场景的三套调色板使用同序的84个不同材质引用，但天气／时间变化同时修改环境光、灯、天空、雾材质、后处理和粒子共享变量。**它不是每个建筑块各存一份颜色，也没有在这条换色链里重建块网格。普通过渡入口会跳过地形detail/layer直接应用，不能把资产里保存的所有参数都算作每次切换会生效。
 
 ## 真实配置：三套完整资产与场景连接
@@ -38,7 +40,7 @@ BuildSettings的scene数组索引1为 `Assets/Scenes/Environment Lake/Environmen
 | ApplyParticles / EA→035D                       | 每个共享变量先set_Value，再set_ColorValue                                                                                                     | setter通知已注册且非空的listener；不是只改变调色板副本。                                  |
 | ApplyTerrainDetailColors / E5、LayerTints / E7 | detail的healthy/dryColor，TerrainLayer.diffuseRemapMax，之后写回数组                                                                          | **false入口才调用**，true入口跳过；本篇所查普通过渡末次也保持true。                       |
 
-`SharedVariable.set_Value 0x06000266` 和 `set_ColorValue 0x06000268` 均遍历listeners调用SetValue；`SharedVariableListener.SetValue 0x06000270` 按变量type的0/1分支分别写ParticleSystem emission.rateOverTime或main.startColor。OnEnable先订阅再应用，OnDisable退订。这里接通了共享变量到粒子参数的消费，但没有把场景全部listener实例、运行订阅列表或实际发射数恢复出来。
+`SharedVariable.set_Value 0x06000266` 和 `set_ColorValue 0x06000268` 均遍历listeners调用SetValue；`SharedVariableListener.SetValue 0x06000270` 按变量type的0/1分支分别写ParticleSystem emission.rateOverTime或main.startColor。OnEnable先订阅再应用，OnDisable调用退订入口；[20](20-blend-curves-and-particle-listener-lifecycle.md)复核出其非空列表直接返回，因此不能概括为已经移除。这里接通了共享变量到粒子参数的消费，运行订阅列表与实际发射数仍未恢复；选定scene实例以后续20为准。
 
 主材质在[05的普通窗](05-materials-pixelization-and-camera.md)中已有具体消费者：`Window 07` 的Model01 Renderer4542含Material57 `Glass 01 b`，人物窗Renderer4986也复用它。因此下面夜色玻璃参数写入会沿共享引用影响这些已实例化且仍使用该材质的对象；每扇窗无需各自存储一份天气色。实际场景实例／覆盖、相机可见性仍是条件。
 

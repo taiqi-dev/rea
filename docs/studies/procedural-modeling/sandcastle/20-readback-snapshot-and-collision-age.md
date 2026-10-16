@@ -1,5 +1,7 @@
 # 读回快照到碰撞的时效边界
 
+后续[21](21-readback-request-lifecycle-and-consumers.md)补上Clear→Setup／Init→同步读回→碰撞的加载次序、委托接收者和同尺寸重建条件；Unity native的等待／取消及真实回调时序仍未知。
+
 本篇续查 [07](07-local-updates-readback-and-costs.md) 留下的快照年龄问题。对象仍是 `C:\Software\Steam\steamapps\common\Sandcastle Demo\GameAssembly.dll`，身份与地址坐标沿用 [01](01-artifact-and-method-map.md) 和 [07](07-local-updates-readback-and-costs.md)。这是该制品的有界静态指令推导，未运行、附加游戏或测 GPU/物理耗时。普通 `dumpbin` 文本不是 REA Evidence；先前 Ghidra native timeout 没有状态变化，本轮未重试。
 
 ## 两条调度链相遇于持久 CPU 数组

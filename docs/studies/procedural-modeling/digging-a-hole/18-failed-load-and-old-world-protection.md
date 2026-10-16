@@ -1,5 +1,7 @@
 # 掘地求财：加载失败与旧世界数据的保护边界
 
+后续[19](19-post-clear-failures-and-rollback-boundary.md)把清旧后的失败位追至遍历／ExtractChunk／placeable：已读正常路径未见将它置错的生产者，部分恢复仍可true，并定位上层LOD刷新。下文条件性的“清旧后false”不能当作已找到可达输入。
+
 ## 身份、问题与证据
 
 本页续查 [02：体素保存、载入与一致性边界](02-save-load-and-consistency.md) 的失败分支。目标固定为 `C:\Software\Steam\steamapps\common\A Game About Digging A Hole\DiggingGame\Binaries\Win64\DiggingGame-Win64-Shipping.exe`（PE32+ x64、145,180,160 字节）及同目录匹配 PDB（1,659,662,336 字节）；已有 EXE/PDB RSDS GUID、age 和文件身份见 [00：本机证据身份](00-evidence-and-reproduction.md)。本轮没有重算摘要。地址均为该 EXE 首选映像基址 `0x140000000` 下的 VA，不是运行地址。
