@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查：[25：反射纹理生命周期与绑定](25-reflection-texture-lifecycle-and-binding.md)，补源相机缓存、scale失效门、WaterObject属性块及禁用释放；真实Shader采样与画面仍Unknown。
+
 最新续查见[24：其它投影与 viewport 写端](24-other-projection-and-viewport-writers.md)：四关的活动水体反射组件连接到独立反射相机，写镜像 view 与斜裁剪投影；另核阴影/后期 viewport 与 PixelPerfectCamera 的有限注册边界。主相机最终 native/GPU 状态仍未知，运行未做。
 
 最新续查见[23：最终投影与像素对齐](23-final-projection-and-pixel-alignment.md)：V/P/J生产、所见Execute路径和native矩阵提交接通，主体两个前向vertex直接消费unity_MatrixVP；fixed RT与scaled viewport分开。native最终状态及全局像素锁仍未知，运行未做。

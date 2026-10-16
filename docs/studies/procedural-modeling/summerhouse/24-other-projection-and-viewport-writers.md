@@ -1,5 +1,7 @@
 # SUMMERHOUSE：其他已注册矩阵与 viewport 写端
 
+后续[25](25-reflection-texture-lifecycle-and-binding.md)已沿本篇反射组件入口补RT缓存、失效、WaterObject绑定与禁用释放；主相机native矩阵和实际GPU行为仍未运行验证。
+
 接续[22：像素网格与相机移动](22-pixel-grid-camera-motion-and-silhouette-stability.md)及[23：最终投影提交](23-final-projection-and-pixel-alignment.md)。**本轮找到一条实际注册、不同于 CameraController 的矩阵写入链：水体平面反射组件会为新建的反射相机设置斜裁剪投影与镜像 view，并将它交给 URP 单相机渲染。所读 CIL 的写入目标不是主相机。** URP 阴影及后期／回贴代码还存在各自的矩阵或 viewport setter；所读路径没有把低分辨率目标尺寸转换成主相机的世界像素对齐。native viewport 与运行时动态添加仍是未知，有限静态搜索不证明全游戏没有其它覆盖。
 
 ## 身份与搜索边界

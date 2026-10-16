@@ -1,5 +1,7 @@
 # 掘地求财：MainLevel 网格模式、LOD 过渡与碰撞配置
 
+**更正：**本篇“LOD 3还可能经专用碰撞盒获得资格”的推断遗漏GetUpdates的node.L==0前置门，现已撤回；在所查专用盒/可见块两支中，LOD 3均不获碰撞bit。完整指令、盒来源与条件见[24](24-collision-box-producers-and-invokers.md)。
+
 接续[21 的相邻 LOD／过渡任务](21-lod-seams-and-transition-mesh.md)和[22 的三角形碰撞归属](22-transition-triangles-and-collision-ownership.md)。在发行包 `MainLevel` 的 `VoxelWorld` 实例属性、匹配 PE/PDB 的原生构造写入和 settings 复制均按正常路径生效的**静态初始配置**下，`RenderType=0` 选择 **Marching Cube**，`bEnableTransitions=1`；碰撞及可见块碰撞开关均为 `1`，关卡把 `VisibleChunksCollisionsMaxLOD` 从构造值 `5` 覆盖为 `2`。这把先前的“若选择 Marching Cube”演算收窄到本关卡初始条件。没有运行游戏，不能据此断言每个 chunk 都已生成、每条 LOD 接缝都有网格或物理面。
 
 ## 身份、原文与读取范围

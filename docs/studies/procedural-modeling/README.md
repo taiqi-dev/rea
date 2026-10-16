@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：容量、启动改色、碰撞盒与反射纹理生产者](113-four-static-pool-startup-collision-and-reflection-producers.md)：外部池页数到绘制绑定、Awake到Setup改色、invoker盒来源与LOD资格更正、反射RT缓存及属性块。四份专题分别记录静态结论、条件和未决项，运行仍为Not Run。
+
 最新续查见[四款游戏：配置、覆盖与预算的静态收口](111-four-static-config-overrides-and-budget-boundaries.md)：Tiny Glade 定位屋瓦编号、容量表与共同图视图；沙堡读出选择表初色及 Setup 竞争写端；掘地求财固定主关卡模式和可见块碰撞 LOD 上限；SUMMERHOUSE 区分反射相机与主相机矩阵。专题和自研规格边界均分开说明，运行仍未做。
 
 最新续查见[四款游戏：颜色覆盖、碰撞归属、绘制预算与投影消费](109-four-static-color-collision-draw-and-projection-consumers.md)：全局颜色写端／Shader属性区别、过渡索引进入碰撞、距离分类到mesh索引／单次命令上限、矩阵生产到native提交与vertex消费。真实绑定／物理／帧数量和画面仍未运行验证。

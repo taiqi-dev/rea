@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+最新续查：[24：碰撞盒来源与invoker](24-collision-box-producers-and-invokers.md)，补组件半径、坐标盒及自动相机条件；明确更正23：专用碰撞盒有LOD 0前置门，不能据此给LOD 3碰撞资格。
+
 最新续查见[23：MainLevel 网格、LOD 与碰撞配置](23-mainlevel-mesher-lod-and-collision-config.md)：正常初始链选择 Marching Cube、开启过渡和碰撞，关卡把可见块碰撞上限改为 LOD 2；该门与专门碰撞盒分支分开。实际 chunk 和物理接触仍未运行验证。
 
 最新续查见[22：过渡三角形与碰撞归属](22-transition-triangles-and-collision-ownership.md)：普通／过渡索引条件性合入同一输出buffer，被碰撞section的cooker读取；实际mesh配置、Chaos后态与接缝接触仍未运行验证。

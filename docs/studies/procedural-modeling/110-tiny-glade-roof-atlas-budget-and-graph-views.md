@@ -1,5 +1,7 @@
 # Tiny Glade：屋瓦 atlas 编号、容量表与图资源视图
 
+后续补充见[112](112-tiny-glade-external-pool-producers-and-draw-bindings.md)：+0x50已接构造/flush写端及页数别名，kind6接屋瓦管线与材质。FORCE_FINE=0时实际注册coarse回调；本篇fine的1024仍只是假设进入fine后的条件演算。
+
 接续[108](108-tiny-glade-distance-meta-consumers-and-draw-budget.md)。本轮把 `RoofTile` 的子类编号固定为 **6**，找到绘制回调所读容量表的初始化及一处后写端：初始值 **65,536**，所读变更分支要求新值不大于 **1,048,576** 且为 **64** 的倍数。另把屋瓦 cull 与 sorted fill 的 filtered/meta 参数接到同一组逻辑图视图。发行 RON 的三网格在**新建空 atlas、按默认列表加载且无覆盖**的条件下可对应到部件 `0/1/2`；热重载、空槽复用、最终物理 buffer 和真实帧数量仍不能由此代替证明。
 
 ## 身份、工具与覆盖

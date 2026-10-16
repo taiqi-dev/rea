@@ -1,5 +1,7 @@
 # 四款游戏：配置、覆盖与预算的静态收口
 
+后续与更正见[113](113-four-static-pool-startup-collision-and-reflection-producers.md)。其中掘地求财专用碰撞盒漏读的LOD 0前置门已在[24](digging-a-hole/24-collision-box-producers-and-invokers.md)说明；旧轮对LOD 3专用盒可能性的推断不再成立。
+
 接续[109](109-four-static-color-collision-draw-and-projection-consumers.md)，按上一轮提出的四条入口完成一次有界续查。本轮最有价值的新信息是：**Tiny Glade 的容量表有明确初始化/写端；沙堡的场景参数、默认表与 Setup 改色是不同阶段；掘地求财的可见块碰撞上限实际覆盖为 LOD 2；SUMMERHOUSE 的反射矩阵 writer 写独立反射相机。** 它们能收紧静态规格，仍不能给出真实帧状态、视觉稳定或性能测量。运行全部 **Not Run**。
 
 ## 按专题阅读

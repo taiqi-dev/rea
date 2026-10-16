@@ -1,5 +1,7 @@
 # 沙堡：场景配置初色、所选参数表与同名写端
 
+后续[26](26-startup-configuration-and-setup-colors.md)已补Awake启动实参、Prepare的seed初始化及Setup的HSV改色/回写；本篇首次启动配置未知的范围由新文收紧。
+
 ## 结论与证据边界
 
 `level0` 的 `Game` 组件内联 `Configuration` 把 `sand=0`、`water=0` 序列化下来，但组件里的六个参数 Color 本身全为 `(0,0,0,0)`。它引用的 `Refs` 资源在 `sands[0]`、`waters[0]` 保存了**非零的六种默认色**；`Game.New(configuration)` 和 `Game.ResetConfiguration(seed)` 的原生分支按选择值从这两张表复制参数。因而“场景里直接保存的颜色”和“选择值 0 经默认表复制后的颜色”是两个不同阶段。后者是可复核的静态配置输入，**不是某帧的 GPU 值**：`Ground.Setup`、`Water.Setup` 还会向同六个名字写 global，其中 Water.Setup 在写前改动当前配置的两个水色；`Ground.Run`、`Water.Run` 后续又写同名 global。
