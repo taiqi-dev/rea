@@ -1,5 +1,7 @@
 # 四款游戏：颜色覆盖、碰撞归属、绘制预算与投影消费
 
+后续[111](111-four-static-config-overrides-and-budget-boundaries.md)补充配置/预算生产者与实际注册的覆盖者；沙堡24的水色偏移另有明确勘误。本文验证数量保留本轮历史范围，后续结果不计入本文旧回执。
+
 接续[107](107-four-static-art-transitions-seams-and-pixel-grids.md)的四个静态断点。**沙堡找到了配置到六次全局颜色写入，且排除了“材质保存同名键就优先”的推断；掘地求财证明条件成立时过渡索引进入碰撞输入；Tiny Glade把距离分类接到网格索引与间接命令，并补出单次命令上限实参；SUMMERHOUSE把矩阵接到native提交与主体vertex消费两端。**运行验证继续全部 **Not Run**。
 
 | 专题                                                                                                 | 新闭合的静态链                                                                                                                                                                            | 剩余边界                                                                                                                   |

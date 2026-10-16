@@ -1,5 +1,7 @@
 # 掘地求财：过渡三角形进入 section 与碰撞的条件
 
+后续[23](23-mainlevel-mesher-lod-and-collision-config.md)补主关卡的模式、过渡开关与碰撞LOD配置，并把零play type的可见块碰撞上限固定为2；本文的索引合并结论仍须满足提交和cook条件。
+
 接续[21：LOD 接缝和过渡网格](21-lod-seams-and-transition-mesh.md)留下的问题：**单独生成的过渡三角形，最终是否与普通网格一起交给碰撞构造？** 静态答案是：在相应任务结果被当前 renderer 接受、`GetMeshesToBuild` 找到有效过渡 buffer、section 带碰撞位并成功构建的条件下，过渡索引会进入与普通索引相同的输出 buffer，Chaos cooker 确实读取这个合并 buffer。它不是只凭 `visible` 或 `collision` 名称推断的。实际 MainLevel 是否选用产生该过渡网格的 mesher、某次是否有该 LOD 邻对，以及 cook 后物理表面是否连续，仍未实测。
 
 ## 身份、边界和原文

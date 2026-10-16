@@ -1,5 +1,7 @@
 # SUMMERHOUSE：最终投影提交与像素对齐链
 
+后续[24](24-other-projection-and-viewport-writers.md)核四关活动反射组件的独立相机写端，并补查URP阴影/viewport及PixelPerfectCamera的有限注册边界；最终native/GPU状态仍未验证。
+
 接续[22：相机移动与像素网格](22-pixel-grid-camera-motion-and-silhouette-stability.md)。本轮将相机脚本之后的链补到URP矩阵生产、提交接口、所选主体顶点程序及低分辨率viewport。**所读普通路径传递连续相机矩阵，没有发现以低分辨率目标宽高重算像素偏移的对齐步骤；主体顶点最终用unity_MatrixVP直接输出clip坐标。**native矩阵读取、命令执行及实际GPU常量尚未恢复，不能把提交参数等同于一帧实测值。
 
 ## 身份、工具与范围

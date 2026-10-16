@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：配置、覆盖与预算的静态收口](111-four-static-config-overrides-and-budget-boundaries.md)：Tiny Glade 定位屋瓦编号、容量表与共同图视图；沙堡读出选择表初色及 Setup 竞争写端；掘地求财固定主关卡模式和可见块碰撞 LOD 上限；SUMMERHOUSE 区分反射相机与主相机矩阵。专题和自研规格边界均分开说明，运行仍未做。
+
 最新续查见[四款游戏：颜色覆盖、碰撞归属、绘制预算与投影消费](109-four-static-color-collision-draw-and-projection-consumers.md)：全局颜色写端／Shader属性区别、过渡索引进入碰撞、距离分类到mesh索引／单次命令上限、矩阵生产到native提交与vertex消费。真实绑定／物理／帧数量和画面仍未运行验证。
 
 最新续查见[四款游戏：湿沙薄水、LOD接缝、远处细节与像素轮廓](107-four-static-art-transitions-seams-and-pixel-grids.md)：沙堡补湿色／可见液层两道门，掘地求财补六方向过渡任务，Tiny Glade核实距离分类／分桶而保留真实预算缺口，SUMMERHOUSE读出真实缩放曲线与像素网格。运行未做。

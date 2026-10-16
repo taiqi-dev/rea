@@ -1,5 +1,7 @@
 # Tiny Glade 屋瓦距离分类的消费者与绘制数量边界
 
+后续[110](110-tiny-glade-roof-atlas-budget-and-graph-views.md)固定 RoofTile=6、初始容量表值65,536及一处变更写端，并连接 cull/fill 的共同逻辑图视图；三网格在 fresh 默认 atlas 下形成条件映射。最终物理 buffer 和运行帧预算仍未知。
+
 承接[106：远处屋瓦、深度桶与数量边界](106-tiny-glade-distance-detail-and-budgets.md)。本轮追到一个明确的下游用途：屋瓦 cull 写出的 `filtered_instance_meta_buffer` 分类值在列表填充 shader 中**替代深度桶的低 10 位，成为网格索引**；排序列表的生成 shader 再按这个索引读取 atlas 部件的 `index_count / first_index`，为每个非空部件写一条 20B 间接命令和原实例索引间接表。CPU 的计数式绘制回调另有一个条件性 `1024` 最大命令条数实参。这个静态链支持“距离分类影响选择哪份网格部件”，但仍缺发行 CPU 的逐字段资源绑定与 atlas 顺序证明，不能把 `0/1/2` 无条件命名为主体／LOD1／背面，也不能给出实机绘制次数或瓦片总预算。
 
 ## 身份、方法与实际覆盖

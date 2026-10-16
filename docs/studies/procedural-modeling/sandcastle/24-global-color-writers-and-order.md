@@ -1,5 +1,7 @@
 # 沙堡：全局颜色写入端、材质覆盖与调用顺序
 
+勘误与后续：[25](25-profile-color-inputs-and-competing-writers.md)沿 Run 的两个栈副本核实，水色来自 Configuration+0xe0/+0xf0。本文原将 +0x10c 块误作首水色；该块是 waves 参数，现更正下表及来源范围。六个 setter、RGB 转换和 shader 属性区别的结论不变。
+
 ## 范围与结论
 
 本篇续查 [23：湿沙到薄水](23-wet-sand-and-thin-water-transitions.md) 的颜色来源。目标仍为 `C:/Software/Steam/steamapps/common/Sandcastle Demo` 中的 `GameAssembly.dll`（47,654,400 B）、`Sandcastle_Data/il2cpp_data/Metadata/global-metadata.dat`（8,928,184 B）、`level0`（96,756 B）和 `sharedassets0.assets`（76,135,784 B）。既有身份摘要见 [01](01-artifact-and-method-map.md)，本篇没有新算摘要，也不以文件长度证明逐字节未变。所有新结果为本地只读静态派生，**不是 REA Evidence 或一次运行帧的读数**；条件未变的 Ghidra procedure 搜索超时未重试。
@@ -16,10 +18,10 @@ IL2CPP metadata v39 的 `Assembly-CSharp.dll` 中，`Configuration` 字段依次
 | Ground 2 | `color2`，栈 `+0x50`，同样转换                                                              | `0x182955ea0` → 8891 `sandColor2`                    | `0x1804504fd`  | Material 20 有 `sandColor2`；本篇未跟踪所选湿色片元是否消费它 |
 | Ground 3 | `wetColor`，栈 `+0x60`，同样转换                                                            | `0x182968228` → 9609 `wetSandColor`                  | `0x18045055c`  | Sand 605 `cb0[129]`；Material 20 有 `wetSandColor`            |
 | Ground 4 | `sedimentColor`，栈 `+0x70`，同样转换                                                       | `0x1829572e8` → 8941 `sedimentColor`                 | `0x1804505bb`  | Sand 605 `cb0[130]`；Material 20 的已解析颜色表无此键         |
-| Water 1  | 配置 `waterParameters.color`，从配置块 `+0x10c` 复制至栈 `+0x40`；RGB 同样转换              | `0x182967db0` → 9598 `waterColor`                    | `0x180483803`  | Water 587 `cb0[131]`；Material 41 有 `waterColor`             |
-| Water 2  | `scatteringColor`，栈 `+0x50`，同样转换                                                     | `0x182967f50` → 9602 `waterScatteringColor`          | `0x180483862`  | Water 587 `cb0[132]`；Material 41 有 `waterScatteringColor`   |
+| Water 1  | 配置 `waterParameters.color`，从配置 `+0xe0` 复制至栈 `+0x40`；RGB 同样转换                 | `0x182967db0` → 9598 `waterColor`                    | `0x180483803`  | Water 587 `cb0[131]`；Material 41 有 `waterColor`             |
+| Water 2  | 配置 `+0xf0` 的 `scatteringColor`，栈 `+0x50`，同样转换                                     | `0x182967f50` → 9602 `waterScatteringColor`          | `0x180483862`  | Water 587 `cb0[132]`；Material 41 有 `waterScatteringColor`   |
 
-表中 `Configuration` 相对偏移来自 `Ground.Run 0x180450111–0x18045019f`、`Water.Run 0x18048344e–0x1804834cd` 的实参复制，并由连续 16 字节 Color 字段顺序约束；它们不是 `level0` 文件偏移。Ground/Water 分别在 `0x180450444–0x1804505bb`、`0x1804837a9–0x180483862` 将三个 RGB 分量逐个传给 `0x181c4a140`；同版本 `UnityEngine.CoreModule.dll` metadata→codegen 映射将它确认为 `Mathf.GammaToLinearSpace`。随后每次以第四分量原值组成 Color。`0x181c1aca0` 的同模块映射确认为 `Shader.SetGlobalColor` 的 `(string name, Color value)` 重载，因此上表的字符串是 setter 实参，不是仅靠属性名或字段地址猜的。`Shader.PropertyToID` 的独立入口 `0x181c1aa30` 已在 [09 的相机纹理 `.cctor`](09-camera-color-depth-resource-provenance.md) 被使用；这六处游戏层调用直接传字符串，**没有在所列调用点先生成并传入整数 Property ID**。本篇没有把底层 API 内部转换路径当作已反汇编事实。
+表中 `Configuration` 相对偏移来自 `Ground.Run 0x180450111–0x18045019f`、`Water.Run 0x1804834a0–0x1804834cd` 的实参复制，并由连续 16 字节 Color 字段顺序约束；它们不是 `level0` 文件偏移。Ground/Water 分别在 `0x180450444–0x1804505bb`、`0x1804837a9–0x180483862` 将三个 RGB 分量逐个传给 `0x181c4a140`；同版本 `UnityEngine.CoreModule.dll` metadata→codegen 映射将它确认为 `Mathf.GammaToLinearSpace`。随后每次以第四分量原值组成 Color。`0x181c1aca0` 的同模块映射确认为 `Shader.SetGlobalColor` 的 `(string name, Color value)` 重载，因此上表的字符串是 setter 实参，不是仅靠属性名或字段地址猜的。`Shader.PropertyToID` 的独立入口 `0x181c1aa30` 已在 [09 的相机纹理 `.cctor`](09-camera-color-depth-resource-provenance.md) 被使用；这六处游戏层调用直接传字符串，**没有在所列调用点先生成并传入整数 Property ID**。本篇没有把底层 API 内部转换路径当作已反汇编事实。
 
 有界 [原始调用片段](../../../../.cache/procedural-modeling/sandcastle/disasm/Ground_Run_full.txt)、[Water 片段](../../../../.cache/procedural-modeling/sandcastle/disasm/Water_Run_full.txt) 的 `0x...` 是 PE 首选映像 VA，实际加载地址可能重定位。新 [字符串回执](../../../../.cache/procedural-modeling/static-consumer-followup/sandcastle/global-color-literals.json) 同时保留各 setter 地址、字符串槽 VA/文件偏移、`0xa000...` 使用编码、metadata literal 序号和 UTF-8 数据偏移。解码器先核槽位于 PE `.data`，再按此制品实测的 `encodedLow=2×ordinal+1` 读取 metadata `string_lit/string_lit_data`，并核所选反汇编调用目标确为 `0x181c1aca0`；它没有执行目标。
 

@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+最新续查见[23：MainLevel 网格、LOD 与碰撞配置](23-mainlevel-mesher-lod-and-collision-config.md)：正常初始链选择 Marching Cube、开启过渡和碰撞，关卡把可见块碰撞上限改为 LOD 2；该门与专门碰撞盒分支分开。实际 chunk 和物理接触仍未运行验证。
+
 最新续查见[22：过渡三角形与碰撞归属](22-transition-triangles-and-collision-ownership.md)：普通／过渡索引条件性合入同一输出buffer，被碰撞section的cooker读取；实际mesh配置、Chaos后态与接缝接触仍未运行验证。
 
 最新续查见[21：LOD相邻块与过渡接缝](21-lod-seams-and-transition-mesh.md)：六方向邻块／层级门接到mask、过渡任务及条件构网；过渡三角形的碰撞归属和实际算法配置仍未闭合，运行未做。

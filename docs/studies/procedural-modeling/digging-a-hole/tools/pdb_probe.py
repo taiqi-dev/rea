@@ -117,7 +117,9 @@ def main():
         if not dll.SymCleanup(process):
             raise ctypes.WinError(ctypes.get_last_error())
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    # PDB names may retain unpaired UTF-16 surrogates; JSON escapes preserve
+    # those code units without failing the UTF-8 evidence write.
+    args.output.write_text(json.dumps(result, ensure_ascii=True, indent=2), encoding="utf-8")
     print(json.dumps({"symbols": len(result["symbols"]), "queries": queries, "output": str(args.output)}))
 
 
