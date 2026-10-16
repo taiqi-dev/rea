@@ -1,5 +1,7 @@
 # 掘地求财：LOD 相邻块、过渡网格与碰撞覆盖
 
+后续[22：过渡三角形的碰撞归属](22-transition-triangles-and-collision-ownership.md)补出普通／过渡索引合并到同一主buffer并被cooker读取的条件链。本文当时未答的buffer归属已收窄，真实mesh模式与物理接缝仍未运行验证。
+
 接续[20：LOD 到网格和碰撞的刷新边界](20-partial-restore-lod-mesh-collision.md)。本篇只追 **render octree 中相邻的两个不同层级**如何形成六方向接缝标志、该标志怎样进入单独的过渡网格任务，以及结果到 section 和碰撞时还需什么条件。以下都是发行制品的静态指令推导；未观察画面、GPU 或物理接触。
 
 ## 身份与可复核原文

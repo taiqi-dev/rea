@@ -1,5 +1,7 @@
 # Tiny Glade 远处屋瓦：深度分桶、可见性与数量边界
 
+后续[108：分类消费者与绘制预算](108-tiny-glade-distance-meta-consumers-and-draw-budget.md)把meta接到网格索引／20 B命令，另补fine回调单次最大命令条数参数。具体atlas编号、物理绑定与实例容量仍未知；本文的70／1024不能直接当作瓦数上限。
+
 本篇只追一条屋瓦路径：屋顶编辑后的 64B 实例如何成为 GPU 筛选候选，以及主视图 compute 怎样按距离写元数据、按可见性追加列表。结论是：选定 shader 确有 **70 视图空间深度门槛**与 **1024 个深度桶**；前者给实例写一种分类值，后者给索引/直方图定位。两者都不是已确认的瓦片容量、全局绘制预算或 LOD 网格切换阈值。实际进入 filtered list 的数目还受实例范围、视锥/HZB、前次可见位和缓冲状态制约。
 
 屋瓦 CPU 布局与重建见[41](41-tiny-glade-roof-tile-layout-and-clipping.md)、[50](50-tiny-glade-roof-edit-messages-and-regeneration.md)；已有 GPU 主视图 HZB 推导见[49](49-tiny-glade-roof-gpu-visibility-and-depth.md)。[51](51-tiny-glade-vegetation-counts-and-active-list-rebuild.md)的草活动前缀属于另一类植被列表，不能挪作屋瓦的活动数量。[55](55-tiny-glade-edit-rebuild-stages-and-upload.md)的阶段图给静态依赖骨架，但不能据此补写每帧执行次数。

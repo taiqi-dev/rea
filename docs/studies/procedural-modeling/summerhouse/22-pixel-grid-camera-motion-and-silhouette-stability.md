@@ -1,5 +1,7 @@
 # SUMMERHOUSE：像素网格、相机移动与轮廓稳定的边界
 
+后续[23：最终投影与像素对齐](23-final-projection-and-pixel-alignment.md)继续到URP矩阵初始化／提交和Shader622前向vertex消费，并核对fixed目标的viewport分支；最终native矩阵与GPU常量仍未观测，不把本篇局部无取整扩成全游戏否定。
+
 接续[05](05-materials-pixelization-and-camera.md)、[07](07-pixel-blit-depth-and-local-render-route.md)和[10](10-low-resolution-mips-and-attachments.md)。**所选主镜头把指定层重绘到低分辨率颜色／深度，再用Point采样回贴；真实CameraController会按缩放曲线改变目标大小，但移动位置连续更新。**本轮找到的是控制像素尺度的链，没有证明世界轮廓锁在固定像素网格上，更没有运行观察到抖动或完全稳定。
 
 ## 身份与本轮读取

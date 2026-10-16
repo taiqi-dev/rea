@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[23：最终投影与像素对齐](23-final-projection-and-pixel-alignment.md)：V/P/J生产、所见Execute路径和native矩阵提交接通，主体两个前向vertex直接消费unity_MatrixVP；fixed RT与scaled viewport分开。native最终状态及全局像素锁仍未知，运行未做。
+
 最新续查见[22：像素网格与相机轮廓稳定](22-pixel-grid-camera-motion-and-silhouette-stability.md)：实际四节点缩放曲线接到整数高度／偶数目标；相机移动连续写位置，当前层级未见像素对齐组件。像素尺度不等于轮廓锁定，运行未做。
 
 最新续查见[21：列表写端与重复订阅可达性](21-listener-writers-and-repeat-subscription-reachability.md)：主程序集只有四个列表直接用户；14件粒子与祖先组件、debug／enabled／切scene支路已核，未找到同实例真实重复启用入口。旧条目残留与重复Add分开说明，运行未做。

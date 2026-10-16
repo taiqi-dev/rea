@@ -1,5 +1,7 @@
 # 四款游戏：湿沙薄水、LOD接缝、远处细节与像素轮廓
 
+后续四个消费端断点见[109](109-four-static-color-collision-draw-and-projection-consumers.md)，包括过渡碰撞输入归属及距离分类用途的新证据；本文保留本轮当时的Partial／Unknown与运行未做范围。
+
 本轮执行[105](105-next-static-study-recommendations.md)中新选定的四个美术／性能专题。**沙堡接通湿色与薄水的不同阈值；掘地求财接通邻块层级到过渡网格任务；Tiny Glade核实屋瓦距离分类与分桶，但数量预算尚未恢复；SUMMERHOUSE接通真实缩放曲线与像素目标尺寸，未发现足以保证轮廓锁定的相机位置对齐链。**全部保持静态，运行验证 **Not Run**。
 
 | 专题                                                                                                 | 本轮静态回答                                                                                                                                   | 仍需保留的边界                                                                                                                               |

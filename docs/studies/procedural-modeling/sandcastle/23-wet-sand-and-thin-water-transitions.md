@@ -1,5 +1,7 @@
 # 沙堡：湿沙到薄水的静态过渡链
 
+后续[24：全局颜色写端与顺序](24-global-color-writers-and-order.md)已找到Configuration→GammaToLinearSpace→SetGlobalColor，并核对Shader声明属性与材质保存值的区别。本文以材质数值代入的例子继续只作构造演算，不能改称真实global或最终GPU颜色。
+
 ## 问题、制品与证据性质
 
 本篇只问主地表在水量增加时，何时变成湿沙、何时出现可合成的薄水，以及颜色、法线和边缘各由什么控制。目标是 `C:/Software/Steam/steamapps/common/Sandcastle Demo`；本轮重读 `Sandcastle_Data/sharedassets0.assets`（76,135,784 B，Unity `6000.4.10f1`、SerializedFile 22、小端、无 type tree），并复用 `level0`（现为 96,756 B）及 `GameAssembly.dll`（现为 47,654,400 B）的既有链。身份范围和以前授权的摘要见 [01](01-artifact-and-method-map.md) 与 [04](04-gpu-simulation-and-brush.md)；本轮没有新算摘要，也不以相同长度证明制品逐字节未变。
