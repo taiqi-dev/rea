@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[19：三套调色板与共享状态传播](19-palette-propagation-and-shared-state.md)：完整解析Lake配色与manager，接到材质、环境、天空、Volume及粒子；普通过渡跳过地形直接应用，并列出有条件的写入／分配次数。运行未做。
+
 最新续查见[18：管线纹理需求的配置来源](18-pipeline-texture-demand-and-settings.md)：原生Graphics/QualitySettings均指向选定URP，资产前缀的深度／不透明颜色纹理开关均开启，接到相机继承getter。最终附件／复制与成本仍未验证。
 
 最新续查见[17：TAA目标生命周期与关闭成本](17-taa-target-lifetime-and-disabled-cost.md)：CPU状态对象、Init、目标分配与释放分别接通；普通入口在AA=None条件下走释放／清空分支。实际相机准入、帧次和性能仍未验证。

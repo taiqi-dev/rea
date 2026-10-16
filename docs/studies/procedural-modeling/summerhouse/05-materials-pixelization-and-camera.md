@@ -1,5 +1,7 @@
 # SUMMERHOUSE：材质、像素化与相机的实际资源链
 
+后续[19：调色板传播](19-palette-propagation-and-shared-state.md)完整解析三套Lake配色，将本篇Material57等共享引用接到实际颜色／发光写端，并补环境与粒子链。下文“三套配色尚未完整解码”保留为早期范围，不覆盖19的新证据。
+
 **相机覆盖修订：** [12](12-mask-camera-filter-and-shader-data.md)确认主相机掩码759排除层8，feature471无法把它恢复；下文“层8落在feature范围”的事实不代表Mask进入主相机重绘。MeshRenderer启用字节也已从+14修正为+12，当前634个对象的旧投影值恰好不变。
 
 **后续补证：** [07](07-pixel-blit-depth-and-local-render-route.md) 已按真实 LZ4 表解出 Shader 65，核实颜色/深度取样和 pass 混合状态。本篇“最终采样未知”保留为上一轮记录，以 07 的新增证据和剩余边界续接。

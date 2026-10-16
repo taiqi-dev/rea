@@ -1,5 +1,7 @@
 # 局部编辑、读回与碰撞更新成本
 
+后续[20](20-readback-snapshot-and-collision-age.md)补上具体Update／FixedUpdate调度者、Compute.Step追赶计数、回调版本空缺和碰撞消费时差；严格区分fixed step数量与墙钟上界。下文保留原有范围和当轮算例。
+
 本篇只研究 Sandcastle Demo 已发售制品中的更新范围和成本结构。制品身份沿用 [01](01-artifact-and-method-map.md)：`GameAssembly.dll` SHA-256 `147030ECF9527A25250238120364EB761390B99688B1812C4EA555B3B04E56A0`，`sharedassets0.assets` SHA-256 `6dd7bb6bc7d926fd43c08d22c9c767b7edf531cf11a4a555fcd41830f2f9c721`；摘要只作本次获授权的身份核对。下文 `0x180…` 是该 DLL 的原生虚拟地址，DXBC 位置是 `sharedassets0.assets` 文件偏移。原始截取位于忽略目录 `.cache/procedural-modeling/sandcastle/`，尤其 `disasm/`、`dxbc/` 与 `update-followup/`。未运行游戏、Profiler 或玩家存档。
 
 ## 调度覆盖整张格网，刷子只改变局部值

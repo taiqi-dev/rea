@@ -1,5 +1,7 @@
 # 四款游戏：可变别名、引用映射与默认配置
 
+后续[100](100-four-static-state-consistency-and-palettes.md)按建议转入读回时效、失败载入、单墙稳定seed和真实调色板传播；本篇槽23和尾值3的未知边界继续保留。
+
 接续[95](95-four-static-bufferstate-and-reference-transfer.md)。本轮四款均有专题：**沙堡接到一个非空引用映射接口及其实际实现；Tiny Glade 定位了目标 typed 对象的 Any 表和 TypeId，但没有找到改写内部 raw handle 的消费者。** 掘地求财补上原生 CDO 的真实构造回调和初始化复制门；SUMMERHOUSE 补上相机所继承的管线纹理开关。运行验证仍为 **Not Run**。
 
 | 专题                                                                                       | 本轮新增证据                                                                                                                                                   | 仍未回答                                                                                           |

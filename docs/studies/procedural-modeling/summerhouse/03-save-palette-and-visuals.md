@@ -1,5 +1,7 @@
 # 保存重建与美术变体的边界
 
+后续[19](19-palette-propagation-and-shared-state.md)补上Lake三套真实调色资产、manager和共享写端：按分类曲线过渡，普通切换入口跳过地形直接应用。最终像素、曲线数据和真实成本仍未验证。
+
 本篇依据[固定程序集与工具边界](00-evidence-and-scope.md)。REA 成员 Evidence 为 `ev_dbf130a1797c92e37522986abf7c5c20d073a126086d567887d76411e92c7ddf`（Save/Placer）与 `ev_f1ce68a56c8253ecef304bbb32c0ed4c255a54b6241698c5491eb722f51a1c7d`（Paint/Palette/Vertex）。保存结构说明这个系统把什么视为可重建的建筑状态，但不能替代未解析资源来证明最终画面。
 
 ## 保存的是构件身份和位置

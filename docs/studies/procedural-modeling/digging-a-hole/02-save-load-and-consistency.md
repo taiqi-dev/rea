@@ -1,5 +1,7 @@
 # 掘地求财：体素保存、载入与一致性边界
 
+后续[18：失败载入与旧世界保护](18-failed-load-and-old-world-protection.md)补查临时输出初值及深度门：忽略解压bool不等于失败必然清空，部分早期失败会保留旧体素树；通过深度门后先清旧再恢复，未见内层失败回滚。下文保留原始调查范围。
+
 ## 范围与证据身份
 
 本页研究 `C:\Software\Steam\steamapps\common\A Game About Digging A Hole\DiggingGame\Binaries\Win64\DiggingGame-Win64-Shipping.exe`（PE32+ x64，145,180,160 字节，同目录同名 PDB 1,659,662,336 字节）及同一次安装所载 cooked Blueprint 的**静态路径**。使用仓库 `tools/pdb_probe.py` 将本地 PDB 符号定位到映像基址 `0x140000000`，再用 VS 2022 `dumpbin 14.44.35222.0 /DISASM /RANGE` 有界读取指令；符号查询的 `queries.exhausted` 均为 `true`。Blueprint 使用仓库 `tools/zen_probe.py` 和本研究的 [blueprint_probe.py](tools/blueprint_probe.py) 解析。下文 native 地址均为 EXE VA；Blueprint `文件偏移` 均从解出的 `.uasset` 文件起算，`逻辑偏移` 为 Unreal Kismet code offset。原始记录在本机忽略目录 [save/](../../../../.cache/procedural-modeling/digging-a-hole/save/)；不会随文档跨机器同步。没有启动或附加游戏，没有读取玩家存档，也没有实测保存文件。
