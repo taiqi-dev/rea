@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+最新续查见[21：列表写端与重复订阅可达性](21-listener-writers-and-repeat-subscription-reachability.md)：主程序集只有四个列表直接用户；14件粒子与祖先组件、debug／enabled／切scene支路已核，未找到同实例真实重复启用入口。旧条目残留与重复Add分开说明，运行未做。
+
 最新续查见[20：分类曲线与粒子监听生命周期](20-blend-curves-and-particle-listener-lifecycle.md)：四环境共用实际曲线，五scene解析14件监听组件；玻璃用例外曲线，反向切换用1-f(1-t)。退订非空直接ret已复核，实际生命周期／重复回调仍未运行验证。
 
 最新续查见[19：三套调色板与共享状态传播](19-palette-propagation-and-shared-state.md)：完整解析Lake配色与manager，接到材质、环境、天空、Volume及粒子；普通过渡跳过地形直接应用，并列出有条件的写入／分配次数。运行未做。

@@ -1,5 +1,7 @@
 # 掘地求财：清旧后的失败来源与回滚边界
 
+后续[20：部分恢复后的LOD、网格与碰撞](20-partial-restore-lod-mesh-collision.md)补正变化盒来源：除清旧前旧树终端盒外，成功匹配并ExtractChunk的新叶节点也追加盒。本文对失败bool／旧根回滚的结论不变；变化盒与刷新范围以20的完整链为准。
+
 ## 范围与证据身份
 
 接续 [18：加载失败与旧世界数据的保护边界](18-failed-load-and-old-world-protection.md) 和 [02：体素保存、载入与一致性边界](02-save-load-and-consistency.md)。本篇只分析 `C:\Software\Steam\steamapps\common\A Game About Digging A Hole\DiggingGame\Binaries\Win64\DiggingGame-Win64-Shipping.exe`（PE32+ x64，145,180,160 字节）及同目录匹配 PDB（1,659,662,336 字节）已经解出的静态控制流。地址为 EXE 首选基址 `0x140000000` 下的 VA，非运行地址；同一制品的 RSDS 身份见 [00](00-evidence-and-reproduction.md)。本轮未计算摘要。

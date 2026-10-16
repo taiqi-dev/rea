@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+最新续查见[20：部分恢复后的LOD、网格与碰撞](20-partial-restore-lod-mesh-collision.md)：变化盒补正为旧树终端盒＋匹配恢复的新叶盒，接到默认LOD／renderer任务及mesh／Chaos碰撞接受门；placeable独立通知与实际动态类型仍未闭合。运行未做。
+
 最新续查见[19：清旧后的失败与回滚边界](19-post-clear-failures-and-rollback-boundary.md)：所见恢复链没有置错字节的生产者，部分资源跳过仍可true；旧根已销毁，上层无条件请求LOD变化盒更新。畸形输入的异常／后态仍未运行验证。
 
 最新续查见[18：加载失败与旧世界保护](18-failed-load-and-old-world-protection.md)：空压缩数据／明确解压失败／所见序列化错误重置可被-1深度门挡在清旧前；有效深度进入载入后先换根，后续失败未见回滚。运行未做。

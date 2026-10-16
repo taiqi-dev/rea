@@ -1,5 +1,7 @@
 # Sandcastle Demo：沙、水与地表生成的静态研究
 
+最新续查见[22：native读回请求等待与取消边界](22-native-readback-wait-cancel-boundary.md)：平行接口表接到请求节点、回调句柄和状态1等待门，Clear接到buffer回收；间接释放是否等待／取消仍未知，运行未做。
+
 最新续查见[21：读回请求生命周期与碰撞消费](21-readback-request-lifecycle-and-consumers.md)：Load清理／重建及同步刷新接通，异步委托持有同一Readback接收者；同尺寸旧回调写新数组为条件风险。native等待／取消和实际消费版本仍未知，运行未做。
 
 最新续查见[20：读回快照到碰撞时效](20-readback-snapshot-and-collision-age.md)：接通Update／FixedUpdate两条链，核对回调接受门和版本空缺；按轮换消费给出条件时差公式。0.2秒不是碰撞延迟上界，运行未做。

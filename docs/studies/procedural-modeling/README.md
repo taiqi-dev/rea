@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：原生等待、恢复刷新、调度屏障与订阅可达性](104-four-static-waits-restoration-schedules-and-subscriptions.md)：沙堡进入native请求／回调／等待层；掘地求财修正变化盒来源并接到mesh／碰撞；Tiny Glade区分消息与deferred；SUMMERHOUSE核对列表写端和真实启停条件。运行未做；[下一轮静态建议](105-next-static-study-recommendations.md)另列优先入口及四个美术／性能新方向。
+
 最新续查见[四款游戏：生命周期、seed生产与监听实例](102-four-static-lifecycles-seed-producers-and-listeners.md)：沙堡加载重建与异步接收者、掘地求财失败位／LOD刷新、Tiny Glade重采样数组与快照创建候选，以及SUMMERHOUSE真实分类曲线／14件监听实例。退订实现另有明确修正，运行未做。
 
 最新续查见[四款游戏：快照时效、加载保护、稳定重建与调色传播](100-four-static-state-consistency-and-palettes.md)：沙堡读回与碰撞分属两条调度链；掘地求财补出失败深度门及清旧提交点；Tiny Glade砖seed加数接到数组长度；SUMMERHOUSE三套真实配色接到共享材质与环境、粒子。运行未做。
