@@ -1,5 +1,7 @@
 # 下一轮静态建议：先补提交边界，再转向美术质量与更新成本
 
+本页“新方向”中的四个专题已按用户选定范围开展静态研究，见[107：湿沙薄水、LOD接缝、远处细节与像素轮廓](107-four-static-art-transitions-seams-and-pixel-grids.md)。各题仍有明确Partial／Unknown，尤其Tiny Glade真实预算和SUMMERHOUSE运行稳定性没有改标已验证；下文保留选题依据。
+
 依据[104：本轮四条链](104-four-static-waits-restoration-schedules-and-subscriptions.md)，建议下一轮按下表取一个有边界的切片。以下是**选题判断和独立设计问题，不是已经确认的原作机制**；没有因列建议而启动目标或扩展本轮调查。
 
 ## 优先顺序

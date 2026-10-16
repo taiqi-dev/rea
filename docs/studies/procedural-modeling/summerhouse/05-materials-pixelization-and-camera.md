@@ -1,5 +1,7 @@
 # SUMMERHOUSE：材质、像素化与相机的实际资源链
 
+后续[22：像素网格与相机移动](22-pixel-grid-camera-motion-and-silhouette-stability.md)完整读取CameraController实际曲线及feature引用，补出150…300高度、整数截断与偶数目标量化；本文251仍是feature序列化初值，不是全程固定分辨率或轮廓稳定保证。
+
 后续[19：调色板传播](19-palette-propagation-and-shared-state.md)完整解析三套Lake配色，将本篇Material57等共享引用接到实际颜色／发光写端，并补环境与粒子链。下文“三套配色尚未完整解码”保留为早期范围，不覆盖19的新证据。
 
 **相机覆盖修订：** [12](12-mask-camera-filter-and-shader-data.md)确认主相机掩码759排除层8，feature471无法把它恢复；下文“层8落在feature范围”的事实不代表Mask进入主相机重绘。MeshRenderer启用字节也已从+14修正为+12，当前634个对象的旧投影值恰好不变。

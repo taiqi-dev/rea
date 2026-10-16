@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+最新续查见[四款游戏：湿沙薄水、LOD接缝、远处细节与像素轮廓](107-four-static-art-transitions-seams-and-pixel-grids.md)：沙堡补湿色／可见液层两道门，掘地求财补六方向过渡任务，Tiny Glade核实距离分类／分桶而保留真实预算缺口，SUMMERHOUSE读出真实缩放曲线与像素网格。运行未做。
+
 最新续查见[四款游戏：原生等待、恢复刷新、调度屏障与订阅可达性](104-four-static-waits-restoration-schedules-and-subscriptions.md)：沙堡进入native请求／回调／等待层；掘地求财修正变化盒来源并接到mesh／碰撞；Tiny Glade区分消息与deferred；SUMMERHOUSE核对列表写端和真实启停条件。运行未做；[下一轮静态建议](105-next-static-study-recommendations.md)另列优先入口及四个美术／性能新方向。
 
 最新续查见[四款游戏：生命周期、seed生产与监听实例](102-four-static-lifecycles-seed-producers-and-listeners.md)：沙堡加载重建与异步接收者、掘地求财失败位／LOD刷新、Tiny Glade重采样数组与快照创建候选，以及SUMMERHOUSE真实分类曲线／14件监听实例。退订实现另有明确修正，运行未做。
