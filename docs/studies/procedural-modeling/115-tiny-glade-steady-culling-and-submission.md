@@ -1,5 +1,7 @@
 # Tiny Glade：稳态帧的两轮筛选、深度与绘制提交
 
+后续专项：[117](117-tiny-glade-instance-batching-and-submission-costs.md)继续到coarse命令段的起始/条数实参和recorder写入；[118](118-tiny-glade-lod-selection-and-geometry-costs.md)补发行网格的实际几何计数；[119](119-tiny-glade-shadow-cascades-and-work-budgets.md)补级联参数与视图生产；适合综合demo的独立做法集中在[120](120-tiny-glade-performance-patterns-for-composite-demo.md)。
+
 这次优先回答性能问题：**不编辑时，哪些渲染工作仍然存在，怎样避免把每片砖瓦变成独立 CPU 绘制。** 新证据接通了 `render_world` 中第一轮列表、主绘制、HZB、第二轮列表和 `OC/2` 绘制的编排，并读到 recorder 的状态写入。它支持“持久实例＋按视图筛选＋间接列表”的解释；没有测得原作 FPS，也不能据此诊断用户工程。
 
 本篇承接 [70：更新成本](70-tiny-glade-update-and-render-costs.md)、[72：CPU 绘制](72-tiny-glade-cpu-render-bindings-and-lifecycle.md)、[49：屋瓦可见性](49-tiny-glade-roof-gpu-visibility-and-depth.md)和 [112：实例池到绑定](112-tiny-glade-external-pool-producers-and-draw-bindings.md)。与上一轮 [114](114-four-game-performance-mechanisms-and-demo-priorities.md)的综合整理不同，这里新增当前制品的调用、分支、字符串和 shader 读取。

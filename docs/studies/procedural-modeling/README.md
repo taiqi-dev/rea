@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+Tiny Glade 性能专项见[综合demo具体取舍](120-tiny-glade-performance-patterns-for-composite-demo.md)，下分[实例批处理](117-tiny-glade-instance-batching-and-submission-costs.md)、[LOD几何成本](118-tiny-glade-lod-selection-and-geometry-costs.md)和[级联阴影预算](119-tiny-glade-shadow-cascades-and-work-budgets.md)。本轮新增coarse命令段到recorder、屋瓦30/12/36三角形资源计数及阴影视图生产链；自研方案和原作事实分开，未读取用户工程或运行验证。
+
 性能续查见[四款游戏的稳态工作与准入条件](116-four-game-steady-performance-chains.md)。本轮优先新增 [Tiny Glade 两轮可见性到提交](115-tiny-glade-steady-culling-and-submission.md)，另补沙堡持续模拟、掘地求财空队列/LOD门、SUMMERHOUSE相机/配色频率；有新的静态制品证据，无运行测量，未读取用户工程。
 
 性能专题见[四款游戏的性能机制与综合demo优先级](114-four-game-performance-mechanisms-and-demo-priorities.md)：对照局部生成、实例/缓冲复用、异步任务与提交、读回/碰撞节奏、低分辨率重绘的成本边界；用户报告的Editor Game视图约10 FPS尚无采样归因，另列专项诊断提案。
