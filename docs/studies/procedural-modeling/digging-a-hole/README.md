@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+性能续查：[25：空闲Tick与LOD准入](25-idle-tick-and-lod-admission.md)，补空完成/提交队列的早退、invoker时间门与变化比较；静止仍有轮询，未运行或测帧时。
+
 最新续查：[24：碰撞盒来源与invoker](24-collision-box-producers-and-invokers.md)，补组件半径、坐标盒及自动相机条件；明确更正23：专用碰撞盒有LOD 0前置门，不能据此给LOD 3碰撞资格。
 
 最新续查见[23：MainLevel 网格、LOD 与碰撞配置](23-mainlevel-mesher-lod-and-collision-config.md)：正常初始链选择 Marching Cube、开启过渡和碰撞，关卡把可见块碰撞上限改为 LOD 2；该门与专门碰撞盒分支分开。实际 chunk 和物理接触仍未运行验证。

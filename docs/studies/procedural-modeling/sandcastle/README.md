@@ -1,5 +1,7 @@
 # Sandcastle Demo：沙、水与地表生成的静态研究
 
+性能续查：[27：稳态模拟与子步预算](27-steady-simulation-and-step-budgets.md)，区分无输入仍发的kernel、固定更新与Draw的不同门，以及0.2秒仅限请求的边界；未运行或测帧时。
+
 最新续查：[26：启动配置到Setup改色](26-startup-configuration-and-setup-colors.md)，接通Awake/Reset/Prepare/New，区分沙色临时global与水色配置回写；真实运行顺序仍待验证。
 
 最新续查见[25：场景初色、参数表与同名写端](25-profile-color-inputs-and-competing-writers.md)：场景选中沙/水第0项，内联参数与 Refs 默认表分开；Setup 与 Run 的六个同名写端已核。另更正24中的水色来源偏移为 Configuration+0xe0/+0xf0；启动实参和最终帧颜色仍未知。

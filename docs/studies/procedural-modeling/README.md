@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+性能续查见[四款游戏的稳态工作与准入条件](116-four-game-steady-performance-chains.md)。本轮优先新增 [Tiny Glade 两轮可见性到提交](115-tiny-glade-steady-culling-and-submission.md)，另补沙堡持续模拟、掘地求财空队列/LOD门、SUMMERHOUSE相机/配色频率；有新的静态制品证据，无运行测量，未读取用户工程。
+
 性能专题见[四款游戏的性能机制与综合demo优先级](114-four-game-performance-mechanisms-and-demo-priorities.md)：对照局部生成、实例/缓冲复用、异步任务与提交、读回/碰撞节奏、低分辨率重绘的成本边界；用户报告的Editor Game视图约10 FPS尚无采样归因，另列专项诊断提案。
 
 最新续查见[四款游戏：容量、启动改色、碰撞盒与反射纹理生产者](113-four-static-pool-startup-collision-and-reflection-producers.md)：外部池页数到绘制绑定、Awake到Setup改色、invoker盒来源与LOD资格更正、反射RT缓存及属性块。四份专题分别记录静态结论、条件和未决项，运行仍为Not Run。
