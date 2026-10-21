@@ -1,5 +1,7 @@
 # SUMMERHOUSE：格点小屋拼装与视觉处理
 
+扩展内容专题：[Mod、Workshop、DLC 与加载边界](mod-workshop-and-content-loading.md)。当前官方页未列 Workshop/DLC；本地布局存档、缩略图与外部素材导入分开核对，运行未做。跨游戏对照及 demo 方案见[122](../122-mod-workshop-dlc-comparison.md)、[123](../123-steam-workshop-and-dlc-design-for-demo.md)。
+
 性能续查：[26：稳态相机与配色回调](26-steady-camera-and-color-callbacks.md)，新增REA CIL证据，区分零位移仍做的相机工作、缩放早退与有限配色协程；未运行或测帧时。
 
 最新续查：[25：反射纹理生命周期与绑定](25-reflection-texture-lifecycle-and-binding.md)，补源相机缓存、scale失效门、WaterObject属性块及禁用释放；真实Shader采样与画面仍Unknown。

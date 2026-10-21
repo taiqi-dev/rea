@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+Mod 与扩展内容见[四款游戏的 Mod / Workshop / DLC 对照](122-mod-workshop-dlc-comparison.md)及[综合 demo 的独立设计建议](123-steam-workshop-and-dlc-design-for-demo.md)：Tiny Glade 已有官方内容 Mod 流程；沙堡定位到地图 Workshop 方法候选；另两款的存档/打包能力与官方 Mod 支持分别说明。分开记录公开当前状态、本机静态证据、作品分享、素材包和 DLC；未读取用户项目或运行游戏。
+
 项目性能线交接见[性能研究报告与Supervisor排期建议](121-performance-report-for-project-supervisor.md)：交给“采集静态运行性能分析”结合其项目采样规划，并转交项目Supervisor。参考游戏静态证据、接收对话运行进展转述、自研候选与授权边界分开记录。
 
 Tiny Glade 性能专项见[综合demo具体取舍](120-tiny-glade-performance-patterns-for-composite-demo.md)，下分[实例批处理](117-tiny-glade-instance-batching-and-submission-costs.md)、[LOD几何成本](118-tiny-glade-lod-selection-and-geometry-costs.md)和[级联阴影预算](119-tiny-glade-shadow-cascades-and-work-budgets.md)。本轮新增coarse命令段到recorder、屋瓦30/12/36三角形资源计数及阴影视图生产链；自研方案和原作事实分开，未读取用户工程或运行验证。

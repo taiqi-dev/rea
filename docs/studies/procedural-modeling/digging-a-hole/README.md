@@ -1,5 +1,7 @@
 # 掘地求财：挖掘、存档与性能
 
+扩展内容专题：[Mod、Workshop 与 DLC](mod-workshop-and-content-loading.md)。区分官方故事读物、引擎资源包能力与尚未建立的用户内容加载链；运行未做。跨游戏对照及 demo 方案见[122](../122-mod-workshop-dlc-comparison.md)、[123](../123-steam-workshop-and-dlc-design-for-demo.md)。
+
 性能续查：[25：空闲Tick与LOD准入](25-idle-tick-and-lod-admission.md)，补空完成/提交队列的早退、invoker时间门与变化比较；静止仍有轮询，未运行或测帧时。
 
 最新续查：[24：碰撞盒来源与invoker](24-collision-box-producers-and-invokers.md)，补组件半径、坐标盒及自动相机条件；明确更正23：专用碰撞盒有LOD 0前置门，不能据此给LOD 3碰撞资格。

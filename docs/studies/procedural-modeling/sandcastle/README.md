@@ -1,5 +1,7 @@
 # Sandcastle Demo：沙、水与地表生成的静态研究
 
+扩展内容专题：[Workshop、Mod 与内容加载边界](mod-workshop-and-content-loading.md)。本机有地图 Workshop 方法候选，公开支持和实际玩家入口仍未确认；运行未做。跨游戏对照及 demo 方案见[122](../122-mod-workshop-dlc-comparison.md)、[123](../123-steam-workshop-and-dlc-design-for-demo.md)。
+
 性能续查：[27：稳态模拟与子步预算](27-steady-simulation-and-step-budgets.md)，区分无输入仍发的kernel、固定更新与Draw的不同门，以及0.2秒仅限请求的边界；未运行或测帧时。
 
 最新续查：[26：启动配置到Setup改色](26-startup-configuration-and-setup-colors.md)，接通Awake/Reset/Prepare/New，区分沙色临时global与水色配置回写；真实运行顺序仍待验证。
