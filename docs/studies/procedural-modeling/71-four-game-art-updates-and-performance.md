@@ -1,5 +1,7 @@
 # 四款游戏：美术表现、局部更新与性能续查
 
+面向综合demo的性能取舍及Editor约10 FPS的证据边界见[114](114-four-game-performance-mechanisms-and-demo-priorities.md)，同时纳入后续碰撞资格、池容量和反射缓存勘误。本文保留当时的静态研究范围，不代表当前工程性能实测。
+
 后续新增的 CPU/资源绑定与组件接收链见[73 续查账本](73-four-game-render-chain-closure.md)；[74](74-runtime-validation-cases.md)单列尚未运行的验收用例。本文保留上一轮覆盖。
 
 本轮按 **SUMMERHOUSE → Tiny Glade → Sandcastle Demo → 掘地求财** 的顺序补缺口，各有两篇新专题。四款都新增了本地发行制品的语义证据，而非仅列可研究方向。最有用的共同结论是：**逻辑状态的修改范围、显示产物的重建范围、绘制时的筛选范围和保存范围，往往不同。** 不能用“局部编辑”直接推出每帧只处理局部，也不能用“异步”推出没有主线程复制、等待或数据积累。
