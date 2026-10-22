@@ -1,5 +1,7 @@
 # Tiny Glade：建造出现动画、局部过渡与 demo 优先级
 
+后续 [131](131-tiny-glade-placement-lifecycle-and-animation-handoff.md) 已确认新屋顶两路零进度初始化，并把第二路接到尖顶实例的 `roof_animation_t` 与上传；确认/取消/连续编辑/历史回放分别说明。[132](132-demo-building-feedback-state-and-update-budget.md) 提供独立交互与成本规格。下文未决项保持本轮历史范围。
+
 2026-10-21，Pacific Time。用户观察到放房子有动画；木框专题见 [129](129-tiny-glade-timberframe-placement-preview.md)。本篇区分 CPU 动画进度、实例的顶点表现、瓦片运动与贴图平滑，给出适合独立 demo 的实施取舍。**这些局部效果已有静态依据，但木框何时退出、建筑何时完全接管显示的时序还未闭合。**
 
 本轮未启动/附加游戏，未检查或修改用户工程，未录制画面或做 GPU/FPS 验证。公开商店说明强调建筑会逐件装配砖、石、板材，它支持产品表现的方向，不能替代下文实现证据。[Tiny Glade 官方商店](https://store.steampowered.com/app/2198150/Tiny_Glade/)

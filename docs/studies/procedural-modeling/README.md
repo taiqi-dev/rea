@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+Tiny Glade 木框到成品的后续见[131：确认、取消、连续修改与历史动画交接](131-tiny-glade-placement-lifecycle-and-animation-handoff.md)，独立落地见[132：demo 建造反馈状态与更新预算](132-demo-building-feedback-state-and-update-budget.md)。新增建造 UI 到木框消息、候选清理、编辑历史、零进度屋顶到尖顶实例上传的字段连接；仍保留输入枚举和最终发布顺序的缺口。未运行游戏或用户项目。
+
 Tiny Glade 的建造反馈见[129：木框预览与梁柱实例](129-tiny-glade-timberframe-placement-preview.md)、[130：出现动画与 demo 优先级](130-tiny-glade-placement-animation-and-demo-priorities.md)：新增矩形/圆形木框写端与尺寸分段、屋顶状态推进和尖顶回弹复核，区分瓦片运动与栅格平滑。木框退出到成品接管的完整链仍待查，未运行游戏或用户项目。
 
 新增存档与联机要求见[127：DLC/Mod 状态与联机保存](127-dlc-mod-save-and-multiplayer-persistence.md)、[128：一人拥有 DLC、全房共享与 Mod 同步](128-party-shared-dlc-and-mod-synchronization.md)。用户已选择房间任意参与者拥有即可共玩，提供者不必是房主；统一保存、模块版本、缺包保护、内容准备与资格失效分别设计。公开机制与独立建议分开，实际平台/运行验证未做。
