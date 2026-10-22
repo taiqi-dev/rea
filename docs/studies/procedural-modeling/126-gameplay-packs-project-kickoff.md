@@ -62,3 +62,17 @@
 - owner 按项目政策精确 commit/push，创建中文 PR 并附加到新对话；普通静态/编译证据与运行缺口写清。只有现有项目协调父授予的具体 PR/head 才能合入 main，之后 owner 自理 clean final-sync；主目录由独立同步服务处理。
 - 发现同文件所有权冲突、目标身份不符、必须新增未授权依赖/破坏性操作，或首片必须扩大到不同产品/永久损坏/新网络拓扑时，冻结具体受阻项并报告可审阅的最小决定；不反复询问普通可逆实现选择。
 - 完成定义分层：研究交接完成、新对话启动、功能源码交付、运行验证、PR 合并及用户接受分别记录。本次研究父至少要核到新项目工作树上的成功工具与真实分支，并把后续 owner/窗口责任接好，不能只回一个创建 ID。
+
+## 实际启动回执
+
+新对话 **“玩法扩展｜塔防包与行为Mod首片”** 已由官方 project/worktree API 创建，实际 thread 为 `01a160fa-50bb-70f2-813e-79bc53479462`、host 为 `local`，关联项目 ID 为 `b48795ff-22da-436f-bff2-63807e239f6b`。正式 thread 解析完成后才用于读取与协调，未将初始 `clientThreadId` 当 task ID 使用。
+
+已独立读回实际工作树 `C:/Users/wtq35/.codex/worktrees/60b7/3DSandboxTest`，分支 `codex/gameplay-packs-td01`，启动基线 `78289f68732ee331b7248b4c219e8e30046a5af3`，origin 为 `https://github.com/taiqi-dev/3D-Sandbox.git`。这只是启动快照，不承诺未来仍等于 main。
+
+官方 `read_thread` 中首轮 `01a160fc-4ba0-7590-acc7-07f7e808109f` 已有真实工作：首个成功工具 `exec-fc785667-52ad-424f-b7cb-99c1a7d9a578` 在该根检查 cwd/Git 身份并返回 0；随后成功读取研究 123–126 与项目 Domain/导航代码。owner 已在自己分支建立 `Docs/Planning/Records/GameplayPacksTd01/Scope.md`，记录实际能力对应与受限事件—条件—动作方案，并继续独立源码建设。
+
+按项目里程碑流程，新增人类授权、真实 owner/root/branch/基线和精确窗口责任已通过官方线程发送给当时的项目 Supervisor。发送被接受，**不等于窗口已获授或消息已被消费**；这些动态动作由当前项目 State 与双方后续回报继续记录。研究对话没有写共享 State、抢 Editor/格式/合并席位或另建定时器。
+
+模型/强度按当次项目 policy 明确提交且 API 接受；运行设置与 Fast 没有独立 telemetry，记 Unavailable，未覆盖既有会话设置。创建与启动原始回执留在本机忽略目录 `.cache/procedural-modeling/mod-workshop-dlc/`，正式需求以本文及项目 owner 的 Records 为准。
+
+当前交付状态为 **研究交接完成、项目 owner Started**；不是功能源码闭环、运行验收、PR 合并或用户接受。游戏运行、存读、测试/构建、Steam 操作仍 **Not Run**。
