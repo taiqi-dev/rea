@@ -99,6 +99,8 @@ Steam 默认把条目更新传播给订阅者。当前官方还提供 SDK 1.60 �
 
 ## DLC：购买资格、磁盘内容与可用资源分别判断
 
+后续用户已选择“房间任意参与者拥有对应 DLC，全员即可共玩”；不再将联机拥有政策留作未知。具体资格、内容分发及同步以 [128](128-party-shared-dlc-and-mod-synchronization.md) 为准，保存恢复见 [127](127-dlc-mod-save-and-multiplayer-persistence.md)。下文独立 depot 建议必须补足未购买客机所需内容，不能直接用于购买者独占的共享玩法资源。
+
 Steam DLC 有自己的 App ID，可随基础文件分发并由游戏检查使用资格，也可放在只向拥有者分发的 depot。原声另有专门的应用类型，不能用“商店有原声”证明游戏做过可用建筑包的解锁与挂载。[DLC 官方说明](https://partner.steamgames.com/doc/store/application/dlc)
 
 建议大型主题资源用独立 depot，小型公共外观是否全员携带由下载体积与联机政策决定。官方包使用独立目录和 ID，避免把 Steam depot 的文件覆盖顺序当成游戏的内容依赖解析器。[Depot 挂载规则](https://partner.steamgames.com/doc/store/application/depots#Depot_Mounting_Rules)

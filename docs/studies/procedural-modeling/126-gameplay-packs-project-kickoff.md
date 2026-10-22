@@ -4,6 +4,8 @@
 
 本研究的正式基线为 [123：平台与加载](123-steam-workshop-and-dlc-design-for-demo.md)、[124：玩法包与家园](124-gameplay-dlc-and-moddable-homestead.md)、[125：执行/状态/性能](125-gameplay-mod-runtime-lifecycle-and-references.md)。本篇冻结一个完整而有界的首片；正式项目范围、实际源码对应和后续交付由新 owner 写入项目自己的 Records，不把 REA 文档当项目当前代码的事实来源。
 
+后续用户明确补充**房间任意参与者拥有相应 DLC 即可全员共玩，提供者可以是客机**，并要求调查存档、联机保存与 Mod 同步后交给对应项目会话。新增契约见 [127：版本化模块状态与保存恢复](127-dlc-mod-save-and-multiplayer-persistence.md)、[128：共享资格、内容分发与同步](128-party-shared-dlc-and-mod-synchronization.md)。沿同一 owner/Supervisor 接续；不把后续真实 Steam 实接当成本地首片已完成，也不据此抢共享窗口或启动运行验证。
+
 ## 本轮补查与可以停止调查的理由
 
 | 新核对的官方来源                                                                                          | 直接支持的局部事实                                                                            | 自研需要保留的边界                                                                                                 |

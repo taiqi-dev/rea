@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+新增存档与联机要求见[127：DLC/Mod 状态与联机保存](127-dlc-mod-save-and-multiplayer-persistence.md)、[128：一人拥有 DLC、全房共享与 Mod 同步](128-party-shared-dlc-and-mod-synchronization.md)。用户已选择房间任意参与者拥有即可共玩，提供者不必是房主；统一保存、模块版本、缺包保护、内容准备与资格失效分别设计。公开机制与独立建议分开，实际平台/运行验证未做。
+
 项目开工交接见[126：塔防玩法包与行为 Mod 首片](126-gameplay-packs-project-kickoff.md)：补核包依赖/扩展资格与迁移去重，整理到 3DSandboxTest 的独立 GUI/worktree 实施范围、共享窗口和验收边界。研究与实施分开；不会把新建对话当成功能完成。
 
 玩法扩展目标见[124：家园沙盒的塔防/RPG DLC 与玩法 Mod](124-gameplay-dlc-and-moddable-homestead.md)，执行机制与性能依据见[125](125-gameplay-mod-runtime-lifecycle-and-references.md)。用户已明确本体是建造/钓鱼生活世界，DLC 可增加完整玩法，Mod 可扩展行为；[123](123-steam-workshop-and-dlc-design-for-demo.md) 已修正此前只先做外观包的过窄顺序。没有读取用户工程、运行游戏或安装框架。
