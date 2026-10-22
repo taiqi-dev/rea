@@ -1,6 +1,6 @@
 # 四款游戏的 Mod、Steam Workshop 与 DLC 支持对照
 
-**优先借鉴 Tiny Glade 的受限内容包与游戏内创作者流程，再独立做自己的作品分享和 DLC 管线。** 当前证据不能把另三款当成已经交付完整 Mod/Workshop 系统的案例，也不能拿音乐或故事读物证明游戏内内容 DLC 的加载机制。
+**这四款主要提供资源与作品分享方面的参考，不能覆盖用户要求的全部玩法 DLC。** 用户已明确需要塔防、RPG 玩法包及行为 Mod，正式设计见 [124](124-gameplay-dlc-and-moddable-homestead.md)、[125](125-gameplay-mod-runtime-lifecycle-and-references.md)。Tiny Glade 的受限内容包仍有借鉴价值；当前证据不能把另三款当成已交付完整 Mod/Workshop 的案例，也不能拿音乐或读物证明游戏内玩法扩展链。
 
 本轮为截至 **2026-10-21，Pacific Time** 的官方网页与本机制品静态调查。研究仍在 `C:/Data/WebProject/rea/docs/studies/procedural-modeling/`；没有读取或修改 `3DSandboxTest`，没有启动游戏、操作 Steam 账号、订阅/上传内容、安装 DLC 或进行运行验证。独立设计另见 [123：综合 demo 的 Workshop 与 DLC 方案](123-steam-workshop-and-dlc-design-for-demo.md)。
 
@@ -42,7 +42,7 @@
 
 ## 建议下一步
 
-现在无需继续穷尽没有明确入口的游戏。最有价值的下一片是：**制定一个可脱离 Steam 使用的最小内容包与建筑蓝图契约，写清稳定 ID、版本、缺依赖、失败不污染世界和性能准入，再由项目现有负责人对齐已有实现。** 本轮只完成调查与建议，没有越界接入用户项目。
+现在无需继续穷尽没有明确入口的游戏。按用户补充的玩法目标，下一片改为：**一个本地塔防玩法包、一个行为 Mod，以及战斗中保存/恢复的竖向样片**，再由项目现有负责人对齐已有实现。稳定 ID、依赖和资源预算继续复用，但不能只做外观导入便算完成玩法扩展。本轮只更新调查与建议，没有接入用户项目。
 
 Workshop 集成随后验证上传更新、订阅安装和错误状态；DLC 再验证资格/安装/内容可用的区分。Steam 当前还支持按 beta branch 关联 Workshop 内容版本，但要主动配置，不能把它当作任意历史 Mod 的自动回滚系统。[官方版本机制](https://partner.steamgames.com/doc/features/workshop/itemversioning)
 
