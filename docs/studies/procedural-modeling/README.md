@@ -1,5 +1,9 @@
 # 程序化建造与美术研究
 
+Tiny Glade 的渲染问题见 [137：框架、Slang 与光影](137-tiny-glade-renderer-language-lighting-and-demo-route.md)、[138：植物顶点风](138-tiny-glade-vegetation-wind-shader.md)、[139：水面法线、涟漪与预算](139-tiny-glade-water-shader-and-demo-budget.md)。本机发行版走 Rust/rhapsody/Vulkan-SPIR-V，选定模块声明 Slang，不能当成 Unity URP；已新增树冠实际时间/风参数读取与多频率摆动的证据。附独立 URP 借鉴路线，未检查用户项目或运行目标。
+
+取消与成品发布的续查见 [135：菜单/工具退出到木框清理](135-tiny-glade-menu-tool-exit-and-timber-cleanup.md)、[136：实体、实例与帧提交](136-tiny-glade-entity-upload-and-frame-publication.md)。补上工具按钮 raw8、模式管理 raw10、所属槽清理与木板池 PrepareRendering flush，以及具体单线程 executor 的末尾 deferred 开关、App.update 后进入 render/维护/图执行的路径；仍不把这些静态入口称为逐帧无缝交接。
+
 Tiny Glade 的后续静态补证见 [133：确认、取消与输入映射](133-tiny-glade-confirm-cancel-input-mapping.md)、[134：木框退出、生成调度与发布条件](134-tiny-glade-preview-handoff-schedule-and-publication.md)。接通默认按键与动作状态、点击/拖动阈值、Escape 模式请求，以及主程序实际配置的 45 个有序阶段和五条消费者注册；仍不把消息、ECS 生效、GPU 上传和首帧显示混为同一个成功条件。右键/A/B 的全部画布桥、最终 deferred 图及逐帧交接仍有缺口，运行验证未做。
 
 Tiny Glade 木框到成品的后续见[131：确认、取消、连续修改与历史动画交接](131-tiny-glade-placement-lifecycle-and-animation-handoff.md)，独立落地见[132：demo 建造反馈状态与更新预算](132-demo-building-feedback-state-and-update-budget.md)。新增建造 UI 到木框消息、候选清理、编辑历史、零进度屋顶到尖顶实例上传的字段连接；仍保留输入枚举和最终发布顺序的缺口。未运行游戏或用户项目。

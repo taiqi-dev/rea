@@ -1,5 +1,7 @@
 # Tiny Glade：确认、取消与建造画布输入映射
 
+后续 [135](135-tiny-glade-menu-tool-exit-and-timber-cleanup.md) 已补工具点击到模式请求的实际消费者和阶段、菜单关闭状态提交、木框所属槽清理到木板池 flush；完整导航 Cancel 回调与历史忙碌后的最终接受仍未证明。下文保留本轮的输入调查范围。
+
 2026-10-22，Pacific Time。续接 [131](131-tiny-glade-placement-lifecycle-and-animation-handoff.md)。本篇只分析发行 EXE、PDB 和随游戏提供的控制器配置；没有启动游戏、模拟输入、读取用户按键配置或检查用户项目。调度与发布另见 [134](134-tiny-glade-preview-handoff-schedule-and-publication.md)。
 
 **新增接通了默认物理输入、动作状态、画布拖动、矩形创建，以及 Escape 发默认模式请求的路径。** 最重要的区别是：通用 `ui_confirm/ui_cancel`、画布 `left_click` 和 `main_menu` 是不同动作；拖动结束的两个原始值也不能分别命名为“取消”和“确认”。所有设备、重绑和打断组合仍未穷尽。

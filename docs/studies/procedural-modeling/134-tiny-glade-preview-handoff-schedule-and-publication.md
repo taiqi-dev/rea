@@ -1,5 +1,7 @@
 # Tiny Glade：木框退出、成品生成与发布条件
 
+后续 [136](136-tiny-glade-entity-upload-and-frame-publication.md) 已补具体 executor、末尾 deferred 开关及 App.update → render → 维护/图执行的正常路径；[135](135-tiny-glade-menu-tool-exit-and-timber-cleanup.md) 补所属木板槽的清理和 flush。最终 schedule 图、所有资源版本与首帧呈现仍未证明，下文统计保持本轮范围。
+
 2026-10-22，Pacific Time。续接 [131](131-tiny-glade-placement-lifecycle-and-animation-handoff.md)，输入链见 [133](133-tiny-glade-confirm-cancel-input-mapping.md)。仍仅做静态文件分析。
 
 **本轮从“有阶段名”推进到了“主程序实际注册 45 个有序阶段”，并把矩形 UI、矩形创建、屋顶创建、尖顶组装和屋瓦 flush 的注册连接补上。** 正式逻辑、ECS 实体、CPU 实例内容和 GPU 资源各有发布门槛。现有证据仍不足以把这一整套处理叫作木框与成品的原子替换，或保证确认后固定第几帧出现。

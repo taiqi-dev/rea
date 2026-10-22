@@ -1,5 +1,7 @@
 # Tiny Glade：砖面着色、光照连接与景深准备
 
+2026-10-22 后续：[137](137-tiny-glade-renderer-language-lighting-and-demo-route.md) 补随包框架/依赖与 Slang 源声明，重新解码本篇选定砖片元和光照片元，并将美术外观、阴影预算与独立 URP 实施路线分开整理；没有补成完整 GI 或实际像素验证。
+
 后续 [72](72-tiny-glade-cpu-render-bindings-and-lifecycle.md) 已补 CPU 的 G-buffer/光照 pass 注册与绘制入口；本篇仍保留 shader 模块内的原始证据范围，输出/输入句柄同一性尚未完全闭合。
 
 本篇回答一个有限的问题：程序化砖的可见颜色和法线怎样进入后续光照，以及画面柔焦怎样从深度生成。对象是本机 `C:\Software\Steam\steamapps\common\Tiny Glade` 的 Windows 发行版。EXE/PDB 与[本机身份记录](68-local-targets-and-three-game-comparison.md#tiny-glade-可以接着用哪些旧资料)一致；本篇新读取了以下实际包内文件，而没有运行游戏、附加进程或读取存档。此前砖的几何/实例生产见[39](39-tiny-glade-wall-and-timber-rendering.md)。

@@ -1,4 +1,7 @@
 # Tiny Glade：水生植物、水面噪声与涟漪
+
+2026-10-22 后续：[139](139-tiny-glade-water-shader-and-demo-budget.md) 重新解码水面和噪声模块，复核固定几何高度、涟漪上限和 LUT 采样数，并整理独立 demo 的法线/反射预算；[138](138-tiny-glade-vegetation-wind-shader.md) 另补植物时间形变。原有资源绑定与运行边界继续保留。
+
 本篇回答水域确定以后，植物与水面细节怎样生成。主要机制是候选网格加空间噪声筛选、按软遮罩设置实例尺寸，以及噪声/涟漪改变水面法线。它们与河床地形属于不同职责。
 
 沿用 [制品身份](00-evidence-and-scope.md)；编辑和河床见 [水域与河岸](07-tiny-glade-water-shape-and-banks.md)，文件摘要与 CPU 调度证据见 [水体账本](09-tiny-glade-water-evidence-ledger.md)。下文的 `%ID` 和 `0x偏移` 用于核对原包指令，正文公式不依赖本机导出文件才能阅读。
@@ -159,7 +162,6 @@ normal=normalize((noise_dx+sum(delta.x),1,noise_dz+sum(delta.y)))
 第四轮进一步追到实际两个三角形的水面网格、主深度视图到水面 attachment 的拷贝链、EarlyFragmentTests 和延迟反射的四位逐像素覆盖。**这份复杂颜色片元的 G 掩码采样不是几何轮廓裁剪，最终 alpha 也不是该掩码值。** 初次可见覆盖与后续反射补色必须分开；固定管线与河岸几何的完整补充、证据及剩余缺口见 [10](10-tiny-glade-water-render-pipeline-and-bank-transition.md)，本篇保留原来的局部材质/植物范围。
 
 未做：游戏运行、GPU 调试、所有真实绑定/采样模式核对及完整 CPU/GPU 调度。风险：静态公式适用范围、未核对的同名资源、主题枚举、缓冲容量和剩余动态渲染状态仍有不确定性；第四轮已确认的固定状态另见 10。原游戏文件未修改。
-
 
 ## 贯通的构造算例
 
