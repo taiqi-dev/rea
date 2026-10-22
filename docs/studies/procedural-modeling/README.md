@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+项目开工交接见[126：塔防玩法包与行为 Mod 首片](126-gameplay-packs-project-kickoff.md)：补核包依赖/扩展资格与迁移去重，整理到 3DSandboxTest 的独立 GUI/worktree 实施范围、共享窗口和验收边界。研究与实施分开；不会把新建对话当成功能完成。
+
 玩法扩展目标见[124：家园沙盒的塔防/RPG DLC 与玩法 Mod](124-gameplay-dlc-and-moddable-homestead.md)，执行机制与性能依据见[125](125-gameplay-mod-runtime-lifecycle-and-references.md)。用户已明确本体是建造/钓鱼生活世界，DLC 可增加完整玩法，Mod 可扩展行为；[123](123-steam-workshop-and-dlc-design-for-demo.md) 已修正此前只先做外观包的过窄顺序。没有读取用户工程、运行游戏或安装框架。
 
 Mod 与扩展内容见[四款游戏的 Mod / Workshop / DLC 对照](122-mod-workshop-dlc-comparison.md)及[综合 demo 的独立设计建议](123-steam-workshop-and-dlc-design-for-demo.md)：Tiny Glade 已有官方内容 Mod 流程；沙堡定位到地图 Workshop 方法候选；另两款的存档/打包能力与官方 Mod 支持分别说明。分开记录公开当前状态、本机静态证据、作品分享、素材包和 DLC；未读取用户项目或运行游戏。
