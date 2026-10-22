@@ -1,5 +1,7 @@
 # Tiny Glade：树冠、草与水生植物的 shader 摆动
 
+> 后续 [141](141-tiny-glade-wind-producers-and-frame-constants.md) 接通设置基线、Weather 到帧字段 308 的写入；[143](143-unity-urp-cozy-style-independent-rendering-plan.md) 另写 URP 统一变形与前后帧参数要求。下文保留此前的 shader 局部证据。
+
 2026-10-22，Pacific Time。框架和光照见 [137](137-tiny-glade-renderer-language-lighting-and-demo-route.md)。以下来自新读取的 shader 指令；原作实现与独立 demo 建议分别说明。
 
 **树冠的所选顶点入口已经接通“时间/风参数 → 正弦 → 位置与叶片局部旋转”，不是只发现了一个叫 wind 的字段。** 草、芦苇和灌木走不同入口；不能把它们、常春藤增长动画和落叶粒子合成一个统一风公式。

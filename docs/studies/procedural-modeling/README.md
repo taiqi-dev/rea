@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+Shader 续查见 [140：受光公式、柔影与历史稳定](140-tiny-glade-lighting-brdf-and-soft-shadow-filter.md)、[141：风参数生产者与帧常量](141-tiny-glade-wind-producers-and-frame-constants.md)、[142：水面反射/折射及后备条件](142-tiny-glade-water-reflection-refraction-and-fallback-gates.md)。新增粗糙漫反射/GGX 结构、8+8 阴影搜索/过滤上界、Weather 到风字段 308 的写入，以及 Fresnel、屏幕历史门和实际 compute BVH 求交证据。[143：Unity/URP 独立实现方案](143-unity-urp-cozy-style-independent-rendering-plan.md) 单列光照、统一顶点风/运动向量与基础水面规格，适合综合 demo；未运行目标或检查用户工程。
+
 Tiny Glade 的渲染问题见 [137：框架、Slang 与光影](137-tiny-glade-renderer-language-lighting-and-demo-route.md)、[138：植物顶点风](138-tiny-glade-vegetation-wind-shader.md)、[139：水面法线、涟漪与预算](139-tiny-glade-water-shader-and-demo-budget.md)。本机发行版走 Rust/rhapsody/Vulkan-SPIR-V，选定模块声明 Slang，不能当成 Unity URP；已新增树冠实际时间/风参数读取与多频率摆动的证据。附独立 URP 借鉴路线，未检查用户项目或运行目标。
 
 取消与成品发布的续查见 [135：菜单/工具退出到木框清理](135-tiny-glade-menu-tool-exit-and-timber-cleanup.md)、[136：实体、实例与帧提交](136-tiny-glade-entity-upload-and-frame-publication.md)。补上工具按钮 raw8、模式管理 raw10、所属槽清理与木板池 PrepareRendering flush，以及具体单线程 executor 的末尾 deferred 开关、App.update 后进入 render/维护/图执行的路径；仍不把这些静态入口称为逐帧无缝交接。

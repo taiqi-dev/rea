@@ -1,5 +1,7 @@
 # Tiny Glade：渲染框架、shader 语言与光影实现
 
+> 后续 [140](140-tiny-glade-lighting-brdf-and-soft-shadow-filter.md) 补粗糙漫反射/GGX 与屏幕阴影的搜索、比较采样和历史限幅；[143](143-unity-urp-cozy-style-independent-rendering-plan.md) 单列 Unity/URP 独立规格。下文保留此前的证据范围。
+
 2026-10-22，Pacific Time。本篇回答“是否 Unity URP、为什么光影看起来柔和”，植物与水面分别见 [138](138-tiny-glade-vegetation-wind-shader.md)、[139](139-tiny-glade-water-shader-and-demo-budget.md)。同时完成的菜单/发布续查见 [135](135-tiny-glade-menu-tool-exit-and-timber-cleanup.md)、[136](136-tiny-glade-entity-upload-and-frame-publication.md)。没有运行游戏或读取用户工程。
 
 **本机这份 Windows 发行版走 Rust、`rhapsody` 和 Vulkan/SPIR-V 的专用渲染路径，不是 Unity URP。选定 shader 模块还明确声明源语言 Slang。** Bevy 在这里提供 ECS/调度能力，不能由依赖 `bevy_ecs` 推断它使用 Bevy 的整套 renderer。

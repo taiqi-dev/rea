@@ -1,5 +1,7 @@
 # Tiny Glade：水面法线、涟漪、河岸与 demo 成本
 
+> 后续 [142](142-tiny-glade-water-reflection-refraction-and-fallback-gates.md) 补 Fresnel 混合、屏幕历史门和 compute 软件 BVH 求交；[143](143-unity-urp-cozy-style-independent-rendering-plan.md) 单列 URP 基础水面与低成本退化规格。下文保留此前的证据范围。
+
 2026-10-22，Pacific Time。续接已有 [08](08-tiny-glade-water-vegetation-and-surface.md)、[10](10-tiny-glade-water-render-pipeline-and-bank-transition.md)，本轮重读选定 shader 并整理面向综合 demo 的职责与预算。
 
 **这份水面的波纹主要改变光照用的法线，不是在所选顶点入口升降一张高密度水网格。** 水域形状、河岸、法线波纹、局部涟漪和反射/折射分层处理；它不是一张普通半透明贴图就包办所有效果。
