@@ -99,3 +99,9 @@ Steam 订阅默认更新到最新；beta branch 版本关联需要开发者配�
 一次有界官方等待已观察 owner 新轮 `01a1616f-7342-7932-aa02-d2743f212409` 开始处理，并明确回应会映射“任意参与者拥有即可共享”到包、存档与联机方案，真实 Steam/Workshop 留作后继、沿现有窗口队列。此快照尚不证明全部文档已读或代码已经修改。Supervisor 的发送已接受，消费/正式登记尚待其现有轮次处理；本研究不代写协调 State，也不把发送回执当作项目接入完成。
 
 研究验证：5 份拥有的文档 UTF-8、代码围栏和 132 个本地链接检查通过；格式及差异检查通过，提交/推送钩子的 typecheck/lint 为两项缓存成功。没有把这些文档检查解释成 DLC、Mod、联机、存读或性能验收。
+
+后续消费核验：2026-10-21 19:37 Pacific Time，官方会话快照确认上述 owner 轮次已完成，并明确回报完整读取 127/128。独立核对实际 `60b7/3DSandboxTest` 工作树干净，分支 `codex/gameplay-packs-td01` 的 HEAD 与远端均为 `eba7711371f294daf5f71adcb7e3948ec825cae3`。该提交更新项目 `Scope.md`、`Integration.md`、`PublicationProposal.md`，新增 `SharedDlcAndModSync.md`，共 4 文件、63 行；读取固定提交的新增记录确认已登记本次人类要求、研究来源、当前源码缺口和首片/后继边界。
+
+项目 owner 已采用客机可提供 DLC、个人拥有与房间使用分离、同一 World 保存事务、无资格暂停与缺包拒绝分别处理、内容 Ready 后才接受快照、Host 权威执行和保存。记录也明确当前非空 DLC 要求仍返回 `DlcEntitlementUnknown`，资格暂停和正式 World/Save/网络消费者尚未接入；不能把本次需求文档提交当成运行支持或完整 SourceReady。
+
+因此研究资料已经由对应 owner **消费并映射到项目正式记录**，不再仅是消息已发送；当前阶段为 RequirementsMapped / WaitingDependency。owner 已向现有 Supervisor 回报新提交与缺口，后续仍由同一项目队列授位和接入。研究对话未替 Supervisor 授位或登记共享 State；运行、存读、测试、构建及真实 Steam/Workshop 验证仍 Not Run。
