@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+Tiny Glade 的后续静态补证见 [133：确认、取消与输入映射](133-tiny-glade-confirm-cancel-input-mapping.md)、[134：木框退出、生成调度与发布条件](134-tiny-glade-preview-handoff-schedule-and-publication.md)。接通默认按键与动作状态、点击/拖动阈值、Escape 模式请求，以及主程序实际配置的 45 个有序阶段和五条消费者注册；仍不把消息、ECS 生效、GPU 上传和首帧显示混为同一个成功条件。右键/A/B 的全部画布桥、最终 deferred 图及逐帧交接仍有缺口，运行验证未做。
+
 Tiny Glade 木框到成品的后续见[131：确认、取消、连续修改与历史动画交接](131-tiny-glade-placement-lifecycle-and-animation-handoff.md)，独立落地见[132：demo 建造反馈状态与更新预算](132-demo-building-feedback-state-and-update-budget.md)。新增建造 UI 到木框消息、候选清理、编辑历史、零进度屋顶到尖顶实例上传的字段连接；仍保留输入枚举和最终发布顺序的缺口。未运行游戏或用户项目。
 
 Tiny Glade 的建造反馈见[129：木框预览与梁柱实例](129-tiny-glade-timberframe-placement-preview.md)、[130：出现动画与 demo 优先级](130-tiny-glade-placement-animation-and-demo-priorities.md)：新增矩形/圆形木框写端与尺寸分段、屋顶状态推进和尖顶回弹复核，区分瓦片运动与栅格平滑。木框退出到成品接管的完整链仍待查，未运行游戏或用户项目。

@@ -113,3 +113,7 @@ next = current + step
 原始结果位于忽略目录 `.cache/procedural-modeling/tiny-placement-lifecycle/`：带查询覆盖的符号 JSON、有界函数反汇编、调用者解析、selected-anchors.json。正式复核入口为 [placement_lifecycle_probe.py](tiny-glade/tools/placement_lifecycle_probe.py)：17 个直接调用、15 个指令锚点、四项历史分派、插值常量及一个 shader 字段偏移；它只读文件，不执行目标。锚点匹配不证明整函数语义或适用于别的版本。
 
 下一次若只补静态，优先两个断点：一是 ActionSet/UiState 的 raw variant 到确认、取消及模式切换生产者的精确对应；二是矩形候选停止供给、墙/屋顶 deferred spawn、实例上传与 draw 提交之间的先后条件。不要继续泛查所有动画名字。运行后再核对确认/取消是否闪空、连续改形状是否抖动、撤销是否出现旧结果；本轮均 **Not Run**。
+
+## 2026-10-22 后续补证
+
+[133](133-tiny-glade-confirm-cancel-input-mapping.md) 补上默认 Enter/Escape、A/B 与动作字段、点击和尺寸拖动的区别，以及 Escape 经默认模式请求到候选清理的接受分支；结束原始值 0/1 不能命名为取消/确认。[134](134-tiny-glade-preview-handoff-schedule-and-publication.md) 补上主程序配置的 45 项普通 chain、五条具体消费者注册和屋瓦 PrepareRendering flush。此前“完整输入对应与发布顺序未知”的范围由这两篇进一步缩小；右键/控制器到全部画布操作、历史门禁后的最终接受、最终 deferred 图与首帧呈现仍未证明。运行项继续 **Not Run**。
