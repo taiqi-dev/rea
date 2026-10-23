@@ -1,5 +1,7 @@
 # Tiny Glade：动效期间的命中门控与后续调查优先级
 
+后续 [150](150-tiny-glade-ui-capture-release-and-overlap-arbitration.md) 已补持续拖动时的旧参数保留和释放点击条件；[151](151-tiny-glade-selection-focus-grace-and-ui-sound-events.md) 补两级选中来源、聚焦宽限和声音事件。下文保留本轮门控覆盖和当时的调查优先级。
+
 2026-10-23，Pacific Time。续接 [144–147 的 UI Motion 研究](144-tiny-glade-ui-motion-static-chains.md)及[独立事项交接](148-ui-motion-dedicated-supervisor-handoff.md)。本轮选择补最影响自研交互正确性的门控，而非继续穷尽所有菜单曲线。仍不运行游戏、不读用户项目、不读取私人存档。
 
 **新的具体结论：所选工具栏路径先按逻辑显示位和有效尺寸决定是否注册交互；命中框沿用布局结果，但会再扩张。** 因而“还看得见”“动画没播完”“能否点击”“当前选中”需要分开处理，不能共用一个 animation-finished 布尔。
