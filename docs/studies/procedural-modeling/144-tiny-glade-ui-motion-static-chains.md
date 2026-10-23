@@ -1,5 +1,7 @@
 # Tiny Glade：UI Motion 分类与已恢复的静态链
 
+后续 [146](146-tiny-glade-menu-state-to-render-motion-boundaries.md) 已连接菜单状态与实际渲染参数、确认 MenuButtonContent 的 vtable；[147](147-tiny-glade-click-completion-and-row-timing.md) 接通开始反馈的组件插入和完成时移除，下文保留首轮证据及其当时缺口。独立实施交接见 [148](148-ui-motion-dedicated-supervisor-handoff.md)。
+
 2026-10-22，Pacific Time。回答按钮点击、聚焦、出现/收起、整排布局和菜单切换的实现问题；独立实现规格见 [145](145-independent-cozy-ui-motion-spec.md)。本轮只读游戏制品，没有运行游戏、操作输入或检查用户工程。
 
 **工具栏的关键做法是把交互状态、归一化动画进度、尺寸倍率和布局分开。** 出现与聚焦使用三次缓出；选中反馈使用另一条短脉冲曲线。动画后的尺寸进入 Taffy 布局，因此按钮变大时可以带动邻居重新排布。主菜单使用 `toolbar::mei` 另一条路径，不能将工具栏常数套到所有界面。

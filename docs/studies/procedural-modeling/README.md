@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+UI Motion 续查见 [146：菜单状态到渲染参数](146-tiny-glade-menu-state-to-render-motion-boundaries.md)、[147：点击触发/完成与按钮排时序](147-tiny-glade-click-completion-and-row-timing.md)。新增 MenuButtonContent 的 vtable 身份、实际菜单颜色标量消费者，以及开始交互插入/进度到 1 移除 UiPlaySelectAnimation 的 typed command 链；最终屏幕进退曲线、逐项延迟和完整屏障仍不冒称已恢复。[148：独立事项交接](148-ui-motion-dedicated-supervisor-handoff.md) 按用户新要求交给小屋 Supervisor，明确独立 owner/分支、首批真实 UI 范围与当前选中态修复边界；本会话未读用户工程、未运行验证。
+
 Tiny Glade UI Motion 见 [144：出现、聚焦、点击脉冲与布局联动的静态链](144-tiny-glade-ui-motion-static-chains.md)、[145：综合 demo 的独立动效规格](145-independent-cozy-ui-motion-spec.md)。新增三次缓出、显示/聚焦进度、临时尺寸倍率消费后重置，以及父聚焦到子排显示的证据；菜单整屏进退和逐项错峰仍有缺口。自研规格单列进退、按压、选择、拒绝、错峰、可打断切换和性能边界；未运行目标或检查用户工程。
 
 Shader 续查见 [140：受光公式、柔影与历史稳定](140-tiny-glade-lighting-brdf-and-soft-shadow-filter.md)、[141：风参数生产者与帧常量](141-tiny-glade-wind-producers-and-frame-constants.md)、[142：水面反射/折射及后备条件](142-tiny-glade-water-reflection-refraction-and-fallback-gates.md)。新增粗糙漫反射/GGX 结构、8+8 阴影搜索/过滤上界、Weather 到风字段 308 的写入，以及 Fresnel、屏幕历史门和实际 compute BVH 求交证据。[143：Unity/URP 独立实现方案](143-unity-urp-cozy-style-independent-rendering-plan.md) 单列光照、统一顶点风/运动向量与基础水面规格，适合综合 demo；未运行目标或检查用户工程。
