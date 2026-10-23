@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+相关续查见 [149：动效期间的命中门控与调查优先级](149-tiny-glade-ui-hit-gates-and-next-research.md)。补上工具栏显示/尺寸检查先于 widget 注册、布局命中框的额外扩张及聚焦重算；将旧捕获取消、重叠仲裁、正式选中/导航分离列为优先入口，完整菜单曲线和逐项错峰可延后。仍为静态研究，未检查或运行用户项目。
+
 UI Motion 续查见 [146：菜单状态到渲染参数](146-tiny-glade-menu-state-to-render-motion-boundaries.md)、[147：点击触发/完成与按钮排时序](147-tiny-glade-click-completion-and-row-timing.md)。新增 MenuButtonContent 的 vtable 身份、实际菜单颜色标量消费者，以及开始交互插入/进度到 1 移除 UiPlaySelectAnimation 的 typed command 链；最终屏幕进退曲线、逐项延迟和完整屏障仍不冒称已恢复。[148：独立事项交接](148-ui-motion-dedicated-supervisor-handoff.md) 按用户新要求交给小屋 Supervisor，明确独立 owner/分支、首批真实 UI 范围与当前选中态修复边界；本会话未读用户工程、未运行验证。
 
 Tiny Glade UI Motion 见 [144：出现、聚焦、点击脉冲与布局联动的静态链](144-tiny-glade-ui-motion-static-chains.md)、[145：综合 demo 的独立动效规格](145-independent-cozy-ui-motion-spec.md)。新增三次缓出、显示/聚焦进度、临时尺寸倍率消费后重置，以及父聚焦到子排显示的证据；菜单整屏进退和逐项错峰仍有缺口。自研规格单列进退、按压、选择、拒绝、错峰、可打断切换和性能边界；未运行目标或检查用户工程。

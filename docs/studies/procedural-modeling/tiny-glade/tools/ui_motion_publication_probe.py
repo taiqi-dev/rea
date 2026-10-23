@@ -39,6 +39,59 @@ ANCHORS = {
 }
 
 
+INTERACTION_ANCHORS = {
+    'zero_size_reference': (0x14297CA99, '450f57c0'),
+    'focus_clear_and_show_gate': (0x14297D165, 'c64101008039010f8567faffff'),
+    'nonpositive_size_gate': (0x14297D17E, 'f30f5dc8440f2ec10f834dfaffff'),
+    'hit_padding_scale': (0x14297D196,
+                           'f30f1081e8000000f3410f59c1488b8dc8010000f30f5901'),
+    'hit_dimensions_expansion': (0x14297D1AE, 'f30f12c00f58f0'),
+    'exclusion_intersection_skip': (0x14297D21D, '0f85aff9ffff'),
+    'focus_from_matching_entity': (0x14297D260, 'c6400101'),
+    'active_focus_show_gate': (0x14297D570, '803801756b'),
+    'focus_from_active_widget': (0x14297D598, 'c6400101'),
+    'world_occlusion_argument_false': (0x14297D312, '4531c0'),
+    'negative_distance_argument_true': (0x14297D328, '41b001'),
+}
+
+
+def inspect_interaction(pe):
+    anchors = []
+    for label, (va, expected_hex) in INTERACTION_ANCHORS.items():
+        expected = bytes.fromhex(expected_hex)
+        actual = pe.read(va, len(expected))
+        if actual != expected:
+            raise ValueError(f'Interaction anchor changed: {label} at {va:#x}')
+        offset, section = pe.locate(va, len(expected))
+        anchors.append({'label': label, 'va': hex(va), 'file_offset': hex(offset),
+                         'section': section, 'bytes': actual.hex()})
+    calls = []
+    for va, expected in (
+        (0x14297D1D4, 0x140DEEAD0),
+        (0x14297D2EC, 0x140C9DCB0),
+        (0x14297D315, 0x140C9DBE0),
+        (0x14297D373, 0x1409008D0),
+    ):
+        raw = pe.read(va, 5)
+        if raw[0] != 0xE8 or va + 5 + struct.unpack_from('<i', raw, 1)[0] != expected:
+            raise ValueError(f'Interaction call changed at {va:#x}')
+        calls.append({'va': hex(va), 'target_va': hex(expected)})
+    raw = pe.read(0x14297CA9D, 9)
+    if raw[:5] != bytes.fromhex('f3440f100d'):
+        raise ValueError('Expected selected hit-padding scalar load')
+    constant_va = 0x14297CA9D + 9 + struct.unpack_from('<i', raw, 5)[0]
+    if pe.read(constant_va, 4) != struct.pack('<f', 10.0):
+        raise ValueError('Selected hit-padding scalar changed')
+    return {'anchors_checked': anchors, 'direct_calls_checked': calls,
+            'hit_dimension_addition': {'constant_va': hex(constant_va),
+                                       'scalar_before_user_scales': 10.0},
+            'limitations': [
+                'Finite ordinary dimensions only; this is not invalid-input verification.',
+                'Widget registration gates do not prove cancellation of an older capture.',
+                'No overlap arbitration, full scheduling order, or runtime timing is established.',
+            ]}
+
+
 def inspect(binary, symbols):
     pe = PeReader(binary)
     if pe.base != 0x140000000:
@@ -117,6 +170,7 @@ def inspect(binary, symbols):
         'selected_feedback_parameters': {'constant_va': hex(pair_va),
                                          'values': list(struct.unpack('<ff', pair))},
         'symbol_receipt': str(symbols.resolve()), 'typed_commands': symbol_matches,
+        'interaction_gate': inspect_interaction(pe),
         'limitations': [
             'Selected static branches only; no game execution or elapsed-time observation.',
             'No final ECS scheduler/deferred-barrier order or stale-remove race is established.',
@@ -137,6 +191,7 @@ def main():
         json.dump(result, stream, ensure_ascii=False, indent=2)
         stream.write('\n')
     print(json.dumps({'output': str(args.output), 'anchors': len(ANCHORS),
+                      'interaction_anchors': len(INTERACTION_ANCHORS),
                       'direct_calls': len(result['direct_calls_checked']),
                       'typed_commands': len(result['typed_commands']),
                       'runtime': 'Not Run'}, ensure_ascii=False))
