@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+地面制作优先阅读 [152：地面层次与资源包交接](152-tiny-glade-ground-layers-and-resource-pack-handoff.md)、[153：启动格网、背景地形与接缝](153-tiny-glade-ground-startup-grid-and-background-seams.md)、[154：地表颜色、湿岸和实例装饰](154-tiny-glade-ground-materials-and-pack-decoration.md)。新接通近处规则格网的真实高度位移、已有远景 terrain Mesh 到背景图、两圈边缘与高度梯度法线；区分起始作品/背景资产和玩家编辑，不冒称已恢复统一随机初始生成器。自研真实地形生成按最新用户要求推进，建筑/草木/石头/装饰必须使用已有资源包；未运行游戏或读取用户项目。
+
 交互续查见 [150：旧捕获、释放点击与重叠仲裁](150-tiny-glade-ui-capture-release-and-overlap-arbitration.md)、[151：正式选中、聚焦宽限与声音事件](151-tiny-glade-selection-focus-grace-and-ui-sound-events.md)。接通未登记时保留捕获参数、释放点击身份检查、两组候选排序与追加、模式/类别的独立选中来源，以及约 0.3 秒的聚焦保留和声音事件入口。独立验收要求交给既有 NC11/相关 UI owner；未检查用户项目或运行验证。
 
 相关续查见 [149：动效期间的命中门控与调查优先级](149-tiny-glade-ui-hit-gates-and-next-research.md)。补上工具栏显示/尺寸检查先于 widget 注册、布局命中框的额外扩张及聚焦重算；将旧捕获取消、重叠仲裁、正式选中/导航分离列为优先入口，完整菜单曲线和逐项错峰可延后。仍为静态研究，未检查或运行用户项目。
