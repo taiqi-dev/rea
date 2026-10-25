@@ -1,5 +1,7 @@
 # Tiny Glade：景深焦点、近远模糊与开关位置
 
+后续 [163](163-tiny-glade-autofocus-parameter-producers.md) 已接回五个实际资源类型、当前相机的 focus/lens 选择表，以及配置点/光标/锁定/光圈/tilt-shift 的 CPU 来源；[165](165-tiny-glade-scene-depth-to-focus-and-coc.md) 补深度附件到两个消费者的记录身份。全部 UI 写端、图版本与 GPU 结果仍保留未知，下文为本轮原始范围。
+
 2026-10-24，America/Los_Angeles。承接用户在「Supervisor｜小屋美化与未完事项」提出的新调查：镜头贴近物体时的景深是否与树木局部透明互斥。树的证据和两效果关系见 [162](162-tiny-glade-tree-see-through-and-dof-composition.md)。本项当前只授权先调研，不据此启动 Unity 制作或运行验证。
 
 ## 先回答“特别近才触发吗”

@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+景深/渐隐续查见 [163：自动焦点参数生产者](163-tiny-glade-autofocus-parameter-producers.md)、[164：tree_see_thru 设置与圆锥来源](164-tiny-glade-tree-settings-and-cone-producers.md)、[165：场景深度到焦点/CoC](165-tiny-glade-scene-depth-to-focus-and-coc.md)。以五组 typed insert/查询的原有 TypeId 对照确认资源身份，接回光标和配置点、当前镜头参数、ArtisticConfig 字段、平滑距离与 FOV 换算；深度记录/槽位已接通，注册版本和最终 GPU 像素继续分开。未读取用户项目或运行游戏。
+
 近镜头反馈新调查见 [161：景深焦点与近远模糊](161-tiny-glade-dof-focus-and-near-far-blur.md)、[162：树木局部渐隐与景深关系](162-tiny-glade-tree-see-through-and-dof-composition.md)。重新解析自动焦点、CoC、树冠/树干及选定砖 shader，接通手放树动画到实例 half 打包、材质局部丢弃和编辑模式资格；不支持简单“树透明、建筑景深”的二选一模型。修正 69 的过渡项 min/下限误述；全部材料/模式、空间滞回及最终 GPU 同帧仍未知。本项仅先调研，未启动 Unity 制作或运行验证。
 
 本轮界面/环境制作入口见 [155：菜单快照与悬停分类](155-tiny-glade-menu-snapshot-and-hover-visibility.md)、[156：太阳、雾与天气锁](156-tiny-glade-sun-fog-and-weather-panel.md)、[157：编辑边界、相机与远景](157-tiny-glade-edit-bounds-camera-and-distant-horizon.md)、[158：画质与 TGSR 比例](158-tiny-glade-video-settings-and-resolution-scales.md)。新接通开菜单事件到背景缓存、雾三字段/独立锁、普通相机选定约束、两套质量枚举与实际尺度；白线生产者、完整 GPU 截图回调、全预设矩阵仍未知。供现有 Supervisor/owner 实施，未运行游戏或检查 Unity 源码。

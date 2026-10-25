@@ -1,5 +1,7 @@
 # Tiny Glade：树木局部渐隐与景深的关系
 
+后续 [164](164-tiny-glade-tree-settings-and-cone-producers.md) 将配置字节命名为 ImageFormationConfig.artistic.tree_see_thru，并接回模式门、平滑距离状态及镜头 FOV 角度；[165](165-tiny-glade-scene-depth-to-focus-and-coc.md) 补场景深度记录与自动焦点/CoC 的绑定。中间 pass 版本和真实 GPU 树深度仍未冒称闭合。
+
 2026-10-24，America/Los_Angeles。景深的输入、近远侧和开关见 [161](161-tiny-glade-dof-focus-and-near-far-blur.md)。本篇回答局部树木透明是否是“树触发透明、建筑触发景深”的优先级选择。静态范围、制品身份和截图限制沿 161；当前仅调研，不授予项目新实施或运行权限。
 
 ## 结论：两种效果分工，存在树专用资格
