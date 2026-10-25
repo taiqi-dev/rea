@@ -1,5 +1,7 @@
 # 程序化建造与美术研究
 
+近镜头反馈新调查见 [161：景深焦点与近远模糊](161-tiny-glade-dof-focus-and-near-far-blur.md)、[162：树木局部渐隐与景深关系](162-tiny-glade-tree-see-through-and-dof-composition.md)。重新解析自动焦点、CoC、树冠/树干及选定砖 shader，接通手放树动画到实例 half 打包、材质局部丢弃和编辑模式资格；不支持简单“树透明、建筑景深”的二选一模型。修正 69 的过渡项 min/下限误述；全部材料/模式、空间滞回及最终 GPU 同帧仍未知。本项仅先调研，未启动 Unity 制作或运行验证。
+
 本轮界面/环境制作入口见 [155：菜单快照与悬停分类](155-tiny-glade-menu-snapshot-and-hover-visibility.md)、[156：太阳、雾与天气锁](156-tiny-glade-sun-fog-and-weather-panel.md)、[157：编辑边界、相机与远景](157-tiny-glade-edit-bounds-camera-and-distant-horizon.md)、[158：画质与 TGSR 比例](158-tiny-glade-video-settings-and-resolution-scales.md)。新接通开菜单事件到背景缓存、雾三字段/独立锁、普通相机选定约束、两套质量枚举与实际尺度；白线生产者、完整 GPU 截图回调、全预设矩阵仍未知。供现有 Supervisor/owner 实施，未运行游戏或检查 Unity 源码。
 
 补充制作取舍见 [159：楼梯手柄、桥接与木框预览](159-tiny-glade-stair-handles-and-preview-adoption.md)、[160：统一水笔刷与分层橡皮](160-tiny-glade-water-brush-and-layered-eraser.md)。复用既有楼梯/预览/水域研究，新增七种 EraserLayer 及临时擦除查表；原作事实与用户新增的岸边、鱼、季节、保存范围分开。建筑/楼梯/桥/装饰用资源包；局部更新、撤销与旧异步结果失效按单一权威实施，未授予运行验证或项目写权。

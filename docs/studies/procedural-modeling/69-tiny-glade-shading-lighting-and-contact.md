@@ -1,5 +1,7 @@
 # Tiny Glade：砖面着色、光照连接与景深准备
 
+2026-10-24 复核：[161](161-tiny-glade-dof-focus-and-near-far-blur.md) 补自动焦点、近远符号与 CPU 处理开关；将本篇 CoC 过渡项的“至少 .01”更正为实际的 `min(.01,.05*(U-L))`，不是下限。[162](162-tiny-glade-tree-see-through-and-dof-composition.md) 另查树木局部渐隐，未运行 GPU。
+
 2026-10-22 后续：[137](137-tiny-glade-renderer-language-lighting-and-demo-route.md) 补随包框架/依赖与 Slang 源声明，重新解码本篇选定砖片元和光照片元，并将美术外观、阴影预算与独立 URP 实施路线分开整理；没有补成完整 GI 或实际像素验证。
 
 后续 [72](72-tiny-glade-cpu-render-bindings-and-lifecycle.md) 已补 CPU 的 G-buffer/光照 pass 注册与绘制入口；本篇仍保留 shader 模块内的原始证据范围，输出/输入句柄同一性尚未完全闭合。
@@ -37,11 +39,11 @@
 
 **观察。** `dof/prepare.precomp` 是 `8×8×1` compute（`w20–32`），每线程按像素坐标从 `depth_tex` 取深度（`w1883–1908`），经 `sample_to_view`、`view_to_world` 矩阵构造世界位置（`w1956–2009`）。从 `DofAutofocus` 当前 camera 索引读取 `focus0`、`focus1`、`use_tilt_shift`、`focus_scale`（`w2014–2063`）。所选路径将两个焦点值取倒数，再以 `0.001` 下限及 `±0.00001` 修正形成两个阈值（`w2067–2110`）。`use_tilt_shift` 控制投影距离计算分支（`w2115–2378`），所以焦点并非一个无条件的单标量距离。
 
-后续以 `r = 1/max(1e-10, projected_distance)` 同两个阈值比较，分三段计算带符号响应（`w2204–2333`）；窄的过渡项至少为 `0.01`（`w2216–2226`）。结果还乘 `focus_scale`、视图投影矩阵的 `[1][1]` 值和 `depth_tex_dims.y/720`（`w2385–2418`）。这里 `depth_tex_dims.y/720` 是确切的**垂直分辨率缩放**，并不证明整条画质或帧成本在各分辨率上线性变化。
+后续以 `r = 1/max(1e-10, projected_distance)` 同两个阈值比较，分三段计算带符号响应（`w2204–2333`）；窄的过渡项为 `min(0.01,0.05*(U-L))`（`w2216–2226`），其中 U/L 是上/下阈值。结果在 `w2385` 取负后还乘 `focus_scale`、视图投影矩阵的 `[1][1]` 值和 `depth_tex_dims.y/720`（`w2385–2418`）。这里 `depth_tex_dims.y/720` 是确切的**垂直分辨率缩放**，并不证明整条画质或帧成本在各分辨率上线性变化。
 
 每线程把绝对模糊半径限制为不超过 `depth_tex_dims.y/24`，再在 8×8 workgroup 内做原子 min/max；第一个线程把该 tile 的 min/max 写入 `tile_output_tex`（`w2423–2504`）。各线程也把自身带符号半径写进 `coc_out_tex`（`w2512–2523`）。写入前的 `abs` 只用于 tile 范围，像素 CoC 保留正负号。两张输出纹理的后续 gather/composite、tile 跳过规则和实际总成本未在本模块确认。
 
-**构造演算 2（中间值已给定）。** 设 `depth_tex_dims.y=1440`，则分辨率系数 `1440/720=2`、绝对半径上限 `1440/24=60`。设某片元经焦点分段所得带符号响应为 `-0.06`，`focus_scale=1`，投影矩阵 `[1][1]=2`；写入的 CoC 为 `-0.06×1×2×2=-0.24`。tile 聚合用 `min(60,abs(-0.24))=0.24`，而 `coc_out_tex` 仍写 `-0.24`。同 tile 其它 63 个线程决定最终 min/max；不能由这一像素推出完整 tile 或实际模糊画面。
+**构造演算 2（中间值已给定）。** 设 `depth_tex_dims.y=1440`，则分辨率系数 `1440/720=2`、绝对半径上限 `1440/24=60`。设某片元经焦点分段并取负后的响应为 `-0.06`，`focus_scale=1`，投影矩阵 `[1][1]=2`；写入的 CoC 为 `-0.06×1×2×2=-0.24`。tile 聚合用 `min(60,abs(-0.24))=0.24`，而 `coc_out_tex` 仍写 `-0.24`。同 tile 其它 63 个线程决定最终 min/max；不能由这一像素推出完整 tile 或实际模糊画面。
 
 ## 独立设计的可用分工与边界
 
