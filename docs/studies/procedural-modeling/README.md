@@ -1,5 +1,9 @@
 # 程序化建造与美术研究
 
+本轮界面/环境制作入口见 [155：菜单快照与悬停分类](155-tiny-glade-menu-snapshot-and-hover-visibility.md)、[156：太阳、雾与天气锁](156-tiny-glade-sun-fog-and-weather-panel.md)、[157：编辑边界、相机与远景](157-tiny-glade-edit-bounds-camera-and-distant-horizon.md)、[158：画质与 TGSR 比例](158-tiny-glade-video-settings-and-resolution-scales.md)。新接通开菜单事件到背景缓存、雾三字段/独立锁、普通相机选定约束、两套质量枚举与实际尺度；白线生产者、完整 GPU 截图回调、全预设矩阵仍未知。供现有 Supervisor/owner 实施，未运行游戏或检查 Unity 源码。
+
+补充制作取舍见 [159：楼梯手柄、桥接与木框预览](159-tiny-glade-stair-handles-and-preview-adoption.md)、[160：统一水笔刷与分层橡皮](160-tiny-glade-water-brush-and-layered-eraser.md)。复用既有楼梯/预览/水域研究，新增七种 EraserLayer 及临时擦除查表；原作事实与用户新增的岸边、鱼、季节、保存范围分开。建筑/楼梯/桥/装饰用资源包；局部更新、撤销与旧异步结果失效按单一权威实施，未授予运行验证或项目写权。
+
 地面制作优先阅读 [152：地面层次与资源包交接](152-tiny-glade-ground-layers-and-resource-pack-handoff.md)、[153：启动格网、背景地形与接缝](153-tiny-glade-ground-startup-grid-and-background-seams.md)、[154：地表颜色、湿岸和实例装饰](154-tiny-glade-ground-materials-and-pack-decoration.md)。新接通近处规则格网的真实高度位移、已有远景 terrain Mesh 到背景图、两圈边缘与高度梯度法线；区分起始作品/背景资产和玩家编辑，不冒称已恢复统一随机初始生成器。自研真实地形生成按最新用户要求推进，建筑/草木/石头/装饰必须使用已有资源包；未运行游戏或读取用户项目。
 
 交互续查见 [150：旧捕获、释放点击与重叠仲裁](150-tiny-glade-ui-capture-release-and-overlap-arbitration.md)、[151：正式选中、聚焦宽限与声音事件](151-tiny-glade-selection-focus-grace-and-ui-sound-events.md)。接通未登记时保留捕获参数、释放点击身份检查、两组候选排序与追加、模式/类别的独立选中来源，以及约 0.3 秒的聚焦保留和声音事件入口。独立验收要求交给既有 NC11/相关 UI owner；未检查用户项目或运行验证。
