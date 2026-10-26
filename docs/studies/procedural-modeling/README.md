@@ -1,6 +1,8 @@
 # 程序化建造与美术研究
 
-最新续查见 [169：锁焦读回适用性与时效](169-tiny-glade-focus-readback-validity-and-latency.md)、[170：深度节点次序与录制](170-tiny-glade-depth-node-order-and-command-recording.md)、[171：树实例到材质和绘制回调](171-tiny-glade-tree-instance-to-draw-binding.md)。已接上 mapped 读回的 GPU/CPU 条件、登记到屏障/队列提交入口，以及树自身的 48 B 参数更新、同 buffer 绑定和计数式间接绘制录制。明确纠正 168：参数块首项是实例 storage buffer 引用。读回代次、实际 GPU 时效、特定树的排序输出与最终 descriptor backing 仍有边界；运行验证仍未进行。
+最新专题见 [172：地形生成与随机输入](172-tiny-glade-terrain-generation-and-randomness.md)、[173：建房/画水附带装饰](173-tiny-glade-context-decoration-and-local-regeneration.md)、[174：场景风格配置与综合 demo 规格](174-tiny-glade-scene-style-presets-and-demo-design.md)。区分作者起始内容、低幅稳定高度场、各类环境候选与主题资源；新增五种场景目录、十个语义贴图映射、公共色库到主题覆盖及实际发布入口。CPU区域重采样与GPU全域候选重筛分开，不把所有装饰说成同一随机池；完整新世界随机配方、全部过滤与运行表现仍有边界。
+
+景深续查见 [169：锁焦读回适用性与时效](169-tiny-glade-focus-readback-validity-and-latency.md)、[170：深度节点次序与录制](170-tiny-glade-depth-node-order-and-command-recording.md)、[171：树实例到材质和绘制回调](171-tiny-glade-tree-instance-to-draw-binding.md)。已接上 mapped 读回的 GPU/CPU 条件、登记到屏障/队列提交入口，以及树自身的 48 B 参数更新、同 buffer 绑定和计数式间接绘制录制。明确纠正 168：参数块首项是实例 storage buffer 引用。读回代次、实际 GPU 时效、特定树的排序输出与最终 descriptor backing 仍有边界；运行验证仍未进行。
 
 前轮续查见 [166：焦点/树木 UI 写端](166-tiny-glade-focus-and-tree-fade-ui-writers.md)、[167：水／冰深度访问与版本边界](167-tiny-glade-water-ice-depth-access-and-epochs.md)、[168：树材质绑定生产者](168-tiny-glade-tree-material-descriptor-producers.md)。已接通三个拍照按钮、焦点拖动写点、两个非默认 profile 的逐项翻转，以及水／冰的可读写深度声明和树冠/树干七张纹理的绑定接口。未运行游戏或检查用户项目。
 

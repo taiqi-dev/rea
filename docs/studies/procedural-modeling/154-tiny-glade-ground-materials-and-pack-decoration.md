@@ -1,5 +1,7 @@
 # Tiny Glade：地表颜色、湿岸与资源实例装饰
 
+后续 [173](173-tiny-glade-context-decoration-and-local-regeneration.md) 补建房/画水的装饰生产与局部更新分工；[174](174-tiny-glade-scene-style-presets-and-demo-design.md) 接通五种主题目录、语义贴图别名、公共色库及主题覆盖，raw4 可对应 winter。实际运行覆盖和最终像素继续独立验证。
+
 2026-10-24，America/Los_Angeles。近处高度、远景资产与接缝见 [153](153-tiny-glade-ground-startup-grid-and-background-seams.md)，制作范围见 [152](152-tiny-glade-ground-layers-and-resource-pack-handoff.md)。身份和本轮 reader 同 153，未运行 shader 或游戏，也未读取用户 Unity 项目。
 
 **地形轮廓、地表着色和装饰实例三者都需要。** 颜色噪声不会增加真实山坡；一片片草花灌木也不是地面网格上的随机三角形。用户的模型约束是资源包优先且禁止自行制作建筑/装饰模型，不影响已经明确要求的真实地形生成。

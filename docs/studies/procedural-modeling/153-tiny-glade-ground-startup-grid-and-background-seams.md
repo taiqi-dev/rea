@@ -1,5 +1,7 @@
 # Tiny Glade：初始地面、规则格网与背景接缝
 
+后续 [172](172-tiny-glade-terrain-generation-and-randomness.md) 已补近处高度 shader 的低幅基础噪声、StrokeID 扰动和公开起始作品地形历史；它与本篇远景资产/格网分工共同解释自然起伏，不代表完整世界 seed 随机山体生成器已恢复。
+
 2026-10-24，America/Los_Angeles。供 [152 地面制作交接](152-tiny-glade-ground-layers-and-resource-pack-handoff.md) 使用，表面颜色与资源包装饰见 [154](154-tiny-glade-ground-materials-and-pack-decoration.md)。本篇只读发行制品，所有 native 地址为 preferred VA，image base 为 `0x140000000`。
 
 **新接通的链不是“先随机生成一整座山”。启动代码分别创建可变形的近处格网、加载现成远景地形，并由后者生成背景高度图；可编辑高度和水域继续改变近处顶点。另有从发行包起始作品进入会话的分支。** 初始内容、渲染载体和玩家编辑是不同阶段。
