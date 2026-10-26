@@ -14,25 +14,32 @@ const cache = join(root, ".cache", "windows-native-build");
 const inspectionFixture = process.argv[2] === "--inspection-fixture";
 const processFixture = process.argv[2] === "--process-fixture";
 const analysisFixture = process.argv[2] === "--analysis-fixture";
-const executableFixture = processFixture || analysisFixture;
-const executableName = analysisFixture
-  ? "rea-windows-analysis.exe"
-  : "process-boundary.exe";
-const executableSource = analysisFixture
-  ? "tests/fixtures/windows/analysisSample.cc"
-  : "tests/fixtures/windows/processBoundary.cc";
+const handleCloseTest = process.argv[2] === "--handle-close-test";
+const executableFixture = processFixture || analysisFixture || handleCloseTest;
+const executableName = handleCloseTest
+  ? "handle-close-test.exe"
+  : analysisFixture
+    ? "rea-windows-analysis.exe"
+    : "process-boundary.exe";
+const executableSource = handleCloseTest
+  ? "native/windows/src/handle_close_test.cc"
+  : analysisFixture
+    ? "tests/fixtures/windows/analysisSample.cc"
+    : "tests/fixtures/windows/processBoundary.cc";
 if (
   process.argv.length > 3 ||
   (process.argv.length > 2 && !inspectionFixture && !executableFixture)
 )
   throw new Error("Unknown Windows native build argument");
-const output = analysisFixture
-  ? join(root, "build", "fixtures")
-  : processFixture
-    ? join(root, ".cache", "windows-process-boundary")
-    : inspectionFixture
-      ? join(root, ".cache", "windows-native-inspection-fixture")
-      : join(root, "native", "windows", "build");
+const output = handleCloseTest
+  ? join(root, ".cache", "windows-handle-close-test")
+  : analysisFixture
+    ? join(root, "build", "fixtures")
+    : processFixture
+      ? join(root, ".cache", "windows-process-boundary")
+      : inspectionFixture
+        ? join(root, ".cache", "windows-native-inspection-fixture")
+        : join(root, "native", "windows", "build");
 let buildEnvironment = process.env;
 const run = (command, args, options = {}) => {
   const result = spawnSync(command, args, {
@@ -150,13 +157,15 @@ if (windowsBuild) {
   await verifiedDownload("win-x64/node.lib", library);
   const intermediate = join(
     cache,
-    analysisFixture
-      ? "analysis-fixture"
-      : processFixture
-        ? "process-fixture"
-        : inspectionFixture
-          ? "inspection"
-          : "release",
+    handleCloseTest
+      ? "handle-close-test"
+      : analysisFixture
+        ? "analysis-fixture"
+        : processFixture
+          ? "process-fixture"
+          : inspectionFixture
+            ? "inspection"
+            : "release",
   );
   await mkdir(intermediate, { recursive: true });
   if (executableFixture) {
@@ -166,12 +175,24 @@ if (windowsBuild) {
       "/EHsc",
       "/O2",
       "/MT",
+      ...(handleCloseTest ? [`/I${headers}`, "/D_WIN32_WINNT=0x0A00"] : []),
       `/Fo${intermediate}\\`,
       `/Fe${join(output, executableName)}`,
       executableSource,
+      ...(handleCloseTest
+        ? [
+            "native/windows/src/addon.cc",
+            "native/windows/src/filesystem.cc",
+            "native/windows/src/process.cc",
+            library,
+          ]
+        : []),
       "/link",
       `/IMPLIB:${join(intermediate, "sample.lib")}`,
       "advapi32.lib",
+      ...(handleCloseTest
+        ? ["/DELAYLOAD:node.exe", "delayimp.lib", "bcrypt.lib", "ntdll.lib"]
+        : []),
     ]);
   } else
     run("cl.exe", [
@@ -232,7 +253,18 @@ if (windowsBuild) {
       "-std=c++17",
       "-O2",
       "-static",
+      ...(handleCloseTest ? [`-I${headers}`, "-D_WIN32_WINNT=0x0A00"] : []),
       executableSource,
+      ...(handleCloseTest
+        ? [
+            "native/windows/src/addon.cc",
+            "native/windows/src/filesystem.cc",
+            "native/windows/src/process.cc",
+            library,
+            "-lbcrypt",
+            "-lntdll",
+          ]
+        : []),
       "-ladvapi32",
       "-o",
       join(output, executableName),

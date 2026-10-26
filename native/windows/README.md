@@ -36,6 +36,10 @@ both program branches, and verifies real Ghidra decompilation through the
 CLI and the configured Codex MCP launcher. Its executable and proof outputs
 remain ignored local artifacts.
 
+`build:windows-native -- --handle-close-test` builds the close-ownership
+regression executable. The Windows test lane runs both injected close/probe
+decisions and real protected-handle failures against the current MSVC build.
+
 `build/` is ignored by Git. The npm file inventory includes only the addon and
 its manifest. Release CI builds both, and `prepublishOnly` rejects a missing,
 stale, mismatched, or wrong-architecture artifact. A development tarball built
@@ -45,6 +49,14 @@ without this lane reports Windows native controls as unavailable.
 
 - Opaque Node objects carry a native type tag, resource kind, and closed state.
   A pathname, serialized object, or forged handle cannot grant authority.
+- A failed `CloseHandle` retains its exact value. A later open probe cannot
+  prove that the number still identifies the same object, so the value is
+  blocked from I/O and further closes. Only a not-in-table probe releases that
+  record; destructor survivors remain owned by a process-lifetime retainer.
+  Runtime removal releases admitted files before walking the tree and resumes
+  root/parent closure after a completed walk. Process cleanup ends local streams
+  before native release and retries a partial release without killing or polling
+  through handles that may already be closed. Unconfirmed release stays a failure.
 - Input admission opens every component with `OPEN_REPARSE_POINT`, verifies
   the actual NTFS object, and retains handles that deny replacement and source
   writing. An admitted child keeps each ancestor nonempty; ancestor handles

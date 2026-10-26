@@ -1,5 +1,5 @@
 import { once } from "node:events";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import type { WindowsNativeAuthority } from "./WindowsNativeLoader.js";
 import {
@@ -40,6 +40,7 @@ const authority = (
     readonly jobMemoryLimit?: true;
     readonly polls?: readonly unknown[];
     readonly appliedLimit?: (requested: unknown) => unknown;
+    readonly close?: () => unknown;
   } = {},
 ) => {
   const calls: { operation: string; arguments_: readonly unknown[] }[] = [];
@@ -81,7 +82,7 @@ const authority = (
             : {}),
         };
       if (operation === "process_poll") return polls.shift();
-      if (operation === "process_close") return null;
+      if (operation === "process_close") return options.close?.() ?? null;
       throw new Error(`Unmodeled native operation ${operation}`);
     },
   };
@@ -103,6 +104,51 @@ const launch = (
       ...(memoryLimitBytes === undefined ? {} : { memoryLimitBytes }),
     },
   );
+
+describe("Windows partial native release", () => {
+  it("ends streams, retains a failed release, and retries close without kill or poll", async () => {
+    vi.useFakeTimers();
+    try {
+      let failuresLeft = 2;
+      const { native, calls } = authority({
+        polls: [settledPoll],
+        close: () => {
+          if (failuresLeft-- > 0) throw new Error("Close owned process failed");
+        },
+      });
+      const child = launch(native);
+      const errors: Error[] = [];
+      let closed = 0;
+      child.on("error", (error: Error) => errors.push(error));
+      child.on("close", () => {
+        closed++;
+      });
+      await vi.advanceTimersByTimeAsync(25);
+      expect(errors.map((error) => error.message)).toEqual([
+        "Close owned process failed",
+      ]);
+      expect(child.stdout.writableEnded).toBe(true);
+      expect(child.stderr.writableEnded).toBe(true);
+      expect(closed).toBe(0);
+      const before = calls.length;
+      expect(child.kill()).toBe(false);
+      expect(child.kill(0)).toBe(false);
+      expect(await child.cleanup()).toMatchObject({
+        cleaned: false,
+        reason: "Close owned process failed",
+      });
+      expect(await child.cleanup()).toEqual({ cleaned: true, signaled: false });
+      expect(await child.cleanup()).toEqual({ cleaned: true, signaled: false });
+      expect(calls.slice(before).map(({ operation }) => operation)).toEqual([
+        "process_close",
+        "process_close",
+      ]);
+      expect(closed).toBe(1);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+});
 
 describe("Windows Job Object memory limits", () => {
   it("refuses a requested limit before launch when the artifact lacks the control", () => {

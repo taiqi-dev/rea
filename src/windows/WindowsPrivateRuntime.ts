@@ -40,6 +40,8 @@ export class WindowsPrivateRuntime {
   #pending: Promise<unknown> | undefined;
   #closed = false;
   #closePromise: Promise<void> | undefined;
+  // Keep the exact wrappers until native close confirms every handle is gone.
+  readonly #unreleasedFiles = new Set<object>();
   private constructor(
     readonly observation: z.infer<typeof runtimeSchema>,
     private readonly authority: WindowsNativeAuthority,
@@ -121,6 +123,8 @@ export class WindowsPrivateRuntime {
         relativePath,
       ]),
     );
+    let readFailure: { readonly cause: unknown } | undefined;
+    let text = "";
     try {
       const chunks: Buffer[] = [];
       for (let offset = 0; offset < file.size;) {
@@ -140,10 +144,23 @@ export class WindowsPrivateRuntime {
         offset += value.length;
         chunks.push(value);
       }
-      return Buffer.concat(chunks).toString("utf8");
-    } finally {
-      this.authority.call("close", [file.handle]);
+      text = Buffer.concat(chunks).toString("utf8");
+    } catch (cause: unknown) {
+      readFailure = { cause };
     }
+    try {
+      this.authority.call("close", [file.handle]);
+    } catch (cause: unknown) {
+      this.#unreleasedFiles.add(file.handle);
+      if (readFailure !== undefined)
+        throw new AggregateError(
+          [readFailure.cause, cause],
+          "Private runtime read and admitted file close both failed",
+        );
+      throw cause;
+    }
+    if (readFailure !== undefined) throw readFailure.cause;
+    return text;
   }
 
   /** Remove owned objects by handle, unlinking reparse entries without traversal. */
@@ -160,6 +177,18 @@ export class WindowsPrivateRuntime {
     if (this.#pending !== undefined)
       this.authority.call("runtime_snapshot_cancel", [this.observation.handle]);
     await this.#pending?.catch(() => undefined);
+    const failures: unknown[] = [];
+    for (const handle of this.#unreleasedFiles) {
+      try {
+        this.authority.call("close", [handle]);
+        this.#unreleasedFiles.delete(handle);
+      } catch (cause: unknown) {
+        failures.push(cause);
+      }
+    }
+    if (failures.length === 1) throw failures[0];
+    if (failures.length > 1)
+      throw new AggregateError(failures, "Close admitted runtime files failed");
     this.authority.call("runtime_close", [this.observation.handle]);
     this.#closed = true;
     runtimes.delete(windowsRuntimeIdentityKey(this.observation));

@@ -216,10 +216,12 @@ std::unique_ptr<Process> spawnProcess(const std::wstring& command, const std::ws
 static napi_value readOutput(napi_env env, Handle& read, bool& ended) {
   std::array<unsigned char, 65536> bytes;
   DWORD available = 0, count = 0;
-  if (!read.valid()) ended = true;
+  // EOF and close ownership are separate. Never read a numeric value after an
+  // unconfirmed close: the handle table may have reused it for another object.
+  if (!read.valid() || read.closeBlocked()) ended = true;
   else if (!PeekNamedPipe(read.get(), nullptr, 0, nullptr, &available, nullptr)) {
     require(GetLastError() == ERROR_BROKEN_PIPE, "Observe owned process output failed");
-    read.reset(); ended = true;
+    read.release(); ended = true;
   } else if (available > 0) {
     require(ReadFile(read.get(), bytes.data(), std::min<DWORD>(available, bytes.size()), &count, nullptr),
             "Read owned process output failed");
@@ -336,7 +338,8 @@ static void completeInput(napi_env env, napi_status status, void* pointer) {
 }
 
 static napi_value inputWrite(napi_env env, napi_value owner, Process& process, napi_value input) {
-  require(process.stdinWrite.valid(), "Owned process has no writable input", L"", ERROR_BROKEN_PIPE);
+  require(process.stdinWrite.valid() && !process.stdinWrite.closeBlocked(),
+          "Owned process has no writable input", L"", ERROR_BROKEN_PIPE);
   require(!process.inputPending, "Owned process input already has a pending write", L"", ERROR_BUSY);
   auto work = std::make_unique<InputWork>(process);
   void* bytes = nullptr;
@@ -397,7 +400,7 @@ napi_value processCall(napi_env env, const std::wstring& operation, const std::v
   require(args.size() == 1, "Wrong native process handle argument count", L"", ERROR_INVALID_PARAMETER);
   auto& process = static_cast<Process&>(resource(env, args[0], Kind::Process));
   if (operation == L"process_stdin_close") {
-    process.stdinWrite.reset();
+    requireReleased(process.stdinWrite, "Close owned process stdin failed");
     return null(env);
   }
   if (operation == L"process_poll") {
@@ -432,8 +435,15 @@ napi_value processCall(napi_env env, const std::wstring& operation, const std::v
   }
   if (operation == L"process_close") {
     // Closing the job is the crash-safe authority; no PID enumeration is used.
-    process.job.reset(); process.process.reset(); process.stdoutRead.reset(); process.stderrRead.reset(); process.stdinWrite.reset();
-    process.notifications.reset();
+    // Preserve each surviving handle. Once this starts, the JS owner retries
+    // close alone; kill/poll would need handles that may already be released.
+    retryRetainedNativeHandles();
+    requireReleased(process.job, "Close owned Job Object failed");
+    requireReleased(process.process, "Close owned process failed");
+    requireReleased(process.stdoutRead, "Close owned process stdout failed");
+    requireReleased(process.stderrRead, "Close owned process stderr failed");
+    requireReleased(process.stdinWrite, "Close owned process stdin failed");
+    requireReleased(process.notifications, "Close owned process notifications failed");
     process.closed = true;
     return null(env);
   }

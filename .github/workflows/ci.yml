@@ -636,6 +636,8 @@ jobs:
           tests/boundary/providers/hopper/hopperClient.cleanupRetry.test.ts
           src/windows/WindowsNativeLoader.test.ts
           src/windows/WindowsOwnedProcess.test.ts
+          src/windows/WindowsPrivateRuntime.test.ts
+          src/windows/WindowsHandleClose.test.ts
           src/ghidra/GhidraLauncherEnvironment.test.ts
           src/process/ProcessOwnership.test.ts
           src/process/ProcessOwnership.part2.test.ts

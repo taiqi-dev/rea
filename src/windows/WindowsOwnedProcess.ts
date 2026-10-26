@@ -65,6 +65,9 @@ export class WindowsOwnedProcess extends EventEmitter {
   readonly #settled: Promise<void>;
   #settle: (() => void) | undefined;
   #closed = false;
+  // Settlement and stream teardown precede native close. A partial close must
+  // resume only that operation, since its job/process handles may be gone.
+  #releasePending = false;
   #failure: string | undefined;
   #timer: NodeJS.Timeout | undefined;
   #unreferenced = false;
@@ -200,6 +203,7 @@ export class WindowsOwnedProcess extends EventEmitter {
 
   /** Terminate the retained job, never a PID supplied by another caller. */
   kill(signal?: NodeJS.Signals | number): boolean {
+    if (this.#releasePending) return false;
     if (signal === 0)
       return (
         !this.#closed &&
@@ -237,6 +241,17 @@ export class WindowsOwnedProcess extends EventEmitter {
 
   async #stop(): Promise<ProcessCleanupResult> {
     if (this.#closed) return { cleaned: true, signaled: false };
+    if (this.#releasePending) {
+      try {
+        this.#release();
+        return { cleaned: true, signaled: false };
+      } catch (cause: unknown) {
+        return {
+          cleaned: false,
+          reason: cause instanceof Error ? cause.message : String(cause),
+        };
+      }
+    }
     let timer: NodeJS.Timeout | undefined;
     try {
       const signaled = this.kill();
@@ -275,6 +290,10 @@ export class WindowsOwnedProcess extends EventEmitter {
     this.#timer = undefined;
     if (this.#closed) return;
     try {
+      if (this.#releasePending) {
+        this.#release();
+        return;
+      }
       const observed: unknown = this.#authority.call("process_poll", [
         this.#handle,
       ]);
@@ -309,18 +328,23 @@ export class WindowsOwnedProcess extends EventEmitter {
       // Native lifecycle failures belong to the error/cleanup channels, never
       // the captured stderr observation produced by the child itself.
       if (this.listenerCount("error") > 0) this.emit("error", failure);
-      // Retain the original job so explicit cleanup can retry its observation.
+      // Keep ownership for explicit retry. A partial close retries close alone.
     }
   }
 
   #release(): void {
     if (this.#closed) return;
-    if (this.#timer !== undefined) clearTimeout(this.#timer);
+    if (!this.#releasePending) {
+      if (this.#timer !== undefined) clearTimeout(this.#timer);
+      this.#timer = undefined;
+      this.#releasePending = true;
+      this.stdin?.destroy();
+      this.stdout.end();
+      this.stderr.end();
+    }
     this.#authority.call("process_close", [this.#handle]);
+    this.#releasePending = false;
     this.#closed = true;
-    this.stdin?.destroy();
-    this.stdout.end();
-    this.stderr.end();
     this.#settle?.();
     this.emit("close", this.exitCode, null);
   }
