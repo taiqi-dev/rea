@@ -15,9 +15,10 @@ export interface OffsetDateTimeInstant {
  * client that compiles advertised patterns — schema compilation happens before
  * arguments are supplied, so the whole tools request fails rather than one call.
  *
- * The accepted set is identical to the Zod validator; only the offset class
- * escapes `-`, as `\x2d`, because an escaped `-` inside a character class is
- * removed by `oxlint --fix` as a useless escape.
+ * Preserve the accepted set from Zod 4.4.3, including timestamps without
+ * seconds; newer Zod versions require seconds for offset timestamps. The offset
+ * class escapes `-` as `\x2d`, because an escaped `-` inside a character class
+ * is removed by `oxlint --fix` as a useless escape.
  */
 export const offsetDateTimeSchema = z
   .string()
