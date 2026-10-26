@@ -50,6 +50,7 @@ export const CLI_COMMANDS = Object.freeze({
   inspectRecordedCrash: "inspect-recorded-crash",
   inspectBinaryLayout: "inspect-binary-layout",
   inspectGoBinary: "inspect-go-binary",
+  inspectIl2cppMetadata: "inspect-il2cpp-metadata",
   inspectPeResources: "inspect-pe-resources",
   inspectAnalysisView: "inspect-analysis-view",
   listFridaDevices: "list-frida-devices",

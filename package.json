@@ -254,6 +254,7 @@
     "test:sqlite:run": "vitest run src/application/sqlite/ tests/boundary/sqlite/ tests/acceptance/sqliteDatabaseCli.test.ts tests/boundary/mcp/serverLifecycleMcp.test.ts",
     "build:windows-native": "node scripts/build-windows-native.mjs",
     "verify:windows-analysis": "node scripts/verify-windows-analysis.mjs",
+    "verify:il2cpp:metadata": "npm run build:cached && node scripts/verify-il2cpp-metadata.mjs",
     "verify:windows-native:artifact": "node scripts/verify-windows-native-artifact.mjs",
     "prepublishOnly": "npm run verify:windows-native:artifact",
     "verify:windows-native": "node scripts/verify-windows-native.mjs",

@@ -62,6 +62,17 @@ unpack .NET single-file hosts or decode IL2CPP metadata. NativeAOT method bodies
 require native analysis. See the [managed-code guide](managed-code-analysis.md)
 for supported deployment forms, selection semantics, and coverage limits.
 
+## Unity IL2CPP metadata
+
+Use `rea inspect-il2cpp-metadata PATH --json` for images, types, methods,
+members, parameters and strings from an unencrypted `global-metadata.dat`.
+For compact output, add `--detail summary --evidence_output NEW_FILE` to
+preserve complete Evidence and query it with `inspect-analysis-view`.
+MCP `inspect_il2cpp_metadata` defaults to a retained summary; selected
+`il2cpp-metadata` views support exact names, indices, owners, fields and paging.
+This static reader requires no Unity installation or native analysis engine.
+See [IL2CPP metadata](il2cpp-metadata.md) for versions and coverage.
+
 ## SQLite snapshots
 
 For a local database snapshot, use `rea inspect-sqlite-database PATH --json`.

@@ -1,11 +1,17 @@
 import { z } from "zod";
 import { javaScriptSourceSelectionSchema } from "../javascript/javascriptSourceSelection.js";
-
 import {
-  AnalysisInputError,
-  type AnalysisInputIssue,
-  AnalysisUnsupportedTargetError,
-} from "../analysisErrorCore.js";
+  projectIl2cppMetadataView,
+  il2cppMetadataSummarySchema,
+  il2cppMetadataViewRequestSchema,
+  il2cppMetadataViewContextSchema,
+  il2cppMetadataViewItemsSchema,
+} from "./il2cppMetadataView.js";
+
+import { AnalysisUnsupportedTargetError } from "../analysisErrorCore.js";
+import { analysisViewInputError } from "./analysisViewErrors.js";
+import { INSPECT_ANALYSIS_VIEW_OPERATION } from "./analysisViewOperation.js";
+export { analysisViewInputError, INSPECT_ANALYSIS_VIEW_OPERATION };
 import { digestCanonicalValue } from "../canonicalDigest.js";
 import { digestSchema, prefixedDigestSchema } from "../digests.js";
 import { evidenceSchema, type Evidence } from "../evidence.js";
@@ -94,7 +100,6 @@ import {
 } from "./dartAotView.js";
 
 /** Public name of the selected-view workflow. */
-export const INSPECT_ANALYSIS_VIEW_OPERATION = "inspect_analysis_view" as const;
 
 const summaryViewSchema = z.strictObject({ kind: z.literal("summary") });
 const facetViewSchema = z.strictObject({
@@ -214,6 +219,7 @@ export const analysisViewRequestSchema = z.discriminatedUnion("kind", [
   qlogViewRequestSchema,
   pcapViewRequestSchema,
   dartAotViewRequestSchema,
+  il2cppMetadataViewRequestSchema,
 ]);
 
 // The application owns admission and authenticated Evidence parsing. SDK and
@@ -332,6 +338,7 @@ const viewResultBase = {
     "inspect_android_package",
     "inspect_pcap_capture",
     "inspect_dart_aot",
+    "inspect_il2cpp_metadata",
   ]),
   parent_digest: digestSchema,
   view_digest: digestSchema,
@@ -424,6 +431,12 @@ export const dartAotSummaryViewResultSchema = z.strictObject({
 });
 
 /** Projected facts for one selected view of retained analysis Evidence. */
+export const il2cppMetadataSummaryViewResultSchema = z.strictObject({
+  ...summaryViewResultBase,
+  parent_operation: z.literal("inspect_il2cpp_metadata"),
+  summary: il2cppMetadataSummarySchema,
+});
+
 export const analysisViewResultSchema = z.discriminatedUnion("kind", [
   z.strictObject({
     ...viewResultBase,
@@ -450,6 +463,7 @@ export const analysisViewResultSchema = z.discriminatedUnion("kind", [
       androidPackageSummarySchema,
       pcapSummarySchema,
       dartAotSummarySchema,
+      il2cppMetadataSummarySchema,
     ]),
   }),
   z.strictObject({
@@ -545,6 +559,14 @@ export const analysisViewResultSchema = z.discriminatedUnion("kind", [
     parent_operation: z.literal("inspect_dart_aot"),
   }),
   z.strictObject({
+    kind: z.literal("il2cpp-metadata"),
+    view: il2cppMetadataViewRequestSchema,
+    items: il2cppMetadataViewItemsSchema,
+    ...viewResultBase,
+    ...il2cppMetadataViewContextSchema.shape,
+    parent_operation: z.literal("inspect_il2cpp_metadata"),
+  }),
+  z.strictObject({
     kind: z.literal("inventory"),
     view: inventoryViewSchema,
     manifest: artifactGraphManifestSchema,
@@ -583,10 +605,6 @@ export interface AnalysisViewParent {
 }
 
 /** Construct a typed input failure for one selected-view constraint. */
-export const analysisViewInputError = (
-  issues: readonly AnalysisInputIssue[],
-): AnalysisInputError =>
-  new AnalysisInputError(INSPECT_ANALYSIS_VIEW_OPERATION, undefined, issues);
 
 /** View payload before the content digest is attached. */
 export type UnsignedAnalysisView =
@@ -628,6 +646,10 @@ export type UnsignedAnalysisView =
     >
   | Omit<
       Extract<AnalysisViewResult, { readonly kind: "dart-aot" }>,
+      "view_digest"
+    >
+  | Omit<
+      Extract<AnalysisViewResult, { readonly kind: "il2cpp-metadata" }>,
       "view_digest"
     >;
 
@@ -706,6 +728,7 @@ const retainedViewProjectors = new Map<string, typeof projectWasmArtifactView>([
   ["inspect_managed_artifact", projectManagedArtifactView],
   ["inspect_android_package", projectAndroidPackageView],
   ["inspect_dart_aot", projectDartAotView],
+  ["inspect_il2cpp_metadata", projectIl2cppMetadataView],
   ["inspect_artifact", projectArtifactInventoryView],
   ["inventory_artifact", projectArtifactInventoryView],
 ]);
