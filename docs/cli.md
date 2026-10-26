@@ -73,6 +73,11 @@ MCP `inspect_il2cpp_metadata` defaults to a retained summary; selected
 This static reader requires no Unity installation or native analysis engine.
 See [IL2CPP metadata](il2cpp-metadata.md) for versions and coverage.
 
+Add `--binary_path C:/build/GameAssembly.dll` to associate method indices with
+preferred virtual addresses and RVAs in an explicitly selected x64 PE binary.
+Native address/type pages retain the identity of that second input. Neither
+file is executed or modified; structural agreement does not prove build identity.
+
 ## SQLite snapshots
 
 For a local database snapshot, use `rea inspect-sqlite-database PATH --json`.

@@ -641,6 +641,9 @@ jobs:
           tests/boundary/il2cpp/il2cppMetadataFile.test.ts
           tests/boundary/il2cpp/il2cppMetadataProvider.test.ts
           tests/acceptance/il2cppMetadataCli.test.ts
+          tests/boundary/il2cpp/il2cppBinaryFile.test.ts
+          tests/boundary/il2cpp/il2cppNativeProvider.test.ts
+          tests/acceptance/il2cppNativeCli.test.ts
           src/ghidra/GhidraLauncherEnvironment.test.ts
           src/process/ProcessOwnership.test.ts
           src/process/ProcessOwnership.part2.test.ts

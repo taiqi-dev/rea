@@ -90,6 +90,12 @@ cliTest(
       events: 2,
       parameters: 1,
       string_literals: 2,
+      code_gen_modules: null,
+      method_addresses: null,
+      method_address_states: null,
+      return_types: null,
+      field_types: null,
+      parameter_types: null,
     });
     expect(view.summary).not.toHaveProperty("sections");
     expect(view.summary.index_widths).toEqual(report.index_widths);

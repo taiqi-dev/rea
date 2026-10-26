@@ -8,12 +8,18 @@ import { createEvidence } from "../evidence.js";
 import { freezeJsonSnapshot } from "../immutableJson.js";
 import { jsonObjectSchema } from "../jsonValue.js";
 import { projectIl2cppMetadataView } from "./il2cppMetadataView.js";
+import { analysisViewRequestSchema } from "./analysisView.js";
 
 afterEach(() => {
   vi.restoreAllMocks();
 });
 
 const report: Il2cppMetadata = {
+  binary: null,
+  method_addresses: [],
+  return_types: [],
+  field_types: [],
+  parameter_types: [],
   artifact: {
     path: "/artifacts/global-metadata.dat",
     sha256: "a".repeat(64),
@@ -71,6 +77,72 @@ const parent = (normalizedResult: unknown, sealedResult: boolean) => ({
   sealedResult,
   limitations: [],
 });
+
+const linkedReport: Il2cppMetadata = {
+  ...report,
+  binary: {
+    artifact: {
+      path: "/artifacts/GameAssembly.dll",
+      sha256: "c".repeat(64),
+      bytes: 1024,
+    },
+    format: "pe",
+    architecture: "amd64",
+    image_base: "0x1000",
+    code_gen_modules_field: "0x1300",
+    code_gen_modules_array: "0x1400",
+    code_gen_modules: [
+      { image: 0, address: "0x1200", method_pointer_count: 1 },
+    ],
+    types_field: "0x1500",
+    types_count: 2,
+  },
+  method_addresses: [{ state: "code", address: "0x1100", rva: "0x100" }],
+  return_types: [{ type: 0, name: "void" }],
+  field_types: [{ type: 1, name: "int" }],
+  parameter_types: [{ type: 1, name: "int" }],
+};
+
+it.each([
+  [
+    {
+      collection: "method_addresses",
+      addresses: ["0x00001100"],
+      states: ["code"],
+      fields: ["rva"],
+    },
+    [{ index: 0, rva: "0x100" }],
+  ],
+  [
+    { collection: "code_gen_modules", image_indices: [0], fields: ["image"] },
+    [{ index: 0, image: 0 }],
+  ],
+  [
+    { collection: "parameter_types", method_indices: [0], fields: ["name"] },
+    [{ index: 0, name: "int" }],
+  ],
+] as const)(
+  "queries exact native selections from the paired parent: %j",
+  (selection, expected) => {
+    const value = projectIl2cppMetadataView(
+      parent(linkedReport, false),
+      analysisViewRequestSchema.parse({
+        kind: "il2cpp-metadata",
+        offset: 0,
+        limit: 16,
+        ...structuredClone(selection),
+      }),
+    );
+    if (!value.ok) throw value.error;
+    if (value.value.kind !== "il2cpp-metadata")
+      throw new Error("Wrong native view");
+    expect(value.value.items).toEqual(expected);
+    expect(value.value.binary_source?.artifact.sha256).toBe(
+      linkedReport.binary?.artifact.sha256,
+    );
+    expect(value.value.coverage).toMatchObject({ total: 1, exhausted: true });
+  },
+);
 
 const page = {
   kind: "il2cpp-metadata",

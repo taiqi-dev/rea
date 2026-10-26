@@ -24,7 +24,15 @@ export const registerIl2cppCommands = (
         .string()
         .describe("Local global-metadata.dat (version 24, 27, 29, 31 or 39)"),
     }),
-    options: z.object(analysisEvidenceDeliveryOptions),
+    options: z.object({
+      ...analysisEvidenceDeliveryOptions,
+      binary_path: z
+        .string()
+        .optional()
+        .describe(
+          "Explicit matching Windows x64 GameAssembly.dll; static reading only",
+        ),
+    }),
     run: ({ args, options }) =>
       withCommandCancellation((signal) =>
         logCliCommand(logger, CLI_COMMANDS.inspectIl2cppMetadata, async () => {
@@ -32,7 +40,13 @@ export const registerIl2cppCommands = (
           return deliverCliAnalysisEvidence({
             run: () =>
               service.inspect(
-                { path: absoluteCallerPath(args.path), detail: "complete" },
+                {
+                  path: absoluteCallerPath(args.path),
+                  detail: "complete",
+                  ...(options.binary_path === undefined
+                    ? {}
+                    : { binary_path: absoluteCallerPath(options.binary_path) }),
+                },
                 { signal },
               ),
             service,

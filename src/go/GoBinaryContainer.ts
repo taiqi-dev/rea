@@ -42,6 +42,9 @@ export interface GoBinaryContainer {
   readonly byte_order: "little" | "big";
   readonly mappings: readonly GoFileMapping[];
   readonly zero_fills: readonly GoZeroFillMapping[];
+  /** Preferred image base and executable file mappings, when observed by the format owner. */
+  readonly image_base?: bigint;
+  readonly executable_mappings?: readonly GoFileMapping[];
   readonly search: GoFileMapping | null;
 }
 

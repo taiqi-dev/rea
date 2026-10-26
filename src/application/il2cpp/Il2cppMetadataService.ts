@@ -51,17 +51,29 @@ export class Il2cppMetadataService {
           cause: input.error,
         }),
       );
-    if (!isAbsolute(input.data.path))
+    const relativeField = !isAbsolute(input.data.path)
+      ? "path"
+      : input.data.binary_path !== undefined &&
+          !isAbsolute(input.data.binary_path)
+        ? "binary_path"
+        : undefined;
+    if (relativeField !== undefined)
       return err(
         new AnalysisInputError(OPERATION, undefined, [
           {
-            path: ["path"],
+            path: [relativeField],
             reason: "invalid_format",
             message: "Expected an absolute filesystem path on this host.",
           },
         ]),
       );
-    const { detail, ...providerInput } = input.data;
+    const { detail } = input.data;
+    const providerInput = {
+      path: input.data.path,
+      ...(input.data.binary_path === undefined
+        ? {}
+        : { binary_path: input.data.binary_path }),
+    };
     if (detail === "summary") {
       const ready = requireAnalysisViewRetention(OPERATION, retention);
       if (!ready.ok) return ready;
@@ -69,7 +81,13 @@ export class Il2cppMetadataService {
     const inspected = await this.provider.inspect(providerInput, options);
     if (!inspected.ok) return inspected;
     const report = il2cppMetadataSchema.safeParse(inspected.value);
-    if (!report.success || report.data.artifact.path !== providerInput.path)
+    if (
+      !report.success ||
+      report.data.artifact.path !== providerInput.path ||
+      (providerInput.binary_path === undefined
+        ? report.data.binary !== null
+        : report.data.binary?.artifact.path !== providerInput.binary_path)
+    )
       return err(
         new AnalysisOutputError(
           OPERATION,
@@ -92,6 +110,14 @@ export class Il2cppMetadataService {
         limitations: value.limitations,
         locations: [
           { kind: "artifact-path", path: value.artifact.path },
+          ...(value.binary === null
+            ? []
+            : [
+                {
+                  kind: "artifact-path" as const,
+                  path: value.binary.artifact.path,
+                },
+              ]),
           ...value.sections
             .filter(
               ({ name, size }) =>

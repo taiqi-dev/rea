@@ -6,7 +6,8 @@ definitions, methods and named members with their owners, plus managed string
 literals, by stable index, namespace, range and count,
 with the header sections and serialized index widths. It reads the file without
 running it and requires no Unity installation, IL2CPP binary, active target,
-Hopper, Ghidra or IDA.
+Hopper, Ghidra or IDA. An optional explicit `binary_path` adds static linking
+to a matching Windows x64 PE `GameAssembly.dll` as described below.
 
 Metadata versions 24, 27, 29, 31 and 39 are supported by the format reader.
 Upstream reports the following producer layouts: Unity 2019.4.41f2
@@ -110,8 +111,9 @@ Existing empty collections retain a zero count. Full Evidence is preserved.
 
 `offset` counts matching rows, not source indices. `limit` defaults to 64;
 `coverage.next_offset` continues that filtered page. Coverage describes retained
-metadata facts only; runtime behavior and correspondence to native code remain
-unknown. Each view preserves the parent Evidence link, artifact identity and
+metadata facts only. Without `binary_path`, native correspondence remains
+unknown; linked views describe static pointer tables, not runtime behavior.
+Each view preserves the parent Evidence link, artifact identity and
 limitations. Queries work after the source file is removed. Select
 `detail: "complete"` to return every row inline within the separate MCP response
 budget.
@@ -138,6 +140,58 @@ in [CLI and Evidence](cli.md#run-a-command). Compact delivery requires
 `--evidence_output`; existing files are never overwritten. The full export
 preserves every decoded row for subsequent queries without the original file.
 
+## Windows GameAssembly.dll association
+
+Supply both files explicitly; the reader does not choose a DLL by filename or
+search surrounding directories:
+
+```powershell
+rea inspect-il2cpp-metadata "C:/build/Data/il2cpp_data/Metadata/global-metadata.dat" --binary_path "C:/build/GameAssembly.dll" --json
+```
+
+For MCP, add `binary_path` to `inspect_il2cpp_metadata`. Summary delivery
+retains both identities and reports native collection counts. Query the same
+parent with `inspect_analysis_view`, using method indices returned by the
+`methods` collection:
+
+```json
+{
+  "source": {
+    "kind": "retained-evidence",
+    "evidence_id": "<parent_evidence_id>"
+  },
+  "view": {
+    "kind": "il2cpp-metadata",
+    "collection": "method_addresses",
+    "indices": [0, 2],
+    "fields": ["state", "address", "rva"]
+  }
+}
+```
+
+`method_addresses` supports exact `addresses` and `states` filters in addition
+to indices, fields and paging. `return_types`, `field_types` and
+`parameter_types` preserve their corresponding metadata indices;
+`parameter_types` also accepts `method_indices`. `code_gen_modules` accepts
+`image_indices`. Each native view carries `binary_source`, so addresses remain
+bound to the selected binary's SHA-256 even after both inputs are removed.
+
+`code` records a file-backed executable pointer, `no-body` records a zero
+module slot, and `unknown` records an unclaimed method. A zero slot does not
+establish that generic instances or other generated code do not exist. Native
+addresses use the PE preferred image base; RVAs are relative to that base and
+are not runtime ASLR-resolved addresses. Field/parameter/return type names are
+C#-like displays from the binary type table. Version 27 preserves type indices
+with unknown names because its same-number layouts disagree about the byref flag.
+
+Only x64 PE is accepted for linking. Module names/counts, tokens, registration
+tables and every source mapping must agree unambiguously; structural agreement
+does not cryptographically prove that both files came from the same build.
+The optional binary input limit is 1 GiB, with fixed module-index and type-text
+workspaces reported on capacity failure. No DLL load, execution, process attach,
+Ghidra seed writing or modification occurs. Open that exact binary separately
+for native analysis and verify its SHA-256 before consuming an address.
+
 ## Observations
 
 The result contains:
@@ -163,6 +217,12 @@ The result contains:
 - `string_literals`: managed string literals as `value`, or `value_base64` with
   the exact bytes when they are not valid UTF-8;
 - `limitations`.
+
+With `binary_path`, the report also carries `binary` identity, preferred base,
+code-generation modules and registration locations, plus `method_addresses`,
+`return_types`, `field_types` and `parameter_types`. Without it, `binary` is
+null, native arrays are empty, and their summary counts remain unknown rather
+than claiming that the build has no native code.
 
 A row's position in its collection is its metadata index, so `type_start`,
 `method_start` and `declaring_type` refer to positions in `types` or `methods`.
@@ -226,7 +286,7 @@ report limit can still require the summary and paging path.
 ## Outside this tool
 
 - Decrypting or deobfuscating protected metadata.
-- Native code addresses, member types and method signatures; use the
+- Native method bodies, generic method instances and complete signatures; use the
   [native workflow](native-investigation.md) for native code.
 - Metadata versions other than 24, 27, 29, 31 and 39.
 
@@ -239,6 +299,12 @@ were compiled into the native binary or how they behave at runtime.
 `global-metadata.dat` through the public CLI and MCP. It is opt-in, like
 `verify:pcap`, because no real game metadata ships with the repository. Normal
 inspection does not need it.
+
+Add `--binary DLL` for CLI/MCP linking and an independent v31 PE pointer-table
+oracle. Add `--ghidra` after the binary argument to verify that a returned
+address maps to the same file offset and bytes through a real Ghidra session,
+with identity matching and cleanup. This optional probe requires existing
+Ghidra/JDK selections; it never executes the DLL.
 
 The public Cpp2IL fixture selected for Windows validation is
 [`Simple_2022_3_35` sample](https://github.com/SamboyCoding/Cpp2IL/tree/b5ad444b82267cb1e4b88b8b373c008105bdea52/TestFiles/Simple_2022_3_35):

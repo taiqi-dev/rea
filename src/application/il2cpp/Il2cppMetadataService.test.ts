@@ -18,6 +18,11 @@ const identity = {
   version: "1",
 };
 const report: Il2cppMetadata = {
+  binary: null,
+  method_addresses: [],
+  return_types: [],
+  field_types: [],
+  parameter_types: [],
   artifact: {
     path: "/artifacts/global-metadata.dat",
     sha256: "a".repeat(64),
@@ -66,6 +71,11 @@ it("rejects invalid paths and extra arguments before invoking the reader", async
     { path: "/artifacts/\0global-metadata.dat", detail: "complete" },
     { path: report.artifact.path, detail: "complete", decrypt: true },
     { path: report.artifact.path, detail: "rows" },
+    {
+      path: report.artifact.path,
+      detail: "complete",
+      binary_path: "relative/GameAssembly.dll",
+    },
   ]) {
     const result = await service.inspect(input);
     expect(result.ok).toBe(false);
