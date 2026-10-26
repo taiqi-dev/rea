@@ -1,6 +1,8 @@
 # 程序化建造与美术研究
 
-景深/渐隐续查见 [163：自动焦点参数生产者](163-tiny-glade-autofocus-parameter-producers.md)、[164：tree_see_thru 设置与圆锥来源](164-tiny-glade-tree-settings-and-cone-producers.md)、[165：场景深度到焦点/CoC](165-tiny-glade-scene-depth-to-focus-and-coc.md)。以五组 typed insert/查询的原有 TypeId 对照确认资源身份，接回光标和配置点、当前镜头参数、ArtisticConfig 字段、平滑距离与 FOV 换算；深度记录/槽位已接通，注册版本和最终 GPU 像素继续分开。未读取用户项目或运行游戏。
+最新续查见 [166：焦点/树木 UI 写端](166-tiny-glade-focus-and-tree-fade-ui-writers.md)、[167：水／冰深度访问与版本边界](167-tiny-glade-water-ice-depth-access-and-epochs.md)、[168：树材质绑定生产者](168-tiny-glade-tree-material-descriptor-producers.md)。已接通三个拍照按钮、焦点拖动写点、两个非默认 profile 的逐项翻转，以及水／冰的可读写深度声明和树冠/树干七张纹理的绑定接口。完整图调度和树实例到最终 draw 仍有明确断点；未运行游戏或检查用户项目。
+
+景深/渐隐参数基础见 [163：自动焦点参数生产者](163-tiny-glade-autofocus-parameter-producers.md)、[164：tree_see_thru 设置与圆锥来源](164-tiny-glade-tree-settings-and-cone-producers.md)、[165：场景深度到焦点/CoC](165-tiny-glade-scene-depth-to-focus-and-coc.md)。
 
 近镜头反馈新调查见 [161：景深焦点与近远模糊](161-tiny-glade-dof-focus-and-near-far-blur.md)、[162：树木局部渐隐与景深关系](162-tiny-glade-tree-see-through-and-dof-composition.md)。重新解析自动焦点、CoC、树冠/树干及选定砖 shader，接通手放树动画到实例 half 打包、材质局部丢弃和编辑模式资格；不支持简单“树透明、建筑景深”的二选一模型。修正 69 的过渡项 min/下限误述；全部材料/模式、空间滞回及最终 GPU 同帧仍未知。本项仅先调研，未启动 Unity 制作或运行验证。
 

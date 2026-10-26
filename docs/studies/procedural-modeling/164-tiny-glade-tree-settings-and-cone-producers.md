@@ -1,5 +1,7 @@
 # Tiny Glade：树木渐隐设置、模式门和圆锥参数生产者
 
+后续 [166](166-tiny-glade-focus-and-tree-fade-ui-writers.md) 已找到拍照工具栏 tree_seethrough 按钮，确认它逐项翻转两个非默认 profile；全部加载与其他 UI 写端仍未穷尽。
+
 2026-10-24，America/Los_Angeles。续 [162](162-tiny-glade-tree-see-through-and-dof-composition.md)，身份与静态方法沿 [163](163-tiny-glade-autofocus-parameter-producers.md)。本轮接回设置的正式字段和圆锥参数来源；原来的手放树动画、树冠/树干片元条件继续有效。
 
 ## tree_see_thru 的真实归属

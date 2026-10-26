@@ -1,5 +1,7 @@
 # Tiny Glade：场景深度到自动焦点与景深准备
 
+后续 [167](167-tiny-glade-water-ice-depth-access-and-epochs.md) 将水／冰接到可读写深度访问声明；[168](168-tiny-glade-tree-material-descriptor-producers.md) 补树材质的专用绑定生产端。完整图调度和树实例最终绘制仍保留边界。
+
 2026-10-24，America/Los_Angeles。续 [161](161-tiny-glade-dof-focus-and-near-far-blur.md)、[162](162-tiny-glade-tree-see-through-and-dof-composition.md)，本轮重点区分“同一 CPU 图资源记录”“注册时点/版本”“最终 GPU 深度”。身份、工具与本轮记录目录沿 [163](163-tiny-glade-autofocus-parameter-producers.md)。
 
 ## 已补上的身份链

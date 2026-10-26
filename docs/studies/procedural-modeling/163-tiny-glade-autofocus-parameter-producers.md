@@ -1,5 +1,7 @@
 # Tiny Glade：自动焦点参数的实际来源
 
+后续 [166](166-tiny-glade-focus-and-tree-fade-ui-writers.md) 已接上焦点框/固定焦点按钮、拖动写点和锁定请求写端；本文末尾的 UI 未决范围由该续篇进一步缩小。
+
 2026-10-24，America/Los_Angeles。续 [161](161-tiny-glade-dof-focus-and-near-far-blur.md)，补 CPU 参数到 shader 的对应，不读取用户配置或启动游戏。树木条件见 [164](164-tiny-glade-tree-settings-and-cone-producers.md)，深度记录见 [165](165-tiny-glade-scene-depth-to-focus-and-coc.md)。
 
 ## 本轮回答了什么
