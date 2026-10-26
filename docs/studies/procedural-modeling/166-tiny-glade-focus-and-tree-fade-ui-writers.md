@@ -1,5 +1,7 @@
 # Tiny Glade：焦点与树木渐隐的 UI 写端
 
+后续 [169](169-tiny-glade-focus-readback-validity-and-latency.md) 已将未命名读回对象接回 DofFocusReadbackSsbo，补 16 B 布局、GPU 写出与 CPU 接受条件；mode 匹配不等于请求代次或固定延迟保证。
+
 2026-10-25，America/Los_Angeles。续 [163：焦点参数来源](163-tiny-glade-autofocus-parameter-producers.md)与 [164：树木设置和帧常量](164-tiny-glade-tree-settings-and-cone-producers.md)。本轮接上拍照工具栏到状态写入，未运行游戏或读取玩家配置。
 
 ## 结论与证据范围

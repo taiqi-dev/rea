@@ -1,5 +1,7 @@
 # Tiny Glade：水／冰深度访问与焦点的版本边界
 
+后续 [170](170-tiny-glade-depth-node-order-and-command-recording.md) 已继续接通所选新建图的节点登记、顺序保存、分批录制、节点前屏障与队列提交入口。本文“仅有注册先后”的旧范围由该续篇缩小，活跃帧与 GPU 内容仍未观测。
+
 2026-10-25，America/Los_Angeles。续 [165：场景深度到焦点/CoC](165-tiny-glade-scene-depth-to-focus-and-coc.md)，结合 [10：水面固定状态](10-tiny-glade-water-render-pipeline-and-bank-transition.md)。身份、普通文件方法与新记录目录沿 [166](166-tiny-glade-focus-and-tree-fade-ui-writers.md)。
 
 ## 本轮补上的结论

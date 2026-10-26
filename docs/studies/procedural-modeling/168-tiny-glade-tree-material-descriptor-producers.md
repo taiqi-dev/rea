@@ -1,5 +1,7 @@
 # Tiny Glade：树冠／树干材质绑定的实际生产入口
 
+后续 [171](171-tiny-glade-tree-instance-to-draw-binding.md) 已补树自身的实例参数 flush、同 buffer 到材质的字段身份及树类别绘制回调，并纠正本文首项的 uniform 表述。特定树的排序结果、最终间接表 backing 与 layout B 仍未全闭合。
+
 2026-10-25，America/Los_Angeles。续 [61：树资源和实例发布](61-tiny-glade-tree-mesh-processing-and-publication.md)、[162：局部渐隐 shader](162-tiny-glade-tree-see-through-and-dof-composition.md)。身份和静态方法沿 [166](166-tiny-glade-focus-and-tree-fade-ui-writers.md)。
 
 ## 本轮闭合了哪一段
@@ -26,9 +28,9 @@
 | 树干 | `bark_color_naked`           | +0x10      | B+2                 | set 0 / binding 2                       |
 | 树干 | `bark_lines`                 | +0x18      | B+3                 | set 0 / binding 3                       |
 
-两种参数块首项 +0 指向 uniform 数据，不能误当为颜色纹理。这里 B 是实际 binding-layout 条目取出的基址；树冠从 `0x141571378` 取，`0x14157140E–14B8` 依次生成 B+1..4；树干 `0x14154FB12–FB93` 生成 B+1..3。本轮未完整追到每个最终 pipeline layout 的 B 选择，不用“shader 里从 0 起”替代它。
+两种参数块首项 +0 指向**实例只读 storage buffer 的引用**，不能误当为颜色纹理或普通 uniform 数据。此前只按块首项推断为 uniform 不准确；171 已核 native `RawBinder::read_buf` 与 SPIR-V 的 Uniform-class + BufferBlock/runtime-array 编码。这里 B 是实际 binding-layout 条目取出的基址；树冠从 `0x141571378` 取，`0x14157140E–14B8` 依次生成 B+1..4；树干 `0x14154FB12–FB93` 生成 B+1..3。本轮未完整追到每个最终 pipeline layout 的 B 选择，不用“shader 里从 0 起”替代它。
 
-树冠生产参数组装在 `0x1409E6BF1–6C01`，顺序是 uniform、alpha、flowers_color、flowers_depth、canopy_color；树干在 `0x1409E72D5–72E8` 组装 uniform 与三纹理。`glade:` 的最终季节资源解析及所有替换条件未在本轮重新恢复。
+树冠生产参数组装在 `0x1409E6BF1–6C01`，顺序是实例 buffer 引用、alpha、flowers_color、flowers_depth、canopy_color；树干在 `0x1409E72D5–72E8` 组装实例 buffer 引用与三纹理。`glade:` 的最终季节资源解析及所有替换条件未在本轮重新恢复。
 
 发行 `assets/prefabs/clearing/tree/default.ron` 的 canopy/trunk parts 分别指定 `country_core/clearing/tree_canopy` 与 `_trunk`；这与专用更新类型和片元接口吻合，但资源声明不是实际某棵树本帧入桶的证据。
 
