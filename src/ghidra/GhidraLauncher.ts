@@ -166,6 +166,8 @@ export interface GhidraHeadlessLauncherOptions {
   readonly disabledAnalyzers?: readonly string[];
   /** Caller seeds committed by the analysis profile, applied before analysis. */
   readonly analysisSeeds?: GhidraSeedCommitment;
+  /** Optional engine-native per-function timeout; omitted leaves it unbounded. */
+  readonly decompileTimeoutSeconds?: number;
   readonly analysisExtensions?: readonly GhidraExtension[];
   readonly pspExtension?: GhidraPspExtension;
   /** Remap typed float storage for the soft-float o32 ABI after analysis. */
@@ -246,6 +248,11 @@ export class GhidraHeadlessLauncher implements GhidraLauncher {
           target_sha256: session.targetSha256,
           provider_version: session.providerVersion,
           profile_digest: session.profileDigest,
+          ...(this.options.decompileTimeoutSeconds === undefined
+            ? {}
+            : {
+                decompile_timeout_seconds: this.options.decompileTimeoutSeconds,
+              }),
           ...(extensions.length === 0
             ? {}
             : { analysis_extensions: extensions }),

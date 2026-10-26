@@ -5,6 +5,7 @@ import {
   AnalysisInputError,
   AnalysisUnsupportedTargetError,
   AnalysisResourceConstraintError,
+  AnalysisTimeoutError,
 } from "./analysisErrorCore.js";
 import { ArtifactOperationError } from "./artifactOperationError.js";
 import {
@@ -28,12 +29,23 @@ import {
 import { ProviderSelectionError } from "./providerSelectionError.js";
 import { UnknownRegistryError } from "./unknownRegistryError.js";
 import { providerRetryAction } from "./providerOperationHealth.js";
+import { ProviderAdapterError } from "./providerAdapterError.js";
 import type { AnalysisError, AnalysisErrorTag } from "./analysisErrorBase.js";
 import type { AnalysisErrorProjection } from "./analysisErrorProjection.js";
 
 export const analysisErrorRemediationAction = (
   error: AnalysisError,
 ): string => {
+  if (
+    error instanceof AnalysisTimeoutError &&
+    error.remediationAction !== undefined
+  )
+    return error.remediationAction;
+  if (
+    error instanceof ProviderAdapterError &&
+    error.remediationAction !== undefined
+  )
+    return error.remediationAction;
   if (error instanceof AnalysisCapabilityUnavailableError && error.retryable)
     return "Review details.reason, then retry the same analysis after the condition clears.";
   if (error instanceof EvidenceFileError && error.published !== undefined)

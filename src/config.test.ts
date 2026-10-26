@@ -290,3 +290,33 @@ describe("configuration failure diagnostics", () => {
       });
   });
 });
+
+it.each(["0", "-1", "1.5", "2147484", "Infinity", " 1", ""])(
+  "rejects an invalid Ghidra per-function timeout: %s",
+  (raw) => {
+    expect(
+      parseConfig({ REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS: raw }),
+    ).toMatchObject({
+      ok: false,
+      error: {
+        settings: [{ setting: "REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS" }],
+      },
+    });
+  },
+);
+it.each(["1", "60", "2147483"])(
+  "accepts an exact Ghidra per-function timeout: %s",
+  (raw) => {
+    expect(
+      parseConfig({ REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS: raw }),
+    ).toMatchObject({
+      ok: true,
+      value: { ghidraDecompileTimeoutSeconds: Number(raw) },
+    });
+  },
+);
+it("leaves the native decompiler unbounded when no limit was selected", () => {
+  const config = parseConfig({});
+  if (!config.ok) throw config.error;
+  expect(config.value).not.toHaveProperty("ghidraDecompileTimeoutSeconds");
+});

@@ -45,6 +45,8 @@ export type AnalysisOperation =
 export interface AnalysisExecution {
   readonly result: JsonValue;
   readonly rawResult: JsonValue | null;
+  /** Keep partial observations as Evidence without replaying a transient failure. */
+  readonly cachePolicy?: "live";
   readonly provider: ProviderIdentity;
   readonly analysisProfile?: AnalysisProfileCommitment;
   readonly limitations: readonly string[];
@@ -62,6 +64,7 @@ export interface AnalysisExecution {
 }
 
 interface CreateAnalysisExecutionOptions {
+  readonly cachePolicy?: "live";
   readonly rawResult?: unknown;
   readonly analysisProfile?: AnalysisProfileCommitment;
   readonly limitations?: readonly string[];
@@ -100,6 +103,9 @@ export function createAnalysisExecution(
         ? null
         : jsonValueSchema.parse(options.rawResult),
     provider,
+    ...(options.cachePolicy === undefined
+      ? {}
+      : { cachePolicy: options.cachePolicy }),
     ...(options.analysisProfile === undefined
       ? {}
       : { analysisProfile: structuredClone(options.analysisProfile) }),

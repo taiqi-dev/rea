@@ -190,6 +190,7 @@
     "verify:interface-builder": "npm run build:cached && node scripts/verify/apple/interface-builder.mjs",
     "verify:ghidra:cross-format": "npm run build:cached && node scripts/verify-real-ghidra.mjs --cross-format",
     "verify:ghidra:windows": "npm run build:cached && npm run build:ghidra-windows-fixture && node scripts/verify-real-ghidra-windows.mjs",
+    "verify:ghidra:windows:timeout": "npm run build:cached && node scripts/verify-ghidra-timeout-windows.mjs",
     "verify:browser": "npm run build:cached && node scripts/verify-real-browser.mjs",
     "verify:frida": "npm run build:cached && node scripts/verify-frida.mjs",
     "verify:frida:bindings": "tsc --noEmit -p tsconfig.frida-verification.json",

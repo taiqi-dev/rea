@@ -2,7 +2,10 @@ import { describe, expect, it } from "vitest";
 
 import { err, ok } from "../domain/result.js";
 import { GhidraRequestQueue } from "./GhidraRequestQueue.js";
-import { bindGhidraSessionFailure } from "./GhidraSessionError.js";
+import {
+  bindGhidraSessionFailure,
+  GhidraSessionError,
+} from "./GhidraSessionError.js";
 
 const failure = bindGhidraSessionFailure(() => ({
   target_path: "/tmp/queue-fixture",
@@ -88,5 +91,43 @@ describe("Ghidra request queue failure settlement", () => {
       ok: false,
       error: { kind: "process" },
     });
+  });
+});
+
+it("marks a remote timeout as session-closed when caller cancellation overlaps its reply", async () => {
+  const controller = new AbortController();
+  let release: (() => void) | undefined;
+  const completed = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  const queue = new GhidraRequestQueue(
+    async () => {
+      await completed;
+      return err(
+        new GhidraSessionError(
+          "remote",
+          "one function timed out",
+          {},
+          { remoteCode: "decompile_timed_out" },
+        ),
+      );
+    },
+    failure,
+    async () => {},
+  );
+  const pending = queue.run(
+    "analyze_function",
+    {},
+    { signal: controller.signal },
+  );
+  controller.abort();
+  if (release === undefined) throw new Error("Missing queue reply control");
+  release();
+  expect(await pending).toMatchObject({
+    ok: false,
+    error: {
+      remoteCode: "decompile_timed_out",
+      diagnostics: { session_closed_by_cancellation: true },
+    },
   });
 });

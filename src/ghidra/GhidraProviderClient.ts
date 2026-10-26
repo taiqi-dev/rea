@@ -277,11 +277,9 @@ const createNativeAotSnapshotOwner = (input: {
             );
             if (!snapshot.ok)
               return err(
-                projectSessionError(
-                  operation,
-                  snapshot.error,
-                  startupTimeoutMs,
-                ),
+                projectSessionError(operation, snapshot.error, {
+                  ghidraStartupTimeoutMs: startupTimeoutMs,
+                }),
               );
             if (closed) return err(new AnalysisCancelledError(operation));
             if (identityConflict)
@@ -609,6 +607,9 @@ export const createGhidraProviderClient = (input: {
         ? {}
         : { disabledAnalyzers: config.ghidraDisabledAnalyzers }),
       ...(seeds === undefined ? {} : { analysisSeeds: seeds }),
+      ...(config.ghidraDecompileTimeoutSeconds === undefined
+        ? {}
+        : { decompileTimeoutSeconds: config.ghidraDecompileTimeoutSeconds }),
       platform: installation.platform,
       ...(extensions.length === 0 ? {} : { analysisExtensions: extensions }),
     }),
@@ -728,10 +729,12 @@ export const createGhidraProviderClient = (input: {
     rawResult: JsonValue,
     observationLimitations: readonly string[] = [],
     locations: readonly EvidenceLocation[] = [],
+    cachePolicy?: "live",
   ) => {
     const relationshipCoverage = relationshipCoverageFor(operation);
     return createAnalysisExecution(normalized, committedProfile.provider, {
       rawResult,
+      ...(cachePolicy === undefined ? {} : { cachePolicy }),
       locations,
       analysisProfile: committedProfile,
       ...(relationshipCoverage === undefined ? {} : { relationshipCoverage }),
@@ -747,13 +750,7 @@ export const createGhidraProviderClient = (input: {
     called: Result<JsonValue, GhidraSessionError>,
   ) => {
     if (!called.ok)
-      return err(
-        projectSessionError(
-          operation,
-          called.error,
-          config.ghidraStartupTimeoutMs,
-        ),
-      );
+      return err(projectSessionError(operation, called.error, config));
     const parsed = parseGhidraInventoryResult(operation, called.value);
     if (!parsed.ok) return parsed;
     return ok(projectExecution(operation, parsed.value, called.value));
@@ -776,13 +773,7 @@ export const createGhidraProviderClient = (input: {
       if (operation === "health") {
         const started = await client.start(options?.signal, options?.progress);
         if (!started.ok)
-          return err(
-            projectSessionError(
-              operation,
-              started.error,
-              config.ghidraStartupTimeoutMs,
-            ),
-          );
+          return err(projectSessionError(operation, started.error, config));
         const failed = await checkSessionObservations(operation, started.value);
         if (failed !== undefined) return err(failed);
         return ok(
@@ -804,13 +795,7 @@ export const createGhidraProviderClient = (input: {
       ) {
         const started = await client.start(options?.signal, options?.progress);
         if (!started.ok)
-          return err(
-            projectSessionError(
-              operation,
-              started.error,
-              config.ghidraStartupTimeoutMs,
-            ),
-          );
+          return err(projectSessionError(operation, started.error, config));
         const failed = await checkSessionObservations(operation, started.value);
         if (failed !== undefined) return err(failed);
       }
@@ -823,20 +808,16 @@ export const createGhidraProviderClient = (input: {
       if (operation === "list_documents" || operation === "list_procedures")
         return inventoryExecution(operation, called);
       if (!called.ok)
-        return err(
-          projectSessionError(
-            operation,
-            called.error,
-            config.ghidraStartupTimeoutMs,
-          ),
-        );
+        return err(projectSessionError(operation, called.error, config));
       let normalized: JsonValue;
       let observationLimitations: readonly string[] = [];
       let observationLocations: readonly EvidenceLocation[] = [];
+      let cachePolicy: "live" | undefined;
       if (isGhidraFunctionOperation(operation)) {
         const result = parseGhidraFunctionResult(operation, called.value);
         if (!result.ok) return result;
         normalized = result.value.value;
+        cachePolicy = result.value.cachePolicy;
         observationLimitations = result.value.limitations;
         observationLocations = result.value.locations ?? [];
       } else {
@@ -853,13 +834,7 @@ export const createGhidraProviderClient = (input: {
               options?.progress,
             );
             if (!started.ok)
-              return err(
-                projectSessionError(
-                  operation,
-                  started.error,
-                  config.ghidraStartupTimeoutMs,
-                ),
-              );
+              return err(projectSessionError(operation, started.error, config));
             const derived = await nativeAotOwner.derive(
               started.value.target.image_base,
               operation,
@@ -916,11 +891,7 @@ export const createGhidraProviderClient = (input: {
           measured: normalized,
           client,
           mapSessionError: (failure) =>
-            projectSessionError(
-              operation,
-              failure,
-              config.ghidraStartupTimeoutMs,
-            ),
+            projectSessionError(operation, failure, config),
           nativeAotResult: derived,
           signal: options?.signal,
         });
@@ -934,6 +905,7 @@ export const createGhidraProviderClient = (input: {
           called.value,
           observationLimitations,
           observationLocations,
+          cachePolicy,
         ),
       );
     },
@@ -1021,13 +993,12 @@ const unavailableClient = (failure: AnalysisError): AnalysisClient => ({
 const projectSessionError = (
   operation: AnalysisOperation,
   failure: GhidraSessionError,
-  startupTimeoutMs: number,
+  limits: Pick<
+    AppConfig,
+    "ghidraStartupTimeoutMs" | "ghidraDecompileTimeoutSeconds"
+  >,
 ): AnalysisError => {
-  const primary = projectPrimarySessionError(
-    operation,
-    failure,
-    startupTimeoutMs,
-  );
+  const primary = projectPrimarySessionError(operation, failure, limits);
   return failure.cleanupFailure === undefined
     ? primary
     : analysisErrorWithCleanupFailure(
@@ -1040,9 +1011,47 @@ const projectSessionError = (
 const projectPrimarySessionError = (
   operation: AnalysisOperation,
   failure: GhidraSessionError,
-  startupTimeoutMs: number,
+  limits: Pick<
+    AppConfig,
+    "ghidraStartupTimeoutMs" | "ghidraDecompileTimeoutSeconds"
+  >,
 ): AnalysisError => {
-  const context = { cause: failure, diagnostics: failure.diagnostics };
+  const startupTimeoutMs = limits.ghidraStartupTimeoutMs;
+  const context = {
+    cause: failure,
+    diagnostics: {
+      ...failure.diagnostics,
+      ...(failure.remoteCode === undefined
+        ? {}
+        : { remote_code: failure.remoteCode }),
+    },
+  };
+  const sessionClosed =
+    failure.diagnostics.session_closed_by_cancellation === true ||
+    failure.cleanupFailure !== undefined;
+  if (
+    failure.kind === "remote" &&
+    failure.remoteCode === "decompile_timed_out"
+  ) {
+    const seconds = limits.ghidraDecompileTimeoutSeconds;
+    if (seconds === undefined)
+      return new ProviderAdapterError("ghidra", operation, context);
+    return new AnalysisTimeoutError(operation, seconds * 1000, {
+      ...context,
+      userMessage: `${failure.message}. ${sessionClosed ? "The session was closed or its cleanup is incomplete." : "Only this function exceeded its decompiler limit; the session remains usable."}`,
+      remediationAction: sessionClosed
+        ? "Resolve any incomplete cleanup, reopen the target, then retry."
+        : "Retry the procedure with REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS increased in REA's launch environment, restarting REA to apply it; or continue with another procedure in this session. Keep the client deadline sufficient for all attempted functions and other query work.",
+    });
+  }
+  if (failure.kind === "remote" && failure.remoteCode === "decompile_failed")
+    return new ProviderAdapterError("ghidra", operation, {
+      ...context,
+      userMessage: `${failure.message}. ${sessionClosed ? "The session was closed or its cleanup is incomplete." : "Only the decompiler failed for this procedure; the session remains usable."}`,
+      remediationAction: sessionClosed
+        ? "Resolve any incomplete cleanup and reopen the target."
+        : "Use analyze_function to retain listing facts, inspect assembly or another procedure, or retry this procedure later.",
+    });
   if (failure.cause instanceof AnalysisAccessDeniedError)
     return new AnalysisAccessDeniedError(
       operation,
@@ -1074,7 +1083,12 @@ const projectPrimarySessionError = (
     return new AnalysisTimeoutError(
       operation,
       failure.timeoutMs ?? startupTimeoutMs,
-      context,
+      {
+        ...context,
+        userMessage: `Ghidra did not finish importing and analyzing the target within its configured ${failure.timeoutMs ?? startupTimeoutMs} ms startup deadline (REA_GHIDRA_STARTUP_TIMEOUT_MS).`,
+        remediationAction:
+          "Export useful Evidence, close the binary and resolve any cleanup failure. Increase REA_GHIDRA_STARTUP_TIMEOUT_MS in REA's launch environment, restart REA, reconnect the MCP client and reopen the target. Reopening alone keeps the existing server settings and repeats the import. REA_GHIDRA_DISABLED_ANALYZERS reduces coverage; the client's deadline must allow startup and the query.",
+      },
     );
   if (
     failure.kind === "remote" &&

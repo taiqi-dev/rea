@@ -2,7 +2,12 @@ import {
   REA_WORKFLOW_PROVIDER,
   workflowAnalysisProfile,
 } from "./InvestigationProviders.js";
-import type { AnalysisOperation } from "./AnalysisProvider.js";
+import type {
+  AnalysisOperation,
+  AnalysisOperationPort,
+} from "./AnalysisProvider.js";
+import type { AnalysisError } from "../domain/analysisErrorBase.js";
+import { ok, type Result } from "../domain/result.js";
 import type { AnalysisProfileCommitment } from "../domain/analysisProfile.js";
 import type { WorkflowSnapshotRecordInput } from "./binary/BinarySessionRecords.js";
 import {
@@ -19,6 +24,34 @@ import type { JsonValue } from "../domain/jsonValue.js";
 import type { UnknownRegistryPort } from "./investigation/InvestigationRecordPort.js";
 import { UnknownRegistryError } from "../domain/unknownRegistryError.js";
 
+/** Retain provider limitations and transient-result policy through composed reads. */
+export const executeComposedWorkflow = async (
+  analysis: AnalysisOperationPort,
+  execute: (
+    port: AnalysisOperationPort,
+  ) => Promise<Result<JsonValue, AnalysisError>>,
+) => {
+  const limitations = new Set<string>();
+  let cachePolicy: "live" | undefined;
+  const result = await execute({
+    execute: async (operation, parameters, options) => {
+      const observed = await analysis.execute(operation, parameters, options);
+      if (observed.ok) {
+        if (observed.value.cachePolicy === "live") cachePolicy = "live";
+        for (const limitation of observed.value.limitations)
+          limitations.add(`${operation}: ${limitation}`);
+      }
+      return observed;
+    },
+  });
+  if (!result.ok) return result;
+  return ok({
+    result: result.value,
+    limitations: [...limitations],
+    ...(cachePolicy === undefined ? {} : { cachePolicy }),
+  });
+};
+
 /** Build the shared Evidence record for a successful composed binary workflow. */
 export const createWorkflowEvidence = (input: {
   readonly target: BinaryTarget | undefined;
@@ -26,6 +59,7 @@ export const createWorkflowEvidence = (input: {
   readonly parameters: Readonly<Record<string, JsonValue>>;
   readonly result: JsonValue;
   readonly upstreamProfile: AnalysisProfileCommitment | undefined;
+  readonly upstreamLimitations?: readonly string[];
 }): Evidence =>
   createEvidence(input.target, REA_WORKFLOW_PROVIDER, {
     operation: input.operation,
@@ -40,7 +74,10 @@ export const createWorkflowEvidence = (input: {
           ),
         }),
     confidence: "derived",
-    limitations: ["Derived by an REA composed workflow."],
+    limitations: [
+      "Derived by an REA composed workflow.",
+      ...(input.upstreamLimitations ?? []),
+    ],
     ...(input.operation === "batch_decompile"
       ? { locations: batchProcedureLocations(input.result) }
       : {}),
@@ -75,8 +112,10 @@ const batchProcedureLocations = (result: JsonValue): EvidenceLocation[] => {
 export const workflowSnapshotRecord = (
   evidence: Evidence,
   operation: AnalysisOperation,
+  cachePolicy?: "live",
 ): WorkflowSnapshotRecordInput | undefined => {
-  if (evidence.analysis_profile === null) return undefined;
+  if (evidence.analysis_profile === null || cachePolicy === "live")
+    return undefined;
   return {
     operation,
     parameters: evidence.parameters,

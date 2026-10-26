@@ -15,3 +15,16 @@ export const providerStartupTimeoutSchema = z
   .regex(/^[1-9]\d*$/u, "must be a positive decimal integer")
   .transform(Number)
   .pipe(z.number().int().min(1).max(MAX_TIMER_DELAY_MS));
+
+/** Ghidra converts its per-function seconds into a signed-int millisecond delay. */
+export const ghidraDecompileTimeoutSchema = z
+  .string()
+  .regex(/^[1-9]\d*$/u, "must be a positive decimal integer")
+  .transform(Number)
+  .pipe(
+    z
+      .number()
+      .int()
+      .min(1)
+      .max(Math.floor(MAX_TIMER_DELAY_MS / 1000)),
+  );

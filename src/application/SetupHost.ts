@@ -163,6 +163,7 @@ export const systemSetupHost = (
         providerEnvironment: {
           ...providerRegistrationEnvironment(
             diagnosis.providerInspections ?? [],
+            environment,
           ),
           ...(diagnosis.hopperPath === undefined
             ? {}

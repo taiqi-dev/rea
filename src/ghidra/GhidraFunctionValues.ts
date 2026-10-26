@@ -419,6 +419,7 @@ const functionBoundaryObservationOperations: ReadonlySet<GhidraFunctionOperation
 const functionObservationEnvelope = z.strictObject({
   value: z.unknown(),
   limitations: z.array(z.string()),
+  cache_policy: z.literal("live").exactOptional(),
   selection: z
     .strictObject({
       file_offset: z.number().int().min(0).max(Number.MAX_SAFE_INTEGER),
@@ -430,6 +431,7 @@ const functionObservationEnvelope = z.strictObject({
 
 export interface ParsedGhidraFunctionResult {
   readonly value: JsonValue;
+  readonly cachePolicy?: "live";
   readonly limitations: readonly string[];
   readonly locations?: readonly EvidenceLocation[];
 }
@@ -442,6 +444,7 @@ export const parseGhidraFunctionResult = (
   let observation: {
     readonly value: unknown;
     readonly limitations: readonly string[];
+    readonly cache_policy?: "live";
     readonly selection?: z.infer<
       typeof functionObservationEnvelope
     >["selection"];
@@ -450,6 +453,8 @@ export const parseGhidraFunctionResult = (
     const envelope = functionObservationEnvelope.safeParse(value);
     if (
       !envelope.success ||
+      (operation !== "analyze_function" &&
+        envelope.data.cache_policy !== undefined) ||
       (operation !== "procedure_pseudo_code" &&
         envelope.data.selection !== undefined)
     )
@@ -469,6 +474,9 @@ export const parseGhidraFunctionResult = (
     ? ok({
         value: jsonValueSchema.parse(parsed.data),
         limitations: observation.limitations,
+        ...(observation.cache_policy === undefined
+          ? {}
+          : { cachePolicy: observation.cache_policy }),
         ...(observation.selection === undefined
           ? {}
           : {

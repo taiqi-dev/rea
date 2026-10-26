@@ -159,3 +159,55 @@ it.each([
     });
   },
 );
+
+it("carries a live partial-result policy and source limitations through composed workflows", async () => {
+  const { executeComposedWorkflow, workflowSnapshotRecord } =
+    await import("./WorkflowEvidence.js");
+  const { createAnalysisExecution } = await import("./AnalysisProvider.js");
+  const { ok } = await import("../domain/result.js");
+  const result = await executeComposedWorkflow(
+    {
+      execute: async () =>
+        ok(
+          createAnalysisExecution(
+            { partial: true },
+            { id: "ghidra", name: "Ghidra", version: "12.1.4" },
+            {
+              cachePolicy: "live",
+              limitations: ["Native decompiler timed out"],
+            },
+          ),
+        ),
+    },
+    async (port) => {
+      const read = await port.execute("analyze_function", {
+        procedure: "0x1000",
+      });
+      return read.ok ? ok(read.value.result) : read;
+    },
+  );
+  expect(result).toMatchObject({
+    ok: true,
+    value: {
+      cachePolicy: "live",
+      limitations: ["analyze_function: Native decompiler timed out"],
+      result: { partial: true },
+    },
+  });
+  const { createAnalysisProfile } =
+    await import("../domain/analysisProfile.js");
+  const evidence = createWorkflowEvidence({
+    target: undefined,
+    operation: "inspect_native_api",
+    parameters: {},
+    result: {},
+    upstreamProfile: createAnalysisProfile(
+      { id: "ghidra", name: "Ghidra", version: "12.1.4" },
+      {},
+    ),
+  });
+  expect(workflowSnapshotRecord(evidence, "inspect_native_api")).toBeDefined();
+  expect(
+    workflowSnapshotRecord(evidence, "inspect_native_api", "live"),
+  ).toBeUndefined();
+});

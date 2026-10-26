@@ -754,3 +754,42 @@ describe("complete Ghidra function body range evidence", () => {
     ).toBe(false);
   });
 });
+
+it("retains a partial function dossier and a live retry policy through the bridge parser", () => {
+  const dossier = functionDossierSchema.parse(ghidraFunctionDossier());
+  const reason = "Ghidra decompilation exceeded the one-second limit";
+  const partial = {
+    ...dossier,
+    pseudocode: "",
+    facet_availability: { pseudocode: { available: false, reason } },
+    native_api: { available: false, reason, residual_unknowns: [reason] },
+    native_value_flow: { available: false, reason, limitations: [reason] },
+  };
+  const result = parseGhidraFunctionResult(
+    "analyze_function",
+    jsonValueSchema.parse({
+      value: partial,
+      limitations: [reason],
+      cache_policy: "live",
+    }),
+  );
+  expect(result).toMatchObject({
+    ok: true,
+    value: {
+      cachePolicy: "live",
+      value: {
+        pseudocode: "",
+        assembly: dossier.assembly,
+        basic_blocks: dossier.basic_blocks,
+        facet_availability: { pseudocode: { available: false, reason } },
+      },
+    },
+  });
+  expect(
+    parseGhidraFunctionResult("procedure_pseudo_code", {
+      value: "",
+      limitations: [],
+      cache_policy: "live",
+    }).ok,
+  ).toBe(false);
+});

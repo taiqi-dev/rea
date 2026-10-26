@@ -593,14 +593,23 @@ without exposing partial analysis. This deadline is separate from MCP transport
 initialization and the client's deadline for that individual tool call. A client
 can time out earlier even when Ghidra would complete within its startup deadline.
 See [Ghidra first-query deadlines and recovery](mcp-contracts.md#ghidra-first-query-deadlines-and-recovery)
-for client options and the close/reopen recovery flow.
+for client options and recovery. Changing the launch environment requires
+exporting useful Evidence, closing the binary, resolving incomplete cleanup,
+restarting REA, reconnecting MCP and reopening the target. Reopening alone
+keeps the running server's configuration and repeats the cold import.
 
 One session contains exactly one imported Program; use `provider_id: "ghidra"`, `--provider ghidra`, or
 `REA_ANALYSIS_PROVIDER=ghidra` when both Hopper and Ghidra support the target.
 One persistent decompiler is owned by the Program, and a serial queue keeps
 Ghidra API calls on the owning Program thread without a fixed queue length.
-Operations run until a result, caller cancellation, or provider shutdown; there
-is no fixed per-operation or response-size ceiling. Unresolved computed calls
+Operations run until a result, caller cancellation, or provider shutdown.
+`REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS` optionally bounds each native function
+decompile to 1–2,147,483 whole seconds; absent keeps it unbounded. The maximum
+follows Ghidra's signed-int millisecond timer conversion. A native decompile
+timeout preserves the session; caller cancellation still closes it. A batch
+can attempt several functions, so the client's deadline must allow every
+attempt plus startup and other work. There is no fixed response-size ceiling.
+Unresolved computed calls
 remain unknown, reference-kind provenance is preserved, and provider-specific
 pseudocode is never treated as original source or Hopper-equivalent text.
 

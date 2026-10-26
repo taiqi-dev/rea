@@ -16,6 +16,7 @@ import type { ValidatedEnhancedCall } from "../application/EnhancedToolTypes.js"
 import {
   createWorkflowEvidence,
   workflowSnapshotRecord,
+  executeComposedWorkflow,
   recordWorkflowUnknowns,
 } from "../application/WorkflowEvidence.js";
 import { toolContract } from "../contracts/toolContracts.js";
@@ -231,15 +232,20 @@ const executeEnhancedTool = async (
           context,
           parameters,
         });
-      const services = new EnhancedTools({
+      const port: AnalysisOperationPort = {
         execute: (operation, operationParameters, executionOptions) =>
           admittedAnalysis.execute(operation, operationParameters, {
             ...executionOptions,
             progress,
           }),
-      });
+      };
       const result = await logToolExecution(registration.logger, name, () =>
-        services.executeValidated(validatedCall, context.mcpReq.signal),
+        executeComposedWorkflow(port, (observed) =>
+          new EnhancedTools(observed).executeValidated(
+            validatedCall,
+            context.mcpReq.signal,
+          ),
+        ),
       );
       await progress.report({
         phase: name,
@@ -253,7 +259,8 @@ const executeEnhancedTool = async (
           target: registration.activeTarget?.(),
           operation: name,
           parameters,
-          result: result.value,
+          result: result.value.result,
+          upstreamLimitations: result.value.limitations,
           upstreamProfile: registration.analysisProfile?.(),
         });
         const recorded = registration.recordEvidence?.(evidence);
@@ -263,7 +270,11 @@ const executeEnhancedTool = async (
           name !== "trace_native_ui_action" &&
           registration.allowsSnapshotReplay?.(name) === true
         ) {
-          const workflowRecord = workflowSnapshotRecord(evidence, name);
+          const workflowRecord = workflowSnapshotRecord(
+            evidence,
+            name,
+            result.value.cachePolicy,
+          );
           if (workflowRecord !== undefined) {
             const snapshot =
               registration.recordWorkflowSnapshot?.(workflowRecord);

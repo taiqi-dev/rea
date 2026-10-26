@@ -44,6 +44,7 @@ import {
 import {
   createWorkflowEvidence,
   workflowSnapshotRecord,
+  executeComposedWorkflow,
   recordWorkflowUnknowns,
 } from "./WorkflowEvidence.js";
 import type { AnalysisProviderSelector } from "../contracts/providerSelection.js";
@@ -301,7 +302,7 @@ const runAnalysis = async (
           : await session.openResolvedTarget(resolvedTarget, openOptions);
       if (!opened.ok) return cliError(opened.error);
       const evidenceProfile = analysisProfileForEvidence(session, tool);
-      const { output, evidence } = await executeAnalysisTool({
+      const { output, evidence, cachePolicy } = await executeAnalysisTool({
         session,
         openedTarget: opened.value,
         tool,
@@ -331,7 +332,11 @@ const runAnalysis = async (
         evidence !== undefined &&
         session.allowsSnapshotReplay(tool)
       ) {
-        const workflowRecord = workflowSnapshotRecord(evidence, tool);
+        const workflowRecord = workflowSnapshotRecord(
+          evidence,
+          tool,
+          cachePolicy,
+        );
         if (workflowRecord !== undefined) {
           const recorded = session.recordWorkflowSnapshot(workflowRecord);
           if (!recorded.ok)
@@ -377,7 +382,11 @@ const executeAnalysisTool = async (input: {
   readonly arguments: Readonly<Record<string, JsonValue>>;
   readonly signal: AbortSignal;
   readonly evidenceProfile: AnalysisProfileCommitment | undefined;
-}): Promise<{ readonly output: JsonValue; readonly evidence?: Evidence }> => {
+}): Promise<{
+  readonly output: JsonValue;
+  readonly evidence?: Evidence;
+  readonly cachePolicy?: "live";
+}> => {
   const { session, tool, signal, evidenceProfile } = input;
   if (tool === "analyze_function") {
     const { executeFunctionAnalysisEvidence } =
@@ -401,20 +410,25 @@ const executeAnalysisTool = async (input: {
     tool === "trace_native_ui_action"
   ) {
     const { EnhancedTools } = await import("./EnhancedTools.js");
-    const result = await new EnhancedTools(session).execute(
-      tool,
-      input.arguments,
-      signal,
+    const result = await executeComposedWorkflow(session, (port) =>
+      new EnhancedTools(port).execute(tool, input.arguments, signal),
     );
     if (!result.ok) return { output: cliError(result.error) };
     const evidence = createWorkflowEvidence({
       target: input.openedTarget,
       operation: tool,
       parameters: input.arguments,
-      result: result.value,
+      result: result.value.result,
+      upstreamLimitations: result.value.limitations,
       upstreamProfile: evidenceProfile,
     });
-    return { output: evidence, evidence };
+    return {
+      output: evidence,
+      evidence,
+      ...(result.value.cachePolicy === undefined
+        ? {}
+        : { cachePolicy: result.value.cachePolicy }),
+    };
   }
   let result = await session.execute(tool, input.arguments, { signal });
   if (

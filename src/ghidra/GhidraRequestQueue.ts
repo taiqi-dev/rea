@@ -131,6 +131,16 @@ export class GhidraRequestQueue {
     )
       .then(async (result) => {
         if (activeCancellation !== undefined) {
+          result = result.ok
+            ? err(
+                this.failure(
+                  "cancelled",
+                  "Ghidra request was cancelled; the session was closed",
+                ),
+              )
+            : result.error.kind === "remote"
+              ? err(result.error.withConcurrentCancellation())
+              : result;
           try {
             await activeCancellation;
           } catch (cause: unknown) {

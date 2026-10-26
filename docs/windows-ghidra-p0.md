@@ -62,6 +62,28 @@ and DLLs.
 
 ## Configuration
 
+`REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS` is an optional per-function limit from
+1 to 2,147,483 whole seconds. An unset value leaves decompilation unbounded.
+For example, set `$env:REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS = "60"` in the
+environment that launches REA. Restart REA and reconnect MCP after changing it;
+closing and reopening a binary alone does not reload environment settings.
+
+When only the decompiler fails or reaches this limit, `analyze_function`
+retains listing-backed assembly, comments, references, callers/callees and CFG.
+`facet_availability.pseudocode`, `native_api` and `native_value_flow` report
+unavailability and its reason. The partial Evidence remains available, but it
+is not cached for snapshot replay, so a later request can retry. Atomic
+`procedure_pseudo_code` instead returns retryable `provider_timeout` for this
+limit. Another function can be analyzed in the same session. Caller cancellation
+continues to close the session and retains incomplete-cleanup diagnostics.
+
+Windows qualification: `npm run verify:ghidra:windows:timeout` requires a
+Visual Studio x64 developer environment, `REA_CC` set to the absolute `cl.exe`,
+and the existing Ghidra/JDK configuration. It builds a source-owned DLL without
+an entry routine, never loads it, and checks a natural one-second timeout,
+retained listing facts, an atomic timeout and same-session small-function retry.
+The generated source is bounded to one MiB. Build REA before running it.
+
 ```powershell
 npm install --global rea-agents
 $env:GHIDRA_INSTALL_DIR = "C:\tools\ghidra_12.1.4_PUBLIC"

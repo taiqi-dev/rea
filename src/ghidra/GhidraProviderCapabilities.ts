@@ -172,6 +172,7 @@ export const limitationsFor = (operation: string): readonly string[] => {
     case "analyze_function":
       return [
         ...common,
+        "REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS optionally bounds each function's native decompile; unavailable decompiler facets preserve listing facts and permit same-session retry. Caller cancellation still closes the session.",
         "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
         "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
         "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",

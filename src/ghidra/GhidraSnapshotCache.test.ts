@@ -24,7 +24,7 @@ const TARGET: BinaryTarget = {
 
 // Exercise the real provider descriptors, profile, input/output projection and
 // session cache; only the installed Ghidra process is replaced at its seam.
-const fixture = (version = "12.1.4") => {
+const fixture = (version = "12.1.4", failFirstDecompile = false) => {
   const config = parseConfig({ GHIDRA_INSTALL_DIR: "/opt/ghidra" });
   if (!config.ok) throw config.error;
   const calls: string[] = [];
@@ -92,6 +92,24 @@ const fixture = (version = "12.1.4") => {
         const dossier = functionDossierSchema.parse(ghidraFunctionDossier());
         dossier.procedure.name = name;
         dossier.pseudocode = `void ${name}() {}`;
+        if (
+          operation === "analyze_function" &&
+          failFirstDecompile &&
+          calls.filter((name) => name === "analyze_function").length === 1
+        ) {
+          dossier.pseudocode = "";
+          dossier.facet_availability = {
+            pseudocode: {
+              available: false,
+              reason: "Native decompiler timed out",
+            },
+          };
+          return ok({
+            value: dossier,
+            limitations: ["Native decompiler timed out"],
+            cache_policy: "live",
+          });
+        }
         if (operation === "annotate_native_function")
           return ok({
             annotations: {
@@ -284,4 +302,33 @@ describe("Ghidra snapshot cache", () => {
     expect(session.exportAnalysisSnapshot().ok).toBe(false);
     await session.close();
   });
+});
+
+it("retains partial Evidence but retries a timed-out function before caching a complete dossier", async () => {
+  const initial = fixture("12.1.4", true);
+  await open(initial.session);
+  try {
+    const first = await initial.session.execute("analyze_function", {
+      procedure: "0x401000",
+    });
+    expect(first).toMatchObject({
+      ok: true,
+      value: { cachePolicy: "live", result: { pseudocode: "" } },
+    });
+    const partialSnapshot = initial.session.exportAnalysisSnapshot();
+    if (!partialSnapshot.ok) throw partialSnapshot.error;
+    expect(partialSnapshot.value.entries).toHaveLength(0);
+    const second = await initial.session.execute("analyze_function", {
+      procedure: "0x401000",
+    });
+    expect(second.ok && second.value.result).toMatchObject({
+      pseudocode: "void original() {}",
+    });
+    await initial.session.execute("analyze_function", {
+      procedure: "0x401000",
+    });
+    expect(initial.calls).toEqual(["analyze_function", "analyze_function"]);
+  } finally {
+    await initial.session.close();
+  }
 });

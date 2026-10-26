@@ -174,6 +174,8 @@ public final class ReaGhidraBridge extends HeadlessScript {
     private List<FunctionEntry> procedureInventory;
     private List<InventoryItem> stringInventory;
     private DecompInterface decompiler;
+    private int decompileTimeoutSeconds;
+    private static final int MAX_DECOMPILE_TIMEOUT_SECONDS = Integer.MAX_VALUE / 1000;
     private final ReaGhidraExtensions analysisExtensions = new ReaGhidraExtensions();
     private static AddressSpace sessionDefaultAddressSpace;
 
@@ -185,6 +187,7 @@ public final class ReaGhidraBridge extends HeadlessScript {
         }
         Path descriptorPath = Path.of(arguments[0]);
         SessionDescriptor descriptor = readDescriptor(descriptorPath);
+        decompileTimeoutSeconds = descriptor.decompileTimeoutSeconds();
         // Windows retains a native immutable bearer descriptor lease until
         // runtime_close; POSIX removes it after this read. Normal cleanup removes
         // the Windows file, while abrupt owner death can leave private residue.
@@ -405,7 +408,9 @@ public final class ReaGhidraBridge extends HeadlessScript {
             case "xrefs" -> xrefs(request.params);
             case "analyze_function" -> {
                 FunctionAnalysisObservation observation = analyzeFunctionObservation(request.params);
-                yield functionObservation(observation.dossier(), observation.limitations());
+                JsonObject result = functionObservation(observation.dossier(), observation.limitations());
+                if (observation.decompilerFailed()) result.addProperty("cache_policy", "live");
+                yield result;
             }
             case "set_address_name", "set_addresses_names" -> {
                 if (!descriptor.transport.equals("unix-socket"))
@@ -1488,7 +1493,17 @@ public final class ReaGhidraBridge extends HeadlessScript {
         requireKeys(params, Set.of("procedure"));
         Function function = resolveProcedure(requireString(params, "procedure"));
         InstructionScan scan = scanInstructions(function, Integer.MAX_VALUE);
-        DecompileResults decompilation = decompile(function);
+        DecompileResults decompilation;
+        String decompilerFailure = null;
+        try {
+            decompilation = decompile(function);
+        } catch (RequestFailure failure) {
+            if (!failure.code.equals("decompile_failed") &&
+                !failure.code.equals("decompile_timed_out")) throw failure;
+            decompilation = null;
+            decompilerFailure = failure.getMessage().strip();
+        }
+        monitor.checkCancelled();
         String pseudocode = decompiledText(decompilation);
         if (pseudocode == null) {
             pseudocode = "";
@@ -1533,9 +1548,23 @@ public final class ReaGhidraBridge extends HeadlessScript {
         result.add("basic_blocks", blocks);
         result.add(
             "native_api",
-            nativeApiBoundary(function, decompilation)
+            decompilerFailure == null ? nativeApiBoundary(function, decompilation)
+                : unavailableNativeApiBoundary(decompilerFailure)
         );
-        result.add("native_value_flow", nativeValueFlow(decompilation));
+        result.add("native_value_flow", decompilerFailure == null ? nativeValueFlow(decompilation)
+            : unavailableNativeValueFlow(decompilerFailure));
+        JsonObject availability = new JsonObject();
+        JsonObject pseudocodeAvailability = new JsonObject();
+        pseudocodeAvailability.addProperty("available", !pseudocode.isEmpty());
+        if (pseudocode.isEmpty()) pseudocodeAvailability.addProperty("reason",
+            decompilerFailure != null ? decompilerFailure : "Ghidra returned no pseudocode for this procedure.");
+        availability.add("pseudocode", pseudocodeAvailability);
+        for (String facet : List.of("assembly", "comments", "callers", "callees", "references", "strings_names", "cfg")) {
+            JsonObject available = new JsonObject();
+            available.addProperty("available", true);
+            availability.add(facet, available);
+        }
+        result.add("facet_availability", availability);
         JsonArray limitations = new JsonArray();
         limitations.add(
             "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
@@ -1571,27 +1600,22 @@ public final class ReaGhidraBridge extends HeadlessScript {
             !decompilation.getErrorMessage().isBlank()) {
             limitations.add("Ghidra decompiler diagnostic: " + decompilation.getErrorMessage());
         }
+        if (decompilerFailure != null) {
+            limitations.add(decompilerFailure +
+                "; pseudocode, native API and p-code value flow are unavailable; listing facts were retained.");
+            boundaryLimitations = new ArrayList<>(boundaryLimitations);
+            boundaryLimitations.add(decompilerFailure);
+        }
         result.add("limitations", limitations);
-        return new FunctionAnalysisObservation(result, boundaryLimitations);
+        monitor.checkCancelled();
+        return new FunctionAnalysisObservation(result, boundaryLimitations, decompilerFailure != null);
     }
 
     private JsonObject nativeValueFlow(DecompileResults decompilation) throws Exception {
         HighFunction highFunction =
             decompilation == null ? null : decompilation.getHighFunction();
-        if (highFunction == null) {
-            JsonObject unavailable = new JsonObject();
-            unavailable.addProperty("available", false);
-            unavailable.addProperty(
-                "reason",
-                "Ghidra has no HighFunction p-code model for this procedure"
-            );
-            JsonArray limitations = new JsonArray();
-            limitations.add(
-                "No p-code operations or def-use relationships were recovered for this procedure."
-            );
-            unavailable.add("limitations", limitations);
-            return unavailable;
-        }
+        if (highFunction == null) return unavailableNativeValueFlow(
+            "Ghidra has no HighFunction p-code model for this procedure");
 
         List<PcodeOpAST> selected = new ArrayList<>();
         int omittedOperationsLowerBound = 0;
@@ -2260,6 +2284,16 @@ public final class ReaGhidraBridge extends HeadlessScript {
             jumpTables.add(inferredJumpTable(recoveredJumpTables[index], caseTokens));
         }
         return result;
+    }
+
+    private static JsonObject unavailableNativeValueFlow(String reason) {
+        JsonObject unavailable = new JsonObject();
+        unavailable.addProperty("available", false);
+        unavailable.addProperty("reason", reason);
+        JsonArray limitations = new JsonArray();
+        limitations.add("No p-code operations or def-use relationships were recovered for this procedure.");
+        unavailable.add("limitations", limitations);
+        return unavailable;
     }
 
     private static JsonObject unavailableNativeApiBoundary(String reason) {
@@ -3231,12 +3265,15 @@ public final class ReaGhidraBridge extends HeadlessScript {
         }
         DecompileResults results = decompiler.decompileFunction(
             function,
-            0,
+            decompileTimeoutSeconds,
             monitor
         );
         if (results.isCancelled()) {
             throw new RequestFailure("decompile_cancelled", "Ghidra decompilation was cancelled");
         }
+        if (results.isTimedOut()) throw new RequestFailure("decompile_timed_out",
+            "Ghidra decompilation of " + canonicalAddress(function.getEntryPoint()) +
+            " exceeded REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS=" + decompileTimeoutSeconds);
         if (!results.decompileCompleted()) {
             throw new RequestFailure(
                 "decompile_failed",
@@ -4302,7 +4339,15 @@ public final class ReaGhidraBridge extends HeadlessScript {
         Set<String> keys = new HashSet<>(DESCRIPTOR_KEYS);
         if (parsed.isJsonObject() && parsed.getAsJsonObject().has("analysis_extensions"))
             keys.add("analysis_extensions");
+        if (parsed.isJsonObject() && parsed.getAsJsonObject().has("decompile_timeout_seconds"))
+            keys.add("decompile_timeout_seconds");
         JsonObject object = requireObject(parsed, keys);
+        int timeoutSeconds = 0;
+        if (object.has("decompile_timeout_seconds")) {
+            timeoutSeconds = requireInteger(object, "decompile_timeout_seconds");
+            if (timeoutSeconds < 1 || timeoutSeconds > MAX_DECOMPILE_TIMEOUT_SECONDS)
+                throw new IllegalArgumentException("REA session descriptor timeout is invalid");
+        }
         return new SessionDescriptor(
             requireString(object, "transport"),
             requireString(object, "endpoint_path"),
@@ -4311,7 +4356,8 @@ public final class ReaGhidraBridge extends HeadlessScript {
             requireSha256(object, "target_sha256"),
             requireString(object, "provider_version"),
             requireString(object, "profile_digest"),
-            object.has("analysis_extensions") ? object.getAsJsonArray("analysis_extensions") : new JsonArray()
+            object.has("analysis_extensions") ? object.getAsJsonArray("analysis_extensions") : new JsonArray(),
+            timeoutSeconds
         );
     }
 
@@ -4497,7 +4543,7 @@ public final class ReaGhidraBridge extends HeadlessScript {
     private record InventoryItem(Address address, String value, JsonObject facts) {}
     private record AddressNameRequest(String inputAddress, Address address, String name) {}
     private record FunctionEntry(Function function, InventoryItem item) {}
-    private record FunctionAnalysisObservation(JsonObject dossier, List<String> limitations) {}
+    private record FunctionAnalysisObservation(JsonObject dossier, List<String> limitations, boolean decompilerFailed) {}
     private record SwiftStringLiteralDecode(JsonArray literals, JsonArray omissions) {}
     private record SwiftLiteralLayout(
         String representation,
@@ -4515,7 +4561,8 @@ public final class ReaGhidraBridge extends HeadlessScript {
         String targetSha256,
         String providerVersion,
         String profileDigest,
-        JsonArray analysisExtensions
+        JsonArray analysisExtensions,
+        int decompileTimeoutSeconds
     ) {}
     private record Request(int id, String method, JsonObject params) {}
 

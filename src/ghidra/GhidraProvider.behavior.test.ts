@@ -552,6 +552,13 @@ describe("Ghidra startup configuration", () => {
           ok: false,
           error: { _tag: "AnalysisTimeoutError", timeoutMs: expected },
         });
+        if (!failure.ok) {
+          const projected = projectAnalysisError(failure.error);
+          expect(projected.remediation.action).toContain("restart REA");
+          expect(projected.remediation.action).toContain(
+            "Reopening alone keeps",
+          );
+        }
         if (timeout === undefined)
           throw new Error("Provider omitted startup deadline");
         const deadline = new ProviderStartupDeadline(timeout);
@@ -2185,4 +2192,54 @@ describe("Ghidra disabled analyzer options", () => {
       expect(starts).toBe(0);
     }
   });
+});
+
+it("projects a native decompile timeout as retryable without closing the session", async () => {
+  const config = parseConfig({
+    GHIDRA_INSTALL_DIR: INSTALL,
+    REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS: "2",
+  });
+  if (!config.ok) throw config.error;
+  let closed = 0;
+  const ghidra = new GhidraProvider(
+    config.value,
+    silentLogger,
+    {},
+    installationHost(),
+    () => ({
+      start: () => Promise.resolve(ok(sessionInfo())),
+      callTool: () =>
+        Promise.resolve(
+          err(
+            new GhidraSessionError(
+              "remote",
+              "Function limit exceeded",
+              {},
+              { remoteCode: "decompile_timed_out" },
+            ),
+          ),
+        ),
+      close: () => {
+        closed++;
+        return Promise.resolve(ok(null));
+      },
+    }),
+  );
+  const client = await createElfClient(ghidra);
+  const result = await client.execute("procedure_pseudo_code", {
+    procedure: "0x1000",
+  });
+  expect(result.ok).toBe(false);
+  if (result.ok) throw new Error("Expected timeout");
+  expect(projectAnalysisError(result.error)).toMatchObject({
+    code: "provider_timeout",
+    retryable: true,
+    details: {
+      timeout_ms: 2000,
+      diagnostics: { remote_code: "decompile_timed_out" },
+    },
+    remediation: { action: expect.stringContaining("another procedure") },
+  });
+  expect(closed).toBe(0);
+  await client.close();
 });

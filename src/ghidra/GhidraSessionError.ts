@@ -49,6 +49,25 @@ export class GhidraSessionError extends Error {
     this.remoteCode = options.remoteCode;
     this.cleanupFailure = options.cleanupFailure;
   }
+
+  /** A reply observed while cancellation closed the session cannot promise reuse. */
+  withConcurrentCancellation(): GhidraSessionError {
+    return new GhidraSessionError(
+      this.kind,
+      this.message,
+      { ...this.diagnostics, session_closed_by_cancellation: true },
+      {
+        cause: this.cause,
+        ...(this.timeoutMs === undefined ? {} : { timeoutMs: this.timeoutMs }),
+        ...(this.remoteCode === undefined
+          ? {}
+          : { remoteCode: this.remoteCode }),
+        ...(this.cleanupFailure === undefined
+          ? {}
+          : { cleanupFailure: this.cleanupFailure }),
+      },
+    );
+  }
 }
 
 /** Build a session failure while preserving bounded remote failure metadata. */

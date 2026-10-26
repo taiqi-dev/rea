@@ -461,6 +461,22 @@ and returns its result and Evidence inline.
 
 ## Ghidra first-query deadlines and recovery
 
+REA snapshots configuration at server startup. To change
+`REA_GHIDRA_STARTUP_TIMEOUT_MS` or `REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS`, export
+useful Evidence, close the binary, resolve cleanup failures, update the launch
+environment and restart REA. Reconnect MCP, then reopen the target. Reopening
+alone keeps the old settings and repeats import. Disabling analyzers can shorten
+startup with reduced coverage; it does not change a running server's settings.
+
+The optional native decompile limit applies to each attempted function, not an
+entire tool call. `analyze_function` returns listing facts with explicit
+unavailable decompiler facets when that limit is reached, and keeps the session
+usable. These partial results remain Evidence but are not replayed as completed
+snapshots, including through composed workflows. Caller cancellation still
+closes the session. A client's tool deadline must cover startup, every attempted
+function and the remainder of its query; existing selected deadlines are not
+automatically raised.
+
 A successful MCP initialize handshake establishes the REA connection.
 `open_binary` then selects a target and provider binding; it does not establish
 that Ghidra has finished importing the target. The first Ghidra-backed query,

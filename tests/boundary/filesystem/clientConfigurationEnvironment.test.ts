@@ -29,6 +29,7 @@ it.each([
     const client = { name, format, configPath };
     const custom = {
       REA_MCP_INPUT_SCHEMA_PROFILE: "compact",
+      REA_GHIDRA_DECOMPILE_TIMEOUT_SECONDS: "60",
       REA_MCP_MAX_RESPONSE_BYTES: "33554432",
       REA_BROWSER_EXECUTABLE: join(root, "custom-browser"),
       GHIDRA_INSTALL_DIR: join(root, "old-ghidra"),
