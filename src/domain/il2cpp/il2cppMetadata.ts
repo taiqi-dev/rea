@@ -98,7 +98,19 @@ export const inspectIl2cppMetadataInputSchema = z.strictObject({
   binary_path: localPathStringSchema
     .optional()
     .describe(
-      "Absolute path to the caller-selected Windows x64 PE GameAssembly.dll; static reading, never executed",
+      "Absolute path to a matching x64 Windows PE, x64/ARM64 ELF, or x64/ARM64 Mach-O; static reading only",
+    ),
+  binary_architecture: z
+    .enum(["amd64", "arm64"])
+    .optional()
+    .describe(
+      "Required to select a single slice when binary_path is a universal Mach-O",
+    ),
+  generic_instances: z
+    .boolean()
+    .optional()
+    .describe(
+      "Link generic method instances for metadata versions 27, 29 and 31. Requires binary_path.",
     ),
 });
 
@@ -209,6 +221,33 @@ export const il2cppCodeGenModuleSchema = z.strictObject({
   method_pointer_count: count,
 });
 
+export const il2cppGenericMethodIssueSchema = z.strictObject({
+  row: count,
+  address: il2cppAddressSchema,
+  message: z.string(),
+});
+export const il2cppGenericMethodInstanceSchema =
+  il2cppMethodAddressSchema.extend({
+    method_spec: count,
+    method: z.int().nullable(),
+    name: z.string().nullable(),
+  });
+export const il2cppGenericMethodLinkSchema = z.strictObject({
+  generic_method_pointers_field: il2cppAddressSchema.nullable(),
+  generic_method_pointers_count: count.nullable(),
+  generic_method_table: il2cppAddressSchema,
+  generic_method_table_count: count,
+  generic_method_table_stride: z
+    .union([z.literal(12), z.literal(16)])
+    .nullable(),
+  method_specs_count: count,
+  generic_insts_count: count,
+  issues: z.array(il2cppGenericMethodIssueSchema),
+});
+export type Il2cppGenericMethodInstance = z.infer<
+  typeof il2cppGenericMethodInstanceSchema
+>;
+
 /** Identity and registration facts of the linked native binary. */
 export const il2cppBinaryLinkSchema = z.strictObject({
   artifact: z.strictObject({
@@ -216,8 +255,8 @@ export const il2cppBinaryLinkSchema = z.strictObject({
     sha256: digestSchema,
     bytes: count,
   }),
-  format: z.literal("pe"),
-  architecture: z.literal("amd64"),
+  format: z.enum(["pe", "elf", "macho"]),
+  architecture: z.enum(["amd64", "arm64"]),
   image_base: il2cppAddressSchema,
   /**
    * CodeRegistration's codeGenModulesCount field, followed by the module array
@@ -231,6 +270,7 @@ export const il2cppBinaryLinkSchema = z.strictObject({
   /** MetadataRegistration's typesCount field, followed by the types pointer. */
   types_field: il2cppAddressSchema,
   types_count: count,
+  generic_methods: il2cppGenericMethodLinkSchema.optional(),
 });
 
 /** Unrefined report fields, shared with projections that omit row collections. */
@@ -272,6 +312,9 @@ export const il2cppMetadataObjectSchema = z.strictObject({
   return_types: z.array(il2cppTypeReferenceSchema),
   field_types: z.array(il2cppTypeReferenceSchema),
   parameter_types: z.array(il2cppTypeReferenceSchema),
+  generic_method_instances: z
+    .array(il2cppGenericMethodInstanceSchema)
+    .optional(),
   limitations: z.array(z.string()),
 });
 
@@ -310,6 +353,57 @@ const validateMetadataFacts = (
   report: z.infer<typeof il2cppMetadataParentObjectSchema>,
   context: z.RefinementCtx,
 ): void => {
+  const instances = report.generic_method_instances;
+  const generic = report.binary?.generic_methods;
+  if (instances?.length !== generic?.generic_method_table_count) {
+    context.addIssue({
+      code: "custom",
+      path: ["generic_method_instances"],
+      message:
+        "Generic instance rows must match the observed generic method table count.",
+    });
+  }
+  if (
+    instances !== undefined &&
+    generic !== undefined &&
+    report.binary != null
+  ) {
+    const issued = new Set(generic.issues.map(({ row }) => row));
+    if (generic.issues.some(({ row }) => row >= instances.length))
+      context.addIssue({
+        code: "custom",
+        path: ["binary", "generic_methods", "issues"],
+        message: "Generic issue is outside the instance table.",
+      });
+    instances.forEach((row, index) => {
+      const validCode =
+        row.address !== null &&
+        row.rva !== null &&
+        addressPattern.test(row.address) &&
+        addressPattern.test(row.rva) &&
+        addressPattern.test(report.binary!.image_base) &&
+        BigInt(row.address) ===
+          BigInt(report.binary!.image_base) + BigInt(row.rva);
+      const linkedDefinition =
+        row.method !== null &&
+        row.method >= 0 &&
+        row.method < report.methods.length &&
+        row.method_spec < generic.method_specs_count &&
+        row.name !== null;
+      if (
+        (row.state === "unknown") !== issued.has(index) ||
+        (row.state !== "unknown" && !linkedDefinition) ||
+        (row.state === "code"
+          ? !validCode
+          : row.address !== null || row.rva !== null)
+      )
+        context.addIssue({
+          code: "custom",
+          path: ["generic_method_instances", index],
+          message: "Generic method state, source and address facts disagree.",
+        });
+    });
+  }
   const names = il2cppMetadataSectionNames(report.metadata_version);
   if (report.sections.length !== names.length)
     context.addIssue({
@@ -494,6 +588,19 @@ export type Il2cppMetadataProviderInput = Omit<
   "detail"
 >;
 export type Il2cppMetadataSection = z.infer<typeof il2cppMetadataSectionSchema>;
-export type Il2cppMetadata = z.infer<typeof il2cppMetadataSchema>;
+/** Producer reports omit unrequested generic fields so they remain valid JSON. */
+export type Il2cppMetadata = Omit<
+  z.infer<typeof il2cppMetadataSchema>,
+  "binary" | "generic_method_instances"
+> & {
+  readonly binary:
+    | (Omit<z.infer<typeof il2cppBinaryLinkSchema>, "generic_methods"> & {
+        readonly generic_methods?: z.infer<
+          typeof il2cppGenericMethodLinkSchema
+        >;
+      })
+    | null;
+  readonly generic_method_instances?: Il2cppGenericMethodInstance[];
+};
 
 export type Il2cppMethodAddress = z.infer<typeof il2cppMethodAddressSchema>;

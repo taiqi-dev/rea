@@ -20,6 +20,7 @@ export const abortIfNeeded = (signal?: AbortSignal): void => {
     throw new ArtifactReaderFailure(
       "cancelled",
       "Artifact inventory cancelled",
+      { cause: signal.reason },
     );
 };
 

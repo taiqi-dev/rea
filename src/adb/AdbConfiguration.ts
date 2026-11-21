@@ -1,5 +1,11 @@
-import { AnalysisCancelledError } from "../domain/analysisErrorCore.js";
-import { isAbsolute } from "node:path";
+import {
+  AnalysisCancelledError,
+  AnalysisTimeoutError,
+} from "../domain/analysisErrorCore.js";
+import { posix, win32 } from "node:path";
+import { ProviderStartupDeadline } from "../process/ProviderDeadline.js";
+import { findWindowsExecutable } from "../process/WindowsExecutable.js";
+import { snapshotEnvironment } from "../process/snapshotEnvironment.js";
 
 import {
   execFileOutput,
@@ -23,16 +29,24 @@ export interface AdbBinarySelection {
 
 /**
  * Resolve the caller-supplied adb binary. `REA_ADB_PATH` must be absolute so
- * the selection stays explicit; without it, adb is resolved from `PATH` by
- * the platform exec at run time, like any bring-your-own tool.
+ * the selection stays explicit. Resolve default Windows commands before spawn.
  */
-export const resolveAdbBinary = (
+export const resolveAdbBinary = async (
   environment: Readonly<Record<string, string | undefined>>,
-): AdbBinarySelection => {
-  const configured = environment[ADB_BINARY_ENV];
+  platform: NodeJS.Platform = process.platform,
+  signal?: AbortSignal,
+): Promise<AdbBinarySelection> => {
+  const selected = snapshotEnvironment(environment, platform);
+  const configured = selected[ADB_BINARY_ENV];
   if (configured === undefined || configured.trim() === "")
-    return { binary: "adb", pathSource: "path" };
-  if (!isAbsolute(configured))
+    return {
+      binary:
+        platform === "win32"
+          ? await resolveWindowsAdb(selected, signal)
+          : "adb",
+      pathSource: "path",
+    };
+  if (!(platform === "win32" ? win32 : posix).isAbsolute(configured))
     throw new AdbConfigurationFailure(
       "not_absolute",
       `${ADB_BINARY_ENV} must be an absolute path to the adb binary`,
@@ -41,9 +55,51 @@ export const resolveAdbBinary = (
   return { binary: configured, pathSource: "environment" };
 };
 
+const resolveWindowsAdb = async (
+  environment: Readonly<NodeJS.ProcessEnv>,
+  signal?: AbortSignal,
+): Promise<string> => {
+  const deadline = new ProviderStartupDeadline(VERSION_TIMEOUT_MS, signal);
+  try {
+    const found = await findWindowsExecutable("adb", environment, {
+      signal: deadline.signal,
+    });
+    if (found.ok) return found.value;
+    const failure = found.error;
+    if (failure.kind === "interrupted") {
+      if (deadline.interruption === "cancelled")
+        throw new AnalysisCancelledError("inspect_adb_client", {
+          cause: signal?.reason,
+        });
+      throw new AnalysisTimeoutError("inspect_adb_client", VERSION_TIMEOUT_MS, {
+        diagnostics: { phase: "windows_path_lookup" },
+      });
+    }
+    throw new AdbConfigurationFailure(
+      failure.kind === "missing" ? "binary_missing" : "binary_unresolved",
+      "The adb binary could not be selected from the Windows PATH/PATHEXT",
+      {
+        selected_binary: "adb",
+        path_source: "path",
+        remediation: `Set ${ADB_BINARY_ENV} to an absolute adb executable, or add it to PATH/PATHEXT`,
+        ...(failure.kind === "invalid_extension"
+          ? { invalid_extension: failure.extension }
+          : {}),
+        ...(failure.kind === "inspection"
+          ? { candidate_path: failure.path, filesystem_error: failure.code }
+          : {}),
+      },
+      failure.kind === "inspection" ? { cause: failure.cause } : undefined,
+    );
+  } finally {
+    deadline.dispose();
+  }
+};
+
 export type AdbConfigurationFailureCode =
   | "not_absolute"
   | "binary_missing"
+  | "binary_unresolved"
   | "version_unresolved";
 
 export class AdbConfigurationFailure extends Error {
@@ -129,7 +185,7 @@ const rejectionCodeOf = (
 ): ProviderRejectionCode =>
   code === "binary_missing"
     ? "executable_missing"
-    : code === "not_absolute"
+    : code === "not_absolute" || code === "binary_unresolved"
       ? "not_configured"
       : "version_unresolved";
 

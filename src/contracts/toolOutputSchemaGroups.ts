@@ -5,7 +5,10 @@ import {
   machoSummaryViewResultSchema,
   managedArtifactSummaryViewResultSchema,
 } from "../domain/analysisView/analysisView.js";
-import { evidenceBundleSummarySchema } from "../domain/evidenceRecordSummary.js";
+import {
+  evidenceBundleSummarySchema,
+  evidenceRecordSelectionSchema,
+} from "../domain/evidenceRecordSummary.js";
 import { BINARY_ARCHITECTURES } from "../domain/binaryTargetTypes.js";
 import {
   binaryArchitectureSchema,
@@ -518,7 +521,11 @@ export const sessionOutputSchemas = {
     }),
   ),
   get_evidence_bundle: lifecycleResultOf(
-    z.union([evidenceBundleSchema, evidenceBundleSummarySchema]),
+    z.union([
+      evidenceBundleSchema,
+      evidenceBundleSummarySchema,
+      evidenceRecordSelectionSchema,
+    ]),
   ),
   get_navigation_context: lifecycleResultOf(
     z.object({

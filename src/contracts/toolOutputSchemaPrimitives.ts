@@ -62,6 +62,7 @@ export const targetFormatSchema = z.enum([
   "raw-binary",
   ...ZIP_PACKAGE_FORMATS,
   "asar",
+  "unityfs",
   "dmg",
   "pkg",
   "plist",

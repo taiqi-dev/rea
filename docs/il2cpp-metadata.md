@@ -7,7 +7,8 @@ literals, by stable index, namespace, range and count,
 with the header sections and serialized index widths. It reads the file without
 running it and requires no Unity installation, IL2CPP binary, active target,
 Hopper, Ghidra or IDA. An optional explicit `binary_path` adds static linking
-to a matching Windows x64 PE `GameAssembly.dll` as described below.
+to a matching Windows x64 PE `GameAssembly.dll`, x64/ARM64 ELF such as
+Android `libil2cpp.so`, or x64/ARM64 Mach-O such as `GameAssembly.dylib`.
 
 Metadata versions 24, 27, 29, 31 and 39 are supported by the format reader.
 Upstream reports the following producer layouts: Unity 2019.4.41f2
@@ -184,13 +185,36 @@ are not runtime ASLR-resolved addresses. Field/parameter/return type names are
 C#-like displays from the binary type table. Version 27 preserves type indices
 with unknown names because its same-number layouts disagree about the byref flag.
 
-Only x64 PE is accepted for linking. Module names/counts, tokens, registration
+Module names/counts, tokens, registration
 tables and every source mapping must agree unambiguously; structural agreement
 does not cryptographically prove that both files came from the same build.
 The optional binary input limit is 1 GiB, with fixed module-index and type-text
 workspaces reported on capacity failure. No DLL load, execution, process attach,
 Ghidra seed writing or modification occurs. Open that exact binary separately
 for native analysis and verify its SHA-256 before consuming an address.
+
+## ELF, Mach-O and generic method instances
+
+The same explicit `binary_path` selection works with little-endian x64 or
+ARM64 ELF and Mach-O. Universal Mach-O requires `binary_architecture` set to
+`amd64` or `arm64` and a unique matching slice. ELF linking interprets standard
+RELA relative relocations in a private in-memory image. Android packed
+relocations, REL, RELR and Mach-O chained fixups are refused. The ELF or
+Mach-O RVA uses the image's recorded link base.
+
+Set `generic_instances: true` in MCP or pass `--generic-instances` in CLI
+with `binary_path` to link generic method table rows for versions 27, 29 or 31.
+The report retains the method spec, definition index, rendered label, address
+state and row-specific issues. Use the `generic_method_instances` and
+`generic_method_issues` collections to page the retained rows. Generic table
+facts are absent when the option was omitted. A folded or ambiguous
+registration can still support an ordinary definition link and refuse a
+generic link.
+
+Version 108 produces an unsupported-target result with partial Evidence when
+the assumed header and string section validate. The partial Evidence retains
+section ranges and up to 16 samples of 128 bytes each. Complete inventories,
+literal decoding and native linking require a verified v108 layout.
 
 ## Observations
 
@@ -286,7 +310,7 @@ report limit can still require the summary and paging path.
 ## Outside this tool
 
 - Decrypting or deobfuscating protected metadata.
-- Native method bodies, generic method instances and complete signatures; use the
+- Native method bodies and complete signatures; use the
   [native workflow](native-investigation.md) for native code.
 - Metadata versions other than 24, 27, 29, 31 and 39.
 

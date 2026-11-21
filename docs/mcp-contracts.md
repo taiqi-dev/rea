@@ -96,7 +96,12 @@ a provider. `retention: "complete-record"` describes stored Evidence, while
 `native_dossier.value_flow` independently reports truncation, unavailable or
 unknown metadata. Missing omission counts remain null. Summary output carries
 every matching record; actual transport admission still applies. Omitted
-`detail` preserves complete canonical bundle delivery; filters require summary.
+`detail` preserves complete canonical bundle delivery. Set `detail: "records"`
+with the same filters to retrieve complete records in Evidence ID order.
+`offset` and `limit` page the matches (default 8 per call). The result keeps
+original IDs and reports direct links that the source bundle does not retain.
+Use canonical bundle export for import into another session. The CLI
+`inspect-evidence-bundle` accepts the same selection fields for a local bundle.
 
 `list_unknowns` returns every matching current head by default. For a smaller
 inline response, supply `offset` and `limit`, then follow `next_offset` until it

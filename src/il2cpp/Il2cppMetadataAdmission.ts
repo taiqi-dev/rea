@@ -25,6 +25,15 @@ const emptyRows = {
   string_literals: { value: "", value_base64: null },
 };
 
+export const IL2CPP_GENERIC_INSTANCE_MINIMUM_BYTES = JSON.stringify({
+  method_spec: 0,
+  method: 0,
+  name: "",
+  state: "code",
+  address: null,
+  rva: null,
+}).length;
+
 /** Per-snapshot admission, before text expansion and each retained fact. */
 export const createIl2cppMetadataAdmission = (
   limit: number,

@@ -68,11 +68,33 @@ export class Il2cppMetadataService {
         ]),
       );
     const { detail } = input.data;
+    const binaryOption =
+      input.data.binary_architecture !== undefined
+        ? "binary_architecture"
+        : input.data.generic_instances === true
+          ? "generic_instances"
+          : undefined;
+    if (binaryOption !== undefined && input.data.binary_path === undefined)
+      return err(
+        new AnalysisInputError(OPERATION, undefined, [
+          {
+            path: [binaryOption],
+            reason: "invalid_value",
+            message: `${binaryOption} requires binary_path.`,
+          },
+        ]),
+      );
     const providerInput = {
       path: input.data.path,
       ...(input.data.binary_path === undefined
         ? {}
         : { binary_path: input.data.binary_path }),
+      ...(input.data.binary_architecture === undefined
+        ? {}
+        : { binary_architecture: input.data.binary_architecture }),
+      ...(input.data.generic_instances === true
+        ? { generic_instances: true }
+        : {}),
     };
     if (detail === "summary") {
       const ready = requireAnalysisViewRetention(OPERATION, retention);
@@ -86,7 +108,13 @@ export class Il2cppMetadataService {
       report.data.artifact.path !== providerInput.path ||
       (providerInput.binary_path === undefined
         ? report.data.binary !== null
-        : report.data.binary?.artifact.path !== providerInput.binary_path)
+        : report.data.binary?.artifact.path !== providerInput.binary_path) ||
+      (providerInput.binary_architecture !== undefined &&
+        (report.data.binary?.format !== "macho" ||
+          report.data.binary?.architecture !==
+            providerInput.binary_architecture)) ||
+      (providerInput.generic_instances === true) !==
+        (report.data.generic_method_instances !== undefined)
     )
       return err(
         new AnalysisOutputError(
@@ -94,7 +122,7 @@ export class Il2cppMetadataService {
           "IL2CPP metadata reader returned malformed metadata or changed the selected artifact identity.",
         ),
       );
-    const value = report.data;
+    const value = inspected.value;
     const evidence = createEvidence(
       {
         path: value.artifact.path,

@@ -6,6 +6,7 @@ import {
   normalizeArtifactPath,
 } from "../ArtifactPaths.js";
 import {
+  ArtifactEntryContentUnavailable,
   ArtifactReaderFailure,
   type ArtifactEntry,
   type ArtifactReader,
@@ -157,9 +158,15 @@ const visitArtifactEntries = async (
           logicalPath,
         );
       } catch (cause: unknown) {
-        if (!isUnavailableUnpackedEntry(cause, entry)) throw cause;
+        const limitation =
+          cause instanceof ArtifactEntryContentUnavailable
+            ? cause.limitation
+            : isUnavailableUnpackedEntry(cause, entry)
+              ? UNAVAILABLE_UNPACKED_LIMITATION
+              : undefined;
+        if (limitation === undefined) throw cause;
         occurrence.hash_status = "unavailable";
-        occurrence.limitations.push(UNAVAILABLE_UNPACKED_LIMITATION);
+        occurrence.limitations.push(limitation);
       }
       if (digested === undefined) noteUnreadContainerSuffix(occurrence);
       else {

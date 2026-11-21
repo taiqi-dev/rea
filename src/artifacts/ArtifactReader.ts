@@ -1,6 +1,7 @@
 import type { Readable } from "node:stream";
 import type { ArtifactCommand } from "../domain/artifactGraph.js";
 import type { ZipPackageFormat } from "../domain/zipPackageFormat.js";
+import type { UnityFsEntryMetadata } from "../domain/unityfsMetadata.js";
 import type {
   AnalysisCleanupObservation,
   AnalysisPartialObservation,
@@ -24,6 +25,7 @@ export interface ArtifactEntry {
   readonly unpacked: boolean;
   readonly limitations: readonly string[];
   readonly adapterKey: string;
+  readonly formatMetadata?: UnityFsEntryMetadata;
   /** Filesystem identity captured during traversal, when supplied by an adapter. */
   readonly sourceIdentity?: {
     readonly device: bigint;
@@ -59,6 +61,9 @@ export const sameArtifactSourceIdentity = (
 export const copyArtifactEntry = (entry: ArtifactEntry): ArtifactEntry => ({
   ...entry,
   limitations: [...entry.limitations],
+  ...(entry.formatMetadata === undefined
+    ? {}
+    : { formatMetadata: { ...entry.formatMetadata } }),
   ...(entry.sourceIdentity === undefined
     ? {}
     : { sourceIdentity: { ...entry.sourceIdentity } }),
@@ -79,6 +84,11 @@ export const sameArtifactEntry = (
   entry.declaredSha256 === produced.declaredSha256 &&
   entry.unpacked === produced.unpacked &&
   entry.adapterKey === produced.adapterKey &&
+  entry.formatMetadata?.index === produced.formatMetadata?.index &&
+  entry.formatMetadata?.source_path === produced.formatMetadata?.source_path &&
+  entry.formatMetadata?.declared_offset ===
+    produced.formatMetadata?.declared_offset &&
+  entry.formatMetadata?.flags === produced.formatMetadata?.flags &&
   entry.limitations.length === produced.limitations.length &&
   entry.limitations.every(
     (limitation, index) => limitation === produced.limitations[index],
@@ -92,7 +102,7 @@ export const sameArtifactEntry = (
 
 /** Read-only adapter over one directory, archive, or virtual container. */
 export interface ArtifactReader {
-  readonly format: "directory" | ZipPackageFormat | "asar" | "file";
+  readonly format: "directory" | ZipPackageFormat | "asar" | "unityfs" | "file";
   entries(signal?: AbortSignal): AsyncIterable<ArtifactEntry>;
   open(entry: ArtifactEntry, signal?: AbortSignal): Promise<Readable>;
   provenance(): readonly ArtifactCommand[];
@@ -161,6 +171,13 @@ export class ArtifactReaderFailure extends Error {
     if (cause instanceof ArtifactReaderFailure && cause.cleanup !== undefined)
       return cause.cleanup;
     return { reason: errorMessage(cause), resources: [resource] };
+  }
+}
+
+/** Member identity is available, but its compression cannot be decoded. */
+export class ArtifactEntryContentUnavailable extends ArtifactReaderFailure {
+  constructor(readonly limitation: string) {
+    super("unavailable", limitation);
   }
 }
 

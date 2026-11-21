@@ -1,4 +1,5 @@
 import { AsarArtifactReader } from "../AsarArtifactReader.js";
+import { UnityFsArtifactReader } from "../UnityFsArtifactReader.js";
 import type { ArtifactReader } from "../ArtifactReader.js";
 import { DirectoryArtifactReader } from "../DirectoryArtifactReader.js";
 import { MachOSliceArtifactReader } from "../MachOSliceArtifactReader.js";
@@ -28,6 +29,8 @@ export const createReader = (
       return new DirectoryArtifactReader(path);
     case "asar":
       return new AsarArtifactReader(path);
+    case "unityfs":
+      return new UnityFsArtifactReader(path, rootSource);
     case "mach-o-universal":
       return process.platform === "darwin"
         ? new MachOSliceArtifactReader(path, environment, undefined, rootSource)

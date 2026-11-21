@@ -1,4 +1,8 @@
 import { z } from "zod";
+import {
+  unityFsEntryMetadataSchema,
+  unityFsMetadataSchema,
+} from "./unityfsMetadata.js";
 import { prefixedDigestSchema } from "./../domain/digests.js";
 
 const sha256Schema = z.string().regex(/^[a-f0-9]{64}$/u);
@@ -42,6 +46,7 @@ const artifactFormatSchema = z.enum([
   "zip",
   "pkg",
   "asar",
+  "unityfs",
   "javascript-bundle",
   "source-map",
   "mach-o-universal",
@@ -70,6 +75,7 @@ const artifactFormatSchema = z.enum([
 /** Formats established from bytes or a virtual directory tree, independent of path roles. */
 const artifactContentFormatSchema = artifactFormatSchema.extract([
   "zip",
+  "unityfs",
   "mach-o-universal",
   "mach-o",
   "elf",
@@ -113,7 +119,7 @@ export const artifactNodeSchema = z.object({
 });
 
 /** One path or virtual location where an artifact occurs in its parent. */
-export const artifactOccurrenceSchema = z.object({
+const artifactOccurrenceBaseSchema = z.strictObject({
   occurrence_id: occurrenceIdSchema,
   artifact_id: artifactIdSchema.nullable(),
   parent_occurrence_id: occurrenceIdSchema.nullable(),
@@ -139,6 +145,15 @@ export const artifactOccurrenceSchema = z.object({
   source_location: artifactByteRangeSchema.nullable(),
   limitations: z.array(z.string()),
 });
+export const artifactOccurrenceSchema = z.union([
+  artifactOccurrenceBaseSchema.extend({
+    format_metadata: z.union([
+      unityFsMetadataSchema,
+      unityFsEntryMetadataSchema,
+    ]),
+  }),
+  artifactOccurrenceBaseSchema,
+]);
 
 /** Observed bytes that contradict a container's declared integrity identity. */
 export const integrityContradictionSchema = z.object({
@@ -258,7 +273,11 @@ export type ArtifactNode = z.infer<typeof artifactNodeSchema>;
 export type ArtifactEdge = z.infer<typeof artifactEdgeSchema>;
 
 /** Parsed artifact occurrence. */
-export type ArtifactOccurrence = z.infer<typeof artifactOccurrenceSchema>;
+export type ArtifactOccurrence = z.infer<typeof artifactOccurrenceSchema> & {
+  format_metadata?: z.infer<
+    typeof unityFsMetadataSchema | typeof unityFsEntryMetadataSchema
+  >;
+};
 export type IntegrityContradiction = z.infer<
   typeof integrityContradictionSchema
 >;

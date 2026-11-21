@@ -42,6 +42,7 @@ export const createTypeNamer = (
   facts: Il2cppMetadataLinkFacts,
   version: number,
   beforeText?: (bytes: number) => void,
+  includeByref = true,
 ) => {
   const fail = (message: string): never => {
     throw new Il2cppBinaryFormatFailure("invalid-type", message);
@@ -138,7 +139,8 @@ export const createTypeNamer = (
           "unsupported-type-kind",
           `type kind 0x${kind.toString(16)} is not rendered`,
         );
-      if (((bits >>> byrefBit) & 1) === 1) result = join([result, "&"]);
+      if (includeByref && ((bits >>> byrefBit) & 1) === 1)
+        result = join([result, "&"]);
       const bytes = Buffer.byteLength(result);
       guard(bytes);
       cachedBytes += bytes;
@@ -174,4 +176,93 @@ export const createTypeNamer = (
     return join([definition.replace(/`\d+$/u, ""), "<", join(args, ", "), ">"]);
   }
   return name;
+};
+
+/** Render a method-spec label using the existing bounded C#-style type names. */
+export const createMethodSpecNamer = (
+  image: NativeImage,
+  metadata: Il2cppMetadataDecoded,
+  facts: Il2cppMetadataLinkFacts,
+  version: number,
+  beforeText?: (bytes: number) => void,
+) => {
+  const renderType = createTypeNamer(
+    image,
+    metadata,
+    facts,
+    version,
+    beforeText,
+    false,
+  );
+  const fail = (message: string): never => {
+    throw new Il2cppBinaryFormatFailure("invalid-type", message);
+  };
+  const guard = (bytes: number): void => {
+    if (bytes > TYPE_TEXT_BYTES)
+      throw new Il2cppBinaryFormatFailure(
+        "native-type-text-capacity",
+        "Rendered generic method label exceeds its UTF-8 byte limit",
+        { maximum_type_text_bytes: TYPE_TEXT_BYTES },
+      );
+    beforeText?.(bytes);
+  };
+  function* argumentsAt(instance: bigint | null): Generator<void, string> {
+    if (instance === null) return "";
+    const count =
+      readUInt32(image, instance) ??
+      fail("Generic instance count is unreadable");
+    const table =
+      readPointer(image, instance + 8n) ??
+      fail("Generic argument table is unreadable");
+    guard(count * 2);
+    if (!isMapped(image, table, count * 8))
+      fail("Generic arguments are outside the image");
+    const args: string[] = [];
+    let bytes = count * 2;
+    for (let index = 0; index < count; index++) {
+      if (index % 256 === 0) yield;
+      const type =
+        readPointer(image, table + BigInt(index * 8)) ??
+        fail("Generic argument pointer is unreadable");
+      const name = yield* renderType(type, 0);
+      bytes += Buffer.byteLength(name);
+      guard(bytes);
+      args.push(name);
+    }
+    return `<${args.join(", ")}>`;
+  }
+  return function* methodSpecName(
+    method: number,
+    classInstance: bigint | null,
+    methodInstance: bigint | null,
+  ): Generator<void, string> {
+    const row =
+      metadata.methods[method] ??
+      fail("Generic method definition is unavailable");
+    const parts: string[] = [];
+    let namespace = "";
+    let bytes = Buffer.byteLength(row.name) + 2;
+    for (let at = row.declaring_type; at >= 0;) {
+      if (parts.length % 256 === 0) yield;
+      const type =
+        metadata.types[at] ?? fail("Generic method owner is unavailable");
+      const name = type.name.replace(/`\d+$/u, "");
+      bytes += Buffer.byteLength(name) + 1;
+      guard(bytes);
+      parts.push(name);
+      namespace = type.namespace;
+      at = type.declaring_type;
+    }
+    if (parts.length === 0) fail("Generic method has no declaring type");
+    const classArguments = yield* argumentsAt(classInstance);
+    const methodArguments = yield* argumentsAt(methodInstance);
+    guard(
+      bytes +
+        Buffer.byteLength(namespace) +
+        Buffer.byteLength(classArguments) +
+        Buffer.byteLength(methodArguments),
+    );
+    const owner = parts.reverse().join("+");
+    return `${namespace === "" ? "" : namespace + "."}${owner}${classArguments}$$${row.name}${methodArguments}`;
+  };
 };

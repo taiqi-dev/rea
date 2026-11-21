@@ -98,6 +98,16 @@ const materializeArtifactInventoryInScope = async (
   signal?: AbortSignal,
 ): Promise<ArtifactExtractionResult> => {
   abortIfNeeded(signal);
+  const rootMetadata = snapshot.occurrences[0]?.format_metadata;
+  if (
+    rootMetadata?.kind === "unityfs" &&
+    rootMetadata.directory_status !== "available"
+  )
+    throw new AnalysisUnsupportedTargetError(
+      "extract_artifact",
+      input.inputPath,
+      `UnityFS directory is ${rootMetadata.directory_status}; complete extraction is unavailable.`,
+    );
   const selectedOccurrences = snapshot.occurrences.filter(
     (occurrence) =>
       (occurrence.entry_kind === "file" || occurrence.entry_kind === "slice") &&
@@ -153,13 +163,15 @@ const materializeArtifactInventoryInScope = async (
     )
       throw new ArtifactReaderFailure(
         "unavailable",
-        `ASAR unpacked companion bytes are unavailable for ${occurrence.logical_path}`,
+        occurrence.format_metadata?.kind === "unityfs-entry"
+          ? `UnityFS member bytes are unavailable for ${occurrence.logical_path}`
+          : `ASAR unpacked companion bytes are unavailable for ${occurrence.logical_path}`,
         undefined,
         {
           logicalPath: occurrence.logical_path,
           declaredSha256: null,
           calculatedSha256: null,
-          unpacked: true,
+          unpacked: occurrence.format_metadata?.kind !== "unityfs-entry",
         },
       );
     if (
@@ -415,6 +427,7 @@ const requireExtractableFormat = async (
   if (
     !directory &&
     format !== "asar" &&
+    format !== "unityfs" &&
     !isMachOFormat(format) &&
     !isZipPackageFormat(format)
   )
@@ -437,6 +450,7 @@ const createReader = async (
   if (await requireExtractableFormat(path, input))
     return new DirectoryArtifactReader(path);
   if (format === "asar") return new AsarArtifactReader(path);
+  if (format === "unityfs") return new UnityFsArtifactReader(path);
   if (isZipPackageFormat(format)) return new ZipArtifactReader(path, format);
   return new MachOSliceArtifactReader(path, input.environment);
 };
@@ -448,3 +462,4 @@ const preflight = (entry: ArtifactEntry): void => {
       `Selected artifact entry cannot be read: ${entry.path}`,
     );
 };
+import { UnityFsArtifactReader } from "../UnityFsArtifactReader.js";
