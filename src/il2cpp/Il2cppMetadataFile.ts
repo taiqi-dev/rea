@@ -32,6 +32,7 @@ export type Il2cppMetadataDecoded = Omit<
   | "return_types"
   | "field_types"
   | "parameter_types"
+  | "generic_method_instances"
 >;
 
 /**
@@ -595,10 +596,8 @@ function* readMethods({
     if (linkFacts !== undefined) {
       const returnAt = at + 4 + widths.type_definition;
       const tokenAt =
-        returnAt +
-        widths.type +
-        (methodReturnParameterToken ? 4 : 0) +
-        widths.parameter +
+        at +
+        methodContainerAt({ widths, methodReturnParameterToken }) +
         widths.generic_container;
       linkFacts.returnTypes[index] = readIndex(bytes, returnAt, widths.type);
       linkFacts.methodTokens[index] = bytes.readUInt32LE(tokenAt);
@@ -717,7 +716,60 @@ export interface Il2cppMetadataLinkFacts {
   readonly parameterTypes: Int32Array;
   /** Demand-read names from this stable metadata snapshot, by GenericParameterIndex. */
   readonly genericParameterName: (index: number) => string | undefined;
+  readonly typeGenericContainer: (index: number) => number | undefined;
+  readonly methodGenericContainer: (index: number) => number | undefined;
+  readonly genericContainer: (
+    index: number,
+  ) => { readonly count: number } | undefined;
 }
+
+const methodContainerAt = ({
+  widths,
+  methodReturnParameterToken,
+}: Pick<MetadataTables, "widths" | "methodReturnParameterToken">) =>
+  4 +
+  widths.type_definition +
+  widths.type +
+  (methodReturnParameterToken ? 4 : 0) +
+  widths.parameter;
+
+const createGenericContainerReaders = (tables: MetadataTables) => {
+  const types = tables.section("typeDefinitions");
+  const methods = tables.section("methods");
+  const containers = tables.section("genericContainers");
+  const fixed = tables.indexing !== "counted";
+  const containerWidth = tables.widths.generic_container;
+  const typeOffset = 8 + tables.typeDefinitionTypeIndices * tables.widths.type;
+  const methodOffset = methodContainerAt(tables);
+  const inRange = (index: number, count: number) =>
+    Number.isInteger(index) && index >= 0 && index < count;
+  return {
+    typeGenericContainer: (index: number) =>
+      fixed && inRange(index, tables.counts.typeDefinitions)
+        ? readIndex(
+            tables.bytes,
+            types.offset +
+              index * tables.recordBytes.typeDefinitions +
+              typeOffset,
+            containerWidth,
+          )
+        : undefined,
+    methodGenericContainer: (index: number) =>
+      fixed && inRange(index, tables.counts.methods)
+        ? readIndex(
+            tables.bytes,
+            methods.offset + index * tables.recordBytes.methods + methodOffset,
+            containerWidth,
+          )
+        : undefined,
+    genericContainer: (index: number) =>
+      fixed && inRange(index, Math.floor(containers.size / 16))
+        ? {
+            count: tables.bytes.readInt32LE(containers.offset + index * 16 + 4),
+          }
+        : undefined,
+  };
+};
 
 /** Own the row layout once; unused generic names allocate no arrays or strings. */
 const createGenericParameterReader = (tables: MetadataTables) => {
@@ -821,6 +873,7 @@ function* readMetadataCoreSteps(
         fieldTypes: new Int32Array(tables.members.counts.fields),
         parameterTypes: new Int32Array(tables.members.counts.parameters),
         genericParameterName: createGenericParameterReader(tables),
+        ...createGenericContainerReaders(tables),
       },
     };
   yield;

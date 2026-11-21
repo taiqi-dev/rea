@@ -1,4 +1,6 @@
 import { AnalysisCapabilityUnavailableError } from "../../domain/analysisErrorCore.js";
+import { projectAnalysisError } from "../../domain/analysisErrorProjection.js";
+import { ProviderCleanupError } from "../../domain/providerCleanupError.js";
 import { err, ok } from "../../domain/result.js";
 import type { BinaryTarget } from "../../domain/binaryTargetTypes.js";
 import type { AnalysisProfileCommitment } from "../../domain/analysisProfile.js";
@@ -85,14 +87,44 @@ export class CompositeProvider implements AnalysisProvider {
       clients.set(provider, created);
       return created;
     };
-    const close: AnalysisClient["close"] = async (options) => {
+    const released = new Set<AnalysisClient>();
+    let closing: ReturnType<AnalysisClient["close"]> | undefined;
+    const closeChildren: AnalysisClient["close"] = async (options) => {
       const outcomes = await Promise.all(
-        [...clients.entries()].map(([provider, client]) =>
-          closeAnalysisClient(client, provider.identity().id, options),
+        [...clients.entries()].map(async ([provider, client]) => {
+          const providerId = provider.identity().id;
+          if (released.has(client)) return { providerId, result: ok(null) };
+          const result = await closeAnalysisClient(client, providerId, options);
+          if (result.ok) released.add(client);
+          return { providerId, result };
+        }),
+      );
+      const failures = outcomes.flatMap(({ providerId, result }) =>
+        result.ok ? [] : [{ providerId, error: result.error }],
+      );
+      const first = failures[0];
+      if (first === undefined) return ok(null);
+      if (failures.length === 1 && first.error.cleanupIncomplete)
+        return err(first.error);
+      return err(
+        new ProviderCleanupError(
+          this.#identity.id,
+          [...new Set(failures.flatMap(({ error }) => error.cleanupResources))],
+          {
+            reason: "Could not confirm closure of composed provider clients.",
+            failures: failures.map(({ providerId, error }) => ({
+              provider_id: providerId,
+              error: projectAnalysisError(error),
+            })),
+          },
+          { cause: new AggregateError(failures.map(({ error }) => error)) },
         ),
       );
-      return outcomes.find((outcome) => !outcome.ok) ?? ok(null);
     };
+    const close: AnalysisClient["close"] = (options) =>
+      (closing ??= closeChildren(options).finally(() => {
+        closing = undefined;
+      }));
     return {
       executeIfReady: (operation, parameters, options) => {
         const provider = this.#providerByOperation.get(operation);

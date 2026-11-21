@@ -15,6 +15,47 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+it("retains v108 header and bounded strings in an unsupported observation", async () => {
+  const root = await createTestTempDirectory("rea-il2cpp-v108-");
+  const path = join(root, "global-metadata.dat");
+  const header = Buffer.alloc(500);
+  const strings = Buffer.from([0x61, 0, 0xff, 0, 0x62]);
+  header.writeUInt32LE(0xfab11baf, 0);
+  header.writeInt32LE(108, 4);
+  header.writeInt32LE(header.length, 32);
+  header.writeInt32LE(strings.length, 36);
+  header.writeInt32LE(2, 40);
+  await writeFile(path, Buffer.concat([header, strings]));
+  const provider = new Il2cppMetadataProvider();
+  try {
+    const result = await provider.inspect({ path });
+    expect(result).toMatchObject({
+      ok: false,
+      error: {
+        _tag: "AnalysisUnsupportedTargetError",
+        partialObservation: {
+          normalized_result: {
+            v108: {
+              metadata_version: 108,
+              coverage: "header-and-bounded-string-sample-only",
+              strings: {
+                terminated_count: 2,
+                unterminated_tail_bytes: 1,
+                sample: [
+                  { offset: 0, value: "a", value_base64: null },
+                  { offset: 2, value: null, value_base64: "/w==" },
+                ],
+              },
+            },
+          },
+        },
+      },
+    });
+  } finally {
+    await provider.close();
+  }
+});
+
 /** Version 29 file whose methods all share one long name. */
 const sharedNameMetadata = (
   nameBytes: number | Buffer,

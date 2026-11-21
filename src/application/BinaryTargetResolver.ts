@@ -302,6 +302,7 @@ const detectArtifactFormat = async (
     if (lower.endsWith(".app")) return "app-pack";
     return zipPackageFormatForPath(lower) ?? "zip";
   }
+  if (hasUnityFsHeader(magic.subarray(0, observed.bytesRead))) return "unityfs";
   // Binary plists, including keyed archives, often use other extensions.
   if (hasBinaryPlistSignature(magic.subarray(0, observed.bytesRead)))
     return "plist";
@@ -350,7 +351,8 @@ const isArchiveFormat = (
     | "raw-binary"
   >,
 ): format is Extract<BinaryTarget, { kind: "archive" }>["format"] =>
-  isZipPackageFormat(format) || ["asar", "dmg", "pkg"].includes(format);
+  isZipPackageFormat(format) ||
+  ["asar", "dmg", "pkg", "unityfs"].includes(format);
 
 const sha256Handle = async (
   handle: FileHandle,
@@ -556,3 +558,4 @@ const readPeMetadata = async (
     ? parsePeRecord(record)
     : err("invalid or truncated PE header");
 };
+import { hasUnityFsHeader } from "../domain/unityfsFormat.js";

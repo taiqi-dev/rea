@@ -30,7 +30,17 @@ export const registerIl2cppCommands = (
         .string()
         .optional()
         .describe(
-          "Explicit matching Windows x64 GameAssembly.dll; static reading only",
+          "Matching Windows x64 PE, x64/ARM64 ELF, or x64/ARM64 Mach-O",
+        ),
+      binaryArchitecture: z
+        .enum(["amd64", "arm64"])
+        .optional()
+        .describe("Select a slice of a universal Mach-O"),
+      genericInstances: z
+        .boolean()
+        .optional()
+        .describe(
+          "Link generic method instances for metadata versions 27, 29 and 31",
         ),
     }),
     run: ({ args, options }) =>
@@ -46,6 +56,12 @@ export const registerIl2cppCommands = (
                   ...(options.binary_path === undefined
                     ? {}
                     : { binary_path: absoluteCallerPath(options.binary_path) }),
+                  ...(options.binaryArchitecture === undefined
+                    ? {}
+                    : { binary_architecture: options.binaryArchitecture }),
+                  ...(options.genericInstances === true
+                    ? { generic_instances: true }
+                    : {}),
                 },
                 { signal },
               ),

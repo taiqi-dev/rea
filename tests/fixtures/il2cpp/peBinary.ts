@@ -11,6 +11,7 @@ export interface PeIl2cppOptions {
   readonly executable?: boolean;
   readonly machine?: number;
   readonly payloadBytes?: number;
+  readonly genericInstance?: boolean;
 }
 
 export const createPeIl2cppFixture = (
@@ -66,6 +67,24 @@ export const createPeIl2cppFixture = (
     pointer(0x858, 0x900);
     payload.writeBigUInt64LE(4n, 0x860);
     pointer(0x868, 0x900);
+  }
+  if (options.genericInstance) {
+    // CodeRegistration layout with codeGenModulesCount 104 bytes from start.
+    payload.writeBigUInt64LE(1n, 0x5a8);
+    pointer(0x5b0, 0xd00);
+    pointer(0xd00, 0x210);
+    payload.writeBigUInt64LE(1n, 0x810);
+    pointer(0x818, 0xb00);
+    pointer(0xb00, 0xb20);
+    payload.writeBigUInt64LE(1n, 0xb20);
+    pointer(0xb28, 0xb60);
+    pointer(0xb60, 0x990);
+    payload.writeBigUInt64LE(1n, 0x820);
+    pointer(0x828, 0xbc0);
+    payload.writeBigUInt64LE(1n, 0x840);
+    pointer(0x848, 0xb80);
+    payload.writeInt32LE(-1, 0xb84);
+    payload.writeInt32LE(-1, 0xbc8);
   }
   const header = Buffer.alloc(0x200);
   header.writeUInt16LE(0x5a4d);

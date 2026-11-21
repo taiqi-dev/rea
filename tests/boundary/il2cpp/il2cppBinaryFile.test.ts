@@ -29,7 +29,117 @@ const reason = (bytes: Buffer) => {
   throw new Error("Expected link refusal");
 };
 
+const convertToMachO = (pe: Buffer): Buffer => {
+  const bytes = Buffer.from(pe);
+  bytes.fill(0, 0, 0x200);
+  bytes.writeUInt32LE(0xfeedfacf, 0);
+  bytes.writeUInt32LE(0x0100000c, 4);
+  bytes.writeUInt32LE(6, 12);
+  bytes.writeUInt32LE(1, 16);
+  bytes.writeUInt32LE(72, 20);
+  bytes.writeUInt32LE(0x19, 32);
+  bytes.writeUInt32LE(72, 36);
+  bytes.write("__TEXT", 40);
+  bytes.writeBigUInt64LE(PE_BASE + BigInt(PE_RVA), 56);
+  bytes.writeBigUInt64LE(BigInt(bytes.length - 0x200), 64);
+  bytes.writeBigUInt64LE(0x200n, 72);
+  bytes.writeBigUInt64LE(BigInt(bytes.length - 0x200), 80);
+  bytes.writeUInt32LE(5, 88);
+  bytes.writeUInt32LE(5, 92);
+  return bytes;
+};
+
+const convertToElf = (pe: Buffer): Buffer => {
+  const base = PE_BASE + BigInt(PE_RVA);
+  const dynamic = Buffer.alloc(64);
+  const rela = Buffer.alloc(24);
+  const physicalSlot = 0x200 + 0x308;
+  rela.writeBigUInt64LE(base + 0x308n, 0);
+  rela.writeBigUInt64LE(1027n, 8);
+  rela.writeBigUInt64LE(pe.readBigUInt64LE(physicalSlot), 16);
+  for (const [index, [tag, value]] of [
+    [7n, base + BigInt(pe.length - 0x200)],
+    [8n, 24n],
+    [9n, 24n],
+  ].entries()) {
+    dynamic.writeBigUInt64LE(tag!, index * 16);
+    dynamic.writeBigUInt64LE(value!, index * 16 + 8);
+  }
+  const bytes = Buffer.concat([pe, rela, dynamic]);
+  bytes.writeBigUInt64LE(0n, physicalSlot);
+  bytes.fill(0, 0, 0x200);
+  bytes.write("\x7fELF", 0, "latin1");
+  bytes.set([2, 1, 1], 4);
+  bytes.writeUInt16LE(3, 16);
+  bytes.writeUInt16LE(183, 18);
+  bytes.writeUInt32LE(1, 20);
+  bytes.writeBigUInt64LE(64n, 32);
+  bytes.writeUInt16LE(64, 52);
+  bytes.writeUInt16LE(56, 54);
+  bytes.writeUInt16LE(2, 56);
+  bytes.writeUInt32LE(1, 64);
+  bytes.writeUInt32LE(7, 68);
+  bytes.writeBigUInt64LE(0x200n, 72);
+  bytes.writeBigUInt64LE(base, 80);
+  bytes.writeBigUInt64LE(base, 88);
+  bytes.writeBigUInt64LE(BigInt(bytes.length - 0x200), 96);
+  bytes.writeBigUInt64LE(BigInt(bytes.length - 0x200), 104);
+  bytes.writeUInt32LE(2, 120);
+  bytes.writeBigUInt64LE(BigInt(pe.length + rela.length), 128);
+  bytes.writeBigUInt64LE(base + BigInt(pe.length + rela.length - 0x200), 136);
+  bytes.writeBigUInt64LE(BigInt(dynamic.length), 152);
+  bytes.writeBigUInt64LE(BigInt(dynamic.length), 160);
+  return bytes;
+};
+
+it.each([
+  ["macho", convertToMachO],
+  ["elf", convertToElf],
+] as const)(
+  "links ARM64 %s with the same observed definition addresses as PE",
+  (format, convert) => {
+    const pe = createPeIl2cppFixture();
+    const linked = link(convert(pe));
+    expect(linked).toMatchObject({ format, architecture: "arm64" });
+    expect(linked.method_addresses.map((row) => row.address)).toEqual(
+      link(pe).method_addresses.map((row) => row.address),
+    );
+  },
+);
+
 describe("Windows PE IL2CPP static address association", () => {
+  it("links the selected generic method spec and preserves definition addresses", () => {
+    const fixture = createIl2cppMetadataFixture({
+      version: 31,
+      wide: { genericContainers: 1, fillerTypes: 0, parameters: 0 },
+    });
+    fixture.bytes.writeInt32LE(0, fixture.record("methods", 0) + 20);
+    fixture.bytes.writeInt32LE(
+      1,
+      fixture.section("genericContainers").offset + 4,
+    );
+    const { metadata: report, link: facts } = readIl2cppMetadataForLinking(
+      fixture.bytes,
+    );
+    const bytes = createPeIl2cppFixture({ genericInstance: true });
+    const linked = linkIl2cppBinary(bytes, report, facts, undefined, {
+      genericInstances: true,
+    });
+    const ordinary = linkIl2cppBinary(bytes, report, facts);
+    expect(ordinary.generic_methods).toBeUndefined();
+    expect(linked.method_addresses).toEqual(ordinary.method_addresses);
+    expect(linked.generic_methods?.issues).toEqual([]);
+    expect(linked.generic_methods?.instances).toEqual([
+      {
+        method_spec: 0,
+        method: 0,
+        name: expect.stringMatching(/\$\$[^<]+<string>$/u),
+        state: "code",
+        address: `0x${(PE_BASE + BigInt(PE_RVA + 0x210)).toString(16)}`,
+        rva: "0x1210",
+      },
+    ]);
+  });
   it.each([24, 27, 29, 31, 39] as const)(
     "links version %i tokens rather than row order",
     (version) => {

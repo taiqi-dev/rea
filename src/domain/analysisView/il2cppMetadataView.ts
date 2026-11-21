@@ -19,6 +19,9 @@ import {
   il2cppMetadataMemberCollections,
   il2cppMetadataBinaryCollections,
   il2cppMetadataTypeSchema,
+  il2cppGenericMethodInstanceSchema,
+  il2cppGenericMethodIssueSchema,
+  il2cppGenericMethodLinkSchema,
 } from "../il2cpp/il2cppMetadata.js";
 import { err, ok, type Result } from "../result.js";
 import { analysisInputErrorFromIssues } from "../inputIssueProjection.js";
@@ -56,6 +59,8 @@ const countsSchema = z.strictObject({
   return_types: z.number().int().nonnegative().nullable(),
   field_types: z.number().int().nonnegative().nullable(),
   parameter_types: z.number().int().nonnegative().nullable(),
+  generic_method_instances: z.int().nonnegative().nullable().optional(),
+  generic_method_issues: z.int().nonnegative().nullable().optional(),
 });
 
 export const il2cppMetadataSummarySchema = il2cppMetadataObjectSchema
@@ -73,17 +78,29 @@ export const il2cppMetadataSummarySchema = il2cppMetadataObjectSchema
     return_types: true,
     field_types: true,
     parameter_types: true,
+    generic_method_instances: true,
     binary: true,
   })
   .extend({
     binary: il2cppBinaryLinkSchema
       .omit({ code_gen_modules: true })
+      .extend({
+        generic_methods: il2cppGenericMethodLinkSchema
+          .omit({ issues: true })
+          .optional(),
+      })
       .nullable()
       .optional(),
     counts: countsSchema,
   });
 
 const indexSchema = z.number().int().nonnegative();
+const genericInstanceRowSchema = il2cppGenericMethodInstanceSchema.extend({
+  index: indexSchema,
+});
+const genericIssueRowSchema = il2cppGenericMethodIssueSchema.extend({
+  index: indexSchema,
+});
 const sectionRowSchema = il2cppMetadataSectionSchema.extend({
   index: indexSchema,
 });
@@ -179,6 +196,18 @@ export const il2cppMetadataViewRequestSchema = z.discriminatedUnion(
       image_indices: z.array(indexSchema).optional(),
       fields: z.array(codeGenModuleRowSchema.keyof()).optional(),
     }),
+    z.strictObject({
+      ...indexPage,
+      collection: z.literal("generic_method_instances"),
+      method_indices: z.array(indexSchema).optional(),
+      states: z.array(il2cppMethodAddressSchema.shape.state).optional(),
+      fields: z.array(genericInstanceRowSchema.keyof()).optional(),
+    }),
+    z.strictObject({
+      ...indexPage,
+      collection: z.literal("generic_method_issues"),
+      fields: z.array(genericIssueRowSchema.keyof()).optional(),
+    }),
     ...(["return_types", "field_types"] as const).map((collection) =>
       z.strictObject({
         ...indexPage,
@@ -207,6 +236,8 @@ export const il2cppMetadataViewItemsSchema = z.union([
   z.array(methodAddressRowSchema.partial().required({ index: true })),
   z.array(typeReferenceRowSchema.partial().required({ index: true })),
   z.array(codeGenModuleRowSchema.partial().required({ index: true })),
+  z.array(genericInstanceRowSchema.partial().required({ index: true })),
+  z.array(genericIssueRowSchema.partial().required({ index: true })),
 ]);
 
 export const il2cppMetadataViewContextSchema = z.strictObject({
@@ -226,6 +257,9 @@ type Report = z.infer<typeof il2cppMetadataParentSchema>;
 type Request = z.infer<typeof il2cppMetadataViewRequestSchema>;
 type CollectionRows = Omit<Report, "binary"> & {
   code_gen_modules: NonNullable<Report["binary"]>["code_gen_modules"];
+  generic_method_issues: NonNullable<
+    NonNullable<Report["binary"]>["generic_methods"]
+  >["issues"];
 };
 type Row = NonNullable<CollectionRows[Request["collection"]]>[number];
 interface CheckedReport {
@@ -298,6 +332,13 @@ const parseMetadataReport = (
         report.binary == null ? null : (report.field_types?.length ?? null),
       parameter_types:
         report.binary == null ? null : (report.parameter_types?.length ?? null),
+      ...(report.generic_method_instances === undefined
+        ? {}
+        : {
+            generic_method_instances: report.generic_method_instances.length,
+            generic_method_issues:
+              report.binary?.generic_methods?.issues.length ?? null,
+          }),
     },
   };
   if (reusable) checkedReports.set(key, checked);
@@ -344,13 +385,11 @@ const selection = (view: Request, report: Report) => {
       ? new Set(view.addresses.map((value) => BigInt(value).toString(16)))
       : undefined;
   const states =
-    view.collection === "method_addresses" && view.states !== undefined
+    "states" in view && view.states !== undefined
       ? new Set<string>(view.states)
       : undefined;
   const methods =
-    (view.collection === "parameters" ||
-      view.collection === "parameter_types") &&
-    view.method_indices !== undefined
+    "method_indices" in view && view.method_indices !== undefined
       ? new Set(view.method_indices)
       : undefined;
   // A parameter type row is owned by the method of the parameter at its index.
@@ -499,6 +538,7 @@ export const projectIl2cppMetadataView = (
     return_types,
     field_types,
     parameter_types,
+    generic_method_instances,
     ...identity
   } = report;
   const allRows = {
@@ -516,6 +556,8 @@ export const projectIl2cppMetadataView = (
     return_types,
     field_types,
     parameter_types,
+    generic_method_instances,
+    generic_method_issues: report.binary?.generic_methods?.issues,
   };
   const shared = {
     parent_evidence_id: parent.evidenceId,
@@ -540,7 +582,10 @@ export const projectIl2cppMetadataView = (
         ),
       report.binary == null
         ? "Names come from unencrypted metadata only; native code addresses and runtime registration remain unknown."
-        : "Addresses come from static binary tables; runtime behavior and generic instance code remain unknown.",
+        : "Addresses come from static binary tables; runtime behavior remains unknown.",
+      ...(report.binary != null && report.generic_method_instances === undefined
+        ? ["The retained report did not collect generic method instances."]
+        : []),
       ...(parent.subject == null
         ? [
             "The parent has no recorded subject; its normalized artifact identity cannot be cross-checked against a subject digest.",
@@ -552,7 +597,11 @@ export const projectIl2cppMetadataView = (
     const binary =
       report.binary == null
         ? report.binary
-        : (({ code_gen_modules: _modules, ...facts }) => facts)(report.binary);
+        : (({ code_gen_modules: _modules, generic_methods, ...facts }) => {
+            if (generic_methods === undefined) return facts;
+            const { issues: _issues, ...registration } = generic_methods;
+            return { ...facts, generic_methods: registration };
+          })(report.binary);
     return ok({
       kind: "summary",
       view,

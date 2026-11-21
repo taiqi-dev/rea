@@ -1,5 +1,6 @@
 import { Il2cppBinaryFormatFailure } from "./Il2cppBinaryFormat.js";
 import { Il2cppMetadataFormatFailure } from "./Il2cppMetadataFormat.js";
+import { inspectIl2cppMetadataV108 } from "./Il2cppMetadataV108.js";
 import type { AnalysisPartialObservation } from "../domain/analysisErrorBase.js";
 import { jsonValueSchema } from "../domain/jsonValue.js";
 import { setImmediate } from "node:timers/promises";
@@ -177,30 +178,54 @@ const hex = (value: bigint) => `0x${value.toString(16)}`;
 const binaryReport = (
   link: Il2cppBinaryLink,
   artifact: { path: string; sha256: string; bytes: number },
-) => ({
-  binary: {
-    artifact,
-    format: link.format,
-    architecture: link.architecture,
-    image_base: hex(link.image_base),
-    code_gen_modules_field:
-      link.code_gen_modules_field === null
-        ? null
-        : hex(link.code_gen_modules_field),
-    code_gen_modules_array: hex(link.code_gen_modules_array),
-    code_gen_modules: link.code_gen_modules.map((module) => ({
-      image: module.image,
-      address: hex(module.address),
-      method_pointer_count: module.method_pointer_count,
-    })),
-    types_field: hex(link.types_field),
-    types_count: link.types_count,
-  },
-  return_types: link.return_types,
-  field_types: link.field_types,
-  parameter_types: link.parameter_types,
-  method_addresses: link.method_addresses,
-});
+) => {
+  const { generic_methods: generic } = link;
+  return {
+    binary: {
+      artifact,
+      format: link.format,
+      architecture: link.architecture,
+      image_base: hex(link.image_base),
+      code_gen_modules_field:
+        link.code_gen_modules_field === null
+          ? null
+          : hex(link.code_gen_modules_field),
+      code_gen_modules_array: hex(link.code_gen_modules_array),
+      code_gen_modules: link.code_gen_modules.map((module) => ({
+        image: module.image,
+        address: hex(module.address),
+        method_pointer_count: module.method_pointer_count,
+      })),
+      types_field: hex(link.types_field),
+      types_count: link.types_count,
+      ...(generic === undefined
+        ? {}
+        : {
+            generic_methods: {
+              generic_method_pointers_field:
+                generic.generic_method_pointers_field === null
+                  ? null
+                  : hex(generic.generic_method_pointers_field),
+              generic_method_pointers_count:
+                generic.generic_method_pointers_count,
+              generic_method_table: hex(generic.generic_method_table),
+              generic_method_table_count: generic.generic_method_table_count,
+              generic_method_table_stride: generic.generic_method_table_stride,
+              method_specs_count: generic.method_specs_count,
+              generic_insts_count: generic.generic_insts_count,
+              issues: generic.issues,
+            },
+          }),
+    },
+    return_types: link.return_types,
+    field_types: link.field_types,
+    parameter_types: link.parameter_types,
+    method_addresses: link.method_addresses,
+    ...(generic === undefined
+      ? {}
+      : { generic_method_instances: generic.instances }),
+  };
+};
 
 const reportLimit = (path: string, maximumBytes: number) =>
   new AnalysisResourceConstraintError(
@@ -228,6 +253,7 @@ const metadataSourceEvidence = (
       }
     | undefined = undefined,
   previous?: AnalysisPartialObservation,
+  v108?: NonNullable<Awaited<ReturnType<typeof inspectIl2cppMetadataV108>>>,
 ) =>
   createEvidence(
     {
@@ -277,6 +303,7 @@ const metadataSourceEvidence = (
         ...(counts === undefined
           ? {}
           : { validated_section_row_counts: { ...counts } }),
+        ...(v108 === undefined ? {} : { v108 }),
       },
       confidence: "observed",
       limitations: [
@@ -353,6 +380,9 @@ export class Il2cppMetadataProvider implements Il2cppMetadataPort {
         ? undefined
         : {
             path: input.binary_path,
+            ...(input.binary_architecture === undefined
+              ? {}
+              : { architecture: input.binary_architecture }),
             ...(observed.binary === undefined
               ? {}
               : { artifact: observed.binary }),
@@ -370,6 +400,30 @@ export class Il2cppMetadataProvider implements Il2cppMetadataPort {
         const artifact = sourceArtifact(input.path, snapshot);
         observed.artifact = artifact;
         assertArtifactReadActive(options?.signal);
+        const v108 = await inspectIl2cppMetadataV108(
+          snapshot.bytes,
+          async () => {
+            await this.yieldControl();
+            assertArtifactReadActive(options?.signal);
+          },
+        );
+        if (v108 !== null)
+          return err(
+            new AnalysisUnsupportedTargetError(
+              OPERATION,
+              input.path,
+              "Version 108 currently supports only a partial header and metadata string observation.",
+              {
+                partialObservation: metadataSourceEvidence(
+                  artifact,
+                  undefined,
+                  selectedBinarySource(),
+                  undefined,
+                  v108,
+                ),
+              },
+            ),
+          );
         const limit = this.outputBytes;
         const admission = createIl2cppMetadataAdmission(
           limit,
@@ -406,6 +460,7 @@ export class Il2cppMetadataProvider implements Il2cppMetadataPort {
           | "return_types"
           | "field_types"
           | "parameter_types"
+          | "generic_method_instances"
         > = {
           binary: null,
           method_addresses: [],
@@ -433,8 +488,11 @@ export class Il2cppMetadataProvider implements Il2cppMetadataPort {
               binary.bytes,
               decoded,
               link,
-              undefined,
-              admission,
+              input.binary_architecture,
+              {
+                ...admission,
+                genericInstances: input.generic_instances === true,
+              },
             );
             let linkStep = linking.next();
             while (!linkStep.done) {
@@ -469,11 +527,18 @@ export class Il2cppMetadataProvider implements Il2cppMetadataPort {
           ...linked,
           artifact,
           limitations: [
-            "Native linking is limited to x64 PE images; addresses use the preferred PE image base, not runtime ASLR placement. Neither input is executed or modified.",
+            "Native linking uses file-defined addresses for admitted PE, ELF and Mach-O images. Neither input is executed or modified, and runtime placement remains unknown.",
             "Only unencrypted global-metadata.dat versions 24, 27, 29, 31 and 39 are decoded; names, counts and string literals are observed file content, not runtime behavior.",
             binaryPath === undefined
               ? "Native code addresses and IL2CPP binary registration are not recovered without binary_path."
-              : "Method addresses come from the binary's code-generation module methodPointers, matched by module name, method count and metadata token; generic method instances, adjustor thunks and invokers are not linked, no-body means an observed zero slot, and unknown means no module claimed the method or its slot has an unresolved relocation.",
+              : "Definition method addresses come from code-generation module methodPointers, matched by module name, method count and metadata token. A zero slot records no body. Unresolved ownership or relocation remains unknown.",
+            ...(linked.generic_method_instances === undefined
+              ? [
+                  "Generic method instances remain unobserved without a completed opt-in link.",
+                ]
+              : [
+                  "Generic method instances use resolved method specs and generic method pointer slots. Adjustor thunk and invoker addresses remain unobserved.",
+                ]),
             binaryPath === undefined
               ? "Field, parameter and return types are not recovered without binary_path; type indices refer to the native binary."
               : decoded.metadata_version === 27
@@ -503,7 +568,7 @@ export class Il2cppMetadataProvider implements Il2cppMetadataPort {
             { cause: parsed.error },
           );
         assertArtifactReadActive(options?.signal);
-        return ok(parsed.data);
+        return ok(report);
       });
     } catch (cause: unknown) {
       const failure = failureFor(cause, input.path);

@@ -43,6 +43,7 @@ export interface MutableOccurrence {
   encrypted: boolean;
   hash_status: ArtifactOccurrence["hash_status"];
   source_location: ArtifactOccurrence["source_location"];
+  format_metadata?: NonNullable<ArtifactOccurrence["format_metadata"]>;
   limitations: string[];
 }
 
@@ -96,6 +97,9 @@ export const createOccurrence = (
         ? null
         : { offset: entry.byteOffset, length: entry.declaredSize },
     limitations: [...entry.limitations],
+    ...(entry.formatMetadata === undefined
+      ? {}
+      : { format_metadata: entry.formatMetadata }),
   };
 };
 
@@ -227,7 +231,7 @@ export const rootOccurrenceFor = (
   artifact_kind:
     metadata.format === "directory" ||
     isZipPackageFormat(metadata.format) ||
-    ["asar", "dmg", "pkg"].includes(metadata.format)
+    ["asar", "dmg", "pkg", "unityfs"].includes(metadata.format)
       ? "container"
       : artifactRoleForFormat(metadata.path, metadata.format).kind,
   artifact_format: metadata.format,
@@ -421,6 +425,7 @@ const artifactRoleForFormat = (
   const byPath = classifyArtifactPath(path);
   if (format === "file" || format === byPath.format) return byPath;
   if (format === "unknown") return { kind: "unknown", format };
+  if (format === "unityfs") return { kind: "container", format };
   if (format === "zip")
     return {
       kind: "container",
@@ -441,6 +446,7 @@ export const classifyArtifactBytes = (
   fileSize = prefix.length,
 ): ArtifactNode["format"] => {
   if (hasZipSignature(prefix)) return "zip";
+  if (hasUnityFsHeader(prefix)) return "unityfs";
   if (hasBinaryPlistSignature(prefix)) return "plist";
   const fatFormat = classifyFatArtifact(prefix, fileSize);
   if (fatFormat !== null) return fatFormat;
@@ -500,3 +506,4 @@ const relationFor = (path: string): ArtifactEdge["relation"] => {
 };
 
 const depth = (path: string): number => path.split("/").length;
+import { hasUnityFsHeader } from "../../domain/unityfsFormat.js";

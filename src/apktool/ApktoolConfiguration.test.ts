@@ -139,7 +139,6 @@ describe("Windows PATH launcher selection", () => {
     Path: '"C:\\Selected Tools";C:\\Other Tools',
     PathExt: ".EXE;.CMD;.BAT",
     ComSpec: "C:\\Windows\\System32\\cmd.exe",
-    NoDefaultCurrentDirectoryInExePath: "",
   };
   const files = (...paths: string[]) => {
     const selected = new Set(paths.map((path) => path.toLowerCase()));
@@ -224,7 +223,7 @@ describe("Windows PATH launcher selection", () => {
     expect(lookup.stat).not.toHaveBeenCalled();
   });
 
-  it("does not inspect the current directory when the caller disables it", async () => {
+  it("does not implicitly inspect the current directory", async () => {
     await expect(
       resolveApktoolCommand(environment, "win32"),
     ).rejects.toMatchObject({ code: "command_missing" });

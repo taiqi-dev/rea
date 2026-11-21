@@ -201,6 +201,22 @@ it("discovers an oversized native dossier by exact metadata and reads its retain
     arguments: { filters: { operation: "analyze_function" } },
   });
   expect(parseMcpToolError(invalid).error.code).toBe("invalid_request");
+  const selected = await client.callTool({
+    name: "get_evidence_bundle",
+    arguments: {
+      detail: "records",
+      filters: { evidence_id: other.evidence_id },
+      limit: 1,
+    },
+  });
+  expect(selected.isError).not.toBe(true);
+  expect(selected.structuredContent).toMatchObject({
+    result: {
+      kind: "evidence-record-selection",
+      records: [other],
+      next_offset: null,
+    },
+  });
 });
 
 it("advertises exact schemas and projects one layout section from retained Evidence", async () => {

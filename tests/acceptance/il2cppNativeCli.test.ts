@@ -2,6 +2,7 @@ import { readFile, unlink, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, it } from "vitest";
 import { createEvidence, parseEvidence } from "../../src/domain/evidence.js";
+import { jsonValueSchema } from "../../src/domain/jsonValue.js";
 import { il2cppMetadataSchema } from "../../src/domain/il2cpp/il2cppMetadata.js";
 import { analysisViewResultSchema } from "../../src/domain/analysisView/analysisView.js";
 import { createTestTempDirectory } from "../fixtures/temporaryDirectory.js";
@@ -29,6 +30,75 @@ const inputs = async (name = "Assembly-CSharp.dll") => {
   );
   return { path, binary_path };
 };
+
+cliTest(
+  "retains generic instance rows for CLI and MCP selection",
+  async ({ cli }) => {
+    const input = await inputs();
+    const fixture = createIl2cppMetadataFixture({
+      version: 31,
+      wide: { fillerTypes: 0, parameters: 0, genericContainers: 1 },
+    });
+    fixture.bytes.writeInt32LE(0, fixture.record("methods", 0) + 20);
+    fixture.bytes.writeInt32LE(
+      1,
+      fixture.section("genericContainers").offset + 4,
+    );
+    await writeFile(input.path, fixture.bytes);
+    await writeFile(
+      input.binary_path,
+      createPeIl2cppFixture({ genericInstance: true }),
+    );
+    const complete = await cli.run({
+      arguments: [
+        "inspect-il2cpp-metadata",
+        input.path,
+        "--binary_path",
+        input.binary_path,
+        "--generic-instances",
+        "--json",
+      ],
+    });
+    expect(complete.exitCode, JSON.stringify(complete.json)).toBe(0);
+    const report = il2cppMetadataSchema.parse(
+      parseEvidence(complete.json).normalized_result,
+    );
+    expect(report.generic_method_instances).toMatchObject([
+      { method: 0, state: "code" },
+    ]);
+    const { call } = await connectLocalToolsMcp();
+    const summary = await call("inspect_il2cpp_metadata", {
+      ...input,
+      generic_instances: true,
+    });
+    expect(summary.isError).not.toBe(true);
+    const view = analysisViewResultSchema.parse(
+      parseEvidence(summary.structuredContent).normalized_result,
+    );
+    expect(view).toMatchObject({
+      summary: {
+        counts: { generic_method_instances: 1, generic_method_issues: 0 },
+      },
+    });
+    const page = await call("inspect_analysis_view", {
+      source: {
+        kind: "retained-evidence",
+        evidence_id: view.parent_evidence_id,
+      },
+      view: {
+        kind: "il2cpp-metadata",
+        collection: "generic_method_instances",
+        method_indices: [0],
+      },
+    });
+    expect(page.isError).not.toBe(true);
+    expect(
+      parseEvidence(page.structuredContent).normalized_result,
+    ).toMatchObject({
+      items: [{ index: 0, ...report.generic_method_instances?.[0] }],
+    });
+  },
+);
 
 cliTest(
   "matches native CLI/MCP Evidence and queries addresses after both inputs are removed",
@@ -120,7 +190,7 @@ cliTest(
       {
         operation: "inspect_il2cpp_metadata",
         parameters: input,
-        result: malformed,
+        result: jsonValueSchema.parse(malformed),
       },
     );
     const refused = parseMcpToolError(

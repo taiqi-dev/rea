@@ -169,6 +169,21 @@ cliTest(
     const expected = inspectEvidenceBundle(bundle, options);
     if (!expected.ok) throw expected.error;
     expect(result.json).toEqual(expected.value);
+    const selected = await cli.run({
+      arguments: [
+        "inspect-evidence-bundle",
+        JSON.stringify({ path, ...options, detail: "records", limit: 1 }),
+        "--json",
+      ],
+      environment: { HOME: root, XDG_CONFIG_HOME: root, XDG_CACHE_HOME: root },
+    });
+    expect(selected.exitCode).toBe(0);
+    expect(selected.json).toMatchObject({
+      kind: "evidence-record-selection",
+      matching_records: 1,
+      next_offset: null,
+      records: [parent],
+    });
     const complete = await cli.run({
       arguments: [
         "inspect-evidence-bundle",

@@ -216,6 +216,11 @@ const buildInventorySnapshot = async (
     format: rootFormat,
     path,
   });
+  const unityFs =
+    reader instanceof UnityFsArtifactReader
+      ? reader.formatMetadata()
+      : undefined;
+  if (unityFs !== undefined) rootOccurrence.format_metadata = unityFs;
   for (const occurrence of input.occurrences)
     if (occurrence.parent_occurrence_id === null)
       occurrence.parent_occurrence_id = rootOccurrence.occurrence_id;
@@ -274,6 +279,21 @@ const buildInventorySnapshot = async (
     integrityContradictions,
     input.caseCollisionLimitation,
   );
+  const unityFsUnavailable = input.occurrences.filter(
+    (entry) =>
+      entry.format_metadata?.kind === "unityfs-entry" &&
+      entry.hash_status === "unavailable",
+  );
+  const unreadDirectory =
+    unityFs !== undefined && unityFs.directory_status !== "available";
+  if (unreadDirectory)
+    assessment.limitations.push(
+      `UnityFS member directory remains unknown (${unityFs.directory_status}).`,
+    );
+  if (unityFsUnavailable.length > 0)
+    assessment.limitations.push(
+      ...new Set(unityFsUnavailable.flatMap((entry) => entry.limitations)),
+    );
   return {
     manifest,
     nodes: orderedNodes,
@@ -281,7 +301,10 @@ const buildInventorySnapshot = async (
     edges: orderedEdges,
     provenance: reader?.provenance() ?? [],
     integrity_contradictions: integrityContradictions,
-    coverage_status: assessment.coverage_status,
+    coverage_status:
+      unreadDirectory || unityFsUnavailable.length > 0
+        ? "partial"
+        : assessment.coverage_status,
     limitations: assessment.limitations,
   };
 };
@@ -395,3 +418,4 @@ const buildManifest = ({
     occurrence_count: orderedOccurrences.length,
     edge_count: orderedEdges.length,
   });
+import { UnityFsArtifactReader } from "../UnityFsArtifactReader.js";

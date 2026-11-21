@@ -7,27 +7,39 @@ import {
 } from "./AdbConfiguration.js";
 
 describe("resolveAdbBinary", () => {
-  it("prefers an absolute REA_ADB_PATH", () => {
-    expect(resolveAdbBinary({ [ADB_BINARY_ENV]: "/opt/tools/adb" })).toEqual({
+  it("prefers an absolute REA_ADB_PATH", async () => {
+    expect(
+      await resolveAdbBinary({ [ADB_BINARY_ENV]: "/opt/tools/adb" }, "linux"),
+    ).toEqual({
       binary: "/opt/tools/adb",
       pathSource: "environment",
     });
   });
 
-  it("falls back to PATH resolution without the environment key", () => {
-    expect(resolveAdbBinary({})).toEqual({
+  it("falls back to PATH resolution without the environment key on POSIX", async () => {
+    expect(await resolveAdbBinary({}, "linux")).toEqual({
       binary: "adb",
       pathSource: "path",
     });
-    expect(resolveAdbBinary({ [ADB_BINARY_ENV]: "  " })).toEqual({
-      binary: "adb",
-      pathSource: "path",
-    });
+    expect(await resolveAdbBinary({ [ADB_BINARY_ENV]: "  " }, "linux")).toEqual(
+      {
+        binary: "adb",
+        pathSource: "path",
+      },
+    );
   });
 
-  it("rejects a relative environment path explicitly", () => {
-    expect(() => resolveAdbBinary({ [ADB_BINARY_ENV]: "tools/adb" })).toThrow(
-      /must be an absolute path/u,
+  it("rejects a relative environment path explicitly", async () => {
+    await expect(
+      resolveAdbBinary({ [ADB_BINARY_ENV]: "tools/adb" }),
+    ).rejects.toThrow(/must be an absolute path/u);
+  });
+
+  it("refuses a missing default Windows executable before spawn", async () => {
+    await expect(resolveAdbBinary({ Path: "" }, "win32")).rejects.toMatchObject(
+      {
+        code: "binary_missing",
+      },
     );
   });
 });

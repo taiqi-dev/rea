@@ -99,6 +99,7 @@ export const readGoElfImage = (bytes: Buffer): GoBinaryContainer => {
     "ELF program headers",
   );
   const mappings: GoFileMapping[] = [];
+  const executableMappings: GoFileMapping[] = [];
   const zeroFills: GoZeroFillMapping[] = [];
   let fallback: GoFileMapping | null = null;
   for (let index = 0; index < phCount; index++) {
@@ -120,7 +121,10 @@ export const readGoElfImage = (bytes: Buffer): GoBinaryContainer => {
         : reader.fileRange(fileOffset, size, "ELF load segment")),
       address,
     };
-    if (mapping.size !== 0) mappings.push(mapping);
+    if (mapping.size !== 0) {
+      mappings.push(mapping);
+      if ((flags & 1) !== 0) executableMappings.push(mapping);
+    }
     if (memorySize > size)
       zeroFills.push({ address: address + size, size: memorySize - size });
     if (fallback === null && (flags & 3) === 2) fallback = mapping;
@@ -212,6 +216,7 @@ export const readGoElfImage = (bytes: Buffer): GoBinaryContainer => {
     bits,
     byte_order: reader.little ? "little" : "big",
     mappings,
+    executable_mappings: executableMappings,
     zero_fills: zeroFills,
     search: search ?? fallback,
   };
